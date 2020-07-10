@@ -1,6 +1,58 @@
 the_plan <-
   drake_plan(
+    prob_positive_seq = get_prob_positive_seq(),
+    outcome_positive_seq = get_outcome_positive_seq(),
+    size = 10000,
+    prob_positive_sample = prob_positive_seq %>%
+      sample(size = size, replace = TRUE),
+    outcome_positive_sample = outcome_positive_seq %>%
+      sample(size = size, replace = TRUE),
+    outcome_dif = 240,
+    restriction_values = get_restriction_values(prob_positive_sample, outcome_positive_sample, outcome_dif),
+    restriction = get_restriction(restriction_values),
+    outcome_positive_restricted = outcome_positive_sample[restriction],
+    prob_positive_restricted = prob_positive_sample[restriction],
+    loss_prob_restriction = 0.15,
+    gambles = get_gambles(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif),
+    gamble_plot = plot_gamble(gambles),
+    project_name = c(
+      "Refinera",
+      "Microxy",
+      "Vital Records",
+      "Logivia",
+      "Savoro",
+      "Grown Media",
+      "Biotechly",
+      "FreightCog",
+      "Evogenic",
+      "Erectic"
+    ),
+    project_type = c(
+      "oil well",
+      "microchip",
+      "record deal",
+      "shipping logistics",
+      "restaurant chain",
+      "national newspaper",
+      "pharmaceutical",
+      "railway",
+      "GMO",
+      "high-rise construction"
+    )
+    # project_attribute_list = list(
+    #   outcome_positive,
+    #   outcome_dif,
+    #   prob_positive,
+    #   project_name,
+    #   project_type
+    # ),
+    # project_description = pmap(project_attribute_list, get_project_description),
+    # project_type_nospace = str_replace_all(project_type, " ", "-"),
+    # project_input = str_c(project_type_nospace,
+    #   outcome_positive,
+    #   outcome_dif,
+    #   prob_positive,
+    #   sep = "_"
+    # )
 
-   ## Plan targets in here.
-
-)
+  )
