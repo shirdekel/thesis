@@ -1,43 +1,49 @@
 ##' @title Get project description
-##' @param gamble_value_positive
-##' @param gamble_value_dif
-##' @param gamble_prob_positive
+##'
 ##' @param project_name
+##' @param gambles
+##' @param outcome_dif
 ##' @param project_type
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_description <- function(gamble_value_positive, gamble_value_dif,
-                                    gamble_prob_positive, project_name, project_type) {
+get_project_description <- function(gambles,
+                                    outcome_dif,
+                                    project_name,
+                                    project_type) {
 
-  gamble_value_negative <-  gamble_value_dif - gamble_value_positive
-  gamble_prob_positive <- gamble_prob_positive * 100
-  gamble_prob_negative <- 100 - gamble_prob_positive
-  gamble_value_profit <- gamble_value_positive + gamble_value_negative
+
+  outcome_negative <- outcome_dif - gambles$outcome_positive_restricted_sample
+  prob_positive <- gambles$prob_positive_restricted_sample * 100
+  prob_negative <- 100 - prob_positive
 
   bold <- paste0("there is ",
-                gamble_prob_positive,
+                prob_positive,
                 "% chance of gaining $",
-                gamble_value_positive,
+                gambles$outcome_positive_restricted_sample,
                 " million and a ",
-                gamble_prob_negative,
+                prob_negative,
                 "% chance of losing $",
-                gamble_value_negative,
-                " million on the investment.")
+                outcome_negative,
+                " million on the investment.") %>%
+    map_chr(~tags$strong(.x) %>%
+              as.character())
 
   project_description <- paste0(project_name,
         " is a business in your company that proposes to construct ",
-        getindefinite(project_type),
+        project_type %>%
+          map_chr(getindefinite),
         " ",
         project_type,
         " project, which they forecast will cost $",
-        gamble_value_negative,
+        outcome_negative,
         " million. If the project succeeds, forecasts show the company would make $",
-        gamble_value_profit,
+        outcome_dif,
         " million. Research suggests that there is a ",
-        gamble_prob_positive,
+        prob_positive,
         "% chance of the project succeeding. Therefore, ",
-        tags$strong(bold))
+        bold)
 
   return(project_description)
 

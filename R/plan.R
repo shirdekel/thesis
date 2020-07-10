@@ -38,16 +38,12 @@ the_plan <-
       "railway",
       "GMO",
       "high-rise construction"
-    )
-    # project_attribute_list = list(
-    #   outcome_positive,
-    #   outcome_dif,
-    #   prob_positive,
-    #   project_name,
-    #   project_type
-    # ),
-    # project_description = pmap(project_attribute_list, get_project_description),
-    # project_type_nospace = str_replace_all(project_type, " ", "-"),
+    ),
+    project_description = get_project_description(gambles,
+                                                  outcome_dif,
+                                                  project_name,
+                                                  project_type),
+    project_type_nospace = str_replace_all(project_type, " ", "-"),
     # project_input = str_c(project_type_nospace,
     #   outcome_positive,
     #   outcome_dif,
