@@ -1,0 +1,55 @@
+##' @title Get gambles
+
+##' @param outcome_positive_restricted
+##'
+##' @param prob_positive_restricted
+##' @param outcome_dif
+##' @param loss_prob_restriction
+##'
+##' @return
+##' @author Shir Dekel
+##' @export
+get_gambles <- function(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif) {
+
+  loss_prob <- 1
+
+  while (loss_prob > loss_prob_restriction) {
+
+    index_sample <- sample(1:length(outcome_positive_restricted), 10)
+
+    outcome_positive_restricted_sample <- outcome_positive_restricted[index_sample]
+
+    prob_positive_restricted_sample <- prob_positive_restricted[index_sample]
+
+    # Get a list of trial outcomes (positive and negative possibilities)
+    outcome_combined <- list(outcome_positive_restricted_sample, outcome_positive_restricted_sample-outcome_dif) %>%
+      transpose() %>%
+      map(unlist)
+
+    outcome_aggregated <- expand.grid(outcome_combined) %>% # Get a data frame of all possible combinations of the trial outcomes
+      rowSums() %>% # Sum the rows (to get the final state of what the outcome combinations would be)
+      unique() %>%
+      sort() # Important so that the probabilities do not flip when plotted
+
+    prob_aggregated <- dpoibin(kk=0:length(prob_positive_restricted_sample),
+                                   pp = prob_positive_restricted_sample)
+
+    loss <- outcome_aggregated < 0
+    loss_prob <- prob_aggregated[loss] %>%
+      sum()
+  }
+
+  restriction_values_restricted <- get_restriction_values(prob_positive_restricted_sample, outcome_positive_restricted_sample, outcome_dif)
+
+  gambles <- list(
+    outcome_positive_restricted_sample = outcome_positive_restricted_sample,
+    prob_positive_restricted_sample = prob_positive_restricted_sample,
+    prob_aggregated = prob_aggregated,
+    outcome_aggregated = outcome_aggregated,
+    loss_prob = loss_prob
+  ) %>%
+    append(restriction_values_restricted)
+
+  return(gambles)
+
+}
