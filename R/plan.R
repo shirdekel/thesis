@@ -9,10 +9,11 @@ the_plan <-
       sample(size = size, replace = TRUE),
     outcome_dif = 240,
     restriction_values = get_restriction_values(prob_positive_sample, outcome_positive_sample, outcome_dif),
-    restriction = get_restriction(restriction_values),
+    gain_loss_ratio_restriction = 2.5,
+    restriction = get_restriction(restriction_values, gain_loss_ratio_restriction),
     outcome_positive_restricted = outcome_positive_sample[restriction],
     prob_positive_restricted = prob_positive_sample[restriction],
-    loss_prob_restriction = 0.15,
+    loss_prob_restriction = 0.1,
     gambles = get_gambles(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif),
     gamble_plot = plot_gamble(gambles),
     project_name = c(
