@@ -38,21 +38,28 @@ get_gambles <- function(outcome_positive_restricted, prob_positive_restricted, l
       transpose() %>%
       map(unlist)
 
+    # Get aggregated outcomes
     outcome_aggregated <- expand.grid(outcome_combined) %>% # Get a data frame of all possible combinations of the trial outcomes
       rowSums() %>% # Sum the rows (to get the final state of what the outcome combinations would be)
       unique() %>%
       sort() # Important so that the probabilities do not flip when plotted
 
+    # Get Poisson binomial distribution of the sample of probabilities
     prob_aggregated <- dpoibin(kk=0:length(prob_positive_restricted_sample),
                                    pp = prob_positive_restricted_sample)
 
+    # Get negative aggregated outcomes
     loss <- outcome_aggregated < 0
+
+    # Sum corresponding probabilities
     loss_prob <- prob_aggregated[loss] %>%
       sum()
   }
 
+  # Calculate expected value and gain/loss ratio of selected gambles
   restriction_values_restricted <- get_restriction_values(prob_positive_restricted_sample, outcome_positive_restricted_sample, outcome_dif)
 
+  # Combine values
   gambles <- list(
     outcome_positive_restricted_sample = outcome_positive_restricted_sample,
     prob_positive_restricted_sample = prob_positive_restricted_sample,
