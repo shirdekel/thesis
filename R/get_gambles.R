@@ -12,14 +12,26 @@
 get_gambles <- function(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif) {
 
   loss_prob <- 1
+  duplicate_restriction <- TRUE
 
-  while (loss_prob > loss_prob_restriction) {
+  while ((loss_prob > loss_prob_restriction) | any(duplicate_restriction)) {
 
+    # Sample from the indexes of the restricted set (so that you can get the corresponding set of outcomes and probabilities)
     index_sample <- sample(1:length(outcome_positive_restricted), 10)
 
+    # Get a sample of outcomes
     outcome_positive_restricted_sample <- outcome_positive_restricted[index_sample]
 
+    # Get a sample of probabilities
     prob_positive_restricted_sample <- prob_positive_restricted[index_sample]
+
+    # Combine outcomes and probabilities and organise as list of pairs
+    positive_combined <- list(outcome_positive_restricted_sample,prob_positive_restricted_sample) %>%
+      transpose() %>%
+      map(unlist)
+
+    # Check for duplicate pairs
+    duplicate_restriction <- duplicated(positive_combined)
 
     # Get a list of trial outcomes (positive and negative possibilities)
     outcome_combined <- list(outcome_positive_restricted_sample, outcome_positive_restricted_sample-outcome_dif) %>%
