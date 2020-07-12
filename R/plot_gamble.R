@@ -6,14 +6,6 @@
 ##' @export
 plot_gamble <- function(gambles) {
 
-  # Determine whether the figure will have zero or not
-  # If zero exists, the order of colorspace fill needs to be specified so that zero gets the blue colour
-  if(0 %in% gambles$outcome_aggregated) {
-    colour_order <- c(1, 3, 2)
-  } else {
-    colour_order <- c(1, 2)
-  }
-
   gamble_plot <- tibble(outcomes = gambles$outcome_aggregated,
          probs = gambles$prob_aggregated,
          colour_group = case_when(
@@ -26,11 +18,14 @@ plot_gamble <- function(gambles) {
                y = probs,
                fill = colour_group)) +
     geom_col() +
-    scale_fill_discrete_qualitative("Dark 3", order = colour_order) +
-    labs(x = "Outcomes ($ million)",
+    scale_fill_discrete_qualitative("Dark 3", order = c(1, 3, 2)) +
+    labs(x = "Outcome ($ million)",
          y = "Probability",
          fill = "Outcome type") +
     scale_x_continuous(breaks = gambles$outcome_aggregated)
+
+  here("images", "distribution.png") %>%
+    ggsave(width = 6, height = 4, dpi = 300)
 
   return(gamble_plot)
 
