@@ -45,6 +45,14 @@ the_plan <-
                                                   project_name,
                                                   project_type),
     project_type_nospace = str_replace_all(project_type, " ", "-"),
+    form_options = c("Yes", "No"),
+    page1 = get_page1(project_description, form_options),
+    experiment = build_experiment(
+      timeline = build_timeline(page1),
+      resources = build_resources(here("images")),
+      path = here("inst", "jspsych"),
+      on_finish = save_locally()
+    ),
     # project_input = str_c(project_type_nospace,
     #   outcome_positive,
     #   outcome_dif,
