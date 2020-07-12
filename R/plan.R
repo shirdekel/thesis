@@ -9,7 +9,7 @@ the_plan <-
       sample(size = size, replace = TRUE),
     outcome_dif = 240,
     restriction_values = get_restriction_values(prob_positive_sample, outcome_positive_sample, outcome_dif),
-    gain_loss_ratio_restriction = 2.5,
+    gain_loss_ratio_restriction = 2.25,
     restriction = get_restriction(restriction_values, gain_loss_ratio_restriction),
     outcome_positive_restricted = outcome_positive_sample[restriction],
     prob_positive_restricted = prob_positive_sample[restriction],
