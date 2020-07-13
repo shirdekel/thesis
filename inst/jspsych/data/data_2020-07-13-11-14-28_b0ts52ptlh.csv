@@ -1,0 +1,3 @@
+file_id,view_history,rt,trial_type,trial_index,time_elapsed,internal_node_id,experiment,sample,condition_distribution,condition_awareness,condition_presentation,responses,question_order
+data_2020-07-13-11-14-28_b0ts52ptlh,"[{""page_index"":0,""viewing_time"":1099.4250000003376},{""page_index"":1,""viewing_time"":381.48499999988417},{""page_index"":2,""viewing_time"":405.2449999999226},{""page_index"":3,""viewing_time"":686.5399999996953}]",2573.0100000000675,instructions,0,2660,0.0-0.0-0.0,aggregation_exp2,prolific,absent,aware,separate,NA,NA
+data_2020-07-13-11-14-28_b0ts52ptlh,NA,1989.8549999998068,survey-multi-choice,1,4651,0.0-0.0-2.0-0.0,aggregation_exp2,prolific,absent,aware,separate,"{""Q0"":""Yes""}",[0]
