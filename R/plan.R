@@ -65,32 +65,23 @@ the_plan <-
                                                        questions_joint),
     trial_joint_distribution_absent = get_trial_joint(preamble_distribution_absent,
                                                       questions_joint),
-    timeline_joint_distribution_present = get_timeline_conditional(trial_joint_distribution_present, "present", "joint"),
-    timeline_joint_distribution_absent = get_timeline_conditional(trial_joint_distribution_absent, "absent", "joint"),
+    timeline_joint_distribution_present = get_timeline_conditional_distribution(trial_joint_distribution_present, "present", "joint"),
+    timeline_joint_distribution_absent = get_timeline_conditional_distribution(trial_joint_distribution_absent, "absent", "joint"),
     trial_separate_distribution_present = get_trial_separate(preamble_distribution_present, project_description, form_options, project_input),
     trial_separate_distribution_absent = get_trial_separate(preamble_distribution_absent, project_description, form_options, project_input),
-    timeline_separate_distribution_present = get_timeline_conditional(trial_separate_distribution_present, "present", "separate"),
-    timeline_separate_distribution_absent = get_timeline_conditional(trial_separate_distribution_absent, "absent", "separate"),
+    timeline_separate_distribution_present = get_timeline_conditional_distribution(trial_separate_distribution_present, "present", "separate"),
+    timeline_separate_distribution_absent = get_timeline_conditional_distribution(trial_separate_distribution_absent, "absent", "separate"),
     trial_aware = get_trial_awareness("You will now see the 10 projects."),
     trial_naive = get_trial_awareness("You will now see the projects."),
-    timeline_aware = build_timeline(trial_aware) %>%
-      display_if(fn_data_condition(condition_awareness == "aware")) %>%
-      build_timeline() %>%
-      display_if(fn_data_condition(condition_presentation == "separate")),
-    timeline_naive_joint = build_timeline(trial_naive) %>%
-      display_if(fn_data_condition(condition_awareness == "aware")) %>%
-      build_timeline() %>%
-      display_if(fn_data_condition(condition_presentation == "joint")),
-    timeline_naive = build_timeline(trial_naive) %>%
-      display_if(fn_data_condition(condition_awareness == "naive")),
+    timeline_aware = get_timeline_conditional_awareness(trial_aware, "aware"),
+    timeline_naive = get_timeline_conditional_awareness(trial_naive, "naive"),
     experiment = get_experiment(instructions,
                                 timeline_aware,
                                 timeline_naive,
-                                timeline_naive_joint,
                                 timeline_joint_distribution_present,
                                 timeline_joint_distribution_absent,
                                 timeline_separate_distribution_present,
                                 timeline_separate_distribution_absent),
-    responses = get_responses(here("inst", "jspsych", "data"))
+    responses = get_data(here("inst", "jspsych", "data"))
 
   )
