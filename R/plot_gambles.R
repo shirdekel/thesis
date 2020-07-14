@@ -4,16 +4,16 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-plot_gamble <- function(gambles) {
+plot_gambles <- function(gambles) {
 
-  gamble_plot <- tibble(outcomes = gambles$outcome_aggregated,
+  gambles_plot <- tibble(outcomes = gambles$outcome_aggregated,
          probs = gambles$prob_aggregated,
          colour_group = case_when(
-           outcomes > 0 ~ "Positive",
-           outcomes < 0 ~ "Negative",
+           outcomes > 0 ~ "Gain",
+           outcomes < 0 ~ "Loss",
            outcomes == 0 ~ "Zero"
          ) %>%
-           fct_relevel("Positive", after = 2)) %>%
+           fct_relevel("Gain", after = 2)) %>%
     ggplot(aes(x = outcomes,
                y = probs,
                fill = colour_group)) +
@@ -27,6 +27,6 @@ plot_gamble <- function(gambles) {
   here("images", "distribution.png") %>%
     ggsave(width = 6, height = 4, dpi = 300)
 
-  return(gamble_plot)
+  return(gambles_plot)
 
 }
