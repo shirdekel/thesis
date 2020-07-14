@@ -63,7 +63,7 @@ var timeline = {
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_awareness == "naive"){
+      if(data.awareness == "naive"){
         return true;
       } else {
         return false;
@@ -349,7 +349,7 @@ var timeline = {
           ],
           "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_distribution == "present"){
+      if(data.distribution == "present"){
         return true;
       } else {
         return false;
@@ -359,7 +359,7 @@ var timeline = {
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "separate"){
+      if(data.presentation == "separate"){
         return true;
       } else {
         return false;
@@ -437,7 +437,7 @@ var timeline = {
           ],
           "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_distribution == "absent"){
+      if(data.distribution == "absent"){
         return true;
       } else {
         return false;
@@ -447,7 +447,7 @@ var timeline = {
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "separate"){
+      if(data.presentation == "separate"){
         return true;
       } else {
         return false;
