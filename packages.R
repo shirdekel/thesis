@@ -9,5 +9,8 @@ library(poibin)
 library(colorspace)
 library(jaysire)
 library(here)
+library(jsonlite)
+library(lubridate)
+library(js)
 
 conflict_prefer("filter", "dplyr")
