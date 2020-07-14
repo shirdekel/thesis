@@ -1,9 +1,17 @@
+var awareness_presentation, regex_awareness, regex_presentation;
+
+awareness_presentation = jsPsych.randomization.sampleWithoutReplacement(['aware_separate', 'naive_joint', 'naive_separate'], 1)[0];
+
+regex_awareness = /.*(?=_)/;
+
+regex_presentation = /(?<=_).*/;
+
 jsPsych.data.addProperties({
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
-  "condition_distribution": jsPsych.randomization.sampleWithoutReplacement(['present', 'absent'], 1),
-  "condition_awareness": jsPsych.randomization.sampleWithoutReplacement(['aware', 'naive'], 1),
-  "condition_presentation": jsPsych.randomization.sampleWithoutReplacement(['joint', 'separate'], 1)
+  "distribution": jsPsych.randomization.sampleWithoutReplacement(['present', 'absent'], 1),
+  "awareness": awareness_presentation.match(regex_awareness),
+  "presentation": awareness_presentation.match(regex_presentation)
 });
 
 var timeline = {
