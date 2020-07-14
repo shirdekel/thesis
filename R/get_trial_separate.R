@@ -16,7 +16,8 @@ get_trial_separate <- function(preamble, project_description, form_options, proj
     questions = question_multi(
       prompt = insert_variable("prompt"),
       options = form_options,
-      name = insert_variable("name")
+      name = insert_variable("name"),
+      required = TRUE
     )
   ) %>%
     build_timeline() %>%

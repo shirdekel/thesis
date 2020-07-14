@@ -14,7 +14,8 @@ get_questions_joint <- function(project_description, form_options, project_input
     map2(project_input, ~question_multi(
       prompt = .x,
       options = form_options,
-      name = .y
+      name = .y,
+      required = TRUE
     ))
 
   return(questions_joint)

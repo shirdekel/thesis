@@ -31,30 +31,18 @@ var timeline = {
     {
       "timeline": [
         {
-          "timeline": [
-            {
-              "type": ["html-button-response"],
-              "stimulus": ["You will now see the 10 projects."],
-              "choices": ["Continue"],
-              "margin_vertical": ["0px"],
-              "margin_horizontal": ["8px"],
-              "response_ends_trial": true,
-              "post_trial_gap": [0]
-            }
-          ],
-          "conditional_function": function(){
-      var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_awareness == "aware"){
-        return true;
-      } else {
-        return false;
-      }
-    }
+          "type": ["html-button-response"],
+          "stimulus": ["You will now see the 10 projects."],
+          "choices": ["Continue"],
+          "margin_vertical": ["0px"],
+          "margin_horizontal": ["8px"],
+          "response_ends_trial": true,
+          "post_trial_gap": [0]
         }
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "separate"){
+      if(data.awareness == "aware"){
         return true;
       } else {
         return false;
@@ -87,18 +75,89 @@ var timeline = {
         {
           "timeline": [
             {
-              "type": ["html-button-response"],
-              "stimulus": ["You will now see the projects."],
-              "choices": ["Continue"],
-              "margin_vertical": ["0px"],
-              "margin_horizontal": ["8px"],
-              "response_ends_trial": true,
+              "type": ["survey-multi-choice"],
+              "questions": [
+                {
+                  "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["oil-well_140_240_0.55"]
+                },
+                {
+                  "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["microchip_170_240_0.45"]
+                },
+                {
+                  "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["record-deal_200_240_0.3"]
+                },
+                {
+                  "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["shipping-logistics_120_240_0.6"]
+                },
+                {
+                  "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["restaurant-chain_110_240_0.7"]
+                },
+                {
+                  "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["national-newspaper_180_240_0.35"]
+                },
+                {
+                  "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["pharmaceutical_150_240_0.55"]
+                },
+                {
+                  "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["railway_140_240_0.6"]
+                },
+                {
+                  "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["GMO_130_240_0.6"]
+                },
+                {
+                  "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["high-rise-construction_100_240_0.75"]
+                }
+              ],
+              "randomize_question_order": true,
+              "preamble": ["<p>Decide whether you would like to invest in the following:<\/p><p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div>"],
+              "button_label": ["Continue"],
+              "required_message": ["You must choose at least one response for this question"],
               "post_trial_gap": [0]
             }
           ],
           "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_awareness == "aware"){
+      if(data.distribution == "present"){
         return true;
       } else {
         return false;
@@ -108,7 +167,7 @@ var timeline = {
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "joint"){
+      if(data.presentation == "joint"){
         return true;
       } else {
         return false;
@@ -120,94 +179,89 @@ var timeline = {
         {
           "timeline": [
             {
-              "timeline": [
+              "type": ["survey-multi-choice"],
+              "questions": [
                 {
-                  "type": ["survey-multi-choice"],
-                  "questions": [
-                    {
-                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["oil-well_140_240_0.55"]
-                    },
-                    {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["microchip_170_240_0.45"]
-                    },
-                    {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["record-deal_200_240_0.3"]
-                    },
-                    {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["shipping-logistics_120_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["restaurant-chain_110_240_0.7"]
-                    },
-                    {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["national-newspaper_180_240_0.35"]
-                    },
-                    {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["pharmaceutical_150_240_0.55"]
-                    },
-                    {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["railway_140_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["GMO_130_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["high-rise-construction_100_240_0.75"]
-                    }
-                  ],
-                  "randomize_question_order": false,
-                  "preamble": ["<p>Decide whether you would like to invest in the following:<\/p><p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div>"],
-                  "button_label": ["Continue"],
-                  "required_message": ["You must choose at least one response for this question"],
-                  "post_trial_gap": [0]
+                  "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["oil-well_140_240_0.55"]
+                },
+                {
+                  "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["microchip_170_240_0.45"]
+                },
+                {
+                  "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["record-deal_200_240_0.3"]
+                },
+                {
+                  "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["shipping-logistics_120_240_0.6"]
+                },
+                {
+                  "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["restaurant-chain_110_240_0.7"]
+                },
+                {
+                  "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["national-newspaper_180_240_0.35"]
+                },
+                {
+                  "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["pharmaceutical_150_240_0.55"]
+                },
+                {
+                  "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["railway_140_240_0.6"]
+                },
+                {
+                  "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["GMO_130_240_0.6"]
+                },
+                {
+                  "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                  "options": ["Yes", "No"],
+                  "horizontal": false,
+                  "required": true,
+                  "name": ["high-rise-construction_100_240_0.75"]
                 }
               ],
-              "randomize_order": [true]
+              "randomize_question_order": true,
+              "preamble": ["<p>Decide whether you would like to invest in the following:<\/p>"],
+              "button_label": ["Continue"],
+              "required_message": ["You must choose at least one response for this question"],
+              "post_trial_gap": [0]
             }
           ],
           "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_distribution == "present"){
+      if(data.distribution == "absent"){
         return true;
       } else {
         return false;
@@ -217,116 +271,7 @@ var timeline = {
       ],
       "conditional_function": function(){
       var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "joint"){
-        return true;
-      } else {
-        return false;
-      }
-    }
-    },
-    {
-      "timeline": [
-        {
-          "timeline": [
-            {
-              "timeline": [
-                {
-                  "type": ["survey-multi-choice"],
-                  "questions": [
-                    {
-                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["oil-well_140_240_0.55"]
-                    },
-                    {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["microchip_170_240_0.45"]
-                    },
-                    {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["record-deal_200_240_0.3"]
-                    },
-                    {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["shipping-logistics_120_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["restaurant-chain_110_240_0.7"]
-                    },
-                    {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["national-newspaper_180_240_0.35"]
-                    },
-                    {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["pharmaceutical_150_240_0.55"]
-                    },
-                    {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["railway_140_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["GMO_130_240_0.6"]
-                    },
-                    {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "options": ["Yes", "No"],
-                      "horizontal": false,
-                      "required": false,
-                      "name": ["high-rise-construction_100_240_0.75"]
-                    }
-                  ],
-                  "randomize_question_order": false,
-                  "preamble": ["<p>Decide whether you would like to invest in the following:<\/p>"],
-                  "button_label": ["Continue"],
-                  "required_message": ["You must choose at least one response for this question"],
-                  "post_trial_gap": [0]
-                }
-              ],
-              "randomize_order": [true]
-            }
-          ],
-          "conditional_function": function(){
-      var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_distribution == "absent"){
-        return true;
-      } else {
-        return false;
-      }
-    }
-        }
-      ],
-      "conditional_function": function(){
-      var data = jsPsych.data.get().last(1).values()[0];
-      if(data.condition_presentation == "joint"){
+      if(data.presentation == "joint"){
         return true;
       } else {
         return false;
@@ -346,7 +291,7 @@ var timeline = {
                       "prompt": jsPsych.timelineVariable('prompt'),
                       "options": ["Yes", "No"],
                       "horizontal": false,
-                      "required": false,
+                      "required": true,
                       "name": jsPsych.timelineVariable('name')
                     }
                   ],
@@ -434,7 +379,7 @@ var timeline = {
                       "prompt": jsPsych.timelineVariable('prompt'),
                       "options": ["Yes", "No"],
                       "horizontal": false,
-                      "required": false,
+                      "required": true,
                       "name": jsPsych.timelineVariable('name')
                     }
                   ],
