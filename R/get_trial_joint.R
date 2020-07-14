@@ -8,9 +8,10 @@ get_trial_joint <- function(preamble, questions_joint) {
 
   trial_joint <- trial_survey_multi_choice(
     preamble = preamble,
-    questions = questions_joint
-  ) %>%
-    build_timeline() %>%
-    set_parameters(randomize_order = TRUE)
+    questions = questions_joint,
+    randomize_question_order = TRUE
+  )
+
+  return(trial_joint)
 
 }
