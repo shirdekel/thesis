@@ -9,3 +9,5 @@ library(poibin)
 library(colorspace)
 library(jaysire)
 library(here)
+
+conflict_prefer("filter", "dplyr")
