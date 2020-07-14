@@ -1,14 +1,9 @@
 the_plan <-
   drake_plan(
-    instructions = trial_instructions(
-      pages = c(
-        "Welcome! Use the arrow buttons to browse these instructions",
-        "Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them. Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.",
-        "You will respond by clicking a button",
-        "Press the 'Next' button to begin!"
-      ),
-      show_clickable_nav = TRUE
-    ),
+    pis_prolific = get_pis("prolific"),
+    pis_sona = get_pis("sona"),
+    consent = get_consent(),
+    instructions = get_instructions(),
     prob_positive_seq = get_prob_positive_seq(),
     outcome_positive_seq = get_outcome_positive_seq(),
     size = 10000,
@@ -24,7 +19,7 @@ the_plan <-
     prob_positive_restricted = prob_positive_sample[restriction],
     loss_prob_restriction = 0.1,
     gambles = get_gambles(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif),
-    gamble_plot = plot_gamble(gambles),
+    gambles_plot = plot_gambles(gambles),
     project_name = c(
       "Refinera",
       "Microxy",
@@ -76,12 +71,16 @@ the_plan <-
     timeline_aware = get_timeline_conditional_awareness(trial_aware, "aware"),
     timeline_naive = get_timeline_conditional_awareness(trial_naive, "naive"),
     experiment = get_experiment(instructions,
+                                pis_prolific,
+                                consent,
                                 timeline_aware,
                                 timeline_naive,
                                 timeline_joint_distribution_present,
                                 timeline_joint_distribution_absent,
                                 timeline_separate_distribution_present,
                                 timeline_separate_distribution_absent),
-    responses = get_data(here("inst", "jspsych", "data"))
+    directory_data = here("inst", "jspsych", "data"),
+    data_raw = import_data(directory_data),
+    data = clean_data(data_raw)
 
   )
