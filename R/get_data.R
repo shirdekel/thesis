@@ -1,11 +1,11 @@
-##' @title Get responses
+##' @title Get data
 
 ##' @param directory
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_responses <- function(directory) {
+get_data <- function(directory) {
 
   col_types <- cols(
     file_id = col_character(),
@@ -20,14 +20,20 @@ get_responses <- function(directory) {
     condition_distribution = col_character(),
     condition_awareness = col_character(),
     condition_presentation = col_character(),
+    stimulus = col_character(),
+    button_pressed = col_double(),
     responses = col_character(),
     question_order = col_character()
   )
 
-  directory %>%
-    file.path(list.files(directory) %>%
-                .[list.files(directory) %>%
-                    length()]) %>%
-    read_csv(col_names = TRUE, col_types = col_types)
+  data_raw <- directory %>%
+    file.path(list.files(directory)) %>%
+    map_dfr(~ .x %>%
+          read_csv(col_types = col_types))
+
+  data_joint <- data_raw %>%
+    filter(condition_presentation)
+
+  return(responses)
 
 }
