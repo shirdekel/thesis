@@ -1,11 +1,9 @@
-##' @title Get data
-
-##' @param directory
-##'
+##' @title Import data
+##' @param directory_data
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_data <- function(directory) {
+import_data <- function(directory_data) {
 
   col_types <- cols(
     file_id = col_character(),
@@ -17,23 +15,20 @@ get_data <- function(directory) {
     internal_node_id = col_character(),
     experiment = col_character(),
     sample = col_character(),
-    condition_distribution = col_character(),
-    condition_awareness = col_character(),
-    condition_presentation = col_character(),
+    distribution = col_character(),
+    awareness = col_character(),
+    presentation = col_character(),
     stimulus = col_character(),
     button_pressed = col_double(),
     responses = col_character(),
     question_order = col_character()
   )
 
-  data_raw <- directory %>%
-    file.path(list.files(directory)) %>%
+  data_raw <- directory_data %>%
+    file.path(list.files(directory_data)) %>%
     map_dfr(~ .x %>%
-          read_csv(col_types = col_types))
+              read_csv(col_types = col_types))
 
-  data_joint <- data_raw %>%
-    filter(condition_presentation)
-
-  return(responses)
+  return(data_raw)
 
 }
