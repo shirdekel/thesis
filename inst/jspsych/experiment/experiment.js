@@ -488,6 +488,73 @@ var timeline = {
         return false;
       }
     }
+    },
+    {
+      "timeline": [
+        {
+          "type": ["survey-multi-choice"],
+          "questions": [
+            {
+              "prompt": ["Regardless of what you chose previously, would you accept investing in all the projects that you saw?"],
+              "options": ["Yes", "No"],
+              "horizontal": false,
+              "required": true,
+              "name": ["portfolio"]
+            }
+          ],
+          "randomize_question_order": false,
+          "preamble": ["<div>\n  <p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div>"],
+          "button_label": ["Continue"],
+          "required_message": ["You must choose at least one response for this question"],
+          "post_trial_gap": [0]
+        }
+      ],
+      "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "present"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+    },
+    {
+      "timeline": [
+        {
+          "type": ["survey-multi-choice"],
+          "questions": [
+            {
+              "prompt": ["Regardless of what you chose previously, would you accept investing in all the projects that you saw?"],
+              "options": ["Yes", "No"],
+              "horizontal": false,
+              "required": true,
+              "name": ["portfolio"]
+            }
+          ],
+          "randomize_question_order": false,
+          "preamble": [""],
+          "button_label": ["Continue"],
+          "required_message": ["You must choose at least one response for this question"],
+          "post_trial_gap": [0]
+        }
+      ],
+      "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "absent"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+    },
+    {
+      "type": ["html-button-response"],
+      "stimulus": ["<div>\n  <p>Press below to complete the experiment.<\/p>\n  <p>Thank you!<\/p>\n<\/div>"],
+      "choices": ["End experiment"],
+      "margin_vertical": ["0px"],
+      "margin_horizontal": ["8px"],
+      "response_ends_trial": true,
+      "post_trial_gap": [0]
     }
   ]
 };
