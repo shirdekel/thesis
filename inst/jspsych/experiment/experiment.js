@@ -6,16 +6,6 @@ regex_awareness = /.*(?=_)/;
 
 regex_presentation = /(?<=_).*/;
 
-var check_consent = function(elem) {
-  if (document.getElementById('consent_checkbox').checked) {
-    return true;
-  }
-  else {
-    alert('If you wish to participate, you must check the box next to the statement <em>I agree to participate in this study.</em>');
-    return false;
-  }
-  return false;
-};
 jsPsych.data.addProperties({
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
@@ -54,7 +44,16 @@ var timeline = {
       "type": ["external-html"],
       "url": ["resource/other/consent.html"],
       "cont_btn": ["start"],
-      "check_fn": check_consent
+      "check_fn": function(elem) {
+  if (document.getElementById('consent_checkbox').checked) {
+    return true;
+  }
+  else {
+    alert('If you wish to participate, you must check the box next to the statement <em>I agree to participate in this study.</em>');
+    return false;
+  }
+  return false;
+}
     },
     {
       "timeline": [
