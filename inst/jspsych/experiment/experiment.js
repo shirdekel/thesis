@@ -17,22 +17,24 @@ jsPsych.data.addProperties({
 var timeline = {
   "timeline": [
     {
-      "type": ["instructions"],
-      "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
-      "key_forward": [39],
-      "key_backward": [37],
-      "allow_backward": true,
-      "allow_keys": true,
-      "show_clickable_nav": true,
-      "button_label_previous": ["Previous"],
-      "button_label_next": ["Next"],
-      "post_trial_gap": [0]
-    },
-    {
-      "type": ["external-html"],
-      "url": ["resource/other/consent.html"],
-      "cont_btn": ["start"],
-      "check_fn": function(elem) {
+      "timeline": [
+        {
+          "type": ["instructions"],
+          "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
+          "key_forward": [39],
+          "key_backward": [37],
+          "allow_backward": true,
+          "allow_keys": true,
+          "show_clickable_nav": true,
+          "button_label_previous": ["Previous"],
+          "button_label_next": ["Next"],
+          "post_trial_gap": [0]
+        },
+        {
+          "type": ["external-html"],
+          "url": ["resource/other/consent.html"],
+          "cont_btn": ["start"],
+          "check_fn": function(elem) {
   if (document.getElementById('consent_checkbox').checked) {
     return true;
   }
@@ -42,18 +44,20 @@ var timeline = {
   }
   return false;
 }
-    },
-    {
-      "type": ["survey-html-form"],
-      "html": ["<div>\n  <div>\n    <p>I would like to receive feedback about the overall results of this study.<\/p>\n    <input type=\"radio\" id=\"contact_yes\" name=\"contact\" value=\"yes\"/>\n    <label for=\"contact_yes\">YES<\/label>\n    <input type=\"radio\" id=\"contact_no\" name=\"contact\" value=\"no\" checked/>\n    <label for=\"contact_no\">NO<\/label>\n  <\/div>\n  <div>\n    <p>If you answered YES, please indicate your preferred form of feedback and address:<\/p>\n    <p>\n      Email:\n      <input type=\"text\" id=\"address\" name=\"address\"/>\n    <\/p>\n  <\/div>\n<\/div>"]
-    },
-    {
-      "type": ["survey-html-form"],
-      "html": ["<div>\n  <label for=\"prolific\">Enter your Prolific ID (24 alphanumeric characters, no spaces):<\/label>\n  <input type=\"text\" id=\"prolific\" name=\"prolific\" required minlength=\"24\" maxlength=\"24\" pattern=\"^[a-z0-9]+$\" size=\"30\"/>\n<\/div>"]
+        },
+        {
+          "type": ["survey-html-form"],
+          "html": ["<div>\n  <div>\n    <p>I would like to receive feedback about the overall results of this study.<\/p>\n    <input type=\"radio\" id=\"contact_yes\" name=\"contact\" value=\"yes\"/>\n    <label for=\"contact_yes\">YES<\/label>\n    <input type=\"radio\" id=\"contact_no\" name=\"contact\" value=\"no\" checked/>\n    <label for=\"contact_no\">NO<\/label>\n  <\/div>\n  <div>\n    <p>If you answered YES, please indicate your preferred form of feedback and address:<\/p>\n    <p>\n      Email:\n      <input type=\"text\" id=\"address\" name=\"address\"/>\n    <\/p>\n  <\/div>\n<\/div>"]
+        },
+        {
+          "type": ["survey-html-form"],
+          "html": ["<div>\n  <p>\n    What is your sex?\n    <input type=\"radio\" id=\"male\" name=\"sex\" value=\"male\" checked/>\n    <label for=\"male\">Male<\/label>\n    <input type=\"radio\" id=\"female\" name=\"sex\" value=\"female\"/>\n    <label for=\"female\">Female<\/label>\n  <\/p>\n  <p>\n    <label for=\"age\">What is your age?<\/label>\n    <input type=\"number\" id=\"age\" name=\"age\" min=\"10\" max=\"100\" required/>\n  <\/p>\n  <p>\n    <p>\n      <label for=\"languages\">Do you speak a language other than English at home?<\/label>\n      <select id=\"languages\">\n        <option value=\"No\">No<\/option>\n        <option value=\"Chinese\">Chinese<\/option>\n        <option value=\"Japanese\">Japanese<\/option>\n        <option value=\"Vietnamese\">Vietnamese<\/option>\n        <option value=\"Korean\">Korean<\/option>\n        <option value=\"Arabic\">Arabic<\/option>\n        <option value=\"Spanish\">Spanish<\/option>\n        <option value=\"Italian\">Italian<\/option>\n        <option value=\"Greek\">Greek<\/option>\n        <option value=\"Hebrew\">Hebrew<\/option>\n        <option value=\"Other\">Other<\/option>\n      <\/select>\n    <\/p>\n    <p>\n      <label for=\"languages\">If other language, please specify:<\/label>\n      <input type=\"text\" id=\"other\" name=\"other\"/>\n    <\/p>\n  <\/p>\n  <p>\n    <label for=\"business_edu\">How many years of experience do you have studying business?<\/label>\n    <input type=\"number\" id=\"business_edu\" name=\"business_edu\" min=\"0\" max=\"100\" required/>\n  <\/p>\n  <p>\n    <label for=\"business_exp\">How many years of experience do you have working in a corporate business setting?<\/label>\n    <input type=\"number\" id=\"business_exp\" name=\"business_exp\" min=\"0\" max=\"100\" required/>\n  <\/p>\n  <p>\n    <p>Do you currently work in an executive or managerial role?<\/p>\n    <input type=\"radio\" id=\"current_yes\" name=\"current\" value=\"yes\"/>\n    <label for=\"current_yes\">Yes<\/label>\n    <input type=\"radio\" id=\"current_no\" name=\"current\" value=\"no\" checked/>\n    <label for=\"current_no\">No<\/label>\n  <\/p>\n<\/div>"]
+        }
+      ]
     },
     {
       "type": ["instructions"],
-      "pages": ["Welcome! Use the arrow buttons to browse these instructions", "Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them. Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.", "You will respond by clicking a button", "Press the 'Next' button to begin!"],
+      "pages": ["We will now give you the instructions for the task. Use the arrow buttons to browse these instructions", "<div>\n  <p>Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them.<\/p>\n  <p>Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.<\/p>\n<\/div>", "Press the 'Next' button to begin."],
       "key_forward": [39],
       "key_backward": [37],
       "allow_backward": true,

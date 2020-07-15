@@ -7,6 +7,7 @@ the_plan <-
     contact = get_contact(),
     id_prolific = get_id_prolific(),
     id_sona = get_id_sona(),
+    demographics = get_demographics(),
     instructions = get_instructions(),
     prob_positive_seq = get_prob_positive_seq(),
     outcome_positive_seq = get_outcome_positive_seq(),
