@@ -13,16 +13,19 @@ get_pis <- function(sample) {
     as.character() %>%
     str_c()
 
-  pis <- str_c("pis", 1:3, "_", sample, ".png") %>%
-    map_chr(~ img(src = insert_resource(.x)) %>%
+  img_html <- str_c("pis", 1:3, "_", sample, ".png") %>%
+    map_chr(~ img(src = insert_resource(.x),
+                  width = "750") %>%
               as.character())
 
-  trial_instructions(
+  pis <- trial_instructions(
     pages = c(
       welcome,
-      pis
+      img_html
     ),
     show_clickable_nav = TRUE
   )
+
+  return(pis)
 
 }

@@ -18,19 +18,7 @@ var timeline = {
   "timeline": [
     {
       "type": ["instructions"],
-      "pages": ["Welcome! Use the arrow buttons to browse these instructions", "Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them. Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.", "You will respond by clicking a button", "Press the 'Next' button to begin!"],
-      "key_forward": [39],
-      "key_backward": [37],
-      "allow_backward": true,
-      "allow_keys": true,
-      "show_clickable_nav": true,
-      "button_label_previous": ["Previous"],
-      "button_label_next": ["Next"],
-      "post_trial_gap": [0]
-    },
-    {
-      "type": ["instructions"],
-      "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\"/>", "<img src=\"resource/image/pis2_prolific.png\"/>", "<img src=\"resource/image/pis3_prolific.png\"/>"],
+      "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
       "key_forward": [39],
       "key_backward": [37],
       "allow_backward": true,
@@ -54,6 +42,18 @@ var timeline = {
   }
   return false;
 }
+    },
+    {
+      "type": ["instructions"],
+      "pages": ["Welcome! Use the arrow buttons to browse these instructions", "Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them. Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.", "You will respond by clicking a button", "Press the 'Next' button to begin!"],
+      "key_forward": [39],
+      "key_backward": [37],
+      "allow_backward": true,
+      "allow_keys": true,
+      "show_clickable_nav": true,
+      "button_label_previous": ["Previous"],
+      "button_label_next": ["Next"],
+      "post_trial_gap": [0]
     },
     {
       "timeline": [

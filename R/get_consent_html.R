@@ -10,7 +10,8 @@ get_consent_html <- function() {
   consent_html <- withTags(
     div(id = "consent",
         p(
-          img(src = insert_resource("consent.png"))
+          img(src = insert_resource("consent.png"),
+              width = "750")
         ),
         p(
           label(`for` = "consent_checkbox",
