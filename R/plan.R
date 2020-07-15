@@ -5,6 +5,8 @@ the_plan <-
     consent_html = get_consent_html(),
     consent = get_consent(),
     contact = get_contact(),
+    id_prolific = get_id_prolific(),
+    id_sona = get_id_sona(),
     instructions = get_instructions(),
     prob_positive_seq = get_prob_positive_seq(),
     outcome_positive_seq = get_outcome_positive_seq(),
