@@ -53,7 +53,7 @@ the_plan <-
                                       gambles,
                                       outcome_dif),
     form_options = c("Yes", "No"),
-    preamble_distribution_absent = p("Decide whether you would like to invest in the following:") %>%
+    preamble_distribution_absent = p("Indicate below whether you would invest in the following projects:") %>%
       as.character(),
     preamble_distribution_present = get_preamble_distribution_present(preamble_distribution_absent),
     questions_joint = get_questions_joint(project_description, form_options, project_input),
