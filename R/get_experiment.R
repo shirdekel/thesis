@@ -8,7 +8,7 @@
 get_experiment <- function(...) {
   experiment <- build_experiment(
     timeline = build_timeline(...),
-    resources = build_resources(here("images")),
+    resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
       experiment = "aggregation_exp2",
       sample = "prolific",
