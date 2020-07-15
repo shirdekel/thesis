@@ -2,6 +2,7 @@ the_plan <-
   drake_plan(
     pis_prolific = get_pis("prolific"),
     pis_sona = get_pis("sona"),
+    consent_html = get_consent_html(),
     consent = get_consent(),
     instructions = get_instructions(),
     prob_positive_seq = get_prob_positive_seq(),
