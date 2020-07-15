@@ -180,7 +180,7 @@ var timeline = {
                 }
               ],
               "randomize_question_order": true,
-              "preamble": ["<p>Decide whether you would like to invest in the following:<\/p><div>\n  <p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div>"],
+              "preamble": ["<div>\n  <p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>Indicate below whether you would invest in the following projects:<\/p>"],
               "button_label": ["Continue"],
               "required_message": ["You must choose at least one response for this question"],
               "post_trial_gap": [0]
@@ -284,7 +284,7 @@ var timeline = {
                 }
               ],
               "randomize_question_order": true,
-              "preamble": ["<p>Decide whether you would like to invest in the following:<\/p>"],
+              "preamble": ["<p>Indicate below whether you would invest in the following projects:<\/p>"],
               "button_label": ["Continue"],
               "required_message": ["You must choose at least one response for this question"],
               "post_trial_gap": [0]
@@ -327,7 +327,7 @@ var timeline = {
                     }
                   ],
                   "randomize_question_order": false,
-                  "preamble": ["<p>Decide whether you would like to invest in the following:<\/p><div>\n  <p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div>"],
+                  "preamble": ["<div>\n  <p>Below is the probability distribution of final outcomes if all gambles were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>Indicate below whether you would invest in the following projects:<\/p>"],
                   "button_label": ["Continue"],
                   "required_message": ["You must choose at least one response for this question"],
                   "post_trial_gap": [0]
@@ -415,7 +415,7 @@ var timeline = {
                     }
                   ],
                   "randomize_question_order": false,
-                  "preamble": ["<p>Decide whether you would like to invest in the following:<\/p>"],
+                  "preamble": ["<p>Indicate below whether you would invest in the following projects:<\/p>"],
                   "button_label": ["Continue"],
                   "required_message": ["You must choose at least one response for this question"],
                   "post_trial_gap": [0]
