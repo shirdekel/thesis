@@ -29,10 +29,12 @@ get_experiment <- function(...) {
    element.style.display='none';
 }"),
     path = here("inst", "jspsych"),
+    experiment_title = "Business decision-making",
     on_close = insert_javascript(" function(){
     event.preventDefault();
     event.returnValue = '';
   }"),
+    experiment_width = 750,
     on_finish = save_locally()
   )
 
