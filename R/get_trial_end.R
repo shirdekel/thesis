@@ -1,8 +1,4 @@
-##' .. content for \description{} (no empty lines) ..
-##'
-##' .. content for \details{} ..
-##'
-##' @title
+##' @title End trial
 
 ##' @return
 ##' @author Shir Dekel
@@ -15,9 +11,11 @@ get_trial_end <- function() {
   ) %>%
     as.character()
 
-  trial_html_button_response(
+  trial_end <- trial_html_button_response(
     trial_end_html,
     choices = "End experiment"
   )
+
+  return(trial_end)
 
 }
