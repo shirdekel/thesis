@@ -20,7 +20,14 @@ get_experiment <- function(...) {
       "awareness_presentation = jsPsych.randomization.sampleWithoutReplacement(['aware_separate', 'naive_joint', 'naive_separate'], 1)[0]",
       "regex_awareness = /.*(?=_)/",
       "regex_presentation = /(?<=_).*/") %>%
-    coffee_compile(bare = T),
+    coffee_compile(bare = T) %>%
+      c("function checkOther(val, id){
+ var element=document.getElementById(id);
+ if(val=='Other')
+   element.style.display='block';
+ else
+   element.style.display='none';
+}"),
     path = here("inst", "jspsych"),
     on_close = insert_javascript(" function(){
     event.preventDefault();

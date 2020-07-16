@@ -6,6 +6,13 @@ regex_awareness = /.*(?=_)/;
 
 regex_presentation = /(?<=_).*/;
 
+function checkOther(val, id){
+ var element=document.getElementById(id);
+ if(val=='Other')
+   element.style.display='block';
+ else
+   element.style.display='none';
+}
 jsPsych.data.addProperties({
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
