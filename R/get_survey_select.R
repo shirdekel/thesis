@@ -17,8 +17,10 @@ get_survey_select <- function(name_select, name_other, option, label_select) {
   survey_select <- withTags(
     p(
       p(
-        label(`for` = name_select,
-                   label_select),
+        p(
+          label(`for` = name_select,
+                   label_select)
+          ),
         select(id = name_select,
                name = name_select,
                option_html,
