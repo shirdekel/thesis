@@ -12,5 +12,8 @@ library(here)
 library(jsonlite)
 library(lubridate)
 library(js)
+library(magick)
+library(rmarkdown)
+library(knitr)
 
 conflict_prefer("filter", "dplyr")
