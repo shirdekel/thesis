@@ -28,26 +28,12 @@ get_demographics <- function() {
                            question_name = "age",
                            question_min = "10")
 
-  language_options <- c("No", "Chinese", "Japanese", "Vietnamese", "Korean", "Arabic", "Spanish", "Italian", "Greek" , "Hebrew", "Other") %>%
-    map(~ tags$option(value = .x, .x))
+  language_options <- c("No", "Chinese", "Japanese", "Vietnamese", "Korean", "Arabic", "Spanish", "Italian", "Greek" , "Hebrew", "Other")
 
-  language <- withTags(
-    p(
-      p(
-        label(`for` = "languages",
-            "Do you speak a language other than English at home?"),
-      select(id = "languages",
-             language_options)
-      ),
-      p(
-        label(`for` = "languages",
-            "If other language, please specify:"),
-      input(type = "text",
-            id = "other",
-            name = "other")
-      )
-    )
-  )
+  language <- get_survey_select(name_select = "language",
+                    name_other = "language_other",
+                    option = language_options,
+                    label_select = "Do you speak a language other than English at home?")
 
   education <- get_survey_number("How many years of experience do you have studying business?", "business_edu")
 
