@@ -1,26 +1,32 @@
 #' Get number-type survey question
 #'
-#' @param question_text
-#' @param question_name
-#' @param question_max
-#' @param question_min
+#'
+#' @param text
+#' @param name
+#' @param max
+#' @param min
 #'
 #' @return
 #' @export
 #'
 #' @examples
-get_survey_number <- function(question_text, question_name, question_min = "0", question_max = "100") {
+get_survey_number <- function(label_text, name, min = 0, max = 100, width = 70, prefix = "", suffix = "") {
 
   survey_number <- withTags(
     p(
-      label(`for` = question_name,
-            question_text),
+      p(
+        label(`for` = name,
+            label_text)
+        ),
+      prefix,
       input(type = "number",
-            id = question_name,
-            name = question_name,
-            min = question_min,
-            max = question_max,
-            required = NA)
+            id = name,
+            name = name,
+            min = min,
+            max = max,
+            required = NA,
+            style = str_c("width:", width, "px")),
+      suffix
     )
   )
 
