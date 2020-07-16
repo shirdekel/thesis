@@ -8,6 +8,7 @@ the_plan <-
     id_prolific = get_id_prolific(),
     id_sona = get_id_sona(),
     demographics = get_demographics(),
+    business_information = get_business_information(),
     instructions = get_instructions(),
     prob_positive_seq = get_prob_positive_seq(),
     outcome_positive_seq = get_outcome_positive_seq(),
@@ -57,7 +58,7 @@ the_plan <-
                                       gambles,
                                       outcome_dif),
     form_options = c("Yes", "No"),
-    preamble_distribution_absent = p("Indicate below whether you would invest in the following projects:") %>%
+    preamble_distribution_absent = p("Indicate below whether you would invest in the following:") %>%
       as.character(),
     preamble_distribution_present = get_preamble_distribution_present(preamble_distribution_absent),
     questions_joint = get_questions_joint(project_description, form_options, project_input),
@@ -65,43 +66,60 @@ the_plan <-
                                                        questions_joint),
     trial_joint_distribution_absent = get_trial_joint(preamble_distribution_absent,
                                                       questions_joint),
-    timeline_joint_distribution_present = get_timeline_conditional_distribution(trial_joint_distribution_present, "present", "joint"),
-    timeline_joint_distribution_absent = get_timeline_conditional_distribution(trial_joint_distribution_absent, "absent", "joint"),
+    timeline_joint_distribution_present = get_timeline_conditional_distribution(trial_joint_distribution_present, "present") %>%
+      get_timeline_conditional_presentation("joint"),
+    timeline_joint_distribution_absent = get_timeline_conditional_distribution(trial_joint_distribution_absent, "absent") %>%
+      get_timeline_conditional_presentation("joint"),
     trial_separate_distribution_present = get_trial_separate(preamble_distribution_present, project_description, form_options, project_input),
     trial_separate_distribution_absent = get_trial_separate(preamble_distribution_absent, project_description, form_options, project_input),
-    timeline_separate_distribution_present = get_timeline_conditional_distribution(trial_separate_distribution_present, "present", "separate"),
-    timeline_separate_distribution_absent = get_timeline_conditional_distribution(trial_separate_distribution_absent, "absent", "separate"),
+    timeline_separate_distribution_present = get_timeline_conditional_distribution(trial_separate_distribution_present, "present") %>%
+      get_timeline_conditional_presentation("separate"),
+    timeline_separate_distribution_absent = get_timeline_conditional_distribution(trial_separate_distribution_absent, "absent") %>%
+      get_timeline_conditional_presentation("separate"),
     trial_aware = get_trial_awareness("You will now see the 10 projects."),
     trial_naive = get_trial_awareness("You will now see the projects."),
     timeline_aware = get_timeline_conditional_awareness(trial_aware, "aware"),
     timeline_naive = get_timeline_conditional_awareness(trial_naive, "naive"),
+    trial_project_number = get_trial_project_number(),
     preamble_portfolio_distribution_absent = "",
     preamble_portfolio_distribution_present = get_preamble_distribution_present(preamble_portfolio_distribution_absent),
-    trial_portfolio_distribution_present = get_trial_portfolio(preamble_portfolio_distribution_present, form_options),
-    trial_portfolio_distribution_absent = get_trial_portfolio(preamble_portfolio_distribution_absent, form_options),
-    timeline_portfolio_distribution_present = build_timeline(trial_portfolio_distribution_present) %>%
-      display_if(fn_data_condition(distribution == "present")),
-    timeline_portfolio_distribution_absent = build_timeline(trial_portfolio_distribution_absent) %>%
-      display_if(fn_data_condition(distribution == "absent")),
+    trial_portfolio_binary_distribution_present = get_trial_portfolio_binary(preamble_portfolio_distribution_present),
+    trial_portfolio_binary_distribution_absent = get_trial_portfolio_binary(preamble_portfolio_distribution_absent),
+    timeline_portfolio_binary_distribution_present = get_timeline_conditional_distribution(trial_portfolio_binary_distribution_present, "present"),
+    timeline_portfolio_binary_distribution_absent = get_timeline_conditional_distribution(trial_portfolio_binary_distribution_absent, "absent"),
+    trial_portfolio_number_distribution_present = get_trial_portfolio_number(preamble_portfolio_distribution_present),
+    trial_portfolio_number_distribution_absent = get_trial_portfolio_number(preamble_portfolio_distribution_absent),
+    timeline_portfolio_number_distribution_present = get_timeline_conditional_distribution(trial_portfolio_number_distribution_present, "present"),
+    timeline_portfolio_number_distribution_absent = get_timeline_conditional_distribution(trial_portfolio_number_distribution_absent, "absent"),
     trial_end = get_trial_end(),
     experiment_pre = build_timeline(pis_prolific,
                                     consent,
                                     contact,
                                     demographics),
+    experiment_main = build_timeline(instructions,
+                                     timeline_aware,
+                                     timeline_naive,
+                                     timeline_joint_distribution_present,
+                                     timeline_joint_distribution_absent,
+                                     timeline_separate_distribution_present,
+                                     timeline_separate_distribution_absent),
+    experiment_post = build_timeline(trial_project_number,
+                                     timeline_portfolio_binary_distribution_present,
+                                     timeline_portfolio_binary_distribution_absent,
+                                     timeline_portfolio_number_distribution_present,
+                                     timeline_portfolio_number_distribution_absent,
+                                     trial_end),
     experiment = get_experiment(
-      experiment_pre,
-      instructions,
-      timeline_aware,
-      timeline_naive,
-      timeline_joint_distribution_present,
-      timeline_joint_distribution_absent,
-      timeline_separate_distribution_present,
-      timeline_separate_distribution_absent,
-      timeline_portfolio_distribution_present,
-      timeline_portfolio_distribution_absent,
-      trial_end),
+      experiment_main),
     directory_data = here("inst", "jspsych", "data"),
     data_raw = import_data(directory_data),
-    data = clean_data(data_raw)
+    data = clean_data(data_raw),
+    memo_materials = target(
+      command = {
+        render(knitr_in("doc/aggregation_exp2_materials.Rmd"))
+        file_out("doc/aggregation_exp2_materials.pdf")
+      }
+    )
+
 
   )
