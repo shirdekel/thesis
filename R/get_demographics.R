@@ -7,7 +7,7 @@ get_demographics <- function() {
 
   sex <- withTags(
     p(
-      "What is your sex?",
+      p("What is your sex?"),
       input(type = "radio",
             id = "male",
             name = "sex",
@@ -24,20 +24,20 @@ get_demographics <- function() {
     )
   )
 
-  age <- get_survey_number(question_text = "What is your age?",
-                           question_name = "age",
-                           question_min = "10")
+  age <- get_survey_number(label_text = "What is your age?",
+                           name = "age",
+                           min = "10")
 
-  language_options <- c("No", "Chinese", "Japanese", "Vietnamese", "Korean", "Arabic", "Spanish", "Italian", "Greek" , "Hebrew", "Other")
+  language_options <- c("No", "Chinese", "Japanese", "Vietnamese", "Korean", "Arabic", "Spanish", "Italian", "Greek" , "Hebrew")
 
   language <- get_survey_select(name_select = "language",
                     name_other = "language_other",
                     option = language_options,
                     label_select = "Do you speak a language other than English at home?")
 
-  education <- get_survey_number("How many years of experience do you have studying business?", "business_edu")
+  education <- get_survey_number("How many years of experience do you have studying business?", "business_edu", suffix = "years")
 
-  experience <- get_survey_number("How many years of experience do you have working in a corporate business setting?", "business_exp")
+  experience <- get_survey_number("How many years of experience do you have working in a corporate business setting?", "business_exp", suffix = "years")
 
   current <- withTags(
     p(
@@ -58,12 +58,14 @@ get_demographics <- function() {
     )
   )
 
-  demographics_html <- div(sex, age, language, education, experience, current) %>%
+  demographics_combined <- list(sex, age, language, education, experience, current) %>%
+    map(~tags$li(.x)) %>%
+    tags$ol(style = "text-align:left") %>%
     as.character()
 
   demographics <-trial_generic(
     "survey-html-form",
-    html = demographics_html)
+    html = demographics_combined)
 
   return(demographics)
 
