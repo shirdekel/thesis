@@ -1,9 +1,10 @@
 ##' @title Import data
-##' @param directory_data
+##' @param data_paths
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-import_data <- function(directory_data) {
+import_data <- function(data_paths) {
 
   col_types <- cols(
     file_id = col_character(),
@@ -24,8 +25,7 @@ import_data <- function(directory_data) {
     question_order = col_character()
   )
 
-  data_raw <- directory_data %>%
-    file.path(list.files(directory_data)) %>%
+  data_raw <- data_paths %>%
     map_dfr(~ .x %>%
               read_csv(col_types = col_types))
 
