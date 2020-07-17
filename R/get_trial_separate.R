@@ -27,7 +27,7 @@ get_trial_separate <- function(preamble, project_description, form_options, proj
     build_timeline() %>%
     display_if(fn_data_condition(distribution == !!distribution)) %>%
     build_timeline() %>%
-    display_if(fn_data_condition(presentation == "joint"))
+    display_if(fn_data_condition(presentation == "separate"))
 
   return(trial_separate)
 
