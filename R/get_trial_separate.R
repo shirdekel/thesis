@@ -9,7 +9,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_separate <- function(preamble, project_description, form_options, project_input) {
+get_trial_separate <- function(preamble, project_description, form_options, project_input, distribution) {
 
   trial_separate <- trial_survey_multi_choice(
     preamble = preamble,
@@ -23,7 +23,11 @@ get_trial_separate <- function(preamble, project_description, form_options, proj
     build_timeline() %>%
     set_variables(prompt = project_description,
                   name = project_input) %>%
-    set_parameters(randomize_order = TRUE)
+    set_parameters(randomize_order = TRUE) %>%
+    build_timeline() %>%
+    display_if(fn_data_condition(distribution == !!distribution)) %>%
+    build_timeline() %>%
+    display_if(fn_data_condition(presentation == "joint"))
 
   return(trial_separate)
 

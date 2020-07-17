@@ -1,11 +1,12 @@
 ##' @title Get portfolio trial - number
 ##'
 ##' @param preamble_portfolio_distribution
+##' @param distribution
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_portfolio_number <- function(preamble_portfolio_distribution) {
+get_trial_portfolio_number <- function(preamble_portfolio_distribution, distribution) {
 
   trial_portfolio_number_html <- get_survey_number(
     label_text = p(
@@ -19,7 +20,9 @@ get_trial_portfolio_number <- function(preamble_portfolio_distribution) {
   trial_portfolio_number <- trial_generic(
     "survey-html-form",
     html = str_c(preamble_portfolio_distribution, trial_portfolio_number_html)
-  )
+  ) %>%
+    build_timeline() %>%
+    display_if(fn_data_condition(distribution == !!distribution))
 
   return(trial_portfolio_number)
 
