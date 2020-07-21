@@ -96,11 +96,15 @@ the_plan <-
                                      trial_portfolio_number_distribution_absent,
                                      debrief,
                                      trial_end),
-    experiment = get_experiment(
-      trial_end),
-    data_paths = here("inst", "jspsych", "data") %>%
-      list.files(full.names = TRUE),
-    data_raw = import_data(data_paths),
+    experiment = target({
+      get_experiment(trial_end)
+      file_out(!!here("inst", "jspsych","experiment","experiment.js"))
+      }),
+    data_directory = target(
+      here("inst", "jspsych", "data"),
+      format = "file"
+    ),
+    data_raw = import_data(data_directory),
     data = clean_data(data_raw),
     memo_materials = target(
       command = {
