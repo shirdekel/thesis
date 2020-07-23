@@ -16,13 +16,71 @@ function checkOther(val, id){
 jsPsych.data.addProperties({
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
-  "distribution": jsPsych.randomization.sampleWithoutReplacement(['present', 'absent'], 1) ,
+  "distribution": jsPsych.randomization.sampleWithoutReplacement(['present', 'absent'], 1),
   "awareness": awareness_presentation.match(regex_awareness),
   "presentation": awareness_presentation.match(regex_presentation)
 });
 
 var timeline = {
   "timeline": [
+    {
+      "timeline": [
+        {
+          "type": ["instructions"],
+          "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
+          "key_forward": [39],
+          "key_backward": [37],
+          "allow_backward": true,
+          "allow_keys": true,
+          "show_clickable_nav": true,
+          "button_label_previous": ["Previous"],
+          "button_label_next": ["Next"],
+          "post_trial_gap": [0]
+        },
+        {
+          "type": ["external-html"],
+          "url": ["resource/other/consent.html"],
+          "cont_btn": ["start"],
+          "check_fn": function(elem) {
+  if (document.getElementById('consent_checkbox').checked) {
+    return true;
+  }
+  else {
+    alert('If you wish to participate, you must check the box next to the statement <em>I agree to participate in this study.</em>');
+    return false;
+  }
+  return false;
+}
+        },
+        {
+          "type": ["survey-html-form"],
+          "html": ["<div>\n  <div>\n    <p>I would like to receive feedback about the overall results of this study.<\/p>\n    <input type=\"radio\" id=\"contact_yes\" name=\"contact\" value=\"yes\"/>\n    <label for=\"contact_yes\">YES<\/label>\n    <input type=\"radio\" id=\"contact_no\" name=\"contact\" value=\"no\" checked/>\n    <label for=\"contact_no\">NO<\/label>\n  <\/div>\n  <div>\n    <p>If you answered YES, please indicate your preferred form of feedback and address:<\/p>\n    <p>\n      Email:\n      <input type=\"text\" id=\"address\" name=\"address\"/>\n    <\/p>\n  <\/div>\n<\/div>"]
+        },
+        {
+          "type": ["survey-html-form"],
+          "html": ["<ol style=\"text-align:left\">\n  <li>\n    <p>\n      <p>What is your sex?<\/p>\n      <input type=\"radio\" id=\"male\" name=\"sex\" value=\"male\" checked/>\n      <label for=\"male\">Male<\/label>\n      <input type=\"radio\" id=\"female\" name=\"sex\" value=\"female\"/>\n      <label for=\"female\">Female<\/label>\n    <\/p>\n  <\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"age\">What is your age?<\/label>\n      <\/p>\n      \n      <input type=\"number\" id=\"age\" name=\"age\" min=\"10\" max=\"100\" required style=\"width:70px\"/>\n      \n    <\/p>\n  <\/li>\n  <li><p>\n  <p>\n    <p>\n      <label for=\"language\">Do you speak a language other than English at home?<\/label>\n    <\/p>\n    <select id=\"language\" name=\"language\" onchange=\"checkOther(this.value, 'language_other');\" required>\n      <option value=\"\"><\/option>\n      <option value=\"No\">No<\/option>\n      <option value=\"Chinese\">Chinese<\/option>\n      <option value=\"Japanese\">Japanese<\/option>\n      <option value=\"Vietnamese\">Vietnamese<\/option>\n      <option value=\"Korean\">Korean<\/option>\n      <option value=\"Arabic\">Arabic<\/option>\n      <option value=\"Spanish\">Spanish<\/option>\n      <option value=\"Italian\">Italian<\/option>\n      <option value=\"Greek\">Greek<\/option>\n      <option value=\"Hebrew\">Hebrew<\/option>\n      <option value=\"Other\">Other<\/option>\n    <\/select>\n  <\/p>\n  <p>\n    <input type=\"text\" id=\"language_other\" name=\"language\" style=\"display:none;\" placeholder=\"Specify other\"/>\n  <\/p>\n<\/p><\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"business_edu\">How many years of experience do you have studying business?<\/label>\n      <\/p>\n      \n      <input type=\"number\" id=\"business_edu\" name=\"business_edu\" min=\"0\" max=\"100\" required style=\"width:70px\"/>\n      years\n    <\/p>\n  <\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"business_exp\">How many years of experience do you have working in a corporate business setting?<\/label>\n      <\/p>\n      \n      <input type=\"number\" id=\"business_exp\" name=\"business_exp\" min=\"0\" max=\"100\" required style=\"width:70px\"/>\n      years\n    <\/p>\n  <\/li>\n  <li>\n    <p>\n      <p>Do you currently work in an executive or managerial role?<\/p>\n      <input type=\"radio\" id=\"current_yes\" name=\"current\" value=\"yes\"/>\n      <label for=\"current_yes\">Yes<\/label>\n      <input type=\"radio\" id=\"current_no\" name=\"current\" value=\"no\" checked/>\n      <label for=\"current_no\">No<\/label>\n    <\/p>\n  <\/li>\n<\/ol>"],
+          "on_finish": function(data){
+    data.current_response = JSON.parse(data.responses).current
+  }
+        },
+        {
+          "timeline": [
+            {
+              "type": ["survey-html-form"],
+              "html": ["<ol style=\"text-align:left\">\n  <li>\n    <p>\n      <label for=\"company_name\">What is your company name? (optional)<\/label>\n      <input type=\"text\" id=\"company_name\" name=\"company_name\"/>\n    <\/p>\n  <\/li>\n  <li><p>\n  <p>\n    <p>\n      <label for=\"sector\">What is your primary company sector?<\/label>\n    <\/p>\n    <select id=\"sector\" name=\"sector\" onchange=\"checkOther(this.value, 'sector_other');\" required>\n      <option value=\"\"><\/option>\n      <option value=\"Aerospace &amp; Defense\">Aerospace &amp; Defense<\/option>\n      <option value=\"Agriculture, Farming, Food Processing\">Agriculture, Farming, Food Processing<\/option>\n      <option value=\"Asset Management - Brokers, Fund Mgmt, Stock Exchange\">Asset Management - Brokers, Fund Mgmt, Stock Exchange<\/option>\n      <option value=\"Automotive\">Automotive<\/option>\n      <option value=\"Banking - Payments, Central Banks, Retail, Wholesale, Investment\">Banking - Payments, Central Banks, Retail, Wholesale, Investment<\/option>\n      <option value=\"Business Services - Legal, Accounting, Security, Consulting, PR\">Business Services - Legal, Accounting, Security, Consulting, PR<\/option>\n      <option value=\"Chemicals\">Chemicals<\/option>\n      <option value=\"Computers &amp; Electronics, Software, High Tech\">Computers &amp; Electronics, Software, High Tech<\/option>\n      <option value=\"Consumer Products &amp; Packaged Goods\">Consumer Products &amp; Packaged Goods<\/option>\n      <option value=\"Diversified Conglomerate\">Diversified Conglomerate<\/option>\n      <option value=\"Energy - Power, Gas, Electricity, Water, Renewables\">Energy - Power, Gas, Electricity, Water, Renewables<\/option>\n      <option value=\"Engineering, Construction, Infrastructure, Real Estate\">Engineering, Construction, Infrastructure, Real Estate<\/option>\n      <option value=\"Health Services - Payor, Provider\">Health Services - Payor, Provider<\/option>\n      <option value=\"Insurance - Pension, Financial, Health \tLeisure - Sports, Parks, Theater, Gambling\">Insurance - Pension, Financial, Health \tLeisure - Sports, Parks, Theater, Gambling<\/option>\n      <option value=\"Machinery &amp; Industrial Goods\">Machinery &amp; Industrial Goods<\/option>\n      <option value=\"Media - Broadcasting, Publishing, Information\">Media - Broadcasting, Publishing, Information<\/option>\n      <option value=\"Metals, Mining, Ore\">Metals, Mining, Ore<\/option>\n      <option value=\"Paper, Packaging, Forestry\">Paper, Packaging, Forestry<\/option>\n      <option value=\"Petroleum, Oil\">Petroleum, Oil<\/option>\n      <option value=\"Pharmaceuticals, Medical Products &amp; Equipment\">Pharmaceuticals, Medical Products &amp; Equipment<\/option>\n      <option value=\"Private Equity, FOB, Venture Capital\">Private Equity, FOB, Venture Capital<\/option>\n      <option value=\"Public Sector, Government\">Public Sector, Government<\/option>\n      <option value=\"Retail, Wholesale, Restaurants\">Retail, Wholesale, Restaurants<\/option>\n      <option value=\"Social Sector, Non-profit, Charity\">Social Sector, Non-profit, Charity<\/option>\n      <option value=\"Telecommunications\">Telecommunications<\/option>\n      <option value=\"Travel, Transport &amp; Logistics, Hotels\">Travel, Transport &amp; Logistics, Hotels<\/option>\n      <option value=\"Other\">Other<\/option>\n    <\/select>\n  <\/p>\n  <p>\n    <input type=\"text\" id=\"sector_other\" name=\"sector\" style=\"display:none;\" placeholder=\"Specify other\"/>\n  <\/p>\n<\/p><\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"employees\">Approximately, how many employees work at your company?<\/label>\n      <\/p>\n      \n      <input type=\"number\" id=\"employees\" name=\"employees\" min=\"0\" max=\"3e+06\" required style=\"width:70px\"/>\n      \n    <\/p>\n  <\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"revenue\">What is the size of your company’s revenues?<\/label>\n      <\/p>\n      $\n      <input type=\"number\" id=\"revenue\" name=\"revenue\" min=\"0\" max=\"6e+05\" required style=\"width:70px\"/>\n      million\n    <\/p>\n  <\/li>\n  <li><p>\n  <p>\n    <p>\n      <label for=\"role_company\">What is your role in the company?<\/label>\n    <\/p>\n    <select id=\"role_company\" name=\"role_company\" onchange=\"checkOther(this.value, 'role_company_other');\" required>\n      <option value=\"\"><\/option>\n      <option value=\"CEO\">CEO<\/option>\n      <option value=\"Corporate President\">Corporate President<\/option>\n      <option value=\"Chairman\">Chairman<\/option>\n      <option value=\"Managing Director\">Managing Director<\/option>\n      <option value=\"CFO\">CFO<\/option>\n      <option value=\"COO\">COO<\/option>\n      <option value=\"CSO\">CSO<\/option>\n      <option value=\"Other C-level executive\">Other C-level executive<\/option>\n      <option value=\"Senior strategist\">Senior strategist<\/option>\n      <option value=\"EVP\">EVP<\/option>\n      <option value=\"BU/Divisional President\">BU/Divisional President<\/option>\n      <option value=\"SVP\">SVP<\/option>\n      <option value=\"VP\">VP<\/option>\n      <option value=\"Business Leader\">Business Leader<\/option>\n      <option value=\"Business Member\">Business Member<\/option>\n      <option value=\"Other\">Other<\/option>\n    <\/select>\n  <\/p>\n  <p>\n    <input type=\"text\" id=\"role_company_other\" name=\"role_company\" style=\"display:none;\" placeholder=\"Specify other\"/>\n  <\/p>\n<\/p><\/li>\n  <li><p>\n  <p>\n    <p>\n      <label for=\"role_allocation\">What is your role in resource allocation decisions?<\/label>\n    <\/p>\n    <select id=\"role_allocation\" name=\"role_allocation\" onchange=\"checkOther(this.value, 'role_allocation_other');\" required>\n      <option value=\"\"><\/option>\n      <option value=\"Decide on allocations for the company\">Decide on allocations for the company<\/option>\n      <option value=\"Decide on allocations for business unit or division\">Decide on allocations for business unit or division<\/option>\n      <option value=\"Decide on allocations for line of business level\">Decide on allocations for line of business level<\/option>\n      <option value=\"Provide information and analysis for the decision-makers at the company\">Provide information and analysis for the decision-makers at the company<\/option>\n      <option value=\"Provide information and analysis for the decision-makers at business unit or division\">Provide information and analysis for the decision-makers at business unit or division<\/option>\n      <option value=\"Provide information and analysis for the decision-makers at line of business level\">Provide information and analysis for the decision-makers at line of business level<\/option>\n      <option value=\"Other\">Other<\/option>\n    <\/select>\n  <\/p>\n  <p>\n    <input type=\"text\" id=\"role_allocation_other\" name=\"role_allocation\" style=\"display:none;\" placeholder=\"Specify other\"/>\n  <\/p>\n<\/p><\/li>\n  <li>\n    <p>\n      <p>\n        <label for=\"budget\">How large is the annual budget under your discretion?<\/label>\n      <\/p>\n      $\n      <input type=\"number\" id=\"budget\" name=\"budget\" min=\"0\" max=\"6e+05\" required style=\"width:70px\"/>\n      million\n    <\/p>\n  <\/li>\n<\/ol>"]
+            }
+          ],
+          "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.current_response == "yes"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+        }
+      ]
+    },
     {
       "timeline": [
         {
@@ -94,67 +152,67 @@ var timeline = {
                       "name": ["oil-well_140_240_0.55"]
                     },
                     {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["microchip_170_240_0.45"]
+                      "name": ["oil-well_170_240_0.45"]
                     },
                     {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["record-deal_200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["shipping-logistics_120_240_0.6"]
+                      "name": ["oil-well_120_240_0.6"]
                     },
                     {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["restaurant-chain_110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["national-newspaper_180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     },
                     {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["pharmaceutical_150_240_0.55"]
+                      "name": ["oil-well_150_240_0.55"]
                     },
                     {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["railway_140_240_0.6"]
+                      "name": ["oil-well_140_240_0.6"]
                     },
                     {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["GMO_130_240_0.6"]
+                      "name": ["oil-well_130_240_0.6"]
                     },
                     {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["high-rise-construction_100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     }
                   ],
                   "randomize_question_order": true,
@@ -198,67 +256,67 @@ var timeline = {
                       "name": ["oil-well_140_240_0.55"]
                     },
                     {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["microchip_170_240_0.45"]
+                      "name": ["oil-well_170_240_0.45"]
                     },
                     {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["record-deal_200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["shipping-logistics_120_240_0.6"]
+                      "name": ["oil-well_120_240_0.6"]
                     },
                     {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["restaurant-chain_110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["national-newspaper_180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     },
                     {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["pharmaceutical_150_240_0.55"]
+                      "name": ["oil-well_150_240_0.55"]
                     },
                     {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["railway_140_240_0.6"]
+                      "name": ["oil-well_140_240_0.6"]
                     },
                     {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["GMO_130_240_0.6"]
+                      "name": ["oil-well_130_240_0.6"]
                     },
                     {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["high-rise-construction_100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     }
                   ],
                   "randomize_question_order": true,
@@ -317,40 +375,40 @@ var timeline = {
                       "name": ["oil-well_140_240_0.55"]
                     },
                     {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
-                      "name": ["microchip_170_240_0.45"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                      "name": ["oil-well_170_240_0.45"]
                     },
                     {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "name": ["record-deal_200_240_0.3"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
-                      "name": ["shipping-logistics_120_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                      "name": ["oil-well_120_240_0.6"]
                     },
                     {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["restaurant-chain_110_240_0.7"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["national-newspaper_180_240_0.35"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                      "name": ["oil-well_180_240_0.35"]
                     },
                     {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
-                      "name": ["pharmaceutical_150_240_0.55"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                      "name": ["oil-well_150_240_0.55"]
                     },
                     {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
-                      "name": ["railway_140_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                      "name": ["oil-well_140_240_0.6"]
                     },
                     {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
-                      "name": ["GMO_130_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                      "name": ["oil-well_130_240_0.6"]
                     },
                     {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["high-rise-construction_100_240_0.75"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                      "name": ["oil-well_100_240_0.75"]
                     }
                   ],
                   "randomize_order": [true]
@@ -405,40 +463,40 @@ var timeline = {
                       "name": ["oil-well_140_240_0.55"]
                     },
                     {
-                      "prompt": ["Microxy is a business in your company that proposes to construct a microchip project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
-                      "name": ["microchip_170_240_0.45"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $70 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 45% chance of the project succeeding. Therefore, <strong>there is 45% chance of gaining $170 million and a 55% chance of losing $70 million on the investment.<\/strong>"],
+                      "name": ["oil-well_170_240_0.45"]
                     },
                     {
-                      "prompt": ["Vital Records is a business in your company that proposes to construct a record deal project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "name": ["record-deal_200_240_0.3"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
-                      "prompt": ["Logivia is a business in your company that proposes to construct a shipping logistics project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
-                      "name": ["shipping-logistics_120_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $120 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $120 million and a 40% chance of losing $120 million on the investment.<\/strong>"],
+                      "name": ["oil-well_120_240_0.6"]
                     },
                     {
-                      "prompt": ["Savoro is a business in your company that proposes to construct a restaurant chain project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["restaurant-chain_110_240_0.7"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
-                      "prompt": ["Grown Media is a business in your company that proposes to construct a national newspaper project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["national-newspaper_180_240_0.35"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
+                      "name": ["oil-well_180_240_0.35"]
                     },
                     {
-                      "prompt": ["Biotechly is a business in your company that proposes to construct a pharmaceutical project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
-                      "name": ["pharmaceutical_150_240_0.55"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $90 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $150 million and a 45% chance of losing $90 million on the investment.<\/strong>"],
+                      "name": ["oil-well_150_240_0.55"]
                     },
                     {
-                      "prompt": ["FreightCog is a business in your company that proposes to construct a railway project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
-                      "name": ["railway_140_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $140 million and a 40% chance of losing $100 million on the investment.<\/strong>"],
+                      "name": ["oil-well_140_240_0.6"]
                     },
                     {
-                      "prompt": ["Evogenic is a business in your company that proposes to construct a GMO project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
-                      "name": ["GMO_130_240_0.6"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 60% chance of the project succeeding. Therefore, <strong>there is 60% chance of gaining $130 million and a 40% chance of losing $110 million on the investment.<\/strong>"],
+                      "name": ["oil-well_130_240_0.6"]
                     },
                     {
-                      "prompt": ["Erectic is a business in your company that proposes to construct a high-rise construction project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["high-rise-construction_100_240_0.75"]
+                      "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
+                      "name": ["oil-well_100_240_0.75"]
                     }
                   ],
                   "randomize_order": [true]
@@ -464,6 +522,109 @@ var timeline = {
     }
         }
       ]
+    },
+    {
+      "timeline": [
+        {
+          "type": ["survey-html-form"],
+          "html": ["<p>\n  <p>\n    <label for=\"project_number\">In total, how many projects did you just see?<\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"project_number\" name=\"project_number\" min=\"0\" max=\"20\" required style=\"width:70px\"/>\n  projects\n<\/p>"]
+        },
+        {
+          "timeline": [
+            {
+              "type": ["html-button-response"],
+              "stimulus": ["<div>\n  <p>Below is the probability distribution of final outcomes if all projects were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>\n  <strong>Consider all the projects you saw. If you had to choose between investing in all of them, or investing in none of them, which would you choose?<\/strong>\n<\/p>"],
+              "choices": ["Invest in all of the projects", "Invest in none of the projects"],
+              "margin_vertical": ["0px"],
+              "margin_horizontal": ["8px"],
+              "response_ends_trial": true,
+              "post_trial_gap": [0]
+            }
+          ],
+          "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "present"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+        },
+        {
+          "timeline": [
+            {
+              "type": ["html-button-response"],
+              "stimulus": ["<p>\n  <strong>Consider all the projects you saw. If you had to choose between investing in all of them, or investing in none of them, which would you choose?<\/strong>\n<\/p>"],
+              "choices": ["Invest in all of the projects", "Invest in none of the projects"],
+              "margin_vertical": ["0px"],
+              "margin_horizontal": ["8px"],
+              "response_ends_trial": true,
+              "post_trial_gap": [0]
+            }
+          ],
+          "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "absent"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+        },
+        {
+          "timeline": [
+            {
+              "type": ["survey-html-form"],
+              "html": ["<div>\n  <p>Below is the probability distribution of final outcomes if all projects were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?<\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"]
+            }
+          ],
+          "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "present"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+        },
+        {
+          "timeline": [
+            {
+              "type": ["survey-html-form"],
+              "html": ["<p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?<\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"]
+            }
+          ],
+          "conditional_function": function(){
+      var data = jsPsych.data.get().last(1).values()[0];
+      if(data.distribution == "absent"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+        },
+        {
+          "type": ["instructions"],
+          "pages": ["<img src=\"resource/image/debrief1.png\" width=\"750\"/>", "<img src=\"resource/image/debrief2.png\" width=\"750\"/>"],
+          "key_forward": [39],
+          "key_backward": [37],
+          "allow_backward": true,
+          "allow_keys": true,
+          "show_clickable_nav": true,
+          "button_label_previous": ["Previous"],
+          "button_label_next": ["Next"],
+          "post_trial_gap": [0]
+        },
+        {
+          "type": ["html-button-response"],
+          "stimulus": ["<div>\n  <p>Press below to complete the experiment and save your data.<\/p>\n  <p>Thank you!<\/p>\n<\/div>"],
+          "choices": ["End experiment"],
+          "margin_vertical": ["0px"],
+          "margin_horizontal": ["8px"],
+          "response_ends_trial": true,
+          "post_trial_gap": [0]
+        }
+      ]
     }
   ]
 };
@@ -476,13 +637,19 @@ jsPsych.init(
     event.returnValue = '';
   },
   "experiment_width": [750],
-  "on_finish": function() {
-    var data = jsPsych.data.get().csv();
-    var file = 'xprmntr_local_name';
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'submit');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({filename: file, filedata: data}));
-  }
+  "preload_images": ["resource/image/consent.png", "resource/image/debrief1.png", "resource/image/debrief2.png", "resource/image/distribution.png", "resource/image/pis1_prolific.png", "resource/image/pis1_sona.png", "resource/image/pis2_prolific.png", "resource/image/pis2_sona.png", "resource/image/pis3_prolific.png", "resource/image/pis3_sona.png"],
+  "on_finish": 
+    function() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'SaveToDatabase.aspx'); // change 'write_data.php' to point to php script.
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function () {
+          if (xhr.status == 200) {
+              var response = JSON.parse(xhr.responseText);
+              console.log(response.success);
+          }
+      };
+      xhr.send(jsPsych.data.get().json());
+    }
 }
 );
