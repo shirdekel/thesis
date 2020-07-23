@@ -35,7 +35,24 @@ get_experiment <- function(...) {
     event.returnValue = '';
   }"),
     experiment_width = 750,
-    on_finish = save_locally()
+    preload_images = here("inst", "experiment_resources") %>%
+      list.files() %>%
+      str_extract("(.*.png)") %>%
+      na.omit() %>%
+      insert_resource(),
+    on_finish = insert_javascript("
+    function() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'SaveToDatabase.aspx'); // change 'write_data.php' to point to php script.
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function () {
+          if (xhr.status == 200) {
+              var response = JSON.parse(xhr.responseText);
+              console.log(response.success);
+          }
+      };
+      xhr.send(jsPsych.data.get().json());
+    }")
   )
 
   return(experiment)
