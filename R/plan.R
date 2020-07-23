@@ -27,28 +27,10 @@ the_plan <-
     gambles = get_gambles(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif),
     gambles_plot = plot_gambles(gambles),
     project_name = c(
-      "Refinera",
-      "Microxy",
-      "Vital Records",
-      "Logivia",
-      "Savoro",
-      "Grown Media",
-      "Biotechly",
-      "FreightCog",
-      "Evogenic",
-      "Erectic"
+      "Refinera"
     ),
     project_type = c(
-      "oil well",
-      "microchip",
-      "record deal",
-      "shipping logistics",
-      "restaurant chain",
-      "national newspaper",
-      "pharmaceutical",
-      "railway",
-      "GMO",
-      "high-rise construction"
+      "oil well"
     ),
     project_description = get_project_description(gambles,
                                                   outcome_dif,
