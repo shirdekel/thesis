@@ -10,10 +10,10 @@ get_trial_portfolio_number <- function(preamble_portfolio_distribution, distribu
 
   trial_portfolio_number_html <- get_survey_number(
     label_text = p(
-      strong("If you could choose to invest in a certain number of the projects you saw, how many would you invest in?")
+      strong("The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?")
     ),
     name = "portfolio_number",
-    max = 20,
+    max = 10,
     suffix = "projects") %>%
     as.character()
 
