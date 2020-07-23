@@ -79,7 +79,9 @@ the_plan <-
                                      debrief,
                                      trial_end),
     experiment = target({
-      get_experiment(trial_end)
+      get_experiment(experiment_pre,
+                     experiment_main,
+                     experiment_post)
       file_out(!!here("inst", "jspsych","experiment","experiment.js"))
       }),
     data_directory = target(
@@ -87,7 +89,7 @@ the_plan <-
       format = "file"
     ),
     data_raw = import_data(data_directory),
-    data = clean_data(data_raw),
+    # data = clean_data(data_raw),
     memo_materials = target(
       command = {
         render(knitr_in("doc/aggregation_exp2_materials.Rmd"))
