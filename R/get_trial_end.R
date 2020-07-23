@@ -6,7 +6,7 @@
 get_trial_end <- function() {
 
   trial_end_html <- div(
-    p("Press below to complete the experiment."),
+    p("Press below to complete the experiment and save your data."),
     p("Thank you!")
   ) %>%
     as.character()
