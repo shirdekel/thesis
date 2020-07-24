@@ -20,7 +20,7 @@ get_experiment <- function(...) {
       "condition = jsPsych.randomization.sampleWithoutReplacement(['naive_joint_absent', 'naive_separate_absent', 'naive_separate_present'], 1)[0]",
       "regex_awareness = /(.*)_.*_.*/",
       "regex_presentation = /.*_(.*)_.*/",
-      "regex_distribution = /.*_.*_(.*)") %>%
+      "regex_distribution = /.*_.*_(.*)/") %>%
     coffee_compile(bare = T) %>%
       c("function checkOther(val, id){
  var element=document.getElementById(id);
