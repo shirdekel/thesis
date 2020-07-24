@@ -12,14 +12,15 @@ get_experiment <- function(...) {
     columns = insert_property(
       experiment = "aggregation_exp2",
       sample = "prolific",
-      distribution = insert_javascript("jsPsych.randomization.sampleWithoutReplacement(['present', 'absent'], 1)"),
-      awareness = insert_javascript("awareness_presentation.match(regex_awareness)"),
-      presentation = insert_javascript("awareness_presentation.match(regex_presentation)")
+      distribution = insert_javascript("condition.match(regex_distribution)[1]"), # Add [1] to extract capture group
+      awareness = insert_javascript("condition.match(regex_awareness)[1]"),
+      presentation = insert_javascript("condition.match(regex_presentation)[1]")
     ),
     vanilla = c(
-      "awareness_presentation = jsPsych.randomization.sampleWithoutReplacement(['aware_separate', 'naive_joint', 'naive_separate'], 1)[0]",
-      "regex_awareness = /.*(?=_)/",
-      "regex_presentation = /(?<=_).*/") %>%
+      "condition = jsPsych.randomization.sampleWithoutReplacement(['naive_joint_absent', 'naive_separate_absent', 'naive_separate_present'], 1)[0]",
+      "regex_awareness = /(.*)_.*_.*/",
+      "regex_presentation = /.*_(.*)_.*/",
+      "regex_distribution = /.*_.*_(.*)") %>%
     coffee_compile(bare = T) %>%
       c("function checkOther(val, id){
  var element=document.getElementById(id);
