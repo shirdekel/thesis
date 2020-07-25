@@ -18,8 +18,9 @@ get_consent <- function() {
     return false;
   }
   return false;
-}")
-  )
+}"),
+    data = insert_property(stage = "consent")
+    )
 
   return(consent)
 

@@ -13,7 +13,8 @@ get_trial_end <- function() {
 
   trial_end <- trial_html_button_response(
     trial_end_html,
-    choices = "End experiment"
+    choices = "End experiment",
+    data = insert_property(stage = "end")
   )
 
   return(trial_end)

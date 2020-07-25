@@ -23,7 +23,8 @@ get_pis <- function(sample) {
       welcome,
       img_html
     ),
-    show_clickable_nav = TRUE
+    show_clickable_nav = TRUE,
+    data = insert_property(stage = "pis")
   )
 
   return(pis)

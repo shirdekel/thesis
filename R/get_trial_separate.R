@@ -18,7 +18,8 @@ get_trial_separate <- function(preamble, project_description, form_options, proj
       options = form_options,
       name = insert_variable("name"),
       required = TRUE
-    )
+    ),
+    data = insert_property(stage = "project_choice")
   ) %>%
     build_timeline() %>%
     set_variables(prompt = project_description,

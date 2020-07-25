@@ -15,7 +15,8 @@ get_trial_portfolio_binary <- function(preamble_portfolio_distribution, distribu
 
   trial_portfolio_binary <- trial_html_button_response(
     stimulus = str_c(preamble_portfolio_distribution, trial_portfolio_binary_html),
-    choices = c("Invest in all of the projects", "Invest in none of the projects")
+    choices = c("Invest in all of the projects", "Invest in none of the projects"),
+    data = insert_property(stage = "portfolio_binary")
   ) %>%
     build_timeline() %>%
     display_if(fn_data_condition(distribution == !!distribution))

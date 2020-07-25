@@ -12,7 +12,8 @@ get_trial_joint <- function(preamble, questions_joint, distribution) {
   trial_joint <- trial_survey_multi_choice(
     preamble = preamble,
     questions = questions_joint,
-    randomize_question_order = TRUE
+    randomize_question_order = TRUE,
+    data = insert_property(stage = "project_choice")
   ) %>%
     build_timeline() %>%
     display_if(fn_data_condition(distribution == !!distribution)) %>%

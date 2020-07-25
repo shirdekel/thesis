@@ -37,7 +37,8 @@ get_contact <- function() {
 
   contact <- trial_generic(
     "survey-html-form",
-    html = contact_html
+    html = contact_html,
+    data = insert_property(stage = "contact")
   )
 
   return(contact)

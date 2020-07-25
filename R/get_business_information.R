@@ -108,7 +108,8 @@ get_business_information <- function() {
 
   business_information <- trial_generic(
     "survey-html-form",
-    html = business_information_combined
+    html = business_information_combined,
+    data = insert_property(stage = "business_information")
   ) %>%
     build_timeline() %>%
     display_if(fn_data_condition(current_response == "yes"))

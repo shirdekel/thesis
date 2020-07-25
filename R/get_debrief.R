@@ -14,7 +14,8 @@ get_debrief <- function() {
     pages = c(
       debrief_html
     ),
-    show_clickable_nav = TRUE
+    show_clickable_nav = TRUE,
+    data = insert_property(stage = "debrief")
   )
 
   return(debrief)

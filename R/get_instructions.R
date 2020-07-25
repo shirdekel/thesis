@@ -17,7 +17,8 @@ get_instructions <- function() {
       instructions_main,
       "Press the 'Next' button to begin."
     ),
-    show_clickable_nav = TRUE
+    show_clickable_nav = TRUE,
+    data = insert_property(stage = "instructions")
   )
 
   return(instructions)

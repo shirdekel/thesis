@@ -19,7 +19,8 @@ get_trial_portfolio_number <- function(preamble_portfolio_distribution, distribu
 
   trial_portfolio_number <- trial_generic(
     "survey-html-form",
-    html = str_c(preamble_portfolio_distribution, trial_portfolio_number_html)
+    html = str_c(preamble_portfolio_distribution, trial_portfolio_number_html),
+    data = insert_property(stage = "portfolio_number")
   ) %>%
     build_timeline() %>%
     display_if(fn_data_condition(distribution == !!distribution))

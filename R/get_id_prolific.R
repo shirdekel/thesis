@@ -23,7 +23,8 @@ get_id_prolific <- function() {
 
   id_prolific <- trial_generic(
     "survey-html-form",
-    html = id_prolific_html
+    html = id_prolific_html,
+    data = insert_property(stage = "id")
   )
 
   return(id_prolific)

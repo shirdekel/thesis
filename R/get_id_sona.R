@@ -20,7 +20,8 @@ get_id_sona <- function() {
 
   id_sona <- trial_generic(
     "survey-html-form",
-    html = id_sona_html
+    html = id_sona_html,
+    data = insert_property(stage = "id")
   )
 
   return(id_sona)

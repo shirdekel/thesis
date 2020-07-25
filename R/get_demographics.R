@@ -66,6 +66,7 @@ get_demographics <- function() {
   demographics <-trial_generic(
     "survey-html-form",
     html = demographics_combined,
+    data = insert_property(stage = "demographics"),
     on_finish = insert_javascript("function(data){
     data.current_response = JSON.parse(data.responses).current
   }")

@@ -14,7 +14,8 @@ get_trial_project_number <- function() {
 
   trial_project_number <- trial_generic(
     "survey-html-form",
-    html = trial_project_number_html
+    html = trial_project_number_html,
+    data = insert_property(stage = "project_number")
   )
 
   return(trial_project_number)
