@@ -1,29 +1,27 @@
 ##' @title Get gambles
 
-##' @param outcome_positive_restricted
+##' @param restricted_values
 ##'
-##' @param prob_positive_restricted
 ##' @param outcome_dif
-##' @param loss_prob_restriction
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_gambles <- function(outcome_positive_restricted, prob_positive_restricted, loss_prob_restriction, outcome_dif) {
+get_gambles <- function(restricted_values, outcome_dif) {
 
   loss_prob <- 1
   duplicate_restriction <- TRUE
 
-  while ((loss_prob > loss_prob_restriction) | any(duplicate_restriction)) {
+  while ((loss_prob > 0.1) | any(duplicate_restriction)) {
 
     # Sample from the indexes of the restricted set (so that you can get the corresponding set of outcomes and probabilities)
-    index_sample <- sample(1:length(outcome_positive_restricted), 10)
+    index_sample <- sample(1:length(restricted_values$outcome), 10)
 
     # Get a sample of outcomes
-    outcome_positive_restricted_sample <- outcome_positive_restricted[index_sample]
+    outcome_positive_restricted_sample <- restricted_values$outcome[index_sample]
 
     # Get a sample of probabilities
-    prob_positive_restricted_sample <- prob_positive_restricted[index_sample]
+    prob_positive_restricted_sample <- restricted_values$prob[index_sample]
 
     # Combine outcomes and probabilities and organise as list of pairs
     positive_combined <- list(outcome_positive_restricted_sample,prob_positive_restricted_sample) %>%

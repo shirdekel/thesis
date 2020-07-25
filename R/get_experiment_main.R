@@ -1,13 +1,11 @@
 ##' @title Get main experiment trials
 
-##' @param project_description
-##'
-##' @param project_input
+##' @param projects
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_main <- function(project_description, project_input) {
+get_experiment_main <- function(projects) {
 
   instructions <- get_instructions()
 
@@ -22,9 +20,9 @@ get_experiment_main <- function(project_description, project_input) {
 
   form_options <- c("Yes", "No")
 
-  questions_joint <- get_questions_joint(project_description,
+  questions_joint <- get_questions_joint(projects$description,
                                          form_options,
-                                         project_input)
+                                         projects$input)
   trial_joint_distribution_present <- get_trial_joint(preamble_distribution_present,
                                                       questions_joint,
                                                       "present")
@@ -33,14 +31,14 @@ get_experiment_main <- function(project_description, project_input) {
                                                      "absent")
 
   trial_separate_distribution_present <- get_trial_separate(preamble_distribution_present,
-                                                            project_description,
+                                                            projects$description,
                                                             form_options,
-                                                            project_input,
+                                                            projects$input,
                                                             "present")
   trial_separate_distribution_absent <- get_trial_separate(preamble_distribution_absent,
-                                                           project_description,
+                                                           projects$description,
                                                            form_options,
-                                                           project_input,
+                                                           projects$input,
                                                            "absent")
 
   experiment_main <- build_timeline(instructions,
