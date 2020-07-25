@@ -1,0 +1,44 @@
+##' @title Get post experiment trials
+
+##' @return
+##' @author Shir Dekel
+##' @export
+get_experiment_post <- function() {
+
+  trial_project_number <- get_trial_project_number()
+
+  preamble_portfolio_distribution_absent <- ""
+  preamble_portfolio_distribution_present <- get_preamble_distribution_present(preamble_portfolio_distribution_absent)
+
+  trial_portfolio_binary_distribution_present <- get_trial_portfolio_binary(
+    preamble_portfolio_distribution_present,
+    "present"
+  )
+  trial_portfolio_binary_distribution_absent <- get_trial_portfolio_binary(
+    preamble_portfolio_distribution_absent,
+    "absent"
+  )
+
+  trial_portfolio_number_distribution_present <- get_trial_portfolio_number(
+    preamble_portfolio_distribution_present,
+    "present"
+  )
+  trial_portfolio_number_distribution_absent <- get_trial_portfolio_number(
+    preamble_portfolio_distribution_absent,
+    "absent"
+  )
+
+  debrief <- get_debrief()
+  trial_end <- get_trial_end()
+
+  experiment_post <- build_timeline(trial_project_number,
+                                    trial_portfolio_binary_distribution_present,
+                                    trial_portfolio_binary_distribution_absent,
+                                    trial_portfolio_number_distribution_present,
+                                    trial_portfolio_number_distribution_absent,
+                                    debrief,
+                                    trial_end)
+
+  return(experiment_post)
+
+}
