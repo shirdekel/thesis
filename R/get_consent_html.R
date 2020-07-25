@@ -2,7 +2,6 @@
 ##'
 ##' Template from jsPsych html-external example
 
-##' @return
 ##' @author Shir Dekel
 ##' @export
 get_consent_html <- function() {
@@ -33,7 +32,5 @@ get_consent_html <- function() {
 
   consent_html %>%
     save_html(here("inst", "experiment_resources", "consent.html"))
-
-  return(consent_html)
 
 }
