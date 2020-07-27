@@ -2,12 +2,10 @@
 
 ##' @param restricted_values
 ##'
-##' @param outcome_dif
-##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_gambles <- function(restricted_values, outcome_dif) {
+get_gambles <- function(restricted_values) {
 
   loss_prob <- 1
   duplicate_restriction <- TRUE
@@ -32,7 +30,7 @@ get_gambles <- function(restricted_values, outcome_dif) {
     duplicate_restriction <- duplicated(positive_combined)
 
     # Get a list of trial outcomes (positive and negative possibilities)
-    outcome_combined <- list(outcome_positive_restricted_sample, outcome_positive_restricted_sample-outcome_dif) %>%
+    outcome_combined <- list(outcome_positive_restricted_sample, outcome_positive_restricted_sample-restricted_values$outcome_dif) %>%
       transpose() %>%
       map(unlist)
 
@@ -55,7 +53,7 @@ get_gambles <- function(restricted_values, outcome_dif) {
   }
 
   # Calculate expected value and gain/loss ratio of selected gambles
-  restriction_values_restricted <- get_restriction_values(prob_positive_restricted_sample, outcome_positive_restricted_sample, outcome_dif)
+  restriction_values_restricted <- get_restriction_values(prob_positive_restricted_sample, outcome_positive_restricted_sample)
 
   # Combine values
   gambles <- list(

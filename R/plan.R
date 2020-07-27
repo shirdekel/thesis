@@ -1,10 +1,9 @@
 the_plan <-
   drake_plan(
-    outcome_dif = 240,
-    restricted_values = get_restricted_values(outcome_dif),
-    gambles = get_gambles(restricted_values, outcome_dif),
+    restricted_values = get_restricted_values(),
+    gambles = get_gambles(restricted_values),
     gambles_plot = plot_gambles(gambles),
-    projects = get_projects(gambles, outcome_dif),
+    projects = get_projects(gambles),
     experiment_pre = get_experiment_pre(),
     experiment_main = get_experiment_main(projects),
     experiment_post = get_experiment_post(),
