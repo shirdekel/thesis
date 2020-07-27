@@ -2,19 +2,17 @@
 ##'
 ##' @param project_name
 ##' @param gambles
-##' @param outcome_dif
 ##' @param project_type
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 get_project_description <- function(gambles,
-                                    outcome_dif,
                                     project_name,
                                     project_type) {
 
 
-  outcome_negative <- outcome_dif - gambles$outcome_positive_restricted_sample
+  outcome_negative <- gambles$outcome_dif - gambles$outcome_positive_restricted_sample
   prob_positive <- gambles$prob_positive_restricted_sample * 100
   prob_negative <- 100 - prob_positive
 
@@ -39,7 +37,7 @@ get_project_description <- function(gambles,
         " project, which they forecast will cost $",
         outcome_negative,
         " million. If the project succeeds, forecasts show the company would make $",
-        outcome_dif,
+        gambles$outcome_dif,
         " million. Research suggests that there is a ",
         prob_positive,
         "% chance of the project succeeding. Therefore, ",

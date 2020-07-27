@@ -17,14 +17,12 @@ get_projects <- function(gambles, outcome_dif) {
   )
   project_description <- get_project_description(
     gambles,
-    outcome_dif,
     project_name,
     project_type
   )
   project_input <- get_project_input(
     project_type,
-    gambles,
-    outcome_dif
+    gambles
   )
 
   return(list(description = project_description,
