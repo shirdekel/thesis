@@ -4,7 +4,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-import_data <- function(data_directory) {
+import_data_local <- function(data_directory) {
 
   col_types <- cols(
     file_id = col_character(),
@@ -25,11 +25,11 @@ import_data <- function(data_directory) {
     question_order = col_character()
   )
 
-  data_raw <- data_directory %>%
+  data_raw_local <- data_directory %>%
     list.files(full.names = TRUE) %>%
     map_dfr(~ .x %>%
               read_csv(col_types = col_types))
 
-  return(data_raw)
+  return(data_raw_local)
 
 }
