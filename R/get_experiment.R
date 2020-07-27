@@ -10,6 +10,7 @@ get_experiment <- function(...) {
     timeline = build_timeline(...),
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
+      subject = insert_javascript("jsPsych.randomization.randomID(15)"),
       experiment = "aggregation_exp2",
       sample = "prolific",
       distribution = insert_javascript("condition.match(regex_distribution)[1]"), # Add [1] to extract capture group
@@ -17,47 +18,20 @@ get_experiment <- function(...) {
       presentation = insert_javascript("condition.match(regex_presentation)[1]")
     ),
     vanilla = c(
-      "condition = jsPsych.randomization.sampleWithoutReplacement(['naive_joint_absent', 'naive_separate_absent', 'naive_separate_present'], 1)[0]",
-      "regex_awareness = /(.*)_.*_.*/",
-      "regex_presentation = /.*_(.*)_.*/",
-      "regex_distribution = /.*_.*_(.*)/") %>%
-    coffee_compile(bare = T) %>%
-      c("function checkOther(val, id){
- var element=document.getElementById(id);
- if(val=='Other')
-   element.style.display='block';
- else
-   element.style.display='none';
-}"),
+      verify_close(),
+      condition_allocation(),
+      check_other()
+    ),
     path = here("inst", "jspsych"),
     experiment_title = "Business decision-making",
-    on_close = insert_javascript(" function(){
-    event.preventDefault();
-    event.returnValue = '';
-  }"),
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%
       list.files() %>%
       str_extract("(.*.png)") %>%
       na.omit() %>%
       insert_resource(),
-    on_finish = insert_javascript("
-    function() {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'SaveToDatabase.aspx'); // change 'write_data.php' to point to php script.
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onload = function () {
-          if (xhr.status == 200) {
-              var response = JSON.parse(xhr.responseText);
-              console.log(response.success);
-          }
-      };
-      xhr.send(jsPsych.data.get().json());
-    }")
+    on_finish = save_psychserver()
   )
 
   return(experiment)
 }
-
-
-
