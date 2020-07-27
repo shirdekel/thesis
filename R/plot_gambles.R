@@ -24,7 +24,7 @@ plot_gambles <- function(gambles) {
          fill = "Outcome type") +
     scale_x_continuous(breaks = gambles$outcome_aggregated)
 
-  here("images", "distribution.png") %>%
+  here("inst", "experiment_resources", "distribution.png") %>%
     ggsave(width = 6, height = 4, dpi = 300)
 
   return(gambles_plot)
