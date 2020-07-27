@@ -89,7 +89,7 @@ get_business_information <- function() {
                                 option = sector_option,
                                 label_select = "What is your primary company sector?")
 
-  revenue <- get_survey_number(label_text = "What is the size of your company’s revenues?",
+  revenue <- get_survey_number(label_text = "What is the size of your company's revenues?",
                                name = "revenue",
                                max = 6e5,
                                prefix = "$",
