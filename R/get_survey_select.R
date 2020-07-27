@@ -11,7 +11,7 @@
 ##' @export
 get_survey_select <- function(name_select, name_other, option, label_select) {
 
-  option_html <- c("", option, "Other") %>%
+  option_html <- c("", option, "Other") %>% # Empty initial value to make required validation work
     map(~ tags$option(value = .x, .x))
 
   survey_select <- withTags(
@@ -30,7 +30,7 @@ get_survey_select <- function(name_select, name_other, option, label_select) {
       p(
         input(type = "text",
               id = name_other, # So that checkOther() looks for this
-              name = name_select, # So that the input gets encoded into the same column as the drop-down options
+              name = name_other, # The input will be encoded into a different column as the drop-down options (setting this to name_select erases the value if a non-other option is selected)
               style = "display:none;",
               placeholder = "Specify other")
       )
