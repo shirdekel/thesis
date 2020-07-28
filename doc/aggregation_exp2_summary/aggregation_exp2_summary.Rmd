@@ -1,0 +1,53 @@
+---
+title             : "Aggregation Experiment 2 - Summary"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(descriptives)
+```
+
+```{r allocation}
+descriptives$allocation %>% 
+  apa_table("Group allocation to the between-subject variables of awareness, presentation, and distribution.")
+```
+
+```{r plot-choice, fig.cap = "Choice data"}
+readd(choice_plot)
+```
+
+```{r plot-proportion, fig.cap = "Proportion data"}
+readd(proportion_plot)
+```
+
+```{r plot-portfolio-number, fig.cap = "Portfolio number data"}
+readd(portfolio_number_plot)
+```
+
+```{r plot-portfolio-binary, fig.cap = "Portfolio binary data"}
+readd(portfolio_binary_plot)
+```
+
+\newpage
+
+# References
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
