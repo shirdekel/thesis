@@ -15,5 +15,7 @@ library(js)
 library(magick)
 library(rmarkdown)
 library(knitr)
+library(papaja)
+library(janitor)
 
 conflict_prefer("filter", "dplyr")
