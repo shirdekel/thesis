@@ -81,7 +81,8 @@ clean_data <- function(data_raw) {
            datetime = dateCreated %>%
              dmy_hms(tz = "Australia/Sydney"),
            total_time = max(time_elapsed)/60000, # Milliseconds to minutes
-           proportion = sum(choice)/10) %>%
+           proportion = sum(choice)/10,
+           across(c(distribution, awareness, presentation), as.factor)) %>%
     ungroup() %>%
     select(subject, experiment:presentation, stage:proportion) %>%
     inner_join(data_other, by = "subject") %>%
