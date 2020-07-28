@@ -11,20 +11,43 @@ the_plan <-
       get_experiment(experiment_pre,
                      experiment_main,
                      experiment_post)
-      file_out(!!here("inst", "jspsych","experiment","experiment.js"))
-      }),
-    data_directory = target(
+      file_out(!!here("inst", "jspsych", "experiment", "experiment.js"))
+    }),
+    data_directory_local = target(
       here("inst", "jspsych", "data"),
       format = "file"
     ),
-    data_raw = import_data(data_directory),
-    # data = clean_data(data_raw),
+    data_raw_local = import_data_local(data_directory_local),
+    data_directory_server = target(
+      here("inst", "extdata", "psychsydexp"),
+      format = "file"
+    ),
+    data_raw_server = import_data_server(data_directory_server),
+    data = clean_data(data_raw_server),
+    descriptives = get_descriptives(data),
+    proportion_plot = plot_proportion(data),
+    choice_plot = plot_choice(data),
+    portfolio_binary_plot = plot_portfolio_binary(data),
+    portfolio_number_plot = plot_portfolio_number(data),
     memo_materials = target(
       command = {
-        render(knitr_in("doc/aggregation_exp2_materials.Rmd"))
-        file_out("doc/aggregation_exp2_materials.pdf")
+        render(knitr_in(!!here("doc",
+                               "aggregation_exp2_materials",
+                               "aggregation_exp2_materials.Rmd")))
+        file_out(!!here("doc",
+                        "aggregation_exp2_materials",
+                        "aggregation_exp2_materials.pdf"))
+      }
+    ),
+    memo_summary = target(
+      command = {
+        render(knitr_in(!!here("doc",
+                               "aggregation_exp2_summary",
+                               "aggregation_exp2_summary.Rmd")))
+        file_out(!!here("doc",
+                        "aggregation_exp2_summary",
+                        "aggregation_exp2_summary.pdf"))
       }
     )
-
 
   )
