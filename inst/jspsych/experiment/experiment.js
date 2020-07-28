@@ -8,7 +8,7 @@ window.onbeforeunload = verifyClose;
 
 var condition, regex_awareness, regex_distribution, regex_presentation;
 
-condition = jsPsych.randomization.sampleWithoutReplacement(['naive_joint_absent', 'naive_separate_absent', 'naive_separate_present'], 1)[0];
+condition = jsPsych.randomization.sampleWithoutReplacement(['naive_separate_absent', 'naive_separate_present'], 1)[0];
 
 regex_awareness = /(.*)_.*_.*/;
 
@@ -27,9 +27,9 @@ jsPsych.data.addProperties({
   "subject": jsPsych.randomization.randomID(15),
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
-  "distribution": 'absent',
-  "awareness": 'naive',
-  "presentation": 'joint'
+  "distribution": condition.match(regex_distribution)[1],
+  "awareness": condition.match(regex_awareness)[1],
+  "presentation": condition.match(regex_presentation)[1]
 });
 
 var timeline = {
