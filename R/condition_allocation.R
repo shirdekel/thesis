@@ -5,7 +5,7 @@
 ##' @export
 condition_allocation <- function() {
 
-  c("condition = jsPsych.randomization.sampleWithoutReplacement(['naive_joint_absent', 'naive_separate_absent', 'naive_separate_present'], 1)[0]",
+  c("condition = jsPsych.randomization.sampleWithoutReplacement(['naive_separate_absent', 'naive_separate_present'], 1)[0]",
     "regex_awareness = /(.*)_.*_.*/",
     "regex_presentation = /.*_(.*)_.*/",
     "regex_distribution = /.*_.*_(.*)/") %>%
