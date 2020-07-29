@@ -27,9 +27,9 @@ jsPsych.data.addProperties({
   "subject": jsPsych.randomization.randomID(15),
   "experiment": ["aggregation_exp2"],
   "sample": ["prolific"],
-  "distribution": condition.match(regex_distribution)[1],
-  "awareness": condition.match(regex_awareness)[1],
-  "presentation": condition.match(regex_presentation)[1]
+  "distribution": 'absent',
+  "awareness": 'naive',
+  "presentation": 'separate'
 });
 
 var timeline = {

@@ -13,9 +13,9 @@ get_experiment <- function(...) {
       subject = insert_javascript("jsPsych.randomization.randomID(15)"),
       experiment = "aggregation_exp2",
       sample = "prolific",
-      distribution = insert_javascript("condition.match(regex_distribution)[1]"), # Add [1] to extract capture group
-      awareness = insert_javascript("condition.match(regex_awareness)[1]"),
-      presentation = insert_javascript("condition.match(regex_presentation)[1]")
+      distribution = insert_javascript("'absent'"), # Add [1] to extract capture group
+      awareness = insert_javascript("'naive'"),
+      presentation = insert_javascript("'separate'")
     ),
     vanilla = c(
       verify_close(),
