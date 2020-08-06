@@ -17,5 +17,7 @@ library(rmarkdown)
 library(knitr)
 library(papaja)
 library(janitor)
+library(MOTE)
+library(lme4)
 
 conflict_prefer("filter", "dplyr")
