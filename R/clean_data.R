@@ -87,7 +87,11 @@ clean_data <- function(data_raw) {
     select(subject, experiment:presentation, stage:proportion) %>%
     inner_join(data_other, by = "subject") %>%
     inner_join(data_portfolio_binary, by = "subject") %>%
-    filter(!str_detect(prolific, "test1234"))
+    filter(!str_detect(prolific, "test1234")) %>%
+    nest_by(subject) %>%
+    rowid_to_column("id") %>%
+    unnest(data) %>%
+    ungroup()
 
   get_prolific_id(data)
 
