@@ -42,11 +42,11 @@ get_experiment_main <- function(projects) {
                                                            "absent")
 
   experiment_main <- build_timeline(instructions,
-                 # trial_aware,
-                 trial_naive,
+                 trial_aware,
+                 # trial_naive,
                  # trial_joint_distribution_present,
-                 trial_joint_distribution_absent,
-                 trial_separate_distribution_present,
+                 # trial_joint_distribution_absent,
+                 # trial_separate_distribution_present,
                  trial_separate_distribution_absent)
 
   return(experiment_main)

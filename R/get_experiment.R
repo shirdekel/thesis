@@ -14,12 +14,12 @@ get_experiment <- function(...) {
       experiment = "aggregation_exp2",
       sample = "prolific",
       distribution = insert_javascript("'absent'"), # Add [1] to extract capture group
-      awareness = insert_javascript("'naive'"),
+      awareness = insert_javascript("'aware'"),
       presentation = insert_javascript("'separate'")
     ),
     vanilla = c(
       verify_close(),
-      condition_allocation(),
+      #condition_allocation(),
       check_other()
     ),
     path = here("inst", "jspsych"),
