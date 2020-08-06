@@ -29,6 +29,8 @@ the_plan <-
     choice_plot = plot_choice(data),
     portfolio_binary_plot = plot_portfolio_binary(data),
     portfolio_number_plot = plot_portfolio_number(data),
+    analysis_ttest = get_analysis_ttest(data),
+    analysis_glmer = get_analysis_glmer(data),
     memo_materials = target(
       command = {
         render(knitr_in(!!here("doc",
