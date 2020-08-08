@@ -5,16 +5,16 @@
 ##' @export
 get_analysis_ttest <- function(data) {
 
-  data_proportion <- c("absent", "separate") %>%
+  data_proportion <- c("absent_naive", "separate.*naive", "separate_absent") %>%
     map(~ data %>%
-          nest_by(subject, presentation, distribution, proportion) %>%
-          unite("condition", presentation, distribution) %>%
+          nest_by(subject, presentation, distribution, awareness, proportion) %>%
+          unite("condition", presentation, distribution, awareness) %>%
           mutate(across(condition, ~ .x %>%
                           as.factor() %>%
-                          fct_relevel("separate_present"))) %>%
+                          fct_relevel("separate_present_naive"))) %>%
           filter(condition %>%
                    str_detect(.x))) %>%
-    set_names("presentation", "distribution")
+    set_names("presentation", "distribution", "awareness")
 
   t <- data_proportion %>%
     map(~ .x %>%
