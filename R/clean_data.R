@@ -93,7 +93,7 @@ clean_data <- function(data_raw) {
     unnest(data) %>%
     ungroup()
 
-  get_prolific_id(data)
+  get_prolific_id(data, from_date = "2020-08-07")
 
   return(data)
 
