@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_analysis_ttest <- function(data) {
+get_analysis_proportion <- function(data) {
 
   data_proportion <- c("absent_naive", "separate.*naive", "separate_absent") %>%
     map(~ data %>%
@@ -26,11 +26,11 @@ get_analysis_ttest <- function(data) {
           count(condition) %>%
           pull(n))
 
-  analysis_ttest <- t %>%
+  analysis_proportion <- t %>%
     map2(n, ~ d.ind.t.t(.x, .y[1], .y[2]) %>%
            .[c("estimate", "statistic")] %>%
            str_c(collapse = ", "))
 
-  return(analysis_ttest)
+  return(analysis_proportion)
 
 }

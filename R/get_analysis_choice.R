@@ -22,10 +22,10 @@ get_analysis_glmer <- function(data) {
 
   model_awareness <- glmer(choice ~ awareness + (1 | id), family = binomial, data = data_awareness)
 
-  analysis_glmer <- c(model_presentation, model_distribution, model_awareness) %>%
+  analysis_choice <- c(model_presentation, model_distribution, model_awareness) %>%
     map(apa_print) %>%
     set_names("presentation", "distribution", "awareness")
 
-  return(analysis_glmer)
+  return(analysis_choice)
 
 }
