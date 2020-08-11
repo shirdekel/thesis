@@ -1,5 +1,5 @@
 ---
-title             : "Aggregation Experiment 2 - Summary"
+title             : "Aggregation Experiment 2 - Results summary"
 shorttitle        : ""
 
 note              : Created `r format(Sys.time())`
@@ -22,8 +22,10 @@ output:
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 loadd(descriptives)
-loadd(analysis_proportion)
-loadd(analysis_choice)
+loadd(results_proportion)
+loadd(results_choice)
+loadd(results_portfolio_binary)
+loadd(results_portfolio_number)
 ```
 
 ```{r allocation}
@@ -33,29 +35,56 @@ descriptives$allocation %>%
 
 # Results
 
-There are two ways that I can see of analysing these data: as binary choice per trial (using logistic regression), or as proportions of choice per participant (using t-test). The logistic regression should theoretically account for more variance than the t-test, but the estimates are less interpretable.
+Overall, it seems as though nothing from Experiment 1 replicated, but the distribution effect was significant.
 
-Figures\ \@ref(fig:plot-choice) and\ \@ref(fig:plot-proportion) show the choice and proportion data, respectively. The difference between presentation conditions was not significant, both in the logistic regression `r analysis_choice$presentation$full_result$presentationjoint`, and in the t-test, `r analysis_proportion$presentation`. However, those that that saw a distribution tended to choose to invest significantly more than those that did not see a distribution, seen both in the logistic regression, `r analysis_choice$distribution$full_result$distributionpresent`, and the t-test `r analysis_proportion$distribution`.
+## Project investment
 
-```{r plot-choice, fig.cap = "Choice data"}
-readd(choice_plot)
+There are two ways that I can see of analysing the project investment data: as binary choice per trial (using logistic regression), or as proportions of choice per participant (using t-test). The logistic regression should theoretically account for more variance than the t-test, but the estimates are less interpretable.
+
+Figures\ \@ref(fig:plot-choice-binary) and\ \@ref(fig:plot-choice-proportion) show the choice and proportion data, respectively. The difference between presentation conditions was not significant, both in the logistic regression `r results_choice$presentation$full_result[[2]]`, and in the t-test, `r results_proportion$presentation`. Similarly, the difference between awareness conditions was not significant, both in the logistic regression `r results_choice$awareness$full_result[[2]]`, and in the t-test, `r results_proportion$awareness`. However, those that that saw a distribution tended to choose to invest significantly more than those that did not see a distribution, seen both in the logistic regression, `r results_choice$distribution$full_result[[2]]`, and the t-test `r results_proportion$distribution`.
+
+```{r plot-choice-binary, fig.cap = "Mean project acceptance for the presentation, awareness, and distribution effects. Note, the condition on the left of each effect is the reference condition (separate presentation, naive awareness, distribution absent). As such, it is identical for the three effects."}
+readd(choice_binary_plot)
 ```
 
-```{r plot-proportion, fig.cap = "Proportion data"}
-readd(proportion_plot)
+```{r plot-choice-proportion, fig.cap = "Mean proportion of project acceptance for the presentation, awareness, and distribution effects. Note, the condition on the left of each effect is the reference condition (separate presentation, naive awareness, distribution absent). As such, it is identical for the three effects."}
+readd(choice_proportion_plot)
 ```
 
-```{r plot-portfolio-number, fig.cap = "Portfolio number data"}
-readd(portfolio_number_plot)
+Further, as Figure\ \@ref(fig:plot-awareness-trials) shows, it doesn't seem as if the previous awareness by trial effect was replicated.
+
+```{r plot-awareness-trials, fig.cap = "Mean project acceptance for separate presentation, distribution absent condition, by awareness and trial."}
+readd(awareness_trials_plot)
 ```
 
-```{r plot-portfolio-binary, fig.cap = "Portfolio binary data"}
+## Follow-up
+
+We asked participants how many projects they think they saw. Figure\ \@ref(fig:plot-project-number) shows that overall people to correctly estimate the number of projects, with more accuracy for those in the aware condition.
+
+```{r plot-project-number, fig.cap = "Number of projects participants reported seeing, by condition"}
+readd(project_number_plot)
+```
+
+Participants were then asked if they would rather invest in all or none of the projects. As Figure\ \@ref(fig:plot-portfolio-binary) shows, the difference between presentation conditions was not significant, `r results_portfolio_binary$presentation$full_result[[2]]`. However those that were told how many projects they were going to see, chose to invest in all 10 projects significantly more than those that were not told how many projects they will see, `r results_portfolio_binary$awareness$full_result[[2]]`. Further, those that that saw a distribution chose to invest in all 10 projects significantly more than those that did not see a distribution, `r results_portfolio_binary$distribution$full_result[[2]]`. 
+
+```{r plot-portfolio-binary, fig.cap = "Mean choice of investing in all 10 projects for the presentation, awareness, and distribution effects. Note, the condition on the left of each effect is the reference condition (separate presentation, naive awareness, distribution absent). As such, it is identical for the three effects."}
 readd(portfolio_binary_plot)
 ```
 
-\newpage
+Subsequently, we asked participants how many projects they would invest in out of the 10 that they saw. As Figure\ \@ref(fig:plot-portfolio-number) shows, the difference between presentation conditions was not significant, `r results_portfolio_number$presentation`. However those that were told how many projects they were going to see, chose to invest in significantly more projects than those that were not told how many projects they will see, `r results_portfolio_number$awareness`. Further, those that that saw a distribution chose to invest in significantly more projects than those that did not see a distribution, `r results_portfolio_number$distribution`. 
 
-# References
+```{r plot-portfolio-number, fig.cap = "Mean number of projects chosen in the follow-up for the presentation, awareness, and distribution effects. Note, the condition on the left of each effect is the reference condition (separate presentation, naive awareness, distribution absent). As such, it is identical for the three effects."}
+readd(portfolio_number_plot)
+```
 
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
+## Gambles
+
+Figures\ \@ref(fig:plot-trials) and\ \@ref(fig:plot-gamble-values) show the overall people seemed to prefer gambles with higher probabilities of gain, sometimes regardless of expected value or value of the gain.
+
+```{r plot-trials, fig.cap = "Mean project acceptance for the 10 gambles. The format of the labels indicate: (gain probability, gain value; loss probability, loss value)."}
+readd(trials_plot)
+```
+
+```{r plot-gamble-values, fig.cap = "Mean project acceptance for the gambles' expected value, positive probability, and positive outcome."}
+readd(gamble_values_plot)
+```

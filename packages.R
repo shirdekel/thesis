@@ -19,5 +19,6 @@ library(papaja)
 library(janitor)
 library(MOTE)
 library(lme4)
+library(patchwork)
 
 conflict_prefer("filter", "dplyr")
