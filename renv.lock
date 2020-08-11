@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.0.1",
+    "Version": "4.0.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -308,8 +308,8 @@
       "RemoteRepo": "broom",
       "RemoteUsername": "tidymodels",
       "RemoteRef": "master",
-      "RemoteSha": "762e3adb26c1515fb3cc0c2b86228dfa62d8086b",
-      "Hash": "3a61b3508ac0dfb495158256e6a2a497"
+      "RemoteSha": "a0bb1054bac904381f306d84f385bd0b2de6c7b1",
+      "Hash": "6be3d70d53b813dabd75dba61913a1e5"
     },
     "caTools": {
       "Package": "caTools",
@@ -1074,10 +1074,10 @@
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "papaja",
-      "RemoteUsername": "crsh",
-      "RemoteRef": "master",
-      "RemoteSha": "0457653be4f854fd3e981088b69479dbcf8bcef5",
-      "Hash": "f56940d251e96f13e8629d808b29d891"
+      "RemoteUsername": "mariusbarth",
+      "RemoteRef": "devel",
+      "RemoteSha": "444af19e23ab83f71679951dc79fc4cb646bcd89",
+      "Hash": "e68cd48128027467aff483b924d19294"
     },
     "pbapply": {
       "Package": "pbapply",
