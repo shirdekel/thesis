@@ -82,16 +82,35 @@ clean_data <- function(data_raw) {
              dmy_hms(tz = "Australia/Sydney"),
            total_time = max(time_elapsed)/60000, # Milliseconds to minutes
            proportion = sum(choice)/10,
-           across(c(distribution, awareness, presentation), as.factor)) %>%
+           across(c(distribution, awareness, presentation), as.factor),
+           across(outcome_positive:probability_positive,
+                  as.numeric),
+           gamble = str_c("(",
+                          probability_positive,
+                          ", ",
+                          outcome_positive,
+                          "; ",
+                          1- probability_positive,
+                          ", ",
+                          outcome_positive - outcome_dif,
+                          ")") %>%
+             as.factor(),
+           get_restriction_values(probability_positive, outcome_positive) %>%
+             .[c("expected_value", "gain_loss_ratio")] %>%
+             as_tibble()) %>%
     ungroup() %>%
-    select(subject, experiment:presentation, stage:proportion) %>%
+    select(subject, experiment:presentation, stage:gain_loss_ratio) %>%
     inner_join(data_other, by = "subject") %>%
     inner_join(data_portfolio_binary, by = "subject") %>%
     filter(!str_detect(prolific, "test1234")) %>%
     nest_by(subject) %>%
     rowid_to_column("id") %>%
     unnest(data) %>%
-    ungroup()
+    ungroup() %>%
+    nest_by(subject, presentation, distribution, awareness, proportion) %>%
+    unite("condition", presentation, distribution, awareness, remove = FALSE) %>%
+    mutate(across(condition, as.factor)) %>%
+    unnest(data)
 
   get_prolific_id(data, from_date = "2020-08-07")
 
