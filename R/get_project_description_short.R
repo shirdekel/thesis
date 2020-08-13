@@ -1,4 +1,4 @@
-##' @title Get project description
+##' @title Get short project description
 ##'
 ##' @param project_name
 ##' @param gambles
@@ -7,7 +7,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_description <- function(gambles,
+get_project_description_short <- function(gambles,
                                     project_name,
                                     project_type) {
 
