@@ -6,7 +6,7 @@ the_plan <-
     projects_short = get_projects_short(gambles),
     projects_long = get_projects_long(gambles),
     experiment_pre = get_experiment_pre(),
-    experiment_main = get_experiment_main(projects),
+    experiment_main = get_experiment_main(projects_short),
     experiment_post = get_experiment_post(),
     experiment = target({
       get_experiment(
