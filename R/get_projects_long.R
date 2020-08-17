@@ -1,34 +1,48 @@
 ##' @title Get long projects
 ##'
 ##' @param gambles
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 get_projects_long <- function(gambles) {
 
-  detail <-
-    get_project_detail_long_detail()
+  label_similarity <- c("similarity_low", "similarity_high")
 
-  project_detail_long <-
-    detail %>%
-    transpose() %>%
-    map(get_project_detail_long)
+  project_long_detail_components <-
+    get_project_long_detail_components()
+
+  project_long_detail <-
+    get_project_long_detail(project_long_detail_components)
+
+  project_long_components <-
+    list(
+      get_project_long_components(),
+      get_project_long_components() %>%
+        transpose() %>%
+        simplify()
+    ) %>%
+    set_names(label_similarity)
 
 
-  project_description <-
-    project_detail_long %>%
-    map(
-      ~ gambles %>%
-        get_project_description_long(.x)
+  project_description_long_similarity <-
+    get_project_description_long_similarity(gambles,
+                                            project_long_detail,
+                                            project_long_components,
+                                            label_similarity)
+
+  project_input_long_similarity <-
+    get_project_input_long_similarity(gambles,
+                                      project_long_detail_components,
+                                      project_long_components,
+                                      label_similarity)
+
+  projects_long <-
+    list(
+      description = project_description_long_similarity,
+      input = project_input_long_similarity
     )
 
-  project_input <-
-    get_project_input(
-      project_detail_long$type,
-      gambles
-    )
-
-  return(list(description = project_description,
-              input = project_input))
+  return(projects_long)
 
 }

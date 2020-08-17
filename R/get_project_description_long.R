@@ -1,12 +1,13 @@
 ##' @title Get long project descriptions
 ##'
 ##' @param gambles
-##' @param project_detail_long
+##' @param project_long_components
+##' @param project_long_detail
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_description_long <- function(gambles, project_detail_long) {
+get_project_description_long <- function(gambles, project_long_components, project_long_detail) {
 
   outcome_negative <-
     gambles$outcome_dif - gambles$outcome_positive_restricted_sample
@@ -32,26 +33,26 @@ get_project_description_long <- function(gambles, project_detail_long) {
 
   project_description_long <-
     str_c(
-      project_detail_long$name,
+      project_long_components$name,
       " is a business in your company that proposes to construct ",
-      project_detail_long$type %>%
+      project_long_components$type %>%
         map_chr(getindefinite),
       " ",
-      project_detail_long$type,
+      project_long_components$type,
       " project. That is, they want to ",
-      project_detail_long$detail,
+      project_long_detail,
       ". Their research team has been investigating ",
-      project_detail_long$investigation,
+      project_long_components$investigation,
       ". Due to ",
-      project_detail_long$cost_explanation,
+      project_long_components$cost_explanation,
       ", they forecast the entire project to cost $",
       outcome_negative,
       " million. The company would make $",
       gambles$outcome_dif,
       " million if the forecasted ",
-      project_detail_long$forecast_details,
+      project_long_components$forecast_details,
       ". ",
-      project_detail_long$analysis_details,
+      project_long_components$analysis_details,
       " suggest that there is a ",
       prob_positive,
       "% chance of these forecasts being accurate. Therefore, ",
