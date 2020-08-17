@@ -14,12 +14,16 @@ get_experiment <- function(...) {
       experiment = "aggregation_exp2",
       sample = "prolific",
       distribution = insert_javascript("'absent'"), # Add [1] to extract capture group
-      awareness = insert_javascript("'aware'"),
-      presentation = insert_javascript("'separate'")
+      awareness = insert_javascript("'naive'"),
+      presentation = insert_javascript("'joint'"),
+      similarity = insert_javascript("'high'"),
+      project_variation = str_c(1:10, collapse = ", ") %>%
+        str_c("jsPsych.randomization.sampleWithReplacement([", ., "], 1)") %>%
+      insert_javascript()
     ),
     vanilla = c(
       verify_close(),
-      #condition_allocation(),
+      # condition_allocation(),
       check_other()
     ),
     path = here("inst", "jspsych"),
@@ -30,7 +34,7 @@ get_experiment <- function(...) {
       str_extract("(.*.png)") %>%
       na.omit() %>%
       insert_resource(),
-    on_finish = save_psychserver()
+    on_finish = save_locally()
   )
 
   return(experiment)
