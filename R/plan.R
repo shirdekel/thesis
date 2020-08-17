@@ -10,7 +10,7 @@ the_plan <-
     experiment_post = get_experiment_post(),
     experiment = target({
       get_experiment(
-        experiment_pre,
+        # experiment_pre,
         experiment_main,
         experiment_post
       )
@@ -82,6 +82,20 @@ the_plan <-
           "doc",
           "aggregation_exp2_summary",
           "aggregation_exp2_summary.pdf"
+        ))
+      }
+    ),
+    memo_projects_long = target(
+      command = {
+        render(knitr_in(!!here(
+          "doc",
+          "aggregation_exp2_projects_long",
+          "aggregation_exp2_projects_long.Rmd"
+        )))
+        file_out(!!here(
+          "doc",
+          "aggregation_exp2_projects_long",
+          "aggregation_exp2_projects_long.pdf"
         ))
       }
     )
