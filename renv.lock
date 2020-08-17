@@ -1079,6 +1079,18 @@
       "RemoteSha": "444af19e23ab83f71679951dc79fc4cb646bcd89",
       "Hash": "e68cd48128027467aff483b924d19294"
     },
+    "patchwork": {
+      "Package": "patchwork",
+      "Version": "1.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "patchwork",
+      "RemoteUsername": "thomasp85",
+      "RemoteRef": "master",
+      "RemoteSha": "012fb8bb7ba07d3ba4717536e43471828dca61fb",
+      "Hash": "8926b2b0f38d19890ed4121ad1d25330"
+    },
     "pbapply": {
       "Package": "pbapply",
       "Version": "1.4-2",
