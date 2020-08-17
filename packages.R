@@ -22,3 +22,4 @@ library(lme4)
 library(patchwork)
 
 conflict_prefer("filter", "dplyr")
+conflict_prefer("flatten", "purrr")
