@@ -1,5 +1,3 @@
-##' @param detail
-##'
 ##' @title Get details for long projects
 ##'
 ##' Names generated from namelix.com
@@ -7,7 +5,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_detail_long <- function(detail) {
+get_project_long_components <- function() {
 
   name <-
     c(
@@ -93,17 +91,17 @@ get_project_detail_long <- function(detail) {
       "A study of the geotechnical risk and local regulations, and an analysis of the property market for previous similar properties"
     )
 
-  project_detail_long <-
+  project_long_components <-
     list(
       name = name,
       type = type,
-      detail = detail,
+      # detail = project_long_detail,
       investigation = investigation,
       cost_explanation = cost_explanation,
       forecast_details = forecast_details,
       analysis_details = analysis_details
     )
 
-  return(project_detail_long)
+  return(project_long_components)
 
 }

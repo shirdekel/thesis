@@ -1,8 +1,9 @@
-##' @title Get detail line
+##' @title Get long project detail components
+
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_detail_long_detail <- function() {
+get_project_long_detail_components <- function() {
 
   well_type <-
     c(
@@ -11,7 +12,7 @@ get_project_detail_long_detail <- function() {
     ) %>%
     rep(5)
 
-  oil_location <-
+  location <-
     c(
       "Houston, US",
       "Kuala Lumpur, Malaysia",
@@ -26,16 +27,12 @@ get_project_detail_long_detail <- function() {
     )
 
   oil <-
-    str_c(
-      "establish an exploration site at an",
-      well_type,
-      " location in",
-      oil_location,
-      " in order to see if the hydrocarbon supply is sufficient to establish a more permanent well",
-      sep = " "
-    )
+    lst(
+    well_type = well_type,
+    location = location
+  )
 
-  microchip_market <-
+  microchip <-
     c(
       "personal computer",
       "smartphone",
@@ -49,15 +46,7 @@ get_project_detail_long_detail <- function() {
       "GPS tracking device"
     )
 
-  microchip <-
-    str_c(
-      "develop a new type of Integrated Circuit (IC) with a higher complexity than those in the current",
-      microchip_market,
-      "market",
-      sep = " "
-    )
-
-  music_market <-
+  record_deal <-
     c(
       "hip hop",
       "classical",
@@ -71,15 +60,7 @@ get_project_detail_long_detail <- function() {
       "latin"
     )
 
-  record_deal <-
-    str_c(
-      "sign a new recording artist for their",
-      music_market,
-      "music market",
-      sep = " "
-    )
-
-  export_market <-
+  shipping_logistics <-
     c(
       "motorbike",
       "wheat",
@@ -93,15 +74,7 @@ get_project_detail_long_detail <- function() {
       "wool"
     )
 
-  shipping_logistics <-
-    str_c(
-      "develop a new shipping route for a",
-      export_market,
-      "export market.",
-      sep = " "
-    )
-
-  restaurant_type <-
+  restaurant_chain <-
     c(
       "italian",
       "burger",
@@ -115,15 +88,7 @@ get_project_detail_long_detail <- function() {
       "buffet"
     )
 
-  restaurant_chain <-
-    str_c(
-      "develop a new franchise of",
-      restaurant_type,
-      "restaurants",
-      sep = " "
-    )
-
-  newspaper_topic <-
+  national_newspaper <-
     c(
       "electronics",
       "politics",
@@ -137,14 +102,7 @@ get_project_detail_long_detail <- function() {
       "foreign affairs"
     )
 
-  national_newspaper <-
-    str_c(
-      "develop a new nationally-distributed newspaper about",
-      newspaper_topic,
-      sep = " "
-    )
-
-  disease <-
+  pharmaceutical <-
     c(
       "leukaemia",
       "anaemia",
@@ -158,14 +116,7 @@ get_project_detail_long_detail <- function() {
       "Chronic kidney disease"
     )
 
-  pharmaceutical <-
-    str_c(
-      "develop a new pharmaceutical drug to help treat",
-      disease,
-      sep = " "
-    )
-
-  railway_location <-
+  railway <-
     c(
       "Guangdong, China",
       "Uttar Pradesh, India",
@@ -179,14 +130,7 @@ get_project_detail_long_detail <- function() {
       "Oaxaca, Mexico"
     )
 
-  railway <-
-    str_c(
-      "develop a new railway line in",
-      railway_location,
-      sep = " "
-    )
-
-  gmo_product <-
+  gmo <-
     c(
       "potato crop enriched with Vitamin A",
       "tomato crop that induces a Hepatitis B immune response",
@@ -198,13 +142,6 @@ get_project_detail_long_detail <- function() {
       "virus resistant orange",
       "sunflower oil with healthier fatty acid composition",
       "bacteria for clean fuel development"
-    )
-
-  gmo <-
-    str_c(
-      "develop a new genetically modified",
-      gmo_product,
-      sep = " "
     )
 
   storeys <-
@@ -227,19 +164,13 @@ get_project_detail_long_detail <- function() {
     )
 
   high_rise_construction <-
-    str_c(
-      "develop a new",
-      str_c(
-        storeys,
-        "-storey high-rise with a"
-      ),
-      structural_system,
-      "structural system",
-      sep = " "
+    lst(
+      storeys,
+      structural_system
     )
 
-  project_detail_long_detail <-
-    list(
+  project_long_detail_components <-
+    lst(
       oil,
       microchip,
       record_deal,
@@ -252,6 +183,6 @@ get_project_detail_long_detail <- function() {
       high_rise_construction
     )
 
-  return(project_detail_long_detail)
+  return(project_long_detail_components)
 
 }
