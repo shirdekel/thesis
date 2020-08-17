@@ -36,7 +36,7 @@ get_project_long_detail <- function(project_long_detail_components) {
     str_c(
       "develop a new shipping route for a",
       project_long_detail_components$shipping_logistics,
-      "export market.",
+      "export market",
       sep = " "
     )
 
