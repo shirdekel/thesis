@@ -16,21 +16,6 @@ get_project_description_long <- function(gambles, project_long_components, proje
   prob_negative <-
     100 - prob_positive
 
-  bold <-
-    str_c(
-      "there is ",
-      prob_positive,
-      "% chance of gaining $",
-      gambles$outcome_positive_restricted_sample,
-      " million and a ",
-      prob_negative,
-      "% chance of losing $",
-      outcome_negative,
-      " million on the investment.") %>%
-    map_chr(~tags$strong(.x) %>%
-              as.character()
-    )
-
   project_description_long <-
     str_c(
       project_long_components$name,
@@ -55,8 +40,15 @@ get_project_description_long <- function(gambles, project_long_components, proje
       project_long_components$analysis_details,
       " suggest that there is a ",
       prob_positive,
-      "% chance of these forecasts being accurate. Therefore, ",
-      bold
+      "% chance of these forecasts being accurate. Therefore, there is ",
+      prob_positive,
+      "% chance of gaining $",
+      gambles$outcome_positive_restricted_sample,
+      " million and a ",
+      prob_negative,
+      "% chance of losing $",
+      outcome_negative,
+      " million on the investment."
     )
 
   return(project_description_long)
