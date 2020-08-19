@@ -8,7 +8,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_questions_joint <- function(project_description, form_options, project_input) {
+get_questions_joint <- function(project_description, form_options = c("Yes", "No"), project_input) {
 
   questions_joint <- project_description %>%
     map2(project_input, ~question_multi(
