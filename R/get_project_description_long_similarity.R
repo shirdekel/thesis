@@ -24,13 +24,8 @@ get_project_description_long_similarity <- function(gambles,
         get_project_description_long(
           .x,
           .y
-        ) %>%
-      map(
-        ~.x %>%
-          set_names(str_c("variation", 1:10))
-      )
-    ) %>%
-    set_names(names(project_long_detail))
+        )
+    )
 
   project_description_long_similarity_low <-
     project_long_detail %>%
@@ -40,13 +35,8 @@ get_project_description_long_similarity <- function(gambles,
         get_project_description_long(
           project_long_components$similarity_low,
           .x
-        ) %>%
-        map(
-          ~.x %>%
-            set_names(names(project_long_detail))
         )
-    ) %>%
-    set_names(str_c("variation", 1:10))
+    )
 
   project_description_long_similarity <-
     list(
