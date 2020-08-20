@@ -30,8 +30,10 @@ get_project_input_long_similarity <- function(gambles,
         project_long_components$similarity_low$type,
         .x,
         gambles
-      )
-    )
+      ) %>%
+        set_names(names(project_long_detail_components))
+    ) %>%
+    set_names(str_c("variation", 1:10))
 
   project_input_long_similarity_high <-
     project_long_components$similarity_high %>%
@@ -41,8 +43,10 @@ get_project_input_long_similarity <- function(gambles,
         .x$type,
         .y,
         gambles
-      )
-    )
+      ) %>%
+        set_names(str_c("variation", 1:10))
+    ) %>%
+    set_names(names(project_long_detail_components))
 
   project_input_long_similarity <-
     list(
