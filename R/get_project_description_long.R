@@ -18,16 +18,20 @@ get_project_description_long <- function(gambles, project_long_components, proje
 
   project_description_long <-
     project_long_section %>%
-    transpose() %>%
+    latin_list() %>%
     map(
-      ~ str_c(
-        .,
-        collapse = ". "
-      ) %>%
-        str_c(".")
-    )
+      ~ .x %>%
+        transpose() %>%
+        map_chr(
+          ~ str_c(
+            .,
+            collapse = ". "
+          ) %>%
+            str_c(".")
+        )
+    ) %>%
+    set_names(str_c("latin_section", 1:4))
 
   return(project_description_long)
-
 
 }

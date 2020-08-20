@@ -28,6 +28,9 @@ get_trial_distribution_absent <- function(projects_long,
                                    project_input = .y)
         )
     )
+  latin_section <-
+    1:length(projects_long$description$similarity_low$variation1) %>%
+    as.numeric()
 
   trial_joint_distribution_absent <-
     list(

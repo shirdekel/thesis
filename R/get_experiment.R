@@ -15,9 +15,12 @@ get_experiment <- function(...) {
       sample = "prolific",
       distribution = insert_javascript("'absent'"), # Add [1] to extract capture group
       awareness = insert_javascript("'naive'"),
-      presentation = insert_javascript("'joint'"),
+      presentation = insert_javascript("'separate'"),
       similarity = insert_javascript("'high'"),
-      project_variation = str_c(1:10, collapse = ", ") %>%
+      project_variation = str_c(1, collapse = ", ") %>%
+        str_c("jsPsych.randomization.sampleWithReplacement([", ., "], 1)") %>%
+      insert_javascript(),
+      latin_section = str_c(1, collapse = ", ") %>%
         str_c("jsPsych.randomization.sampleWithReplacement([", ., "], 1)") %>%
       insert_javascript()
     ),
