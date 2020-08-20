@@ -15,9 +15,11 @@ get_project_description_long_similarity <- function(gambles,
                                                     label_similarity) {
 
   project_description_long_similarity_high <-
-    project_long_components$similarity_high %>%
-    map2(
-      project_long_detail,
+    list(
+      project_long_components$similarity_high,
+      project_long_detail
+    ) %>%
+    pmap(
       ~ gambles %>%
         get_project_description_long(
           .x,

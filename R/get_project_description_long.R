@@ -14,23 +14,13 @@ get_project_description_long <- function(gambles, project_long_components, proje
       gambles,
       project_long_components,
       project_long_detail
-    )
+    ) %>%
+    transpose() %>%
+    map(unlist)
 
   project_description_long <-
     project_long_section %>%
-    latin_list() %>%
-    map(
-      ~ .x %>%
-        transpose() %>%
-        map_chr(
-          ~ str_c(
-            .,
-            collapse = ". "
-          ) %>%
-            str_c(".")
-        )
-    ) %>%
-    set_names(str_c("latin_section", 1:4))
+    map(shuffle_project_long_section)
 
   return(project_description_long)
 

@@ -14,29 +14,23 @@ get_trial_distribution_absent <- function(projects_long) {
     str_match(".*_(.*)") %>%
     .[, 2]
 
-  # For both within- and between-domain variation
+  # For both within- and between-industry variation
   project_variation <-
     1:length(projects_long$description$similarity_low) %>%
-    as.numeric()
-
-  latin_section <-
-    1:length(projects_long$description$similarity_low$variation1) %>%
     as.numeric()
 
   trial_joint_distribution_absent <-
     get_trial_joint_distribution_absent(
       projects_long,
       similarity_condition,
-      project_variation,
-      latin_section
+      project_variation
     )
 
   trial_separate_distribution_absent <-
     get_trial_separate_distribution_absent(
       projects_long,
       similarity_condition,
-      project_variation,
-      latin_section
+      project_variation
     )
 
   trial_distribution_absent <-
