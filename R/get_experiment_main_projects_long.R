@@ -26,11 +26,10 @@ get_experiment_main_projects_long <- function(projects_long) {
     ) %>%
     append(
       list(
-        # trial_distribution_absent$separate$similarity_low,
-        trial_distribution_absent$separate$similarity_high[[1]][[1]]
-      )
-        # flatten() %>%
-        # flatten()
+        trial_distribution_absent$separate$similarity_low,
+        trial_distribution_absent$separate$similarity_high
+      ) %>%
+        flatten()
     ) %>%
     build_timeline() %>%
     flatten()
