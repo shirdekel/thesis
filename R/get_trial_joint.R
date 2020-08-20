@@ -7,7 +7,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_joint <- function(preamble, questions_joint, distribution) {
+get_trial_joint <- function(preamble = "<p>Indicate below whether you would invest in the following:</p>", questions_joint, distribution) {
 
   trial_joint <- trial_survey_multi_choice(
     preamble = preamble,
