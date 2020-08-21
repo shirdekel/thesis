@@ -20,8 +20,16 @@ get_experiment3 <- function(gambles) {
       experiment = "aggregation_exp3",
       sample = "prolific",
       similarity = insert_javascript("similarity_condition"),
-      project_variation = str_c(1:10, collapse = ", ") %>%
-        str_c("jsPsych.randomization.sampleWithReplacement([", ., "], 1)") %>%
+      distribution = insert_javascript("'absent'"),
+      awareness = insert_javascript("'naive'"),
+      presentation = insert_javascript("'separate'"),
+      project_variation = 1:10 %>%
+        str_c(collapse = ", ") %>%
+        str_c(
+          "jsPsych.randomization.sampleWithReplacement([",
+          .,
+          "], 1)"
+        ) %>%
         insert_javascript()
     ),
     vanilla = c(
