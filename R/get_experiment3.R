@@ -32,7 +32,7 @@ get_experiment3 <- function(gambles) {
       # condition_allocation(),
       check_other()
     ),
-    path = here("inst", "jspsych"),
+    path = here("inst", "jspsych", "experiment3"),
     experiment_title = "Business decision-making",
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%

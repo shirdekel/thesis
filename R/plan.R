@@ -4,9 +4,9 @@ the_plan <-
     gambles = get_gambles(restricted_values),
     gambles_plot = plot_gambles(gambles),
     projects_short = get_projects_short(gambles),
-    experiment = target({
+    experiment3 = target({
       get_experiment3(gambles)
-      file_out(!!here("inst", "jspsych", "experiment", "experiment.js"))
+      file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
     }),
     data_directory_local = target(
       here("inst", "jspsych", "data"),
