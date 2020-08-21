@@ -25,10 +25,7 @@ get_main_experiment3 <- function(projects_experiment3) {
       trial_naive
     ) %>%
     append(
-      list(
-        trials_experiment3$separate$similarity_low,
-        trials_experiment3$separate$similarity_high
-      ) %>%
+        trials_experiment3 %>%
         flatten()
     ) %>%
     build_timeline() %>%

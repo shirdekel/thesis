@@ -18,24 +18,30 @@ get_trials_experiment3 <- function(projects_experiment3) {
     1:length(projects_experiment3$description$similarity_low) %>%
     as.numeric()
 
-  trials_joint_experiment3 <-
-    get_trials_joint_experiment3(
-      projects_experiment3,
-      similarity_condition,
-      project_variation
-    )
-
-  trials_separate_experiment3 <-
-    get_trials_separate_experiment3(
-      projects_experiment3,
-      similarity_condition,
-      project_variation
-    )
-
   trials_experiment3 <-
-    list(
-      joint = trials_joint_experiment3,
-      separate = trials_separate_experiment3
+    c(
+      projects_experiment3,
+      list(similarity_condition)
+    ) %>%
+    pmap(
+      function(description_similarity, input_similarity, similarity_condition_value)
+        list(
+          description_similarity,
+          input_similarity,
+          project_variation
+        ) %>%
+        pmap(
+          function(description_variation, input_variation, project_variation_value)
+            get_trial_separate(
+              project_description = description_variation,
+              project_input = input_variation,
+              distribution = "absent"
+            ) %>%
+            build_timeline() %>%
+            display_if(fn_data_condition(similarity == !!similarity_condition_value)) %>%
+            build_timeline() %>%
+            display_if(fn_data_condition(project_variation == !!project_variation_value))
+        )
     )
 
   return(trials_experiment3)
