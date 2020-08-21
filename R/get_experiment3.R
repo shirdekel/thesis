@@ -17,7 +17,7 @@ get_experiment3 <- function(gambles) {
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
       subject = insert_javascript("jsPsych.randomization.randomID(15)"),
-      experiment = "aggregation_exp2",
+      experiment = "aggregation_exp3",
       sample = "prolific",
       distribution = insert_javascript("'absent'"), # Add [1] to extract capture group
       awareness = insert_javascript("'naive'"),
