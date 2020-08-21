@@ -1,19 +1,19 @@
 ##' @title Get separate trials for long projects
 ##'
-##' @param projects_long
 ##' @param similarity_condition
 ##' @param project_variation
+##' @param projects_experiment3
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_separate_distribution_absent <- function(projects_long,
-                                                   similarity_condition,
-                                                   project_variation) {
+get_trials_separate_experiment3 <- function(projects_experiment3,
+                                            similarity_condition,
+                                            project_variation) {
 
-  trial_separate_distribution_absent <-
+  trials_separate_experiment3 <-
     c(
-      projects_long,
+      projects_experiment3,
       list(similarity_condition)
     ) %>%
     pmap(
@@ -37,6 +37,6 @@ get_trial_separate_distribution_absent <- function(projects_long,
         )
     )
 
-  return(trial_separate_distribution_absent)
+  return(trials_separate_experiment3)
 
 }

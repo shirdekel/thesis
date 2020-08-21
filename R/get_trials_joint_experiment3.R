@@ -1,18 +1,18 @@
 ##' @title Get joint trials for long projects
 ##'
-##' @param projects_long
+##' @param projects_experiment3
 ##' @param similarity_condition
 ##' @param project_variation
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_joint_distribution_absent <- function(projects_long,
-                                                similarity_condition,
-                                                project_variation) {
+get_trials_joint_experiment3 <- function(projects_experiment3,
+                                         similarity_condition,
+                                         project_variation) {
 
   questions_joint <-
-    projects_long %>%
+    projects_experiment3 %>%
     pmap(
       function(description_similarity, input_similarity)
         list(description_similarity, input_similarity) %>%
@@ -25,7 +25,7 @@ get_trial_joint_distribution_absent <- function(projects_long,
         )
     )
 
-  trial_joint_distribution_absent <-
+  trials_joint_experiment3 <-
     list(
       questions_joint,
       similarity_condition
@@ -49,6 +49,6 @@ get_trial_joint_distribution_absent <- function(projects_long,
         )
     )
 
-  return(trial_joint_distribution_absent)
+  return(trials_joint_experiment3)
 
 }

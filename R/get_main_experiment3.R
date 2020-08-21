@@ -14,9 +14,9 @@ get_main_experiment3 <- function(projects_experiment3) {
     get_trial_awareness("You will now see the projects.",
                         "naive")
 
-  trial_distribution_absent <-
-    get_trial_distribution_absent(
-      projects_long
+  trials_experiment3 <-
+    get_trials_experiment3(
+      projects_experiment3
     )
 
   main_experiment3 <-
@@ -26,8 +26,8 @@ get_main_experiment3 <- function(projects_experiment3) {
     ) %>%
     append(
       list(
-        trial_distribution_absent$separate$similarity_low,
-        trial_distribution_absent$separate$similarity_high
+        trials_experiment3$separate$similarity_low,
+        trials_experiment3$separate$similarity_high
       ) %>%
         flatten()
     ) %>%
