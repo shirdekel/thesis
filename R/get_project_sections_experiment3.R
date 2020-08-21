@@ -38,12 +38,15 @@ get_project_sections_experiment3 <- function(gambles,
   cost <-
     str_c(
       str_c(
-        "Their research team has been investigating",
+        str_c(
+          project_components_experiment3$name,
+          "'s research team has been investigating"
+        ),
         project_components_experiment3$investigation,
         sep = " "
       ),
       str_c(
-        "Due to",
+        "Due to the",
         str_c(
           project_components_experiment3$cost_explanation,
           ", they forecast the entire project to cost $",
@@ -80,7 +83,7 @@ get_project_sections_experiment3 <- function(gambles,
 
   gamble <-
     str_c(
-      "To summarise, there is a",
+      "To summarise this investment, there is a",
       str_c(
         prob_positive,
         "% chance of gaining $",
