@@ -1,12 +1,13 @@
 ##' @title Get input-friendly components
-##' @param project_long_detail_components
+##' @param project_detail_components_experiment3
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_long_detail_components_input <- function(project_long_detail_components) {
+get_project_detail_components_input_experiment3 <- function(project_detail_components_experiment3) {
 
-  project_long_detail_components_input <-
-    project_long_detail_components %>%
+  project_detail_components_input_experiment3 <-
+    project_detail_components_experiment3 %>%
     map_if(is.list,
            ~ .x %>%
              transpose() %>%
@@ -16,6 +17,6 @@ get_project_long_detail_components_input <- function(project_long_detail_compone
           str_replace_all(" ", "-") %>%
           str_remove_all(","))
 
-  return(project_long_detail_components_input)
+  return(project_detail_components_input_experiment3)
 
 }

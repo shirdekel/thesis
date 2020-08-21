@@ -1,17 +1,13 @@
-##' .. content for \description{} (no empty lines) ..
-##'
-##' .. content for \details{} ..
-##'
-##' @title
+##' @title Get project sections E3
 ##' @param gambles
-##' @param project_long_components
-##' @param project_long_detail
+##' @param project_components_experiment3
+##' @param project_detail_experiment3
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_long_sections <- function(gambles,
-                                      project_long_components,
-                                      project_long_detail) {
+get_project_sections_experiment3 <- function(gambles,
+                                             project_components_experiment3,
+                                             project_detail_experiment3) {
 
   outcome_negative <-
     gambles$outcome_dif - gambles$outcome_positive_restricted_sample
@@ -23,17 +19,17 @@ get_project_long_sections <- function(gambles,
   intro <-
     str_c(
       str_c(
-        project_long_components$name,
+        project_components_experiment3$name,
         "is a business in your company that proposes to construct",
-        project_long_components$type %>%
+        project_components_experiment3$type %>%
           map_chr(getindefinite),
-        project_long_components$type,
+        project_components_experiment3$type,
         "project",
         sep = " "
       ),
       str_c(
         "That is, they want to",
-        project_long_detail,
+        project_detail_experiment3,
         sep = " "
       ),
       sep = ". "
@@ -43,13 +39,13 @@ get_project_long_sections <- function(gambles,
     str_c(
       str_c(
         "Their research team has been investigating",
-        project_long_components$investigation,
+        project_components_experiment3$investigation,
         sep = " "
       ),
       str_c(
         "Due to",
         str_c(
-          project_long_components$cost_explanation,
+          project_components_experiment3$cost_explanation,
           ", they forecast the entire project to cost $",
           outcome_negative
         ),
@@ -67,11 +63,11 @@ get_project_long_sections <- function(gambles,
           gambles$outcome_dif
         ),
         "million if the forecasted",
-        project_long_components$forecast_details,
+        project_components_experiment3$forecast_details,
         sep = " "
       ),
       str_c(
-        project_long_components$analysis_details,
+        project_components_experiment3$analysis_details,
         "suggest that there is a",
         str_c(
           prob_positive,
@@ -100,7 +96,7 @@ get_project_long_sections <- function(gambles,
       sep = " "
     )
 
-  project_long_section <-
+  project_sections_experiment3 <-
     list(
       intro,
       cost,
@@ -108,6 +104,6 @@ get_project_long_sections <- function(gambles,
       gamble
     )
 
-  return(project_long_section)
+  return(project_sections_experiment3)
 
 }

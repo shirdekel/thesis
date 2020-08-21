@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_long_detail_components <- function() {
+get_project_detail_components_experiment3 <- function() {
 
   well_type <-
     c(
@@ -169,7 +169,7 @@ get_project_long_detail_components <- function() {
       structural_system
     )
 
-  project_long_detail_components <-
+  project_detail_components_experiment3 <-
     lst(
       oil,
       microchip,
@@ -183,6 +183,6 @@ get_project_long_detail_components <- function() {
       high_rise_construction
     )
 
-  return(project_long_detail_components)
+  return(project_detail_components_experiment3)
 
 }

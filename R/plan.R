@@ -4,16 +4,8 @@ the_plan <-
     gambles = get_gambles(restricted_values),
     gambles_plot = plot_gambles(gambles),
     projects_short = get_projects_short(gambles),
-    projects_long = get_projects_long(gambles),
-    experiment_pre = get_experiment_pre(),
-    experiment_main = get_experiment_main_projects_long(projects_long),
-    experiment_post = get_experiment_post(),
     experiment = target({
-      get_experiment(
-        # experiment_pre,
-        experiment_main,
-        experiment_post
-      )
+      get_experiment3(gambles)
       file_out(!!here("inst", "jspsych", "experiment", "experiment.js"))
     }),
     data_directory_local = target(

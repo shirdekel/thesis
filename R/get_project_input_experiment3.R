@@ -3,26 +3,26 @@
 ##' To name questions
 ##'
 ##' @param gambles
-##' @param project_long_detail_components_input
 ##' @param type
+##' @param detail
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_input_long <- function(type,
-                                   project_long_detail_components_input,
-                                   gambles) {
+get_project_input_experiment3 <- function(type,
+                                          detail,
+                                          gambles) {
 
-  project_input_long <-
+  project_input_experiment3 <-
     type %>%
     str_replace_all(" ", "-") %>%
-    str_c(project_long_detail_components_input,
+    str_c(detail,
           gambles$outcome_positive_restricted_sample,
           gambles$outcome_dif,
           gambles$prob_positive_restricted_sample,
           sep = "_"
     )
 
-  return(project_input_long)
+  return(project_input_experiment3)
 
 }

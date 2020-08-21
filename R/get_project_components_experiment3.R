@@ -5,7 +5,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_long_components <- function() {
+get_project_components_experiment3 <- function() {
 
   name <-
     c(
@@ -91,17 +91,16 @@ get_project_long_components <- function() {
       "A study of the geotechnical risk and local regulations, and an analysis of the property market for previous similar properties"
     )
 
-  project_long_components <-
+  project_components_experiment3 <-
     list(
       name = name,
       type = type,
-      # detail = project_long_detail,
       investigation = investigation,
       cost_explanation = cost_explanation,
       forecast_details = forecast_details,
       analysis_details = analysis_details
     )
 
-  return(project_long_components)
+  return(project_components_experiment3)
 
 }

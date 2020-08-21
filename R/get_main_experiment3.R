@@ -1,11 +1,11 @@
 ##' @title Get main experiment trials
 
-##' @param projects_long
+##' @param projects_experiment3
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_main_projects_long <- function(projects_long) {
+get_main_experiment3 <- function(projects_experiment3) {
 
   instructions <-
     get_instructions()
@@ -19,7 +19,7 @@ get_experiment_main_projects_long <- function(projects_long) {
       projects_long
     )
 
-  experiment_main_projects_long <-
+  main_experiment3 <-
     list(
       instructions,
       trial_naive
@@ -34,6 +34,6 @@ get_experiment_main_projects_long <- function(projects_long) {
     build_timeline() %>%
     flatten()
 
-  return(experiment_main_projects_long)
+  return(main_experiment3)
 
 }
