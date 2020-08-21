@@ -3,7 +3,10 @@ the_plan <-
     restricted_values = get_restricted_values(),
     gambles = get_gambles(restricted_values),
     gambles_plot = plot_gambles(gambles),
-    projects_short = get_projects_short(gambles),
+    experiment2 = target({
+      get_experiment2(gambles)
+      file_out(!!here("inst", "jspsych", "experiment2", "experiment", "experiment.js"))
+    }),
     experiment3 = target({
       get_experiment3(gambles)
       file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
