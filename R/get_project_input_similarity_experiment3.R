@@ -29,7 +29,7 @@ get_project_input_similarity_experiment3 <- function(
   project_input_similarity_low_experiment3 <-
     map(
       project_detail_components_input_experiment3$similarity_low,
-      ~ get_project_input_experiment3(
+      ~ get_project_input(
         type = project_components_experiment3$similarity_low$type,
         detail = .x,
         gambles
@@ -40,7 +40,7 @@ get_project_input_similarity_experiment3 <- function(
     project_components_experiment3$similarity_high %>%
     map2(
       project_detail_components_input_experiment3$similarity_high,
-      ~ get_project_input_experiment3(
+      ~ get_project_input(
         type = .x$type,
         detail = .y,
         gambles = gambles

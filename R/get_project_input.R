@@ -1,18 +1,23 @@
-##' @title Get project inputs
+##' @title Get long project inputs
 ##'
 ##' To name questions
 ##'
-##' @param project_type
 ##' @param gambles
+##' @param type
+##' @param detail
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_input <- function(project_type,
+get_project_input <- function(type,
+                              detail = "",
                               gambles) {
 
-  project_input <- str_replace_all(project_type, " ", "-") %>%
-    str_c(gambles$outcome_positive_restricted_sample,
+  project_input <-
+    type %>%
+    str_replace_all(" ", "-") %>%
+    str_c(detail,
+          gambles$outcome_positive_restricted_sample,
           gambles$outcome_dif,
           gambles$prob_positive_restricted_sample,
           sep = "_"
