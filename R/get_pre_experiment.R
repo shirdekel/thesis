@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_pre <- function() {
+get_pre_experiment <- function() {
 
   pis <-
     get_pis("prolific")
@@ -25,7 +25,7 @@ get_experiment_pre <- function() {
   business_information <-
     get_business_information()
 
-  experiment_pre <-
+  pre_experiment <-
     build_timeline(
       pis,
       consent,
@@ -35,6 +35,6 @@ get_experiment_pre <- function() {
       business_information
     )
 
-  return(experiment_pre)
+  return(pre_experiment)
 
 }

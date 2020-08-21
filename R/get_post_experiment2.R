@@ -1,9 +1,9 @@
-##' @title Get post experiment trials
+##' @title Get post experiment trials E2
 
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_post <- function() {
+get_post_experiment2 <- function() {
 
   trial_project_number <-
     get_trial_project_number()
@@ -39,7 +39,7 @@ get_experiment_post <- function() {
   trial_end <-
     get_trial_end()
 
-  experiment_post <-
+  post_experiment2 <-
     build_timeline(
       trial_project_number,
       trial_portfolio_binary_distribution_present,
@@ -50,6 +50,6 @@ get_experiment_post <- function() {
       trial_end
     )
 
-  return(experiment_post)
+  return(post_experiment2)
 
 }

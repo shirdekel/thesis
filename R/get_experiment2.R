@@ -10,9 +10,9 @@ get_experiment2 <- function(gambles) {
 
   experiment2 <- build_experiment(
     timeline = build_timeline(
-      get_experiment_pre(),
+      get_pre_experiment(),
       get_main_experiment2(projects_experiment2),
-      get_experiment_post()
+      get_post_experiment2()
     ),
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(

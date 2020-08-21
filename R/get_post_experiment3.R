@@ -1,0 +1,38 @@
+##' @title Get post experiment trials E2
+
+##' @return
+##' @author Shir Dekel
+##' @export
+get_post_experiment3 <- function() {
+
+  trial_project_number <-
+    get_trial_project_number()
+
+  trial_portfolio_binary <-
+    get_trial_portfolio_binary(
+      distribution = "absent"
+    )
+
+  trial_portfolio_number <-
+    get_trial_portfolio_number(
+      distribution = "absent"
+    )
+
+  debrief <-
+    get_debrief()
+
+  trial_end <-
+    get_trial_end()
+
+  post_experiment3 <-
+    build_timeline(
+      trial_project_number,
+      trial_portfolio_binary,
+      trial_portfolio_number,
+      debrief,
+      trial_end
+    )
+
+  return(post_experiment3)
+
+}
