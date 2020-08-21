@@ -9,7 +9,7 @@ the_plan <-
       file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
     }),
     data_directory_local = target(
-      here("inst", "jspsych", "data"),
+      here("inst", "jspsych", "experiment3", "data"),
       format = "file"
     ),
     data_raw_local = import_data_local(data_directory_local),
