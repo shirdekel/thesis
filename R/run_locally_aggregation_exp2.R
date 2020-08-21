@@ -3,9 +3,9 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-run_locally_aggregation_exp2 <- function() {
+run_locally_aggregation <- function(experiment_number) {
 
-  here("inst", "jspsych") %>%
-         run_locally()
+  here("inst", "jspsych", str_c("experiment", (experiment_number))) %>%
+    run_locally()
 
 }
