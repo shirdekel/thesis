@@ -6,7 +6,7 @@
 condition_allocation_experiment3 <- function() {
 
   c(
-    "similarity_condition = jsPsych.randomization.sampleWithoutReplacement(['low', 'high'], 1)[0]",
+    "similarity_condition = jsPsych.randomization.sampleWithoutReplacement(['low', 'high'], 1)[0]"
   ) %>%
     coffee_compile(bare = TRUE)
 
