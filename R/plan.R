@@ -7,9 +7,9 @@ the_plan <-
       get_experiment2(gambles)
       file_out(!!here("inst", "jspsych", "experiment2", "experiment", "experiment.js"))
     }),
-    experiment3 = target({
-      get_experiment3(gambles)
-      file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
+    experiment3a = target({
+      get_experiment3a(gambles)
+      file_out(!!here("inst", "jspsych", "experiment3a", "experiment", "experiment.js"))
     }),
     data_directory_local = target(
       here("inst", "jspsych", "experiment3", "data"),

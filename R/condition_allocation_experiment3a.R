@@ -1,9 +1,9 @@
-##' @title Parse condition allocation JS code for E3
+##' @title Parse condition allocation JS code for E3a
 
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-condition_allocation_experiment3 <- function() {
+condition_allocation_experiment3a <- function() {
 
   1:10 %>%
     str_c(collapse = ", ") %>%

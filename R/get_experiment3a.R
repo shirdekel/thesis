@@ -3,21 +3,21 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment3 <- function(gambles) {
+get_experiment3a <- function(gambles) {
 
   projects_experiment3 <-
     get_projects_experiment3(gambles)
 
-  experiment3 <- build_experiment(
+  experiment3a <- build_experiment(
     timeline = build_timeline(
       get_pre_experiment(),
-      get_main_experiment3(projects_experiment3),
+      get_main_experiment3a(projects_experiment3),
       get_post_experiment3()
     ),
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
       subject = insert_javascript("jsPsych.randomization.randomID(15)"),
-      experiment = "aggregation_exp3",
+      experiment = "aggregation_exp3a",
       sample = "prolific",
       similarity = insert_javascript("similarity_condition"),
       distribution = insert_javascript("'absent'"),
@@ -27,10 +27,10 @@ get_experiment3 <- function(gambles) {
     ),
     vanilla = c(
       verify_close(),
-      condition_allocation_experiment3(),
+      condition_allocation_experiment3a(),
       check_other()
     ),
-    path = here("inst", "jspsych", "experiment3"),
+    path = here("inst", "jspsych", "experiment3a"),
     experiment_title = "Business decision-making",
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%
@@ -41,5 +41,5 @@ get_experiment3 <- function(gambles) {
     on_finish = save_locally()
   )
 
-  return(experiment3)
+  return(experiment3a)
 }

@@ -5,7 +5,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trials_experiment3 <- function(projects_experiment3) {
+get_trials_experiment3a <- function(projects_experiment3) {
 
   similarity_condition <-
     projects_experiment3$description %>%
@@ -18,7 +18,7 @@ get_trials_experiment3 <- function(projects_experiment3) {
     1:length(projects_experiment3$description$similarity_low) %>%
     as.numeric()
 
-  trials_experiment3 <-
+  trials_experiment3a <-
     c(
       projects_experiment3,
       list(similarity_condition)
@@ -44,6 +44,6 @@ get_trials_experiment3 <- function(projects_experiment3) {
         )
     )
 
-  return(trials_experiment3)
+  return(trials_experiment3a)
 
 }
