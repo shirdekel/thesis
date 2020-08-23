@@ -23,14 +23,7 @@ get_experiment3 <- function(gambles) {
       distribution = insert_javascript("'absent'"),
       awareness = insert_javascript("'naive'"),
       presentation = insert_javascript("'separate'"),
-      project_variation = 1:10 %>%
-        str_c(collapse = ", ") %>%
-        str_c(
-          "jsPsych.randomization.sampleWithReplacement([",
-          .,
-          "], 1)"
-        ) %>%
-        insert_javascript()
+      project_variation = insert_javascript("project_variation_condition")
     ),
     vanilla = c(
       verify_close(),
