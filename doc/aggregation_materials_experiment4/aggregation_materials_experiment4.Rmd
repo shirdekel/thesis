@@ -1,0 +1,36 @@
+---
+title             : "Aggregation Experiment 4 - Materials"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+Experiment 4 tests what we previously called the "awareness effect" (better name pending). Participants will see 20 non-identical gambles (different from the previous experiments). The projects will be about the same 10 industries, with two variations for each industry.
+
+```{r instructions-naive, out.width = "100%", fig.cap = "Instructions - 'Naive'/'Narrow bracketing'", fig.pos = "H"}
+here("inst", "materials", "experiment4", "instructions_naive.png") %>% 
+  image_read()
+```
+
+```{r instructions-aware, out.width = "100%", fig.cap = "Instructions - 'Aware'/'Broad bracketing'", fig.pos = "H"}
+here("inst", "materials", "experiment4", "instructions_aware.png") %>% 
+  image_read()
+```

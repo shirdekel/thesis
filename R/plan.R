@@ -1,15 +1,24 @@
 the_plan <-
   drake_plan(
-    restricted_values = get_restricted_values(),
-    gambles = get_gambles(restricted_values),
-    gambles_plot = plot_gambles(gambles),
+    restricted_values = get_restricted_values(
+      get_prob_positive_seq(),
+      get_outcome_positive_seq()
+    ),
+    gambles = get_gambles(restricted_values, 10),
+    restricted_values_20 = get_restricted_values(
+      get_prob_positive_seq(),
+      seq(from = 100, to = 200, by = 5)
+    ),
+    gambles_20 = get_gambles(restricted_values_20, 20),
+    gambles_plot = plot_gambles(gambles, file_name = "distribution"),
+    gambles_plot_20 = plot_gambles(gambles_20, file_name = "distribution_20"),
     experiment2 = target({
       get_experiment2(gambles)
       file_out(!!here("inst", "jspsych", "experiment2", "experiment", "experiment.js"))
     }),
-    experiment3a = target({
-      get_experiment3a(gambles)
-      file_out(!!here("inst", "jspsych", "experiment3a", "experiment", "experiment.js"))
+    experiment3 = target({
+      get_experiment3(gambles)
+      file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
     }),
     data_directory_local = target(
       here("inst", "jspsych", "experiment3", "data"),
@@ -52,46 +61,42 @@ the_plan <-
     results_portfolio_binary = get_results_glmer(data_effects, "portfolio_binary"),
     results_portfolio_number = get_results_ttest(data_effects, "portfolio_number"),
     trials_plot = plot_trials(data),
-    memo_materials = target(
+    experiment4 = target({
+      get_experiment4(gambles_20)
+      file_out(!!here("inst", "jspsych", "experiment4", "experiment", "experiment.js"))
+    }),
+    # file_paths_experiment3 = target(
+    #   here("inst", "jspsych", "experiment3", "experiment"),
+    #   format = "file"
+    # ),
+    screenshots3 = get_screenshots_experiment3(),
+    screenshots4 = get_screenshots_experiment4(),
+    memo_materials_experiment3 = target(
       command = {
         render(knitr_in(!!here(
           "doc",
-          "aggregation_exp2_materials",
-          "aggregation_exp2_materials.Rmd"
+          "aggregation_materials_experiment3",
+          "aggregation_materials_experiment3.Rmd"
         )))
         file_out(!!here(
           "doc",
-          "aggregation_exp2_materials",
-          "aggregation_exp2_materials.pdf"
+          "aggregation_materials_experiment3",
+          "aggregation_materials_experiment3.pdf"
         ))
       }
     ),
-    memo_summary = target(
+    memo_materials_experiment4 = target(
       command = {
         render(knitr_in(!!here(
           "doc",
-          "aggregation_exp2_summary",
-          "aggregation_exp2_summary.Rmd"
+          "aggregation_materials_experiment4",
+          "aggregation_materials_experiment4.Rmd"
         )))
         file_out(!!here(
           "doc",
-          "aggregation_exp2_summary",
-          "aggregation_exp2_summary.pdf"
+          "aggregation_materials_experiment4",
+          "aggregation_materials_experiment4.pdf"
         ))
       }
     ),
-    memo_projects_long = target(
-      command = {
-        render(knitr_in(!!here(
-          "doc",
-          "aggregation_exp2_projects_long",
-          "aggregation_exp2_projects_long.Rmd"
-        )))
-        file_out(!!here(
-          "doc",
-          "aggregation_exp2_projects_long",
-          "aggregation_exp2_projects_long.pdf"
-        ))
-      }
-    )
   )
