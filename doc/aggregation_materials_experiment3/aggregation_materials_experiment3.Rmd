@@ -1,0 +1,58 @@
+---
+title             : "Aggregation Experiment 3 - Materials"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+Experiment 3 tests the similarity effect. Participants in the low similarity condition will see 10 projects, each from a different industry. Participants in the high similarity condition will set 10 projects from the same industry (the specific industry will be randomly assigned), each with a different variation. For instance, 10 oil well projects, each from a different location. The instructions are the same as the previous "naive awareness" condition.
+
+```{r instructions-experiment3, out.width = "100%", fig.cap = "Instructions - Experiment 3", fig.pos = "H"}
+here("inst", "materials", "experiment3", "instructions_experiment3.png") %>% 
+  image_read()
+```
+
+```{r include = FALSE}
+file_paths_materials_experiment3 <- 
+  here("inst", "materials", "experiment3")
+
+paths <- file_paths_materials_experiment3 %>% 
+  list.files() %>% 
+  str_match("project_choice_experiment3_(.*).png") %>% 
+  na.omit() %>% 
+  split(rep(1:ncol(.), each = nrow(.)))
+
+src <- 
+  paths %>% 
+  pmap(
+    ~ c(
+      '```{r project-choice-experiment3-{{.y}}, out.width = "100%", fig.cap = "Example {{.y}} project (order of sentences randomised)", fig.pos = "H"}',
+      'image_read(file.path(file_paths_materials_experiment3, "{{.x}}"))',
+      '```'
+    ) %>% 
+      knit_expand(text = .) # needs `text = `
+  )
+
+res <- 
+  knit_child(text = unlist(src)) # only works when knitting
+```
+
+`r res`

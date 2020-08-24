@@ -5,27 +5,27 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_main_experiment3a <- function(projects_experiment3) {
+get_main_experiment3 <- function(projects_experiment3) {
 
   instructions <-
     get_instructions()
 
-  trials_experiment3a <-
-    get_trials_experiment3a(
+  trials_experiment3 <-
+    get_trials_experiment3(
       projects_experiment3
     )
 
-  main_experiment3a <-
+  main_experiment3 <-
     list(
       instructions
     ) %>%
     append(
-        trials_experiment3a %>%
+        trials_experiment3 %>%
         flatten()
     ) %>%
     build_timeline() %>%
     flatten()
 
-  return(main_experiment3a)
+  return(main_experiment3)
 
 }
