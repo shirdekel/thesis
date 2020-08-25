@@ -243,6 +243,13 @@
       "Repository": "CRAN",
       "Hash": "50c838a310445e954bc13f26f26a6ecf"
     },
+    "audio": {
+      "Package": "audio",
+      "Version": "0.1-7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "31dcf8bcc4b1d343d75fee98ee44550b"
+    },
     "backports": {
       "Package": "backports",
       "Version": "1.1.8",
@@ -270,6 +277,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ff27176ac1485dff0c7690edab20f251"
+    },
+    "beepr": {
+      "Package": "beepr",
+      "Version": "1.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b3158a579ecef0e8f7626f4dadc369d0"
     },
     "bitops": {
       "Package": "bitops",
@@ -811,8 +825,14 @@
     "jaysire": {
       "Package": "jaysire",
       "Version": "0.1.0",
-      "Source": "unknown",
-      "Hash": "9b5ac2f66554771a31dfdf0af62e6ce3"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "jaysire",
+      "RemoteUsername": "shirdekel",
+      "RemoteRef": "master",
+      "RemoteSha": "24284e8545b36439a0f6461220b2175e311c2f27",
+      "Hash": "3171fe5cec7245c855b12c80b7c4027e"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -1442,8 +1462,8 @@
       "RemoteRepo": "shiR",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "b4d619a52d32555f1a4979d20fd083a0bac08dd3",
-      "Hash": "09186c74c2555984257e58fbc711b620"
+      "RemoteSha": "6c7fb70bce43f36c2659674354b8f5a882d18b18",
+      "Hash": "8e1424820f9ca26d87ac4cc5a7c10305"
     },
     "snakecase": {
       "Package": "snakecase",
@@ -1605,6 +1625,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ce4f6271baa94776db692f1cb2055bee"
+    },
+    "webshot": {
+      "Package": "webshot",
+      "Version": "0.5.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e99d80ad34457a4853674e89d5e806de"
     },
     "whisker": {
       "Package": "whisker",
