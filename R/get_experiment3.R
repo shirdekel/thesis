@@ -1,12 +1,13 @@
 ##' @title Get experiment 3
-##' @param gambles_10
+##' @param gambles
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment3 <- function(gambles_10) {
+get_experiment3 <- function(gambles) {
 
   projects_experiment3 <-
-    get_projects_experiment3(gambles_10)
+    get_projects_experiment3(gambles)
 
   experiment3 <- build_experiment(
     timeline = build_timeline(
