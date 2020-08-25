@@ -8,7 +8,8 @@
 get_main_experiment4 <- function(projects_experiment4) {
 
   instructions_experiment4 <-
-    get_instructions_experiment4()
+    get_instructions_experiment4() %>%
+    unname()
 
   trials_experiment4 <-
     get_trials_experiment4(

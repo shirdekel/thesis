@@ -44,21 +44,23 @@ var timeline = {
   "timeline": [
     {
       "timeline": [
-        {
-          "type": ["instructions"],
-          "pages": ["We will now give you the instructions for the task. Use the arrow buttons to browse these instructions", "<div>\n  <p>Imagine that you are an executive in a large company composed of many individual businesses. You will see various projects from these businesses and have to decide whether you would like to invest in them.<\/p>\n  <p>Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios.<\/p>\n<\/div>", "Press the 'Next' button to begin."],
-          "key_forward": [39],
-          "key_backward": [37],
-          "allow_backward": true,
-          "allow_keys": true,
-          "show_clickable_nav": true,
-          "button_label_previous": ["Previous"],
-          "button_label_next": ["Next"],
-          "post_trial_gap": [0],
-          "data": {
-            "stage": ["instructions"]
+        [
+          {
+            "type": ["instructions"],
+            "pages": ["We will now give you the instructions for the task. Use the arrow buttons to browse these instructions", "<div>\n  <p>Imagine that you are an executive in a large company composed of many individual businesses. You need to make decisions about projects that come across your desk.<\/p>\n  <p>Imagine that making a good investment decision will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in this scenario.<\/p>\n<\/div>", "Press the 'Next' button to begin."],
+            "key_forward": [39],
+            "key_backward": [37],
+            "allow_backward": true,
+            "allow_keys": true,
+            "show_clickable_nav": true,
+            "button_label_previous": ["Previous"],
+            "button_label_next": ["Next"],
+            "post_trial_gap": [0],
+            "data": {
+              "stage": ["instructions"]
+            }
           }
-        },
+        ],
         {
           "timeline": [
             {

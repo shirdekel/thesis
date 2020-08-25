@@ -5,11 +5,14 @@
 ##' @export
 get_instructions_experiment4 <- function() {
 
+  instructions_intro <-
+    p(
+      "Imagine that you are an executive in a large company composed of many individual businesses. You need to make decisions about projects that come across your desk."
+    )
+
   instructions_naive <-
     div(
-      p(
-        "Imagine that you are an executive in a large company composed of many individual businesses. You will see one project from one of the businesses and have to decide whether you would like to invest in it."
-      ),
+        instructions_intro,
       p(
         "Imagine that making a good investment decision will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in this scenario."
       )
@@ -18,11 +21,12 @@ get_instructions_experiment4 <- function() {
 
   instructions_aware <-
     div(
-      p(
-        "Imagine that you are an executive in a large company composed of many individual businesses. You will see 20 projects from these businesses and have to decide whether you would like to invest in them."
-      ),
+      instructions_intro,
       p(
         "Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios."
+      ),
+      p(
+        "There will be 20 projects that you will decide on this quarter."
       )
     ) %>%
     as.character()
