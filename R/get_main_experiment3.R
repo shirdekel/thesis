@@ -18,11 +18,9 @@ get_main_experiment3 <- function(projects_experiment3) {
     )
 
   main_experiment3 <-
-    list(
-      instructions_experiment3
-    ) %>%
+    instructions_experiment3 %>%
     append(
-        trials_experiment3 %>%
+      trials_experiment3 %>%
         flatten()
     ) %>%
     build_timeline() %>%
