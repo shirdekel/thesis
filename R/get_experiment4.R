@@ -23,7 +23,8 @@ get_experiment4 <- function(gambles_20) {
       distribution = insert_javascript("'absent'"),
       awareness = insert_javascript("awareness_condition"),
       presentation = insert_javascript("'separate'"),
-      project_variation = insert_javascript("project_variation_condition")
+      project_variation = insert_javascript("project_variation_condition"),
+      current_project_choice_order = insert_javascript("1")
     ),
     vanilla = c(
       verify_close(),
