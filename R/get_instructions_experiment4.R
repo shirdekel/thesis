@@ -47,7 +47,8 @@ get_instructions_experiment4 <- function() {
       ) %>%
         build_timeline() %>%
         display_if(fn_data_condition(awareness == !!.y))
-    )
+    ) %>%
+    set_names(awareness_condition)
 
   return(instructions_experiment4)
 
