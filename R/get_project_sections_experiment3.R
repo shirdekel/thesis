@@ -28,7 +28,7 @@ get_project_sections_experiment3 <- function(gambles,
         sep = " "
       ),
       str_c(
-        "That is, they want to",
+        "Specifically, they want to",
         project_detail_experiment3,
         sep = " "
       ),
@@ -52,7 +52,7 @@ get_project_sections_experiment3 <- function(gambles,
           ", they forecast the entire project to cost $",
           outcome_negative
         ),
-        "million",
+        "million (the loss amount)",
         sep = " "
       ),
       sep = ". "
@@ -70,12 +70,10 @@ get_project_sections_experiment3 <- function(gambles,
         sep = " "
       ),
       str_c(
+        "The estimate for the anticipated chance of gain is based on",
+        project_components_experiment3$analysis_details %>%
+          map_chr(getindefinite),
         project_components_experiment3$analysis_details,
-        "suggest that there is a",
-        str_c(
-          prob_positive,
-          "% chance that these forecasts are accurate"
-        ),
         sep = " "
       ),
       sep = ". "
@@ -95,7 +93,7 @@ get_project_sections_experiment3 <- function(gambles,
         "% chance of losing $",
         outcome_negative
       ),
-      "million on this investment",
+      "million",
       sep = " "
     )
 
