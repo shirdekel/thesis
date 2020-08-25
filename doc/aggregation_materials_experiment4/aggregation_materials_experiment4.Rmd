@@ -34,3 +34,13 @@ here("inst", "materials", "experiment4", "instructions_naive.png") %>%
 here("inst", "materials", "experiment4", "instructions_aware.png") %>% 
   image_read()
 ```
+
+```{r interstitial-naive, out.width = "100%", fig.cap = "Example interstitial - 'Naive'/'Narrow bracketing'", fig.pos = "H"}
+here("inst", "materials", "experiment4", "interstitial_naive.png") %>% 
+  image_read()
+```
+
+```{r interstitial-aware, out.width = "100%", fig.cap = "Example interstitial - 'Aware'/'Broad bracketing'", fig.pos = "H"}
+here("inst", "materials", "experiment4", "interstitial_aware.png") %>% 
+  image_read()
+```
