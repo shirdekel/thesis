@@ -5,6 +5,9 @@
 ##' @export
 get_post_experiment3 <- function() {
 
+  trial_project_expectation <-
+    get_trial_project_expectation()
+
   trial_project_number <-
     get_trial_project_number()
 
@@ -26,6 +29,7 @@ get_post_experiment3 <- function() {
 
   post_experiment3 <-
     build_timeline(
+      trial_project_expectation,
       trial_project_number,
       trial_portfolio_binary,
       trial_portfolio_number,
