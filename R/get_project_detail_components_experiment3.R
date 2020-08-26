@@ -138,7 +138,7 @@ get_project_detail_components_experiment3 <- function() {
       "corn crop with faster maturation",
       "animal feed with enzymes to enhance digestion",
       "herbicide tolerant melon",
-      "insect resistant mango",
+      "insect resistant persimmon",
       "virus resistant orange",
       "sunflower oil with healthier fatty acid composition",
       "bacteria for clean fuel development"

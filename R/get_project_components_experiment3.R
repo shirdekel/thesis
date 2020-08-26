@@ -79,16 +79,16 @@ get_project_components_experiment3 <- function() {
 
   analysis_details <-
     c(
-      "A geological and seismic study of the site, and an analysis of the previous similar sites",
-      "An electrical engineering and design study of the site, and an analysis of the yield rates of previous similar ICs",
-      "A study of the distribution market, and an analysis of the record sales of previous similar recording artists",
-      "A study of freight risks, and an analysis of the demand of previous similar export markets",
-      "A study of culinary preference trends, and an analysis of the demand of previous similar restaurants",
-      "A study of the target readership, impact of online publications, and an analysis of the sales of previous similar newspapers",
-      "A biomedical study of the proposed compound, its possible side effects, and an analysis of the efficacy of previous similar compounds",
-      "A study of the regional market, current commuter trends, and an analysis of the performance of previous similar lines",
-      "A study of the potential health and ecological risks, current genetic engineering innovations, and an analysis of the demand for previous similar GMOs",
-      "A study of the geotechnical risk and local regulations, and an analysis of the property market for previous similar properties"
+      "geological and seismic study of the site, and an analysis of previous similar sites",
+      "electrical engineering and design study of the site, and an analysis of the yield rates of previous similar ICs",
+      "study of the distribution market, and an analysis of the record sales of previous similar recording artists",
+      "study of freight risks, and an analysis of the demand of previous similar export markets",
+      "study of culinary preference trends, and an analysis of the demand of previous similar restaurants",
+      "study of the target readership, impact of online publications, and an analysis of the sales of previous similar newspapers",
+      "biomedical study of the proposed compound, its possible side effects, and an analysis of the efficacy of previous similar compounds",
+      "study of the regional market, current commuter trends, and an analysis of the performance of previous similar lines",
+      "study of the potential health and ecological risks, current genetic engineering innovations, and an analysis of the demand for previous similar GMOs",
+      "study of the geotechnical risk and local regulations, and an analysis of the property market for previous similar properties"
     )
 
   project_components_experiment3 <-
