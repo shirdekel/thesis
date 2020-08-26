@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment4 <- function(gambles_20) {
+get_experiment4 <- function(gambles_20, randomize_order = TRUE, path = here("inst", "jspsych", "experiment4")) {
 
   projects_experiment4 <-
     get_projects_experiment4(gambles_20)
@@ -11,8 +11,8 @@ get_experiment4 <- function(gambles_20) {
   experiment4 <- build_experiment(
     timeline = build_timeline(
       # get_pre_experiment(),
-      get_main_experiment4(projects_experiment4),
-      get_post_experiment3()
+      get_main_experiment4(projects_experiment4, randomize_order),
+      get_post_experiment4()
     ),
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
@@ -31,7 +31,7 @@ get_experiment4 <- function(gambles_20) {
       condition_allocation_experiment4(),
       check_other()
     ),
-    path = here("inst", "jspsych", "experiment4"),
+    path = path,
     experiment_title = "Business decision-making",
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%

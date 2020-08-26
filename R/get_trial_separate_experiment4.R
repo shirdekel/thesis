@@ -9,7 +9,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_separate_experiment4 <- function(preamble, timeline_variable, form_options = c("Yes", "No"), awareness, project_variation_value) {
+get_trial_separate_experiment4 <- function(preamble, timeline_variable, form_options = c("Yes", "No"), awareness, project_variation_value, randomize_order = randomize_order) {
 
   preamble <-
     p(
@@ -70,7 +70,7 @@ get_trial_separate_experiment4 <- function(preamble, timeline_variable, form_opt
     build_timeline(trial_separate_main) %>%
     set_variables(prompt = timeline_variable$description,
                   name = timeline_variable$input) %>%
-    set_parameters(randomize_order = TRUE) %>%
+    set_parameters(randomize_order = randomize_order) %>%
     build_timeline() %>%
     display_if(fn_data_condition(awareness == !!awareness)) %>%
     build_timeline() %>%
