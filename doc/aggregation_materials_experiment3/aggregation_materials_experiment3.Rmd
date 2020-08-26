@@ -21,31 +21,32 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(dir_materials_experiment3)
 ```
 
-Experiment 3 tests the similarity effect. Participants in the low similarity condition will see 10 projects, each from a different industry. Participants in the high similarity condition will set 10 projects from the same industry (the specific industry will be randomly assigned), each with a different variation. For instance, 10 oil well projects, each from a different location. The instructions are the same as the previous "naive awareness" condition.
-
-```{r instructions-experiment3, out.width = "100%", fig.cap = "Instructions - Experiment 3", fig.pos = "H"}
-here("inst", "materials", "experiment3", "instructions_experiment3.png") %>% 
-  image_read()
-```
+Experiment 3 tests the similarity effect. Participants in the low similarity condition will see 10 projects, each from a different industry. Participants in the high similarity condition will set 10 projects from the same industry (the specific industry will be randomly assigned), each with a different variation. For instance, 10 oil well projects, each from a different location. Description sentence order is randomised. See below screenshots of the instructions, project descriptions (for brevity only one variation per project is shown), and follow-up questions.
 
 ```{r include = FALSE}
-file_paths_materials_experiment3 <- 
-  here("inst", "materials", "experiment3")
-
-paths <- file_paths_materials_experiment3 %>% 
-  list.files() %>% 
-  str_match("project_choice_experiment3_(.*).png") %>% 
-  na.omit() %>% 
-  split(rep(1:ncol(.), each = nrow(.)))
-
+file_name_materials_experiment3 <-
+    get_file_name_materials_experiment3()
+  
+file_path_materials_experiment3 <- 
+  get_file_path_materials(dir_materials_experiment3, file_name_materials_experiment3)
+  
 src <- 
-  paths %>% 
+  list(
+  file_name_materials_experiment3 %>% 
+    str_replace_all("_", "-"),
+  file_name_materials_experiment3 %>% 
+    str_replace_all("_", " ") %>% 
+    str_to_sentence(),
+  file_path_materials_experiment3
+) %>% 
   pmap(
-    ~ c(
-      '```{r project-choice-experiment3-{{.y}}, out.width = "100%", fig.cap = "Example {{.y}} project (order of sentences randomised)", fig.pos = "H"}',
-      'image_read(file.path(file_paths_materials_experiment3, "{{.x}}"))',
+    function(chunk_name, caption, path) 
+      c(
+      '```{r {{chunk_name}}, out.width = "100%", fig.cap = "{{caption}}", fig.pos = "H"}',
+      'image_read("{{path}}")',
       '```'
     ) %>% 
       knit_expand(text = .) # needs `text = `

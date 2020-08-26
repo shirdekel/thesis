@@ -21,26 +21,39 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(dir_materials_experiment4)
 ```
 
-Experiment 4 tests what we previously called the "awareness effect" (better name pending). Participants will see 20 non-identical gambles (different from the previous experiments). The projects will be about the same 10 industries, with two variations for each industry.
+Experiment 4 tests what we previously called the "awareness effect" (better name pending). Participants will see 20 non-identical gambles (different from the previous experiments). The projects will be about the same 10 industries, with two variations for each industry. Description sentence order is randomised. See below screenshots of the instructions, project descriptions (for brevity only one example of a "naive" condition project is shown), and follow-up questions.
 
-```{r instructions-naive, out.width = "100%", fig.cap = "Instructions - 'Naive'/'Narrow bracketing'", fig.pos = "H"}
-here("inst", "materials", "experiment4", "instructions_naive.png") %>% 
-  image_read()
+```{r include = FALSE}
+file_name_materials_experiment4 <-
+    get_file_name_materials_experiment4()
+  
+file_path_materials_experiment4 <- 
+  get_file_path_materials(dir_materials_experiment4, file_name_materials_experiment4)
+  
+src <- 
+  list(
+  file_name_materials_experiment4 %>% 
+    str_replace_all("_", "-"),
+  file_name_materials_experiment4 %>% 
+    str_replace_all("_", " ") %>% 
+    str_to_sentence(),
+  file_path_materials_experiment4
+) %>% 
+  pmap(
+    function(chunk_name, caption, path) 
+      c(
+      '```{r {{chunk_name}}, out.width = "100%", fig.cap = "{{caption}}", fig.pos = "H"}',
+      'image_read("{{path}}")',
+      '```'
+    ) %>% 
+      knit_expand(text = .) # needs `text = `
+  )
+
+res <- 
+  knit_child(text = unlist(src)) # only works when knitting
 ```
 
-```{r instructions-aware, out.width = "100%", fig.cap = "Instructions - 'Aware'/'Broad bracketing'", fig.pos = "H"}
-here("inst", "materials", "experiment4", "instructions_aware.png") %>% 
-  image_read()
-```
-
-```{r interstitial-naive, out.width = "100%", fig.cap = "Example interstitial - 'Naive'/'Narrow bracketing'", fig.pos = "H"}
-here("inst", "materials", "experiment4", "interstitial_naive.png") %>% 
-  image_read()
-```
-
-```{r interstitial-aware, out.width = "100%", fig.cap = "Example interstitial - 'Aware'/'Broad bracketing'", fig.pos = "H"}
-here("inst", "materials", "experiment4", "interstitial_aware.png") %>% 
-  image_read()
-```
+`r res`
