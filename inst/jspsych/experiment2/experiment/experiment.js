@@ -468,7 +468,7 @@ var timeline = {
                       "name": ["oil-well__180_240_0.35"]
                     }
                   ],
-                  "randomize_order": [true]
+                  "randomize_order": true
                 }
               ],
               "conditional_function": function(){
@@ -559,7 +559,7 @@ var timeline = {
                       "name": ["oil-well__180_240_0.35"]
                     }
                   ],
-                  "randomize_order": [true]
+                  "randomize_order": true
                 }
               ],
               "conditional_function": function(){
@@ -644,7 +644,7 @@ var timeline = {
           "timeline": [
             {
               "type": ["survey-html-form"],
-              "html": ["<div>\n  <p>Below is the probability distribution of final outcomes if all projects were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>Indicate below whether you would invest in the following:<\/p><p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?<\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
+              "html": ["<div>\n  <p>Below is the probability distribution of final outcomes if all projects were chosen.<\/p>\n  <p>The numbers on the x-axis (labelled 'Outcome') represent the final amounts of money possible if you chose to invest in all the projects. The numbers on the y-axis (labelled 'Probability') represent the likelihoods of each of the possible outcomes. Negative final outcomes (losses) are shown in red, positive final outcomes (gains) are shown in green, and a final outcome of zero (no loss or gain) is shown in blue.<\/p>\n<\/div><div><img src=\"resource/image/distribution.png\" width=\"600\" height=\"400\"/><\/div><p>Indicate below whether you would invest in the following:<\/p><p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>\n          The total number of projects you were shown is \n          10\n          . If you could choose to invest in a certain number of those \n          10\n           projects, how many would you invest in?\n        <\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
               "data": {
                 "stage": ["portfolio_number"]
               }
@@ -663,7 +663,7 @@ var timeline = {
           "timeline": [
             {
               "type": ["survey-html-form"],
-              "html": ["<p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?<\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
+              "html": ["<p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>\n          The total number of projects you were shown is \n          10\n          . If you could choose to invest in a certain number of those \n          10\n           projects, how many would you invest in?\n        <\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
               "data": {
                 "stage": ["portfolio_number"]
               }
@@ -714,7 +714,7 @@ jsPsych.init(
 {
   "timeline": [timeline],
   "experiment_width": [750],
-  "preload_images": ["resource/image/consent.png", "resource/image/debrief1.png", "resource/image/debrief2.png", "resource/image/distribution.png", "resource/image/pis1_prolific.png", "resource/image/pis1_sona.png", "resource/image/pis2_prolific.png", "resource/image/pis2_sona.png", "resource/image/pis3_prolific.png", "resource/image/pis3_sona.png"],
+  "preload_images": ["resource/image/consent.png", "resource/image/debrief1.png", "resource/image/debrief2.png", "resource/image/distribution_20.png", "resource/image/distribution.png", "resource/image/pis1_prolific.png", "resource/image/pis1_sona.png", "resource/image/pis2_prolific.png", "resource/image/pis2_sona.png", "resource/image/pis3_prolific.png", "resource/image/pis3_sona.png"],
   "on_finish": function() {
       safe_to_close_window = true; // turn off verifyClose()
       var xhr = new XMLHttpRequest();
