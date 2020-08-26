@@ -14,15 +14,15 @@ the_plan <-
     gambles_plot_20 = plot_gambles(gambles_20, file_name = "distribution_20"),
     experiment2 = target({
       get_experiment2(gambles)
-      file_out(!!here("inst", "jspsych", "experiment2", "experiment", "experiment.js"))
+      file_out(!!here("inst", "jspsych", "experiment2", "experiment"))
     }),
     experiment3 = target({
       get_experiment3(gambles)
-      file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
+      file_out(!!here("inst", "jspsych", "experiment3", "experiment"))
     }),
     experiment4 = target({
       get_experiment4(gambles_20)
-      file_out(!!here("inst", "jspsych", "experiment4", "experiment", "experiment.js"))
+      file_out(!!here("inst", "jspsych", "experiment4", "experiment"))
     }),
     dir_materials_experiment3 = target(
       here("inst", "materials", "experiment3"),
