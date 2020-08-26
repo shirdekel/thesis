@@ -71,32 +71,32 @@ the_plan <-
     # ),
     screenshots3 = get_screenshots_experiment3(),
     screenshots4 = get_screenshots_experiment4(),
-    memo_materials_experiment3 = target(
+    memo_materials_experiment2 = target(
       command = {
         render(knitr_in(!!here(
           "doc",
-          "aggregation_materials_experiment3",
-          "aggregation_materials_experiment3.Rmd"
+          "aggregation_materials_experiment2",
+          "aggregation_materials_experiment2.Rmd"
         )))
         file_out(!!here(
           "doc",
-          "aggregation_materials_experiment3",
-          "aggregation_materials_experiment3.pdf"
+          "aggregation_materials_experiment2",
+          "aggregation_materials_experiment2.pdf"
         ))
       }
     ),
-    memo_materials_experiment4 = target(
+    memo_summary_experiment2 = target(
       command = {
         render(knitr_in(!!here(
           "doc",
-          "aggregation_materials_experiment4",
-          "aggregation_materials_experiment4.Rmd"
+          "aggregation_summary_experiment2",
+          "aggregation_summary_experiment2.Rmd"
         )))
         file_out(!!here(
           "doc",
-          "aggregation_materials_experiment4",
-          "aggregation_materials_experiment4.pdf"
+          "aggregation_summary_experiment2",
+          "aggregation_summary_experiment2.pdf"
         ))
       }
-    ),
+    )
   )
