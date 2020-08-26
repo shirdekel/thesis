@@ -75,4 +75,6 @@ get_screenshots_experiment4 <- function(gambles_20) {
           )
     )
 
+  get_screenshots(file_path_materials_experiment4, eval, dir_testing)
+
 }
