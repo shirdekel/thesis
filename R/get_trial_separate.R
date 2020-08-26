@@ -5,11 +5,13 @@
 ##' @param project_description
 ##' @param form_options
 ##' @param project_input
+##' @param distribution
+##' @param randomize_order
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_separate <- function(preamble = "<p>Indicate below whether you would invest in the following:</p>", project_description, form_options = c("Yes", "No"), project_input, distribution) {
+get_trial_separate <- function(preamble = "<p>Indicate below whether you would invest in the following:</p>", project_description, form_options = c("Yes", "No"), project_input, distribution, randomize_order = TRUE) {
 
   trial_separate <- trial_survey_multi_choice(
     preamble = preamble,
@@ -24,7 +26,7 @@ get_trial_separate <- function(preamble = "<p>Indicate below whether you would i
     build_timeline() %>%
     set_variables(prompt = project_description,
                   name = project_input) %>%
-    set_parameters(randomize_order = TRUE) %>%
+    set_parameters(randomize_order = randomize_order) %>%
     build_timeline() %>%
     display_if(fn_data_condition(distribution == !!distribution)) %>%
     build_timeline() %>%
