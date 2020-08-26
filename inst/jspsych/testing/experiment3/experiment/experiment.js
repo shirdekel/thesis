@@ -2405,7 +2405,7 @@ var timeline = {
           "timeline": [
             {
               "type": ["survey-html-form"],
-              "html": ["<p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>The total number of projects you were shown is 10. If you could choose to invest in a certain number of those 10 projects, how many would you invest in?<\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
+              "html": ["<p>\n  <p>\n    <label for=\"portfolio_number\">\n      <p>\n        <strong>\n          The total number of projects you were shown is \n          10\n          . If you could choose to invest in a certain number of those \n          10\n           projects, how many would you invest in?\n        <\/strong>\n      <\/p>\n    <\/label>\n  <\/p>\n  \n  <input type=\"number\" id=\"portfolio_number\" name=\"portfolio_number\" min=\"0\" max=\"10\" required style=\"width:70px\"/>\n  projects\n<\/p>"],
               "data": {
                 "stage": ["portfolio_number"]
               }
