@@ -12,8 +12,8 @@ get_project_description_experiment3 <- function(gambles, project_components_expe
   project_sections_experiment3 <-
     get_project_sections_experiment3(
       gambles,
-      project_components_experiment3,
-      project_detail_experiment3
+      components = project_components_experiment3,
+      detail = project_detail_experiment3
     ) %>%
     transpose() %>%
     map(unlist)
