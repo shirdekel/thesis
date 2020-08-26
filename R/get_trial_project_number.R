@@ -1,14 +1,16 @@
 ##' @title Project number follow up question
 
+##' @param max
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_project_number <- function() {
+get_trial_project_number <- function(max = 20) {
 
   trial_project_number_html <- get_survey_number(
     label_text = "In total, how many projects did you just see?",
     name = "project_number",
-    max = 20,
+    max = max,
     suffix = "projects") %>%
     as.character()
 
