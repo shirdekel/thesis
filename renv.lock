@@ -252,10 +252,10 @@
     },
     "backports": {
       "Package": "backports",
-      "Version": "1.1.8",
+      "Version": "1.1.9",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "3ef0eac19317fd03c0c854aed581d473"
+      "Hash": "b29e2d989dfb2e71ca3fd7d5bb1c0d58"
     },
     "base64enc": {
       "Package": "base64enc",
@@ -317,13 +317,14 @@
       "Package": "broom",
       "Version": "0.7.0.9001",
       "Source": "GitHub",
+      "Remotes": "alexpghayes/modeltests",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "broom",
       "RemoteUsername": "tidymodels",
       "RemoteRef": "master",
-      "RemoteSha": "a0bb1054bac904381f306d84f385bd0b2de6c7b1",
-      "Hash": "6be3d70d53b813dabd75dba61913a1e5"
+      "RemoteSha": "7b500323a18d982847482421094a5fe0c20333d0",
+      "Hash": "c79996273e18d8ce62e9017d73f0b803"
     },
     "caTools": {
       "Package": "caTools",
@@ -341,10 +342,10 @@
     },
     "car": {
       "Package": "car",
-      "Version": "3.0-8",
+      "Version": "3.0-9",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "561fc600526c46694aadea0d555f4359"
+      "Hash": "5b4045bd11466d0d3e55c71f81cc1b5f"
     },
     "carData": {
       "Package": "carData",
@@ -439,10 +440,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.1.0",
+      "Version": "0.2.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "07ac25dbe65bfa02deac8ec3bf74fdd2"
+      "Hash": "c4c83167f43ca762a9fa998d4fead3ae"
     },
     "crayon": {
       "Package": "crayon",
@@ -509,10 +510,10 @@
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.0.1",
+      "Version": "1.0.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "018b2fc43cb25d9f07241986c53fbf8e"
+      "Hash": "d0509913b27ea898189ee664b6030dc2"
     },
     "drake": {
       "Package": "drake",
@@ -544,10 +545,10 @@
     },
     "emmeans": {
       "Package": "emmeans",
-      "Version": "1.4.8",
+      "Version": "1.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e4e155221cb570a5070611c42690e100"
+      "Hash": "0dc804fb37bcdfea325b3214e635f1ff"
     },
     "estimability": {
       "Package": "estimability",
@@ -831,8 +832,8 @@
       "RemoteRepo": "jaysire",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "24284e8545b36439a0f6461220b2175e311c2f27",
-      "Hash": "3171fe5cec7245c855b12c80b7c4027e"
+      "RemoteSha": "f954a794ccb3d0f8cf7066073327ae8af0074c2e",
+      "Hash": "f03b276eb35aa4b4db83f2a0088c606f"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -948,10 +949,10 @@
     },
     "maptools": {
       "Package": "maptools",
-      "Version": "1.0-1",
+      "Version": "1.0-2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5117ca3798362fadc2d985899b3e891e"
+      "Hash": "1cb5cb7bbab76318944e3794ff2512ae"
     },
     "markdown": {
       "Package": "markdown",
@@ -1094,10 +1095,10 @@
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "papaja",
-      "RemoteUsername": "mariusbarth",
-      "RemoteRef": "devel",
-      "RemoteSha": "444af19e23ab83f71679951dc79fc4cb646bcd89",
-      "Hash": "e68cd48128027467aff483b924d19294"
+      "RemoteUsername": "crsh",
+      "RemoteRef": "master",
+      "RemoteSha": "0457653be4f854fd3e981088b69479dbcf8bcef5",
+      "Hash": "f56940d251e96f13e8629d808b29d891"
     },
     "patchwork": {
       "Package": "patchwork",
@@ -1113,10 +1114,10 @@
     },
     "pbapply": {
       "Package": "pbapply",
-      "Version": "1.4-2",
+      "Version": "1.4-3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ee90507ce37987b22470fae76325f370"
+      "Hash": "52f8028b028076bc3b7ee5d6251abf0d"
     },
     "pbivnorm": {
       "Package": "pbivnorm",
@@ -1232,10 +1233,10 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.3.3",
+      "Version": "1.3.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "425d938eb9c02906a8ac98c0c2a306b5"
+      "Hash": "a54a7dfd68124abb2225dbfa9a85c457"
     },
     "purrr": {
       "Package": "purrr",
@@ -1465,6 +1466,13 @@
       "RemoteSha": "6c7fb70bce43f36c2659674354b8f5a882d18b18",
       "Hash": "8e1424820f9ca26d87ac4cc5a7c10305"
     },
+    "slider": {
+      "Package": "slider",
+      "Version": "0.1.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ac1eb08941cacd8ff16f0041ca60a3de"
+    },
     "snakecase": {
       "Package": "snakecase",
       "Version": "0.11.0",
@@ -1626,6 +1634,13 @@
       "Repository": "CRAN",
       "Hash": "ce4f6271baa94776db692f1cb2055bee"
     },
+    "warp": {
+      "Package": "warp",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5c786a8883c9f49f6d137ee76558ceef"
+    },
     "webshot": {
       "Package": "webshot",
       "Version": "0.5.2",
@@ -1677,10 +1692,10 @@
     },
     "zip": {
       "Package": "zip",
-      "Version": "2.0.4",
+      "Version": "2.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "caa73cdca1a87e5f2617915c8809f207"
+      "Hash": "e900bc5f049697942cc2d4d2e7e8f857"
     }
   }
 }
