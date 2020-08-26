@@ -1,4 +1,4 @@
-##' @title Get post experiment trials E2
+##' @title Get post experiment trials E3
 
 ##' @return
 ##' @author Shir Dekel
