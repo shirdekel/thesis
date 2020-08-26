@@ -20,6 +20,48 @@ the_plan <-
       get_experiment3(gambles)
       file_out(!!here("inst", "jspsych", "experiment3", "experiment", "experiment.js"))
     }),
+    experiment4 = target({
+      get_experiment4(gambles_20)
+      file_out(!!here("inst", "jspsych", "experiment4", "experiment", "experiment.js"))
+    }),
+    dir_materials_experiment3 = target(
+      here("inst", "materials", "experiment3"),
+      format = "file"
+    ),
+    screenshots3 = get_screenshots_experiment3(gambles),
+    dir_materials_experiment4 = target(
+      here("inst", "materials", "experiment4"),
+      format = "file"
+    ),
+    screenshots4 = get_screenshots_experiment4(gambles_20),
+    memo_materials_experiment3 = target(
+      command = {
+        render(knitr_in(!!here(
+          "doc",
+          "aggregation_materials_experiment3",
+          "aggregation_materials_experiment3.Rmd"
+        )))
+        file_out(!!here(
+          "doc",
+          "aggregation_materials_experiment3",
+          "aggregation_materials_experiment3.pdf"
+        ))
+      }
+    ),
+    memo_materials_experiment4 = target(
+      command = {
+        render(knitr_in(!!here(
+          "doc",
+          "aggregation_materials_experiment4",
+          "aggregation_materials_experiment4.Rmd"
+        )))
+        file_out(!!here(
+          "doc",
+          "aggregation_materials_experiment4",
+          "aggregation_materials_experiment4.pdf"
+        ))
+      }
+    ),
     data_directory_local = target(
       here("inst", "jspsych", "experiment3", "data"),
       format = "file"
@@ -61,16 +103,6 @@ the_plan <-
     results_portfolio_binary = get_results_glmer(data_effects, "portfolio_binary"),
     results_portfolio_number = get_results_ttest(data_effects, "portfolio_number"),
     trials_plot = plot_trials(data),
-    experiment4 = target({
-      get_experiment4(gambles_20)
-      file_out(!!here("inst", "jspsych", "experiment4", "experiment", "experiment.js"))
-    }),
-    # file_paths_experiment3 = target(
-    #   here("inst", "jspsych", "experiment3", "experiment"),
-    #   format = "file"
-    # ),
-    screenshots3 = get_screenshots_experiment3(),
-    screenshots4 = get_screenshots_experiment4(),
     memo_materials_experiment2 = target(
       command = {
         render(knitr_in(!!here(
