@@ -6,7 +6,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_portfolio_binary <- function(preamble = "", distribution) {
+get_trial_portfolio_binary <- function(preamble = "", distribution = "absent") {
 
   trial_portfolio_binary_html <- p(
     strong("Consider all the projects you saw. If you had to choose between investing in all of them, or investing in none of them, which would you choose?")
