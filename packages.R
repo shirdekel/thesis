@@ -21,6 +21,7 @@ library(MOTE)
 library(lme4)
 library(patchwork)
 library(webshot)
+library(slider)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
