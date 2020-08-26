@@ -1,10 +1,13 @@
 ##' @title Get experiment 3
+##'
 ##' @param gambles
+##' @param randomize_order
+##' @param path
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment3 <- function(gambles) {
+get_experiment3 <- function(gambles, randomize_order = TRUE, path = here("inst", "jspsych", "experiment3")) {
 
   projects_experiment3 <-
     get_projects_experiment3(gambles)
@@ -12,7 +15,7 @@ get_experiment3 <- function(gambles) {
   experiment3 <- build_experiment(
     timeline = build_timeline(
       # get_pre_experiment(),
-      get_main_experiment3(projects_experiment3),
+      get_main_experiment3(projects_experiment3, randomize_order),
       get_post_experiment3()
     ),
     resources = build_resources(here("inst", "experiment_resources")),
@@ -31,7 +34,7 @@ get_experiment3 <- function(gambles) {
       condition_allocation_experiment3(),
       check_other()
     ),
-    path = here("inst", "jspsych", "experiment3"),
+    path = path,
     experiment_title = "Business decision-making",
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%

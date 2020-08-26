@@ -2,10 +2,12 @@
 
 ##' @param projects_experiment3
 ##'
+##' @param randomize_order
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_main_experiment3 <- function(projects_experiment3) {
+get_main_experiment3 <- function(projects_experiment3, randomize_order) {
 
   instructions_experiment3 <-
     get_instructions_experiment4() %>%
@@ -14,7 +16,8 @@ get_main_experiment3 <- function(projects_experiment3) {
 
   trials_experiment3 <-
     get_trials_experiment3(
-      projects_experiment3
+      projects_experiment3,
+      randomize_order
     )
 
   main_experiment3 <-

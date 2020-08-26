@@ -1,11 +1,13 @@
 ##' @title Get long projects distribution absent trial
+##'
 ##' @param projects_experiment3
 ##'
+##' @param randomize_order
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trials_experiment3 <- function(projects_experiment3) {
+get_trials_experiment3 <- function(projects_experiment3, randomize_order) {
 
   similarity_condition <-
     projects_experiment3$description %>%
@@ -35,7 +37,8 @@ get_trials_experiment3 <- function(projects_experiment3) {
             get_trial_separate(
               project_description = description_variation,
               project_input = input_variation,
-              distribution = "absent"
+              distribution = "absent",
+              randomize_order = randomize_order
             ) %>%
             build_timeline() %>%
             display_if(fn_data_condition(similarity == !!similarity_condition_value)) %>%
