@@ -19,15 +19,12 @@ get_main_experiment4 <- function(projects_experiment4, randomize_order) {
       randomize_order
     )
 
-  trial_test <-
-    trial_html_button_response("test")
-
   main_experiment4 <-
-    list(trial_test) %>%
-    append(list(instructions_experiment4) %>%
-             flatten()) %>%
-    append(trials_experiment4 %>%
-             flatten()) %>%
+    instructions_experiment4 %>%
+    c(
+      trials_experiment4 %>%
+        flatten()
+    ) %>%
     build_timeline() %>%
     flatten()
 
