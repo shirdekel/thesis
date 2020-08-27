@@ -65,7 +65,7 @@ get_screenshots_experiment4 <- function(gambles_20) {
     pmap_chr(
       function(casper_calls, awareness)
           str_c(
-            "casper.thenOpen(this.getCurrentUrl() + '?awareness=",
+            "casper.thenOpen(this.getCurrentUrl() + '?project_variation=1&awareness=",
             awareness,
             str_c(
               "', function() {", casper_calls, "});",
