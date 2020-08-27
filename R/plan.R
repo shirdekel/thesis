@@ -24,16 +24,18 @@ the_plan <-
       get_experiment4(gambles_20)
       file_out(!!here("inst", "jspsych", "experiment4", "experiment"))
     }),
-    dir_materials_experiment3 = target(
-      here("inst", "materials", "experiment3"),
-      format = "file"
+    dir_materials_experiment3 = target({
+      get_screenshots_experiment3(gambles)
+      here("inst", "materials", "experiment3")
+    },
+    format = "file"
     ),
-    screenshots3 = get_screenshots_experiment3(gambles),
-    dir_materials_experiment4 = target(
-      here("inst", "materials", "experiment4"),
-      format = "file"
+    dir_materials_experiment4 = target({
+      get_screenshots_experiment4(gambles_20)
+      here("inst", "materials", "experiment4")
+    },
+    format = "file"
     ),
-    screenshots4 = get_screenshots_experiment4(gambles_20),
     memo_materials_experiment3 = target(
       command = {
         render(knitr_in(!!here(
