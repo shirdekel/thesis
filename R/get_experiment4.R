@@ -3,17 +3,30 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment4 <- function(gambles_20, randomize_order = TRUE, path = here("inst", "jspsych", "experiment4")) {
+get_experiment4 <- function(gambles_20, randomize_order = TRUE, path = here("inst", "jspsych", "experiment4"), pre_experiment = TRUE) {
 
   projects_experiment4 <-
     get_projects_experiment4(gambles_20)
 
-  experiment4 <- build_experiment(
-    timeline = build_timeline(
-      # get_pre_experiment(),
+  timeline <-
+    list(
+      get_welcome(),
       get_main_experiment4(projects_experiment4, randomize_order),
       get_post_experiment4()
-    ),
+    )
+
+  if(pre_experiment) {
+    timeline <-
+      timeline %>%
+      append(
+        list(get_pre_experiment()),
+        after = 1
+      )
+  }
+
+  experiment4 <- build_experiment(
+    timeline = build_timeline(timeline) %>%
+      flatten(),
     resources = build_resources(here("inst", "experiment_resources")),
     columns = insert_property(
       subject = insert_javascript("jsPsych.randomization.randomID(15)"),
