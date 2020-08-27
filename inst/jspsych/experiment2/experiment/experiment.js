@@ -41,10 +41,25 @@ jsPsych.data.addProperties({
 var timeline = {
   "timeline": [
     {
+      "type": ["instructions"],
+      "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>"],
+      "key_forward": [39],
+      "key_backward": [37],
+      "allow_backward": true,
+      "allow_keys": true,
+      "show_clickable_nav": true,
+      "button_label_previous": ["Previous"],
+      "button_label_next": ["Next"],
+      "post_trial_gap": [0],
+      "data": {
+        "stage": ["welcome"]
+      }
+    },
+    {
       "timeline": [
         {
           "type": ["instructions"],
-          "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>", "<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
+          "pages": ["<img src=\"resource/image/pis1_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis2_prolific.png\" width=\"750\"/>", "<img src=\"resource/image/pis3_prolific.png\" width=\"750\"/>"],
           "key_forward": [39],
           "key_backward": [37],
           "allow_backward": true,
@@ -80,7 +95,12 @@ var timeline = {
           "html": ["<div>\n  <label for=\"prolific\">Enter your Prolific ID (24 alphanumeric characters, no spaces):<\/label>\n  <input type=\"text\" id=\"prolific\" name=\"prolific\" required minlength=\"24\" maxlength=\"24\" pattern=\"^[a-z0-9]+$\" size=\"30\"/>\n<\/div>"],
           "data": {
             "stage": ["id"]
-          }
+          },
+          "on_load": function() {
+      if (typeof urlvar.PROLIFIC_PID !== 'undefined') {
+        document.getElementById('prolific').setAttribute('value', urlvar.PROLIFIC_PID);
+      }
+    }
         },
         {
           "type": ["survey-html-form"],
