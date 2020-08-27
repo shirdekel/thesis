@@ -16,7 +16,7 @@ get_screenshots_experiment4 <- function(gambles_20) {
   }
 
   # Create experiment files in testing directory without randomisation (so that we can get screenshots for all projects)
-  get_experiment4(gambles_20, randomize_order = FALSE, path = dir_testing)
+  get_experiment4(gambles_20, randomize_order = FALSE, path = dir_testing, pre_experiment = FALSE)
 
   file_name_materials_experiment4 <-
     get_file_name_materials_experiment4()
@@ -29,9 +29,8 @@ get_screenshots_experiment4 <- function(gambles_20) {
 
   casper_calls <-
     c(
-      "this.click('#jspsych-html-button-response-button-0');",
       "this.click('#jspsych-instructions-next');" %>%
-        rep(3),
+        rep(4),
       "this.click('#jspsych-survey-multi-choice-next');" %>%
         rep(20),
       "this.click('#jspsych-survey-html-form-next');" %>%

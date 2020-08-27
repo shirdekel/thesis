@@ -16,7 +16,7 @@ get_screenshots_experiment3 <- function(gambles) {
   }
 
   # Create experiment files in testing directory without randomisation (so that we can get screenshots for all projects)
-  get_experiment3(gambles, randomize_order = FALSE, path = dir_testing)
+  get_experiment3(gambles, randomize_order = FALSE, path = dir_testing, pre_experiment = FALSE)
 
   file_name_materials_experiment3 <-
     get_file_name_materials_experiment3()
@@ -29,9 +29,8 @@ get_screenshots_experiment3 <- function(gambles) {
 
   eval <-
     c(
-      "",
       "this.click('#jspsych-instructions-next');" %>%
-        rep(3),
+        rep(4),
       "this.click('#jspsych-survey-multi-choice-next');" %>%
         rep(10),
       "this.click('#jspsych-survey-html-form-next');" %>%
