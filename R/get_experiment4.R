@@ -37,7 +37,10 @@ get_experiment4 <- function(gambles_20, randomize_order = TRUE, path = here("ins
       awareness = insert_javascript("awareness_condition"),
       presentation = insert_javascript("'separate'"),
       project_variation = insert_javascript("project_variation_condition"),
-      current_project_choice_order = insert_javascript("1")
+      current_project_choice_order = insert_javascript("1"),
+      PROLIFIC_PID = insert_javascript("urlvar.PROLIFIC_PID"),
+      STUDY_ID = insert_javascript("urlvar.STUDY_ID"),
+      SESSION_ID = insert_javascript("urlvar.SESSION_ID")
     ),
     vanilla = c(
       verify_close(),
