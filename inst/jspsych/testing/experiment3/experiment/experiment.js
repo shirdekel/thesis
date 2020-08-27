@@ -37,11 +37,29 @@ jsPsych.data.addProperties({
   "distribution": 'absent',
   "awareness": 'naive',
   "presentation": 'separate',
-  "project_variation": project_variation_condition
+  "project_variation": project_variation_condition,
+  "PROLIFIC_PID": urlvar.PROLIFIC_PID,
+  "STUDY_ID": urlvar.STUDY_ID,
+  "SESSION_ID": urlvar.SESSION_ID
 });
 
 var timeline = {
   "timeline": [
+    {
+      "type": ["instructions"],
+      "pages": ["<div>\n  <p>Welcome to the study.<\/p>\n  <p>Make sure to scroll down to the bottom of each page to see the navigation buttons.<\/p>\n<\/div>"],
+      "key_forward": [39],
+      "key_backward": [37],
+      "allow_backward": true,
+      "allow_keys": true,
+      "show_clickable_nav": true,
+      "button_label_previous": ["Previous"],
+      "button_label_next": ["Next"],
+      "post_trial_gap": [0],
+      "data": {
+        "stage": ["welcome"]
+      }
+    },
     {
       "timeline": [
         {
