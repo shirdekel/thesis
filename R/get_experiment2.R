@@ -10,6 +10,7 @@ get_experiment2 <- function(gambles) {
 
   experiment2 <- build_experiment(
     timeline = build_timeline(
+      get_welcome(),
       get_pre_experiment(),
       get_main_experiment2(projects_experiment2),
       get_post_experiment2()
