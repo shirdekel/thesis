@@ -43,7 +43,13 @@ get_sample_id <- function(sample) {
   id <- trial_generic(
     "survey-html-form",
     html = id_html,
-    data = insert_property(stage = "id")
+    data = insert_property(stage = "id"),
+    on_load = insert_javascript(
+    "function() {
+      if (typeof urlvar.PROLIFIC_PID !== 'undefined') {
+        document.getElementById('prolific').setAttribute('value', urlvar.PROLIFIC_PID);
+      }
+    }")
   )
 
   return(id)
