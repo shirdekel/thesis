@@ -1,74 +1,99 @@
+plot_function_values <-
+  syms(c("plot_awareness_trials", "plot_project_number", "plot_gamble_values"))
+
+gamble_n_values <-
+  c(10 %>% rep(2), 20)
+
+old_seed_restricted_values <-
+  diagnose(restricted_values)$seed
+
+old_seed_gambles <-
+  diagnose(gambles)$seed
+
+experiment_values <-
+  str_c("experiment", 2:4)
+
+get_experiment_values <-
+  syms(str_c("get", experiment_values, sep = "_"))
+
+get_screenshots_values <-
+  syms(str_c("get_screenshots", experiment_values, sep = "_"))
+
 the_plan <-
   drake_plan(
-    restricted_values = get_restricted_values(
-      get_prob_positive_seq(),
-      get_outcome_positive_seq()
+    restricted_values = target(
+      get_restricted_values(experiment),
+      transform = map(experiment = !!experiment_values),
+      seed = old_seed_restricted_values
     ),
-    gambles = get_gambles(restricted_values, 10),
-    restricted_values_20 = get_restricted_values(
-      get_prob_positive_seq(),
-      seq(from = 100, to = 200, by = 5)
+    gambles = target(
+      get_gambles(restricted_values, gamble_n),
+      transform = map(
+        restricted_values,
+        gamble_n = !!gamble_n_values,
+        .id = experiment
+      ),
+      seed = old_seed_gambles
     ),
-    gambles_20 = get_gambles(restricted_values_20, 20),
-    gambles_plot = plot_gambles(gambles, file_name = "distribution"),
-    gambles_plot_20 = plot_gambles(gambles_20, file_name = "distribution_20"),
-    experiment2 = target({
-      get_experiment2(gambles)
-      file_out(!!here("inst", "jspsych", "experiment2", "experiment"))
-    }),
-    experiment3 = target({
-      get_experiment3(gambles)
-      file_out(!!here("inst", "jspsych", "experiment3", "experiment"))
-    }),
-    experiment4 = target({
-      get_experiment4(gambles_20)
-      file_out(!!here("inst", "jspsych", "experiment4", "experiment"))
-    }),
-    dir_materials_experiment3 = target({
-      get_screenshots_experiment3(gambles)
-      here("inst", "materials", "experiment3")
-    },
-    format = "file"
+    gambles_plot = target(
+      plot_gambles(gambles, file_name = .id_chr),
+      transform = map(gambles,
+                      .id = experiment)
     ),
-    dir_materials_experiment4 = target({
-      get_screenshots_experiment4(gambles_20)
-      here("inst", "materials", "experiment4")
-    },
-    format = "file"
-    ),
-    memo_materials_experiment3 = target(
-      command = {
-        render(knitr_in(!!here(
-          "doc",
-          "aggregation_materials_experiment3",
-          "aggregation_materials_experiment3.Rmd"
-        )))
-        file_out(!!here(
-          "doc",
-          "aggregation_materials_experiment3",
-          "aggregation_materials_experiment3.pdf"
-        ))
-      }
-    ),
-    memo_materials_experiment4 = target(
-      command = {
-        render(knitr_in(!!here(
-          "doc",
-          "aggregation_materials_experiment4",
-          "aggregation_materials_experiment4.Rmd"
-        )))
-        file_out(!!here(
-          "doc",
-          "aggregation_materials_experiment4",
-          "aggregation_materials_experiment4.pdf"
-        ))
-      }
-    ),
-    data_directory_local = target(
-      here("inst", "jspsych", "experiment3", "data"),
+    experiment_resources = target(
+      here("inst", "experiment_resources"),
       format = "file"
     ),
-    data_raw_local = import_data_local(data_directory_local),
+    experiment = target({
+      get_experiment(gambles)
+      file_out(!!here("inst", "jspsych", directory, "experiment"))
+    },
+    transform = map(
+      gambles,
+      get_experiment = !!get_experiment_values,
+      directory = !!experiment_values,
+      .names = experiment_values
+    )),
+    dir_materials = target({
+      get_screenshots(gambles)
+      here("inst", "materials", experiment)
+    },
+    transform = map(
+      gambles,
+      get_screenshots = !!get_screenshots_values,
+      experiment = !!experiment_values,
+      .id = experiment
+    ),
+    format = "file"
+    ),
+    materials = target({
+      render(knitr_in(!!here(
+        "doc",
+        str_c("aggregation_materials_", experiment),
+        str_c("aggregation_materials_", experiment, ".Rmd")
+      )))
+      file_out(!!here(
+        "doc",
+        str_c("aggregation_materials_", experiment),
+        str_c("aggregation_materials_", experiment, ".pdf")
+      ))
+    },
+    transform = map(experiment = !!experiment_values)
+    ),
+    data_mock = target(
+      get_data_mock(experiment, 1),
+      transform = map(experiment = !!experiment_values)
+    ),
+    data_directory_local = target(
+      here("inst", "jspsych", experiment, "data"),
+      format = "file",
+      transform = map(experiment = !!experiment_values)
+    ),
+    data_raw_local = target(
+      import_data_local(data_directory_local),
+      transform = map(data_directory_local,
+                      .id = experiment)
+    ),
     data_directory_server = target(
       here("inst", "extdata", "psychsydexp"),
       format = "file"
