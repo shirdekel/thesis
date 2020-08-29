@@ -31,7 +31,7 @@ get_experiment3 <- function(gambles, randomize_order = TRUE, path = here("inst",
   experiment3 <- build_experiment(
     timeline = build_timeline(timeline) %>%
       flatten(),
-    resources = build_resources(here("inst", "experiment_resources")),
+    resources = build_resources(readd(experiment_resources)),
     columns = insert_property(
       subject = insert_javascript("jsPsych.randomization.randomID(15)"),
       experiment = "aggregation_exp3",
