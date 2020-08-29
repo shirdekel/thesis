@@ -1,44 +1,31 @@
-plot_function_values <-
-  syms(c("plot_awareness_trials", "plot_project_number", "plot_gamble_values"))
+values <-
+  get_values()
 
-gamble_n_values <-
-  c(10 %>% rep(2), 20)
-
-old_seed_restricted_values <-
-  diagnose(restricted_values)$seed
-
-old_seed_gambles <-
-  diagnose(gambles)$seed
-
-experiment_values <-
-  str_c("experiment", 2:4)
-
-get_experiment_values <-
-  syms(str_c("get", experiment_values, sep = "_"))
-
-get_screenshots_values <-
-  syms(str_c("get_screenshots", experiment_values, sep = "_"))
+old_seed <-
+  get_old_seed()
 
 the_plan <-
   drake_plan(
     restricted_values = target(
       get_restricted_values(experiment),
-      transform = map(experiment = !!experiment_values),
-      seed = old_seed_restricted_values
+      transform = map(experiment = !!values$experiment),
+      seed = old_seed$restricted_values
     ),
     gambles = target(
       get_gambles(restricted_values, gamble_n),
       transform = map(
         restricted_values,
-        gamble_n = !!gamble_n_values,
+        gamble_n = !!values$gamble_n,
         .id = experiment
       ),
-      seed = old_seed_gambles
+      seed = old_seed$gambles
     ),
     gambles_plot = target(
       plot_gambles(gambles, file_name = .id_chr),
-      transform = map(gambles,
-                      .id = experiment)
+      transform = map(
+        gambles,
+        .id = experiment
+      )
     ),
     experiment_resources = target(
       here("inst", "experiment_resources"),
@@ -50,9 +37,9 @@ the_plan <-
     },
     transform = map(
       gambles,
-      get_experiment = !!get_experiment_values,
-      directory = !!experiment_values,
-      .names = experiment_values
+      get_experiment = !!values$get_experiment,
+      directory = !!values$experiment,
+      .names = values$experiment
     )),
     dir_materials = target({
       get_screenshots(gambles)
@@ -60,8 +47,8 @@ the_plan <-
     },
     transform = map(
       gambles,
-      get_screenshots = !!get_screenshots_values,
-      experiment = !!experiment_values,
+      get_screenshots = !!values$get_screenshots,
+      experiment = !!values$experiment,
       .id = experiment
     ),
     format = "file"
@@ -78,16 +65,16 @@ the_plan <-
         str_c("aggregation_materials_", experiment, ".pdf")
       ))
     },
-    transform = map(experiment = !!experiment_values)
+    transform = map(experiment = !!values$experiment)
     ),
     data_mock = target(
       get_data_mock(experiment, 1),
-      transform = map(experiment = !!experiment_values)
+      transform = map(experiment = !!values$experiment)
     ),
     data_directory_local = target(
       here("inst", "jspsych", experiment, "data"),
       format = "file",
-      transform = map(experiment = !!experiment_values)
+      transform = map(experiment = !!values$experiment)
     ),
     data_raw_local = target(
       import_data_local(data_directory_local),
