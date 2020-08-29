@@ -1,13 +1,22 @@
 ##' @title Get restriction
 
-##' @param prob_positive_seq
-##'
-##' @param outcome_positive_seq
+##' @param experiment
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_restricted_values <- function(prob_positive_seq, outcome_positive_seq) {
+get_restricted_values <- function(experiment) {
+
+  prob_positive_seq <-
+    get_prob_positive_seq()
+
+  if(experiment == "experiment4") {
+    outcome_positive_seq <-
+      seq(from = 100, to = 200, by = 5)
+  } else {
+    outcome_positive_seq <-
+      seq(from = 100, to = 200, by = 10)
+  }
 
   size <- 10000
 
