@@ -11,7 +11,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_trial_separate <- function(preamble = "<p>Indicate below whether you would invest in the following:</p>", project_description, form_options = c("Yes", "No"), project_input, distribution, randomize_order = TRUE) {
+get_trial_separate <- function(preamble = "<p>Indicate below whether you would invest in the following:</p>", project_description, form_options = c("Yes", "No"), project_input, distribution, randomize_order) {
 
   trial_separate <- trial_survey_multi_choice(
     preamble = preamble,

@@ -2,10 +2,12 @@
 
 ##' @param projects_experiment2
 ##'
+##' @param randomize_order
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_main_experiment2 <- function(projects_experiment2) {
+get_main_experiment2 <- function(projects_experiment2, randomize_order) {
 
   instructions <-
     get_instructions()
@@ -30,13 +32,15 @@ get_main_experiment2 <- function(projects_experiment2) {
     get_trial_joint(
       preamble = preamble_distribution,
       questions_joint = questions_joint,
-      distribution = "present"
+      distribution = "present",
+      randomize_order = randomize_order
     )
 
   trial_joint_distribution_absent <-
     get_trial_joint(
       questions_joint = questions_joint,
-      distribution = "absent"
+      distribution = "absent",
+      randomize_order = randomize_order
     )
 
   trial_separate_distribution_present <-
@@ -44,14 +48,16 @@ get_main_experiment2 <- function(projects_experiment2) {
       preamble = preamble_distribution,
       project_description = projects_experiment2$description,
       project_input = projects_experiment2$input,
-      distribution = "present"
+      distribution = "present",
+      randomize_order = randomize_order
     )
 
   trial_separate_distribution_absent <-
     get_trial_separate(
       project_description = projects_experiment2$description,
       project_input = projects_experiment2$input,
-      distribution = "absent"
+      distribution = "absent",
+      randomize_order = randomize_order
     )
 
   main_experiment2 <-
