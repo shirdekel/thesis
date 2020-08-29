@@ -22,6 +22,7 @@ library(lme4)
 library(patchwork)
 library(webshot)
 library(slider)
+library(webdriver)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
