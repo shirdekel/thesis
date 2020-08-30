@@ -301,10 +301,15 @@
     },
     "bookdown": {
       "Package": "bookdown",
-      "Version": "0.20",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "31ed5641f4a91cf113de490e0bb006b8"
+      "Version": "0.20.3",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "bookdown",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "master",
+      "RemoteSha": "9eb20a83fe303d643cdc1ffca21c2b228be9406a",
+      "Hash": "3564c698fc02ab5bcf7a3daedf9c7ba8"
     },
     "boot": {
       "Package": "boot",
@@ -479,6 +484,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "eb265b52c7e032cc8276f0c96c14466c"
+    },
+    "debugme": {
+      "Package": "debugme",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2d8a9e4f08f3dd669cb8ddd1eb575959"
     },
     "dendextend": {
       "Package": "dendextend",
@@ -671,10 +683,10 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.4.1",
+      "Version": "1.4.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "f43e0d5e85ccb0a4045670c0607ee504"
+      "Hash": "6efd734b14c6471cfe443345f3e35e29"
     },
     "gplots": {
       "Package": "gplots",
@@ -832,8 +844,8 @@
       "RemoteRepo": "jaysire",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "f954a794ccb3d0f8cf7066073327ae8af0074c2e",
-      "Hash": "f03b276eb35aa4b4db83f2a0088c606f"
+      "RemoteSha": "a350c7f1d058aee4d972bb9bfdf64dee441c60f7",
+      "Hash": "21e185a85c0420eecfb4e0649cedc919"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -1466,6 +1478,13 @@
       "RemoteSha": "6c7fb70bce43f36c2659674354b8f5a882d18b18",
       "Hash": "8e1424820f9ca26d87ac4cc5a7c10305"
     },
+    "showimage": {
+      "Package": "showimage",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "841927b226db842d24d9c288c99ed27b"
+    },
     "slider": {
       "Package": "slider",
       "Version": "0.1.5",
@@ -1615,10 +1634,10 @@
     },
     "vctrs": {
       "Package": "vctrs",
-      "Version": "0.3.2",
+      "Version": "0.3.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5ba3006888ac62fd5e97b208d00d3317"
+      "Hash": "0bc90078aeee42f2520b1d0a33bd6758"
     },
     "viridis": {
       "Package": "viridis",
@@ -1640,6 +1659,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5c786a8883c9f49f6d137ee76558ceef"
+    },
+    "webdriver": {
+      "Package": "webdriver",
+      "Version": "1.0.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "966f2cee50cf95fdbce9c395187b2baf"
     },
     "webshot": {
       "Package": "webshot",
