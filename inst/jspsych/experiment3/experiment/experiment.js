@@ -31,12 +31,13 @@ function checkOther(val, id){
 }
 jsPsych.data.addProperties({
   "subject": jsPsych.randomization.randomID(15),
-  "experiment": ["aggregation_exp3"],
-  "sample": ["prolific"],
+  "thesis_project": "aggregation",
+  "experiment": "experiment3",
+  "sample": "prolific",
   "similarity": similarity_condition,
-  "distribution": 'absent',
-  "awareness": 'naive',
-  "presentation": 'separate',
+  "distribution": "absent",
+  "awareness": "naive",
+  "presentation": "separate",
   "project_variation": project_variation_condition,
   "PROLIFIC_PID": urlvar.PROLIFIC_PID,
   "STUDY_ID": urlvar.STUDY_ID,

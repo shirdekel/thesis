@@ -31,8 +31,8 @@ function checkOther(val, id){
 }
 jsPsych.data.addProperties({
   "subject": jsPsych.randomization.randomID(15),
-  "experiment": ["aggregation_exp2"],
-  "sample": ["prolific"],
+  "experiment": "aggregation_exp2",
+  "sample": "prolific",
   "awareness": awareness_condition,
   "presentation": presentation_condition,
   "distribution": distribution_condition

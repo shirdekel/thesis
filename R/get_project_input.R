@@ -10,7 +10,7 @@
 ##' @author Shir Dekel
 ##' @export
 get_project_input <- function(type,
-                              detail = "",
+                              detail = NULL,
                               gambles) {
 
   project_input <-
