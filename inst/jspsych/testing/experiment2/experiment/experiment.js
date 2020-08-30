@@ -132,70 +132,70 @@ var timeline = {
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $130 million and a 35% chance of losing $110 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__130_240_0.65"]
+                      "name": ["oil-well_130_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $100 million and a 30% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__100_240_0.7"]
+                      "name": ["oil-well_100_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__140_240_0.55"]
+                      "name": ["oil-well_140_240_0.55"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $50 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $190 million and a 65% chance of losing $50 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__190_240_0.35"]
+                      "name": ["oil-well_190_240_0.35"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $110 million and a 35% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__110_240_0.65"]
+                      "name": ["oil-well_110_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 40% chance of the project succeeding. Therefore, <strong>there is 40% chance of gaining $180 million and a 60% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__180_240_0.4"]
+                      "name": ["oil-well_180_240_0.4"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     }
                   ],
                   "randomize_question_order": false,
@@ -239,70 +239,70 @@ var timeline = {
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $130 million and a 35% chance of losing $110 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__130_240_0.65"]
+                      "name": ["oil-well_130_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $100 million and a 30% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__100_240_0.7"]
+                      "name": ["oil-well_100_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__140_240_0.55"]
+                      "name": ["oil-well_140_240_0.55"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $50 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $190 million and a 65% chance of losing $50 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__190_240_0.35"]
+                      "name": ["oil-well_190_240_0.35"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $110 million and a 35% chance of losing $130 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__110_240_0.65"]
+                      "name": ["oil-well_110_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 40% chance of the project succeeding. Therefore, <strong>there is 40% chance of gaining $180 million and a 60% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__180_240_0.4"]
+                      "name": ["oil-well_180_240_0.4"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
                       "options": ["Yes", "No"],
                       "horizontal": false,
                       "required": true,
-                      "name": ["oil-well__180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     }
                   ],
                   "randomize_question_order": false,
@@ -364,43 +364,43 @@ var timeline = {
                   "timeline_variables": [
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "name": ["oil-well__200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $130 million and a 35% chance of losing $110 million on the investment.<\/strong>"],
-                      "name": ["oil-well__130_240_0.65"]
+                      "name": ["oil-well_130_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $100 million and a 30% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["oil-well__100_240_0.7"]
+                      "name": ["oil-well_100_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
-                      "name": ["oil-well__140_240_0.55"]
+                      "name": ["oil-well_140_240_0.55"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $50 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $190 million and a 65% chance of losing $50 million on the investment.<\/strong>"],
-                      "name": ["oil-well__190_240_0.35"]
+                      "name": ["oil-well_190_240_0.35"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["oil-well__100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["oil-well__110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $110 million and a 35% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["oil-well__110_240_0.65"]
+                      "name": ["oil-well_110_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 40% chance of the project succeeding. Therefore, <strong>there is 40% chance of gaining $180 million and a 60% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["oil-well__180_240_0.4"]
+                      "name": ["oil-well_180_240_0.4"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["oil-well__180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     }
                   ],
                   "randomize_order": false
@@ -455,43 +455,43 @@ var timeline = {
                   "timeline_variables": [
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $40 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 30% chance of the project succeeding. Therefore, <strong>there is 30% chance of gaining $200 million and a 70% chance of losing $40 million on the investment.<\/strong>"],
-                      "name": ["oil-well__200_240_0.3"]
+                      "name": ["oil-well_200_240_0.3"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $110 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $130 million and a 35% chance of losing $110 million on the investment.<\/strong>"],
-                      "name": ["oil-well__130_240_0.65"]
+                      "name": ["oil-well_130_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $100 million and a 30% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["oil-well__100_240_0.7"]
+                      "name": ["oil-well_100_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $100 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 55% chance of the project succeeding. Therefore, <strong>there is 55% chance of gaining $140 million and a 45% chance of losing $100 million on the investment.<\/strong>"],
-                      "name": ["oil-well__140_240_0.55"]
+                      "name": ["oil-well_140_240_0.55"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $50 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $190 million and a 65% chance of losing $50 million on the investment.<\/strong>"],
-                      "name": ["oil-well__190_240_0.35"]
+                      "name": ["oil-well_190_240_0.35"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $140 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 75% chance of the project succeeding. Therefore, <strong>there is 75% chance of gaining $100 million and a 25% chance of losing $140 million on the investment.<\/strong>"],
-                      "name": ["oil-well__100_240_0.75"]
+                      "name": ["oil-well_100_240_0.75"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 70% chance of the project succeeding. Therefore, <strong>there is 70% chance of gaining $110 million and a 30% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["oil-well__110_240_0.7"]
+                      "name": ["oil-well_110_240_0.7"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $130 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 65% chance of the project succeeding. Therefore, <strong>there is 65% chance of gaining $110 million and a 35% chance of losing $130 million on the investment.<\/strong>"],
-                      "name": ["oil-well__110_240_0.65"]
+                      "name": ["oil-well_110_240_0.65"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 40% chance of the project succeeding. Therefore, <strong>there is 40% chance of gaining $180 million and a 60% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["oil-well__180_240_0.4"]
+                      "name": ["oil-well_180_240_0.4"]
                     },
                     {
                       "prompt": ["Refinera is a business in your company that proposes to construct an oil well project, which they forecast will cost $60 million. If the project succeeds, forecasts show the company would make $240 million. Research suggests that there is a 35% chance of the project succeeding. Therefore, <strong>there is 35% chance of gaining $180 million and a 65% chance of losing $60 million on the investment.<\/strong>"],
-                      "name": ["oil-well__180_240_0.35"]
+                      "name": ["oil-well_180_240_0.35"]
                     }
                   ],
                   "randomize_order": false
