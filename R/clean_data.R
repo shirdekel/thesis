@@ -1,108 +1,97 @@
-##' @title clean data
+##' @title Clean data
 
 ##' @param data_raw
+##'
+##' @param experiment
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data <- function(data_raw) {
+clean_data <- function(data_raw, experiment) {
 
-  data_raw_prep <- data_raw %>%
-    drop_na(experiment, stage) %>% # Filter out old data, but only taking rows with experiment and stage values
-    rowwise() %>%
-    mutate(across(c(experiment, sample, stage), . %>%
-                    fromJSON())) %>%
-    filter(experiment == "aggregation_exp2")
+  if(experiment == "experiment2") {
+    data_raw <-
+      data_raw %>%
+      rowwise() %>%
+      mutate(
+        across(c(experiment, sample, stage), ~ .x %>%
+                 map_if(validate, fromJSON) %>%
+                 unlist()),
+        across(experiment, ~ .x %>%
+                 recode("aggregation_exp2" = "experiment2")),
+        thesis_project = "aggregation"
+      ) %>%
+      ungroup()
+  }
 
-  data_other <- data_raw_prep %>%
-    drop_na(responses) %>%
-    filter(stage != "project_choice") %>%
-    nest_by(subject) %>%
-    mutate(other = data %>%
-             pull(responses) %>%
-             map_dfc(fromJSON) %>%
-             list()) %>%
-    unnest(other) %>%
-    ungroup() %>%
-    mutate(across(c(age,
-                    business_edu,
-                    business_exp,
-                    project_number,
-                    portfolio_number,
-                    employees,
-                    revenue,
-                    budget),
-             as.numeric)) %>%
-    select(-data)
+  data_raw_prep <-
+    data_raw %>%
+    filter(experiment == experiment, thesis_project == "aggregation") %>%
+    select(stage, time_elapsed, dateCreated, subject, experiment, sample, awareness, presentation, distribution, button_pressed, responses, question_order, thesis_project)
 
-  data_portfolio_binary <- data_raw_prep %>%
-    filter(stage == "portfolio_binary") %>%
-    mutate(portfolio_binary = button_pressed %>%
-             recode("0" = 1, # In the experiment, 0 corresponds to investing in all, so this reverses the coding to be more intuitive
-                    "1" = 0)) %>%
-    select(subject, portfolio_binary)
+  data_combined <-
+    tibble()
 
-  names_to <- c("project", "outcome_positive", "outcome_dif", "probability_positive")
-  values_to <- "choice"
+  if(experiment == "experiment2") {
+    names_to <- c("project", "outcome_positive", "outcome_dif", "probability_positive")
+  } else {
+    names_to <- c("project", "detail", "outcome_positive", "outcome_dif", "probability_positive")
+  }
 
-  data_separate <- data_raw_prep %>%
-    filter(stage == "project_choice", presentation == "separate") %>%
-    group_by(subject) %>%
-    mutate(project_order = 1:10) %>%
-    rowwise() %>%
-    mutate(responses %>%
-             map_dfc(fromJSON) %>% # Doesn't work as a single step without pivot_longer()
-             pivot_longer(cols = everything(),
-                          names_to = names_to,
-                          names_sep = "_",
-                          values_to = values_to)
-    )
+  if("separate" %in% data_raw_prep$presentation) {
+    data_combined <-
+      data_raw_prep %>%
+      clean_data_separate(names_to) %>%
+      bind_rows(data_combined)
+  }
 
-  data_joint <- data_raw_prep %>%
-    filter(stage == "project_choice", presentation == "joint") %>%
-    rowwise()  %>%
-    mutate(responses %>%
-             map_dfc(fromJSON)) %>%
-    pivot_longer(cols = -(time_elapsed:stage),
-                 names_to = names_to,
-                 names_sep = "_",
-                 values_to = values_to) %>%
-    nest_by(subject, question_order) %>%
-    mutate(project_order = question_order %>%
-             map(fromJSON)) %>%
-    unnest(c(data, project_order)) %>%
-    mutate(project_order = project_order + 1) %>%
-    ungroup()
+  if("joint" %in% data_raw_prep$presentation) {
+    data_combined <-
+      data_raw_prep %>%
+      clean_data_joint(names_to) %>%
+      bind_rows(data_combined)
+  }
 
-  data <- data_joint %>%
-    bind_rows(data_separate) %>%
+  data_combined <-
+    data_raw_prep %>%
+    clean_data_other() %>%
+    inner_join(data_combined, by = "subject")
+
+  if("portfolio_binary" %in% data_raw_prep$stage) {
+    data_combined <-
+      data_raw_prep %>%
+      clean_data_portfolio_binary() %>%
+      inner_join(data_combined, by = "subject")
+  }
+
+  data <-
+    data_combined %>%
+    remove_empty("cols") %>%
     group_by(subject) %>%
     mutate(choice = recode(choice, "Yes" = 1, "No" = 0),
            datetime = dateCreated %>%
              dmy_hms(tz = "Australia/Sydney"),
            total_time = max(time_elapsed)/60000, # Milliseconds to minutes
-           proportion = sum(choice)/10,
+           proportion = sum(choice)/length(choice),
            across(c(distribution, awareness, presentation), as.factor),
-           across(outcome_positive:probability_positive,
-                  as.numeric),
-           gamble = str_c("(",
-                          probability_positive,
-                          ", ",
-                          outcome_positive,
-                          "; ",
-                          1- probability_positive,
-                          ", ",
-                          outcome_positive - outcome_dif,
-                          ")") %>%
+           across(where(check_numeric), as.numeric),
+           gamble = str_c(
+             "(",
+             probability_positive,
+             ", ",
+             outcome_positive,
+             "; ",
+             1 - probability_positive,
+             ", ",
+             outcome_positive - outcome_dif,
+             ")"
+           ) %>%
              as.factor(),
            get_restriction_values(probability_positive, outcome_positive) %>%
              .[c("expected_value", "gain_loss_ratio")] %>%
              as_tibble()) %>%
+    select(-c(question_order, time_elapsed, dateCreated, responses)) %>%
     ungroup() %>%
-    select(subject, experiment:presentation, stage:gain_loss_ratio) %>%
-    inner_join(data_other, by = "subject") %>%
-    inner_join(data_portfolio_binary, by = "subject") %>%
-    filter(!str_detect(prolific, "test1234")) %>%
     nest_by(subject) %>%
     rowid_to_column("id") %>%
     unnest(data) %>%
@@ -112,7 +101,13 @@ clean_data <- function(data_raw) {
     mutate(across(condition, as.factor)) %>%
     unnest(data)
 
-  get_prolific_id(data, from_date = "2020-08-07")
+  if("prolific" %in% colnames(data)) {
+    data <-
+      data %>%
+      filter(!str_detect(prolific, "test1234"))
+
+    get_prolific_id(data)
+  }
 
   return(data)
 
