@@ -83,7 +83,15 @@ the_plan <-
       format = "file"
     ),
     data_raw_server = import_data_server(data_directory_server),
-    data = clean_data(data_raw_server),
+    data_local = target(
+      clean_data(data_raw_local, experiment),
+      transform = map(data_raw_local,
+                      experiment = !!values$experiment,
+                      .id = experiment)
+    ),
+    data = target(
+      clean_data(data_raw_server, "experiment2")
+    ),
     data_effects = split_data(data),
     descriptives = get_descriptives(data),
     choice_binary_plot = plot_choice(
