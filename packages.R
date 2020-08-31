@@ -26,3 +26,4 @@ library(webdriver)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
+conflict_prefer("validate", "jsonlite")
