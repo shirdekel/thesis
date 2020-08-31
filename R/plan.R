@@ -33,12 +33,13 @@ the_plan <-
     ),
     experiment = target({
       get_experiment(gambles)
-      file_out(!!here("inst", "jspsych", directory, "experiment"))
+      file_out(!!here("inst", "jspsych", experiment, "experiment"))
+      get_data_mock(experiment, 10)
     },
     transform = map(
       gambles,
       get_experiment = !!values$get_experiment,
-      directory = !!values$experiment,
+      experiment = !!values$experiment,
       .names = values$experiment
     )),
     dir_materials = target({
@@ -66,10 +67,6 @@ the_plan <-
       ))
     },
     transform = map(experiment = !!values$experiment)
-    ),
-    data_mock = target(
-      get_data_mock(experiment, 1),
-      transform = map(experiment = !!values$experiment)
     ),
     data_directory_local = target(
       here("inst", "jspsych", experiment, "data"),
