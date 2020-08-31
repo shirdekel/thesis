@@ -26,6 +26,8 @@ save_data_mock <- function(session, data_folder) {
     data$message %>%
       str_remove(" \\(:\\)")
   ) %>%
+    mutate(dateCreated = data$timestamp %>%
+             format("%d/%m/%Y %H:%M:%S")) %>%
     write_csv(
       file.path(data_folder, str_c(file_id, ".csv"))
     )
