@@ -23,24 +23,8 @@ import_data_server <- function(data_directory_server) {
 
   file_path <- file_paths[str_which(dates, dates_max)]
 
-  col_types = cols(
-    .default = col_double(),
-    sectionName = col_character(),
-    sectionValue = col_character(),
-    trial_type = col_character(),
-    internal_node_id = col_character(),
-    computerName = col_character(),
-    dateCreated = col_character(),
-    trial_id = col_character(),
-    gender = col_logical(),
-    age = col_logical(),
-    language = col_logical(),
-    country = col_logical(),
-    turkcode = col_logical()
-  )
-
   data_server <- file_path %>%
-    read_csv(col_types = col_types) %>%
+    read_csv(col_types = cols()) %>%
     select(sectionName, sectionValue, time_elapsed, dateCreated) %>%
     pivot_wider(names_from = "sectionName",
                 values_from = "sectionValue")
