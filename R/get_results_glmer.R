@@ -28,7 +28,7 @@ get_results_glmer <- function(data_effects, dv) {
     data_effects_names %>%
     map2(data_nested, ~
            reformulate(termlabels = c(.x, "(1 | id)"), response = dv) %>%
-           glmer(family = binomial, data = .y) %>%
+           fit_glmer(family = binomial, data = .y) %>%
            apa_print()
     ) %>%
     set_names(data_effects_names)
