@@ -1,17 +1,25 @@
 ##' @title Get pre experiment trials
 
+##' @param ethics
+##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_pre_experiment <- function() {
+get_pre_experiment <- function(ethics) {
 
-  pis <-
-    get_pis("prolific")
+  pis <- NULL
+
+  consent <- NULL
 
   get_consent_html()
 
-  consent <-
-    get_consent()
+  if(ethics) {
+    pis <-
+      get_pis("prolific")
+
+    consent <-
+      get_consent()
+  }
 
   sample_id <-
     get_sample_id("prolific")
@@ -33,7 +41,8 @@ get_pre_experiment <- function() {
       contact,
       demographics,
       business_information
-    )
+    ) %>%
+    map(compact) # Remove PIS and consent if `NULL`
 
   return(pre_experiment)
 
