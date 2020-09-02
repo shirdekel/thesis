@@ -13,6 +13,8 @@ get_file_name_materials_experiment2 <- function() {
         "project_choice",
         "oil-well",
         .x,
+        "distribution",
+        "present",
         1:.y,
         sep = "_"
       )
@@ -32,8 +34,14 @@ get_file_name_materials_experiment2 <- function() {
       ),
       project_choice,
       "project_number",
-      "porfolio_binary",
-      "porfolio_number"
+      str_c(
+        c(
+          "porfolio_binary",
+          "porfolio_number"
+        ),
+        "distribution_present",
+        sep = "_"
+      )
     )
 
   return(file_name_materials_experiment2)
