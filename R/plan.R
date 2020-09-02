@@ -97,86 +97,59 @@ the_plan <-
     },
     transform = map(experiment = !!values$experiment)
     ),
-    data_directory_local = target(
-      here("inst", "jspsych", experiment, "data"),
-      format = "file",
-      transform = map(experiment = !!values$experiment)
+    data_raw = target({
+      import_data(file_in(data_directory))
+    },
+    transform = map(
+      data_directory = !!values$data_directory,
+      import_data = !!values$import_data,
+      .names = str_c("data_raw", values$experiment, sep = "_")
+    )
     ),
-    data_raw_local = target(
-      import_data_local(data_directory_local),
-      transform = map(data_directory_local,
-                      .id = experiment)
+    data_clean = target(
+      clean_data(data_raw, experiment, test = data_clean_test),
+      transform = map(
+        data_raw,
+        experiment = !!values$experiment,
+        data_clean_test = !!values$data_clean_test,
+        .id = experiment
+      )
     ),
-    data_directory_server = target(
-      here("inst", "extdata", "psychsydexp"),
-      format = "file"
+    descriptives = target(
+      get_descriptives(data_clean),
+      transform = map(
+        data_clean,
+        .id = experiment
+      )
     ),
-    data_raw_server = import_data_server(data_directory_server),
-    data_local = target(
-      clean_data(data_raw_local, experiment),
-      transform = map(data_raw_local,
-                      experiment = !!values$experiment,
-                      .id = experiment)
+    plot = target(
+      get_plot(data_clean),
+      transform = map(
+        data_clean,
+        get_plot = !!values$get_plot,
+        .id = experiment
+      )
     ),
-    data = target(
-      clean_data(data_raw_server, "experiment2")
+    results = target(
+      get_results(data_clean),
+      transform = map(
+        data_clean,
+        get_results = !!values$get_results,
+        .id = experiment
+      )
     ),
-    data_effects = split_data(data),
-    descriptives = get_descriptives(data),
-    choice_binary_plot = plot_choice(
-      data_effects,
-      choice,
-      "Mean choice of project acceptance"
-    ),
-    choice_proportion_plot = plot_choice(
-      data_effects,
-      proportion,
-      "Mean proportion of project acceptance"
-    ),
-    awareness_trials_plot = plot_awareness_trials(data),
-    portfolio_number_plot = plot_choice(
-      data_effects,
-      portfolio_number,
-      "Mean number of project acceptance"
-    ),
-    portfolio_binary_plot = plot_choice(
-      data_effects,
-      portfolio_binary,
-      "Mean choice of complete project portfolio acceptance"
-    ),
-    project_number_plot = plot_project_number(data),
-    gamble_values_plot = plot_gamble_values(data),
-    results_choice = get_results_glmer(data_effects, "choice"),
-    results_proportion = get_results_ttest(data_effects, "proportion"),
-    results_portfolio_binary = get_results_glmer(data_effects, "portfolio_binary"),
-    results_portfolio_number = get_results_ttest(data_effects, "portfolio_number"),
-    trials_plot = plot_trials(data),
-    memo_materials_experiment2 = target(
-      command = {
-        render(knitr_in(!!here(
-          "doc",
-          "aggregation_materials_experiment2",
-          "aggregation_materials_experiment2.Rmd"
-        )))
-        file_out(!!here(
-          "doc",
-          "aggregation_materials_experiment2",
-          "aggregation_materials_experiment2.pdf"
-        ))
-      }
-    ),
-    memo_summary_experiment2 = target(
-      command = {
-        render(knitr_in(!!here(
-          "doc",
-          "aggregation_summary_experiment2",
-          "aggregation_summary_experiment2.Rmd"
-        )))
-        file_out(!!here(
-          "doc",
-          "aggregation_summary_experiment2",
-          "aggregation_summary_experiment2.pdf"
-        ))
-      }
+    summary = target({
+      render(knitr_in(!!here(
+        "doc",
+        str_c("aggregation_summary_", experiment),
+        str_c("aggregation_summary_", experiment, ".Rmd")
+      )))
+      file_out(!!here(
+        "doc",
+        str_c("aggregation_summary_", experiment),
+        str_c("aggregation_summary_", experiment, ".pdf")
+      ))
+    },
+    transform = map(experiment = !!values$experiment)
     )
   )
