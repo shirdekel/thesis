@@ -18,8 +18,17 @@ get_screenshots_experiment3 <- function(dir_testing) {
 
   eval <-
     c(
+      str_c(
+        "this.click('#jspsych-instructions-next');",
+        str_c(
+          "this.click('.jspsych-btn');" %>%
+            rep(3),
+          collapse = "\n"
+        ),
+        sep = "\n"
+      ),
       "this.click('#jspsych-instructions-next');" %>%
-        rep(4),
+        rep(3),
       "this.click('#jspsych-survey-multi-choice-next');" %>%
         rep(10),
       "this.click('#jspsych-survey-html-form-next');" %>%

@@ -18,8 +18,17 @@ get_screenshots_experiment4 <- function(dir_testing) {
 
   casper_calls <-
     c(
+      str_c(
+        "this.click('#jspsych-instructions-next');",
+        str_c(
+          "this.click('.jspsych-btn');" %>%
+            rep(3),
+          collapse = "\n"
+        ),
+        sep = "\n"
+      ),
       "this.click('#jspsych-instructions-next');" %>%
-        rep(4),
+        rep(3),
       "this.click('#jspsych-survey-multi-choice-next');" %>%
         rep(20),
       "this.click('#jspsych-survey-html-form-next');" %>%
