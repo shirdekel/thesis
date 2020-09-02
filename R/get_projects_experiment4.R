@@ -1,11 +1,11 @@
 ##' @title Get long projects
 ##'
-##' @param gambles_20
+##' @param gambles
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_projects_experiment4 <- function(gambles_20) {
+get_projects_experiment4 <- function(gambles) {
 
   project_detail_components_experiment3 <-
     get_project_detail_components_experiment3()
@@ -39,7 +39,7 @@ get_projects_experiment4 <- function(gambles_20) {
     project_pair_sample %>%
     map(
       ~ get_project_description_experiment3(
-        gambles_20,
+        gambles,
         project_components_experiment3 %>%
           map(~.x %>%
                 rep(2)),
@@ -54,7 +54,7 @@ get_projects_experiment4 <- function(gambles_20) {
         type = project_components_experiment3$type %>%
           rep(2),
         detail = .x$input,
-        gambles_20
+        gambles
       )
     )
 
