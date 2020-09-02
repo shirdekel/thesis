@@ -3,11 +3,12 @@
 ##' @param data_raw
 ##'
 ##' @param experiment
+##' @param test
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data <- function(data_raw, experiment) {
+clean_data <- function(data_raw, experiment, test = FALSE) {
 
   if(experiment == "experiment2") {
     data_raw <-
@@ -19,7 +20,8 @@ clean_data <- function(data_raw, experiment) {
                  unlist()),
         across(experiment, ~ .x %>%
                  recode("aggregation_exp2" = "experiment2")),
-        thesis_project = "aggregation"
+        thesis_project = "aggregation",
+        similarity = "high"
       ) %>%
       ungroup()
   }
@@ -27,7 +29,22 @@ clean_data <- function(data_raw, experiment) {
   data_raw_prep <-
     data_raw %>%
     filter(experiment == experiment, thesis_project == "aggregation") %>%
-    select(stage, time_elapsed, dateCreated, subject, experiment, sample, awareness, presentation, distribution, button_pressed, responses, question_order, thesis_project)
+    select(
+      stage,
+      time_elapsed,
+      dateCreated,
+      subject,
+      experiment,
+      sample,
+      similarity,
+      awareness,
+      presentation,
+      distribution,
+      button_pressed,
+      responses,
+      question_order,
+      thesis_project
+    )
 
   data_combined <-
     tibble()
@@ -66,42 +83,9 @@ clean_data <- function(data_raw, experiment) {
 
   data <-
     data_combined %>%
-    remove_empty("cols") %>%
-    group_by(subject) %>%
-    mutate(choice = recode(choice, "Yes" = 1, "No" = 0),
-           datetime = dateCreated %>%
-             dmy_hms(tz = "Australia/Sydney"),
-           total_time = max(time_elapsed)/60000, # Milliseconds to minutes
-           proportion = sum(choice)/length(choice),
-           across(c(distribution, awareness, presentation), as.factor),
-           across(where(check_numeric), as.numeric),
-           gamble = str_c(
-             "(",
-             probability_positive,
-             ", ",
-             outcome_positive,
-             "; ",
-             1 - probability_positive,
-             ", ",
-             outcome_positive - outcome_dif,
-             ")"
-           ) %>%
-             as.factor(),
-           get_restriction_values(probability_positive, outcome_positive) %>%
-             .[c("expected_value", "gain_loss_ratio")] %>%
-             as_tibble()) %>%
-    select(-c(question_order, time_elapsed, dateCreated, responses)) %>%
-    ungroup() %>%
-    nest_by(subject) %>%
-    rowid_to_column("id") %>%
-    unnest(data) %>%
-    ungroup() %>%
-    nest_by(subject, presentation, distribution, awareness, proportion) %>%
-    unite("condition", presentation, distribution, awareness, remove = FALSE) %>%
-    mutate(across(condition, as.factor)) %>%
-    unnest(data)
+    clean_data_combined()
 
-  if("prolific" %in% colnames(data)) {
+  if("prolific" %in% colnames(data) & !test) {
     data <-
       data %>%
       filter(!str_detect(prolific, "test1234"))
