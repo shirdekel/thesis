@@ -252,10 +252,10 @@
     },
     "backports": {
       "Package": "backports",
-      "Version": "1.1.9",
+      "Version": "1.1.8",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "b29e2d989dfb2e71ca3fd7d5bb1c0d58"
+      "Hash": "3ef0eac19317fd03c0c854aed581d473"
     },
     "base64enc": {
       "Package": "base64enc",
@@ -301,15 +301,10 @@
     },
     "bookdown": {
       "Package": "bookdown",
-      "Version": "0.20.3",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "bookdown",
-      "RemoteUsername": "rstudio",
-      "RemoteRef": "master",
-      "RemoteSha": "9eb20a83fe303d643cdc1ffca21c2b228be9406a",
-      "Hash": "3564c698fc02ab5bcf7a3daedf9c7ba8"
+      "Version": "0.20",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "31ed5641f4a91cf113de490e0bb006b8"
     },
     "boot": {
       "Package": "boot",
@@ -322,14 +317,13 @@
       "Package": "broom",
       "Version": "0.7.0.9001",
       "Source": "GitHub",
-      "Remotes": "alexpghayes/modeltests",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "broom",
       "RemoteUsername": "tidymodels",
       "RemoteRef": "master",
-      "RemoteSha": "2633c1c43bdff726272c0f57270d8a041e2cca9d",
-      "Hash": "204f84fc2b101380a7bd26912fd77bc9"
+      "RemoteSha": "762e3adb26c1515fb3cc0c2b86228dfa62d8086b",
+      "Hash": "3a61b3508ac0dfb495158256e6a2a497"
     },
     "caTools": {
       "Package": "caTools",
@@ -347,10 +341,10 @@
     },
     "car": {
       "Package": "car",
-      "Version": "3.0-9",
+      "Version": "3.0-8",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5b4045bd11466d0d3e55c71f81cc1b5f"
+      "Hash": "561fc600526c46694aadea0d555f4359"
     },
     "carData": {
       "Package": "carData",
@@ -445,10 +439,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.2.1",
+      "Version": "0.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "c4c83167f43ca762a9fa998d4fead3ae"
+      "Hash": "07ac25dbe65bfa02deac8ec3bf74fdd2"
     },
     "crayon": {
       "Package": "crayon",
@@ -522,10 +516,10 @@
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.0.2",
+      "Version": "1.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d0509913b27ea898189ee664b6030dc2"
+      "Hash": "018b2fc43cb25d9f07241986c53fbf8e"
     },
     "drake": {
       "Package": "drake",
@@ -557,10 +551,10 @@
     },
     "emmeans": {
       "Package": "emmeans",
-      "Version": "1.5.0",
+      "Version": "1.4.8",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0dc804fb37bcdfea325b3214e635f1ff"
+      "Hash": "e4e155221cb570a5070611c42690e100"
     },
     "estimability": {
       "Package": "estimability",
@@ -683,10 +677,10 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.4.2",
+      "Version": "1.4.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "6efd734b14c6471cfe443345f3e35e29"
+      "Hash": "f43e0d5e85ccb0a4045670c0607ee504"
     },
     "gplots": {
       "Package": "gplots",
@@ -844,8 +838,8 @@
       "RemoteRepo": "jaysire",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "a350c7f1d058aee4d972bb9bfdf64dee441c60f7",
-      "Hash": "21e185a85c0420eecfb4e0649cedc919"
+      "RemoteSha": "6778a10ddccdfba6278956245523efd920fd087e",
+      "Hash": "776bfb429a1d382de8eb818d4d2655a8"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -961,10 +955,10 @@
     },
     "maptools": {
       "Package": "maptools",
-      "Version": "1.0-2",
+      "Version": "1.0-1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "1cb5cb7bbab76318944e3794ff2512ae"
+      "Hash": "5117ca3798362fadc2d985899b3e891e"
     },
     "markdown": {
       "Package": "markdown",
@@ -1114,22 +1108,17 @@
     },
     "patchwork": {
       "Package": "patchwork",
-      "Version": "1.0.0.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "patchwork",
-      "RemoteUsername": "thomasp85",
-      "RemoteRef": "master",
-      "RemoteSha": "012fb8bb7ba07d3ba4717536e43471828dca61fb",
-      "Hash": "8926b2b0f38d19890ed4121ad1d25330"
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "d6b817898a400e82e6777d4f7e027100"
     },
     "pbapply": {
       "Package": "pbapply",
-      "Version": "1.4-3",
+      "Version": "1.4-2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "52f8028b028076bc3b7ee5d6251abf0d"
+      "Hash": "ee90507ce37987b22470fae76325f370"
     },
     "pbivnorm": {
       "Package": "pbivnorm",
@@ -1245,10 +1234,10 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.3.4",
+      "Version": "1.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a54a7dfd68124abb2225dbfa9a85c457"
+      "Hash": "425d938eb9c02906a8ac98c0c2a306b5"
     },
     "purrr": {
       "Package": "purrr",
@@ -1469,8 +1458,8 @@
       "Package": "shiR",
       "Version": "0.0.0.9000",
       "Source": "GitHub",
-      "Remotes": "crsh/papaja, Lakens/ANOVApower",
       "RemoteType": "github",
+      "Remotes": "crsh/papaja, Lakens/ANOVApower",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "shiR",
       "RemoteUsername": "shirdekel",
@@ -1578,10 +1567,10 @@
     },
     "tidyr": {
       "Package": "tidyr",
-      "Version": "1.1.2",
+      "Version": "1.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "c40b2d5824d829190f4b825f4496dfae"
+      "Hash": "a0d8d887f9887f668e3d54d1b820c2a2"
     },
     "tidyselect": {
       "Package": "tidyselect",
@@ -1634,10 +1623,10 @@
     },
     "vctrs": {
       "Package": "vctrs",
-      "Version": "0.3.4",
+      "Version": "0.3.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0bc90078aeee42f2520b1d0a33bd6758"
+      "Hash": "5ba3006888ac62fd5e97b208d00d3317"
     },
     "viridis": {
       "Package": "viridis",
@@ -1718,10 +1707,10 @@
     },
     "zip": {
       "Package": "zip",
-      "Version": "2.1.1",
+      "Version": "2.0.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "3bc8405c637d988801ec5ea88372d0c2"
+      "Hash": "caa73cdca1a87e5f2617915c8809f207"
     }
   }
 }
