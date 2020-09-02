@@ -6,7 +6,11 @@
 get_dir_testing <- function(experiment) {
 
   dir_testing <-
-    here("inst", "jspsych", "testing", str_c("experiment", experiment))
+    here("inst", "jspsych", "testing", experiment)
+
+  if(!dir.exists(dir_testing)) {
+    dir.create(dir_testing)
+  }
 
   return(dir_testing)
 
