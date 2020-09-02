@@ -1,22 +1,11 @@
 ##' @title screenshots E3
 
-##' @param gambles
+##' @param dir_testing
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment3 <- function(gambles) {
-
-  # Establish E3 testing directory
-  dir_testing <-
-    get_dir_testing(experiment = 3)
-
-  if(!dir.exists(dir_testing)) {
-    dir.create(dir_testing)
-  }
-
-  # Create experiment files in testing directory without randomisation (so that we can get screenshots for all projects)
-  get_experiment3(gambles, randomize_order = FALSE, path = dir_testing, pre_experiment = FALSE)
+get_screenshots_experiment3 <- function(dir_testing) {
 
   file_name_materials_experiment3 <-
     get_file_name_materials_experiment3()

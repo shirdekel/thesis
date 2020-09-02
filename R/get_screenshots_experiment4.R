@@ -1,22 +1,11 @@
 ##' @title Screenshots E4
 
-##' @param gambles_20
+##' @param dir_testing
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment4 <- function(gambles_20) {
-
-  # Establish E4 testing directory
-  dir_testing <-
-    get_dir_testing(experiment = 4)
-
-  if(!dir.exists(dir_testing)) {
-    dir.create(dir_testing)
-  }
-
-  # Create experiment files in testing directory without randomisation (so that we can get screenshots for all projects)
-  get_experiment4(gambles_20, randomize_order = FALSE, path = dir_testing, pre_experiment = FALSE)
+get_screenshots_experiment4 <- function(dir_testing) {
 
   file_name_materials_experiment4 <-
     get_file_name_materials_experiment4()
