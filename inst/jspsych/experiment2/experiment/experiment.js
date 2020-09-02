@@ -6,7 +6,7 @@ function verifyClose() {
 }
 window.onbeforeunload = verifyClose;
 
-var awareness_condition, condition, distribution_condition, presentation_condition, regex_awareness, regex_distribution, regex_presentation;
+var awareness_condition, condition, distribution_condition, presentation_condition, regex_awareness, regex_distribution, regex_presentation, urlvar;
 
 condition = jsPsych.randomization.sampleWithoutReplacement(["naive_separate_absent", "naive_joint_absent", "naive_separate_present", "aware_separate_absent"], 1)[0];
 
@@ -21,6 +21,20 @@ awareness_condition = condition.match(regex_awareness)[1];
 presentation_condition = condition.match(regex_presentation)[1];
 
 distribution_condition = condition.match(regex_distribution)[1];
+
+urlvar = jsPsych.data.urlVariables();
+
+if (typeof urlvar.presentation !== 'undefined') {
+  presentation_condition = urlvar.presentation;
+}
+
+if (typeof urlvar.awareness !== 'undefined') {
+  awareness_condition = urlvar.awareness;
+}
+
+if (typeof urlvar.distribution !== 'undefined') {
+  distribution_condition = urlvar.distribution;
+}
 
 function checkOther(val, id){
  var element=document.getElementById(id);

@@ -22,7 +22,11 @@ condition_allocation_experiment2 <- function() {
       # Add [1] to extract capture group
       "awareness_condition = condition.match(regex_awareness)[1]",
       "presentation_condition = condition.match(regex_presentation)[1]",
-      "distribution_condition = condition.match(regex_distribution)[1]") %>%
+      "distribution_condition = condition.match(regex_distribution)[1]",
+      "urlvar = jsPsych.data.urlVariables()",
+      "if typeof urlvar.presentation != 'undefined' then presentation_condition = urlvar.presentation;",
+      "if typeof urlvar.awareness != 'undefined' then awareness_condition = urlvar.awareness;",
+      "if typeof urlvar.distribution != 'undefined' then distribution_condition = urlvar.distribution;") %>%
     coffee_compile(bare = TRUE)
 
 
