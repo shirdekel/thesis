@@ -20,7 +20,7 @@ get_trial_separate_experiment4 <- function(preamble, timeline_variable, form_opt
     preamble_awareness <-
       div(
         p(
-          "Below is a description of one project."
+          "Below is a description of the current project."
         ),
         preamble
       ) %>%
