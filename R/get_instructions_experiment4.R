@@ -10,35 +10,39 @@ get_instructions_experiment4 <- function() {
       "Imagine that you are an executive in a large company composed of many individual businesses. You need to make decisions about projects that come across your desk."
     )
 
-  instructions_naive <-
-    div(
-        instructions_intro,
-      p(
-        "Imagine that making a good investment decision will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in this scenario."
-      )
-    ) %>%
-    as.character()
-
-  instructions_aware <-
-    div(
-      instructions_intro,
-      p(
-        "Imagine that making good investment decisions will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in these scenarios."
+  instructions_param <-
+    tibble(
+      condition = c("naive", "aware"),
+      investment = c(
+        "each investment",
+        "your investments"
       ),
-      p(
+      project_number = c(
+        "",
         "There will be 20 projects that you will decide on this quarter."
       )
-    ) %>%
-    as.character()
+    )
 
-  awareness_condition <- c("naive", "aware")
+  instructions_main <-
+    instructions_param %>%
+    slide_chr(
+      ~ div(
+        instructions_intro,
+        p(
+          "As the executive, your pay will be determined by the performance of ",
+          .x$investment,
+          ". We want to know what choices you would actually make."
+        ),
+        p(
+          .x$project_number
+        )
+      ) %>%
+        as.character()
+    )
 
   instructions_experiment4 <-
-    list(
-      instructions_naive,
-      instructions_aware
-    ) %>%
-    list(awareness_condition) %>%
+    instructions_main %>%
+    list(instructions_param$condition) %>%
     pmap(
       ~ trial_instructions(
         pages = c(
@@ -52,7 +56,7 @@ get_instructions_experiment4 <- function() {
         build_timeline() %>%
         display_if(fn_data_condition(awareness == !!.y))
     ) %>%
-    set_names(awareness_condition)
+    set_names(instructions_param$condition)
 
   return(instructions_experiment4)
 
