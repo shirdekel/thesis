@@ -221,7 +221,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -358,7 +358,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -495,7 +495,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -632,7 +632,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -769,7 +769,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -906,7 +906,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -1043,7 +1043,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -1180,7 +1180,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -1317,7 +1317,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
@@ -1454,7 +1454,7 @@ var timeline = {
                         }
                       ],
                       "randomize_question_order": false,
-                      "preamble": ["<div>\n  <p>Below is a description of one project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
+                      "preamble": ["<div>\n  <p>Below is a description of the current project.<\/p>\n  <p>Indicate below whether you would invest in the project:<\/p>\n<\/div>"],
                       "button_label": ["Continue"],
                       "required_message": ["You must choose at least one response for this question"],
                       "post_trial_gap": [0],
