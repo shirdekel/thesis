@@ -1,11 +1,11 @@
 ##' @title screenshots E2
 
-##' @param dir_testing
+##' @param dir_testing_experiment
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment2 <- function(dir_testing) {
+get_screenshots_experiment2 <- function(dir_testing_experiment) {
 
   file_name_materials_experiment2 <-
     get_file_name_materials_experiment2()
@@ -83,6 +83,6 @@ get_screenshots_experiment2 <- function(dir_testing) {
         )
     )
 
-  get_screenshots(file_path_materials_experiment2, eval, dir_testing)
+  get_screenshots(file_path_materials_experiment2, eval, dir_testing_experiment)
 
 }

@@ -1,11 +1,11 @@
 ##' @title screenshots E3
 
-##' @param dir_testing
+##' @param dir_testing_experiment
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment3 <- function(dir_testing) {
+get_screenshots_experiment3 <- function(dir_testing_experiment) {
 
   file_name_materials_experiment3 <-
     get_file_name_materials_experiment3()
@@ -47,17 +47,6 @@ get_screenshots_experiment3 <- function(dir_testing) {
         )
     )
 
-  list(
-    file_path_materials_experiment3,
-    eval
-  ) %>%
-    pmap(
-      ~ file.path(dir_testing, "experiment", "index.html") %>%
-        webshot(
-          file = .x,
-          selector = "#jspsych-content",
-          eval = .y
-        )
-    )
+  get_screenshots(file_path_materials_experiment3, eval, dir_testing_experiment)
 
 }
