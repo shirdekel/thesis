@@ -2541,7 +2541,7 @@ var timeline = {
         },
         {
           "type": ["html-button-response"],
-          "stimulus": ["<div>\n  <p>Press below to complete the experiment.<\/p>\n  <p>It will take a few seconds to save your data, after which you will be automatically redirected back to Prolific.<\/p>\n  <p>Thank you!<\/p>\n<\/div>"],
+          "stimulus": ["<div>\n  <p>Press below to complete the experiment.<\/p>\n  <p>The next page will be a blank white screen. It will take approximately 10 seconds to save your data, after which you will be automatically redirected back to Prolific. Please do not exit until you have been redirected back to Prolific.<\/p>\n  <p>Thank you!<\/p>\n<\/div>"],
           "choices": ["End experiment"],
           "margin_vertical": ["0px"],
           "margin_horizontal": ["8px"],
@@ -2573,7 +2573,7 @@ jsPsych.init(
         }
       };
       xhr.send(jsPsych.data.get().json());
-      setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 4000);
+      setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 8000);
     }
 }
 );

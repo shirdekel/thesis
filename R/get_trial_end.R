@@ -7,7 +7,7 @@ get_trial_end <- function() {
 
   trial_end_html <- div(
     p("Press below to complete the experiment."),
-    p("It will take a few seconds to save your data, after which you will be automatically redirected back to Prolific."),
+    p("The next page will be a blank white screen. It will take approximately 10 seconds to save your data, after which you will be automatically redirected back to Prolific. Please do not exit until you have been redirected back to Prolific."),
     p("Thank you!")
   ) %>%
     as.character()
