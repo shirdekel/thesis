@@ -31,10 +31,12 @@ rsconnect/
 *.html
 # renv via capsule
 renv/
-# outputs
+
+# output files
 *.pdf
 *.png
 *.tex
 *.thm
 !preamble.tex
 .DS_Store
+*.zip

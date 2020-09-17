@@ -1,4 +1,3 @@
-## library() calls go here
 library(conflicted)
 library(dotenv)
 library(drake)
@@ -23,7 +22,9 @@ library(patchwork)
 library(webshot)
 library(slider)
 library(webdriver)
+library(zip)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
 conflict_prefer("validate", "jsonlite")
+conflict_prefer("zip", "zip")
