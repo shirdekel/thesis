@@ -7,17 +7,15 @@
 ##' @export
 get_values <- function() {
 
-  plot_function <-
-    syms(c("plot_awareness_trials", "plot_project_number", "plot_gamble_values"))
-
   gamble_n <-
-    c(10 %>% rep(2), 20)
+    c(
+      10 %>%
+        rep(2),
+      20
+    )
 
   experiment <-
     str_c("experiment", 2:4)
-
-  get_experiment <-
-    syms(str_c("get", experiment, sep = "_"))
 
   get_screenshots <-
     syms(str_c("get_screenshots", experiment, sep = "_"))
@@ -29,26 +27,26 @@ get_values <- function() {
     syms(str_c("get_results", experiment, sep = "_"))
 
   import_data <-
-    syms(c("import_data_server", "import_data_local" %>%
-             rep(2)))
+    syms(c("import_data_server" %>%
+             rep(2),
+           "import_data_local"))
 
   data_directory <-
     c(
-      here("inst", "extdata", "psychsydexp"),
-      here("inst", "jspsych", "experiment3", "data"),
+      here("inst", "extdata", "psychsydexp") %>%
+        rep(2),
       here("inst", "jspsych", "experiment4", "data")
     )
 
   data_clean_test <-
     c(
-      FALSE,
-      TRUE %>%
-        rep(2)
+      FALSE %>%
+        rep(2),
+      TRUE
     )
 
   values <-
     lst(
-      plot_function,
       gamble_n,
       experiment,
       get_experiment,

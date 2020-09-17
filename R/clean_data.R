@@ -28,7 +28,17 @@ clean_data <- function(data_raw, experiment, test = FALSE) {
 
   data_raw_prep <-
     data_raw %>%
-    filter(experiment == experiment, thesis_project == "aggregation") %>%
+    # Filtering the experiment object in this case seem to require unquoting
+    filter(experiment == !!experiment,
+           thesis_project == "aggregation") %>%
+    rowwise() %>%
+    # Need to convert stage from JSON. Making sure it comes out normal from jaysire proved to be difficult because it unboxes also other elements.
+    # Also might need to eventually include project_variation, but Experiment 2 doesn't have it.
+    mutate(
+      across(c(stage), ~ .x %>%
+               map_if(validate, fromJSON) %>%
+               unlist())
+    ) %>%
     select(
       stage,
       time_elapsed,
