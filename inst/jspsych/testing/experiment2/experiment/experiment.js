@@ -717,18 +717,12 @@ jsPsych.init(
   "experiment_width": [750],
   "preload_images": ["resource/image/consent.png", "resource/image/debrief1.png", "resource/image/debrief2.png", "resource/image/distribution_20.png", "resource/image/distribution.png", "resource/image/gambles_plot_experiment2.png", "resource/image/gambles_plot_experiment3.png", "resource/image/gambles_plot_experiment4.png", "resource/image/pis1_prolific.png", "resource/image/pis1_sona.png", "resource/image/pis2_prolific.png", "resource/image/pis2_sona.png", "resource/image/pis3_prolific.png", "resource/image/pis3_sona.png"],
   "on_finish": function() {
-      safe_to_close_window = true; // turn off verifyClose()
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'SaveToDatabase.aspx'); // change 'write_data.php' to point to php script.
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onload = function () {
-        if (xhr.status == 200) {
-          var response = JSON.parse(xhr.responseText);
-          console.log(response.success);
-        }
-      };
-      xhr.send(jsPsych.data.get().json());
-      setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 4000);
-    }
+    var data = jsPsych.data.get().csv();
+    var file = 'xprmntr_local_name';
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'submit');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({filename: file, filedata: data}));
+  }
 }
 );
