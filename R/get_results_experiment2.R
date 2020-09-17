@@ -20,6 +20,11 @@ get_results_experiment2 <- function(data) {
     portfolio_number <-
       get_results_ttest(data_split, "portfolio_number")
 
+    sample_size <-
+      pwr.t.test(d = mean(c(0.47, 0.22)), power = 0.8) %>%
+      .[["n"]] %>%
+      prod(2) %>%
+      ceiling()
 
   results_experiment2 <-
     lst(

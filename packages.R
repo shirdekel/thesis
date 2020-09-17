@@ -23,6 +23,7 @@ library(webshot)
 library(slider)
 library(webdriver)
 library(zip)
+library(pwr)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
