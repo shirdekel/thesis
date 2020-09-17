@@ -29,9 +29,11 @@ get_instructions_experiment4 <- function() {
       ~ div(
         instructions_intro,
         p(
-          "As the executive, your pay will be determined by the performance of ",
-          .x$investment,
-          ". We want to know what choices you would actually make."
+          str_c(
+            "As the executive, your pay will be determined by the performance of ",
+            .x$investment,
+            ". We want to know what choices you would actually make."
+          )
         ),
         p(
           .x$project_number

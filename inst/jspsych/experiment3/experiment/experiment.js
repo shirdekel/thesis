@@ -150,7 +150,7 @@ var timeline = {
       "timeline": [
         {
           "type": ["instructions"],
-          "pages": ["We will now give you the instructions for the task. Use the arrow buttons to browse these instructions", "<div>\n  <p>Imagine that you are an executive in a large company composed of many individual businesses. You need to make decisions about projects that come across your desk.<\/p>\n  <p>Imagine that making a good investment decision will result in you receiving a generous bonus and a potential promotion, and that doing poorly will result in you receiving a large pay cut and a potential demotion. We want to know what choices you would actually make in this scenario.<\/p>\n<\/div>", "Press the 'Next' button to begin."],
+          "pages": ["We will now give you the instructions for the task. Use the arrow buttons to browse these instructions", "<div>\n  <p>Imagine that you are an executive in a large company composed of many individual businesses. You need to make decisions about projects that come across your desk.<\/p>\n  <p>As the executive, your pay will be determined by the performance of each investment. We want to know what choices you would actually make.<\/p>\n  <p><\/p>\n<\/div>", "Press the 'Next' button to begin."],
           "key_forward": [39],
           "key_backward": [37],
           "allow_backward": true,
