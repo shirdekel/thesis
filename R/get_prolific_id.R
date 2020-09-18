@@ -2,13 +2,14 @@
 ##'
 ##' To use for copying to Prolific for approval
 ##'
+##' @param prolific_filter
+##' @param prolific_filter_label
 ##' @param data
-##' @param from_date
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_prolific_id <- function(data, from_date = "2020-07-28") {
+get_prolific_id <- function(data, prolific_filter, prolific_filter_label) {
 
   file_name <-
     str_c(
@@ -16,12 +17,13 @@ get_prolific_id <- function(data, from_date = "2020-07-28") {
         "prolific_id",
         unique(data$thesis_project),
         unique(data$experiment),
+        prolific_filter_label,
         sep = "_"),
       ".txt"
     )
 
   data %>%
-    filter(datetime > from_date) %>%
+    filter_by_string(prolific_filter) %>%
     pull(prolific) %>%
     unique() %>%
     write_lines(here("inst", "extdata", file_name))

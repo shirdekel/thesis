@@ -4,11 +4,13 @@
 ##'
 ##' @param experiment
 ##' @param test
+##' @param prolific_filter
+##' @param prolific_filter_label
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data <- function(data_raw, experiment, test = FALSE) {
+clean_data <- function(data_raw, experiment, test = FALSE, prolific_filter, prolific_filter_label) {
 
   if(experiment == "experiment2") {
     data_raw <-
@@ -100,7 +102,11 @@ clean_data <- function(data_raw, experiment, test = FALSE) {
       data %>%
       filter(!str_detect(prolific, "test1234"))
 
-    get_prolific_id(data)
+    list(prolific_filter, prolific_filter_label) %>%
+      pmap(
+        ~ data %>%
+          get_prolific_id(.x, .y)
+      )
   }
 
   return(data)
