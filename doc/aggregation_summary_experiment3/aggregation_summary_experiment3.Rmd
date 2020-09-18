@@ -59,7 +59,7 @@ plot_experiment3$choice_trials
 
 ### Project expectation
 
-We asked participants how many projects they expected to see. Figure\ \@ref(fig:plot-project-expectation) shows that overall people to correctly estimate the number of projects, with more accuracy for those in the aware condition.
+We asked participants how many projects they expected to see. As Figure\ \@ref(fig:plot-project-expectation) shows, the difference between presentation conditions was not significant, `r results_experiment3$project_expectation`. 
 
 ```{r plot-project-expectation, fig.cap = "Number of projects participants expected to see, by condition"}
 plot_experiment3$project_expectation
