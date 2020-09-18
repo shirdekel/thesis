@@ -761,7 +761,7 @@ jsPsych.init(
         }
       };
       xhr.send(jsPsych.data.get().json());
-      setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 8000);
+      setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 10000);
     }
 }
 );
