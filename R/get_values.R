@@ -45,6 +45,28 @@ get_values <- function() {
       TRUE
     )
 
+  prolific_filter <-
+    list(
+      "datetime > '2020-07-28'",
+      list(
+        c("datetime > '2020-09-17'", "datetime < '2020-09-18'"),
+        c("datetime > '2020-09-18'", "similarity == 'low'"),
+        c("datetime > '2020-09-18'", "similarity == 'high'")
+      ),
+      "datetime > '2020-07-28'"
+    )
+
+  prolific_filter_label <-
+    list(
+      character(0),
+      list(
+        character(0),
+        "similarity_low",
+        "similarity_high"
+      ),
+      character(0)
+    )
+
   values <-
     lst(
       gamble_n,
@@ -55,7 +77,9 @@ get_values <- function() {
       get_results,
       import_data,
       data_directory,
-      data_clean_test
+      data_clean_test,
+      prolific_filter,
+      prolific_filter_label
     )
 
   return(values)
