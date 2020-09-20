@@ -32,15 +32,15 @@ the_plan <-
       format = "file"
     ),
     experiment = target({
-      path <- here("inst", "jspsych", experiment)
-      get_experiment(gambles, path, experiment)
+      path <- here("inst", "jspsych", str_c("experiment", experiment))
+      get_experiment(gambles, path, thesis_project, experiment)
       # get_data_mock(experiment, 20)
       file.path(path, "experiment")
     },
     transform = map(
       gambles,
-      experiment = !!values$experiment,
-      .names = values$experiment
+      .data = !!values$parameters
+      # .names = values$experiment
     ),
     target = "file"
     ),
@@ -54,6 +54,7 @@ the_plan <-
     testing = target({
       get_experiment(
         gambles,
+        thesis_project,
         experiment,
         randomize_order = FALSE,
         path = dir_testing,
@@ -61,13 +62,14 @@ the_plan <-
         zip = FALSE,
         on_finish = save_locally()
       )
-      here("inst", "jspsych", "testing", experiment, "experiment")
+      here("inst", "jspsych", "testing", str_c("experiment", experiment), "experiment")
     },
     transform = map(
       gambles,
       dir_testing,
-      experiment = !!values$experiment,
-      .id = experiment
+      .data = !!values$parameters
+      # experiment = !!values$experiment,
+      # .id = experiment
     ),
     target = "file"
     ),

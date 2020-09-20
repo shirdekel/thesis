@@ -64,6 +64,16 @@ get_values <- function() {
       list(character(0))
     )
 
+  parameters <-
+    tibble(
+      thesis_project = c(
+        c("aggregation") %>%
+          rep(3)
+        # "alignment"
+      ),
+      experiment = c(2,3,4)
+    )
+
   values <-
     lst(
       gamble_n,
@@ -76,7 +86,8 @@ get_values <- function() {
       data_directory,
       data_clean_test,
       prolific_filter,
-      prolific_filter_label
+      prolific_filter_label,
+      parameters
     )
 
   return(values)
