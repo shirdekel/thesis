@@ -28,21 +28,18 @@ get_values <- function() {
 
   import_data <-
     syms(c("import_data_server" %>%
-             rep(2),
-           "import_data_local"))
+             rep(3)))
 
   data_directory <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(2),
-      here("inst", "jspsych", "experiment4", "data")
+        rep(3)
     )
 
   data_clean_test <-
     c(
       FALSE %>%
-        rep(2),
-      TRUE
+        rep(3)
     )
 
   prolific_filter <-
@@ -58,13 +55,13 @@ get_values <- function() {
 
   prolific_filter_label <-
     list(
-      character(0),
+      list(character(0)),
       list(
         character(0),
         "similarity_low",
         "similarity_high"
       ),
-      character(0)
+      list(character(0))
     )
 
   values <-
