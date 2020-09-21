@@ -7,9 +7,9 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_path <- function(thesis_project, experiment_number) {
+get_experiment_directory <- function(thesis_project, experiment_number) {
 
-  experiment_path <-
+  experiment_directory <-
     here(
       "inst",
       "jspsych",
@@ -20,5 +20,5 @@ get_experiment_path <- function(thesis_project, experiment_number) {
       )
     )
 
-  return(experiment_path)
+  return(experiment_directory)
 }
