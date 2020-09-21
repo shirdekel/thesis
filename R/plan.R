@@ -22,6 +22,10 @@ the_plan <-
       ),
       seed = old_seed$gambles
     ),
+    experiment_resources = target(
+      here("inst", "experiment_resources"),
+      format = "file"
+    ),
     gambles_plot = target(
       plot_gambles(
         thesis_project,
@@ -34,56 +38,74 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    experiment_resources = target(
-      here("inst", "experiment_resources"),
-      format = "file"
+    experiment_components = target(
+      get_experiment_components(gambles),
+      transform = map(
+        gambles,
+        .id = c(thesis_project, experiment_number)
+      ),
+      seed = old_seed$experiment4
     ),
     experiment = target({
-      path <- here("inst", "jspsych", str_c("experiment", experiment_number))
-      get_experiment(gambles, path, thesis_project, experiment_number, experiment_resources)
+      get_experiment(
+        gambles,
+        experiment_directory,
+        thesis_project,
+        experiment_number,
+        experiment_resources,
+        experiment_components
+      )
       # get_data_mock(experiment, 20)
-      file.path(path, "experiment")
+      file.path(experiment_directory, "experiment")
     },
     transform = map(
       gambles,
+      experiment_components,
       .id = c(thesis_project, experiment_number)
     ),
-    target = "file",
-    seed = old_seed$experiment4
+    target = "file"
     ),
-    dir_testing = target(
-      get_dir_testing(experiment_number),
+    testing_directory = target(
+      get_testing_directory(thesis_project, experiment_number),
       transform = map(
         experiment_number,
         .id = c(thesis_project, experiment_number)
       ),
       target = "file"
     ),
+    testing_components = target(
+      get_experiment_components(gambles, randomize_order = FALSE),
+      transform = map(
+        gambles,
+        .id = c(thesis_project, experiment_number)
+      ),
+      seed = old_seed$experiment4
+    ),
     testing = target({
       get_experiment(
         gambles,
-        path = dir_testing,
+        path = testing_directory,
         thesis_project,
         experiment_number,
         experiment_resources,
-        randomize_order = FALSE,
+        testing_components,
         ethics = FALSE,
         zip = FALSE,
         on_finish = save_locally()
       )
-      here("inst", "jspsych", "testing", str_c("experiment", experiment_number), "experiment")
+      file.path(testing_directory, "experiment")
     },
     transform = map(
       gambles,
-      dir_testing,
+      testing_directory,
+      testing_components,
       .id = c(thesis_project, experiment_number)
     ),
-    target = "file",
-    seed = old_seed$experiment4
+    target = "file"
     ),
-    dir_materials = target({
-      get_screenshots(testing)
-      here("inst", "materials", str_c("experiment", experiment_number))
+    materials = target({
+      get_screenshots(testing, screenshot_components)
+      materials_directory
     },
     transform = map(
       testing,
@@ -91,17 +113,9 @@ the_plan <-
     ),
     format = "file"
     ),
-    materials = target({
-      render(knitr_in(!!here(
-        "doc",
-        str_c("aggregation_materials_experiment", experiment_number),
-        str_c("aggregation_materials_experiment", experiment_number, ".Rmd")
-      )))
-      file_out(!!here(
-        "doc",
-        str_c("aggregation_materials_experiment", experiment_number),
-        str_c("aggregation_materials_experiment", experiment_number, ".pdf")
-      ))
+    materials_memo = target({
+      render(knitr_in(!!memo_path[[1]][[1]]))
+      file_out(!!memo_path[[1]][[2]])
     },
     transform = map(
       .data = !!parameters,
@@ -109,7 +123,7 @@ the_plan <-
     )
     ),
     data_raw = target({
-      import_data(file_in(data_directory))
+      import_data(file_in(!!data_directory))
     },
     transform = map(
       .data = !!parameters,
@@ -145,16 +159,8 @@ the_plan <-
       )
     ),
     summary = target({
-      render(knitr_in(!!here(
-        "doc",
-        str_c("aggregation_summary_experiment", experiment_number),
-        str_c("aggregation_summary_experiment", experiment_number, ".Rmd")
-      )))
-      file_out(!!here(
-        "doc",
-        str_c("aggregation_summary_experiment", experiment_number),
-        str_c("aggregation_summary_experiment", experiment_number, ".pdf")
-      ))
+      render(knitr_in(!!memo_path[[2]][[1]]))
+      file_out(!!memo_path[[2]][[2]])
     },
     transform = map(
       .data = !!parameters,
@@ -162,3 +168,4 @@ the_plan <-
     )
     )
   )
+
