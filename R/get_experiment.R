@@ -5,14 +5,14 @@
 ##' @param zip
 ##' @param on_finish
 ##' @param gambles
-##' @param experiment
 ##' @param path
 ##' @param thesis_project
+##' @param experiment_number
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment <- function(gambles, path, thesis_project, experiment, randomize_order = TRUE, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
+get_experiment <- function(gambles, path, thesis_project, experiment_number, randomize_order = TRUE, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
 
   welcome <-
     get_welcome()
@@ -20,18 +20,18 @@ get_experiment <- function(gambles, path, thesis_project, experiment, randomize_
   pre_experiment <-
     get_pre_experiment(ethics)
 
-  if (thesis_project == "aggregation") {
-    if (experiment == 2) {
+  # if (thesis_project == "aggregation") {
+    if (experiment_number == 2) {
       experiment_components <-
         get_experiment_components2(gambles, randomize_order)
-    } else if (experiment == 3) {
+    } else if (experiment_number == 3) {
       experiment_components <-
         get_experiment_components3(gambles, randomize_order)
-    } else if (experiment == 4) {
+    } else if (experiment_number == 4) {
       experiment_components <-
         get_experiment_components4(gambles, randomize_order)
     }
-  }
+  # }
 
   build_experiment(
     timeline = build_timeline(

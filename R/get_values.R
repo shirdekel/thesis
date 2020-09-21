@@ -71,7 +71,7 @@ get_values <- function() {
           rep(3)
         # "alignment"
       ),
-      experiment = c(2,3,4)
+      experiment_number = c(2, 3, 4)
     )
 
   values <-
