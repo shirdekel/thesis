@@ -2,15 +2,17 @@
 
 ##' @param data_raw
 ##'
-##' @param experiment
 ##' @param test
 ##' @param prolific_filter
 ##' @param prolific_filter_label
+##' @param experiment_number
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data <- function(data_raw, experiment, test = FALSE, prolific_filter, prolific_filter_label) {
+clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filter, prolific_filter_label) {
+
+  experiment <- str_c("experiment", experiment_number)
 
   if(experiment == "experiment2") {
     data_raw <-

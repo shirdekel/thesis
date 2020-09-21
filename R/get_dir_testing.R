@@ -1,12 +1,13 @@
+##' @param experiment_number
+##'
 ##' @title Get testing directory
-##' @param experiment
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_dir_testing <- function(experiment) {
+get_dir_testing <- function(experiment_number) {
 
   dir_testing <-
-    here("inst", "jspsych", "testing", experiment)
+    here("inst", "jspsych", "testing", str_c("experiment", experiment_number))
 
   if(!dir.exists(dir_testing)) {
     dir.create(dir_testing)

@@ -1,5 +1,5 @@
-values <-
-  get_values()
+parameters <-
+  get_parameters()
 
 old_seed <-
   get_old_seed()
@@ -7,24 +7,31 @@ old_seed <-
 the_plan <-
   drake_plan(
     restricted_values = target(
-      get_restricted_values(experiment),
-      transform = map(experiment = !!values$experiment),
+      get_restricted_values(thesis_project, experiment_number),
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+      ),
       seed = old_seed$restricted_values
     ),
     gambles = target(
-      get_gambles(restricted_values, gamble_n),
+      get_gambles(thesis_project, restricted_values, gamble_n),
       transform = map(
         restricted_values,
-        gamble_n = !!values$gamble_n,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       ),
       seed = old_seed$gambles
     ),
     gambles_plot = target(
-      plot_gambles(gambles, file_name = .id_chr),
+      plot_gambles(
+        thesis_project,
+        gambles,
+        experiment_number,
+        experiment_resources
+      ),
       transform = map(
         gambles,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       )
     ),
     experiment_resources = target(
@@ -33,22 +40,22 @@ the_plan <-
     ),
     experiment = target({
       path <- here("inst", "jspsych", str_c("experiment", experiment_number))
-      get_experiment(gambles, path, thesis_project, experiment_number)
+      get_experiment(gambles, path, thesis_project, experiment_number, experiment_resources)
       # get_data_mock(experiment, 20)
       file.path(path, "experiment")
     },
     transform = map(
       gambles,
-      .data = !!values$parameters,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file",
     seed = old_seed$experiment4
     ),
     dir_testing = target(
-      get_dir_testing(experiment),
+      get_dir_testing(experiment_number),
       transform = map(
-        experiment = !!values$experiment
+        experiment_number,
+        .id = c(thesis_project, experiment_number)
       ),
       target = "file"
     ),
@@ -58,6 +65,7 @@ the_plan <-
         path = dir_testing,
         thesis_project,
         experiment_number,
+        experiment_resources,
         randomize_order = FALSE,
         ethics = FALSE,
         zip = FALSE,
@@ -68,7 +76,6 @@ the_plan <-
     transform = map(
       gambles,
       dir_testing,
-      .data = !!values$parameters,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file",
@@ -76,85 +83,82 @@ the_plan <-
     ),
     dir_materials = target({
       get_screenshots(testing)
-      here("inst", "materials", experiment)
+      here("inst", "materials", str_c("experiment", experiment_number))
     },
     transform = map(
       testing,
-      get_screenshots = !!values$get_screenshots,
-      experiment = !!values$experiment,
-      .id = experiment
+      .id = c(thesis_project, experiment_number)
     ),
     format = "file"
     ),
     materials = target({
       render(knitr_in(!!here(
         "doc",
-        str_c("aggregation_materials_", experiment),
-        str_c("aggregation_materials_", experiment, ".Rmd")
+        str_c("aggregation_materials_experiment", experiment_number),
+        str_c("aggregation_materials_experiment", experiment_number, ".Rmd")
       )))
       file_out(!!here(
         "doc",
-        str_c("aggregation_materials_", experiment),
-        str_c("aggregation_materials_", experiment, ".pdf")
+        str_c("aggregation_materials_experiment", experiment_number),
+        str_c("aggregation_materials_experiment", experiment_number, ".pdf")
       ))
     },
-    transform = map(experiment = !!values$experiment)
+    transform = map(
+      .data = !!parameters,
+      .id = c(thesis_project, experiment_number)
+    )
     ),
     data_raw = target({
       import_data(file_in(data_directory))
     },
     transform = map(
-      data_directory = !!values$data_directory,
-      import_data = !!values$import_data,
-      .names = str_c("data_raw", values$experiment, sep = "_")
+      .data = !!parameters,
+      .id = c(thesis_project, experiment_number)
     )
     ),
     data_clean = target(
-      clean_data(data_raw, experiment, data_clean_test, prolific_filter, prolific_filter_label),
+      clean_data(data_raw, experiment_number, data_clean_test, prolific_filter, prolific_filter_label),
       transform = map(
         data_raw,
-        experiment = !!values$experiment,
-        data_clean_test = !!values$data_clean_test,
-        prolific_filter = !!values$prolific_filter,
-        prolific_filter_label = !!values$prolific_filter_label,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       )
     ),
     descriptives = target(
       get_descriptives(data_clean),
       transform = map(
         data_clean,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       )
     ),
     plot = target(
       get_plot(data_clean),
       transform = map(
         data_clean,
-        get_plot = !!values$get_plot,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       )
     ),
     results = target(
       get_results(data_clean),
       transform = map(
         data_clean,
-        get_results = !!values$get_results,
-        .id = experiment
+        .id = c(thesis_project, experiment_number)
       )
     ),
     summary = target({
       render(knitr_in(!!here(
         "doc",
-        str_c("aggregation_summary_", experiment),
-        str_c("aggregation_summary_", experiment, ".Rmd")
+        str_c("aggregation_summary_experiment", experiment_number),
+        str_c("aggregation_summary_experiment", experiment_number, ".Rmd")
       )))
       file_out(!!here(
         "doc",
-        str_c("aggregation_summary_", experiment),
-        str_c("aggregation_summary_", experiment, ".pdf")
+        str_c("aggregation_summary_experiment", experiment_number),
+        str_c("aggregation_summary_experiment", experiment_number, ".pdf")
       ))
     },
-    transform = map(experiment = !!values$experiment)
+    transform = map(
+      .data = !!parameters,
+      .id = c(thesis_project, experiment_number)
+    )
     )
   )
