@@ -21,7 +21,7 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-loadd(dir_materials_experiment4)
+loadd(dir_materials_aggregation_4)
 ```
 
 Experiment 4 tests what we previously called the "awareness effect" (better name pending). Participants will see 20 non-identical gambles (different from the previous experiments). The projects will be about the same 10 industries, with two variations for each industry. Description sentence order is randomised. See below screenshots of the instructions, project descriptions (for brevity only one example of a "naive" condition project is shown), and follow-up questions.
@@ -31,7 +31,7 @@ file_name_materials_experiment4 <-
     get_file_name_materials_experiment4()
   
 file_path_materials_experiment4 <- 
-  get_file_path_materials(dir_materials_experiment4, file_name_materials_experiment4)
+  get_file_path_materials(dir_materials_aggregation_4, file_name_materials_experiment4)
   
 src <- 
   list(

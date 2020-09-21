@@ -21,17 +21,17 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-loadd(descriptives_experiment4)
-loadd(results_experiment4)
-loadd(plot_experiment4)
+loadd(descriptives_aggregation_4)
+loadd(results_aggregation_4)
+loadd(plot_aggregation_4)
 ```
 
 # Participants
 
-`r descriptives_experiment4$apa` Table\ \@ref(tab:allocation) shows the condition allocation.
+`r descriptives_aggregation_4$apa` Table\ \@ref(tab:allocation) shows the condition allocation.
 
 ```{r allocation}
-descriptives_experiment4$allocation %>% 
+descriptives_aggregation_4$allocation %>% 
   apa_table("Group allocation to the between-subject variables of awareness, presentation, and distribution.")
 ```
 
@@ -39,20 +39,20 @@ descriptives_experiment4$allocation %>%
 
 ## Project investment
 
-Figures\ \@ref(fig:plot-choice-binary) and\ \@ref(fig:plot-choice-proportion) show the choice and proportion data, respectively. The difference between similarity conditions was not significant, both in the logistic regression `r results_experiment4$choice$full_result[[2]]`, and in the t-test, `r results_experiment4$proportion`.
+Figures\ \@ref(fig:plot-choice-binary) and\ \@ref(fig:plot-choice-proportion) show the choice and proportion data, respectively. The difference between similarity conditions was not significant, both in the logistic regression `r results_aggregation_4$choice$full_result[[2]]`, and in the t-test, `r results_aggregation_4$proportion`.
 
 ```{r plot-choice-binary, fig.cap = "Mean project acceptance for the similarity effect."}
-plot_experiment4$choice_binary
+plot_aggregation_4$choice_binary
 ```
 
 ```{r plot-choice-proportion, fig.cap = "Mean proportion of project acceptance for the similarity effect."}
-plot_experiment4$choice_proportion
+plot_aggregation_4$choice_proportion
 ```
 
 Further, as Figure\ \@ref(fig:plot-choice-trials) shows, it doesn't seem as if the previous awareness by trial effect was replicated.
 
 ```{r plot-choice-trials, fig.cap = "Mean project acceptance by similarity and trial."}
-plot_experiment4$choice_trials
+plot_aggregation_4$choice_trials
 ```
 
 ## Follow-up
@@ -62,7 +62,7 @@ plot_experiment4$choice_trials
 We asked participants how many projects they expected to see. Figure\ \@ref(fig:plot-project-expectation) shows that overall people to correctly estimate the number of projects, with more accuracy for those in the aware condition.
 
 ```{r plot-project-expectation, fig.cap = "Number of projects participants expected to see, by condition"}
-plot_experiment4$project_expectation
+plot_aggregation_4$project_expectation
 ```
 
 ### Project number
@@ -70,23 +70,23 @@ plot_experiment4$project_expectation
 We asked participants how many projects they think they saw. Figure\ \@ref(fig:plot-project-number) shows that overall people to correctly estimate the number of projects, with more accuracy for those in the aware condition.
 
 ```{r plot-project-number, fig.cap = "Number of projects participants reported seeing, by condition"}
-plot_experiment4$project_number
+plot_aggregation_4$project_number
 ```
 
 ### Portfolio choice - binary
 
-Participants were then asked if they would rather invest in all or none of the projects. As Figure\ \@ref(fig:plot-portfolio-binary) shows, the difference between presentation conditions was not significant, `r results_experiment4$portfolio_binary$full_result[[2]]`. 
+Participants were then asked if they would rather invest in all or none of the projects. As Figure\ \@ref(fig:plot-portfolio-binary) shows, the difference between presentation conditions was not significant, `r results_aggregation_4$portfolio_binary$full_result[[2]]`. 
 
 ```{r plot-portfolio-binary, fig.cap = "Mean choice of investing in all 10 projects for the similarity effect."}
-plot_experiment4$portfolio_binary
+plot_aggregation_4$portfolio_binary
 ```
 
 ### Portfolio choice - number
 
-Subsequently, we asked participants how many projects they would invest in out of the 10 that they saw. As Figure\ \@ref(fig:plot-portfolio-number) shows, the difference between presentation conditions was not significant, `r results_experiment4$portfolio_number`.
+Subsequently, we asked participants how many projects they would invest in out of the 10 that they saw. As Figure\ \@ref(fig:plot-portfolio-number) shows, the difference between presentation conditions was not significant, `r results_aggregation_4$portfolio_number`.
 
 ```{r plot-portfolio-number, fig.cap = "Mean number of projects chosen in the follow-up for the similarity effect."}
-plot_experiment4$portfolio_number
+plot_aggregation_4$portfolio_number
 ```
 
 ## Gambles
@@ -94,9 +94,9 @@ plot_experiment4$portfolio_number
 Figures\ \@ref(fig:plot-trials) and\ \@ref(fig:plot-gamble-values) show the overall people seemed to prefer gambles with higher probabilities of gain, sometimes regardless of expected value or value of the gain.
 
 ```{r plot-trials, fig.cap = "Mean project acceptance for the 10 gambles. The format of the labels indicate: (gain probability, gain value; loss probability, loss value)."}
-plot_experiment4$trials
+plot_aggregation_4$trials
 ```
 
 ```{r plot-gamble-values, fig.cap = "Mean project acceptance for the gambles' expected value, positive probability, and positive outcome."}
-plot_experiment4$gamble_values
+plot_aggregation_4$gamble_values
 ```
