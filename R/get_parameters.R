@@ -1,11 +1,20 @@
-##' @title Get plan values
+##' @title Get plan parameters
 ##'
 ##' To be used in static branching functions
 
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_values <- function() {
+get_parameters <- function() {
+
+  thesis_project <-
+    c(
+      c("aggregation") %>%
+        rep(3)
+    )
+
+  experiment_number <-
+    c(2, 3, 4)
 
   gamble_n <-
     c(
@@ -14,17 +23,14 @@ get_values <- function() {
       20
     )
 
-  experiment <-
-    str_c("experiment", 2:4)
-
   get_screenshots <-
-    syms(str_c("get_screenshots", experiment, sep = "_"))
+    syms(str_c("get_screenshots_experiment", experiment_number))
 
   get_plot <-
-    syms(str_c("get_plot", experiment, sep = "_"))
+    syms(str_c("get_plot_experiment", experiment_number))
 
   get_results <-
-    syms(str_c("get_results", experiment, sep = "_"))
+    syms(str_c("get_results_experiment", experiment_number))
 
   import_data <-
     syms(c("import_data_server" %>%
@@ -66,19 +72,9 @@ get_values <- function() {
 
   parameters <-
     tibble(
-      thesis_project = c(
-        c("aggregation") %>%
-          rep(3)
-        # "alignment"
-      ),
-      experiment_number = c(2, 3, 4)
-    )
-
-  values <-
-    lst(
+      experiment_number,
+      thesis_project,
       gamble_n,
-      experiment,
-      get_experiment,
       get_screenshots,
       get_plot,
       get_results,
@@ -86,9 +82,8 @@ get_values <- function() {
       data_directory,
       data_clean_test,
       prolific_filter,
-      prolific_filter_label,
-      parameters
+      prolific_filter_label
     )
 
-  return(values)
+  return(parameters)
 }
