@@ -28,27 +28,27 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 Figure\ \@ref(fig:demographics) shows page 1 of the demographics. Figure\ \@ref(fig:business) shows the business-specific questionnaire that participants see if they select "Yes" to the last question on page 1. Figures\ \@ref(fig:sector),\ \@ref(fig:role-company), and\ \@ref(fig:role-allocation) show the drop-down menu options for the sector, company role, and allocation role questions, respectively.
 
 ```{r demographics, out.width = "100%", fig.cap = "Demographics", fig.pos = "H"}
-image_read(here("inst", "materials", "demographics.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "demographics.png")) %>% 
         image_trim()
 ```
 
 ```{r business, out.width = "100%", fig.cap = "Business-specific questionnaire", fig.pos = "H"}
-image_read(here("inst", "materials", "business_information.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "business_information.png")) %>% 
         image_trim()
 ```
 
 ```{r sector, out.width = "100%", fig.cap = "Sector options", fig.pos = "H"}
-image_read(here("inst", "materials", "sector.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "sector.png")) %>% 
         image_trim()
 ```
 
 ```{r role-company, out.width = "100%", fig.cap = "Company role options", fig.pos = "H"}
-image_read(here("inst", "materials", "role_company.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "role_company.png")) %>% 
         image_trim()
 ```
 
 ```{r role-allocation, out.width = "100%", fig.cap = "Allocation role options", fig.pos = "H"}
-image_read(here("inst", "materials", "role_allocation.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "role_allocation.png")) %>% 
         image_trim()
 ```
 
@@ -57,7 +57,7 @@ image_read(here("inst", "materials", "role_allocation.png")) %>%
 Figure\ \@ref(fig:instructions) shows the instructions.
 
 ```{r instructions, out.width = "100%", fig.cap = "Instructions", fig.pos = "H"}
-image_read(here("inst", "materials", "instructions.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "instructions.png")) %>% 
         image_trim()
 ```
 
@@ -73,17 +73,17 @@ The gambles were generated from the following restrictions:
 4. No identical gambles
 
 ```{r awareness-aware, out.width = "50%", fig.cap = "Awareness - Aware condition", fig.pos = "H"}
-image_read(here("inst", "materials", "aware.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "aware.png")) %>% 
         image_trim()
 ```
 
 ```{r awareness-naive, out.width = "50%", fig.cap = "Awareness - Naive condition", fig.pos = "H"}
-image_read(here("inst", "materials", "naive.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "naive.png")) %>% 
         image_trim()
 ```
 
 ```{r joint-distribution, out.width = "100%", fig.cap = "Joint presentation - Distribution present (cropped for space)", fig.pos = "H"}
-image_read(here("inst", "materials", "joint_distribution.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "joint_distribution.png")) %>% 
   image_trim() %>%
   image_crop("1485x1880+0+0")
 ```
@@ -95,17 +95,17 @@ After seeing the individual projects, participants would be asked three follow-u
 Figures\ \@ref(fig:portfolio-binary) and\ \@ref(fig:portfolio-number) ask participants whether they are willing to take all or none of the projects; and how many projects would they choose if they could pick randomly (maximum value is set to 20). Those in the distribution absent condition were asked the same questions, but without the distribution and its explanation.
 
 ```{r project-number, out.width = "100%", fig.cap = "Follow-up 1", fig.pos = "H"}
-image_read(here("inst", "materials", "project_number.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "project_number.png")) %>% 
         image_trim()
 ```
 
 ```{r portfolio-binary, out.width = "100%", fig.cap = "Follow-up 2", fig.pos = "H"}
-image_read(here("inst", "materials", "portfolio_binary.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "portfolio_binary.png")) %>% 
         image_trim()
 ```
 
 ```{r portfolio-number, out.width = "100%", fig.cap = "Follow-up 3", fig.pos = "H"}
-image_read(here("inst", "materials", "portfolio_number.png")) %>% 
+image_read(here("inst", "materials", "aggregation", "portfolio_number.png")) %>% 
         image_trim()
 ```
 
