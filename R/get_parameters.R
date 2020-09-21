@@ -10,23 +10,25 @@ get_parameters <- function() {
   thesis_project <-
     c(
       c("aggregation") %>%
-        rep(3),
-      "alignment"
+        rep(3)
+      # "alignment"
     )
 
   experiment_number <-
-    c(2, 3, 4, 1)
+    c(
+      2,
+      3,
+      4
+      # 8
+    )
 
   gamble_n <-
     c(
       10 %>%
         rep(2),
-      20,
-      NA
+      20
+      # NA
     )
-
-  get_screenshots <-
-    syms(str_c("get_screenshots_experiment", experiment_number))
 
   get_plot <-
     syms(str_c("get_plot_experiment", experiment_number))
@@ -37,21 +39,21 @@ get_parameters <- function() {
   import_data <-
     syms(c(
       "import_data_server" %>%
-             rep(4)
-      ))
+        rep(3)
+    ))
 
   data_directory <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(3),
-      NA
+        rep(3)
+      # NA
     )
 
   data_clean_test <-
     c(
       FALSE %>%
-        rep(3),
-      NA
+        rep(3)
+      # NA
     )
 
   prolific_filter <-
@@ -62,8 +64,8 @@ get_parameters <- function() {
         c("datetime > '2020-09-18'", "similarity == 'low'"),
         c("datetime > '2020-09-18'", "similarity == 'high'")
       ),
-      "datetime > '2020-07-28'",
-      NA
+      "datetime > '2020-07-28'"
+      # NA
     )
 
   prolific_filter_label <-
@@ -74,19 +76,65 @@ get_parameters <- function() {
         "similarity_low",
         "similarity_high"
       ),
-      list(character(0)),
-      NA
+      list(character(0))
+      # NA
     )
 
-  experiment_path <-
-    get_experiment_path(thesis_project, experiment_number)
+  experiment_directory <-
+    get_experiment_directory(thesis_project, experiment_number)
+
+  get_experiment_components <-
+    syms(
+      str_c("get_experiment_components", experiment_number)
+    )
+
+  screenshot_components <-
+    list(
+      get_screenshots_experiment2(),
+      get_screenshots_experiment3(),
+      get_screenshots_experiment4()
+      # NA
+    )
+
+  materials_directory <-
+    get_materials_directory(thesis_project, experiment_number)
+
+  memo_type <-
+    c("materials", "summary")
+
+  memo_extension <-
+    c("Rmd", "pdf")
+
+  memo_path <-
+    list(
+      experiment_number,
+      thesis_project
+    ) %>%
+    pmap(
+      function(experiment_number_value, thesis_project_value)
+        memo_type %>%
+        map(
+          function(memo_type_value)
+            memo_extension %>%
+            map(
+              function(memo_extension_value)
+                get_memo_path(
+                  thesis_project_value,
+                  experiment_number_value,
+                  memo_type_value,
+                  memo_extension_value
+                )
+            ) %>%
+            set_names(memo_extension)
+        ) %>%
+        set_names(memo_type)
+    )
 
   parameters <-
     tibble(
       thesis_project,
       experiment_number,
       gamble_n,
-      get_screenshots,
       get_plot,
       get_results,
       import_data,
@@ -94,7 +142,11 @@ get_parameters <- function() {
       data_clean_test,
       prolific_filter,
       prolific_filter_label,
-      experiment_path
+      experiment_directory,
+      get_experiment_components,
+      screenshot_components,
+      memo_path,
+      materials_directory
     )
 
   return(parameters)
