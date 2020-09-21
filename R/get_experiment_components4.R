@@ -6,7 +6,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment_components4 <- function(gambles, randomize_order) {
+get_experiment_components4 <- function(gambles, randomize_order = TRUE) {
 
   projects_experiment <-
     get_projects_experiment4(gambles)
