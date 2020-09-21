@@ -11,10 +11,16 @@ get_old_seed <- function() {
   gambles <-
     diagnose(gambles)$seed
 
+  experiment4 <-
+    diagnose(experiment4)$seed
+
   old_seed <-
     lst(
       restricted_values,
-      gambles
+      gambles,
+      experiment4
     )
+
+  return(old_seed)
 
 }
