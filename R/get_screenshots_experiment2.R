@@ -1,25 +1,23 @@
 ##' @title screenshots E2
 
-##' @param dir_testing_experiment
-##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment2 <- function(dir_testing_experiment) {
+get_screenshots_experiment2 <- function() {
 
   file_name_materials_experiment2 <-
     get_file_name_materials_experiment2()
 
-  dir_materials_experiment2 <-
-    here("inst", "materials", "experiment2")
+  materials_directory_experiment2 <-
+    here("inst", "materials", "aggregation", "experiment2")
 
-  if(!dir.exists(dir_materials_experiment2)) {
-    dir.create(dir_materials_experiment2)
+  if(!dir.exists(materials_directory_experiment2)) {
+    dir.create(materials_directory_experiment2)
   }
 
-  file_path_materials_experiment2 <-
+  file_path_materials <-
     get_file_path_materials(
-      dir_materials_experiment2,
+      materials_directory_experiment2,
       file_name_materials_experiment2
       )
 
@@ -63,7 +61,7 @@ get_screenshots_experiment2 <- function(dir_testing_experiment) {
         rep(13)
     )
 
-  eval <-
+  webshot_eval <-
     list(
       casper_calls,
       awareness,
@@ -83,6 +81,12 @@ get_screenshots_experiment2 <- function(dir_testing_experiment) {
         )
     )
 
-  get_screenshots(file_path_materials_experiment2, eval, dir_testing_experiment)
+  screenshot_components <-
+    lst(
+      file_path_materials,
+      webshot_eval
+    )
+
+  return(screenshot_components)
 
 }

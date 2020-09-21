@@ -1,22 +1,20 @@
 ##' @title screenshots E3
 
-##' @param dir_testing_experiment
-##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment3 <- function(dir_testing_experiment) {
+get_screenshots_experiment3 <- function() {
 
   file_name_materials_experiment3 <-
     get_file_name_materials_experiment3()
 
-  dir_materials_experiment3 <-
-    here("inst", "materials", "experiment3")
+  materials_directory_experiment3 <-
+    here("inst", "materials", "aggregation", "experiment3")
 
-  file_path_materials_experiment3 <-
-    get_file_path_materials(dir_materials_experiment3, file_name_materials_experiment3)
+  file_path_materials <-
+    get_file_path_materials(materials_directory_experiment3, file_name_materials_experiment3)
 
-  eval <-
+  webshot_eval <-
     c(
       str_c(
         "this.click('#jspsych-instructions-next');",
@@ -47,6 +45,12 @@ get_screenshots_experiment3 <- function(dir_testing_experiment) {
         )
     )
 
-  get_screenshots(file_path_materials_experiment3, eval, dir_testing_experiment)
+  screenshot_components <-
+    lst(
+      file_path_materials,
+      webshot_eval
+    )
+
+  return(screenshot_components)
 
 }
