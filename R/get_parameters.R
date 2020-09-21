@@ -10,17 +10,19 @@ get_parameters <- function() {
   thesis_project <-
     c(
       c("aggregation") %>%
-        rep(3)
+        rep(3),
+      "alignment"
     )
 
   experiment_number <-
-    c(2, 3, 4)
+    c(2, 3, 4, 1)
 
   gamble_n <-
     c(
       10 %>%
         rep(2),
-      20
+      20,
+      NA
     )
 
   get_screenshots <-
@@ -33,19 +35,23 @@ get_parameters <- function() {
     syms(str_c("get_results_experiment", experiment_number))
 
   import_data <-
-    syms(c("import_data_server" %>%
-             rep(3)))
+    syms(c(
+      "import_data_server" %>%
+             rep(4)
+      ))
 
   data_directory <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(3)
+        rep(3),
+      NA
     )
 
   data_clean_test <-
     c(
       FALSE %>%
-        rep(3)
+        rep(3),
+      NA
     )
 
   prolific_filter <-
@@ -56,7 +62,8 @@ get_parameters <- function() {
         c("datetime > '2020-09-18'", "similarity == 'low'"),
         c("datetime > '2020-09-18'", "similarity == 'high'")
       ),
-      "datetime > '2020-07-28'"
+      "datetime > '2020-07-28'",
+      NA
     )
 
   prolific_filter_label <-
@@ -67,13 +74,17 @@ get_parameters <- function() {
         "similarity_low",
         "similarity_high"
       ),
-      list(character(0))
+      list(character(0)),
+      NA
     )
+
+  experiment_path <-
+    get_experiment_path(thesis_project, experiment_number)
 
   parameters <-
     tibble(
-      experiment_number,
       thesis_project,
+      experiment_number,
       gamble_n,
       get_screenshots,
       get_plot,
@@ -82,7 +93,8 @@ get_parameters <- function() {
       data_directory,
       data_clean_test,
       prolific_filter,
-      prolific_filter_label
+      prolific_filter_label,
+      experiment_path
     )
 
   return(parameters)
