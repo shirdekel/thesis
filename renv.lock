@@ -252,10 +252,10 @@
     },
     "backports": {
       "Package": "backports",
-      "Version": "1.1.9",
+      "Version": "1.1.10",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "b29e2d989dfb2e71ca3fd7d5bb1c0d58"
+      "Hash": "05ffd2d4acb51aee70f1de68ad7a6aed"
     },
     "base64enc": {
       "Package": "base64enc",
@@ -524,10 +524,15 @@
     },
     "drake": {
       "Package": "drake",
-      "Version": "7.12.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f1b1d4fa17d7006044b6c690888ed4e3"
+      "Version": "7.12.5.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "drake",
+      "RemoteUsername": "ropensci",
+      "RemoteRef": "master",
+      "RemoteSha": "9fb42f570bdc64f381710648a971d99a9c5a47ff",
+      "Hash": "885647c124864a247c82ecfbc43ab582"
     },
     "effsize": {
       "Package": "effsize",
@@ -1610,10 +1615,10 @@
     },
     "txtq": {
       "Package": "txtq",
-      "Version": "0.2.0",
+      "Version": "0.2.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "92e5a36ad5b445e895a0f9b98db4d810"
+      "Hash": "38a421b8003ba704b5b8471e6c3762a7"
     },
     "usethis": {
       "Package": "usethis",
