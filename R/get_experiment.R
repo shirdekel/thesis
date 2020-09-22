@@ -4,17 +4,22 @@
 ##' @param zip
 ##' @param on_finish
 ##' @param gambles
-##' @param path
 ##' @param thesis_project
 ##' @param experiment_number
 ##' @param experiment_resources
-##' @param experiment_components
+##' @param sample
+##' @param experiment_label
+##' @param thesis_project_label
+##' @param main
+##' @param post_experiment
+##' @param condition_allocation_columns
+##' @param condition_allocation
+##' @param experiment_directory
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment <- function(gambles, path, thesis_project, experiment_number, experiment_resources, experiment_components, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
-
+get_experiment <- function(gambles, experiment_directory, thesis_project, experiment_number, experiment_resources, main, post_experiment, columns, condition_allocation, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
   welcome <-
     get_welcome()
 
@@ -25,17 +30,17 @@ get_experiment <- function(gambles, path, thesis_project, experiment_number, exp
     timeline = build_timeline(
       welcome,
       pre_experiment,
-      experiment_components$main_experiment,
-      experiment_components$post_experiment
+      main,
+      post_experiment
     ),
     resources = build_resources(experiment_resources),
-    columns = experiment_components$columns,
+    columns = columns,
     vanilla = c(
       verify_close(),
-      experiment_components$condition_allocation,
+      condition_allocation,
       check_other()
     ),
-    path = path,
+    path = experiment_directory,
     experiment_title = "Business decision-making",
     experiment_width = 750,
     preload_images = here("inst", "experiment_resources") %>%
@@ -46,6 +51,5 @@ get_experiment <- function(gambles, path, thesis_project, experiment_number, exp
     on_finish = on_finish
   )
 
-  if (zip) zip_experiment(path)
-
+  if (zip) zip_experiment(experiment_directory)
 }
