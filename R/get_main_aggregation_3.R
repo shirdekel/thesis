@@ -1,26 +1,29 @@
 ##' @title Get main experiment trials
 
-##' @param projects_experiment3
-##'
 ##' @param randomize_order
+##'
+##' @param gambles
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_main_experiment3 <- function(projects_experiment3, randomize_order) {
+get_main_aggregation_3 <- function(gambles, randomize_order = TRUE) {
 
   instructions_experiment3 <-
     get_instructions_experiment4() %>%
     .[["naive"]] %>%
     .[["timeline"]]
 
+  projects <-
+    get_projects_experiment3(gambles)
+
   trials_experiment3 <-
     get_trials_experiment3(
-      projects_experiment3,
+      projects,
       randomize_order
     )
 
-  main_experiment3 <-
+  main <-
     instructions_experiment3 %>%
     append(
       trials_experiment3 %>%
@@ -29,6 +32,6 @@ get_main_experiment3 <- function(projects_experiment3, randomize_order) {
     build_timeline() %>%
     flatten()
 
-  return(main_experiment3)
+  return(main)
 
 }

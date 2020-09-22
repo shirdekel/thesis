@@ -1,13 +1,13 @@
 ##' @title Get main experiment trials
 
-##' @param projects_experiment2
-##'
 ##' @param randomize_order
+##'
+##' @param gambles
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_main_experiment2 <- function(projects_experiment2, randomize_order) {
+get_main_aggregation_2 <- function(gambles, randomize_order = TRUE) {
 
   instructions <-
     get_instructions()
@@ -22,10 +22,13 @@ get_main_experiment2 <- function(projects_experiment2, randomize_order) {
   preamble_distribution <-
     get_preamble_distribution()
 
+  projects <-
+    get_projects_experiment2(gambles)
+
   questions_joint <-
     get_questions_joint(
-      project_description = projects_experiment2$description,
-      project_input = projects_experiment2$input
+      project_description = projects$description,
+      project_input = projects$input
     )
 
   trial_joint_distribution_present <-
@@ -46,21 +49,21 @@ get_main_experiment2 <- function(projects_experiment2, randomize_order) {
   trial_separate_distribution_present <-
     get_trial_separate(
       preamble = preamble_distribution,
-      project_description = projects_experiment2$description,
-      project_input = projects_experiment2$input,
+      project_description = projects$description,
+      project_input = projects$input,
       distribution = "present",
       randomize_order = randomize_order
     )
 
   trial_separate_distribution_absent <-
     get_trial_separate(
-      project_description = projects_experiment2$description,
-      project_input = projects_experiment2$input,
+      project_description = projects$description,
+      project_input = projects$input,
       distribution = "absent",
       randomize_order = randomize_order
     )
 
-  main_experiment2 <-
+  main <-
     build_timeline(
       instructions,
       trial_aware,
@@ -71,6 +74,6 @@ get_main_experiment2 <- function(projects_experiment2, randomize_order) {
       trial_separate_distribution_absent
     )
 
-  return(main_experiment2)
+  return(main)
 
 }
