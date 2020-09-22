@@ -531,8 +531,8 @@
       "RemoteRepo": "drake",
       "RemoteUsername": "ropensci",
       "RemoteRef": "master",
-      "RemoteSha": "9fb42f570bdc64f381710648a971d99a9c5a47ff",
-      "Hash": "885647c124864a247c82ecfbc43ab582"
+      "RemoteSha": "ab787aa3eb1ea5051f706470785afc7ee4a24a00",
+      "Hash": "f698c06744ee82adaf39c57e8626c0b8"
     },
     "effsize": {
       "Package": "effsize",
