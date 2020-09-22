@@ -30,7 +30,7 @@ get_memo_path <- function(thesis_project, experiment_number, memo_type, memo_ext
         str_c(
           memo_type,
           thesis_project,
-          str_c("experiment", experiment_number),
+          experiment_number,
           sep = "_"
         ),
         memo_extension,
