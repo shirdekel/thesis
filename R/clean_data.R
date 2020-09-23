@@ -113,6 +113,11 @@ clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filte
       )
   }
 
+  # Assign IDs only after all filtering
+  data <-
+    data %>%
+    add_id_column(subject)
+
   return(data)
 
 }

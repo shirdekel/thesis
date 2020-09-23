@@ -35,10 +35,6 @@ clean_data_combined <- function(data_combined) {
              as_tibble()) %>%
     select(-c(question_order, time_elapsed, dateCreated, responses)) %>%
     ungroup() %>%
-    nest_by(subject) %>%
-    rowid_to_column("id") %>%
-    unnest(data) %>%
-    ungroup() %>%
     nest_by(subject, presentation, distribution, awareness, proportion) %>%
     unite("condition", presentation, distribution, awareness, remove = FALSE) %>%
     mutate(across(condition, as.factor)) %>%
