@@ -9,6 +9,8 @@
 ##' @export
 get_screenshots <- function(testing_experiment_directory, screenshot_components) {
 
+  if (is_empty(screenshot_components)) return(NA)
+
   screenshot_components %>%
     pmap(
       ~ file.path(testing_experiment_directory, "index.html") %>%

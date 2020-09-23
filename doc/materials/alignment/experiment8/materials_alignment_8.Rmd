@@ -1,0 +1,96 @@
+---
+title             : "Alignment Experiment 8 - Materials"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+header-includes:
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(materials_directory_alignment_8)
+```
+
+- Experiment 8 (previously called Experiment 4 in the context of the article, but it is the 8th alignment experiment of the thesis) investigates the effects of alignment (between-subjects), reliability type (between-subjects), and reliability amount (within-subjects) on allocations. 
+
+Hypotheses
+
+- More reliance on NPV in low alignment compared to high alignment, but only in the explicit reliability condition.
+- An interaction between reliability amount and NPV amount (within-display), but only in the explicit reliability condition.
+
+# Instructions
+
+Figure\ \@ref(fig:instructions) shows the instructions.
+
+```{r instructions, out.width = "100%", fig.cap = "Instructions", fig.pos = "H"}
+image_read(here("inst", "materials", "alignment", "experiment8", "instructions.png")) %>% 
+        image_trim()
+```
+
+- Figures\ \@ref(fig:alignment-low-reliability-implicit-high) and\ \@ref(fig:alignment-low-reliability-implicit-low), and\ \@ref(fig:alignment-high-reliability-implicit-high) and\ \@ref(fig:alignment-high-reliability-implicit-low) show the two reliability conditions for the low and high alignment conditions, respectively for the implicit reliability conditions.
+- Figures\ \@ref(fig:alignment-low-reliability-explicit-high), and\ \@ref(fig:alignment-low-reliability-explicit-low) show the two explicit reliability conditions in the low alignment displays.
+
+\newpage
+\blandscape
+
+```{r alignment-low-reliability-implicit-high, out.width = "100%", fig.cap = "Experiment 8 low alignment high implicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_implicit_high_alignment_low.png")
+) %>% 
+  image_trim()
+```
+
+```{r alignment-high-reliability-implicit-high, out.width = "100%", fig.cap = "Experiment 8 high alignment high implicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_implicit_high_alignment_high.png")
+) %>% 
+  image_trim()
+```
+
+```{r alignment-low-reliability-implicit-low, out.width = "100%", fig.cap = "Experiment 8 low alignment high implicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_implicit_low_alignment_low.png")
+) %>% 
+  image_trim()
+```
+
+```{r alignment-high-reliability-implicit-low, out.width = "100%", fig.cap = "Experiment 8 high alignment low implicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_implicit_low_alignment_high.png")
+) %>% 
+  image_trim()
+```
+
+```{r alignment-low-reliability-explicit-high, out.width = "100%", fig.cap = "Experiment 8 low alignment high explicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_explicit_high_alignment_low.png")
+) %>% 
+  image_trim()
+```
+
+```{r alignment-low-reliability-explicit-low, out.width = "100%", fig.cap = "Experiment 8 low alignment low explicit reliability.", fig.pos = "H"}
+image_read(
+  file.path(materials_directory_alignment_8, "reliability_explicit_low_alignment_low.png")
+) %>% 
+  image_trim()
+```
+
+\elandscape
+
+\newpage

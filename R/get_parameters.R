@@ -10,50 +10,51 @@ get_parameters <- function() {
   thesis_project <-
     c(
       c("aggregation") %>%
-        rep(3)
-      # "alignment"
+        rep(3),
+      "alignment"
     )
 
   experiment_number <-
     c(
       2,
       3,
-      4
-      # 8
+      4,
+      8
     )
 
   gamble_n <-
     c(
       10 %>%
         rep(2),
-      20
-      # NA
+      20,
+      NA
     )
 
   get_plot <-
-    syms(str_c("get_plot_experiment", experiment_number))
+    syms(str_c("get_plot_experiment", c(experiment_number[1:3], 4)))
 
   get_results <-
-    syms(str_c("get_results_experiment", experiment_number))
+    syms(str_c("get_results_experiment", c(experiment_number[1:3], 4)))
 
   import_data <-
     syms(c(
       "import_data_server" %>%
-        rep(3)
+        rep(3),
+      "import_data_local"
     ))
 
   data_directory <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(3)
-      # NA
+        rep(3),
+      here("inst", "jspsych", thesis_project[4], str_c("experiment", experiment_number[4]), "data")
     )
 
   data_clean_test <-
     c(
       FALSE %>%
-        rep(3)
-      # NA
+        rep(3),
+      TRUE
     )
 
   prolific_filter <-
@@ -63,9 +64,10 @@ get_parameters <- function() {
         c("datetime > '2020-09-17'", "datetime < '2020-09-18'"),
         c("datetime > '2020-09-18'", "similarity == 'low'"),
         c("datetime > '2020-09-18'", "similarity == 'high'")
-      ),
-      "datetime > '2020-07-28'"
-      # NA
+      )) %>%
+    append(
+      "datetime > '2020-07-28'" %>%
+        rep(2)
     )
 
   prolific_filter_label <-
@@ -75,59 +77,57 @@ get_parameters <- function() {
         character(0),
         "similarity_low",
         "similarity_high"
-      ),
-      list(character(0))
-      # NA
+      )) %>%
+    append(
+      list(character(0)) %>%
+        rep(2)
     )
 
   experiment_directory <-
     get_experiment_directory(thesis_project, experiment_number)
 
-  get_experiment_components <-
+  get_main <-
     syms(
-      str_c("get_experiment_components", experiment_number)
+      str_c(
+        "get",
+        "main",
+        thesis_project,
+        experiment_number,
+        sep = "_"
+      )
     )
 
   screenshot_components <-
     list(
       get_screenshots_experiment2(),
       get_screenshots_experiment3(),
-      get_screenshots_experiment4()
-      # NA
+      get_screenshots_experiment4(),
+      character(0)
     )
 
   materials_directory <-
     get_materials_directory(thesis_project, experiment_number)
 
-  memo_type <-
-    c("materials", "summary")
-
-  memo_extension <-
-    c("Rmd", "pdf")
-
   memo_path <-
+    get_all_memo_paths(thesis_project, experiment_number)
+
+  columns <-
+    get_columns(thesis_project, experiment_number)
+
+  post_experiment <-
     list(
-      experiment_number,
-      thesis_project
-    ) %>%
-    pmap(
-      function(experiment_number_value, thesis_project_value)
-        memo_type %>%
-        map(
-          function(memo_type_value)
-            memo_extension %>%
-            map(
-              function(memo_extension_value)
-                get_memo_path(
-                  thesis_project_value,
-                  experiment_number_value,
-                  memo_type_value,
-                  memo_extension_value
-                )
-            ) %>%
-            set_names(memo_extension)
-        ) %>%
-        set_names(memo_type)
+      get_post_experiment2(),
+      get_post_experiment3(),
+      get_post_experiment4(),
+      get_post_experiment4()
+    )
+
+  condition_allocation <-
+    list(
+      condition_allocation_experiment2(),
+      condition_allocation_experiment3(),
+      condition_allocation_experiment4(),
+      condition_allocation_experiment4()
     )
 
   parameters <-
@@ -143,10 +143,13 @@ get_parameters <- function() {
       prolific_filter,
       prolific_filter_label,
       experiment_directory,
-      get_experiment_components,
+      get_main,
       screenshot_components,
       memo_path,
-      materials_directory
+      materials_directory,
+      columns,
+      post_experiment,
+      condition_allocation
     )
 
   return(parameters)

@@ -12,6 +12,8 @@
 ##' @export
 clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filter, prolific_filter_label) {
 
+  if (experiment_number == 8) experiment_number <- 4
+
   experiment <- str_c("experiment", experiment_number)
 
   if(experiment == "experiment2") {
