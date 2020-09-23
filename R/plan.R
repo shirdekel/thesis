@@ -38,8 +38,8 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    experiment_components = target(
-      get_experiment_components(gambles),
+    main = target(
+        get_main(gambles),
       transform = map(
         gambles,
         .id = c(thesis_project, experiment_number)
@@ -53,14 +53,17 @@ the_plan <-
         thesis_project,
         experiment_number,
         experiment_resources,
-        experiment_components
+        main,
+        post_experiment,
+        columns,
+        condition_allocation
       )
       # get_data_mock(experiment, 20)
       file.path(experiment_directory, "experiment")
     },
     transform = map(
       gambles,
-      experiment_components,
+      main,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file"
@@ -73,8 +76,8 @@ the_plan <-
       ),
       target = "file"
     ),
-    testing_components = target(
-      get_experiment_components(gambles, randomize_order = FALSE),
+    testing_main = target(
+      get_main(gambles, randomize_order = FALSE),
       transform = map(
         gambles,
         .id = c(thesis_project, experiment_number)
@@ -84,11 +87,14 @@ the_plan <-
     testing = target({
       get_experiment(
         gambles,
-        path = testing_directory,
+        testing_directory,
         thesis_project,
         experiment_number,
         experiment_resources,
-        testing_components,
+        testing_main,
+        post_experiment,
+        columns,
+        condition_allocation,
         ethics = FALSE,
         zip = FALSE,
         on_finish = save_locally()
@@ -97,13 +103,13 @@ the_plan <-
     },
     transform = map(
       gambles,
+      testing_main,
       testing_directory,
-      testing_components,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file"
     ),
-    materials = target({
+    materials_directory = target({
       get_screenshots(testing, screenshot_components)
       materials_directory
     },
@@ -114,8 +120,8 @@ the_plan <-
     format = "file"
     ),
     materials_memo = target({
-      render(knitr_in(!!memo_path[[1]][[1]]))
-      file_out(!!memo_path[[1]][[2]])
+      render(knitr_in(!!memo_path$materials$Rmd))
+      file_out(!!memo_path$materials$pdf)
     },
     transform = map(
       .data = !!parameters,
@@ -158,9 +164,9 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    summary = target({
-      render(knitr_in(!!memo_path[[2]][[1]]))
-      file_out(!!memo_path[[2]][[2]])
+    summary_memo = target({
+      render(knitr_in(!!memo_path$summary$Rmd))
+      file_out(!!memo_path$summary$pdf)
     },
     transform = map(
       .data = !!parameters,
@@ -168,4 +174,3 @@ the_plan <-
     )
     )
   )
-
