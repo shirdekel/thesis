@@ -137,7 +137,13 @@ the_plan <-
     )
     ),
     data_clean = target(
-      clean_data(data_raw, experiment_number, data_clean_test, prolific_filter, prolific_filter_label),
+      clean_data(
+        data_raw,
+        experiment_number,
+        data_clean_test,
+        prolific_filter,
+        prolific_filter_label
+      ),
       transform = map(
         data_raw,
         .id = c(thesis_project, experiment_number)
