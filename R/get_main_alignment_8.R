@@ -10,22 +10,18 @@
 get_main_alignment_8 <- function(gambles, randomize_order = TRUE) {
 
   instructions <-
-    get_instructions_experiment4() %>%
-    unname()
+    get_instructions_alignment_8()
 
-  # projects <-
-  #   get_projects_experiment4(gambles)
-  #
-  # trials <-
-  #   get_trials_experiment4(
-  #     projects,
-  #     randomize_order
-  #   )
+  projects <-
+    get_projects_alignment_8()
+
+  project_allocation <-
+    projects %>%
+    slide(get_project_allocation)
 
   main <-
     instructions %>%
-    build_timeline() %>%
-    flatten()
+    build_timeline(project_allocation)
 
   return(main)
 
