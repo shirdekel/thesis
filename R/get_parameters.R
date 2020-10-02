@@ -6,7 +6,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_parameters <- function() {
-
   thesis_project <-
     c(
       c("aggregation") %>%
@@ -64,22 +63,26 @@ get_parameters <- function() {
         c("datetime > '2020-09-17'", "datetime < '2020-09-18'"),
         c("datetime > '2020-09-18'", "similarity == 'low'"),
         c("datetime > '2020-09-18'", "similarity == 'high'")
-      )) %>%
-    append(
-      "datetime > '2020-07-28'" %>%
-        rep(2)
+      ),
+      c(
+        "datetime > '2020-07-28'",
+        # Participants from Experiment 3 that used the Experiment 4 link
+        "!prolific %in% c('5f3d8efea2dc2616ff46b697', '5dd4a7c9c0823f494b158668', '5858c6178604ae000165e66a')"
+      ),
+      "datetime > '2020-07-28'"
     )
 
   prolific_filter_label <-
     list(
-      list(character(0)),
+      NA,
       list(
-        character(0),
+        NA,
         "similarity_low",
         "similarity_high"
-      )) %>%
+      )
+    ) %>%
     append(
-      list(character(0)) %>%
+      NA %>%
         rep(2)
     )
 

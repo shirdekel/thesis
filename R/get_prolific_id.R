@@ -10,6 +10,8 @@
 ##' @author Shir Dekel
 ##' @export
 get_prolific_id <- function(data, prolific_filter, prolific_filter_label) {
+  # For some reason passing an empty argument into pmap leads to an empty list and the function isn't evaluated. So we're passing NAs and converting to empty here so that the file_name doesn't have the extra label if it isn't needed.
+  if (is.na(prolific_filter_label)) prolific_filter_label<- character(0)
 
   file_name <-
     str_c(
