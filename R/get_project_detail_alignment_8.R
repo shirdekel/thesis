@@ -4,7 +4,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_project_detail_alignment_8 <- function() {
-  options(scipen = 999)
   business_name <-
     get_business_name()
 

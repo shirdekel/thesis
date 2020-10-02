@@ -4,7 +4,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_project_value_high <- function() {
-
   project_value_high <-
     list(
       c(
@@ -30,7 +29,12 @@ get_project_value_high <- function() {
       )
     ) %>%
     transpose() %>%
-      map(unlist)
+    map(
+      ~ .x %>%
+        unlist() %>%
+        # Prevent scientific notation
+        as.integer()
+    )
 
-return(project_value_high)
+  return(project_value_high)
 }
