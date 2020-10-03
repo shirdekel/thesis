@@ -8,7 +8,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_columns <- function(thesis_project, experiment_number) {
-
   subject <-
     "jsPsych.randomization.randomID(15)" %>%
     rep(4) %>%
@@ -40,7 +39,7 @@ get_columns <- function(thesis_project, experiment_number) {
       character(0),
       insert_javascript("similarity_condition"),
       "low",
-      insert_javascript("similarity_condition")
+      character(0)
     )
 
   distribution <-
@@ -73,9 +72,8 @@ get_columns <- function(thesis_project, experiment_number) {
     c(
       list(character(0)),
       "project_variation_condition" %>%
-        rep(2) %>%
-        map(insert_javascript),
-      list(character(0))
+        rep(3) %>%
+        map(insert_javascript)
     )
 
   current_project_choice_order <-
@@ -85,6 +83,24 @@ get_columns <- function(thesis_project, experiment_number) {
       list(
         insert_javascript("1"),
         character(0)
+      )
+    )
+
+  alignment <-
+    list(character(0)) %>%
+    rep(3) %>%
+    append(
+      list(
+        insert_javascript("alignment_condition")
+      )
+    )
+
+  reliability_type <-
+    list(character(0)) %>%
+    rep(3) %>%
+    append(
+      list(
+        insert_javascript("reliability_type_condition")
       )
     )
 
@@ -124,6 +140,8 @@ get_columns <- function(thesis_project, experiment_number) {
       distribution = distribution,
       project_variation = project_variation,
       current_project_choice_order = current_project_choice_order,
+      alignment = alignment,
+      reliability_type = reliability_type,
       PROLIFIC_PID = PROLIFIC_PID,
       STUDY_ID = STUDY_ID,
       SESSION_ID = SESSION_ID
