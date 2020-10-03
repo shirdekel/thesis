@@ -3,35 +3,31 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_allocation <- function(project_detail) {
+get_project_allocation <- function(projects) {
   trial_projects <-
     trial_generic(
       "survey-html-form2",
-      html = project_detail$project_table,
+      html = insert_variable("allocation_table"),
       data = insert_property(stage = "project_allocation")
     ) %>%
     build_timeline() %>%
+    set_variables(allocation_table = projects$data[[1]]$project_table) %>%
+    build_timeline() %>%
     display_if(
       fn_data_condition(
-        alignment == !!project_detail$alignment
+        reliability_type == !!projects$reliability_type
       )
     ) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
-        reliability_type == !!project_detail$reliability_type
+        project_variation == !!projects$project_variation
       )
     ) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
-        project_variation == !!project_detail$project_variation
-      )
-    ) %>%
-    build_timeline() %>%
-    display_if(
-      fn_data_condition(
-        reliability_amount == !!project_detail$reliability_amount
+        alignment == !!projects$alignment
       )
     )
 
