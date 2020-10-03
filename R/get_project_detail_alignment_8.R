@@ -28,6 +28,9 @@ get_project_detail_alignment_8 <- function() {
   intrinsic_feature_multipliers <-
     get_intrinsic_feature_multipliers()
 
+  project_number <- 1:5 %>%
+    as.numeric()
+
   project_detail <-
     tibble(
       project_detail_feature,
@@ -35,7 +38,7 @@ get_project_detail_alignment_8 <- function() {
       project_unit,
       business_name,
       project_type,
-      alignment_high = 1:5,
+      alignment_high = project_number,
       intrinsic_feature_multipliers
     ) %>%
     unnest(
@@ -48,7 +51,7 @@ get_project_detail_alignment_8 <- function() {
     ) %>%
     mutate(
       intrinsic_feature_rank = list(seq(from = 5, to = 1)),
-      alignment_low = list(1:5)
+      alignment_low = list(project_number)
     ) %>%
     unnest(
       c(
