@@ -116,7 +116,7 @@ get_parameters <- function() {
       get_post_experiment2(),
       get_post_experiment3(),
       get_post_experiment4(),
-      get_post_experiment4()
+      get_post_alignment_8()
     )
 
   condition_allocation <-
@@ -124,7 +124,7 @@ get_parameters <- function() {
       condition_allocation_experiment2(),
       condition_allocation_experiment3(),
       condition_allocation_experiment4(),
-      condition_allocation_experiment4()
+      condition_allocation_alignment_8()
     )
 
   parameters <-
