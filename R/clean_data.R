@@ -113,9 +113,11 @@ clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filte
       )
   }
 
-  # Assign IDs only after all filtering
   data <-
     data %>%
+    # Only remove duplicates now because sometimes the past study filtering is not set right in Prolific and you still need to credit the duplicates
+    remove_duplicates() %>%
+    # Assign IDs only after all filtering
     add_id_column(subject)
 
   return(data)

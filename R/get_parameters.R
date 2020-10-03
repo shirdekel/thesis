@@ -59,16 +59,8 @@ get_parameters <- function() {
   prolific_filter <-
     list(
       "datetime > '2020-07-28'",
-      list(
-        c("datetime > '2020-09-17'", "datetime < '2020-09-18'"),
-        c("datetime > '2020-09-18'", "similarity == 'low'"),
-        c("datetime > '2020-09-18'", "similarity == 'high'")
-      ),
-      c(
-        "datetime > '2020-07-28'",
-        # Participants from Experiment 3 that used the Experiment 4 link
-        "!prolific %in% c('5f3d8efea2dc2616ff46b697', '5dd4a7c9c0823f494b158668', '5858c6178604ae000165e66a')"
-      ),
+      get_prolific_filter_aggregation_3(),
+      get_prolific_filter_aggregation_4(),
       "datetime > '2020-07-28'"
     )
 
@@ -79,11 +71,13 @@ get_parameters <- function() {
         NA,
         "similarity_low",
         "similarity_high"
-      )
-    ) %>%
-    append(
-      NA %>%
-        rep(2)
+      ),
+      list(
+        NA,
+        "awareness_naive",
+        "awareness_aware"
+      ),
+      NA
     )
 
   experiment_directory <-

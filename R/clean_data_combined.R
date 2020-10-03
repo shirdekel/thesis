@@ -38,8 +38,7 @@ clean_data_combined <- function(data_combined) {
     nest_by(subject, presentation, distribution, awareness, proportion) %>%
     unite("condition", presentation, distribution, awareness, remove = FALSE) %>%
     mutate(across(condition, as.factor)) %>%
-    unnest(data) %>%
-    remove_duplicates()
+    unnest(data)
 
   return(data)
 
