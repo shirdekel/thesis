@@ -25,14 +25,14 @@ get_columns <- function(thesis_project, experiment_number) {
       "aggregation_exp2",
       str_c(
         "experiment",
-        experiment_number[2:4]
+        experiment_number[-1]
       )
     )
 
   thesis_project_label <-
     c(
       list(character(0)),
-      thesis_project[2:4]
+      thesis_project[-1]
     )
 
   similarity <-
