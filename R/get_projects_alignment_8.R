@@ -12,7 +12,10 @@ get_projects_alignment_8 <- function() {
             useViewer = FALSE
           )
       )
-    )
+    ) %>%
+    ungroup() %>%
+    select(-data) %>%
+    nest(data = c(reliability_amount, project_table))
 
   return(projects)
 }
