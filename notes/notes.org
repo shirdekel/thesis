@@ -1,0 +1,39 @@
+* Alignment
+** TODO Experiment 8
+    - Let's try work backwards:
+    - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
+    - So each iteration of the loop should have a list of two for the two displays
+    - I guess we can do everything in tibbles and then in the end nest the two displays (for reliability amount) in the end
+      - And convert the two rows to a list
+    - So everything can be on big tibble with the following variable columns:
+      - Alignment condition
+      - Reliability type 
+      - Project variation
+        - Low alignment: intrinsic features
+        - High alignment: project type
+    - Then supposedly, filtering that down (and passing the relevant column value to display_if for condition) will get you the two displays for each combination
+      - but actually it wouldn't be filtering, it would be stepping down each row and pulling the 'parameters'
+    - Actually configuring the two reliability amount displays isn't that easy
+      - They need different NPVs
+      - Also, they need five new project descriptions
+    - New issue
+      - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
+      - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
+*** TODO Counterbalancing
+    - Project variation
+      - But this is randomised
+    - Project name
+      - Is it really just project name that needs latin square?
+      
+*** TODO Inputs 
+* Emacs wishlist
+** TODO Spotify
+** TODO combine ESS configs
+** DONE Elaborate on syntax highlighting question
+  CLOSED: [2020-10-03 Sat 19:00]
+** TODO Figure out listviewer
+** TODO Figure out ess-r-view-data
+** TODO Line wrap without breaking up words
+** TODO Evernote
+** TODO Automatically start R REPL in project root
+** TODO Get graphics device in buffer
