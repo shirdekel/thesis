@@ -28,7 +28,8 @@ get_project_detail_alignment_8 <- function() {
   intrinsic_feature_multipliers <-
     get_intrinsic_feature_multipliers()
 
-  project_number <- 1:5 %>%
+  project_number <-
+    1:5 %>%
     as.numeric()
 
   project_detail <-
@@ -63,7 +64,10 @@ get_project_detail_alignment_8 <- function() {
     ) %>%
     rowwise() %>%
     mutate(
-      project_value = project_value_base * intrinsic_feature_multipliers,
+      project_value = project_value_base %>%
+        prod(intrinsic_feature_multipliers) %>%
+        # Prevent scientific notation
+        as.integer(),
       combined = str_c(
         project_detail_feature, ": ", project_value, project_unit
       )

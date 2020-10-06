@@ -31,9 +31,7 @@ get_project_value_high <- function() {
     transpose() %>%
     map(
       ~ .x %>%
-        unlist() %>%
-        # Prevent scientific notation
-        as.integer()
+        unlist()
     )
 
   return(project_value_high)
