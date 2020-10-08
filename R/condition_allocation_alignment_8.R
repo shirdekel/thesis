@@ -4,18 +4,19 @@
 ##' @author Shir Dekel
 ##' @export
 condition_allocation_alignment_8 <- function() {
-  1:5 %>%
-    str_c(collapse = ", ") %>%
-    str_c(
-      "project_variation_condition = jsPsych.randomization.sampleWithReplacement([",
-      .,
-      "], 1)"
+  list(
+    list(c(1:5), c(1:5)),
+    list("project_variation_condition", "latin_variation_condition")
+  ) %>%
+    pmap_chr(
+      ~ jspsych_sample(.x, .y)
     ) %>%
     c(
       "alignment_condition = jsPsych.randomization.sampleWithoutReplacement(['low', 'high'], 1)[0]",
       "reliability_type_condition = jsPsych.randomization.sampleWithoutReplacement(['implicit', 'explicit'], 1)[0]",
       "urlvar = jsPsych.data.urlVariables()",
       "if typeof urlvar.project_variation != 'undefined' then project_variation_condition = urlvar.project_variation;",
+      "if typeof urlvar.latin_variation != 'undefined' then latin_variation_condition = urlvar.latin_variation;",
       "if typeof urlvar.alignment != 'undefined' then alignment_condition = urlvar.alignment;",
       "if typeof urlvar.reliability_type != 'undefined' then reliability_type_condition = urlvar.reliability_type;"
     ) %>%

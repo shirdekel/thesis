@@ -29,6 +29,12 @@ get_project_allocation <- function(projects) {
       fn_data_condition(
         alignment == !!projects$alignment
       )
+    ) %>%
+    build_timeline() %>%
+    display_if(
+      fn_data_condition(
+        latin_variation == !!projects$latin_variation
+      )
     )
 
   return(trial_projects)
