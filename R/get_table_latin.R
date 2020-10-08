@@ -8,7 +8,8 @@ get_table_latin <- function(data, latin, name) {
     latin %>%
     map(
       ~ data %>%
-        mutate("{{name}}" := .x)
+        mutate("{{name}}" := .x) %>%
+        arrange(business_name)
     ) %>%
     list()
 
