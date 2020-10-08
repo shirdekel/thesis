@@ -39,7 +39,9 @@ get_project_detail_alignment_8 <- function() {
       project_unit,
       business_name,
       project_type,
-      alignment_high = project_number,
+      alignment_high_project_variation = project_number,
+      alignment_low_npv_raw = npv %>%
+        rev(),
       intrinsic_feature_multipliers
     ) %>%
     unnest(
@@ -52,14 +54,18 @@ get_project_detail_alignment_8 <- function() {
     ) %>%
     mutate(
       intrinsic_feature_rank = list(seq(from = 5, to = 1)),
-      alignment_low = list(project_number)
+      alignment_low_project_variation = list(project_number),
+      alignment_high_npv_raw = npv %>%
+        rev() %>%
+        list()
     ) %>%
     unnest(
       c(
         intrinsic_feature_multipliers,
         intrinsic_feature_rank,
         business_name,
-        alignment_low
+        alignment_low_project_variation,
+        alignment_high_npv_raw
       )
     ) %>%
     rowwise() %>%
@@ -73,21 +79,24 @@ get_project_detail_alignment_8 <- function() {
       )
     ) %>%
     ungroup() %>%
-    nest_by(business_name, project_type, intrinsic_feature_rank, alignment_low, alignment_high) %>%
+    nest_by(
+      business_name,
+      project_type,
+      intrinsic_feature_rank,
+      alignment_low_project_variation,
+      alignment_high_project_variation,
+      alignment_low_npv_raw,
+      alignment_high_npv_raw
+    ) %>%
     mutate(
       html = multi_list(data$combined)
     ) %>%
     pivot_longer(
       starts_with("alignment"),
-      names_to = "alignment",
-      names_prefix = "alignment_",
-      values_to = "project_variation"
+      names_to = c("alignment", "name"),
+      names_pattern = "alignment_(\\w+?)_(.*)",
     ) %>%
-    group_by(alignment, project_variation) %>%
-    mutate(
-      npv_raw = npv %>%
-        rev()
-    ) %>%
+    pivot_wider() %>%
     rowwise() %>%
     mutate(
       reliability_explicit = list(get_reliability_explicit(npv_raw)),
