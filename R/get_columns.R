@@ -104,12 +104,21 @@ get_columns <- function(thesis_project, experiment_number) {
       )
     )
 
-  latin_variation <-
+  business_name_variation <-
     list(character(0)) %>%
     rep(3) %>%
     append(
       list(
-        insert_javascript("latin_variation_condition")
+        insert_javascript("business_name_variation_condition")
+      )
+    )
+
+  column_order_variation <-
+    list(character(0)) %>%
+    rep(3) %>%
+    append(
+      list(
+        insert_javascript("column_order_variation_condition")
       )
     )
 
@@ -151,7 +160,8 @@ get_columns <- function(thesis_project, experiment_number) {
       current_project_choice_order = current_project_choice_order,
       alignment = alignment,
       reliability_type = reliability_type,
-      latin_variation = latin_variation,
+      business_name_variation = business_name_variation,
+      column_order_variation = column_order_variation,
       PROLIFIC_PID = PROLIFIC_PID,
       STUDY_ID = STUDY_ID,
       SESSION_ID = SESSION_ID
