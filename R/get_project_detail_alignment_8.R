@@ -32,7 +32,7 @@ get_project_detail_alignment_8 <- function() {
     1:5 %>%
     as.numeric()
 
-  project_detail <-
+  project_detail_alignment_8 <-
     tibble(
       project_detail_feature,
       project_value_base,
@@ -118,5 +118,5 @@ get_project_detail_alignment_8 <- function() {
       values_to = "npv"
     )
 
-  return(project_detail)
+  return(project_detail_alignment_8)
 }
