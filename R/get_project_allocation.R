@@ -6,7 +6,7 @@
 get_project_allocation <- function(projects) {
   trial_projects <-
     trial_generic(
-      "survey-html-form2",
+      "survey-html-form4",
       html = insert_variable("allocation_table"),
       data = insert_property(stage = "project_allocation")
     ) %>%
