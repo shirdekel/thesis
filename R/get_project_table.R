@@ -6,10 +6,12 @@
 get_project_table <- function(data) {
   project_table <-
     data %>%
-    select(-c(data, npv_raw, intrinsic_feature_rank)) %>%
+    select(-c(data, npv_raw, intrinsic_feature_rank, input_id)) %>%
     mutate(project_label = str_c("Project", 1:5)) %>%
     pivot_longer(
       c(
+        input_allocation,
+        input_ranking,
         business_name,
         project_type,
         html,

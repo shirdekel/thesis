@@ -76,6 +76,12 @@ get_project_detail_alignment_8 <- function() {
         as.integer(),
       combined = str_c(
         project_detail_feature, ": ", project_value, project_unit
+      ),
+      input_id_component = str_c(
+        project_detail_feature %>%
+          str_replace_all(" ", "-"),
+        project_value,
+        sep = "_"
       )
     ) %>%
     ungroup() %>%
@@ -116,6 +122,35 @@ get_project_detail_alignment_8 <- function() {
       names_to = "reliability_type",
       names_prefix = "reliability_",
       values_to = "npv"
+    ) %>%
+    rowwise() %>%
+    mutate(
+      input_id = str_c(
+        business_name,
+        project_type %>%
+          str_replace_all(" ", "-"),
+        npv_raw,
+        data$input_id_component %>%
+          str_c("detail", 1:3, "_", .) %>%
+          str_c(collapse = "_"),
+        intrinsic_feature_rank,
+        sep = "_"
+      ),
+      input_allocation = get_survey_number(
+        label_text = "Allocation: ",
+        name = input_id %>%
+          str_c("allocation", sep = "_"),
+        suffix = "%"
+      ) %>%
+        as.character(),
+      input_ranking = get_survey_number(
+        label_text = "Ranking: ",
+        name = input_id %>%
+          str_c("ranking", sep = "_"),
+        min = 1,
+        max = 5
+      ) %>%
+        as.character()
     )
 
   return(project_detail_alignment_8)
