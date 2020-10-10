@@ -35,13 +35,6 @@ get_project_allocation <- function(projects) {
       fn_data_condition(
         business_name_variation == !!projects$business_name_variation
       )
-    ) %>%
-    build_timeline() %>%
-    display_if(
-      fn_data_condition(
-        column_order_variation == !!projects$column_order_variation
-      )
     )
-
   return(trial_projects)
 }

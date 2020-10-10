@@ -3,19 +3,13 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-mutate_project_table <- function(projects_column_order_latin) {
+mutate_project_table <- function(projects_business_name_latin) {
   projects_project_table <-
-    projects_column_order_latin %>%
+    projects_business_name_latin %>%
     rowwise() %>%
     mutate(
       project_table = list(
-        get_project_table(column_order_latin_table) %>%
-          htmlTable(
-            rnames = FALSE,
-            align = "l",
-            label = "allocation_task",
-            useViewer = FALSE
-          )
+        get_project_table(business_name_latin_table)
       )
     ) %>%
     ungroup()

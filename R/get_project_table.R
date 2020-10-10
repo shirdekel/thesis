@@ -6,22 +6,45 @@
 get_project_table <- function(data) {
   project_table <-
     data %>%
-    select(-c(data, npv_raw, intrinsic_feature_rank, input_id)) %>%
-    mutate(project_label = str_c("Project", 1:5)) %>%
-    pivot_longer(
-      c(
-        input_allocation,
-        input_ranking,
-        business_name,
-        project_type,
-        html,
-        npv
-      )
-    ) %>%
-    pivot_wider(
-      names_from = project_label,
-      values_from = value
+    select(
+      input_ranking,
+      input_allocation,
+      business_name,
+      project_type,
+      html,
+      npv
     )
 
-  return(project_table)
+  project_details <-
+    project_table %>%
+    as.list() %>%
+    unname()%>%
+    transpose()
+
+  row_names <-
+    project_table %>%
+    names()
+
+  header_row <-
+    c(
+      "Relevant information",
+      str_c("Project", 1:5)
+    )
+
+  table_generation <-
+    list(
+      project_details,
+      row_names,
+      header_row
+    ) %>%
+    map(toJSON) %>%
+    str_c(collapse = ", ") %>%
+    str_c(
+      "generate_alignment_8_table(",
+      .,
+      ")"
+    ) %>%
+    insert_javascript()
+
+  return(table_generation)
 }
