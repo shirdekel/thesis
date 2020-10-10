@@ -23,7 +23,11 @@ the_plan <-
       seed = old_seed$gambles
     ),
     experiment_resources = target(
-      here("inst", "experiment_resources"),
+      experiment_resources_directory,
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+      ),
       format = "file"
     ),
     gambles_plot = target(
@@ -35,6 +39,7 @@ the_plan <-
       ),
       transform = map(
         gambles,
+        experiment_resources,
         .id = c(thesis_project, experiment_number)
       )
     ),
@@ -64,6 +69,7 @@ the_plan <-
     transform = map(
       gambles,
       main,
+      experiment_resources,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file"
@@ -105,6 +111,7 @@ the_plan <-
       gambles,
       testing_main,
       testing_directory,
+      experiment_resources,
       .id = c(thesis_project, experiment_number)
     ),
     target = "file"

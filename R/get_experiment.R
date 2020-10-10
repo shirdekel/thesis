@@ -24,7 +24,7 @@ get_experiment <- function(gambles, experiment_directory, thesis_project, experi
     get_welcome()
 
   pre_experiment <-
-    get_pre_experiment(ethics)
+    get_pre_experiment(ethics, experiment_resources)
 
   build_experiment(
     timeline = build_timeline(

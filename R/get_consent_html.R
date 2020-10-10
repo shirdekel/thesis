@@ -4,7 +4,7 @@
 
 ##' @author Shir Dekel
 ##' @export
-get_consent_html <- function() {
+get_consent_html <- function(experiment_resources) {
 
   consent_html <- withTags(
     div(id = "consent",
@@ -31,6 +31,11 @@ get_consent_html <- function() {
   )
 
   consent_html %>%
-    save_html(here("inst", "experiment_resources", "consent.html"))
+    save_html(
+      file.path(
+        experiment_resources,
+        "consent.html"
+      )
+    )
 
 }

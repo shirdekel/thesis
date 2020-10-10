@@ -5,13 +5,13 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_pre_experiment <- function(ethics) {
+get_pre_experiment <- function(ethics, experiment_resources) {
 
   pis <- NULL
 
   consent <- NULL
 
-  get_consent_html()
+  get_consent_html(experiment_resources)
 
   if(ethics) {
     pis <-

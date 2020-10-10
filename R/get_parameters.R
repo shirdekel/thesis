@@ -127,6 +127,17 @@ get_parameters <- function() {
       condition_allocation_alignment_8()
     )
 
+  experiment_resources_directory <-
+    here(
+      "inst",
+      "experiment_resources",
+      thesis_project,
+      str_c(
+        "experiment",
+        experiment_number
+      )
+    )
+
   parameters <-
     tibble(
       thesis_project,
@@ -146,7 +157,8 @@ get_parameters <- function() {
       materials_directory,
       columns,
       post_experiment,
-      condition_allocation
+      condition_allocation,
+      experiment_resources_directory
     )
 
   return(parameters)
