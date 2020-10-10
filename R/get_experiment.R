@@ -43,7 +43,7 @@ get_experiment <- function(gambles, experiment_directory, thesis_project, experi
     path = experiment_directory,
     experiment_title = "Business decision-making",
     experiment_width = 750,
-    preload_images = here("inst", "experiment_resources") %>%
+    preload_images = experiment_resources %>%
       list.files() %>%
       str_extract("(.*.png)") %>%
       na.omit() %>%
