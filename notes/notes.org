@@ -19,13 +19,60 @@
     - New issue
       - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
       - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
-*** TODO Counterbalancing
+*** DONE Counterbalancing
+    CLOSED: [2020-10-08 Thu 16:40]
     - Project variation
       - But this is randomised
     - Project name
       - Is it really just project name that needs latin square?
-      
-*** TODO Inputs 
+    - Also order of the values in each table, I guess.
+      - Or maybe it's enough to just change the order of values, and we don't care so much about the order of the names
+    - Ok so project name was definitely not as easy as I thought.
+      - Maybe because of the alignment differences
+      - So we're now going to try do it after everything
+    - That worked fine
+      - But might lead to errors when getting input data through, so pay attention.
+    - And column order
+    - We're currently on 12MB, so likely will need to revisit this and add column shuffling on the JS end
+*** DONE Inputs
+    CLOSED: [2020-10-09 Fri 11:50]
+*** TODO Fix project aesthetics
+    - Heading names in the final table
+    - Multiplier values
+    - Allocation and ranking labels
+    - Table width
+*** TODO Make sure projects are different between displays
+    - Different NPVs
+    - Different projects for low alignment?
+    - I guess you can do like in aggregation and sample pairs from the set of different projects
+*** TODO Catch trials
+*** DONE Generate the tables in JS
+    CLOSED: [2020-10-10 Sat 15:43]
+    - Will help with column order counterbalancing
+      - And display pairs
+    - So we just create the vectors/columns/whatever in R
+      - Then jspsych takes them, shuffles, and puts them into a table from a function.
+      - So we make a function whose argument is something like a vector of the columns/rows
+        - And then the function itself already has the project and row names
+        - The shuffling occurs in the function
+    - So here's what you do:
+      - Send to jspsych 1. an array of length five project columns, with each column as a vector (of 6 rows) in the array, 2. a vector for the header, 3. a vector for the row name column. For each table. Already in the function call.
+      - Function steps:
+        1. Shuffle the five vectors (columns)
+        2. Add row name vector to the end of the array
+        3. Transpose so that the rows are now columns
+        4. Add header name vector
+        5. Convert the new array of 6x6 into an HTML table
+    - Would this help with display pairs?
+      - Probably not actually
+      - But what we can do is have "display A" and "display B"
+        - And only five projects can appear in A and the other five in B
+        - And we just randomise the order in jspsych
+        - But then we're associating certain projects with low or high reliability
+      - Instead we'd have to sample pairs like we said before
+* General
+** TODO Give each experiment its own resource folder
+   - But maybe it's ok to use a communal one.
 * Emacs wishlist
 ** TODO Spotify
 ** TODO combine ESS configs
@@ -37,3 +84,4 @@
 ** TODO Evernote
 ** TODO Automatically start R REPL in project root
 ** TODO Get graphics device in buffer
+** TODO Format while typing
