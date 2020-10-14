@@ -41,11 +41,41 @@
     - Multiplier values
     - Allocation and ranking labels
     - Table width
-*** TODO Make sure projects are different between displays
+*** DONE Make sure projects are different between displays
+    CLOSED: [2020-10-12 Mon 18:13]
     - Different NPVs
     - Different projects for low alignment?
     - I guess you can do like in aggregation and sample pairs from the set of different projects
+    - But what we can do is have "display A" and "display B"
+      - And only five projects can appear in A and the other five in B
+      - And we just randomise the order in jspsych
+      - But then we're associating certain projects with low or high reliability
+    - Instead we'd have to sample pairs like we said before
+    - I guess it's a low vs high alignment issue again
+      - With low alignment we can just have one of two variations
+        - That is, either display A or B for low or high reliability
+      - With high alignment that's where we might need to sample
+      - Or not!
+    - What if we just have a "project_display_variation" type of variable
+      - And then within the variation of the display set, for high alignment you have the standard project_variation condition
+      - So then I guess you're "merely" multiplying the conditions by two.
+      - Add it at the beginning when adding project content
+      - Then in the end nest the columns such that you get a tibble with a high and low reliability_amount column, a project_display_variation column that is `c(1,2)`, and the table contents
+        - Supposedly then you'd have cases in which each display variation is associated with each reliability amount
 *** TODO Catch trials
+    - Can think of three types
+      - Instructions check
+      - Attention check
+      - "Honesty check" (from [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6753310/#__sec25title][here]])
+    - For the instructions check we can ask them which NPV is better
+    - For attention check can be a trial between the two displays
+      - Actually can be one before each display
+      - "You will now see the first project display. It is important that you pay attention. Click the following checkbox before continuing on to the next page: [ ]. Please read through and complete the task accordingly.
+    - Maybe also include a captcha?
+    - [[https://blog.prolific.co/how-to-improve-your-data-quality/][This article]] has a bunch of suggestions
+      - And [[https://blog.prolific.co/minimising-noise-and-maximising-your-data-quality-the-case-of-satisficing/][here]]
+    - Can also add something saying that you will get payment regardless of performance etc.
+    - Let's reject if they get the NPV question and mid study attention check wrong
 *** DONE Generate the tables in JS
     CLOSED: [2020-10-10 Sat 15:43]
     - Will help with column order counterbalancing
@@ -70,8 +100,10 @@
         - And we just randomise the order in jspsych
         - But then we're associating certain projects with low or high reliability
       - Instead we'd have to sample pairs like we said before
+*** TODO Add reliability amount condition to input IDs
 * General
-** TODO Give each experiment its own resource folder
+** DONE Give each experiment its own resource folder
+   CLOSED: [2020-10-12 Mon 09:51]
    - But maybe it's ok to use a communal one.
 * Emacs wishlist
 ** TODO Spotify
