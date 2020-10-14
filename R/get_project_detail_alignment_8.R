@@ -39,10 +39,26 @@ get_project_detail_alignment_8 <- function() {
       project_unit,
       business_name,
       project_type,
-      alignment_high_project_variation = project_number,
+      alignment_high_project_variation = project_number %>%
+        list() %>%
+        rep(2),
       alignment_low_npv_raw = npv %>%
-        rev(),
-      intrinsic_feature_multipliers
+        map(rev),
+      intrinsic_feature_multipliers,
+      display_set = seq_len(2) %>%
+        as.numeric()
+    ) %>%
+    unnest(
+      c(
+        project_detail_feature,
+        project_value_base,
+        project_unit,
+        business_name,
+        project_type,
+        alignment_high_project_variation,
+        alignment_low_npv_raw,
+        intrinsic_feature_multipliers
+      )
     ) %>%
     unnest(
       c(
@@ -56,8 +72,8 @@ get_project_detail_alignment_8 <- function() {
       intrinsic_feature_rank = list(seq(from = 5, to = 1)),
       alignment_low_project_variation = list(project_number),
       alignment_high_npv_raw = npv %>%
-        rev() %>%
-        list()
+        map(rev) %>%
+        rep(each = 15)
     ) %>%
     unnest(
       c(
@@ -92,7 +108,8 @@ get_project_detail_alignment_8 <- function() {
       alignment_low_project_variation,
       alignment_high_project_variation,
       alignment_low_npv_raw,
-      alignment_high_npv_raw
+      alignment_high_npv_raw,
+      display_set
     ) %>%
     mutate(
       html = multi_list(data$combined)
@@ -124,6 +141,7 @@ get_project_detail_alignment_8 <- function() {
       values_to = "npv"
     ) %>%
     rowwise() %>%
+    get_display() %>%
     mutate(
       input_id = str_c(
         business_name,

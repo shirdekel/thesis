@@ -3,18 +3,26 @@ get_business_name <- function() {
 
   business_name <-
     list(
-      str_c("Pressbloom", 1:5),
-      str_c("Pharmacore", 1:5),
-      str_c("Railmont", 1:5),
-      str_c("Erectic", 1:5),
-      c(
-        "Cweb",
-        "Codeck",
-        "Digics",
-        "Techip",
-        "Zenix"
+      list(
+        str_c("Pressbloom", 1:5),
+        str_c("Pharmacore", 1:5),
+        str_c("Railmont", 1:5),
+        str_c("Erectic", 1:5),
+        c(
+          "Cweb",
+          "Codeck",
+          "Digics",
+          "Techip",
+          "Zenix"
+        )
+      ),
+      list(
+        str_c("Refinera", 1:5),
+        str_c("Microxy", 1:5),
+        str_c("Logivia", 1:5),
+        str_c("Dinerly", 1:5),
+        str_c("Vital Records", 1:5)
       )
     )
-
   return(business_name)
 }

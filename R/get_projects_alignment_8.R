@@ -13,5 +13,5 @@ get_projects_alignment_8 <- function() {
     ) %>%
     nest(data = c(reliability_amount, project_table))
 
-  return(projects)
+   return(projects)
 }

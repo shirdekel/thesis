@@ -10,7 +10,8 @@ mutate_business_name_latin <- function(project_detail_alignment_8) {
       alignment,
       reliability_amount,
       reliability_type,
-      project_variation
+      project_variation,
+      display_variation
     ) %>%
     mutate(
       business_name_latin = data$business_name %>%
