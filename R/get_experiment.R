@@ -19,24 +19,12 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_experiment <- function(gambles, experiment_directory, thesis_project, experiment_number, experiment_resources, main, post_experiment, columns, condition_allocation, recaptcha = FALSE, script_link = NULL, script_link_async = NULL, script_link_defer = NULL, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
+get_experiment <- function(gambles, experiment_directory, thesis_project, experiment_number, experiment_resources, main, post_experiment, columns, condition_allocation, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
   welcome <-
     get_welcome()
 
   pre_experiment <-
-    get_pre_experiment(ethics, recaptcha, experiment_resources)
-
-  if (is_empty(script_link)) {
-    script_link <- NULL
-  }
-
-  if (is_empty(script_link_async)) {
-    script_link_async <- NULL
-  }
-
-  if (is_empty(script_link_defer)) {
-    script_link_defer <- NULL
-  }
+    get_pre_experiment(ethics, experiment_resources)
 
   build_experiment(
     timeline = build_timeline(
@@ -52,9 +40,6 @@ get_experiment <- function(gambles, experiment_directory, thesis_project, experi
       condition_allocation,
       check_other()
     ),
-    script_link = script_link,
-    script_link_async = script_link_async,
-    script_link_defer = script_link_defer,
     path = experiment_directory,
     experiment_title = "Business decision-making",
     experiment_width = 750,

@@ -5,8 +5,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_pre_experiment <- function(ethics, recaptcha, experiment_resources) {
-  recaptcha_trial <- NULL
+get_pre_experiment <- function(ethics, experiment_resources) {
+  captcha <- NULL
 
   pis <- NULL
 
@@ -15,10 +15,8 @@ get_pre_experiment <- function(ethics, recaptcha, experiment_resources) {
   get_consent_html(experiment_resources)
 
   if (ethics) {
-    if (recaptcha) {
-      recaptcha_trial <-
-        get_captcha()
-    }
+    captcha <-
+      get_captcha()
 
     pis <-
       get_pis("prolific")
@@ -41,7 +39,6 @@ get_pre_experiment <- function(ethics, recaptcha, experiment_resources) {
 
   pre_experiment <-
     build_timeline(
-      recaptcha_trial,
       pis,
       consent,
       sample_id,

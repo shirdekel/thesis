@@ -138,35 +138,6 @@ get_parameters <- function() {
       )
     )
 
-  recaptcha <-
-    c(
-      FALSE %>%
-        rep(3),
-      TRUE
-    )
-
-  script_link <-
-    c(
-      list(character(0)) %>%
-        rep(3),
-      "https://www.google.com/recaptcha/api.js"
-    )
-
-  script_link_async <-
-    c(
-      list(character(0)) %>%
-        rep(3),
-      NA
-    )
-
-  script_link_defer <-
-    c(
-      list(character(0)) %>%
-        rep(3),
-      NA
-    )
-
-
   parameters <-
     tibble(
       thesis_project,
@@ -187,11 +158,7 @@ get_parameters <- function() {
       columns,
       post_experiment,
       condition_allocation,
-      experiment_resources_directory,
-      recaptcha,
-      script_link,
-      script_link_async,
-      script_link_defer
+      experiment_resources_directory
     )
 
   return(parameters)
