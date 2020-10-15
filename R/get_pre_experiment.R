@@ -6,7 +6,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_pre_experiment <- function(ethics, experiment_resources) {
-  captcha <- NULL
 
   pis <- NULL
 
@@ -14,10 +13,7 @@ get_pre_experiment <- function(ethics, experiment_resources) {
 
   get_consent_html(experiment_resources)
 
-  if (ethics) {
-    captcha <-
-      get_captcha()
-
+  if(ethics) {
     pis <-
       get_pis("prolific")
 
@@ -49,4 +45,5 @@ get_pre_experiment <- function(ethics, experiment_resources) {
     map(compact) # Remove PIS and consent if `NULL`
 
   return(pre_experiment)
+
 }
