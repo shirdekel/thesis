@@ -27,8 +27,6 @@ rsconnect/
 # drake
 .drake
 .drake_history
-# html
-*.html
 # renv via capsule
 renv/
 
@@ -40,3 +38,4 @@ renv/
 !preamble.tex
 .DS_Store
 *.zip
+resource/
