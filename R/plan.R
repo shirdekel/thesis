@@ -61,7 +61,11 @@ the_plan <-
         main,
         post_experiment,
         columns,
-        condition_allocation
+        condition_allocation,
+        recaptcha,
+        script_link,
+        script_link_async,
+        script_link_defer,
       )
       # get_data_mock(experiment, 20)
       file.path(experiment_directory, "experiment")
