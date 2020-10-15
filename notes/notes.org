@@ -72,6 +72,8 @@
       - Actually can be one before each display
       - "You will now see the first project display. It is important that you pay attention. Click the following checkbox before continuing on to the next page: [ ]. Please read through and complete the task accordingly.
     - Maybe also include a captcha?
+      - Currently not working
+      - Update: unlikely to happen, because requires update of psych server code
     - [[https://blog.prolific.co/how-to-improve-your-data-quality/][This article]] has a bunch of suggestions
       - And [[https://blog.prolific.co/minimising-noise-and-maximising-your-data-quality-the-case-of-satisficing/][here]]
     - Can also add something saying that you will get payment regardless of performance etc.
