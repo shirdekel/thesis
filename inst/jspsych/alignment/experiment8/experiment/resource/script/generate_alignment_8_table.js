@@ -16,7 +16,8 @@ function generate_alignment_8_table(project_details, row_names, header_row) {
     array_transposed.unshift(header_row);
 
     // 5. Convert the new array of 6x6 into an HTML table
-    // From https://stackoverflow.com/a/15164958/13945974
+    // From https://stackoverflow.com/a/15164796/13945974
+    // The other one (https://stackoverflow.com/a/15164958/13945974) didn't work
     function makeTableHTML(myArray) {
         var result = "<table border=1>";
         for(var i=0; i<myArray.length; i++) {
