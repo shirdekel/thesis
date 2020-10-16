@@ -105,7 +105,12 @@ clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filte
   if ("prolific" %in% colnames(data) & !test) {
     data <-
       data %>%
-      filter(!str_detect(prolific, "test1234"))
+      filter(
+        # Filter out testing data
+        !str_detect(prolific, "test1234"),
+        # Filter out data generated through Prolific preview (through personal PID)
+        prolific != "5b878067600e3a000194db61"
+      )
 
     list(prolific_filter, prolific_filter_label) %>%
       pmap(
