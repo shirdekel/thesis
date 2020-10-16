@@ -7,10 +7,12 @@ condition_allocation_alignment_8 <- function() {
   list(
     seq_len(5) %>%
       list() %>%
-      rep(2),
+    rep(2)%>%
+    append(list(seq_len(2))),
     list(
       "project_variation_condition",
-      "business_name_variation_condition"
+      "business_name_variation_condition",
+      "display_variation_condition"
     )
   ) %>%
     pmap_chr(
@@ -22,6 +24,7 @@ condition_allocation_alignment_8 <- function() {
       "urlvar = jsPsych.data.urlVariables()",
       "if typeof urlvar.project_variation != 'undefined' then project_variation_condition = urlvar.project_variation;",
       "if typeof urlvar.business_name_variation != 'undefined' then business_name_variation_condition = urlvar.business_name_variation;",
+      "if typeof urlvar.display_variation != 'undefined' then display_variation_condition = urlvar.display_variation;",
       "if typeof urlvar.alignment != 'undefined' then alignment_condition = urlvar.alignment;",
       "if typeof urlvar.reliability_type != 'undefined' then reliability_type_condition = urlvar.reliability_type;"
     ) %>%

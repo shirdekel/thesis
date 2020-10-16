@@ -113,6 +113,15 @@ get_columns <- function(thesis_project, experiment_number) {
       )
     )
 
+  display_variation <-
+    list(character(0)) %>%
+    rep(3) %>%
+    append(
+      list(
+        insert_javascript("display_variation_condition")
+      )
+    )
+
   PROLIFIC_PID <-
     c(
       list(character(0)),
@@ -152,6 +161,7 @@ get_columns <- function(thesis_project, experiment_number) {
       alignment = alignment,
       reliability_type = reliability_type,
       business_name_variation = business_name_variation,
+      display_variation = display_variation,
       PROLIFIC_PID = PROLIFIC_PID,
       STUDY_ID = STUDY_ID,
       SESSION_ID = SESSION_ID
