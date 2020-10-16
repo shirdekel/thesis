@@ -5,18 +5,9 @@
 ##' @export
 get_business_information <- function() {
   company_name <-
-    withTags(
-      p(
-        label(
-          `for` = "company_name",
-          "What is your company name? (optional)"
-        ),
-        input(
-          type = "text",
-          id = "company_name",
-          name = "company_name"
-        )
-      )
+    get_survey_text(
+      label_text = "What is your company name? (optional)",
+      name = "company_name",
     )
 
   role_company_option <-
