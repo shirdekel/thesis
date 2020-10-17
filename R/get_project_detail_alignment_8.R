@@ -153,22 +153,7 @@ get_project_detail_alignment_8 <- function() {
           str_c(collapse = "_"),
         intrinsic_feature_rank,
         sep = "_"
-      ),
-      input_allocation = get_survey_number(
-        label_text = "Allocation: ",
-        name = input_id %>%
-          str_c("allocation", sep = "_"),
-        suffix = "%"
-      ) %>%
-        as.character(),
-      input_ranking = get_survey_number(
-        label_text = "Ranking: ",
-        name = input_id %>%
-          str_c("ranking", sep = "_"),
-        min = 1,
-        max = 5
-      ) %>%
-        as.character()
+      )
     )
 
   return(project_detail_alignment_8)

@@ -9,7 +9,7 @@ mutate_project_table <- function(projects_business_name_latin) {
     rowwise() %>%
     mutate(
       project_table = list(
-        get_project_table(business_name_latin_table)
+        get_project_table(business_name_latin_table, reliability_amount)
       )
     ) %>%
     ungroup()

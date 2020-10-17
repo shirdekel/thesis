@@ -3,9 +3,36 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_table <- function(data) {
+##' @param data
+##' @param reliability_amount
+get_project_table <- function(data, reliability_amount) {
   project_table <-
     data %>%
+    rowwise() %>%
+    mutate(
+      input_allocation = get_survey_number(
+        label_text = "Allocation: ",
+        name = input_id %>%
+          str_c(
+            reliability_amount,
+            "allocation",
+            sep = "_"
+          )
+      ) %>%
+        as.character(),
+      input_ranking = get_survey_number(
+        label_text = "Ranking: ",
+        name = input_id %>%
+          str_c(
+            reliability_amount,
+            "ranking",
+            sep = "_"
+          ),
+        min = 1,
+        max = 5
+      ) %>%
+        as.character()
+    ) %>%
     select(
       input_ranking,
       input_allocation,
@@ -18,7 +45,7 @@ get_project_table <- function(data) {
   project_details <-
     project_table %>%
     as.list() %>%
-    unname()%>%
+    unname() %>%
     transpose()
 
   row_names <-
