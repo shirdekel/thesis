@@ -18,7 +18,9 @@ get_main_alignment_8 <- function(gambles, randomize_order = TRUE) {
     projects %>%
     slide(get_project_allocation)
 
-  # Should be a timeline list with length the same as the number of trials to include. If includes conditional timelines, each element of main should be a list of two (one timeline, and conditional)
+  # Should be a timeline list with length the same as the number of trials to
+  # include. If includes conditional timelines, each element of main should be a
+  # list of two (one timeline, and conditional)
 
   main <-
     list(instructions) %>%
