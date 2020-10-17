@@ -34,12 +34,12 @@ get_project_table <- function(data, reliability_amount) {
         as.character()
     ) %>%
     select(
-      input_ranking,
-      input_allocation,
-      business_name,
-      project_type,
-      html,
-      npv
+      "Project ranking" = input_ranking,
+      "Project allocation (%)" = input_allocation,
+      "Business name" = business_name,
+      "Project type" = project_type,
+      "Predicted project features" = html,
+      "NPV ($)" = npv
     )
 
   project_details <-
@@ -55,7 +55,7 @@ get_project_table <- function(data, reliability_amount) {
   header_row <-
     c(
       "Relevant information",
-      str_c("Project", 1:5)
+      str_c("Project", 1:5, sep = " ")
     )
 
   table_generation <-
