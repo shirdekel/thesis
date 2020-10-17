@@ -25,6 +25,7 @@ library(webdriver)
 library(zip)
 library(pwr)
 library(htmlTable)
+library(english)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
