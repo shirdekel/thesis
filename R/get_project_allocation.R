@@ -9,9 +9,31 @@ get_project_allocation <- function(projects) {
       "survey-html-form4",
       html = insert_variable("allocation_table"),
       data = insert_property(stage = "project_allocation")
+    )
+
+  interstitial <-
+    trial_generic(
+      "survey-html-form",
+      html = insert_variable("interstitial"),
+      data = insert_property(stage = "interstitial")
+    )
+
+  interstitial_trials <-
+    seq_len(2) %>%
+    map(
+      ~ get_interstitial(.x)
+    )
+
+  full_timeline <-
+    build_timeline(
+      interstitial,
+      trial_projects
     ) %>%
     build_timeline() %>%
-    set_variables(allocation_table = projects$data[[1]]$project_table) %>%
+    set_variables(
+      allocation_table = projects$data[[1]]$project_table,
+      interstitial = interstitial_trials
+    ) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
@@ -42,5 +64,7 @@ get_project_allocation <- function(projects) {
         display_variation == !!projects$display_variation
       )
     )
-  return(trial_projects)
+
+
+  return(full_timeline)
 }
