@@ -8,9 +8,9 @@ get_reliability_implicit <- function(npv) {
 
   reliability_implicit <-
     str_c(
-      npv,
-      " million.<br>(Midpoint: ",
       range,
+      " million.<br>(Midpoint: ",
+      npv,
       ".)"
     )
 
