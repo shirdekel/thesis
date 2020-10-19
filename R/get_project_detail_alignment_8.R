@@ -26,7 +26,7 @@ get_project_detail_alignment_8 <- function() {
     get_project_unit()
 
   intrinsic_feature_multipliers <-
-    get_intrinsic_feature_multipliers()
+    get_intrinsic_feature_multipliers(npv)
 
   project_number <-
     1:5 %>%
