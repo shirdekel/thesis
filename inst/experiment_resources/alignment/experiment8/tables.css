@@ -6,10 +6,13 @@ table {
     table-layout: auto;
     /* 100% stays within the global 750px, while auto isn't wide enough */
     width: 150%;
+    /* For `left` to work */
     position: relative;
-    left: -10px;
-    list-style-position: inside;
-    padding-left: 0;
+    /* Manually shift to the left, since for some reason it starts towards the
+   right, and setting `margin-left` and `margin-right` to `auto` doesn't help */
+    right: 25%;
+    /* Seems to make the text not break away from the bullet point */
+    list-style-position: outside;
 }
 
 td {
