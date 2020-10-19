@@ -31,25 +31,24 @@ get_project_unit <- function() {
       ),
       list(
         c(
-          " a day",
+          "L an hour",
           " an hour",
-          " a decade",
+          " a week",
           " a year",
-          " lines a day"
+          " a year"
         ),
         c(
-          "",
-          " months",
-          "",
-          "%" %>%
-            rep(2)
-        ),
-        c(
-          "L a day",
-          "%",
           " years",
+          "%",
+          " a day",
           "",
           " million"
+        ),
+        c(
+          "%" %>%
+            rep(3),
+          " a month",
+          ""
         )
       )
     ) %>%

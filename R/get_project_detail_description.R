@@ -35,21 +35,21 @@ get_project_detail_feature <- function() {
           "Microchips produced",
           "Packages shipped",
           "Restaurants established",
-          "Production rate"
+          "Record projects completed"
         ),
         c(
           "Time the machinery lasts before requiring maintenance",
           "Usable semiconductor yield after testing",
           "Number of packages that do not spend time in a bottleneck",
           "Number of reservations on a Saturday night",
-          "Expected listenership"
+          "Radio listenership nationally"
         ),
         c(
           "Probability of finding oil",
           "Compatible PCs in the market",
           "Average accuracy of shipments",
           "Positive reviews",
-          "Network connections"
+          "Relevant network connections"
         )
       )
     ) %>%
