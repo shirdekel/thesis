@@ -1,13 +1,39 @@
+##' @title Get business name
+##' Names generated from namelix.com
+##' @return
+##' @author Shir Dekel
 get_business_name <- function() {
-  # names generated from namelix.com
-
   business_name <-
     list(
       list(
-        str_c("Pressbloom", 1:5),
-        str_c("Pharmacore", 1:5),
-        str_c("Railmont", 1:5),
-        str_c("Erectic", 1:5),
+        c(
+          "Pressbloom",
+          "Grown Media",
+          "Penny Gazette",
+          "Byline",
+          "National Editorial"
+        ),
+        c(
+          "Pharmacore",
+          "Healthgenic",
+          "Drugcard",
+          "Genematic",
+          "Curezo"
+        ),
+        c(
+          "Railmont",
+          "Rural Pass",
+          "Tresletrack",
+          "FreightCog",
+          "MetroAlley"
+        ),
+        c(
+          "Erectic",
+          "Refit",
+          "Logis",
+          "Edifice",
+          "Boltwork"
+        ),
         c(
           "Cweb",
           "Codeck",
@@ -17,11 +43,41 @@ get_business_name <- function() {
         )
       ),
       list(
-        str_c("Refinera", 1:5),
-        str_c("Microxy", 1:5),
-        str_c("Logivia", 1:5),
-        str_c("Dinerly", 1:5),
-        str_c("Vital Records", 1:5)
+        c(
+          "Refinera",
+          "Enfuel",
+          "Oilpier",
+          "Petroyield",
+          "Liquid Pipeline"
+        ),
+        c(
+          "Microxy",
+          "Altchip",
+          "GridCircuit",
+          "Wired Board",
+          "Plextronics"
+        ),
+        c(
+          "Logivia",
+          "Solgistics",
+          "Tough Haul",
+          "Direct Vector",
+          "Cargo Ace"
+        ),
+        c(
+          "Dinerly",
+          "Savoro",
+          "Farmhouse Chef",
+          "LunchLover",
+          "Third Cook"
+        ),
+        c(
+          "Vital Records",
+          "Poppin",
+          "Extasy",
+          "NextRecord",
+          "Dotsonic"
+        )
       )
     )
   return(business_name)
