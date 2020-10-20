@@ -40,10 +40,15 @@ clean_data <- function(data_raw_filtered, experiment_number, test = FALSE, proli
   data_combined <-
     tibble()
 
-  if (experiment == "experiment2") {
-    names_to <- c("project", "outcome_positive", "outcome_dif", "probability_positive")
+  if (experiment_number == 2) {
+    names_to <-
+      c("project", "outcome_positive", "outcome_dif", "probability_positive")
   } else {
-    names_to <- c("project", "detail", "outcome_positive", "outcome_dif", "probability_positive")
+    names_to <-
+      c(
+        "project", "detail", "outcome_positive", "outcome_dif",
+        "probability_positive"
+      )
   }
 
   if ("separate" %in% data_raw_prep$presentation) {
