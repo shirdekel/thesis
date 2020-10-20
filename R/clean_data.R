@@ -1,46 +1,20 @@
 ##' @title Clean data
 
-##' @param data_raw
-##'
+##' @param data_raw_filtered
 ##' @param test
 ##' @param prolific_filter
 ##' @param prolific_filter_label
-##' @param experiment_number
-##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data <- function(data_raw, experiment_number, test = FALSE, prolific_filter, prolific_filter_label) {
-  if (experiment_number == 8) experiment_number <- 4
-
-  experiment <- str_c("experiment", experiment_number)
-
-  if (experiment == "experiment2") {
-    data_raw <-
-      data_raw %>%
-      rowwise() %>%
-      mutate(
-        across(c(experiment, sample, stage), ~ .x %>%
-          map_if(validate, fromJSON) %>%
-          unlist()),
-        across(experiment, ~ .x %>%
-          recode("aggregation_exp2" = "experiment2")),
-        thesis_project = "aggregation",
-        similarity = "high"
-      ) %>%
-      ungroup()
-  }
-
+clean_data <- function(data_raw_filtered, experiment_number, test = FALSE, prolific_filter, prolific_filter_label) {
   data_raw_prep <-
-    data_raw %>%
-    # Filtering the experiment object in this case seem to require unquoting
-    filter(
-      experiment == !!experiment,
-      thesis_project == "aggregation"
-    ) %>%
+    data_raw_filtered %>%
     rowwise() %>%
-    # Need to convert stage from JSON. Making sure it comes out normal from jaysire proved to be difficult because it unboxes also other elements.
-    # Also might need to eventually include project_variation, but Experiment 2 doesn't have it.
+    # Need to convert stage from JSON. Making sure it comes out normal from
+    # jaysire proved to be difficult because it unboxes also other elements.
+    # Also might need to eventually include project_variation, but Experiment 2
+    # doesn't have it.
     mutate(
       across(c(stage), ~ .x %>%
         map_if(validate, fromJSON) %>%

@@ -143,16 +143,23 @@ the_plan <-
       .id = c(thesis_project, experiment_number)
     )
     ),
+    data_raw_filtered = target(
+      filter_data_raw(data_raw, thesis_project, experiment_number),
+      transform = map(
+        data_raw,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     data_clean = target(
       clean_data(
-        data_raw,
+        data_raw_filtered,
         experiment_number,
         data_clean_test,
         prolific_filter,
         prolific_filter_label
       ),
       transform = map(
-        data_raw,
+        data_raw_filtered,
         .id = c(thesis_project, experiment_number)
       )
     ),
