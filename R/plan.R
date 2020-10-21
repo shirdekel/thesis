@@ -135,62 +135,62 @@ the_plan <-
       .id = c(thesis_project, experiment_number)
     )
     ),
-    data_raw = target({
-      import_data(file_in(!!data_directory))
-    },
-    transform = map(
-      .data = !!parameters,
-      .id = c(thesis_project, experiment_number)
-    )
-    ),
-    data_raw_filtered = target(
-      filter_data_raw(data_raw, thesis_project, experiment_number),
-      transform = map(
-        data_raw,
-        .id = c(thesis_project, experiment_number)
-      )
-    ),
-    data_clean = target(
-      clean_data(
-        data_raw_filtered,
-        experiment_number,
-        data_clean_test,
-        prolific_filter,
-        prolific_filter_label
-      ),
-      transform = map(
-        data_raw_filtered,
-        .id = c(thesis_project, experiment_number)
-      )
-    ),
-    descriptives = target(
-      get_descriptives(data_clean),
-      transform = map(
-        data_clean,
-        .id = c(thesis_project, experiment_number)
-      )
-    ),
-    plot = target(
-      get_plot(data_clean),
-      transform = map(
-        data_clean,
-        .id = c(thesis_project, experiment_number)
-      )
-    ),
-    results = target(
-      get_results(data_clean),
-      transform = map(
-        data_clean,
-        .id = c(thesis_project, experiment_number)
-      )
-    ),
-    summary_memo = target({
-      render(knitr_in(!!memo_path$summary$Rmd))
-      file_out(!!memo_path$summary$pdf)
-    },
-    transform = map(
-      .data = !!parameters,
-      .id = c(thesis_project, experiment_number)
-    )
-    )
+    ## data_raw = target({
+    ##   import_data(file_in(!!data_directory))
+    ## },
+    ## transform = map(
+    ##   .data = !!parameters,
+    ##   .id = c(thesis_project, experiment_number)
+    ## )
+    ## ),
+    ## data_raw_filtered = target(
+    ##   filter_data_raw(data_raw, thesis_project, experiment_number),
+    ##   transform = map(
+    ##     data_raw,
+    ##     .id = c(thesis_project, experiment_number)
+    ##   )
+    ## ),
+    ## data_clean = target(
+    ##   clean_data(
+    ##     data_raw_filtered,
+    ##     experiment_number,
+    ##     data_clean_test,
+    ##     prolific_filter,
+    ##     prolific_filter_label
+    ##   ),
+    ##   transform = map(
+    ##     data_raw_filtered,
+    ##     .id = c(thesis_project, experiment_number)
+    ##   )
+    ## ),
+    ## descriptives = target(
+    ##   get_descriptives(data_clean),
+    ##   transform = map(
+    ##     data_clean,
+    ##     .id = c(thesis_project, experiment_number)
+    ##   )
+    ## ),
+    ## plot = target(
+    ##   get_plot(data_clean),
+    ##   transform = map(
+    ##     data_clean,
+    ##     .id = c(thesis_project, experiment_number)
+    ##   )
+    ## ),
+    ## results = target(
+    ##   get_results(data_clean),
+    ##   transform = map(
+    ##     data_clean,
+    ##     .id = c(thesis_project, experiment_number)
+    ##   )
+    ## ),
+    ## summary_memo = target({
+    ##   render(knitr_in(!!memo_path$summary$Rmd))
+    ##   file_out(!!memo_path$summary$pdf)
+    ## },
+    ## transform = map(
+    ##   .data = !!parameters,
+    ##   .id = c(thesis_project, experiment_number)
+    ## )
+    ## )
   )

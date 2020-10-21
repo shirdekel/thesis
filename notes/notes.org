@@ -1,3 +1,11 @@
+* General
+** DONE Give each experiment its own resource folder
+   CLOSED: [2020-10-12 Mon 09:51]
+   - But maybe it's ok to use a communal one.
+** TODO Split up the omnibus data files before data cleaning so that everything isn't rerun after every new import
+** Prolific
+   - Don't recruit multiple versions of the same study at once
+     - You can't set exclusions for studies that haven't been 'completed'
 * Alignment
 ** TODO Experiment 8
     - Let's try work backwards:
@@ -36,14 +44,16 @@
     - We're currently on 12MB, so likely will need to revisit this and add column shuffling on the JS end
 *** DONE Inputs
     CLOSED: [2020-10-09 Fri 11:50]
-*** TODO Fix project aesthetics [2/4]
+*** TODO Fix project aesthetics [4/5]
     - [X] Heading names in the final table
     - [X] Multiplier values
       - [X] Actual values
       - [X] Rounding
         - Done automatically due to the integer conversion
     - [ ] Allocation and ranking labels
-    - [ ] Table width
+      - Might be too hard to bother
+    - [X] Business names
+    - [X] Table width
 *** DONE Make sure projects are different between displays
     CLOSED: [2020-10-12 Mon 18:13]
     - Different NPVs
@@ -110,23 +120,34 @@
       - Instead we'd have to sample pairs like we said before
 *** DONE Add reliability amount condition to input IDs
     CLOSED: [2020-10-17 Sat 13:38]
-* General
-** DONE Give each experiment its own resource folder
-   CLOSED: [2020-10-12 Mon 09:51]
-   - But maybe it's ok to use a communal one.
-** TODO Split up the omnibus data files before data cleaning so that everything isn't rerun after every new import
-** Prolific
-   - Don't recruit multiple versions of the same study at once
-     - You can't set exclusions for studies that haven't been 'completed'
+*** TODO Reanalyse old data using new techniques [0/4]
+    - [ ] difference
+    - [ ] mixed effect
+    - [ ] covariate
+    - [ ] five regression
+*** TODO Add explanation of allocation task
+    - Either in instructions or as preamble
+*** TODO Generate test data
+    - For some reason it isn't showing up with webdriver
+    - But it has something to do with the main code, because welcome page works by itself
+    - Also you changed around the experiment files for aggregation 4 and the resources for it
+    - mock data files have also been edited a bit
 * Emacs wishlist
 ** TODO Spotify
-** TODO combine ESS configs
+** DONE combine ESS configs
+   CLOSED: [2020-10-20 Tue 10:05]
+** TODO Work out how to work with the additional ESS config
+   - That is, do we keep it in the layer, or user-config, or private layer?
 ** DONE Elaborate on syntax highlighting question
   CLOSED: [2020-10-03 Sat 19:00]
 ** TODO Figure out listviewer
 ** TODO Figure out ess-r-view-data
 ** TODO Line wrap without breaking up words
 ** TODO Evernote
-** TODO Automatically start R REPL in project root
+** DONE Automatically start R REPL in project root
+   CLOSED: [2020-10-20 Tue 10:08]
+   - Looks like it's a feature-not-bug situation
+   - You want to be asked, because otherwise there isn't an easy way of determining
+   - RStudio has their .Rproj files, but it seems ESS doesn't want to do that
 ** TODO Get graphics device in buffer
 ** TODO Format while typing
