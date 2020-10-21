@@ -10,8 +10,12 @@ function generate_alignment_8_table(project_details, row_names, header_row) {
 
     // 3. Transpose so that the rows are now columns
     // From https://stackoverflow.com/a/17428705/13945974
-    var array_transposed = array_shuffled[0].map((_, colIndex) => array_shuffled.map(row => row[colIndex]));
-
+    // var array_transposed = array_shuffled[0].map((_, colIndex) => array_shuffled.map(row => row[colIndex]));
+    var array_transposed = array_shuffled[0].map(function (_, colIndex) {
+        return array_shuffled.map(function (row) {
+            return row[colIndex];
+        });
+    });
     // 4. Add header name vector
     array_transposed.unshift(header_row);
 
