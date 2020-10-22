@@ -13,8 +13,6 @@
 ##' @author Shir Dekel
 ##' @export
 filter_data_raw <- function(data_raw, thesis_project, experiment_number) {
-  if (experiment_number == 8) experiment_number <- 4
-
   experiment <- str_c("experiment", experiment_number)
 
   if (experiment == "experiment2") {
