@@ -127,11 +127,22 @@
     - [ ] five regression
 *** TODO Add explanation of allocation task
     - Either in instructions or as preamble
-*** TODO Generate test data
+*** DONE Generate test data
+    CLOSED: [2020-10-22 Thu 17:48]
     - For some reason it isn't showing up with webdriver
     - But it has something to do with the main code, because welcome page works by itself
     - Also you changed around the experiment files for aggregation 4 and the resources for it
     - mock data files have also been edited a bit
+**** DONE Add ad hoc webdriver code to satisfy ranking and allocation requirements [4/5]
+     CLOSED: [2020-10-22 Thu 17:47]
+     - [ ] Maybe add table class
+       - Can also call "table", but probably better to use class in case we use different tables later
+     - [X] Add ranking class
+       - So that you can pull them out easier using webdriver
+     - [X] Add allocation class
+     - [X] Add ranking webdriver code
+     - [X] Add allocation webdriver code
+       
 * Emacs wishlist
 ** TODO Spotify
 ** DONE combine ESS configs
