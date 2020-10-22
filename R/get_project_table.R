@@ -17,7 +17,8 @@ get_project_table <- function(data, reliability_amount) {
             reliability_amount,
             "allocation",
             sep = "_"
-          )
+          ),
+        class = "allocation"
       ) %>%
         as.character(),
       input_ranking = get_survey_number(
@@ -29,7 +30,8 @@ get_project_table <- function(data, reliability_amount) {
             sep = "_"
           ),
         min = 1,
-        max = 5
+        max = 5,
+        class = "ranking"
       ) %>%
         as.character()
     ) %>%
