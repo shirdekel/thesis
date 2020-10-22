@@ -63,7 +63,6 @@ the_plan <-
         columns,
         condition_allocation
       )
-      get_data_mock(thesis_project, experiment_number, 20)
       file.path(experiment_directory, "experiment")
     },
     transform = map(
@@ -135,34 +134,50 @@ the_plan <-
       .id = c(thesis_project, experiment_number)
     )
     ),
-    ## data_raw = target({
-    ##   import_data(file_in(!!data_directory))
-    ## },
-    ## transform = map(
-    ##   .data = !!parameters,
-    ##   .id = c(thesis_project, experiment_number)
-    ## )
-    ## ),
-    ## data_raw_filtered = target(
-    ##   filter_data_raw(data_raw, thesis_project, experiment_number),
-    ##   transform = map(
-    ##     data_raw,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
-    ## data_clean = target(
-    ##   clean_data(
-    ##     data_raw_filtered,
-    ##     experiment_number,
-    ##     data_clean_test,
-    ##     prolific_filter,
-    ##     prolific_filter_label
-    ##   ),
-    ##   transform = map(
-    ##     data_raw_filtered,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    mock_data = target(
+      get_data_mock(testing, 20, data_clean_test)
+    ,
+    transform = map(
+      testing,
+        .id = c(thesis_project, experiment_number)
+    ),
+    ),
+    data_raw_directory = target(
+      data_directory,
+    transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+    ),
+    format = "file"
+    ),
+    data_raw = target({
+      import_data(data_raw_directory)
+    },
+    transform = map(
+      data_raw_directory,
+      .id = c(thesis_project, experiment_number)
+    )
+    ),
+    data_raw_filtered = target(
+      filter_data_raw(data_raw, thesis_project, experiment_number),
+      transform = map(
+        data_raw,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
+    data_clean = target(
+      clean_data(
+        data_raw_filtered,
+        experiment_number,
+        data_clean_test,
+        prolific_filter,
+        prolific_filter_label
+      ),
+      transform = map(
+        data_raw_filtered,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     ## descriptives = target(
     ##   get_descriptives(data_clean),
     ##   transform = map(

@@ -6,40 +6,40 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-##' @param thesis_project
-##' @param experiment
+##' @param testing_directory
 ##' @param n
-get_data_mock <- function(thesis_project, experiment_number, n = 1) {
-  experiment <-
-    str_c("experiment", experiment_number)
+##' @param test
+get_data_mock <- function(testing_directory, n = 1, test = TRUE) {
+  if (test) {
+    phantom_js <-
+      run_phantomjs()
 
-  phantom_js <-
-    run_phantomjs()
+    session <-
+      Session$new(port = phantom_js$port)
 
-  session <-
-    Session$new(port = phantom_js$port)
+    url <-
+      file.path(testing_directory, "index.html")
 
-  path <-
-    here("inst", "jspsych", thesis_project, "testing", experiment)
+    data_folder <-
+      testing_directory %>%
+      dirname() %>%
+      file.path("data")
 
-  url <-
-    file.path(path, "experiment", "index.html")
+    data_folder %>%
+      list.files(full.names = TRUE) %>%
+      file.remove()
 
-  data_folder <-
-    here("inst", "jspsych", thesis_project, experiment, "data")
-
-  data_folder %>%
-    list.files(full.names = TRUE) %>%
-    file.remove()
-
-  seq_len(n) %>%
-    walk(
-      ~ run_data_mock(
-        url,
-        session,
-        data_folder
+    seq_len(n) %>%
+      walk(
+        ~ run_data_mock(
+          url,
+          session,
+          data_folder
+        )
       )
-    )
 
-  session$delete()
+    session$delete()
+  } else {
+    return(NA)
+  }
 }
