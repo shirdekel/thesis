@@ -38,7 +38,7 @@ filter_data_raw <- function(data_raw, thesis_project, experiment_number) {
     # Filtering the experiment object in this case seem to require unquoting
     filter(
       experiment == !!experiment,
-      thesis_project == "aggregation"
+      thesis_project == thesis_project
     )
 
   return(data_raw_filtered)
