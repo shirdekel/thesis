@@ -40,3 +40,4 @@ renv/
 *.zip
 resource/
 *.log
+/inst/jspsych/alignment/experiment8/data/
