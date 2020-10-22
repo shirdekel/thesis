@@ -9,18 +9,15 @@
 ##' @param thesis_project
 ##' @param experiment
 ##' @param n
-get_data_mock <- function(thesis_project = "alignment", experiment_number = 8, n = 1) {
+get_data_mock <- function(thesis_project, experiment_number, n = 1) {
   experiment <-
     str_c("experiment", experiment_number)
 
   phantom_js <-
-    try_run_phantomjs(max_attempt = 5)
+    run_phantomjs()
 
   session <-
     Session$new(port = phantom_js$port)
-
-  session$go(url)
-  session$takeScreenshot()
 
   path <-
     here("inst", "jspsych", thesis_project, "testing", experiment)

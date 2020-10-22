@@ -41,6 +41,16 @@ navigate_webdriver_aggregation <- function(session, screenshot) {
 
     if(screenshot) session$takeScreenshot()
 
+  } else if(!is_empty(session$findElements(".ranking")) | !is_empty(session$findElements(".allocation"))) {
+
+    if (!is_empty(session$findElements(".ranking"))) mock_data_ranking(session, screenshot)
+
+    if (!is_empty(session$findElements(".allocation"))) mock_data_allocation(session, screenshot)
+   
+    navigate_webdriver(".jspsych-btn", session)
+
+    if (screenshot) session$takeScreenshot()
+
   } else if(!is_empty(session$findElements("input"))) {
 
     if(!is_empty(session$findElements("select"))) mock_data_select(session, screenshot)
