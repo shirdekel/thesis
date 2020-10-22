@@ -63,7 +63,7 @@ the_plan <-
         columns,
         condition_allocation
       )
-      # get_data_mock(experiment, 20)
+      get_data_mock(thesis_project, experiment_number, 20)
       file.path(experiment_directory, "experiment")
     },
     transform = map(
