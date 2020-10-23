@@ -46,7 +46,7 @@ src <-
     function(chunk_name, caption, path) 
       c(
       '```{r {{chunk_name}}, out.width = "100%", fig.cap = "{{caption}}", fig.pos = "H"}',
-      'image_read("{{path}}")',
+      'image_read("{{path}}") %>% image_trim()',
       '```'
     ) %>% 
       knit_expand(text = .) # needs `text = `
