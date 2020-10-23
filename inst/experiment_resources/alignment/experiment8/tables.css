@@ -2,8 +2,8 @@
 table {
     border-collapse: collapse;
     font-size: 16px;
-    /* Adapts column widths to content */
-    table-layout: auto;
+    /* Don't adapt column widths to content (some projects have longer names)*/
+    table-layout: fixed;
     /* 100% stays within the global 750px, while auto isn't wide enough */
     width: 150%;
     /* For `left` to work */
