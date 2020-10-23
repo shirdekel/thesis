@@ -99,7 +99,7 @@ get_parameters <- function() {
       get_screenshots_experiment2(),
       get_screenshots_experiment3(),
       get_screenshots_experiment4(),
-      character(0)
+      get_screenshots_alignment_8()
     )
 
   materials_directory <-
