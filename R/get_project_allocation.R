@@ -3,7 +3,9 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_project_allocation <- function(projects) {
+##' @param projects
+##' @param randomize_order
+get_project_allocation <- function(projects, randomize_order) {
   trial_projects <-
     trial_generic(
       "survey-html-form4",
@@ -34,6 +36,7 @@ get_project_allocation <- function(projects) {
       allocation_table = projects$data[[1]]$project_table,
       interstitial = interstitial_trials
     ) %>%
+    set_parameters(randomize_order = randomize_order) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
