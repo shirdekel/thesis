@@ -42,8 +42,9 @@ get_screenshots_alignment_8 <- function() {
     casper_calls_chronological %>%
     .[
       c(
-        # instructions
-        1,
+        # instructions implicit/explicit reliability
+        1 %>%
+          rep(2),
         # interstitial 1
         2,
         # interstitial 1
@@ -68,13 +69,14 @@ get_screenshots_alignment_8 <- function() {
   alignment <-
     c(
       "low" %>%
-        rep(7),
+        rep(8),
       "high" %>%
         rep(10)
     )
 
   reliability_type <-
     c(
+      "implicit",
       "explicit" %>%
         rep(5),
       "implicit" %>%
@@ -84,7 +86,7 @@ get_screenshots_alignment_8 <- function() {
   project_variation <-
     c(
       1 %>%
-        rep(7),
+        rep(8),
       seq_len(5) %>%
         rep(2)
     )

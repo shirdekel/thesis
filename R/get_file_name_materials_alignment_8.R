@@ -6,7 +6,7 @@
 get_file_name_materials_alignment_8 <- function() {
   file_name_materials_alignment_8 <-
     c(
-      "instructions",
+      str_c("instructions_reliability_type", c("implicit", "explicit"), sep = "_"),
       str_c("interstitial", seq_len(2), sep = "_"),
       c("explicit", "implicit") %>%
         map(

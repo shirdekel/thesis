@@ -23,7 +23,7 @@ get_main_alignment_8 <- function(gambles, randomize_order = TRUE) {
   # list of two (one timeline, and conditional)
 
   main <-
-    list(instructions) %>%
+    instructions %>%
     build_timeline(project_allocation) %>%
     map(flatten)
 
