@@ -33,13 +33,16 @@ get_project_table <- function(data, reliability_amount) {
         max = 5,
         class = "ranking"
       ) %>%
+        as.character(),
+      project_type_underlined = project_type %>%
+        tags$u() %>%
         as.character()
     ) %>%
     select(
       "Project ranking" = input_ranking,
       "Project allocation (%)" = input_allocation,
       "Business name" = business_name,
-      "Project type" = project_type,
+      "Project type" = project_type_underlined,
       "Predicted project features" = html,
       "NPV ($)" = npv
     )
