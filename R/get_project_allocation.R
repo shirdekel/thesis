@@ -10,7 +10,8 @@ get_project_allocation <- function(projects, randomize_order) {
     trial_generic(
       "survey-html-form4",
       html = insert_variable("allocation_table"),
-      data = insert_property(stage = "project_allocation")
+      data = insert_property(stage = "project_allocation"),
+      preamble = "Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."
     )
 
   interstitial <-
