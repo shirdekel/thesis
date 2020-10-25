@@ -28,7 +28,7 @@ get_instructions_alignment_8 <- function() {
 
   project_test <-
     c(
-      "Test yourself on the above instructions: if Project A has an NPV of $100, and Project B has an NPV of $200, write in the following text box the name of the project that has a better expectation of profit: "
+      "Test yourself on the above instructions. If Project A has an NPV of $100, and Project B has an NPV of $200, write in the following text box the name of the project that has a greater expectation of profit: "
     ) %>%
     get_survey_text(
       name = "project_test",
