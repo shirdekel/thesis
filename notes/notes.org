@@ -4,9 +4,45 @@
    - But maybe it's ok to use a communal one.
 ** DONE Split up the omnibus data files before data cleaning so that everything isn't rerun after every new import
    CLOSED: [2020-10-26 Mon 09:47]
+** TODO Read "The allocation of resources within firms"
 ** Prolific
    - Don't recruit multiple versions of the same study at once
      - You can't set exclusions for studies that haven't been 'completed'
+* Anecdotes
+** Conceptual discussion
+   - Last reply from Micah:
+     #+begin_quote
+     Meant to reply. I agree, that in the case that knowledge is lacking,
+overall similarity is a smart strategy. But, in the case where you have
+low-knowledge/overall similarity info of an individual case, but also know that
+individual case is an outlier from the overall trend from a larger sample, do
+you think that overall similarity should still be weighed heavily? It's
+specifically the low-knowledge strategy when in conflict with large samples that
+seem problematic to me. But does formal analysis or simulations suggest it is
+still a good strategy? Or is this highly dependent on the degree of variability
+in the large sample?
+     #+end_quote
+* Aggregation
+** Analysis
+   - From Evan:
+   #+begin_quote
+   Ah right! Well I haven’t done that sort of thing before but I guess I’d
+   probably start by looking at the number of alternations per 10 choices (is it
+   a 2AFC type task?) or the average length of the run of the same choice (the
+   two should be related of course)?
+   #+end_quote
+
+   - From Alex:
+#+begin_quote
+What you are describing makes sense though. You have less information in a
+binary outcome than in a continuous or even a richer categorical outcome. So
+it’s not possible to get a meaningful value for the autocorrelation if you don’t
+have any information on how it varies, as in a sequence of all 1s or 0s. It’s a
+similar issue to when you have a perfect predictor for a binary outcome. There
+is no information in that predictor, because there is perfect separation, so you
+have to exclude it from your model.
+
+#+end_quote
 * Alignment
 ** TODO Experiment 8
     - Let's try work backwards:
@@ -123,11 +159,28 @@
       - Instead we'd have to sample pairs like we said before
 *** DONE Add reliability amount condition to input IDs
     CLOSED: [2020-10-17 Sat 13:38]
-*** TODO Reanalyse old data using new techniques [0/4]
-    - [ ] difference
-    - [ ] mixed effect
-    - [ ] covariate
+*** TODO Reanalyse old data using new techniques [3/4]
+    - [X] difference between highest and lowest
+    - [X] mixed effect
+      - Doesn't seem to work
+      - Well, doesn't work when you try to play around with random effects
+      - Works when you specify as in lm
+    - [X] covariate
+      - but really just another within subject variable
+      - But also: do we do project or npv amount?
+        - Surely NPV amount
+      - ANOVA or regression?
+        - Seems equivalent
+        - aov_ez doesn't seem to work with drake because character(0) isn't being taken as an argument
+        - So we've got either aov_car or lm
+          - Somehow lm seems to make more sense, because npv_amount is more continuous than categorical maybe?
+        - Well how hard is it to do both?
+          - Probably not that hard, but let's just start with lm
+        - But now it seems that they're showing different estimates
+        - So yeah let's do both
+        - Ask informatics hub?
     - [ ] five regression
+      - Asked Bruce to clarify
 *** DONE Add explanation of allocation task
     CLOSED: [2020-10-26 Mon 10:18]
     - Either in instructions or as preamble
@@ -150,6 +203,7 @@
      CLOSED: [2020-10-23 Fri 15:39]
 * Emacs wishlist
 ** TODO Spotify
+** TODO Email
 ** DONE combine ESS configs
    CLOSED: [2020-10-20 Tue 10:05]
 ** TODO Work out how to work with the additional ESS config
