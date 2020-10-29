@@ -76,7 +76,7 @@ the_plan <-
     testing_directory = target(
       get_testing_directory(thesis_project, experiment_number),
       transform = map(
-        experiment_number,
+        .data = !!parameters,
         .id = c(thesis_project, experiment_number)
       ),
       target = "file"
