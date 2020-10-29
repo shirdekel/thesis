@@ -24,7 +24,7 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-loadd(materials_directory_alignment_8)
+loadd(materials_alignment_8)
 ```
 
 - Experiment 8 (previously called Experiment 4 in the context of the article, but it is the 8th alignment experiment of the thesis) investigates the effects of alignment (between-subjects), reliability type (between-subjects), and reliability amount (within-subjects) on allocations. 
@@ -39,7 +39,7 @@ file_name_materials <-
   get_file_name_materials_alignment_8()
 
 file_path_materials <-
-  get_file_path_materials(materials_directory_alignment_8, file_name_materials)
+  get_file_path_materials(materials_alignment_8, file_name_materials)
 
 src <-
   list(

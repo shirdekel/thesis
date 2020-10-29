@@ -42,11 +42,10 @@ get_parameters <- function() {
       "import_data_local"
     ))
 
-  data_directory <-
+  data_directory_server <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(3),
-      here("inst", "jspsych", thesis_project[4], str_c("experiment", experiment_number[4]), "data")
+        rep(4)
     )
 
   data_clean_test <-
@@ -153,7 +152,7 @@ get_parameters <- function() {
       get_plot,
       get_results,
       import_data,
-      data_directory,
+      data_directory_server,
       data_clean_test,
       prolific_filter,
       prolific_filter_label,

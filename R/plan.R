@@ -134,19 +134,12 @@ the_plan <-
       .id = c(thesis_project, experiment_number)
     )
     ),
-    mock_data = target(
-      get_data_mock(testing, 20, data_clean_test)
-    ,
+    data_raw_directory = target({
+      get_data_mock(testing, data_directory_server, 20, data_clean_test)
+    },
     transform = map(
       testing,
-        .id = c(thesis_project, experiment_number)
-    ),
-    ),
-    data_raw_directory = target(
-      data_directory,
-    transform = map(
-        .data = !!parameters,
-        .id = c(thesis_project, experiment_number)
+      .id = c(thesis_project, experiment_number)
     ),
     format = "file"
     ),
