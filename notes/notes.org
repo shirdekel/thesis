@@ -113,7 +113,10 @@ have to exclude it from your model.
       - Add it at the beginning when adding project content
       - Then in the end nest the columns such that you get a tibble with a high and low reliability_amount column, a project_display_variation column that is `c(1,2)`, and the table contents
         - Supposedly then you'd have cases in which each display variation is associated with each reliability amount
-*** TODO Figure out why materials_directory doesn't get rebuilt when testing is outdated.
+*** DONE Figure out why materials_directory doesn't get rebuilt when testing is outdated.
+    CLOSED: [2020-10-29 Thu 11:09]
+    - Due to an upstream target not using the correct static branching map argument.
+    - Specifically, ~testing~ had ~testing_directory~ as a dependency, and ~testing_directory~ had ~map(experiment_number)~ instead of ~.data = !!parameters~.
 *** DONE Catch trials [2/2]
     CLOSED: [2020-10-17 Sat 12:51]
     - Can think of three types
@@ -201,6 +204,8 @@ have to exclude it from your model.
      - [X] Add allocation webdriver code
 **** DONE Screenshots
      CLOSED: [2020-10-23 Fri 15:39]
+*** TODO Add project number to input ID
+
 * Emacs wishlist
 ** TODO Spotify
 ** TODO Email
