@@ -165,6 +165,22 @@ get_parameters <- function() {
       )
     )
 
+  get_data_simulation <-
+    c(
+      "get_data_simulation_aggregation" %>%
+     rep(3),
+      "get_data_simulation_alignment"
+    ) %>%
+    syms()
+
+  get_plot_simulation  <-
+    c(
+      "get_data_simulation_aggregation" %>%
+      rep(3),
+      "plot_point_apa"
+    ) %>%
+    syms()
+
   parameters <-
     tibble(
       thesis_project,
@@ -187,7 +203,9 @@ get_parameters <- function() {
       condition_allocation,
       experiment_resources_directory,
       clean_data,
-      iv
+      iv,
+      get_data_simulation,
+      get_plot_simulation
     )
 
   return(parameters)

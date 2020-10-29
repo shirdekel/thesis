@@ -185,6 +185,20 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
+    data_simulation = target(
+      get_data_simulation(data_clean),
+      transform = map(
+        data_clean,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
+    plot_simulation = target(
+      get_plot_simulation(data_simulation),
+      transform = map(
+        data_simulation,
+        .id = c(thesis_project, experiment_number)
+      )
+    )
     ## results = target(
     ##   get_results(data_clean),
     ##   transform = map(
