@@ -21,5 +21,5 @@ plot_point_apa <- function(data) {
     geom_point(shape = 21, colour = "black", alpha = 0.7) +
     geom_smooth(method = "lm", colour = "black") +
     scale_fill_grey(start = 0.2, end = 0.8) +
-    theme_apa(base_size = 12)
+    theme_apa(base_size = 10)
 }

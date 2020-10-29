@@ -1,5 +1,5 @@
 ---
-title             : "Alignment Experiment 8 - Materials"
+title             : "Alignment Experiment 8 - Plan"
 shorttitle        : ""
 
 note              : Created `r format(Sys.time())`
@@ -27,12 +27,85 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 loadd(materials_alignment_8)
 ```
 
-- Experiment 8 (previously called Experiment 4 in the context of the article, but it is the 8th alignment experiment of the thesis) investigates the effects of alignment (between-subjects), reliability type (between-subjects), and reliability amount (within-subjects) on allocations. 
+# Summary
 
-Hypotheses
+- Experiment 8 (previously called Experiment 4 in the context of the article,
+  but it is the 8th alignment experiment of the thesis) investigates the effects
+  of alignment, reliability type, NPV amount, and reliability amount on
+  allocations.
+- IVs
+    - Alignment: low and high
+        - Between-subjects
+    - Reliability type: implicit and explicit
+        - Between-subjects
+    - Reliability amount: low and high
+        - Within-subjects
+    - NPV amount: vector of five approximately equally spaced integers
+      between 400-900
+        - Within-display
+        - Slightly different between each display
+- DVs
+    - Allocation (0-100)
+    - Ranking (1-5)
 
-- More reliance on NPV in low alignment compared to high alignment, but only in the explicit reliability condition.
-- An interaction between reliability amount and NPV amount (within-display), but only in the explicit reliability condition.
+# Hypotheses
+
+## Omnibus
+
+- Alignment $\times$ reliability amount $\times$ reliability type $\times$ NPV
+  amount interaction
+- See Figure\ \@ref(fig:plot-simulation-alignment-8).
+
+## Specifically
+
+- *Explicit reliability, high alignment*: NPV amount $\times$ reliability amount interaction.
+    - **Participants will rely on NPV when told it is reliable, but will rely on
+      intrinsic features when told NPV is unreliable.**
+- *Explicit reliability, low alignment*: main effect of NPV amount.
+    - **Participants will rely on NPV regardless of stated reliability.**
+- *Implicit reliability*: no effects.
+    - **Participants will allocate equally across projects.**
+
+```{r plot-simulation-alignment-8, fig.cap = "Alignment Experiment 8 predicted data"}
+readd(plot_simulation_alignment_8)
+```
+
+# Materials
+
+- Instructions
+    - One version for each reliability type condition.
+    - Includes a test of basic NPV understanding.
+        - Also acts as a sort of attention check as, though it is required to
+          answer, the response should only be one of two letters.
+- Each participant will see two project displays.
+    - One for each reliability amount condition.
+    - Each display will have one of two sets of five projects (10 individual
+      projects total).
+    - Each display has a table describing the projects in the set, with ranking and
+      allocation inputs.
+    - Before each display, participants will see an "interstitial" page, whose
+      role is 1. to introduce the next display, and 2. an attention check (not required to answer, so can be skipped if the interstitial text isn't read).
+- The following are counterbalanced:
+    - The association of reliability amount and project set (two variations).
+    - The association of business name with NPV (five latin square variations).
+    - Project variation (five variations per alignment condition).
+        - For high alignment this means the project type.
+        - For low alignment this means the intrinsic feature variant for the
+          relevant project type.
+- The following are randomised:
+    - Table column order.
+    - Project display order.
+- The below figures show a sample of the possible project displays
+  participants will see.
+    - For the low alignment displays, only one "variation" is shown here.
+        - Across the two reliability amount conditions this shows all 10
+          possible project types.
+        - Both reliability type conditions are shown.
+            - All that differs here is the way the NPV is described.
+    - For the high alignment displays, all five "variations" are shown.
+        - For both reliability amount conditions.
+
+## Screenshots
 
 ```{r include = FALSE}
 file_name_materials <-
@@ -41,13 +114,26 @@ file_name_materials <-
 file_path_materials <-
   get_file_path_materials(materials_alignment_8, file_name_materials)
 
+figure_captions <-
+  file_name_materials %>%
+  str_replace_all(
+    c(
+      "_" = " ",
+      "allocation" = "allocation -",
+      "alignment" = "alignment:",
+      " reliability type" = ", reliability type:",
+      " reliability amount" = ", reliability amount:",
+      " variation" = ", variation:"
+    )
+  ) %>%
+  str_c(".") %>%
+  str_to_sentence()
+
 src <-
   list(
     file_name_materials %>%
       str_replace_all("_", "-"),
-    file_name_materials %>%
-      str_replace_all("_", " ") %>%
-      str_to_sentence(),
+    figure_captions,
     file_path_materials
   ) %>%
   pmap(
