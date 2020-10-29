@@ -1,64 +1,64 @@
-##' @title Get plot for Experiment 3
+##' @title Get plot for Experiment 4
 ##' @param data
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_plot_experiment3 <- function(data) {
+get_plot_aggregation_4 <- function(data) {
 
   choice_binary <-
     data %>%
     apa_plot(
-      iv1 = "similarity",
-      iv1.lab = "Similarity condition",
+      iv1 = "awareness",
+      iv1.lab = "Awareness condition",
       dv = "choice",
       dv.lab = "Mean choice of project acceptance")
 
 
   choice_proportion <-
     data %>%
-    nest_by(subject, similarity, proportion) %>%
+    nest_by(subject, awareness, proportion) %>%
     ungroup() %>%
     apa_plot(
-      iv1 = "similarity",
-      iv1.lab = "Similarity condition",
+      iv1 = "awareness",
+      iv1.lab = "Awareness condition",
       dv = "proportion",
       dv.lab = "Mean proportion of project acceptance")
 
   portfolio_number <-
     data %>%
-    nest_by(subject, similarity, portfolio_number) %>%
+    nest_by(subject, awareness, portfolio_number) %>%
     ungroup() %>%
     apa_plot(
-      iv1 = "similarity",
-      iv1.lab = "Similarity condition",
+      iv1 = "awareness",
+      iv1.lab = "Awareness condition",
       dv = "portfolio_number",
       dv.lab = "Mean number of project acceptance")
 
   portfolio_binary <-
     data %>%
-    nest_by(subject, similarity, portfolio_binary) %>%
+    nest_by(subject, awareness, portfolio_binary) %>%
     ungroup() %>%
     apa_plot(
-      iv1 = "similarity",
-      iv1.lab = "Similarity condition",
+      iv1 = "awareness",
+      iv1.lab = "Awareness condition",
       dv = "portfolio_binary",
       dv.lab = "Mean choice of complete project portfolio acceptance")
 
   project_expectation <-
     data %>%
-    nest_by(subject, similarity, project_expectation) %>%
+    nest_by(subject, awareness, project_expectation) %>%
     ungroup() %>%
     apa_plot(
-      iv1 = "similarity",
-      iv1.lab = "Similarity condition",
+      iv1 = "awareness",
+      iv1.lab = "Awareness condition",
       dv = "project_expectation",
       dv.lab = "Mean number of expected projects")
 
   choice_trials <-
-    plot_choice_trials(data, linetype = similarity)
+    plot_choice_trials(data, awareness)
 
   project_number <-
-    plot_project_number(data, similarity)
+    plot_project_number(data, awareness)
 
   gamble_values <-
     plot_gamble_values(data)
@@ -66,7 +66,7 @@ get_plot_experiment3 <- function(data) {
   trials <-
     plot_trials(data)
 
-  plot_experiment3 <-
+  plot_aggregation_4 <-
     lst(
       choice_binary,
       choice_proportion,
@@ -79,6 +79,6 @@ get_plot_experiment3 <- function(data) {
       trials
     )
 
-  return(plot_experiment3)
+  return(plot_aggregation_4)
 
 }

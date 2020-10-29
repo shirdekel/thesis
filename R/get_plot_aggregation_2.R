@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_plot_experiment2 <- function(data=data_local_experiment2) {
+get_plot_aggregation_2 <- function(data) {
 
   data_split <-
     split_data(data)
@@ -48,7 +48,7 @@ get_plot_experiment2 <- function(data=data_local_experiment2) {
   trials <-
     plot_trials(data)
 
-  plot_experiment2 <-
+  plot_aggregation_2 <-
     lst(
       choice_binary,
       choice_proportion,
@@ -60,6 +60,6 @@ get_plot_experiment2 <- function(data=data_local_experiment2) {
       trials
     )
 
-  return(plot_experiment2)
+  return(plot_aggregation_2)
 
 }

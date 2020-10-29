@@ -30,7 +30,12 @@ get_parameters <- function() {
     )
 
   get_plot <-
-    syms(str_c("get_plot_experiment", c(experiment_number[1:3], 4)))
+    syms(str_c(
+      "get_plot",
+      thesis_project,
+      experiment_number,
+      sep = "_"
+    ))
 
   get_results <-
     syms(str_c("get_results_experiment", c(experiment_number[1:3], 4)))
