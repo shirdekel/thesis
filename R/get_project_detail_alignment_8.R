@@ -149,7 +149,7 @@ get_project_detail_alignment_8 <- function() {
           str_replace_all(" ", "-"),
         npv_raw,
         data$input_id_component %>%
-          str_c("detail", 1:3, "_", .) %>%
+          ## str_c("detail", 1:3, "_", .) %>%
           str_c(collapse = "_"),
         intrinsic_feature_rank,
         sep = "_"
