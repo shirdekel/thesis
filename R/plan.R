@@ -115,7 +115,7 @@ the_plan <-
     ),
     target = "file"
     ),
-    materials_directory = target({
+    materials = target({
       get_screenshots(testing, screenshot_components)
       materials_directory
     },
