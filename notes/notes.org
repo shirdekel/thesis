@@ -205,6 +205,7 @@ have to exclude it from your model.
 **** DONE Screenshots
      CLOSED: [2020-10-23 Fri 15:39]
 *** TODO Add project number to input ID
+*** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
 
 * Emacs wishlist
 ** TODO Spotify
