@@ -178,13 +178,13 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    ## plot = target(
-    ##   get_plot(data_clean),
-    ##   transform = map(
-    ##     data_clean,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    plot = target(
+      get_plot(data_clean),
+      transform = map(
+        data_clean,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     ## results = target(
     ##   get_results(data_clean),
     ##   transform = map(
