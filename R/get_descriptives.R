@@ -1,26 +1,29 @@
 ##' @title Get descriptives
 ##' @param data
+##' @param iv
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_descriptives <- function(data) {
+get_descriptives <- function(data, iv) {
+  diffused_iv <-
+    diffuse_non_na(iv)
 
   allocation <-
     data %>%
-    nest_by(subject, awareness, presentation, distribution, similarity) %>%
+    nest_by(id, !!!diffused_iv) %>%
     ungroup() %>%
-    count(awareness, presentation, distribution, similarity) %>%
+    count(!!!diffused_iv) %>%
     adorn_totals("row")
 
   total_apa <-
     allocation %>%
-    filter(awareness == "Total") %>%
     pull(n) %>%
+    last() %>%
     printnum(numerals = FALSE, capitalize = TRUE)
 
   sex <-
     data %>%
-    nest_by(subject, sex) %>%
+    nest_by(id, sex) %>%
     ungroup() %>%
     count(sex)
 
@@ -44,11 +47,11 @@ get_descriptives <- function(data) {
           )
         ) %>%
         mutate(across(everything(), ~ .x %>%
-                        printnum(drop0trailing = TRUE)))
+          printnum(drop0trailing = TRUE)))
     ) %>%
     set_names(numerical_names) %>%
     map(
-      ~str_c(
+      ~ str_c(
         .x$mean,
         " (*SD* = ",
         .x$sd,
@@ -62,24 +65,25 @@ get_descriptives <- function(data) {
 
   apa <-
     str_c(
-    total_apa,
-    str_c(
-      "(",
-      sex_female
-    ),
-    "female) people were recruited from the online recruitment platform Prolific. Participants were compensated at a rate of £5 an hour. The average age was",
-    str_c(
-      numerical$age,
-      "."),
-    "Participants reported an average of",
-    numerical$business_exp,
-    "years of work in a business setting, and an average of",
-    numerical$business_edu,
-    "years of business education. The mean completion time was",
-    numerical$total_time,
-    "minutes.",
-    sep = " "
-  )
+      total_apa,
+      str_c(
+        "(",
+        sex_female
+      ),
+      "female) people were recruited from the online recruitment platform Prolific. Participants were compensated at a rate of £5 an hour. The average age was",
+      str_c(
+        numerical$age,
+        "."
+      ),
+      "Participants reported an average of",
+      numerical$business_exp,
+      "years of work in a business setting, and an average of",
+      numerical$business_edu,
+      "years of business education. The mean completion time was",
+      numerical$total_time,
+      "minutes.",
+      sep = " "
+    )
 
   descriptives <-
     lst(
@@ -91,5 +95,4 @@ get_descriptives <- function(data) {
     )
 
   return(descriptives)
-
 }

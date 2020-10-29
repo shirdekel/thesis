@@ -144,6 +144,22 @@ get_parameters <- function() {
       "clean_data_alignment"
     ) %>%
     syms()
+
+  iv <-
+    list(
+      c(
+        "awareness",
+        "distribution",
+        "presentation"
+      ),
+      "similarity",
+      "awareness",
+      c(
+        "alignment",
+        "reliability_type"
+      )
+    )
+
   parameters <-
     tibble(
       thesis_project,
@@ -164,7 +180,9 @@ get_parameters <- function() {
       columns,
       post_experiment,
       condition_allocation,
-      experiment_resources_directory
+      experiment_resources_directory,
+      clean_data,
+      iv
     )
 
   return(parameters)
