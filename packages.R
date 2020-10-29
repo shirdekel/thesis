@@ -26,6 +26,7 @@ library(zip)
 library(pwr)
 library(htmlTable)
 library(english)
+library(RVerbalExpressions)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")

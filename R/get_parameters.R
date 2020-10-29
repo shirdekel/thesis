@@ -138,6 +138,13 @@ get_parameters <- function() {
       )
     )
 
+  clean_data <-
+    c(
+      "clean_data_aggregation" %>%
+        rep(3),
+      "clean_data_alignment"
+    ) %>%
+    syms()
   parameters <-
     tibble(
       thesis_project,

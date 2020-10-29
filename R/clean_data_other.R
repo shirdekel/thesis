@@ -3,21 +3,21 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data_other <- function(data_raw_prep) {
-
+##' @param data_raw_prep
+##' @param main_stage
+clean_data_other <- function(data_raw_prep, main_stage) {
   data_other <-
     data_raw_prep %>%
     drop_na(responses) %>%
-    filter(stage != "project_choice") %>%
+    filter(stage != main_stage) %>%
     nest_by(subject) %>%
     mutate(other = data %>%
-             pull(responses) %>%
-             map_dfc(fromJSON) %>%
-             list()) %>%
+      pull(responses) %>%
+      map_dfc(fromJSON) %>%
+      list()) %>%
     unnest(other) %>%
     ungroup() %>%
     select(-data)
 
   return(data_other)
-
 }
