@@ -44,34 +44,35 @@ the_plan <-
       )
     ),
     main = target(
-        get_main(gambles),
+      get_main(gambles),
       transform = map(
         gambles,
         .id = c(thesis_project, experiment_number)
       ),
       seed = old_seed$experiment4
     ),
-    experiment = target({
-      get_experiment(
+    experiment = target(
+      {
+        get_experiment(
+          gambles,
+          experiment_directory,
+          thesis_project,
+          experiment_number,
+          experiment_resources,
+          main,
+          post_experiment,
+          columns,
+          condition_allocation
+        )
+        file.path(experiment_directory, "experiment")
+      },
+      transform = map(
         gambles,
-        experiment_directory,
-        thesis_project,
-        experiment_number,
-        experiment_resources,
         main,
-        post_experiment,
-        columns,
-        condition_allocation
-      )
-      file.path(experiment_directory, "experiment")
-    },
-    transform = map(
-      gambles,
-      main,
-      experiment_resources,
-      .id = c(thesis_project, experiment_number)
-    ),
-    target = "file"
+        experiment_resources,
+        .id = c(thesis_project, experiment_number)
+      ),
+      target = "file"
     ),
     testing_directory = target(
       get_testing_directory(thesis_project, experiment_number),
@@ -89,67 +90,72 @@ the_plan <-
       ),
       seed = old_seed$experiment4
     ),
-    testing = target({
-      get_experiment(
+    testing = target(
+      {
+        get_experiment(
+          gambles,
+          testing_directory,
+          thesis_project,
+          experiment_number,
+          experiment_resources,
+          testing_main,
+          post_experiment,
+          columns,
+          condition_allocation,
+          ethics = FALSE,
+          zip = FALSE,
+          on_finish = save_locally()
+        )
+        file.path(testing_directory, "experiment")
+      },
+      transform = map(
         gambles,
-        testing_directory,
-        thesis_project,
-        experiment_number,
-        experiment_resources,
         testing_main,
-        post_experiment,
-        columns,
-        condition_allocation,
-        ethics = FALSE,
-        zip = FALSE,
-        on_finish = save_locally()
+        testing_directory,
+        experiment_resources,
+        .id = c(thesis_project, experiment_number)
+      ),
+      target = "file"
+    ),
+    materials = target(
+      {
+        get_screenshots(testing, screenshot_components)
+        materials_directory
+      },
+      transform = map(
+        testing,
+        .id = c(thesis_project, experiment_number)
+      ),
+      format = "file"
+    ),
+    materials_memo = target(
+      {
+        render(knitr_in(!!memo_path$materials$Rmd))
+        file_out(!!memo_path$materials$pdf)
+      },
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
       )
-      file.path(testing_directory, "experiment")
-    },
-    transform = map(
-      gambles,
-      testing_main,
-      testing_directory,
-      experiment_resources,
-      .id = c(thesis_project, experiment_number)
     ),
-    target = "file"
+    data_raw_directory = target(
+      {
+        get_data_mock(testing, data_directory_server, 20, data_clean_test)
+      },
+      transform = map(
+        testing,
+        .id = c(thesis_project, experiment_number)
+      ),
+      format = "file"
     ),
-    materials = target({
-      get_screenshots(testing, screenshot_components)
-      materials_directory
-    },
-    transform = map(
-      testing,
-      .id = c(thesis_project, experiment_number)
-    ),
-    format = "file"
-    ),
-    materials_memo = target({
-      render(knitr_in(!!memo_path$materials$Rmd))
-      file_out(!!memo_path$materials$pdf)
-    },
-    transform = map(
-      .data = !!parameters,
-      .id = c(thesis_project, experiment_number)
-    )
-    ),
-    data_raw_directory = target({
-      get_data_mock(testing, data_directory_server, 20, data_clean_test)
-    },
-    transform = map(
-      testing,
-      .id = c(thesis_project, experiment_number)
-    ),
-    format = "file"
-    ),
-    data_raw = target({
-      import_data(data_raw_directory)
-    },
-    transform = map(
-      data_raw_directory,
-      .id = c(thesis_project, experiment_number)
-    )
+    data_raw = target(
+      {
+        import_data(data_raw_directory)
+      },
+      transform = map(
+        data_raw_directory,
+        .id = c(thesis_project, experiment_number)
+      )
     ),
     data_raw_filtered = target(
       filter_data_raw(data_raw, thesis_project, experiment_number),
@@ -206,13 +212,14 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    summary_memo = target({
-      render(knitr_in(!!memo_path$summary$Rmd))
-      file_out(!!memo_path$summary$pdf)
-    },
-    transform = map(
-      .data = !!parameters,
-      .id = c(thesis_project, experiment_number)
-    )
+    summary_memo = target(
+      {
+        render(knitr_in(!!memo_path$summary$Rmd))
+        file_out(!!memo_path$summary$pdf)
+      },
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+      )
     )
   )
