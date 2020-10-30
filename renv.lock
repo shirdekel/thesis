@@ -138,6 +138,13 @@
       "Repository": "CRAN",
       "Hash": "cf29e1b71f8736960e0e851123a83e6f"
     },
+    "RVerbalExpressions": {
+      "Package": "RVerbalExpressions",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "d86868aceaf0131e9b22b47b7418674b"
+    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.5",
