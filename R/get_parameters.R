@@ -73,8 +73,10 @@ get_parameters <- function() {
       NA,
       list(
         NA,
+        "similarity_high",
         "similarity_low",
-        "similarity_high"
+        "similarity_low_2",
+        "similarity_high_2"
       ),
       list(
         NA,
