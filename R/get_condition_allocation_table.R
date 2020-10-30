@@ -1,0 +1,31 @@
+##' @title Get condition allocation table
+##' Use IV character vector, but only count between-subjects IVs
+##' @param data
+##' @param iv
+
+##' @return
+##' @author Shir Dekel
+##' @export
+get_condition_allocation_table <- function(data, iv) {
+  diffused_iv <-
+    diffuse_non_na(iv)
+
+  allocation_raw <-
+    data %>%
+    nest_by(id, !!!diffused_iv) %>%
+    ungroup() %>%
+    select_between_subjects_iv(diffused_iv)
+
+  allocation_columns <-
+    iv %>%
+    extract_from(names(allocation_raw)) %>%
+    diffuse_non_na()
+
+  condition_allocation_table <-
+    allocation_raw %>%
+    nest_by(id, !!!allocation_columns) %>%
+    ungroup() %>%
+    count(!!!allocation_columns) %>%
+    adorn_totals("row")
+  return(condition_allocation_table)
+}

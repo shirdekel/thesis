@@ -160,9 +160,12 @@ get_parameters <- function() {
       "similarity",
       "awareness",
       c(
-        "alignment",
-        "reliability_type"
+          "alignment",
+          "reliability_type",
+          "reliability_amount",
+          "npv_amount"
       )
+
     )
 
   get_data_simulation <-

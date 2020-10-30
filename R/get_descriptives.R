@@ -1,28 +1,22 @@
 ##' @title Get descriptives
-##' @param data
+##' @param data_clean
 ##' @param iv
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_descriptives <- function(data, iv) {
-  diffused_iv <-
-    diffuse_non_na(iv)
-
-  allocation <-
-    data %>%
-    nest_by(id, !!!diffused_iv) %>%
-    ungroup() %>%
-    count(!!!diffused_iv) %>%
-    adorn_totals("row")
+get_descriptives <- function(data_clean = data_clean_alignment_8, iv) {
+  condition_allocation_table <-
+    data_clean %>%
+  get_condition_allocation_table(iv)
 
   total_apa <-
-    allocation %>%
+    condition_allocation_table %>%
     pull(n) %>%
     last() %>%
     printnum(numerals = FALSE, capitalize = TRUE)
 
   sex <-
-    data %>%
+    data_clean %>%
     nest_by(id, sex) %>%
     ungroup() %>%
     count(sex)
@@ -38,7 +32,7 @@ get_descriptives <- function(data, iv) {
   numerical <-
     numerical_names %>%
     map(
-      ~ data %>%
+      ~ data_clean %>%
         summarise(
           across(
             all_of(.x),
@@ -87,7 +81,7 @@ get_descriptives <- function(data, iv) {
 
   descriptives <-
     lst(
-      allocation,
+      condition_allocation_table,
       total_apa,
       sex_female,
       numerical,
