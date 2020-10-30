@@ -206,13 +206,13 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    ## summary_memo = target({
-    ##   render(knitr_in(!!memo_path$summary$Rmd))
-    ##   file_out(!!memo_path$summary$pdf)
-    ## },
-    ## transform = map(
-    ##   .data = !!parameters,
-    ##   .id = c(thesis_project, experiment_number)
-    ## )
-    ## )
+    summary_memo = target({
+      render(knitr_in(!!memo_path$summary$Rmd))
+      file_out(!!memo_path$summary$pdf)
+    },
+    transform = map(
+      .data = !!parameters,
+      .id = c(thesis_project, experiment_number)
+    )
+    )
   )

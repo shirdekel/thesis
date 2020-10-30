@@ -31,7 +31,7 @@ loadd(plot_aggregation_4)
 `r descriptives_aggregation_4$apa` Table\ \@ref(tab:allocation) shows the condition allocation.
 
 ```{r allocation}
-descriptives_aggregation_4$allocation %>% 
+descriptives_aggregation_4$condition_allocation_table %>% 
   apa_table("Group allocation to the between-subject variables of awareness, presentation, and distribution.")
 ```
 
