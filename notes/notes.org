@@ -207,6 +207,7 @@ have to exclude it from your model.
 *** TODO Add project number to input ID
 *** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
 
+*** TODO Work out why you can pass symbols for functions in drake, but not for arguments
 * Emacs wishlist
 ** TODO Spotify
 ** TODO Email
