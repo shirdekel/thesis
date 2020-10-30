@@ -198,14 +198,14 @@ the_plan <-
         data_simulation,
         .id = c(thesis_project, experiment_number)
       )
-    )
-    ## results = target(
-    ##   get_results(data_clean),
-    ##   transform = map(
-    ##     data_clean,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    ),
+    results = target(
+      get_results(data_clean, iv, dv),
+      transform = map(
+        data_clean,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     ## summary_memo = target({
     ##   render(knitr_in(!!memo_path$summary$Rmd))
     ##   file_out(!!memo_path$summary$pdf)

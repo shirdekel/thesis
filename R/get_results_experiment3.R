@@ -1,12 +1,12 @@
 ##' @title Experiment 3 results
 
 ##' @param data
-##'
+##' @param iv
+##' @param dv
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_results_experiment3 <- function(data) {
-
+get_results_experiment3 <- function(data, iv, dv) {
   choice <-
     fit_glmer(
       choice ~ similarity + (1 | id),
@@ -61,5 +61,4 @@ get_results_experiment3 <- function(data) {
     )
 
   return(results_experiment3)
-
 }

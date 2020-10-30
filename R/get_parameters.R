@@ -38,7 +38,13 @@ get_parameters <- function() {
     ))
 
   get_results <-
-    syms(str_c("get_results_experiment", c(experiment_number[1:3], 4)))
+    syms(
+      str_c(
+        "get_results_experiment",
+        c(experiment_number[1:3])
+      ) %>%
+        c("get_results_alignment")
+    )
 
   import_data <-
     syms(c(
@@ -162,26 +168,53 @@ get_parameters <- function() {
       "similarity",
       "awareness",
       c(
-          "alignment",
-          "reliability_type",
-          "reliability_amount",
-          "npv_amount"
+        "alignment",
+        "reliability_type",
+        "reliability_amount",
+        "npv_amount"
       )
+    )
 
+  dv <-
+    list(
+      c(
+        "choice",
+        "proportion",
+        "portfolio_binary",
+        "portfolio_number"
+      ),
+      c(
+        "choice",
+        "proportion",
+        "portfolio_binary",
+        "portfolio_number",
+        "project_expectation"
+      ),
+      c(
+        "choice",
+        "proportion",
+        "portfolio_binary",
+        "portfolio_number",
+        "project_expectation"
+      ),
+      c(
+        "allocation",
+        "ranking"
+      )
     )
 
   get_data_simulation <-
     c(
       "get_data_simulation_aggregation" %>%
-     rep(3),
+        rep(3),
       "get_data_simulation_alignment"
     ) %>%
     syms()
 
-  get_plot_simulation  <-
+  get_plot_simulation <-
     c(
       "get_data_simulation_aggregation" %>%
-      rep(3),
+        rep(3),
       "plot_point_apa"
     ) %>%
     syms()
@@ -209,6 +242,7 @@ get_parameters <- function() {
       experiment_resources_directory,
       clean_data,
       iv,
+      dv,
       get_data_simulation,
       get_plot_simulation
     )

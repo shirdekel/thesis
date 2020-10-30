@@ -1,12 +1,12 @@
 ##' @title Experiment 4 results
 
 ##' @param data
-##'
+##' @param iv
+##' @param dv
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_results_experiment4 <- function(data) {
-
+get_results_experiment4 <- function(data, iv, dv) {
   choice <-
     fit_glmer(
       choice ~ awareness + (1 | id),
@@ -35,9 +35,10 @@ get_results_experiment4 <- function(data) {
 
   portfolio_binary <-
     fit_glmer(portfolio_binary ~ awareness + (1 | id),
-              family = binomial,
-              data = data %>%
-                nest_by(id, awareness, portfolio_binary)) %>%
+      family = binomial,
+      data = data %>%
+        nest_by(id, awareness, portfolio_binary)
+    ) %>%
     apa_print()
 
   portfolio_number <-
@@ -59,5 +60,4 @@ get_results_experiment4 <- function(data) {
     )
 
   return(results_experiment4)
-
 }

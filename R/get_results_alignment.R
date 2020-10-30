@@ -1,56 +1,30 @@
 ##' @title Get alignment results
 ##'
-##' Use the experiment parameters to filter and nest the data if required, and
-##' then analyse.
-##'
 ##' @param data_clean
-##' @param experiment_param
-##'
+##' @param iv
+##' @param dv
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_analysis <- function(data_clean=data_clean_alignment_8, iv) {
+get_results_alignment <- function(data_clean = data_clean_alignment_8, iv = iv[[4]], dv = dv[[4]]) {
+  diffused_iv <-
+      diffuse_non_na(iv)
 
-
-
-
-  experiment_param_unnest <-
-    experiment_param %>%
-    unnest(c(dv, dv.lab, npv_amount))
-
-  lmer <-
-    experiment_param_unnest %>%
-    slide(
-      ~ list(
-        .x$filter[[1]],
-        .x$npv_amount[[1]]
-      ) %>% # I think we need the [[1]] because of {vctrs} (used
-        # by {slider})
-        pmap(
-          function(filters, npv_amount_value) {
-            data_clean %>%
-              filter_by_string(filters) %>%
-              nest_by_columns(
-                # !! needed for `nest_by_columns()`
-                !!.x$iv1,
-                !!.x$iv2,
-                !!.x$iv3,
-                !!.x$dv,
-                !!npv_amount_value
-              ) %>%
-              ifelse_analysis(
-                .x$iv1,
-                .x$iv2,
-                .x$iv3,
-                .x$dv,
-                npv_amount_value
-              ) %>%
-              summary()
-          }
+  results_alignment <-
+      diffuse_non_na(dv) %>%
+    map(
+      ~ data_clean %>%
+        nest_by(id, !!!diffused_iv, !!.x) %>%
+        lmer(
+          reformulate(
+            termlabels = iv %>%
+              str_c(collapse = " * ") %>%
+              c("(1 | id)"),
+            response = .x
+          ),
+          data = .
         ) %>%
-        set_names(.x$filter_label[[1]])
-    ) %>%
-    set_names(experiment_param_unnest$dv)
-
-  return(lmer)
+        apa_print()
+    )
+  return(results_alignment)
 }
