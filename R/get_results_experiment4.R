@@ -8,10 +8,22 @@
 ##' @export
 get_results_experiment4 <- function(data, iv, dv) {
   choice <-
+    data %>%
+    nest_by(id, awareness, choice, project_order) %>%
     fit_glmer(
       choice ~ awareness + (1 | id),
       family = binomial,
-      data = data
+      data = .
+    ) %>%
+    apa_print()
+
+  awareness_project_order <-
+    data %>%
+    nest_by(id, awareness, choice, project_order) %>%
+    fit_glmer(
+      choice ~ awareness * project_order + (1 | id),
+      family = binomial,
+      data = .
     ) %>%
     apa_print()
 
@@ -53,6 +65,7 @@ get_results_experiment4 <- function(data, iv, dv) {
   results_experiment4 <-
     lst(
       choice,
+      awareness_project_order,
       proportion,
       project_expectation,
       portfolio_binary,

@@ -8,10 +8,22 @@
 ##' @export
 get_results_experiment3 <- function(data, iv, dv) {
   choice <-
+    data %>%
+    nest_by(id, similarity, choice, project_order) %>%
     fit_glmer(
       choice ~ similarity + (1 | id),
       family = binomial,
-      data = data
+      data = .
+    ) %>%
+    apa_print()
+
+  similarity_project_order <-
+    data %>%
+    nest_by(id, similarity, choice, project_order) %>%
+    fit_glmer(
+      choice ~ similarity * project_order + (1 | id),
+      family = binomial,
+      data = .
     ) %>%
     apa_print()
 
@@ -54,6 +66,7 @@ get_results_experiment3 <- function(data, iv, dv) {
   results_experiment3 <-
     lst(
       choice,
+      similarity_project_order,
       proportion,
       project_expectation,
       portfolio_binary,
