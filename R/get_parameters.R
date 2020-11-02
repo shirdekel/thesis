@@ -258,7 +258,8 @@ get_parameters <- function() {
       dv,
       get_data_simulation,
       get_plot_simulation
-    )
+    ) %>%
+    filter(thesis_project != "anecdotes")
 
   return(parameters)
 }

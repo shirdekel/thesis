@@ -7,7 +7,7 @@ get_instructions_alignment_8 <- function() {
   instructions_main <-
     c(
       "For each project, you will see a range of possible NPVs alongside a 'midpoint'. The range literally represents the range of plausible outcomes, but the midpoint is the best guess, and hence is the same as a single NPV.",
-      "For each project, you will see an NPV, alongside a statement of whether NPV is considered to be a reliable (or an unreliable) metric for that project."
+      "For each project, you will see an NPV, alongside a statement of whether NPV is considered to be a reliable (or an unreliable) metric for that project. There are usually a range of plausible NPV outcomes, so when NPV is considered to be \"reliable\" this means that the range of possible values is relatively narrow (indicating high confidence in the estimate). Conversely, when NPV is considered to be \"unreliable\", this means that the range of possible values is relatively wider (indicating low confidence in the estimate)."
     ) %>%
     map(
       function(reliability_type) {
