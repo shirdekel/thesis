@@ -22,6 +22,208 @@ seem problematic to me. But does formal analysis or simulations suggest it is
 still a good strategy? Or is this highly dependent on the degree of variability
 in the large sample?
      #+end_quote
+** Experiment 2
+*** Design
+    - IVs
+      - Anecdote
+      - Alignment
+      - Polarity
+    - DV
+      - allocation
+    - But the tricky thing is how we planned the new within-subjects design.
+      - Anecdotes article Efperiment 2 actually summarises it:
+    #+begin_quote
+Efperiment 2 was very similar to [Efperiment 1], efcept that we added a
+within-subjects anecdote valence manipulation. Further, manipulated anecdote
+similarity within-subjects, in order to increase the efperiment's power. All
+participants saw the statistics only condition, as it did not contain an
+anecdote, and therefore did not need to be manipulated between-subjects. As
+such, each participant saw five displays, with one statistics only condition,
+and four displays for either the anecdote only condition, or the statistics and
+anecdote condition. These four displays consisted of the similarity (low and
+high) $\times$ valence (negative and positive) conditions.
+        #+end_quote
+    - How many domains?
+      - Each display has two, and then the anecdote is the same as one of them.
+      - So we cycle between each of them as the anecdote/reference.
+      - So we'd need an anecdote analysis for each.
+      - Eight in total.
+    - How do we structure this?
+      - So the end result is a df with rows that indicate anecdote condition and
+        whatever counterbalancing we need.
+      - Each row has a nested df with five rows.
+        - One for each within-subjects condition (statistics only, and anecdote
+          condition f valence f similarity.
+      - Each of those rows has a nested column with the actual HTML display
+        - Which is either just a table for the statistics only, or a table and a
+          paragraph for the anecdote condition.
+        - But how do we do that? For alignment we sent off just the columns so
+          that you can shuffle the columns.
+        - But I guess here you only have two projects.
+        - So maybe we can just counterbalance anyway without bloating the
+          efperiment file too much.
+      - But the main source of counterbalancing will be the domains
+        - Don't we actually need 10 domains, because the statistics only display
+          also is displaying two projects.
+        - Either way, we need  away of counterbalancing which domains go to
+          which displays.
+        - And which projects go to anecdote vs comparison.
+        - Actually maybe it's not too bad.
+          - Two/three anecdotes conditions (depending on if we do enhanced or not)
+          - Five displays (five pairs of projects)
+          - Two anecdote/comparison states (which of the pair is the anecdote
+            and which is the comparison project)
+          - 2/3 f 5 f 2
+          - So 20/30 rows of five displays (of two projects each)
+          - And double that if we counterbalance column order
+            - But seems that we're better off to make a function for this like
+              in alignment.
+              - Takes rows as arguments, but also an anecdote argument.
+      - So each domain needs different versions
+        - low vs high intrinsic values
+          - to be the anecdote or comparison, depending on valence condition
+        - That's it really
+        - Another way of putting it is that each needs
+          - Anecdote description/analysis
+          - High intrinsic features
+          - Low intrinsic features
+      - So we make a data frame with 10 rows for each domain
+        - Each has the three components each needs as columns
+        - Or two rows each because you can classify the two intrinsic features
+          on a different column
+          - And also because you always need an anecdote and one of the
+            intrinsic features.
+        - Then I guess we pair them
+        - No, we do like in the alignment efperiment
+          - Create a latin nested column, and the unnest, so that each domain
+            has one of the variation values.
+        - But we should still pair them up.
+          - So that you get five pairs.
+          - And then you assign each pair a vector of 1-5 for their variation.
+        - So that's for within-subjects allocation
+          - Wait a second, each domain also needs two valence and two similarity condition.
+        - So we'll have three main columns:
+          - Anecdote (including description and analysis)
+          - Intrinsic features (high and low)
+          - Statistics (high, low, NA (but only for NA anecdote))
+        - For anecdote, we'll have five rows:
+          - High valence, high similarity
+          - High valence, low similarity
+          - Low valence, low similarity
+          - Low valence, high similarity
+          - NA
+        - But the teft of the anecdote depends on the intrinsic features
+          - So I guess we actually mean "the descriptive components of the anecdote".
+      - Also remember that all of this is just for the "low similarity"
+        condition, because in high similarity they're comparing two projects
+        from the same domain.
+        - But the above technically already accounts for this because to do this
+          we just need high and low value conditions
+         | project | business | valence | similarity | statistics amount | anecdote | intrinsic |
+         |---------+----------+---------+------------+-------------------+----------+-----------|
+         | oil     | fuel co  | high    | low        | high              |          |           |
+         | oil     | fuel co  | low     | low        | high              |          |           |
+         | oil     | fuel co  | high    | high       | high              |          |           |
+         | oil     | fuel co  | low     | high       | high              |          |           |
+         | oil     | fuel co  | NA      | NA         | NA                |          |           |
+         | oil     | refinera | high    | low        | low               |          |           |
+         | oil     | refinera | low     | low        | low               |          |           |
+         | oil     | refinera | high    | high       | low               |          |           |
+         | oil     | refinera | low     | high       | low               |          |           |
+         | oil     | refinera | NA      | NA         | NA                |          |           |
+**** After reviewing Experiment 1
+     - High and low similarity don't mean different business names
+       - They have different business names regardless of similarity condition
+       - They mean qualitative features that are similar (e.g., location) and
+         quantitative values that are relevant
+     - So each domain gets five components:
+       1. Target project
+       2. Anecdote - low valence high similarity
+       3. Anecdote - high valence high similarity
+       4. Anecdote - low valence low similarity
+       5. Anecdote - high valence low similarity
+         | project | project role | business | valence | similarity | analysis | features |
+         |---------+--------------+----------+---------+------------+----------+----------|
+         | oil     | target       | enfuel   | high    | high       | NA       | f        |
+         | oil     | anecdote     | refinera | high    | high       | a1       | f1       |
+         | oil     | target       | enfuel   | low     | high       | NA       | f        |
+         | oil     | anecdote     | refinera | low     | high       | a2       | f2       |
+         | oil     | target       | enfuel   | high    | low        | NA       | f        |
+         | oil     | anecdote     | refinera | high    | low        | a3       | f3       |
+         | oil     | target       | enfuel   | low     | low        | NA       | f        |
+         | oil     | anecdote     | refinera | low     | low        | a4       | f4       |
+     - And then when we filter by condition we always get the same target, and
+       one of the four anecdotes
+     - But I guess we have stats only
+     - So we add a statistics column (we'll sketch just with one similarity condition)
+       - But actually similarity doesn't mean anything in statistics only
+       - Nor does valence.
+       - So let's just add on
+       - Anecdote only:
+         | project | role     | business | valence | similarity | analysis | features | statistics |
+         |---------+----------+----------+---------+------------+----------+----------+------------|
+         | oil     | target   | enfuel   | high    | high       | NA       | f        | NA         |
+         | oil     | anecdote | refinera | high    | high       | a1       | f1       | NA         |
+         | oil     | target   | enfuel   | low     | high       | NA       | f        | NA         |
+         | oil     | anecdote | refinera | low     | high       | a2       | f2       | NA         |
+         | oil     | target   | enfuel   | high    | low        | NA       | f        | NA         |
+         | oil     | anecdote | refinera | high    | low        | a3       | f3       | NA         |
+         | oil     | target   | enfuel   | low     | low        | NA       | f        | NA         |
+         | oil     | anecdote | refinera | low     | low        | a4       | f4       | NA         |
+       - Anecdote + statistics:
+          | project | role     | business | valence | similarity | analysis | features | statistics |
+          |---------+----------+----------+---------+------------+----------+----------+------------|
+          | oil     | target   | enfuel   | high    | high       | NA       | f        | high       |
+          | oil     | anecdote | refinera | high    | high       | a1       | f1       | high       |
+          | oil     | target   | enfuel   | low     | high       | NA       | f        | high       |
+          | oil     | anecdote | refinera | low     | high       | a2       | f2       | high       |
+          | oil     | target   | enfuel   | high    | low        | NA       | f        | high       |
+          | oil     | anecdote | refinera | high    | low        | a3       | f3       | high       |
+          | oil     | target   | enfuel   | low     | low        | NA       | f        | high       |
+          | oil     | anecdote | refinera | low     | low        | a4       | f4       | high       |
+         - I think the target will always have high statistics
+           - Or maybe just for low valence?
+           - Yes, it depends on valence
+           - Also valence is positive/negative, not high/low
+       - Anecdote + statistics amended:
+          | project | role     | business | valence  | similarity | analysis | features | statistics |
+          |---------+----------+----------+----------+------------+----------+----------+------------|
+          | oil     | target   | enfuel   | positive | high       | NA       | f        | low        |
+          | oil     | anecdote | refinera | positive | high       | a1       | f1       | low        |
+          | oil     | target   | enfuel   | negative | high       | NA       | f        | high       |
+          | oil     | anecdote | refinera | negative | high       | a2       | f2       | high       |
+          | oil     | target   | enfuel   | positive | low        | NA       | f        | low        |
+          | oil     | anecdote | refinera | positive | low        | a3       | f3       | low        |
+          | oil     | target   | enfuel   | negative | low        | NA       | f        | high       |
+          | oil     | anecdote | refinera | negative | low        | a4       | f4       | high       |
+       - Also, statistics isn't really relevant to the anecdote; only to target.
+         - But again, it seems to be useful for filtering, even though they're duplicated.
+       - Statistics only:
+          | project | role     | business | valence | similarity | analysis | features | statistics |
+          |---------+----------+----------+---------+------------+----------+----------+------------|
+          | oil     | target   | enfuel   | NA      | NA         | NA       | f        | high       |
+          | oil     | anecdote | NA       | NA      | NA         | NA       | NA       | high       |
+     - So we make one of those for each domain.
+     - Pair them up.
+     - Then in each pair each one either acts as a target or a comparison each time.
+       - I guess we do this through some filtering and latin unnesting
+       - After you filter down to a condition, you get a target and anecdote row
+         for each domain.
+       - Each of those gets a value 1 or 2 for "target/comparison variation"
+       - Or I guess just duplicate everything and given them a 1 and 2.
+     - No just to figure out how to counterbalance each pair and their
+       within-subjects condition
+       - Surely just do the same thing as above.
+       - Yeah, give each of the five conditions a vector of five for "project
+         pair within-subject condition variation"
+**** In action
+     - For each project type
+       - Anecdote condition
+       - valence
+         - role
+         - business name
+     - Maybe just go for it
+
 * Aggregation
 ** Analysis
    - From Evan:
@@ -164,10 +366,12 @@ have to exclude it from your model.
     CLOSED: [2020-10-17 Sat 13:38]
 *** TODO Reanalyse old data using new techniques [3/4]
     - [X] difference between highest and lowest
+      - Doesn't show an effect for Experiment 3 allocation
     - [X] mixed effect
       - Doesn't seem to work
       - Well, doesn't work when you try to play around with random effects
       - Works when you specify as in lm
+      - Actually seems to be the best way to do this.
     - [X] covariate
       - but really just another within subject variable
       - But also: do we do project or npv amount?
@@ -206,10 +410,10 @@ have to exclude it from your model.
      CLOSED: [2020-10-23 Fri 15:39]
 *** TODO Add project number to input ID
 *** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
-
 *** TODO Work out why you can pass symbols for functions in drake, but not for arguments
 * Emacs wishlist
-** TODO Spotify
+** DONE Spotify
+   CLOSED: [2020-10-31 Sat 15:03]
 ** TODO Email
 ** DONE combine ESS configs
    CLOSED: [2020-10-20 Tue 10:05]
