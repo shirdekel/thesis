@@ -10,13 +10,13 @@
 get_columns <- function(thesis_project, experiment_number) {
   subject <-
     "jsPsych.randomization.randomID(15)" %>%
-    rep(4) %>%
+    rep(5) %>%
     map(insert_javascript)
 
   sample_label <-
     c(
       "prolific" %>%
-        rep(4)
+        rep(5)
     )
 
   experiment_label <-
@@ -39,6 +39,7 @@ get_columns <- function(thesis_project, experiment_number) {
       character(0),
       insert_javascript("similarity_condition"),
       "low",
+      character(0),
       character(0)
     )
 
@@ -48,13 +49,15 @@ get_columns <- function(thesis_project, experiment_number) {
       list("absent") %>%
         rep(2)
     ) %>%
-    append(list(character(0)))
+    append(list(character(0)) %>%
+      rep(2))
 
   awareness <-
     list(
       insert_javascript("awareness_condition"),
       "naive",
       insert_javascript("awareness_condition"),
+      character(0),
       character(0)
     )
 
@@ -65,14 +68,15 @@ get_columns <- function(thesis_project, experiment_number) {
         rep(2)
     ) %>%
     append(
-      list(character(0))
+      list(character(0)) %>%
+        rep(2)
     )
 
   project_variation <-
     c(
       list(character(0)),
       "project_variation_condition" %>%
-        rep(3) %>%
+        rep(4) %>%
         map(insert_javascript)
     )
 
@@ -82,6 +86,7 @@ get_columns <- function(thesis_project, experiment_number) {
     append(
       list(
         insert_javascript("1"),
+        character(0),
         character(0)
       )
     )
@@ -91,7 +96,8 @@ get_columns <- function(thesis_project, experiment_number) {
     rep(3) %>%
     append(
       list(
-        insert_javascript("alignment_condition")
+        insert_javascript("alignment_condition"),
+        character(0)
       )
     )
 
@@ -100,7 +106,8 @@ get_columns <- function(thesis_project, experiment_number) {
     rep(3) %>%
     append(
       list(
-        insert_javascript("reliability_type_condition")
+        insert_javascript("reliability_type_condition"),
+        character(0)
       )
     )
 
@@ -109,7 +116,8 @@ get_columns <- function(thesis_project, experiment_number) {
     rep(3) %>%
     append(
       list(
-        insert_javascript("business_name_variation_condition")
+        insert_javascript("business_name_variation_condition"),
+        character(0)
       )
     )
 
@@ -119,14 +127,15 @@ get_columns <- function(thesis_project, experiment_number) {
     append(
       list(
         insert_javascript("display_variation_condition")
-      )
+      ) %>%
+        rep(2)
     )
 
   PROLIFIC_PID <-
     c(
       list(character(0)),
       "urlvar.PROLIFIC_PID" %>%
-        rep(3) %>%
+        rep(4) %>%
         map(insert_javascript)
     )
 
@@ -134,7 +143,7 @@ get_columns <- function(thesis_project, experiment_number) {
     c(
       list(character(0)),
       "urlvar.STUDY_ID" %>%
-        rep(3) %>%
+        rep(4) %>%
         map(insert_javascript)
     )
 
@@ -142,8 +151,16 @@ get_columns <- function(thesis_project, experiment_number) {
     c(
       list(character(0)),
       "urlvar.SESSION_ID" %>%
-        rep(3) %>%
+        rep(4) %>%
         map(insert_javascript)
+    )
+
+  anecdote <-
+    c(
+      list(character(0)) %>%
+        rep(4),
+      insert_javascript("anecdote_condition") %>%
+        list()
     )
 
   columns <-
@@ -164,7 +181,8 @@ get_columns <- function(thesis_project, experiment_number) {
       display_variation = display_variation,
       PROLIFIC_PID = PROLIFIC_PID,
       STUDY_ID = STUDY_ID,
-      SESSION_ID = SESSION_ID
+      SESSION_ID = SESSION_ID,
+      anecdote = anecdote
     ) %>%
     transpose() %>%
     map(compact)

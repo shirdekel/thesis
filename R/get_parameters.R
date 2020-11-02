@@ -10,7 +10,8 @@ get_parameters <- function() {
     c(
       c("aggregation") %>%
         rep(3),
-      "alignment"
+      "alignment",
+      "anecdotes"
     )
 
   experiment_number <-
@@ -18,7 +19,8 @@ get_parameters <- function() {
       2,
       3,
       4,
-      8
+      8,
+      2
     )
 
   gamble_n <-
@@ -26,6 +28,7 @@ get_parameters <- function() {
       10 %>%
         rep(2),
       20,
+      NA,
       NA
     )
 
@@ -43,27 +46,29 @@ get_parameters <- function() {
         "get_results_experiment",
         c(experiment_number[1:3])
       ) %>%
-        c("get_results_alignment")
+        c("get_results_alignment", "get_results_anecdotes")
     )
 
   import_data <-
     syms(c(
       "import_data_server" %>%
         rep(3),
-      "import_data_local"
+      "import_data_local" %>%
+        rep(2)
     ))
 
   data_directory_server <-
     c(
       here("inst", "extdata", "psychsydexp") %>%
-        rep(4)
+        rep(5)
     )
 
   data_clean_test <-
     c(
       FALSE %>%
         rep(3),
-      TRUE
+      TRUE %>%
+        rep(2)
     )
 
   prolific_filter <-
@@ -71,6 +76,7 @@ get_parameters <- function() {
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
+      "datetime > '2020-07-28'",
       "datetime > '2020-07-28'"
     )
 
@@ -89,6 +95,7 @@ get_parameters <- function() {
         "awareness_naive",
         "awareness_aware"
       ),
+      NA,
       NA
     )
 
@@ -111,6 +118,7 @@ get_parameters <- function() {
       get_screenshots_experiment2(),
       get_screenshots_experiment3(),
       get_screenshots_experiment4(),
+      get_screenshots_alignment_8(),
       get_screenshots_alignment_8()
     )
 
@@ -128,6 +136,7 @@ get_parameters <- function() {
       get_post_experiment2(),
       get_post_experiment3(),
       get_post_experiment4(),
+      get_post_alignment_8(),
       get_post_alignment_8()
     )
 
@@ -136,25 +145,19 @@ get_parameters <- function() {
       condition_allocation_experiment2(),
       condition_allocation_experiment3(),
       condition_allocation_experiment4(),
+      condition_allocation_alignment_8(),
       condition_allocation_alignment_8()
     )
 
   experiment_resources_directory <-
-    here(
-      "inst",
-      "experiment_resources",
-      thesis_project,
-      str_c(
-        "experiment",
-        experiment_number
-      )
-    )
+    get_experiment_resources_directory(thesis_project, experiment_number)
 
   clean_data <-
     c(
       "clean_data_aggregation" %>%
         rep(3),
-      "clean_data_alignment"
+      "clean_data_alignment",
+      "clean_data_anecdotes"
     ) %>%
     syms()
 
@@ -172,6 +175,11 @@ get_parameters <- function() {
         "reliability_type",
         "reliability_amount",
         "npv_amount"
+      ),
+      c(
+        "anecdote",
+        "alignment",
+        "valence"
       )
     )
 
@@ -200,6 +208,9 @@ get_parameters <- function() {
       c(
         "allocation",
         "ranking"
+      ),
+      c(
+        "allocation"
       )
     )
 
@@ -207,7 +218,8 @@ get_parameters <- function() {
     c(
       "get_data_simulation_aggregation" %>%
         rep(3),
-      "get_data_simulation_alignment"
+      "get_data_simulation_alignment",
+      "get_data_simulation_anecdotes"
     ) %>%
     syms()
 
@@ -215,7 +227,8 @@ get_parameters <- function() {
     c(
       "get_data_simulation_aggregation" %>%
         rep(3),
-      "plot_point_apa"
+      "plot_point_apa",
+      "get_data_simulation_anecdotes"
     ) %>%
     syms()
 
