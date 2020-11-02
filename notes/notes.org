@@ -432,3 +432,47 @@ have to exclude it from your model.
    - RStudio has their .Rproj files, but it seems ESS doesn't want to do that
 ** TODO Get graphics device in buffer
 ** TODO Format while typing
+* Meeting notes
+** Micah, Dan, Bruce <2020-11-02 Mon> 
+*** Alignment 8
+    - Micah
+      - Overall good
+**** DONE Add explanation for explicit reliability 
+     CLOSED: [2020-11-02 Mon 19:14]
+      - But: way I call NPV unreliable
+        - the implication of that: unreliable because estimates are imperceise
+     - precision of the metric prediction
+     - Also:
+     #+begin_quote
+     I would also change "in this particular industry, NPV is an unrelaible
+predictor of project success" to "in this industry, NPV is an unreliable
+predictor of a project's profits"
+     #+end_quote
+     - Unreliability
+       - Good feature some times too
+       - Usually it means that there's a greater upside and downside
+       - Makes it sound like a bad thing. Whereas when implicitly unreliable
+         might be different
+         - Unreliable because it's such a wide range of outcomes
+           - broader range = meaning we have less confidence
+**** Four way interaction
+       - Focus on subcomponents
+       - If hypotheses only concern a subset
+       - Three way interaction for explicit, and no for implicit
+         - implies four-way
+       - how much more expensive
+         - four way is right way to go, other wise have to predict no effect
+       - can specify the interactions
+**** TODO power analysis
+**** Instructions
+     - NPV check
+       - Maybe part of experiment
+       - On a simple task
+       - maybe forcing NPV down their throats
+       - But actually ok
+*** Aggregation
+**** DONE Send aggregation analyses
+     CLOSED: [2020-11-02 Mon 19:14]
+       - Thursday - just about aggregation
+      
+   
