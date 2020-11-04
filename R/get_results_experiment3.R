@@ -9,9 +9,9 @@
 get_results_experiment3 <- function(data, iv, dv) {
   choice <-
     data %>%
-    nest_by(id, similarity, choice, project_order) %>%
-    fit_glmer(
-      choice ~ similarity + (1 | id),
+    nest_by(id, similarity, choice) %>%
+    glm(
+      choice ~ similarity,
       family = binomial,
       data = .
     ) %>%
@@ -20,10 +20,11 @@ get_results_experiment3 <- function(data, iv, dv) {
   similarity_project_order <-
     data %>%
     nest_by(id, similarity, choice, project_order) %>%
-    fit_glmer(
-      choice ~ similarity * project_order + (1 | id),
+    mixed(
+      choice ~ similarity * project_order + (project_order | id),
       family = binomial,
-      data = .
+      data = .,
+      method = "PB"
     ) %>%
     apa_print()
 
@@ -46,8 +47,8 @@ get_results_experiment3 <- function(data, iv, dv) {
     )
 
   portfolio_binary <-
-    fit_glmer(
-      portfolio_binary ~ similarity + (1 | id),
+    glm(
+      portfolio_binary ~ similarity,
       family = binomial,
       data = data %>%
         nest_by(id, similarity, portfolio_binary)

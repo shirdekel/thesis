@@ -9,9 +9,9 @@
 get_results_experiment4 <- function(data, iv, dv) {
   choice <-
     data %>%
-    nest_by(id, awareness, choice, project_order) %>%
-    fit_glmer(
-      choice ~ awareness + (1 | id),
+    nest_by(id, awareness, choice) %>%
+    glm(
+      choice ~ awareness,
       family = binomial,
       data = .
     ) %>%
@@ -20,10 +20,12 @@ get_results_experiment4 <- function(data, iv, dv) {
   awareness_project_order <-
     data %>%
     nest_by(id, awareness, choice, project_order) %>%
-    fit_glmer(
-      choice ~ awareness * project_order + (1 | id),
+    mixed(
+      choice ~ awareness * project_order + (project_order || id),
       family = binomial,
-      data = .
+      data = .,
+      method = "PB",
+      expand_re = TRUE
     ) %>%
     apa_print()
 
@@ -46,7 +48,7 @@ get_results_experiment4 <- function(data, iv, dv) {
     )
 
   portfolio_binary <-
-    fit_glmer(portfolio_binary ~ awareness + (1 | id),
+    glm(portfolio_binary ~ awareness,
       family = binomial,
       data = data %>%
         nest_by(id, awareness, portfolio_binary)

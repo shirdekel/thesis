@@ -27,6 +27,7 @@ library(pwr)
 library(htmlTable)
 library(english)
 library(RVerbalExpressions)
+library(afex)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
