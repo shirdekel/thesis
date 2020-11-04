@@ -247,25 +247,26 @@ have to exclude it from your model.
 #+end_quote
 * Alignment
 ** TODO Experiment 8
-    - Let's try work backwards:
-    - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
-    - So each iteration of the loop should have a list of two for the two displays
-    - I guess we can do everything in tibbles and then in the end nest the two displays (for reliability amount) in the end
-      - And convert the two rows to a list
-    - So everything can be on big tibble with the following variable columns:
-      - Alignment condition
-      - Reliability type
-      - Project variation
-        - Low alignment: intrinsic features
-        - High alignment: project type
-    - Then supposedly, filtering that down (and passing the relevant column value to display_if for condition) will get you the two displays for each combination
-      - but actually it wouldn't be filtering, it would be stepping down each row and pulling the 'parameters'
-    - Actually configuring the two reliability amount displays isn't that easy
-      - They need different NPVs
-      - Also, they need five new project descriptions
-    - New issue
-      - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
-      - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
+*** Plan  
+     - Let's try work backwards:
+     - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
+     - So each iteration of the loop should have a list of two for the two displays
+     - I guess we can do everything in tibbles and then in the end nest the two displays (for reliability amount) in the end
+       - And convert the two rows to a list
+     - So everything can be on big tibble with the following variable columns:
+       - Alignment condition
+       - Reliability type
+       - Project variation
+         - Low alignment: intrinsic features
+         - High alignment: project type
+     - Then supposedly, filtering that down (and passing the relevant column value to display_if for condition) will get you the two displays for each combination
+       - but actually it wouldn't be filtering, it would be stepping down each row and pulling the 'parameters'
+     - Actually configuring the two reliability amount displays isn't that easy
+       - They need different NPVs
+       - Also, they need five new project descriptions
+     - New issue
+       - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
+       - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
 *** DONE Counterbalancing
     CLOSED: [2020-10-08 Thu 16:40]
     - Project variation
@@ -283,7 +284,8 @@ have to exclude it from your model.
     - We're currently on 12MB, so likely will need to revisit this and add column shuffling on the JS end
 *** DONE Inputs
     CLOSED: [2020-10-09 Fri 11:50]
-*** TODO Fix project aesthetics [5/5]
+*** DONE Fix project aesthetics [5/5]
+    CLOSED: [2020-11-03 Tue 09:50]
     - [X] Heading names in the final table
     - [X] Multiplier values
       - [X] Actual values
@@ -366,7 +368,8 @@ have to exclude it from your model.
       - Instead we'd have to sample pairs like we said before
 *** DONE Add reliability amount condition to input IDs
     CLOSED: [2020-10-17 Sat 13:38]
-*** TODO Reanalyse old data using new techniques [3/4]
+*** DONE Reanalyse old data using new techniques [3/3]
+    CLOSED: [2020-11-03 Tue 09:50]
     - [X] difference between highest and lowest
       - Doesn't show an effect for Experiment 3 allocation
     - [X] mixed effect
@@ -388,8 +391,9 @@ have to exclude it from your model.
         - But now it seems that they're showing different estimates
         - So yeah let's do both
         - Ask informatics hub?
-    - [ ] five regression
+    - five regression
       - Asked Bruce to clarify
+      - cancelled
 *** DONE Add explanation of allocation task
     CLOSED: [2020-10-26 Mon 10:18]
     - Either in instructions or as preamble
@@ -413,7 +417,195 @@ have to exclude it from your model.
 *** TODO Add project number to input ID
 *** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
 *** TODO Work out why you can pass symbols for functions in drake, but not for arguments
-* Emacs wishlist
+*** TODO Power analysis
+    - Now that we're using ~lmer~ for analyses, we need to use something like
+      ~simr~
+    - What we can do is get previous experiments and then change the effect
+      sizes as required.
+    - I guess one issue is that we don't have a perfect pilot.
+    - But we do have simulated data now.
+    - Also we're meant to do sub component analyses?
+      - Actually we're meant to do both to compare the sample needed
+**** From http://finzi.psych.upenn.edu/R/library/simr/doc/fromscratch.html
+         #+begin_src R
+           library(simr)
+
+           x <- 1:10
+           g <- letters[1:3]
+           X <- expand.grid(x = x, g = g)
+
+           b <- c(2, -0.1) # fixed intercept and slope
+           V1 <- 0.5 # random intercept variance
+           V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) # random intercept and slope variance-covariance matrix
+           s <- 1 # residual standard deviation
+
+           model1 <- makeLmer(y ~ x + (1|g), fixef=b, VarCorr=V1, sigma=s, data=X)
+           powerSim(model1, nsim=20)
+
+         #+end_src
+         - So I guess we just have to do it from scratch?
+**** Test with already simulated data
+     #+begin_src R
+       library(drake)
+       library(tidyverse)
+       library(simr)
+
+       loadd(data_simulation_alignment_8)
+
+       formula <-
+         allocation ~ alignment * reliability_amount * reliability_type * npv_amount + (1 | id)
+
+       model <-
+         formula %>%
+         lmer(
+           data = data_simulation_alignment_8
+         )
+
+       model %>%
+         doTest(fcompare(~ alignment + reliability_amount))
+
+
+       lm1 <- lmer(y ~ x + (x|g), data=simdata)
+       lm0 <- lmer(y ~ x + (1|g), data=simdata)
+       anova(lm1, lm0)
+       compare(. ~ x + (1|g))(lm1)
+       rcompare(~ (1|g))(lm1)
+     #+end_src
+**** More research
+     - Some useful resources all related to @singmann2019:
+       - https://stats.stackexchange.com/questions/130714/how-to-choose-random-and-fixed-effects-structure-in-linear-mixed-models
+       - http://singmann.org/mixed-models-for-anova-designs-with-one-observation-per-unit-of-observation-and-cell-of-the-design/
+       - https://cran.r-project.org/web/packages/afex/vignettes/afex_mixed_example.html
+**** So let's give it ago
+     - Just following the afex::mixed vignette.
+      #+begin_src R
+        library(tidyverse)
+        library(afex)
+        library(drake)
+
+        loadd(data_clean_alignment_8)
+
+        ## look normal as is
+        data_clean_alignment_8 %>% 
+          mutate(
+            log_allocation = log(allocation)
+          ) %>%
+          pivot_longer(cols = c(allocation, log_allocation),
+                       names_to = "allocation_type",
+                       values_to = "allocation") %>%
+        ggplot(aes(allocation)) +
+          geom_histogram(bins = 100) +
+          facet_wrap(vars(allocation_type), scales = "free_x")
+
+        model1 <-
+          data_clean_alignment_8 %>% 
+          mixed(
+            allocation ~ alignment * reliability_type * reliability_amount * npv_amount + (alignment * reliability_type * reliability_amount * npv_amount | id),
+            data = .
+          )
+
+        ## Warning messages:
+        ## 1: Model failed to converge with 28 negative eigenvalues: -2.0e-01 -3.1e-01 -9.3e-01 -2.2e+00 -4.2e+00 -7.7e+00 -1.2e+01 -8.0e+01 -4.9e+02 -8.3e+02 -1.1e+03 -2.3e+03 -2.9e+03 -3.4e+03 -4.3e+03 -8.6e+03 -1.2e+04 -1.9e+04 -2.5e+04 -3.0e+04 -3.3e+04 -4.3e+04 -4.7e+04 -6.6e+04 -4.2e+05 -1.3e+06 -2.1e+06 -3.4e+06
+        ## 2: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 3: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 4: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 5: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 6: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 7: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 8: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 9: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 10: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 11: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 12: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 13: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 14: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 15: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+        ## 16: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+
+        ## Warning message:
+        ##           lme4 reported (at least) the following warnings for 'full':
+        ##                                                                 * boundary (singular) fit: see ?isSingular 
+
+        summary(model1)$varcor
+      #+end_src
+**** Action plan
+     - Seems like we're going to have to do the standard simulate, analyse, and iterate.
+     - But how will we specify the effect sizes?
+     - At the moment we're simulating allocation using the correlation.
+     - You know what else we can do
+       - Just determine a mean for each NPV amount!
+     - Unless there's a standard way to simulate these kinds of continuous
+       variables
+     - Usually you just use ~rnorm~ or one of the other distributions
+     - Technically we should be working out what kind of distribution this is
+     - We can also generate y by running the regression backwards, as [[https://stats.stackexchange.com/questions/115748/simulate-data-for-2-x-2-anova-with-interaction/115767][this
+       suggests]].
+       - I think we can just use ~lme4::simulate.merMod()~
+     - [[https://aosmith.rbind.io/2018/04/23/simulate-simulate-part-2/][This one]] suggests that we can just add npv amount in as is and you'll get
+       the response variable as long as you specify the others.
+     - But [[https://github.com/RInterested/SIMULATIONS_and_PROOFS/blob/master/Trees%20mixed%20random%20effects][this]] suggests more than one fixed factor might be more involved.
+***** DeBruine and Barr (2019)
+      - I think [[https://debruine.github.io/lmem_sim/articles/paper.html][this]] is a good guide, because it's recent and peer reviewed
+      - Or we use her [[https://github.com/debruine/faux][faux]] package
+      - DeBruine and Barr (2019) suggest that SR approximation is actually better
+        for lmer's REML, and cite Luke (2017).
+      - They also have an interesting mention of what to do without pilot data:
+      #+begin_quote
+       If you lack any pilot data to work with, you can start with the general
+       rule of thumb setting the residual variance to about twice the size of the
+       by-subject or by-item variance components (see supplementary materials
+       from Barr et al., 2013 at
+       https://talklab.psy.gla.ac.uk/simgen/realdata.html for results from an
+       informal convenience sample).
+      #+end_quote
+      - Barr et al. (2013) also has some practical tips.
+*****  [[https://debruine.github.io/tutorials/sim-lmer.html][DeBruine's sim-lmer tutorial]]
+      - Also useful
+      - Goes into interactions
+        - But of categorical variables
+        - And suggests to set the values in relation to the grand mean
+        - Transforms them into main effects and interactions
+      - Slopes
+        - Suggests to only add within-subjects factors
+        - Contrary to [[https://stats.stackexchange.com/a/408983][this example]].
+        - But I guess we'll go with DeBruine?
+        - Also just categorical
+        - [[https://stats.stackexchange.com/a/162735][This]] is an example of using time, which is isimilar to NPV amount
+***** What does {faux} have to offer?
+      - Ideally it automates a lot of this stuff
+      - Otherwise we'll do as per the tutorial
+      - Yeah looks like it's too specific to designs with item random effects.
+      - Unless maybe we can use ~sim_design()~?
+        - Doesn't seem possible/simple
+**** Actual action plan
+     - Bring in alignment experiments 2, 3, and 7.
+       - 2 has information about NPV amount, reliability amount, and alignment
+         for explicit reliability,
+       - 3 has information about NPV amount, reliability amount, and alignment
+         for implicit reliability,
+         - Although these results are different to 7
+         - Here there was a main effect of alignment
+         - So maybe let's not include 3
+       - 7 has information about reliability amount and reliability type for
+         alignment condition separately.
+     - Model
+       #+begin_src R
+                  allocation ~
+                    alignment * reliability_type * reliability_amount * npv_amount +
+                    (npv_amount * reliability_amount | id)
+       #+end_src
+     - Take relevant effects
+       - 2
+         - alignment fixed for explicit reliability
+         - reliability amount fixed for explicit reliability
+         - NPV amount fixed for explicit reliability
+         - Subject variability
+         - Subject x alignment correlation
+         - Subject x reliability amount correlation
+       - 7
+     - Ok, let's just go for it 
+
+* Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
 ** TODO Email
@@ -425,7 +617,9 @@ have to exclude it from your model.
   CLOSED: [2020-10-03 Sat 19:00]
 ** TODO Figure out listviewer
 ** TODO Figure out ess-r-view-data
-** TODO Line wrap without breaking up words
+** DONE Line wrap without breaking up words
+   CLOSED: [2020-11-03 Tue 09:40]
+   - visual-line-mode
 ** TODO Evernote
 ** DONE Automatically start R REPL in project root
    CLOSED: [2020-10-20 Tue 10:08]
