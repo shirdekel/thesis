@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-condition_allocation_alignment_8 <- function() {
+get_condition_allocation_alignment_8 <- function() {
   list(
     seq_len(5) %>%
       list() %>%

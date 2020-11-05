@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-condition_allocation_experiment3 <- function() {
+get_condition_allocation_aggregation_3 <- function() {
 
   1:10 %>%
     str_c(collapse = ", ") %>%

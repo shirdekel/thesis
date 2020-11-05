@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-condition_allocation_experiment2 <- function() {
+get_condition_allocation_aggregation_2 <- function() {
 
   c("naive_separate_absent",
     "naive_joint_absent",
