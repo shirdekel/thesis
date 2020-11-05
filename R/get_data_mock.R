@@ -2,6 +2,9 @@
 ##'
 ##' Remove data files under `data/` and generate the specified amount.
 ##' Dependent on the `experiment.js` generation
+##'
+##' Don't generate data if not designated a test (as a side effect, this also
+##' won't generate data for old qualtrics experiments)
 
 ##' @return
 ##' @author Shir Dekel
