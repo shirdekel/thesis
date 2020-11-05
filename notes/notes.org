@@ -8,6 +8,8 @@
 ** Prolific
    - Don't recruit multiple versions of the same study at once
      - You can't set exclusions for studies that haven't been 'completed'
+** TODO Open {drake} question about "skipping" static branching targets
+
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
@@ -603,8 +605,11 @@ have to exclude it from your model.
          - Subject x alignment correlation
          - Subject x reliability amount correlation
        - 7
-     - Ok, let's just go for it 
-
+     - Ok, let's just go for it
+     - Note, we get singularity even for minimal model for alignment 2
+       - [[https://stats.stackexchange.com/a/112435][This]] suggests that you can keep as is, or even just do a normal
+         regression in that case.
+       
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
