@@ -1,0 +1,20 @@
+---
+title             : "Anecdotes Experiment 2 - Results summary"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
