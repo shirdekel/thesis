@@ -5,7 +5,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_results_experiment2 <- function(data, iv, dv) {
+get_results_aggregation_2 <- function(data, iv, dv) {
   data_split <-
     split_data(data)
 

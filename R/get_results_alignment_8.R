@@ -6,7 +6,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_results_alignment <- function(data_clean = data_clean_alignment_8, iv = iv[[4]], dv = dv[[4]]) {
+get_results_alignment_8 <- function(data_clean, iv, dv) {
   diffused_iv <-
       diffuse_non_na(iv)
 
@@ -15,7 +15,7 @@ get_results_alignment <- function(data_clean = data_clean_alignment_8, iv = iv[[
     map(
       ~ data_clean %>%
         nest_by(id, !!!diffused_iv, !!.x) %>%
-        lmer(
+        mixed(
           reformulate(
             termlabels = iv %>%
               str_c(collapse = " * ") %>%
@@ -26,5 +26,6 @@ get_results_alignment <- function(data_clean = data_clean_alignment_8, iv = iv[[
         ) %>%
         apa_print()
     )
+
   return(results_alignment)
 }

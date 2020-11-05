@@ -1,4 +1,4 @@
-##' @title Experiment 4 results
+##' @title Experiment 3 results
 
 ##' @param data
 ##' @param iv
@@ -6,73 +6,72 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_results_experiment4 <- function(data, iv, dv) {
+get_results_aggregation_3 <- function(data, iv, dv) {
   choice <-
     data %>%
-    nest_by(id, awareness, choice) %>%
+    nest_by(id, similarity, choice) %>%
     glm(
-      choice ~ awareness,
+      choice ~ similarity,
       family = binomial,
       data = .
     ) %>%
     apa_print()
 
-  awareness_project_order <-
+  similarity_project_order <-
     data %>%
-    nest_by(id, awareness, choice, project_order) %>%
-    mixed(
-      choice ~ awareness * project_order + (project_order || id),
+    nest_by(id, similarity, choice, project_order) %>%
+    glmer(
+      choice ~ similarity * project_order + (project_order | id),
       family = binomial,
-      data = .,
-      method = "PB",
-      expand_re = TRUE
+      data = .
     ) %>%
     apa_print()
 
   proportion <-
     data %>%
-    nest_by(id, awareness, proportion) %>%
+    nest_by(id, similarity, proportion) %>%
     ungroup() %>%
     get_ttest_apa(
-      iv = "awareness",
+      iv = "similarity",
       dv = "proportion"
     )
 
   project_expectation <-
     data %>%
-    nest_by(id, awareness, project_expectation) %>%
+    nest_by(id, similarity, project_expectation) %>%
     ungroup() %>%
     get_ttest_apa(
-      iv = "awareness",
+      iv = "similarity",
       dv = "project_expectation"
     )
 
   portfolio_binary <-
-    glm(portfolio_binary ~ awareness,
+    glm(
+      portfolio_binary ~ similarity,
       family = binomial,
       data = data %>%
-        nest_by(id, awareness, portfolio_binary)
+        nest_by(id, similarity, portfolio_binary)
     ) %>%
     apa_print()
 
   portfolio_number <-
     data %>%
-    nest_by(id, awareness, portfolio_number) %>%
+    nest_by(id, similarity, portfolio_number) %>%
     ungroup() %>%
     get_ttest_apa(
-      iv = "awareness",
+      iv = "similarity",
       dv = "portfolio_number"
     )
 
-  results_experiment4 <-
+  results_experiment3 <-
     lst(
       choice,
-      awareness_project_order,
+      similarity_project_order,
       proportion,
       project_expectation,
       portfolio_binary,
       portfolio_number
     )
 
-  return(results_experiment4)
+  return(results_experiment3)
 }
