@@ -1,0 +1,26 @@
+\raggedbottom
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage{ntheorem}
+
+% from https://tex.stackexchange.com/a/100907:
+\newtheorem{hyp}{Hypothesis}
+
+\makeatletter
+\newcounter{subhyp}
+\let\savedc@hyp\c@hyp
+\newenvironment{subhyp}
+ {%
+  \setcounter{subhyp}{0}%
+  \stepcounter{hyp}%
+  \edef\saved@hyp{\thehyp}% Save the current value of hyp
+  \let\c@hyp\c@subhyp     % Now hyp is subhyp
+  \renewcommand{\thehyp}{\saved@hyp\alph{hyp}}%
+ }
+ {}
+\newcommand{\normhyp}{%
+  \let\c@hyp\savedc@hyp % revert to the old one
+  \renewcommand\thehyp{\arabic{hyp}}%
+}
+\makeatother
