@@ -4,10 +4,10 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_descriptives <- function(data_clean = data_clean_alignment_8, iv) {
+get_descriptives <- function(data_clean, iv) {
   condition_allocation_table <-
     data_clean %>%
-  get_condition_allocation_table(iv)
+    get_condition_allocation_table(iv)
 
   total_apa <-
     condition_allocation_table %>%
@@ -23,11 +23,19 @@ get_descriptives <- function(data_clean = data_clean_alignment_8, iv) {
 
   sex_female <-
     sex %>%
+    mutate(
+      across(sex, str_to_lower)
+    ) %>%
     filter(sex == "female") %>%
     pull(n)
 
-  numerical_names <-
+  numerical_names_raw <-
     c("age", "business_exp", "business_edu", "total_time")
+
+  numerical_names <-
+    data_clean %>%
+    names() %>%
+    extract_from(numerical_names_raw)
 
   numerical <-
     numerical_names %>%
@@ -69,15 +77,23 @@ get_descriptives <- function(data_clean = data_clean_alignment_8, iv) {
         numerical$age,
         "."
       ),
-      "Participants reported an average of",
-      numerical$business_exp,
-      "years of work in a business setting, and an average of",
-      numerical$business_edu,
-      "years of business education. The mean completion time was",
-      numerical$total_time,
-      "minutes.",
       sep = " "
     )
+
+  if (all(numerical_names_raw %in% names(numerical))) {
+    apa <-
+      str_c(
+        apa,
+        "Participants reported an average of",
+        numerical$business_exp,
+        "years of work in a business setting, and an average of",
+        numerical$business_edu,
+        "years of business education. The mean completion time was",
+        numerical$total_time,
+        "minutes.",
+        sep = " "
+      )
+  }
 
   descriptives <-
     lst(
