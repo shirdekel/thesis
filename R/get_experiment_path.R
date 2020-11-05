@@ -8,7 +8,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_experiment_directory <- function(thesis_project, experiment_number) {
-
   experiment_directory <-
     here(
       "inst",
@@ -19,6 +18,8 @@ get_experiment_directory <- function(thesis_project, experiment_number) {
         experiment_number
       )
     )
+  experiment_directory %>%
+    map(create_directory)
 
   return(experiment_directory)
 }
