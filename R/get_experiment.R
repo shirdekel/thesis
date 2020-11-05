@@ -20,6 +20,7 @@
 ##' @author Shir Dekel
 ##' @export
 get_experiment <- function(gambles, experiment_directory, thesis_project, experiment_number, experiment_resources, main, post_experiment, columns, condition_allocation, ethics = TRUE, zip = TRUE, on_finish = save_psychserver()) {
+  if (is.na(main)) return(NA)
   welcome <-
     get_welcome()
 
