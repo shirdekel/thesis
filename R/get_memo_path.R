@@ -22,6 +22,8 @@ get_memo_path <- function(thesis_project, experiment_number, memo_type, memo_ext
       )
     )
 
+  memo_directory %>%
+    map(create_directory)
 
   memo_path <-
     memo_directory %>%

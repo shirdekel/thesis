@@ -8,7 +8,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_materials_directory <- function(thesis_project, experiment_number) {
-
   materials_directory <-
     here(
       "inst",
@@ -19,7 +18,8 @@ get_materials_directory <- function(thesis_project, experiment_number) {
         experiment_number
       )
     )
+  materials_directory %>%
+    map(create_directory)
 
   return(materials_directory)
-
 }
