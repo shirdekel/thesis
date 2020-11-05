@@ -12,10 +12,10 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-filter_data_raw <- function(data_raw, thesis_project, experiment_number) {
+filter_data_raw_jspsych <- function(data_raw, thesis_project, experiment_number) {
   experiment <- str_c("experiment", experiment_number)
 
-  if (experiment == "experiment2") {
+  if (thesis_project == "aggregation" & experiment == "experiment2") {
     data_raw <-
       data_raw %>%
       rowwise() %>%

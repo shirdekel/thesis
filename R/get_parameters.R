@@ -246,6 +246,12 @@ get_parameters <- function() {
           thesis_project,
           experiment_number
         )
+      ),
+      filter_data_raw = case_when(
+        experiment_generator == "jspsych" ~ sym("filter_data_raw_jspsych") %>%
+       list(),
+        TRUE ~ sym("filter_data_raw_qualtrics") %>%
+            list()
       )
     ) %>%
     filter(thesis_project != "anecdotes")
