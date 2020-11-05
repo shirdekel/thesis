@@ -139,16 +139,6 @@ get_parameters <- function() {
       )
     )
 
-  get_plot_simulation <-
-    c(
-      "get_data_simulation_aggregation" %>%
-        rep(3),
-      "plot_point_apa",
-      "plot_point_apa",
-      "get_data_simulation_anecdotes"
-    ) %>%
-    syms()
-
   experiment_generator <-
     c(
       "jspsych" %>%
@@ -170,8 +160,7 @@ get_parameters <- function() {
       prolific_filter_label,
       clean_data,
       iv,
-      dv,
-      get_plot_simulation
+      dv
     ) %>%
     rowwise() %>%
     mutate_function_call(
@@ -240,12 +229,25 @@ get_parameters <- function() {
           ) %>%
           list()
       ),
-      data_simulation = case_when(
-        experiment_generator == "jspsych" ~ get_function_call(
+      get_data_simulation = case_when(
+        thesis_project == "alignment" &
+        experiment_number == 8 ~ get_function_call(
           "data_simulation",
           thesis_project,
           experiment_number
-        )
+          ),
+        TRUE ~ sym("placeholder") %>%
+          list()
+      ),
+      get_plot_simulation = case_when(
+        thesis_project == "alignment" &
+        experiment_number == 8 ~ get_function_call(
+          "plot_simulation",
+          thesis_project,
+          experiment_number
+          ),
+        TRUE ~ sym("placeholder") %>%
+          list()
       ),
       filter_data_raw = case_when(
         experiment_generator == "jspsych" ~ sym("filter_data_raw_jspsych") %>%
@@ -253,8 +255,9 @@ get_parameters <- function() {
         TRUE ~ sym("filter_data_raw_qualtrics") %>%
             list()
       )
-    ) %>%
+      )%>%
     filter(thesis_project != "anecdotes")
+
 
   return(parameters)
 }

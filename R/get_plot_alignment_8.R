@@ -14,7 +14,7 @@ get_plot_alignment_8 <- function(data_clean) {
       alignment,
       reliability_type
     )  %>%
-    plot_point_apa()
+    get_plot_simulation_alignment_8()
 
   return(plot_alignment_8)
 }

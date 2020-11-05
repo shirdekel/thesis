@@ -4,7 +4,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_data_simulation_alignment <- function(data_clean) {
+get_data_simulation_alignment_8 <- function(data_clean) {
   data_simulation_alignment <-
     data_clean %>%
     nest_by(

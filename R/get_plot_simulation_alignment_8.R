@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-plot_point_apa <- function(data) {
+get_plot_simulation_alignment_8 <- function(data) {
   data %>%
     ggplot(
       aes(
