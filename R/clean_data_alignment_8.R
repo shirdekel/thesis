@@ -1,4 +1,4 @@
-##' @title Clean data for alignment experiments
+##' @title Clean data for alignment 8
 
 ##' @param data_raw_filtered
 ##' @param test
@@ -7,7 +7,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data_alignment <- function(data_raw_filtered, experiment_number, test, prolific_filter, prolific_filter_label) {
+clean_data_alignment_8 <- function(data_raw_filtered, experiment_number, test, prolific_filter, prolific_filter_label) {
   data_raw_jspsych_columns_unselected <-
     data_raw_filtered %>%
     unselect_jspysch_columns()
