@@ -23,17 +23,17 @@ clean_data_alignment_2 <- function(data_raw_filtered, experiment_number, test, p
       ungroup() %>%
       add_id_column(prolific) %>%
       mutate(
-          across(npvReliability, recode_reliability),
+          across(reliability_amount, recode_reliability),
           across(alignment, recode_alignment),
           across(weighting, recode_weighting),
           across(age, recode_age),
           npv_amount = get_npv_amount(project),
           across(where(check_numeric), as.numeric),
-          across(c(alignment, npvReliability), as.factor),
+          across(c(alignment, reliability_amount), as.factor),
           sample = "prolific"
       ) %>%
       clean_forecast() %>%
-      get_max_min_difference(npv_amount, alignment, npvReliability)
+      get_max_min_difference(npv_amount, alignment, reliability_amount)
 
   return(data_clean)
 }

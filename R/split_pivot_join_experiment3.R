@@ -47,7 +47,7 @@ split_pivot_join_experiment3 <- function(data, dv) {
 
   data_combined <-
     data_pivot %>%
-    reduce(full_join, by = c("StartDate", "EndDate", "Status", "IPAddress", "Progress", "Duration (in seconds)", "Finished", "RecordedDate", "ResponseId", "RecipientLastName", "RecipientFirstName", "RecipientEmail", "ExternalReference", "LocationLatitude", "LocationLongitude", "DistributionChannel", "UserLanguage", "Q83", "prolific", "sex", "age", "language", "language_other", "country", "school", "npvReliability", "alignment", "justification", "project", "ranking", "allocation", "confidence"))
+    reduce(full_join, by = c("StartDate", "EndDate", "Status", "IPAddress", "Progress", "Duration (in seconds)", "Finished", "RecordedDate", "ResponseId", "RecipientLastName", "RecipientFirstName", "RecipientEmail", "ExternalReference", "LocationLatitude", "LocationLongitude", "DistributionChannel", "UserLanguage", "Q83", "prolific", "sex", "age", "language", "language_other", "country", "school", "reliability_amount", "alignment", "justification", "project", "ranking", "allocation", "confidence"))
 
   return(data_combined)
 

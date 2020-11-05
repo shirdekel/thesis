@@ -9,7 +9,7 @@ rename_qualtrics <- function(data) {
 
   data_renamed <-
     data %>%
-    rename(npvReliability = .data$errorAllocation,
+    rename(reliability_amount = .data$errorAllocation,
            alignment = .data$alignAllocation,
            prolific = "Q81",
            sex = "Q79",
@@ -19,9 +19,9 @@ rename_qualtrics <- function(data) {
            country = "Q82",
            school = "Q77"
     ) %>%
-    mutate(across(c(npvReliability, alignment),
+    mutate(across(c(reliability_amount, alignment),
                   ~ .x %>%
-                    recode(!!!c("errorAllocation" = "npvReliability",
+                    recode(!!!c("errorAllocation" = "reliability_amount",
                                 "alignAllocation" = "alignment"))))
 
   return(data_renamed)

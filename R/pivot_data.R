@@ -16,7 +16,7 @@ pivot_data <- function(data, dv_replacement, dv_id) {
     data %>%
     cleanProlific() %>%
     pivot_longer(
-      -c(StartDate:school, npvReliability, alignment),
+      -c(StartDate:school, reliability_amount, alignment),
       names_to = "dv",
       values_to = "value",
       values_drop_na = TRUE,
