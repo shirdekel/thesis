@@ -3,7 +3,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_screenshots_experiment2 <- function() {
+get_screenshots_aggregation_2 <- function() {
 
   file_name_materials_experiment2 <-
     get_file_name_materials_experiment2()
