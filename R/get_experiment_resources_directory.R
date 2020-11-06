@@ -1,4 +1,5 @@
 ##' @title Get resources directory
+##' Will return an empty directory for qualtrics experiments
 ##' @param thesis_project
 ##' @param experiment_number
 ##' @return
