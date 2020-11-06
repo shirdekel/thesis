@@ -10,7 +10,6 @@
 ##' @author Shir Dekel
 ##' @export
 get_memo_path <- function(thesis_project, experiment_number, memo_type, memo_extension) {
-
   memo_directory <-
     here(
       "doc",
@@ -40,6 +39,9 @@ get_memo_path <- function(thesis_project, experiment_number, memo_type, memo_ext
       )
     )
 
-  return(memo_path)
+  if (!file.exists(memo_path)) {
+    file.create(memo_path)
+  }
 
+  return(memo_path)
 }
