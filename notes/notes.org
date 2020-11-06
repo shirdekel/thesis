@@ -9,7 +9,32 @@
    - Don't recruit multiple versions of the same study at once
      - You can't set exclusions for studies that haven't been 'completed'
 ** TODO Open {drake} question about "skipping" static branching targets
-
+** Mixed models
+*** Subject variance = zero
+    - Note, we get singularity even for minimal model for alignment 2
+      - [[https://stats.stackexchange.com/a/112435][This]] suggests that you can keep as is, or even just do a normal
+        regression in that case.
+    - Turns out this is also the case for alignment 7
+    - So do we just simulate the data with subject variance of zero?
+    - [[https://stat.ethz.ch/pipermail/r-sig-mixed-models/2014q3/022509.html][Here]] Bates suggests that variance of zero just suggests the model should
+    be simplified 
+     - Also:
+    #+begin_quote
+    It is much more likely that there is insufficient data to estimate the
+parameters in a model of this level of complexity.
+    #+end_quote
+   - According to [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5970551/][this]], random effects...
+   #+begin_quote
+    are quite ‘data hungry’; requiring at least five ‘levels’ (groups) for a
+    random intercept term to achieve robust estimates of variance (Gelman &
+    Hill, 2007; Harrison, 2015). With <5 levels, the mixed model may not be able
+    to estimate the among-population variance accurately. In this case, the
+    variance estimate will either collapse to zero, making the model equivalent
+    to an ordinary GLM (Gelman & Hill, 2007, p. 275) or be non-zero but
+    incorrect if the small number of groups that were sampled are not
+    representative of true distribution of means (Harrison, 2015).
+   #+end_quote
+   - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
@@ -606,9 +631,6 @@ have to exclude it from your model.
          - Subject x reliability amount correlation
        - 7
      - Ok, let's just go for it
-     - Note, we get singularity even for minimal model for alignment 2
-       - [[https://stats.stackexchange.com/a/112435][This]] suggests that you can keep as is, or even just do a normal
-         regression in that case.
        
 * Emacs
 ** DONE Spotify
