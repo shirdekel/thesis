@@ -34,12 +34,10 @@ clean_data_alignment_7 <- function(data_raw_filtered, experiment_number, test, p
     unnest(data) %>%
     ungroup() %>%
     mutate(
-      across(c(allocation, ranking), as.numeric),
-      id = as.factor(id),
-      order = as.factor(order),
-      npv_amount = as.numeric(as.character(npv_amount))
-    ) %>%
-    mutate_if(is.character, as.factor)
+      across(where(check_numeric), as.numeric),
+      across(c(id, alignment, reliability_type, reliability_amount,
+                    npv_cond, order), as.factor)
+    )
 
   ## Order
   order_conditions <- list(
