@@ -1,5 +1,6 @@
 ##' @title Get condition allocation table
 ##' Use IV character vector, but only count between-subjects IVs
+##' Return just a tibble with n if no between-subjects IVs
 ##' @param data
 ##' @param iv
 
@@ -25,7 +26,12 @@ get_condition_allocation_table <- function(data, iv) {
     allocation_raw %>%
     nest_by(id, !!!allocation_columns) %>%
     ungroup() %>%
-    count(!!!allocation_columns) %>%
-    adorn_totals("row")
+    count(!!!allocation_columns)
+
+  if (!is_empty(allocation_columns)) {
+    condition_allocation_table <-
+      condition_allocation_table %>%
+      adorn_totals("row")
+  }
   return(condition_allocation_table)
 }
