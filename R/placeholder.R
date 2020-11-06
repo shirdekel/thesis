@@ -5,6 +5,6 @@
 ##' @export
 placeholder <- function(...) {
 
-  NULL
+  NA
 
 }
