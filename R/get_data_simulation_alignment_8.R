@@ -4,57 +4,24 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_data_simulation_alignment_8 <- function(data_clean) {
-  data_simulation_alignment <-
-    data_clean %>%
-    nest_by(
-      id,
-      reliability_amount,
-      npv_amount,
-      allocation,
-      ranking,
-      alignment,
-      reliability_type
-    ) %>%
-    ungroup() %>%
-    group_by(id, reliability_amount, reliability_type, alignment) %>%
-    mutate(
-      allocation = case_when(
-        alignment == "high" &
-          reliability_type == "explicit" &
-          reliability_amount == "high" ~ npv_amount %>%
-          rand_vect_correlated(
-            target_correlation = 1,
-            N = 5,
-            M = 100,
-            sd = 10
-          ),
-        alignment == "high" &
-          reliability_type == "explicit" &
-          reliability_amount == "low" ~ npv_amount %>%
-          rand_vect_correlated(
-            target_correlation = -1,
-            N = 5,
-            M = 100,
-            sd = 10
-          ),
-        alignment == "low" &
-          reliability_type == "explicit" ~ npv_amount %>%
-          rand_vect_correlated(
-            target_correlation = 1,
-            N = 5,
-            M = 100,
-            sd = 10
-          ),
-        reliability_type == "implicit" ~ npv_amount %>%
-          rand_vect_correlated(
-            target_correlation = 0,
-            N = 5,
-            M = 100,
-            sd = 10
-          )
-      )
-    ) %>%
-    ungroup()
-  return(data_simulation_alignment)
+get_data_simulation_alignment_8 <- function() {
+  set_sum_contrasts()
+
+  df <-
+    get_df_alignment_8(n = 8*22)
+
+  estimates <-
+    get_estimates_alignment_8(df)
+
+  nsim <- 100
+  simulation_results <-
+    seq_len(nsim) %>%
+    map_df(~ get_data_simulation_raw(df, estimates))
+
+  simulation_summary <-
+    summarise_simulation(simulation_results) %>%
+    filter(term == "npv_amount:reliability_amount1:alignment1:reliability_type1")
+
+  beepr::beep()
+
 }
