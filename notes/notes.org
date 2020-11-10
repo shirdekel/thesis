@@ -2424,18 +2424,17 @@ library(papaja)
                                        model.frame()
 
                                    data_simulation %>%
-                                     mixed(
+                                     lmerTest::lmer(
                                        allocation ~  npv_amount * reliability_amount *
                                      alignment * reliability_type +
                                          (1 | id),
                                        data = .
                                      ) %>%
-                                     .[["full_model"]] %>%
                                      broom.mixed::tidy()
                                    }
 
 
-                   nsim <- 1
+                   nsim <- 100
                                     simulation_results <-
                                       seq_len(nsim) %>%
                                         map_df(~ simulate_data(df))
@@ -2612,3 +2611,8 @@ predictor of a project's profits"
 **** DONE Check about HDR funds
      CLOSED: [2020-11-10 Tue 15:14]
 **** TODO Ask Dan if he can answer Rob's question
+**** TODO Run specific power analyses
+     - explict vs implicit (three-way) - high alignment
+     - explict vs implicit (two-way) - low alignment
+     - high vs low alignment (three-way) - explicit reliability
+     - implicit null effects
