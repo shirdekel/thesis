@@ -19,14 +19,14 @@ clean_data_alignment_7 <- function(data_raw_filtered, experiment_number, test, p
       df = map(data, getresponses, names_to, names_pattern),
       total_time = map_dbl(data, gettime),
       order = map_dbl(data, ~ .x %>%
-                        pull(order_condition) %>%
-                        unique()),
+        pull(order_condition) %>%
+        unique()),
       data = NULL
     ) %>%
     unnest(df) %>%
     pivot_wider(names_from = "dv", values_from = "value") %>%
     mutate(prolific = prolific %>%
-             as.character()) %>%
+      as.character()) %>%
     unite("participant", c(prolific, sona), na.rm = TRUE, remove = F) %>%
     filter(!str_detect(participant, "test")) %>%
     nest() %>%
@@ -35,8 +35,19 @@ clean_data_alignment_7 <- function(data_raw_filtered, experiment_number, test, p
     ungroup() %>%
     mutate(
       across(where(check_numeric), as.numeric),
-      across(c(id, alignment, reliability_type, reliability_amount,
-                    npv_cond, order), as.factor)
+      across(c(
+        id, order
+      ), as.factor),
+      across(c(
+        alignment, reliability_amount, npv_cond
+      ),
+      ~ .x %>%
+        fct_relevel(c("low", "high"))),
+      across(
+        reliability_type,
+        ~ .x %>%
+        fct_relevel(c("imp", "exp"))
+      )
     )
 
   ## Order
@@ -53,9 +64,9 @@ clean_data_alignment_7 <- function(data_raw_filtered, experiment_number, test, p
 
   order_levels <- order_conditions %>%
     map(~ .x %>%
-          map(~ conditions_labels[.x]) %>%
-          unlist() %>%
-          str_c(collapse = "_")) %>%
+      map(~ conditions_labels[.x]) %>%
+      unlist() %>%
+      str_c(collapse = "_")) %>%
     set_names(c(1:4) %>% as.character()) %>%
     unlist()
 
