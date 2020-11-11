@@ -250,6 +250,16 @@ get_parameters <- function() {
         TRUE ~ sym("placeholder") %>%
           list()
       ),
+      get_power = case_when(
+        thesis_project == "alignment" &
+          experiment_number == 8 ~ get_function_call(
+          "power",
+          thesis_project,
+          experiment_number
+        ),
+        TRUE ~ sym("placeholder") %>%
+          list()
+      ),
       get_plot_simulation = case_when(
         thesis_project == "alignment" &
           experiment_number == 8 ~ get_function_call(

@@ -192,9 +192,9 @@ the_plan <-
       )
     ),
     data_simulation = target(
-      get_data_simulation(data_clean),
+      get_data_simulation(),
       transform = map(
-        data_clean,
+        .data = !!parameters,
         .id = c(thesis_project, experiment_number)
       )
     ),
@@ -203,6 +203,13 @@ the_plan <-
       transform = map(
         data_simulation,
         .id = c(thesis_project, experiment_number)
+      )
+    ),
+    power = target(
+      get_power(),
+      transform = map(
+        .data = !!parameters,
+          .id = c(thesis_project, experiment_number)
       )
     ),
     results = target(

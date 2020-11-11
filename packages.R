@@ -31,6 +31,7 @@ library(afex)
 library(faux)
 library(broom.mixed)
 library(simr)
+library(binom)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")

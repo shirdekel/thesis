@@ -5,9 +5,10 @@
 ##' @export
 get_model_alignment_2 <- function() {
   loadd(data_clean_alignment_2)
-model_alignment_2 <-
+  model_alignment_2 <-
     data_clean_alignment_2 %>%
     filter(reliability_amount != "noNPV") %>%
+    droplevels() %>%
     nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
     mixed(
       allocation ~ alignment * reliability_amount * npv_amount +
@@ -16,5 +17,5 @@ model_alignment_2 <-
     ) %>%
     .[["full_model"]] %>%
     tidy()
- return(model_alignment_2)
+  return(model_alignment_2)
 }

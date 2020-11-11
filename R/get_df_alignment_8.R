@@ -4,7 +4,7 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param n Needs to be divisible by 8
-get_df_alignment_8 <- function(n) {
+get_df_alignment_8 <- function(n=8) {
   npv_amount <-
     get_npv()
 
@@ -51,6 +51,10 @@ get_df_alignment_8 <- function(n) {
       by = c("display_variation", "reliability_amount")
     ) %>%
     arrange(id) %>%
+    mutate(
+      across(reliability_amount, ~ .x %>%
+                                   fct_relevel(c("low", "high")))
+    ) %>%
     as_tibble() %>%
     select(-y)
 

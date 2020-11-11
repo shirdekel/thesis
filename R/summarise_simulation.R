@@ -4,7 +4,8 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param simulation_results
-summarise_simulation <- function(simulation_results) {
+##' @param nsim
+summarise_simulation <- function(simulation_results, nsim) {
   simulation_results %>%
     filter(effect == "fixed") %>%
     group_by(term) %>%
