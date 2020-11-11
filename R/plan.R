@@ -205,12 +205,14 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    power = target(
-      get_power(),
+    power_curve = target(
+      get_power_curve(),
       transform = map(
         .data = !!parameters,
           .id = c(thesis_project, experiment_number)
-      )
+      ),
+      # So that the same npv_amount is generated
+      seed = old_seed$experiment4
     ),
     results = target(
       get_results(data_clean, iv, dv),

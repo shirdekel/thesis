@@ -6,15 +6,22 @@
 ##' @export
 ##' @param df
 ##' @param estimates
-get_data_simulation_results <- function(df, estimates) {
+##' @param formula
+get_data_simulation_results <- function(df, estimates, formula) {
   data_simulation_raw <-
-    get_data_simulation_raw(df, estimates)
+    get_data_simulation_raw(df, estimates, formula)
+
+  model <-
+    data_simulation_raw %>%
+    mixed(
+      formula,
+      data = .,
+      method = "S"
+    )
 
   data_simulation_raw %>%
     mixed(
-      allocation ~ npv_amount * reliability_amount *
-        alignment * reliability_type +
-        (1 | id),
+      formula,
       data = .,
       method = "S"
     ) %>%

@@ -6,6 +6,8 @@
 ##' @author Shir Dekel
 ##' @export
 get_parameters <- function() {
+  set_sum_contrasts()
+
   import_data <-
     syms(c(
       "import_data_server" %>%
@@ -250,10 +252,10 @@ get_parameters <- function() {
         TRUE ~ sym("placeholder") %>%
           list()
       ),
-      get_power = case_when(
+      get_power_curve = case_when(
         thesis_project == "alignment" &
           experiment_number == 8 ~ get_function_call(
-          "power",
+          "power_curve",
           thesis_project,
           experiment_number
         ),
