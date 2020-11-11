@@ -2452,6 +2452,29 @@ library(papaja)
                                                 .groups = "drop"
                                               )
                 #+end_src
+**** Another idea
+     - The problem now seems to be that even when we combine alignment 2,
+       alignment 7, and the hypotheses data, it's very hard to get the right
+       combination of effects right
+     - So what if do modelling/simulation of the effects of interest, and then
+       combine the datasets?
+**** Specific effects
+     - The effects
+       - Explicit reliability alignment low vs high
+       - High alignment implicit vs explicit
+       - Low alignment implicit vs explicit
+       - Null effects in implicit reliability
+     - How to get
+       - emmeans doesn't seem like it'll help because not sure how it handles
+         "covariates"
+       - Actually, we can, using ~emtrends~
+       - But we don't actually need that anyway, right?
+       - We just want the three and two-way interactions
+       - So why don't we just filter and use lmer as usual?
+       - But we can also use the ~by~ argument of emmeans to split it up and
+         look at the individual trends/ compare them
+       - Yep this seems to be the way.
+     
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]

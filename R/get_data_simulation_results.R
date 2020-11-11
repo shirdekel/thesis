@@ -11,14 +11,6 @@ get_data_simulation_results <- function(df, estimates, formula) {
   data_simulation_raw <-
     get_data_simulation_raw(df, estimates, formula)
 
-  model <-
-    data_simulation_raw %>%
-    mixed(
-      formula,
-      data = .,
-      method = "S"
-    )
-
   data_simulation_raw %>%
     mixed(
       formula,
