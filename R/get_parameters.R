@@ -76,7 +76,7 @@ get_parameters <- function() {
       "clean_data_alignment_2",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
-      "clean_data_anecdotes"
+      "clean_data_anecdotes_2"
     ) %>%
     syms()
 
