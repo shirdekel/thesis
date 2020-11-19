@@ -1,31 +1,71 @@
-##' @title Power analysis
+##' @title Get power components
 
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-##' @param n 
-get_power_alignment_8 <- function(n) {
-  df <-
-      get_df_alignment_8(n = n)
+##' @param power_table_alignment_8
+get_power_alignment_8 <- function(power_table_alignment_8) {
+  data_power <-
+    power_table_alignment_8 %>%
+    mutate(
+      across(
+        effect,
+        ~ .x %>%
+          as_factor()
+      )
+    ) %>%
+    nest_by(effect, effect_type, power, upper, lower, n)
 
-  formula <-
-      allocation ~
-      npv_amount * reliability_amount * alignment * reliability_type +
-          (1 | id)
+  min_n <-
+    data_power %>%
+    mutate(
+      n = n %>%
+        as.character() %>%
+        as.numeric()
+    ) %>%
+    pull(n) %>%
+    min()
 
-  model_alignment_8 <-
-      get_model_alignment_8(df, formula)
+  data_label <-
+    data_power %>%
+    filter(power > 0.8) %>%
+    group_by(effect) %>%
+    slice_min(power, with_ties = FALSE) %>%
+    filter(n != min_n)
 
-  estimates <-
-      get_estimates(model_alignment_8)
+  power_curve <-
+    get_power_curve_alignment_8(data_power, data_label)
 
-  nsim <- 100
-  simulation_results <-
-      seq_len(nsim) %>%
-      map_df(~ get_data_simulation_results(df, estimates, formula))
+  n <-
+    data_label %>%
+    mutate(
+      across(n, ~ .x %>%
+        as.character() %>%
+        as.numeric())
+    ) %>%
+    pull(n) %>%
+    max()
 
-  simulation_summary <-
-      summarise_simulation(simulation_results, nsim) %>%
-      filter(term == "npv_amount:reliability_amount1:alignment1:reliability_type1")
-  return(simulation_summary)
+  n_total <-
+    n %>%
+    prod(4)
+
+  prolific_gbp <- n_total * 1.63
+
+  exchange_rate <-
+    getQuote("GBPAUD=X") %>%
+    pull(Last)
+
+  prolific_aud <- prolific_gbp * exchange_rate
+
+  power <-
+    lst(
+      power_curve,
+      n,
+      n_total,
+      prolific_gbp,
+      prolific_aud
+    )
+
+  return(power)
 }

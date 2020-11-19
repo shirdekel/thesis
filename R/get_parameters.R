@@ -252,10 +252,20 @@ get_parameters <- function() {
         TRUE ~ sym("placeholder") %>%
           list()
       ),
-      get_power_curve = case_when(
+      get_power_table = case_when(
         thesis_project == "alignment" &
           experiment_number == 8 ~ get_function_call(
-          "power_curve",
+          "power_table",
+          thesis_project,
+          experiment_number
+        ),
+        TRUE ~ sym("placeholder") %>%
+          list()
+      ),
+      get_power = case_when(
+        thesis_project == "alignment" &
+          experiment_number == 8 ~ get_function_call(
+          "power",
           thesis_project,
           experiment_number
         ),

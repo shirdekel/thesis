@@ -13,9 +13,6 @@ bibliography      : '`r system.file("refs.bib", package = "shiR")`'
 csl               : '`r system.file("apa.csl", package = "shiR")`'
 documentclass     : "apa7"
 classoption       : "man, donotrepeattitle"
-header-includes:
-- \newcommand{\blandscape}{\begin{landscape}}
-- \newcommand{\elandscape}{\end{landscape}}
 output: 
   papaja::apa6_pdf:
     includes: 
@@ -25,6 +22,7 @@ output:
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 loadd(materials_alignment_8)
+loadd(power_alignment_8)
 ```
 
 # Summary
@@ -69,6 +67,35 @@ loadd(materials_alignment_8)
 ```{r plot-simulation-alignment-8, fig.cap = "Alignment Experiment 8 predicted data"}
 readd(plot_simulation_alignment_8)
 ```
+
+# Power analysis
+
+- I conducted a power analysis through simulation of the effects listed above
+  (and the simple effects implied by them)
+    - I simulated data with the same regression coefficients as Experiment 2 for
+      the explicit condition, no effects for the implicit condition (as shown in
+      Figure\ \@ref(fig:plot-simulation-alignment-8)), and the intercept and
+      residual variance of Experiment 2.
+    - The null effects are analysed using the two one-sided tests (TOST)
+      procedure, or *equivalence* testing [@lakens2018], and setting the
+      smallest effect size of interest to the smallest difference that leads to
+      a significant equivalence between low and high implicit reliability for
+      low alignment in Experiment 7.
+- See Figure\ \@ref(fig:power-curve-alignment-8).
+- The analysis suggests a total sample size of `r power_alignment_8$n_total` (`r power_alignment_8$n` $\times$ 4).
+  - This means a total cost of approximately \$`r power_alignment_8$prolific_aud` AUD (\pounds`r power_alignment_8$prolific_gbp`).
+
+\newpage
+
+\blandscape
+
+```{r power-curve-alignment-8, fig.width = 13, fig.height = 7, fig.cap = "Alignment Experiment 8 power curve. Labels indicate lowest sample size above 80% power."}
+power_alignment_8$power_curve
+```
+
+\elandscape
+
+\newpage
 
 # Materials
 
@@ -152,3 +179,10 @@ res <-
 ```
 
 `r res`
+
+\newpage
+
+# References
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}

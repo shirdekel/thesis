@@ -18,4 +18,5 @@ get_data_simulation_raw <- function(df, estimates, formula) {
   model %>%
     model.frame() %>%
     as_tibble()
+
 }

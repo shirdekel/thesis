@@ -4,10 +4,8 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param n Needs to be divisible by 8
-get_df_alignment_8 <- function(n=8) {
-  npv_amount <-
-    get_npv()
-
+##' @param npv_amount
+get_df_alignment_8 <- function(n = 8, npv_amount) {
   reliability_amount <- c("low", "high")
   reliability_type <- c("implicit", "explicit")
   alignment <- c("low", "high")
@@ -43,7 +41,7 @@ get_df_alignment_8 <- function(n=8) {
     sim_design(
       within,
       between,
-      n = n/8,
+      n = n / 8,
       plot = FALSE,
       long = TRUE
     ) %>%
@@ -53,7 +51,7 @@ get_df_alignment_8 <- function(n=8) {
     arrange(id) %>%
     mutate(
       across(reliability_amount, ~ .x %>%
-                                   fct_relevel(c("low", "high")))
+        fct_relevel(c("low", "high")))
     ) %>%
     as_tibble() %>%
     select(-y)

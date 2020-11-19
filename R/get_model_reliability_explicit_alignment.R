@@ -1,28 +1,55 @@
 ##' @title Alignment 8 model
-
+##'
+##' Get model with regression coefficients of Experiment 2 for the explicit
+##' condition, no effects for the implicit condition, and the intercept and
+##' residual variance of Experiment 2.
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 ##' @param df
 ##' @param formula
-get_model_alignment_8 <- function(df, formula) {
-  estimates_explicit <-
-    get_estimates_alignment_2()
+get_model_alignment_8 <- function(n = 8, npv_amount) {
+  df <-
+    get_df_alignment_8(n, npv_amount)
 
-  formula_alignment_2 <-
-    allocation ~
-    alignment * reliability_amount * npv_amount +
-      (1 | id)
+  loadd(data_clean_alignment_2)
+
+  model_alignment_2 <-
+    data_clean_alignment_2 %>%
+    filter(reliability_amount != "noNPV") %>%
+    droplevels() %>%
+    nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
+    lm(
+      allocation ~ alignment * reliability_amount * npv_amount,
+      data = .
+    )
+
+  y_explicit <-
+    predict(model_alignment_2, newdata = df)
 
   data_simulation_explicit <-
-    get_data_simulation_raw(df, estimates_explicit, formula_alignment_2) %>%
-    mutate(reliability_type = "explicit")
+    df %>%
+    mutate(
+      allocation = y_explicit,
+      reliability_type = "explicit"
+    )
 
-  estimates_implicit <-
-    get_estimates_implicit()
+  intercept_alignment_2 <-
+    model_alignment_2 %>%
+    tidy() %>%
+    filter(term == "(Intercept)") %>%
+    pull(estimate)
+
+  residual_sd_alignment_2 <-
+    model_alignment_2 %>%
+    glance() %>%
+    pull(sigma)
 
   data_simulation_implicit <-
-    get_data_simulation_raw(df, estimates_implicit, formula_alignment_2) %>%
+    df %>%
+    mutate(
+      allocation = intercept_alignment_2
+    ) %>%
     mutate(reliability_type = "implicit")
 
   data_simulation_raw <-
@@ -30,13 +57,14 @@ get_model_alignment_8 <- function(df, formula) {
     bind_rows(data_simulation_explicit) %>%
     mutate(
       across(reliability_type, ~ .x %>%
-             fct_relevel(c("implicit", "explicit")))
+        fct_relevel(c("implicit", "explicit")))
     )
 
   model <-
-    get_mixed_model(
-      formula,
-      data_simulation_raw
+    lm(
+      allocation ~
+      npv_amount * reliability_amount * alignment * reliability_type,
+      data = data_simulation_raw,
     )
 
   return(model)
