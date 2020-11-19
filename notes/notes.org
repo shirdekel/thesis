@@ -442,8 +442,10 @@ have to exclude it from your model.
      - [X] Add allocation webdriver code
 **** DONE Screenshots
      CLOSED: [2020-10-23 Fri 15:39]
-*** TODO Add project number to input ID
-*** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
+*** CANCELLED Add project number to input ID
+    - State "CANCELLED"  from "TODO"       [2020-11-19 Thu 15:03]
+*** CANCELLED Change the NPV generation code a bit so that there isn't a duplicate value between sets
+    - State "CANCELLED"  from "TODO"       [2020-11-19 Thu 15:03]
 *** DONE Power analysis
     CLOSED: [2020-11-19 Thu 11:39]
     - Now that we're using ~lmer~ for analyses, we need to use something like
