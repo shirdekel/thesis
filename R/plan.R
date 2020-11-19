@@ -117,17 +117,17 @@ the_plan <-
       ),
       target = "file"
     ),
-    ## materials = target(
-    ##   {
-    ##     get_screenshots(testing, screenshot_components)
-    ##     materials_directory
-    ##   },
-    ##   transform = map(
-    ##     testing,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   ),
-    ##   format = "file"
-    ## ),
+    materials = target(
+      {
+        get_screenshots(testing, screenshot_components)
+        materials_directory
+      },
+      transform = map(
+        testing,
+        .id = c(thesis_project, experiment_number)
+      ),
+      format = "file"
+    ),
     ## materials_memo = target(
     ##   {
     ##     render(knitr_in(!!memo_path$materials$Rmd))

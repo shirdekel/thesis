@@ -4,5 +4,5 @@
 ##' @author Shir Dekel
 ##' @export
 get_screenshots_anecdotes_2 <- function() {
-  return(NA)
+  return(NULL)
 }
