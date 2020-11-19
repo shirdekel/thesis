@@ -177,20 +177,20 @@ the_plan <-
         .id = c(thesis_project, experiment_number)
       )
     ),
-    ## descriptives = target(
-    ##   get_descriptives(data_clean, iv),
-    ##   transform = map(
-    ##     data_clean,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
-    ## plot = target(
-    ##   get_plot(data_clean),
-    ##   transform = map(
-    ##     data_clean,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    descriptives = target(
+      get_descriptives(data_clean, iv),
+      transform = map(
+        data_clean,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
+    plot = target(
+      get_plot(data_clean),
+      transform = map(
+        data_clean,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     data_simulation = target(
       get_data_simulation(),
       transform = map(
