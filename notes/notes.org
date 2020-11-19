@@ -35,6 +35,7 @@ parameters in a model of this level of complexity.
     representative of true distribution of means (Harrison, 2015).
    #+end_quote
    - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
+** TODO Work out why you can pass symbols for functions in drake, but not for arguments
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
@@ -443,8 +444,8 @@ have to exclude it from your model.
      CLOSED: [2020-10-23 Fri 15:39]
 *** TODO Add project number to input ID
 *** TODO Change the NPV generation code a bit so that there isn't a duplicate value between sets
-*** TODO Work out why you can pass symbols for functions in drake, but not for arguments
-*** TODO Power analysis
+*** DONE Power analysis
+    CLOSED: [2020-11-19 Thu 11:39]
     - Now that we're using ~lmer~ for analyses, we need to use something like
       ~simr~
     - What we can do is get previous experiments and then change the effect
@@ -454,26 +455,26 @@ have to exclude it from your model.
     - Also we're meant to do sub component analyses?
       - Actually we're meant to do both to compare the sample needed
 **** From http://finzi.psych.upenn.edu/R/library/simr/doc/fromscratch.html
-         #+begin_src R
-           library(simr)
+     #+begin_src R
+       library(simr)
 
-           x <- 1:10
-           g <- letters[1:3]
-           X <- expand.grid(x = x, g = g)
+       x <- 1:10
+       g <- letters[1:3]
+       X <- expand.grid(x = x, g = g)
 
-           b <- c(2, -0.1) # fixed intercept and slope
-           V1 <- 0.5 # random intercept variance
-           V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) # random intercept and slope variance-covariance matrix
-           s <- 1 # residual standard deviation
+       b <- c(2, -0.1) # fixed intercept and slope
+       V1 <- 0.5 # random intercept variance
+       V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) # random intercept and slope variance-covariance matrix
+       s <- 1 # residual standard deviation
 
-           model1 <- makeLmer(y ~ x + (1|g), fixef=b, VarCorr=V1, sigma=s, data=X)
-           powerSim(model1, nsim=20)
+       model1 <- makeLmer(y ~ x + (1|g), fixef=b, VarCorr=V1, sigma=s, data=X)
+       powerSim(model1, nsim=20)
 
-         #+end_src
+     #+end_src
 
-         #+RESULTS:
+     #+RESULTS:
 
-         - So I guess we just have to do it from scratch?
+     - So I guess we just have to do it from scratch?
 **** Test with already simulated data
      #+begin_src R
        library(drake)
@@ -512,56 +513,56 @@ have to exclude it from your model.
        - https://cran.r-project.org/web/packages/afex/vignettes/afex_mixed_example.html
 **** So let's give it ago
      - Just following the afex::mixed vignette.
-      #+begin_src R
-        library(tidyverse)
-        library(afex)
-        library(drake)
+       #+begin_src R
+         library(tidyverse)
+         library(afex)
+         library(drake)
 
-        loadd(data_clean_alignment_8)
+         loadd(data_clean_alignment_8)
 
-        ## look normal as is
-        data_clean_alignment_8 %>% 
-          mutate(
-            log_allocation = log(allocation)
-          ) %>%
-          pivot_longer(cols = c(allocation, log_allocation),
-                       names_to = "allocation_type",
-                       values_to = "allocation") %>%
-        ggplot(aes(allocation)) +
-          geom_histogram(bins = 100) +
-          facet_wrap(vars(allocation_type), scales = "free_x")
+         ## look normal as is
+         data_clean_alignment_8 %>% 
+           mutate(
+             log_allocation = log(allocation)
+           ) %>%
+           pivot_longer(cols = c(allocation, log_allocation),
+                        names_to = "allocation_type",
+                        values_to = "allocation") %>%
+           ggplot(aes(allocation)) +
+           geom_histogram(bins = 100) +
+           facet_wrap(vars(allocation_type), scales = "free_x")
 
-        model1 <-
-          data_clean_alignment_8 %>% 
-          mixed(
-            allocation ~ alignment * reliability_type * reliability_amount * npv_amount + (alignment * reliability_type * reliability_amount * npv_amount | id),
-            data = .
-          )
+         model1 <-
+           data_clean_alignment_8 %>% 
+           mixed(
+             allocation ~ alignment * reliability_type * reliability_amount * npv_amount + (alignment * reliability_type * reliability_amount * npv_amount | id),
+             data = .
+           )
 
-        ## Warning messages:
-        ## 1: Model failed to converge with 28 negative eigenvalues: -2.0e-01 -3.1e-01 -9.3e-01 -2.2e+00 -4.2e+00 -7.7e+00 -1.2e+01 -8.0e+01 -4.9e+02 -8.3e+02 -1.1e+03 -2.3e+03 -2.9e+03 -3.4e+03 -4.3e+03 -8.6e+03 -1.2e+04 -1.9e+04 -2.5e+04 -3.0e+04 -3.3e+04 -4.3e+04 -4.7e+04 -6.6e+04 -4.2e+05 -1.3e+06 -2.1e+06 -3.4e+06
-        ## 2: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 3: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 4: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 5: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 6: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 7: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 8: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 9: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 10: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 11: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 12: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 13: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 14: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 15: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
-        ## 16: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## Warning messages:
+         ## 1: Model failed to converge with 28 negative eigenvalues: -2.0e-01 -3.1e-01 -9.3e-01 -2.2e+00 -4.2e+00 -7.7e+00 -1.2e+01 -8.0e+01 -4.9e+02 -8.3e+02 -1.1e+03 -2.3e+03 -2.9e+03 -3.4e+03 -4.3e+03 -8.6e+03 -1.2e+04 -1.9e+04 -2.5e+04 -3.0e+04 -3.3e+04 -4.3e+04 -4.7e+04 -6.6e+04 -4.2e+05 -1.3e+06 -2.1e+06 -3.4e+06
+         ## 2: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 3: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 4: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 5: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 6: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 7: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 8: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 9: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 10: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 11: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 12: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 13: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 14: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 15: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
+         ## 16: Unable to compute Kenward-Roger F-test: using Satterthwaite instead
 
-        ## Warning message:
-        ##           lme4 reported (at least) the following warnings for 'full':
-        ##                                                                 * boundary (singular) fit: see ?isSingular 
+         ## Warning message:
+         ##           lme4 reported (at least) the following warnings for 'full':
+         ##                                                                 * boundary (singular) fit: see ?isSingular 
 
-        summary(model1)$varcor
-      #+end_src
+         summary(model1)$varcor
+       #+end_src
 **** Action plan
      - Seems like we're going to have to do the standard simulate, analyse, and iterate.
      - But how will we specify the effect sizes?
@@ -585,12 +586,12 @@ have to exclude it from your model.
         for lmer's REML, and cite Luke (2017).
       - They also have an interesting mention of what to do without pilot data:
       #+begin_quote
-       If you lack any pilot data to work with, you can start with the general
-       rule of thumb setting the residual variance to about twice the size of the
-       by-subject or by-item variance components (see supplementary materials
-       from Barr et al., 2013 at
-       https://talklab.psy.gla.ac.uk/simgen/realdata.html for results from an
-       informal convenience sample).
+      If you lack any pilot data to work with, you can start with the general
+      rule of thumb setting the residual variance to about twice the size of the
+      by-subject or by-item variance components (see supplementary materials
+      from Barr et al., 2013 at
+      https://talklab.psy.gla.ac.uk/simgen/realdata.html for results from an
+      informal convenience sample).
       #+end_quote
       - Barr et al. (2013) also has some practical tips.
 *****  [[https://debruine.github.io/tutorials/sim-lmer.html][DeBruine's sim-lmer tutorial]]
@@ -624,9 +625,9 @@ have to exclude it from your model.
          alignment condition separately.
      - Model
        #+begin_src R
-                  allocation ~
-                    alignment * reliability_type * reliability_amount * npv_amount +
-                    (npv_amount * reliability_amount | id)
+         allocation ~
+           alignment * reliability_type * reliability_amount * npv_amount +
+           (npv_amount * reliability_amount | id)
        #+end_src
      - Take relevant effects
        - 2
@@ -666,230 +667,230 @@ have to exclude it from your model.
        - 
 **** An attempt at the full four-way
      #+begin_src R
-              library(drake)
-              library(faux)
-              library(tidyverse)
+       library(drake)
+       library(faux)
+       library(tidyverse)
        library(afex)
-library(papaja)
+       library(papaja)
 
-              npv_amount <-
-                  seq(from = 400, to = 800, length.out = 5) %>%
-                  map(~ seq(from = .x, length.out = 51)) %>%
-                  map(~ sample(., size = 2, replace = T)) %>%
-                  transpose() %>%
-                  map(unlist)
+       npv_amount <-
+         seq(from = 400, to = 800, length.out = 5) %>%
+         map(~ seq(from = .x, length.out = 51)) %>%
+         map(~ sample(., size = 2, replace = T)) %>%
+         transpose() %>%
+         map(unlist)
 
-              reliability_amount <- c("low", "high")
-              reliability_type <- c("implicit", "explicit")
-              alignment <- c("low", "high")
-              display_variation <- seq_len(2)
+       reliability_amount <- c("low", "high")
+       reliability_type <- c("implicit", "explicit")
+       alignment <- c("low", "high")
+       display_variation <- seq_len(2)
 
-              n <- 100
+       n <- 100
 
-              id <- seq_len(n)
+       id <- seq_len(n)
 
-              counterbalanced_npv <-
-                expand_grid(
-                  npv_amount,
-                  reliability_amount
-                ) %>%
-                mutate(
-                  display_variation = c(
-                    display_variation,
-                    display_variation %>%
-                      rev()
-                  ) %>%
-                    as.factor()
-                ) %>%
-                unnest(npv_amount) %>%
-                arrange(display_variation)
+       counterbalanced_npv <-
+         expand_grid(
+           npv_amount,
+           reliability_amount
+         ) %>%
+         mutate(
+           display_variation = c(
+             display_variation,
+             display_variation %>%
+             rev()
+           ) %>%
+             as.factor()
+         ) %>%
+         unnest(npv_amount) %>%
+         arrange(display_variation)
 
-              between <- lst(
-                alignment,
-                reliability_type,
-                display_variation
-              )
+       between <- lst(
+         alignment,
+         reliability_type,
+         display_variation
+       )
 
-              within <- lst(
-                reliability_amount,
-              )
+       within <- lst(
+         reliability_amount,
+         )
 
-              df <-
-                sim_design(
-                  within,
-                  between,
-                  n = 1, plot = FALSE, long = TRUE
-                ) %>%
-                left_join(counterbalanced_npv,
-                  by = c("display_variation", "reliability_amount")
-                ) %>%
-                arrange(id) %>%
-                as_tibble()
+       df <-
+         sim_design(
+           within,
+           between,
+           n = 1, plot = FALSE, long = TRUE
+         ) %>%
+         left_join(counterbalanced_npv,
+                   by = c("display_variation", "reliability_amount")
+                   ) %>%
+         arrange(id) %>%
+         as_tibble()
 
 
-              loadd(data_clean_alignment_2)
-              loadd(data_clean_alignment_7)
+       loadd(data_clean_alignment_2)
+       loadd(data_clean_alignment_7)
 
-              set_sum_contrasts()
+       set_sum_contrasts()
 
-              random_intercept_variance <- 0
+       random_intercept_variance <- 0
 
-              model_alignment_2 <-
-                data_clean_alignment_2 %>%
-                filter(reliability_amount != "noNPV") %>%
-                ## mutate(
-                ##   across(reliability_amount, ~ .x %>%
-                ##                                fct_relevel("noNPV", "low")
-                ##          )
-                ## ) %>%
-                nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
-                mixed(
-                  allocation ~ alignment * reliability_amount * npv_amount +
-                    (1 | id),
-                  data = .
-                ) %>%
-                .[["full_model"]] %>%
-                broom.mixed::tidy()
+       model_alignment_2 <-
+         data_clean_alignment_2 %>%
+         filter(reliability_amount != "noNPV") %>%
+         ## mutate(
+         ##   across(reliability_amount, ~ .x %>%
+         ##                                fct_relevel("noNPV", "low")
+         ##          )
+         ## ) %>%
+         nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
+         mixed(
+           allocation ~ alignment * reliability_amount * npv_amount +
+             (1 | id),
+           data = .
+         ) %>%
+         .[["full_model"]] %>%
+         broom.mixed::tidy()
 
-              model_alignment_7 <-
-                data_clean_alignment_7 %>%
-                filter(alignment == "low") %>%
-                nest_by(id, allocation, reliability_amount, reliability_type, npv_cond) %>%
-                mixed(
-                  allocation ~ reliability_amount * reliability_type * npv_cond +
-                    (1 | id),
-                  data = .
-                ) %>%
-                .[["full_model"]] %>%
-                broom.mixed::tidy()
+       model_alignment_7 <-
+         data_clean_alignment_7 %>%
+         filter(alignment == "low") %>%
+         nest_by(id, allocation, reliability_amount, reliability_type, npv_cond) %>%
+         mixed(
+           allocation ~ reliability_amount * reliability_type * npv_cond +
+             (1 | id),
+           data = .
+         ) %>%
+         .[["full_model"]] %>%
+         broom.mixed::tidy()
 
-              combined_value <-
-                list(
-                  "(Intercept)",
-                  "sd__Observation"
-                ) %>%
-                map(
-                  function(term_value) {
-                    list(
-                      model_alignment_2,
-                      model_alignment_7
-                    ) %>%
-                      map_dbl(
-                        ~ .x %>%
-                          filter(term == term_value) %>%
-                          pull(estimate)
-                      ) %>%
-                      mean()
-                  }
-                ) %>%
-                set_names(
-                  "intercept",
-                  "residual_sd"
-                )
+       combined_value <-
+         list(
+           "(Intercept)",
+           "sd__Observation"
+         ) %>%
+         map(
+           function(term_value) {
+             list(
+               model_alignment_2,
+               model_alignment_7
+             ) %>%
+               map_dbl(
+                 ~ .x %>%
+                   filter(term == term_value) %>%
+                   pull(estimate)
+               ) %>%
+               mean()
+           }
+         ) %>%
+         set_names(
+           "intercept",
+           "residual_sd"
+         )
 
-              model_alignment_7 %>%
-                pull(term)
+       model_alignment_7 %>%
+         pull(term)
 
-              model_alignment_2 %>%
-                pull(term)
+       model_alignment_2 %>%
+         pull(term)
 
-              estimate_label_alignment_2 <-
-                c(
-                  "npv_amount",
-                  "alignment1",
-                  "alignment1:npv_amount",
-                  "reliability_amount1",
-                  "reliability_amount1:npv_amount",
-                  "alignment1:reliability_amount1",
-                  "alignment1:reliability_amount1:npv_amount"
-                )
+       estimate_label_alignment_2 <-
+         c(
+           "npv_amount",
+           "alignment1",
+           "alignment1:npv_amount",
+           "reliability_amount1",
+           "reliability_amount1:npv_amount",
+           "alignment1:reliability_amount1",
+           "alignment1:reliability_amount1:npv_amount"
+         )
 
-              estimate_alignment_2 <-
-                estimate_label_alignment_2 %>%
-                map(
-                  ~ model_alignment_2 %>% 
-                    filter(term == .x) %>%
-                    pull(estimate)
-                ) %>%
-                set_names(
-                  "npv_amount",
-                  "alignment",
-                  "npv_amount_alignment",
-                  "reliability_amount",
-                  "reliability_amount_npv_amount",
-                  "alignment_reliability_amount",
-                  "alignment_reliability_amount_npv_amount"
-                )
+       estimate_alignment_2 <-
+         estimate_label_alignment_2 %>%
+         map(
+           ~ model_alignment_2 %>% 
+             filter(term == .x) %>%
+             pull(estimate)
+         ) %>%
+         set_names(
+           "npv_amount",
+           "alignment",
+           "npv_amount_alignment",
+           "reliability_amount",
+           "reliability_amount_npv_amount",
+           "alignment_reliability_amount",
+           "alignment_reliability_amount_npv_amount"
+         )
 
-              estimate_alignment_7 <-
-                c(
-                  "reliability_type1",
-                  "reliability_amount1:reliability_type1",
-                  "reliability_amount1:reliability_type1:npv_cond1",
-                  "reliability_type1:npv_cond1"
-                ) %>%
-                map(
-                  ~ model_alignment_7 %>% 
-                    filter(term == .x) %>%
-                    pull(estimate)
-                ) %>%
-                set_names(
-                  "reliability_type",
-                  "reliability_amount_reliability_type",
-                  "reliability_amount_reliability_type_npv_cond",
-                  "reliability_type_npv_cond"
-                )
+       estimate_alignment_7 <-
+         c(
+           "reliability_type1",
+           "reliability_amount1:reliability_type1",
+           "reliability_amount1:reliability_type1:npv_cond1",
+           "reliability_type1:npv_cond1"
+         ) %>%
+         map(
+           ~ model_alignment_7 %>% 
+             filter(term == .x) %>%
+             pull(estimate)
+         ) %>%
+         set_names(
+           "reliability_type",
+           "reliability_amount_reliability_type",
+           "reliability_amount_reliability_type_npv_cond",
+           "reliability_type_npv_cond"
+         )
 
-              fixed_effects <-
-                c(
-                combined_value$intercept,
-                estimate_alignment_2$npv_amount,
-                estimate_alignment_2$alignment,
-                estimate_alignment_2$reliability_amount,
-                estimate_alignment_7$reliability_type,
-                estimate_alignment_2$npv_amount_alignment,
-                estimate_alignment_2$reliability_amount_npv_amount,
-                estimate_alignment_2$alignment_reliability_amount,
-                estimate_alignment_7$reliability_type_npv_cond,
-                ## placeholders
-                1,
-                estimate_alignment_7$reliability_amount_reliability_type,
-                estimate_alignment_2$alignment_reliability_amount_npv_amount,
-                1,
-                estimate_alignment_7$reliability_amount_reliability_type_npv_cond,
-                1,
-                1
-              )
+       fixed_effects <-
+         c(
+           combined_value$intercept,
+           estimate_alignment_2$npv_amount,
+           estimate_alignment_2$alignment,
+           estimate_alignment_2$reliability_amount,
+           estimate_alignment_7$reliability_type,
+           estimate_alignment_2$npv_amount_alignment,
+           estimate_alignment_2$reliability_amount_npv_amount,
+           estimate_alignment_2$alignment_reliability_amount,
+           estimate_alignment_7$reliability_type_npv_cond,
+           ## placeholders
+           1,
+           estimate_alignment_7$reliability_amount_reliability_type,
+           estimate_alignment_2$alignment_reliability_amount_npv_amount,
+           1,
+           estimate_alignment_7$reliability_amount_reliability_type_npv_cond,
+           1,
+           1
+         )
 
-              model1 <-
-                simr::makeLmer(allocation ~
-                                 npv_amount * alignment * reliability_amount * reliability_type +
-                                 (1 | id),
-                  fixef = fixed_effects,
-                  VarCorr = random_intercept_variance,
-                  sigma = combined_value$residual_sd,
-                  data = df
-                )
+       model1 <-
+         simr::makeLmer(allocation ~
+                          npv_amount * alignment * reliability_amount * reliability_type +
+                          (1 | id),
+                        fixef = fixed_effects,
+                        VarCorr = random_intercept_variance,
+                        sigma = combined_value$residual_sd,
+                        data = df
+                        )
 
-              data_simulation  <-
-                model1 %>%
-                model.frame()
+       data_simulation  <-
+         model1 %>%
+         model.frame()
 
-              data_simulation %>%
-                ggplot(aes(y = allocation,
-                           x = npv_amount,
-                           linetype = reliability_amount,
-                           fill = reliability_amount
-                           )) +
-                facet_grid(
-                  cols = vars(reliability_type),
-                  rows = vars(alignment),
-                  labeller = "label_both"
-                ) +
-                geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                geom_smooth(method = "lm", colour = "black") +
-                ## scale_fill_grey(start = 0.2, end = 0.8) +
-                theme_apa(base_size = 10)
+       data_simulation %>%
+         ggplot(aes(y = allocation,
+                    x = npv_amount,
+                    linetype = reliability_amount,
+                    fill = reliability_amount
+                    )) +
+         facet_grid(
+           cols = vars(reliability_type),
+           rows = vars(alignment),
+           labeller = "label_both"
+         ) +
+         geom_point(shape = 21, colour = "black", alpha = 0.7) +
+         geom_smooth(method = "lm", colour = "black") +
+         ## scale_fill_grey(start = 0.2, end = 0.8) +
+         theme_apa(base_size = 10)
 
      #+end_src
 
@@ -900,156 +901,156 @@ library(papaja)
 **** A simpler model
      - Let's see if we get more normal values if we just use npv amount
      #+begin_src R
-                    library(drake)
-                    library(faux)
-                    library(tidyverse)
+       library(drake)
+       library(faux)
+       library(tidyverse)
        library(afex)
-library(papaja)
+       library(papaja)
 
-              npv_amount <-
-                  seq(from = 400, to = 800, length.out = 5) %>%
-                  map(~ seq(from = .x, length.out = 51)) %>%
-                  map(~ sample(., size = 2, replace = T)) %>%
-                  transpose() %>%
-                  map(unlist)
+       npv_amount <-
+         seq(from = 400, to = 800, length.out = 5) %>%
+         map(~ seq(from = .x, length.out = 51)) %>%
+         map(~ sample(., size = 2, replace = T)) %>%
+         transpose() %>%
+         map(unlist)
 
-              reliability_amount <- c("low", "high")
-              reliability_type <- c("implicit", "explicit")
-              alignment <- c("low", "high")
-              display_variation <- seq_len(2)
+       reliability_amount <- c("low", "high")
+       reliability_type <- c("implicit", "explicit")
+       alignment <- c("low", "high")
+       display_variation <- seq_len(2)
 
-              n <- 100
+       n <- 100
 
-              id <- seq_len(n)
+       id <- seq_len(n)
 
-              counterbalanced_npv <-
-                expand_grid(
-                  npv_amount,
-                  reliability_amount
-                ) %>%
-                mutate(
-                  display_variation = c(
-                    display_variation,
-                    display_variation %>%
-                      rev()
-                  ) %>%
-                    as.factor()
-                ) %>%
-                unnest(npv_amount) %>%
-                arrange(display_variation)
+       counterbalanced_npv <-
+         expand_grid(
+           npv_amount,
+           reliability_amount
+         ) %>%
+         mutate(
+           display_variation = c(
+             display_variation,
+             display_variation %>%
+             rev()
+           ) %>%
+             as.factor()
+         ) %>%
+         unnest(npv_amount) %>%
+         arrange(display_variation)
 
-              between <- lst(
-                alignment,
-                reliability_type,
-                display_variation
-              )
+       between <- lst(
+         alignment,
+         reliability_type,
+         display_variation
+       )
 
-              within <- lst(
-                reliability_amount,
-              )
+       within <- lst(
+         reliability_amount,
+         )
 
-              df <-
-                sim_design(
-                  within,
-                  between,
-                  n = 1, plot = FALSE, long = TRUE
-                ) %>%
-                left_join(counterbalanced_npv,
-                  by = c("display_variation", "reliability_amount")
-                ) %>%
-                arrange(id) %>%
-                as_tibble()
-
-
-              set_sum_contrasts()
-
-                     loadd(data_clean_alignment_2)
-                     loadd(data_clean_alignment_7)
-
-               data_simple <-
-                 data_clean_alignment_2 %>%
-                 nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
-                 filter(alignment == "high", reliability_amount == "high")
+       df <-
+         sim_design(
+           within,
+           between,
+           n = 1, plot = FALSE, long = TRUE
+         ) %>%
+         left_join(counterbalanced_npv,
+                   by = c("display_variation", "reliability_amount")
+                   ) %>%
+         arrange(id) %>%
+         as_tibble()
 
 
-               data_simple %>%
-                 ggplot(aes(y = allocation,
-                            x = npv_amount,
-                            linetype = reliability_amount,
-                            fill = reliability_amount
-                            )) +
-                 ## facet_grid(
-                 ##   ## cols = vars(reliability_type),
-                 ##   rows = vars(alignment),
-                 ##   labeller = "label_both"
-                 ## ) +
-                 geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                 geom_smooth(method = "lm", colour = "black") +
-                 ## scale_fill_grey(start = 0.2, end = 0.8) +
-                 theme_apa(base_size = 10)
+       set_sum_contrasts()
 
-               model_simple <-
-                 data_simple %>%
-                 mixed(
-                   allocation ~  npv_amount +
-                     (1 | id),
-                   data = .
-                 ) %>%
-                 .[["full_model"]] %>%
-                 broom.mixed::tidy()
+       loadd(data_clean_alignment_2)
+       loadd(data_clean_alignment_7)
 
-               estimate_simple <-
-                 c(
-                   "(Intercept)",
-                   "npv_amount",
-                   "sd__Observation"
-                 ) %>%
-                 map(
-                   ~ model_simple %>% 
-                     filter(term == .x) %>%
-                     pull(estimate)
-                 ) %>%
-                 set_names(
-                   "intercept",
-                   "npv_amount",
-                   "residual_sd"
-                 )
+       data_simple <-
+         data_clean_alignment_2 %>%
+         nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
+         filter(alignment == "high", reliability_amount == "high")
 
-               fixed_effects_2 <-
-                 c(
-                   estimate_simple$intercept,
-                   estimate_simple$npv_amount
-                 )
 
-              model2 <-
-                 simr::makeLmer(allocation ~
-                                  npv_amount +
-                                  (1 | id),
-                   fixef = fixed_effects_2,
-                   VarCorr = 0,
-                   sigma = estimate_simple$residual_sd,
-                   data = df
-                 )
+       data_simple %>%
+         ggplot(aes(y = allocation,
+                    x = npv_amount,
+                    linetype = reliability_amount,
+                    fill = reliability_amount
+                    )) +
+         ## facet_grid(
+         ##   ## cols = vars(reliability_type),
+         ##   rows = vars(alignment),
+         ##   labeller = "label_both"
+         ## ) +
+         geom_point(shape = 21, colour = "black", alpha = 0.7) +
+         geom_smooth(method = "lm", colour = "black") +
+         ## scale_fill_grey(start = 0.2, end = 0.8) +
+         theme_apa(base_size = 10)
 
-               data_simulation_2  <-
-                 model2 %>%
-                 model.frame()
+       model_simple <-
+         data_simple %>%
+         mixed(
+           allocation ~  npv_amount +
+             (1 | id),
+           data = .
+         ) %>%
+         .[["full_model"]] %>%
+         broom.mixed::tidy()
 
-               data_simulation_2 %>%
-                 ggplot(aes(y = allocation,
-                            x = npv_amount,
-                     ## linetype = reliability_amount,
-                     ## fill = reliability_amount
-                            )) +
-                 ## facet_grid(
-                 ##   cols = vars(reliability_type),
-                 ##   rows = vars(alignment),
-                 ##   labeller = "label_both"
-                 ## ) +
-                 geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                 geom_smooth(method = "lm", colour = "black") +
-                 ## scale_fill_grey(start = 0.2, end = 0.8) +
-                 theme_apa(base_size = 10)
+       estimate_simple <-
+         c(
+           "(Intercept)",
+           "npv_amount",
+           "sd__Observation"
+         ) %>%
+         map(
+           ~ model_simple %>% 
+             filter(term == .x) %>%
+             pull(estimate)
+         ) %>%
+         set_names(
+           "intercept",
+           "npv_amount",
+           "residual_sd"
+         )
+
+       fixed_effects_2 <-
+         c(
+           estimate_simple$intercept,
+           estimate_simple$npv_amount
+         )
+
+       model2 <-
+         simr::makeLmer(allocation ~
+                          npv_amount +
+                          (1 | id),
+                        fixef = fixed_effects_2,
+                        VarCorr = 0,
+                        sigma = estimate_simple$residual_sd,
+                        data = df
+                        )
+
+       data_simulation_2  <-
+         model2 %>%
+         model.frame()
+
+       data_simulation_2 %>%
+         ggplot(aes(y = allocation,
+                    x = npv_amount,
+                    ## linetype = reliability_amount,
+                    ## fill = reliability_amount
+                    )) +
+         ## facet_grid(
+         ##   cols = vars(reliability_type),
+         ##   rows = vars(alignment),
+         ##   labeller = "label_both"
+         ## ) +
+         geom_point(shape = 21, colour = "black", alpha = 0.7) +
+         geom_smooth(method = "lm", colour = "black") +
+         ## scale_fill_grey(start = 0.2, end = 0.8) +
+         theme_apa(base_size = 10)
 
      #+end_src
 
@@ -1068,187 +1069,187 @@ library(papaja)
 ***** Explicit high alignment
 
       #+begin_src R
-                library(drake)
-                library(faux)
-                library(tidyverse)
-                library(simr)
+        library(drake)
+        library(faux)
+        library(tidyverse)
+        library(simr)
         library(afex)
 
-                              npv_amount <-
-                                  seq(from = 400, to = 800, length.out = 5) %>%
-                                  map(~ seq(from = .x, length.out = 51)) %>%
-                                  map(~ sample(., size = 2, replace = T)) %>%
-                                  transpose() %>%
-                                  map(unlist)
+        npv_amount <-
+          seq(from = 400, to = 800, length.out = 5) %>%
+          map(~ seq(from = .x, length.out = 51)) %>%
+          map(~ sample(., size = 2, replace = T)) %>%
+          transpose() %>%
+          map(unlist)
 
-                              reliability_amount <- c("low", "high")
-                              reliability_type <- c("implicit", "explicit")
-                              alignment <- c("low", "high")
-                              display_variation <- seq_len(2)
+        reliability_amount <- c("low", "high")
+        reliability_type <- c("implicit", "explicit")
+        alignment <- c("low", "high")
+        display_variation <- seq_len(2)
 
-                              counterbalanced_npv <-
-                                expand_grid(
-                                  npv_amount,
-                                  reliability_amount
-                                ) %>%
-                                mutate(
-                                  display_variation = c(
-                                    display_variation,
-                                    display_variation %>%
-                                      rev()
-                                  ) %>%
-                                    as.factor()
-                                ) %>%
-                                unnest(npv_amount) %>%
-                                arrange(display_variation)
+        counterbalanced_npv <-
+          expand_grid(
+            npv_amount,
+            reliability_amount
+          ) %>%
+          mutate(
+            display_variation = c(
+              display_variation,
+              display_variation %>%
+              rev()
+            ) %>%
+              as.factor()
+          ) %>%
+          unnest(npv_amount) %>%
+          arrange(display_variation)
 
-                              between <- lst(
-                                alignment,
-                                reliability_type,
-                                display_variation
-                              )
+        between <- lst(
+          alignment,
+          reliability_type,
+          display_variation
+        )
 
-                              within <- lst(
-                                reliability_amount,
-                              )
+        within <- lst(
+          reliability_amount,
+          )
 
-                n <- 24
+        n <- 24
 
-                              df <-
-                                sim_design(
-                                  within,
-                                  between,
-                                  n = n/8, plot = FALSE, long = TRUE
-                                ) %>%
-                                left_join(counterbalanced_npv,
-                                  by = c("display_variation", "reliability_amount")
-                                ) %>%
-                                arrange(id) %>%
-                                as_tibble()
+        df <-
+          sim_design(
+            within,
+            between,
+            n = n/8, plot = FALSE, long = TRUE
+          ) %>%
+          left_join(counterbalanced_npv,
+                    by = c("display_variation", "reliability_amount")
+                    ) %>%
+          arrange(id) %>%
+          as_tibble()
 
-                df %>%
-                  pull(id) %>%
-                  unique() %>%
-                  length()
+        df %>%
+          pull(id) %>%
+          unique() %>%
+          length()
 
-                set_sum_contrasts()
+        set_sum_contrasts()
 
-                loadd(data_clean_alignment_2)
+        loadd(data_clean_alignment_2)
 
-                data_filtered <-
-                  data_clean_alignment_2 %>%
-                  filter(alignment == "high", reliability_amount != "noNPV")
+        data_filtered <-
+          data_clean_alignment_2 %>%
+          filter(alignment == "high", reliability_amount != "noNPV")
 
-                data_filtered %>%
-                ggplot(aes(y = allocation,
-                           x = npv_amount,
-                           linetype = reliability_amount,
-                           fill = reliability_amount
-                           )) +
-                  geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                  geom_smooth(method = "lm", colour = "black")
+        data_filtered %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
-                model_simple <-
-                 data_filtered %>%
-                  mixed(
-                    allocation ~  npv_amount * reliability_amount +
-                      (1 | id),
-                    data = .
-                  ) %>%
-                  .[["full_model"]] %>%
-                  broom.mixed::tidy()
+        model_simple <-
+          data_filtered %>%
+          mixed(
+            allocation ~  npv_amount * reliability_amount +
+              (1 | id),
+            data = .
+          ) %>%
+          .[["full_model"]] %>%
+          broom.mixed::tidy()
 
-                  model3 <- 
-                    df %>%
-                    makeLmer(
-                      allocation ~  npv_amount * reliability_amount +
-                        (1 | id),
-                      fixef = model_simple %>%
-                        filter(effect == "fixed") %>%
-                        pull(estimate),
-                      VarCorr = 0,
-                      sigma = model_simple %>%
-                        filter(group == "Residual") %>%
-                        pull(estimate),
-                      data = .
-                    )
+        model3 <- 
+          df %>%
+          makeLmer(
+            allocation ~  npv_amount * reliability_amount +
+              (1 | id),
+            fixef = model_simple %>%
+              filter(effect == "fixed") %>%
+              pull(estimate),
+            VarCorr = 0,
+            sigma = model_simple %>%
+              filter(group == "Residual") %>%
+              pull(estimate),
+            data = .
+          )
 
-                  data_simulation_3  <-
-                    model3 %>%
-                    model.frame()
+        data_simulation_3  <-
+          model3 %>%
+          model.frame()
 
-                simulate_data <- function(df) {
-                  model3 <- 
-                    df %>%
-                    makeLmer(
-                      allocation ~  npv_amount * reliability_amount +
-                        (1 | id),
-                      fixef = model_simple %>%
-                        filter(effect == "fixed") %>%
-                        pull(estimate),
-                      VarCorr = 0,
-                      sigma = model_simple %>%
-                        filter(group == "Residual") %>%
-                        pull(estimate),
-                      data = .
-                    )
+        simulate_data <- function(df) {
+          model3 <- 
+            df %>%
+            makeLmer(
+              allocation ~  npv_amount * reliability_amount +
+                (1 | id),
+              fixef = model_simple %>%
+                filter(effect == "fixed") %>%
+                pull(estimate),
+              VarCorr = 0,
+              sigma = model_simple %>%
+                filter(group == "Residual") %>%
+                pull(estimate),
+              data = .
+            )
 
-                  data_simulation_3  <-
-                    model3 %>%
-                    model.frame()
+          data_simulation_3  <-
+            model3 %>%
+            model.frame()
 
-                data_simulation_3 %>%
-                  mixed(
-                    allocation ~  npv_amount * reliability_amount +
-                      (1 | id),
-                    data = .
-                  ) %>%
-                  .[["full_model"]] %>%
-                  broom.mixed::tidy()
-                }
+          data_simulation_3 %>%
+            mixed(
+              allocation ~  npv_amount * reliability_amount +
+                (1 | id),
+              data = .
+            ) %>%
+            .[["full_model"]] %>%
+            broom.mixed::tidy()
+        }
 
-                data_simulation_3 %>%
-                  ggplot(aes(y = allocation,
-                             x = npv_amount,
-                             linetype = reliability_amount,
-                             fill = reliability_amount
-                             )) +
-                  geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                  geom_smooth(method = "lm", colour = "black")
-
-
-                powerSim(model3,
-                         test = simr::fixed("npv_amount:reliability_amount1"),
-                         nsim=1000)
-
-                powerSim(model3,
-                         test = fcompare(~ npv_amount + reliability_amount, "lr"),
-                         nsim=20)
+        data_simulation_3 %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
 
-                 simulation_results <-
-                     seq_len(100) %>%
-                     map_df(~ simulate_data(df))
+        powerSim(model3,
+                 test = simr::fixed("npv_amount:reliability_amount1"),
+                 nsim=1000)
 
-                 simulation_results %>%
-                     filter(effect == "fixed") %>%
-                     group_by(term) %>%
-                     summarise(
-                             mean_estimate = mean(estimate),
-                             mean_se = mean(std.error),
-                             sum(p.value < 0.05) %>% 
-                             binom.confint(100, level = 0.95, method = "exact") %>% 
-                             select(mean, lower, upper) %>% 
-                             rename(power = mean),
-                             .groups = "drop"
-                           )
-## # A tibble: 4 x 6
-##   term                           mean_estimate mean_se power lower upper
-##   <chr>                                  <dbl>   <dbl> <dbl> <dbl> <dbl>
-## 1 (Intercept)                          29.8    4.39     1    0.964 1    
-## 2 npv_amount                           -0.0199 0.00688  0.8  0.708 0.873
-## 3 npv_amount:reliability_amount1        0.0251 0.00688  0.98 0.930 0.998
-## 4 reliability_amount1                 -12.5    4.37     0.81 0.719 0.882
+        powerSim(model3,
+                 test = fcompare(~ npv_amount + reliability_amount, "lr"),
+                 nsim=20)
+
+
+        simulation_results <-
+          seq_len(100) %>%
+          map_df(~ simulate_data(df))
+
+        simulation_results %>%
+          filter(effect == "fixed") %>%
+          group_by(term) %>%
+          summarise(
+            mean_estimate = mean(estimate),
+            mean_se = mean(std.error),
+            sum(p.value < 0.05) %>% 
+            binom.confint(100, level = 0.95, method = "exact") %>% 
+            select(mean, lower, upper) %>% 
+            rename(power = mean),
+            .groups = "drop"
+          )
+        ## # A tibble: 4 x 6
+        ##   term                           mean_estimate mean_se power lower upper
+        ##   <chr>                                  <dbl>   <dbl> <dbl> <dbl> <dbl>
+        ## 1 (Intercept)                          29.8    4.39     1    0.964 1    
+        ## 2 npv_amount                           -0.0199 0.00688  0.8  0.708 0.873
+        ## 3 npv_amount:reliability_amount1        0.0251 0.00688  0.98 0.930 0.998
+        ## 4 reliability_amount1                 -12.5    4.37     0.81 0.719 0.882
 
       #+end_src
       - Looks like simr is a little annoying
@@ -1257,171 +1258,171 @@ library(papaja)
 ***** Explicit low alignment
 
       #+begin_src R
-                        library(drake)
-                        library(faux)
-                        library(tidyverse)
-                        library(simr)
-                library(afex)
+        library(drake)
+        library(faux)
+        library(tidyverse)
+        library(simr)
+        library(afex)
 
-                                      npv_amount <-
-                                          seq(from = 400, to = 800, length.out = 5) %>%
-                                          map(~ seq(from = .x, length.out = 51)) %>%
-                                          map(~ sample(., size = 2, replace = T)) %>%
-                                          transpose() %>%
-                                          map(unlist)
+        npv_amount <-
+          seq(from = 400, to = 800, length.out = 5) %>%
+          map(~ seq(from = .x, length.out = 51)) %>%
+          map(~ sample(., size = 2, replace = T)) %>%
+          transpose() %>%
+          map(unlist)
 
-                                      reliability_amount <- c("low", "high")
-                                      reliability_type <- c("implicit", "explicit")
-                                      alignment <- c("low", "high")
-                                      display_variation <- seq_len(2)
+        reliability_amount <- c("low", "high")
+        reliability_type <- c("implicit", "explicit")
+        alignment <- c("low", "high")
+        display_variation <- seq_len(2)
 
-                                      counterbalanced_npv <-
-                                        expand_grid(
-                                          npv_amount,
-                                          reliability_amount
-                                        ) %>%
-                                        mutate(
-                                          display_variation = c(
-                                            display_variation,
-                                            display_variation %>%
-                                              rev()
-                                          ) %>%
-                                            as.factor()
-                                        ) %>%
-                                        unnest(npv_amount) %>%
-                                        arrange(display_variation)
+        counterbalanced_npv <-
+          expand_grid(
+            npv_amount,
+            reliability_amount
+          ) %>%
+          mutate(
+            display_variation = c(
+              display_variation,
+              display_variation %>%
+              rev()
+            ) %>%
+              as.factor()
+          ) %>%
+          unnest(npv_amount) %>%
+          arrange(display_variation)
 
-                                      between <- lst(
-                                        alignment,
-                                        reliability_type,
-                                        display_variation
-                                      )
+        between <- lst(
+          alignment,
+          reliability_type,
+          display_variation
+        )
 
-                                      within <- lst(
-                                        reliability_amount,
-                                      )
+        within <- lst(
+          reliability_amount,
+          )
 
-                        n <- 32
+        n <- 32
 
-                                      df <-
-                                        sim_design(
-                                          within,
-                                          between,
-                                          n = n/8, plot = FALSE, long = TRUE
-                                        ) %>%
-                                        left_join(counterbalanced_npv,
-                                          by = c("display_variation", "reliability_amount")
-                                        ) %>%
-                                        arrange(id) %>%
-                                        as_tibble()
+        df <-
+          sim_design(
+            within,
+            between,
+            n = n/8, plot = FALSE, long = TRUE
+          ) %>%
+          left_join(counterbalanced_npv,
+                    by = c("display_variation", "reliability_amount")
+                    ) %>%
+          arrange(id) %>%
+          as_tibble()
 
-                        df %>%
-                          pull(id) %>%
-                          unique() %>%
-                          length()
+        df %>%
+          pull(id) %>%
+          unique() %>%
+          length()
 
-                        set_sum_contrasts()
+        set_sum_contrasts()
 
-                        loadd(data_clean_alignment_2)
+        loadd(data_clean_alignment_2)
 
-                        data_filtered <-
-                          data_clean_alignment_2 %>%
-                          filter(alignment == "low", reliability_amount != "noNPV")
+        data_filtered <-
+          data_clean_alignment_2 %>%
+          filter(alignment == "low", reliability_amount != "noNPV")
 
-                        data_filtered %>%
-                        ggplot(aes(y = allocation,
-                                   x = npv_amount,
-                                   linetype = reliability_amount,
-                                   fill = reliability_amount
-                                   )) +
-                          geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                          geom_smooth(method = "lm", colour = "black")
+        data_filtered %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
-                        model_simple <-
-                         data_filtered %>%
-                          mixed(
-                            allocation ~  npv_amount * reliability_amount +
-                              (1 | id),
-                            data = .
-                          ) %>%
-                          .[["full_model"]] %>%
-                          broom.mixed::tidy()
+        model_simple <-
+          data_filtered %>%
+          mixed(
+            allocation ~  npv_amount * reliability_amount +
+              (1 | id),
+            data = .
+          ) %>%
+          .[["full_model"]] %>%
+          broom.mixed::tidy()
 
-                          model3 <- 
-                            df %>%
-                            makeLmer(
-                              allocation ~  npv_amount * reliability_amount +
-                                (1 | id),
-                              fixef = model_simple %>%
-                                filter(effect == "fixed") %>%
-                                pull(estimate),
-                              VarCorr = 0,
-                              sigma = model_simple %>%
-                                filter(group == "Residual") %>%
-                                pull(estimate),
-                              data = .
-                            )
+        model3 <- 
+          df %>%
+          makeLmer(
+            allocation ~  npv_amount * reliability_amount +
+              (1 | id),
+            fixef = model_simple %>%
+              filter(effect == "fixed") %>%
+              pull(estimate),
+            VarCorr = 0,
+            sigma = model_simple %>%
+              filter(group == "Residual") %>%
+              pull(estimate),
+            data = .
+          )
 
-                          data_simulation_3  <-
-                            model3 %>%
-                            model.frame()
+        data_simulation_3  <-
+          model3 %>%
+          model.frame()
 
-                        simulate_data <- function(df) {
-                          model3 <- 
-                            df %>%
-                            makeLmer(
-                              allocation ~  npv_amount * reliability_amount +
-                                (1 | id),
-                              fixef = model_simple %>%
-                                filter(effect == "fixed") %>%
-                                pull(estimate),
-                              VarCorr = 0,
-                              sigma = model_simple %>%
-                                filter(group == "Residual") %>%
-                                pull(estimate),
-                              data = .
-                            )
+        simulate_data <- function(df) {
+          model3 <- 
+            df %>%
+            makeLmer(
+              allocation ~  npv_amount * reliability_amount +
+                (1 | id),
+              fixef = model_simple %>%
+                filter(effect == "fixed") %>%
+                pull(estimate),
+              VarCorr = 0,
+              sigma = model_simple %>%
+                filter(group == "Residual") %>%
+                pull(estimate),
+              data = .
+            )
 
-                          data_simulation_3  <-
-                            model3 %>%
-                            model.frame()
+          data_simulation_3  <-
+            model3 %>%
+            model.frame()
 
-                        data_simulation_3 %>%
-                          mixed(
-                            allocation ~  npv_amount * reliability_amount +
-                              (1 | id),
-                            data = .
-                          ) %>%
-                          .[["full_model"]] %>%
-                          broom.mixed::tidy()
-                        }
+          data_simulation_3 %>%
+            mixed(
+              allocation ~  npv_amount * reliability_amount +
+                (1 | id),
+              data = .
+            ) %>%
+            .[["full_model"]] %>%
+            broom.mixed::tidy()
+        }
 
-                        data_simulation_3 %>%
-                          ggplot(aes(y = allocation,
-                                     x = npv_amount,
-                                     linetype = reliability_amount,
-                                     fill = reliability_amount
-                                     )) +
-                          geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                          geom_smooth(method = "lm", colour = "black")
+        data_simulation_3 %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
         nsim <- 100
-                         simulation_results <-
-                           seq_len(nsim) %>%
-                             map_df(~ simulate_data(df))
+        simulation_results <-
+          seq_len(nsim) %>%
+          map_df(~ simulate_data(df))
 
-                         simulation_results %>%
-                             filter(effect == "fixed") %>%
-                             group_by(term) %>%
-                             summarise(
-                                     mean_estimate = mean(estimate),
-                                     mean_se = mean(std.error),
-                                     sum(p.value < 0.05) %>% 
-                                     binom.confint(nsim, level = 0.95, method = "exact") %>% 
-                                     select(mean, lower, upper) %>% 
-                                     rename(power = mean),
-                                     .groups = "drop"
-                                   )
+        simulation_results %>%
+          filter(effect == "fixed") %>%
+          group_by(term) %>%
+          summarise(
+            mean_estimate = mean(estimate),
+            mean_se = mean(std.error),
+            sum(p.value < 0.05) %>% 
+            binom.confint(nsim, level = 0.95, method = "exact") %>% 
+            select(mean, lower, upper) %>% 
+            rename(power = mean),
+            .groups = "drop"
+          )
         ##   term                           mean_estimate mean_se power  lower upper
         ##   <chr>                                  <dbl>   <dbl> <dbl>  <dbl> <dbl>
         ## 1 (Intercept)                        12.4      3.35     0.96 0.901  0.989
@@ -1436,179 +1437,179 @@ library(papaja)
 ***** Explicit - three-way
 
       #+begin_src R
-                        library(drake)
-                        library(faux)
-                        library(tidyverse)
-                        library(simr)
-                library(afex)
+        library(drake)
+        library(faux)
+        library(tidyverse)
+        library(simr)
+        library(afex)
         library(binom)
 
-                                      npv_amount <-
-                                          seq(from = 400, to = 800, length.out = 5) %>%
-                                          map(~ seq(from = .x, length.out = 51)) %>%
-                                          map(~ sample(., size = 2, replace = T)) %>%
-                                          transpose() %>%
-                                          map(unlist)
+        npv_amount <-
+          seq(from = 400, to = 800, length.out = 5) %>%
+          map(~ seq(from = .x, length.out = 51)) %>%
+          map(~ sample(., size = 2, replace = T)) %>%
+          transpose() %>%
+          map(unlist)
 
-                                      reliability_amount <- c("low", "high")
-                                      reliability_type <- c("implicit", "explicit")
-                                      alignment <- c("low", "high")
-                                      display_variation <- seq_len(2)
+        reliability_amount <- c("low", "high")
+        reliability_type <- c("implicit", "explicit")
+        alignment <- c("low", "high")
+        display_variation <- seq_len(2)
 
-                                      counterbalanced_npv <-
-                                        expand_grid(
-                                          npv_amount,
-                                          reliability_amount
-                                        ) %>%
-                                        mutate(
-                                          display_variation = c(
-                                            display_variation,
-                                            display_variation %>%
-                                              rev()
-                                          ) %>%
-                                            as.factor()
-                                        ) %>%
-                                        unnest(npv_amount) %>%
-                                        arrange(display_variation)
+        counterbalanced_npv <-
+          expand_grid(
+            npv_amount,
+            reliability_amount
+          ) %>%
+          mutate(
+            display_variation = c(
+              display_variation,
+              display_variation %>%
+              rev()
+            ) %>%
+              as.factor()
+          ) %>%
+          unnest(npv_amount) %>%
+          arrange(display_variation)
 
-                                      between <- lst(
-                                        alignment,
-                                        reliability_type,
-                                        display_variation
-                                      )
+        between <- lst(
+          alignment,
+          reliability_type,
+          display_variation
+        )
 
-                                      within <- lst(
-                                        reliability_amount,
-                                      )
+        within <- lst(
+          reliability_amount,
+          )
 
-                        n <- 80
+        n <- 80
 
-                                      df <-
-                                        sim_design(
-                                          within,
-                                          between,
-                                          n = n/8, plot = FALSE, long = TRUE
-                                        ) %>%
-                                        left_join(counterbalanced_npv,
-                                          by = c("display_variation", "reliability_amount")
-                                        ) %>%
-                                        arrange(id) %>%
-                                        as_tibble()
+        df <-
+          sim_design(
+            within,
+            between,
+            n = n/8, plot = FALSE, long = TRUE
+          ) %>%
+          left_join(counterbalanced_npv,
+                    by = c("display_variation", "reliability_amount")
+                    ) %>%
+          arrange(id) %>%
+          as_tibble()
 
-                        df %>%
-                          pull(id) %>%
-                          unique() %>%
-                          length()
+        df %>%
+          pull(id) %>%
+          unique() %>%
+          length()
 
-                        set_sum_contrasts()
+        set_sum_contrasts()
 
-                        loadd(data_clean_alignment_2)
+        loadd(data_clean_alignment_2)
 
-                        data_filtered <-
-                          data_clean_alignment_2 %>%
-                          filter(reliability_amount != "noNPV")
+        data_filtered <-
+          data_clean_alignment_2 %>%
+          filter(reliability_amount != "noNPV")
 
-                        data_filtered %>%
-                        ggplot(aes(y = allocation,
-                                   x = npv_amount,
-                                   linetype = reliability_amount,
-                                   fill = reliability_amount
-                                   )) +
+        data_filtered %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
           facet_grid(
             ## cols = vars(reliability_type),
             rows = vars(alignment),
             labeller = "label_both"
           ) +
-                          geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                          geom_smooth(method = "lm", colour = "black")
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
-                        model_simple <-
-                         data_filtered %>%
-                          mixed(
-                            allocation ~  npv_amount * reliability_amount * alignment +
-                              (1 | id),
-                            data = .
-                          ) %>%
-                          .[["full_model"]] %>%
-                          broom.mixed::tidy()
+        model_simple <-
+          data_filtered %>%
+          mixed(
+            allocation ~  npv_amount * reliability_amount * alignment +
+              (1 | id),
+            data = .
+          ) %>%
+          .[["full_model"]] %>%
+          broom.mixed::tidy()
 
-                          model3 <- 
-                            df %>%
-                            makeLmer(
-                              allocation ~  npv_amount * reliability_amount * alignment +
-                                (1 | id),
-                              fixef = model_simple %>%
-                                filter(effect == "fixed") %>%
-                                pull(estimate),
-                              VarCorr = 0,
-                              sigma = model_simple %>%
-                                filter(group == "Residual") %>%
-                                pull(estimate),
-                              data = .
-                            )
+        model3 <- 
+          df %>%
+          makeLmer(
+            allocation ~  npv_amount * reliability_amount * alignment +
+              (1 | id),
+            fixef = model_simple %>%
+              filter(effect == "fixed") %>%
+              pull(estimate),
+            VarCorr = 0,
+            sigma = model_simple %>%
+              filter(group == "Residual") %>%
+              pull(estimate),
+            data = .
+          )
 
-                          data_simulation_3  <-
-                            model3 %>%
-                            model.frame()
+        data_simulation_3  <-
+          model3 %>%
+          model.frame()
 
-                        simulate_data <- function(df) {
-                          model3 <- 
-                            df %>%
-                            makeLmer(
-                              allocation ~  npv_amount * reliability_amount * alignment +
-                                (1 | id),
-                              fixef = model_simple %>%
-                                filter(effect == "fixed") %>%
-                                pull(estimate),
-                              VarCorr = 0,
-                              sigma = model_simple %>%
-                                filter(group == "Residual") %>%
-                                pull(estimate),
-                              data = .
-                            )
+        simulate_data <- function(df) {
+          model3 <- 
+            df %>%
+            makeLmer(
+              allocation ~  npv_amount * reliability_amount * alignment +
+                (1 | id),
+              fixef = model_simple %>%
+                filter(effect == "fixed") %>%
+                pull(estimate),
+              VarCorr = 0,
+              sigma = model_simple %>%
+                filter(group == "Residual") %>%
+                pull(estimate),
+              data = .
+            )
 
-                          data_simulation_3  <-
-                            model3 %>%
-                            model.frame()
+          data_simulation_3  <-
+            model3 %>%
+            model.frame()
 
-                        data_simulation_3 %>%
-                          mixed(
-                            allocation ~  npv_amount * reliability_amount * alignment +
-                              (1 | id),
-                            data = .
-                          ) %>%
-                          .[["full_model"]] %>%
-                          broom.mixed::tidy()
-                        }
+          data_simulation_3 %>%
+            mixed(
+              allocation ~  npv_amount * reliability_amount * alignment +
+                (1 | id),
+              data = .
+            ) %>%
+            .[["full_model"]] %>%
+            broom.mixed::tidy()
+        }
 
-                        data_simulation_3 %>%
-                          ggplot(aes(y = allocation,
-                                     x = npv_amount,
-                                     linetype = reliability_amount,
-                                     fill = reliability_amount
-                                     )) +
-                          geom_point(shape = 21, colour = "black", alpha = 0.7) +
-                          geom_smooth(method = "lm", colour = "black")
+        data_simulation_3 %>%
+          ggplot(aes(y = allocation,
+                     x = npv_amount,
+                     linetype = reliability_amount,
+                     fill = reliability_amount
+                     )) +
+          geom_point(shape = 21, colour = "black", alpha = 0.7) +
+          geom_smooth(method = "lm", colour = "black")
 
         nsim <- 1000
-                         simulation_results <-
-                           seq_len(nsim) %>%
-                             map_df(~ simulate_data(df))
+        simulation_results <-
+          seq_len(nsim) %>%
+          map_df(~ simulate_data(df))
 
-                         simulation_results %>%
-                             filter(effect == "fixed") %>%
-                             group_by(term) %>%
-                             summarise(
-                                     mean_estimate = mean(estimate),
-                                     mean_se = mean(std.error),
-                                     sum(p.value < 0.05) %>% 
-                                     binom.confint(nsim, level = 0.95, method = "exact") %>% 
-                                     select(mean, lower, upper) %>% 
-                                     rename(power = mean),
-                                     .groups = "drop"
-                                   )
+        simulation_results %>%
+          filter(effect == "fixed") %>%
+          group_by(term) %>%
+          summarise(
+            mean_estimate = mean(estimate),
+            mean_se = mean(std.error),
+            sum(p.value < 0.05) %>% 
+            binom.confint(nsim, level = 0.95, method = "exact") %>% 
+            select(mean, lower, upper) %>% 
+            rename(power = mean),
+            .groups = "drop"
+          )
 
-        # with 100 reps
+                                                # with 100 reps
 
         ## term                                   mean_estimate mean_se power lower upper
         ## <chr>                                          <dbl>   <dbl> <dbl> <dbl> <dbl>
@@ -1621,7 +1622,7 @@ library(papaja)
         ## 7 reliability_amount1                         -5.99    2.29     0.69 0.590 0.779
         ## 8 reliability_amount1:alignment1              -6.46    2.29     0.86 0.776 0.921
 
-        # with 1000 reps
+                                                # with 1000 reps
 
         ## term                                   mean_estimate mean_se power lower upper
         ## <chr>                                          <dbl>   <dbl> <dbl> <dbl> <dbl>
@@ -1663,7 +1664,7 @@ library(papaja)
        library(tidyverse) # for data wrangling, pipes, and good dataviz
        library(lmerTest)  # for mixed effect models
        library(GGally)    # makes it high to plot relationships between variables
-       # devtools::install_github("debruine/faux")
+                                               # devtools::install_github("debruine/faux")
        library(faux)      # for simulating correlated variables
 
        options("scipen"=10, "digits"=4) # control scientific notation
@@ -1712,7 +1713,7 @@ library(papaja)
          geom_violin(alpha = 0.5) +
          geom_boxplot(width = 0.2, position = position_dodge(width = 0.9))
 
-       # With an interaction
+                                               # With an interaction
 
                                                # set variables to use in calculations below
        grand_i    <- 21.5
@@ -1753,7 +1754,7 @@ library(papaja)
          geom_violin(alpha = 0.5) +
          geom_boxplot(width = 0.2, position = position_dodge(width = 0.9))
 
-       # Try with just effect sizes
+                                               # Try with just effect sizes
 
        grand_i          <- 21.5 # overall mean DV
        alignment_eff     <- 8.86  # mean difference between conditions: low - high
@@ -1780,7 +1781,7 @@ library(papaja)
          geom_violin(alpha = 0.5) +
          geom_boxplot(width = 0.2, position = position_dodge(width = 0.9))
 
-       # With an interaction - fixed raw values to add up to 0
+                                               # With an interaction - fixed raw values to add up to 0
 
                                                # set variables to use in calculations below
        grand_i    <- 21.5
@@ -1821,7 +1822,7 @@ library(papaja)
          geom_violin(alpha = 0.5) +
          geom_boxplot(width = 0.2, position = position_dodge(width = 0.9))
 
-       # run original - without stim
+                                               # run original - without stim
        sub_n  <- 200 # number of subjects in this simulation
        sub_sd <- 0 # SD for the subjects' random intercept
 
@@ -1889,7 +1890,7 @@ library(papaja)
      - And also it's almost just as hard to work out the raw values
        - Not to mention that they don't quite seem to correspond
      - And if you end up just using the effect sizes, then probably just do it
-         through ~simr::makeLmer~
+       through ~simr::makeLmer~
      - The issue with that was that it's hard to just add the four-way estimate,
      because all the other estimates are inter-dependent
      - So the idea was to go from the raw values
@@ -1899,241 +1900,241 @@ library(papaja)
 **** Another four-way attempt
      - Let's go back to the way we did three-way, but try adding reliability
      type and play around with it until it looks realistic
-         #+begin_src R
-           library(drake)
-           library(faux)
-           library(tidyverse)
-           library(afex)
-           library(papaja)
+     #+begin_src R
+       library(drake)
+       library(faux)
+       library(tidyverse)
+       library(afex)
+       library(papaja)
 
-           npv_amount <-
-             seq(from = 400, to = 800, length.out = 5) %>%
-             map(~ seq(from = .x, length.out = 51)) %>%
-             map(~ sample(., size = 2, replace = T)) %>%
-             transpose() %>%
-             map(unlist)
+       npv_amount <-
+         seq(from = 400, to = 800, length.out = 5) %>%
+         map(~ seq(from = .x, length.out = 51)) %>%
+         map(~ sample(., size = 2, replace = T)) %>%
+         transpose() %>%
+         map(unlist)
 
-           reliability_amount <- c("low", "high")
-           reliability_type <- c("implicit", "explicit")
-           alignment <- c("low", "high")
-           display_variation <- seq_len(2)
+       reliability_amount <- c("low", "high")
+       reliability_type <- c("implicit", "explicit")
+       alignment <- c("low", "high")
+       display_variation <- seq_len(2)
 
-           n <- 100
+       n <- 100
 
-           id <- seq_len(n)
+       id <- seq_len(n)
 
-           counterbalanced_npv <-
-             expand_grid(
-               npv_amount,
-               reliability_amount
-             ) %>%
-             mutate(
-               display_variation = c(
-                 display_variation,
-                 display_variation %>%
-                 rev()
-               ) %>%
-                 as.factor()
-             ) %>%
-             unnest(npv_amount) %>%
-             arrange(display_variation)
+       counterbalanced_npv <-
+         expand_grid(
+           npv_amount,
+           reliability_amount
+         ) %>%
+         mutate(
+           display_variation = c(
+             display_variation,
+             display_variation %>%
+             rev()
+           ) %>%
+             as.factor()
+         ) %>%
+         unnest(npv_amount) %>%
+         arrange(display_variation)
 
-           between <- lst(
-             alignment,
-             reliability_type,
-             display_variation
-           )
+       between <- lst(
+         alignment,
+         reliability_type,
+         display_variation
+       )
 
-           within <- lst(
-             reliability_amount,
-             )
+       within <- lst(
+         reliability_amount,
+         )
 
-           df <-
-             sim_design(
-               within,
-               between,
-               n = 1, plot = FALSE, long = TRUE
-             ) %>%
-             left_join(counterbalanced_npv,
-                       by = c("display_variation", "reliability_amount")
-                       ) %>%
-             arrange(id) %>%
-             as_tibble()
-
-
-           loadd(data_clean_alignment_2)
-           loadd(data_clean_alignment_7)
-
-           set_sum_contrasts()
-
-           random_intercept_variance <- 0
-
-           model_alignment_2 <-
-             data_clean_alignment_2 %>%
-             filter(reliability_amount != "noNPV") %>%
-             ## mutate(
-             ##   across(reliability_amount, ~ .x %>%
-             ##                                fct_relevel("noNPV", "low")
-             ##          )
-             ## ) %>%
-             nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
-             mixed(
-               allocation ~ alignment * reliability_amount * npv_amount +
-                 (1 | id),
-               data = .
-             ) %>%
-             .[["full_model"]] %>%
-             broom.mixed::tidy()
-
-           model_alignment_7 <-
-             data_clean_alignment_7 %>%
-             filter(alignment == "low") %>%
-             nest_by(id, allocation, reliability_amount, reliability_type, npv_amount) %>%
-             mixed(
-               allocation ~ reliability_amount * reliability_type * npv_amount +
-                 (1 | id),
-               data = .
-             ) %>%
-             .[["full_model"]] %>%
-             broom.mixed::tidy()
-
-           combined_value <-
-             list(
-               "(Intercept)",
-               "sd__Observation"
-             ) %>%
-             map(
-               function(term_value) {
-                 list(
-                   model_alignment_2,
-                   model_alignment_7
-                 ) %>%
-                   map_dbl(
-                     ~ .x %>%
-                       filter(term == term_value) %>%
-                       pull(estimate)
+       df <-
+         sim_design(
+           within,
+           between,
+           n = 1, plot = FALSE, long = TRUE
+         ) %>%
+         left_join(counterbalanced_npv,
+                   by = c("display_variation", "reliability_amount")
                    ) %>%
-                   mean()
-               }
+         arrange(id) %>%
+         as_tibble()
+
+
+       loadd(data_clean_alignment_2)
+       loadd(data_clean_alignment_7)
+
+       set_sum_contrasts()
+
+       random_intercept_variance <- 0
+
+       model_alignment_2 <-
+         data_clean_alignment_2 %>%
+         filter(reliability_amount != "noNPV") %>%
+         ## mutate(
+         ##   across(reliability_amount, ~ .x %>%
+         ##                                fct_relevel("noNPV", "low")
+         ##          )
+         ## ) %>%
+         nest_by(id, allocation, alignment, reliability_amount, npv_amount) %>%
+         mixed(
+           allocation ~ alignment * reliability_amount * npv_amount +
+             (1 | id),
+           data = .
+         ) %>%
+         .[["full_model"]] %>%
+         broom.mixed::tidy()
+
+       model_alignment_7 <-
+         data_clean_alignment_7 %>%
+         filter(alignment == "low") %>%
+         nest_by(id, allocation, reliability_amount, reliability_type, npv_amount) %>%
+         mixed(
+           allocation ~ reliability_amount * reliability_type * npv_amount +
+             (1 | id),
+           data = .
+         ) %>%
+         .[["full_model"]] %>%
+         broom.mixed::tidy()
+
+       combined_value <-
+         list(
+           "(Intercept)",
+           "sd__Observation"
+         ) %>%
+         map(
+           function(term_value) {
+             list(
+               model_alignment_2,
+               model_alignment_7
              ) %>%
-             set_names(
-               "intercept",
-               "residual_sd"
-             )
+               map_dbl(
+                 ~ .x %>%
+                   filter(term == term_value) %>%
+                   pull(estimate)
+               ) %>%
+               mean()
+           }
+         ) %>%
+         set_names(
+           "intercept",
+           "residual_sd"
+         )
 
-           model_alignment_7 %>%
-             pull(term)
+       model_alignment_7 %>%
+         pull(term)
 
-           model_alignment_2 %>%
-             pull(term)
+       model_alignment_2 %>%
+         pull(term)
 
-           estimate_label_alignment_2 <-
-             c(
-               "npv_amount",
-               "alignment1",
-               "alignment1:npv_amount",
-               "reliability_amount1",
-               "reliability_amount1:npv_amount",
-               "alignment1:reliability_amount1",
-               "alignment1:reliability_amount1:npv_amount"
-             )
+       estimate_label_alignment_2 <-
+         c(
+           "npv_amount",
+           "alignment1",
+           "alignment1:npv_amount",
+           "reliability_amount1",
+           "reliability_amount1:npv_amount",
+           "alignment1:reliability_amount1",
+           "alignment1:reliability_amount1:npv_amount"
+         )
 
-           estimate_alignment_2 <-
-             estimate_label_alignment_2 %>%
-             map(
-               ~ model_alignment_2 %>% 
-                 filter(term == .x) %>%
-                 pull(estimate)
-             ) %>%
-             set_names(
-               "npv_amount",
-               "alignment",
-               "npv_amount_alignment",
-               "reliability_amount",
-               "reliability_amount_npv_amount",
-               "alignment_reliability_amount",
-               "alignment_reliability_amount_npv_amount"
-             )
+       estimate_alignment_2 <-
+         estimate_label_alignment_2 %>%
+         map(
+           ~ model_alignment_2 %>% 
+             filter(term == .x) %>%
+             pull(estimate)
+         ) %>%
+         set_names(
+           "npv_amount",
+           "alignment",
+           "npv_amount_alignment",
+           "reliability_amount",
+           "reliability_amount_npv_amount",
+           "alignment_reliability_amount",
+           "alignment_reliability_amount_npv_amount"
+         )
 
-           estimate_alignment_7 <-
-             c(
-               "reliability_type1",
-               "reliability_amount1:reliability_type1",
-               "reliability_amount1:reliability_type1:npv_amount",
-               "reliability_type1:npv_amount"
-             ) %>%
-             map(
-               ~ model_alignment_7 %>% 
-                 filter(term == .x) %>%
-                 pull(estimate)
-             ) %>%
-             set_names(
-               "reliability_type",
-               "reliability_amount_reliability_type",
-               "reliability_amount_reliability_type_npv_amount",
-               "reliability_type_npv_amount"
-             )
+       estimate_alignment_7 <-
+         c(
+           "reliability_type1",
+           "reliability_amount1:reliability_type1",
+           "reliability_amount1:reliability_type1:npv_amount",
+           "reliability_type1:npv_amount"
+         ) %>%
+         map(
+           ~ model_alignment_7 %>% 
+             filter(term == .x) %>%
+             pull(estimate)
+         ) %>%
+         set_names(
+           "reliability_type",
+           "reliability_amount_reliability_type",
+           "reliability_amount_reliability_type_npv_amount",
+           "reliability_type_npv_amount"
+         )
 
-           fixed_effects <-
-             c(
-               combined_value$intercept,
-               estimate_alignment_2$npv_amount,
-               estimate_alignment_2$alignment,
-               estimate_alignment_2$reliability_amount,
-               estimate_alignment_7$reliability_type,
-               ## 0,
-               estimate_alignment_2$npv_amount_alignment,
-               estimate_alignment_2$reliability_amount_npv_amount,
-               estimate_alignment_2$alignment_reliability_amount,
-               estimate_alignment_7$reliability_type_npv_amount,
-               ## 0,
-               ## placeholders
-               0,
-               ## estimate_alignment_7$reliability_amount_reliability_type,
-               0,
-               estimate_alignment_2$alignment_reliability_amount_npv_amount,
-               0,
-               ## estimate_alignment_7$reliability_amount_reliability_type_npv_amount,
-               1,
-               0,
-               0
-             )
-           model1 <-
-             simr::makeLmer(allocation ~
-                              npv_amount * alignment * reliability_amount * reliability_type +
-                              (1 | id),
-                            fixef = fixed_effects,
-                            VarCorr = random_intercept_variance,
-                            sigma = 0 ## combined_value$residual_sd
-                           ,
-                            data = df
-                            )
-           data_simulation  <-
-             model1 %>%
-             model.frame()
-           data_simulation %>%
-             ggplot(aes(y = allocation,
-                        x = npv_amount,
-                        linetype = reliability_amount,
-                        fill = reliability_amount
-                        )) +
-             facet_grid(
-               cols = vars(reliability_type),
-               rows = vars(alignment),
-               labeller = "label_both"
-             ) +
-             geom_point(shape = 21, colour = "black", alpha = 0.7) +
-             geom_smooth(method = "lm", colour = "black") +
-             ## scale_fill_grey(start = 0.2, end = 0.8) +
-             theme_apa(base_size = 10)
+       fixed_effects <-
+         c(
+           combined_value$intercept,
+           estimate_alignment_2$npv_amount,
+           estimate_alignment_2$alignment,
+           estimate_alignment_2$reliability_amount,
+           estimate_alignment_7$reliability_type,
+           ## 0,
+           estimate_alignment_2$npv_amount_alignment,
+           estimate_alignment_2$reliability_amount_npv_amount,
+           estimate_alignment_2$alignment_reliability_amount,
+           estimate_alignment_7$reliability_type_npv_amount,
+           ## 0,
+           ## placeholders
+           0,
+           ## estimate_alignment_7$reliability_amount_reliability_type,
+           0,
+           estimate_alignment_2$alignment_reliability_amount_npv_amount,
+           0,
+           ## estimate_alignment_7$reliability_amount_reliability_type_npv_amount,
+           1,
+           0,
+           0
+         )
+       model1 <-
+         simr::makeLmer(allocation ~
+                          npv_amount * alignment * reliability_amount * reliability_type +
+                          (1 | id),
+                        fixef = fixed_effects,
+                        VarCorr = random_intercept_variance,
+                        sigma = 0 ## combined_value$residual_sd
+                       ,
+                        data = df
+                        )
+       data_simulation  <-
+         model1 %>%
+         model.frame()
+       data_simulation %>%
+         ggplot(aes(y = allocation,
+                    x = npv_amount,
+                    linetype = reliability_amount,
+                    fill = reliability_amount
+                    )) +
+         facet_grid(
+           cols = vars(reliability_type),
+           rows = vars(alignment),
+           labeller = "label_both"
+         ) +
+         geom_point(shape = 21, colour = "black", alpha = 0.7) +
+         geom_smooth(method = "lm", colour = "black") +
+         ## scale_fill_grey(start = 0.2, end = 0.8) +
+         theme_apa(base_size = 10)
 
-                #+end_src
-         - So it seems as if you don't get such crazy values when changing npv_cond
-         to npv_amount.
-         - Just needed smaller estimates
-         - So technically you just need to feed it the right pattern
-         - And reducing the residual variance makes it clearer
-         - What about using some of the previously simulated data
+     #+end_src
+     - So it seems as if you don't get such crazy values when changing npv_cond
+       to npv_amount.
+       - Just needed smaller estimates
+       - So technically you just need to feed it the right pattern
+       - And reducing the residual variance makes it clearer
+       - What about using some of the previously simulated data
 
          #+begin_src R
            library(drake)
@@ -2407,58 +2408,59 @@ library(papaja)
              ## scale_fill_grey(start = 0.2, end = 0.8) +
              theme_apa(base_size = 10)
 
-                                   simulate_data <- function(df) {
-                                     model1 <-
-                                       simr::makeLmer(allocation ~
-                                                        npv_amount * alignment * reliability_amount * reliability_type +
-                                                        (1 | id),
-                                                      fixef = fixed_effects,
-                                                      VarCorr = random_intercept_variance,
-                                                      sigma = combined_value$residual_sd
-                                                     ,
-                                                      data = df
-                                                      )
+           simulate_data <- function(df) {
+             model1 <-
+               simr::makeLmer(allocation ~
+                                npv_amount * alignment * reliability_amount * reliability_type +
+                                (1 | id),
+                              fixef = fixed_effects,
+                              VarCorr = random_intercept_variance,
+                              sigma = combined_value$residual_sd
+                             ,
+                              data = df
+                              )
 
-                                     data_simulation  <-
-                                       model1 %>%
-                                       model.frame()
+             data_simulation  <-
+               model1 %>%
+               model.frame()
 
-                                   data_simulation %>%
-                                     lmerTest::lmer(
-                                       allocation ~  npv_amount * reliability_amount *
-                                     alignment * reliability_type +
-                                         (1 | id),
-                                       data = .
-                                     ) %>%
-                                     broom.mixed::tidy()
-                                   }
+             data_simulation %>%
+               lmerTest::lmer(
+                           allocation ~  npv_amount * reliability_amount *
+                             alignment * reliability_type +
+                             (1 | id),
+                           data = .
+                         ) %>%
+               broom.mixed::tidy()
+           }
 
 
-                   nsim <- 100
-                                    simulation_results <-
-                                      seq_len(nsim) %>%
-                                        map_df(~ simulate_data(df))
+           nsim <- 100
+           simulation_results <-
+             seq_len(nsim) %>%
+             map_df(~ simulate_data(df))
 
-                                    simulation_results %>%
-                                        filter(effect == "fixed") %>%
-                                        group_by(term) %>%
-                                        summarise(
-                                                mean_estimate = mean(estimate),
-                                                mean_se = mean(std.error),
-                                                sum(p.value < 0.05) %>% 
-                                                binom.confint(nsim, level = 0.95, method = "exact") %>% 
-                                                select(mean, lower, upper) %>% 
-                                                rename(power = mean),
-                                                .groups = "drop"
-                                              )
-                #+end_src
+           simulation_results %>%
+             filter(effect == "fixed") %>%
+             group_by(term) %>%
+             summarise(
+               mean_estimate = mean(estimate),
+               mean_se = mean(std.error),
+               sum(p.value < 0.05) %>% 
+               binom.confint(nsim, level = 0.95, method = "exact") %>% 
+               select(mean, lower, upper) %>% 
+               rename(power = mean),
+               .groups = "drop"
+             )
+         #+end_src
 **** Another idea
      - The problem now seems to be that even when we combine alignment 2,
        alignment 7, and the hypotheses data, it's very hard to get the right
        combination of effects right
      - So what if do modelling/simulation of the effects of interest, and then
        combine the datasets?
-**** Specific effects
+**** DONE Specific effects
+     CLOSED: [2020-11-16 Mon 15:42]
      - The effects
        - Explicit reliability alignment low vs high
        - High alignment implicit vs explicit
@@ -2474,7 +2476,202 @@ library(papaja)
        - But we can also use the ~by~ argument of emmeans to split it up and
          look at the individual trends/ compare them
        - Yep this seems to be the way.
-     
+       - e.g.
+         #+begin_src R
+           library(emmeans)
+
+           ## data_simulation_raw <-
+           ##   get_data_simulation_raw(df, estimates, formula)
+
+           ## model <-
+           ##   data_simulation_raw %>%
+           ##   mixed(
+           ##     formula,
+           ##     data = .,
+           ##     method = "S"
+           ## )
+           ## model %>%
+           ##   emtrends(pairwise ~ reliability_amount | alignment * reliability_type, var = "npv_amount")
+
+           emm_options(lmer.df = "Satterthwaite") # faster setting, preferrable
+           emm_options(lmerTest.limit = 5200)
+
+           fiber.lm <- lm(strength ~ diameter*machine, data=fiber)
+
+                                                   # Suppose we want trends relative to sqrt(diameter)...
+           emtrends(fiber.lm, ~ machine | diameter, var = "sqrt(diameter)", 
+                    at = list(diameter = c(20, 30)))
+
+         #+end_src
+       - What trend differences do we want?
+       - Really only in explicit high alignment
+       - The other specific effects are interactions
+       - Actually no, we care about slope differences between explicit and
+         implicit low alignment, but averaged over reliability amount
+       - And I guess between high and low alignment in low reliability
+       - Summary:
+         - Interactions
+           - Four-way
+             - [X] NPV amount x reliability amount x reliability type x alignment
+           - Three-way
+             - [X] High alignment: NPV amount x reliability amount x reliability type
+             - [X] Explicit reliability: NPV amount x reliability amount x alignment
+           - Two-way
+             - [X] Low alignment: NPV amount x reliability type
+         - Significant specific slopes
+           - [X] High alignment explicit reliability: low vs high reliability
+           - [X] Low explicit reliability: low vs high alignment
+           - [X] Low alignment: implicit vs explicit reliability (averaged over reliability amount)
+         - Null slopes
+           - [X] Implicit reliability: low vs high alignment (averaged over reliability amount)
+           - [X] High alignment implicit reliability: low vs high reliability amount
+           - [X] Low alignment implicit reliability: low vs high reliability amount
+       - Unclear if to use ~joint_tests~ or ~contrast~ for the separate interactions
+         - Unclear also if ~joint_tests~ takes into account the slopes
+         - ~contrast~ might be the safe option
+         - Actually, yes they are equivalent. Squaring the t statistic in
+           ~contrast~ leads to ~joint_tests~ F ratio
+         - I guess just use ~contrast~ because it's a little more specific and
+           you don't need as much filtering after tidying
+       - Do we use ~Superpower::emmeans_power~?
+         - Seems nice; calculates power and effect size for emmeans
+         - But I guess we should just get the power from the same simulations right?
+       - ~TOSTER~?
+         - Seems emmeans equivalence is more powerful
+         - Which seems to be [[https://github.com/Lakens/TOSTER/issues/43][acknowledged by Lakens]].
+       - How do we determine ~delta~ for equivalence?
+         - Surely just go to alignment 7 and see what the difference is there?
+         - Lakens et al. (2018) talks about this
+         - But what is delta, even?
+         - Is it Cohen's d?
+         - From ~?summary.emmGrid~:
+           #+begin_quote
+           Two-sided (equivalence) H_0: |theta - theta_0| >= delta versus
+           H_1: |theta - theta_0| < delta
+           t = (|Q - theta_0| - delta)/SE
+           The p value is the _lower_-tail probability.
+           Note that t is the maximum of t_{nonsup} and -t_{noninf}.
+           This is equivalent to choosing the less significant result in
+           the two-one-sided-test (TOST) procedure.
+           #+end_quote
+         - So I guess it's in terms of the raw measure
+         - Just do an even value about alignment 7 difference?
+         - Would it be an equivalent measure?
+         - Should be, because out of 100, right?
+         - I guess it's out of 400
+         - Well, actually it's a difference in slopes
+         - Why doesn't it work to just set it as the estimate, or a little
+           bigger than it?
+           - Surely because the CIs have to be within the delta, right?
+           - Yeah, it should be the estimate +- CIs
+           - Doesn't work either.
+         - Lakens wants it to be the largest value that isn't significant in the pilot
+           - But that doesn't work here
+           - Calculated using:
+             #+begin_src R
+               BSDA::tsum.test(mean.x = 0.0145,
+                               s.x = 0.007388672*sqrt(52), n.x = 52, mean.y = NULL, s.y = NULL,
+                               n.y = NULL, alternative = "two.sided", mu = 0, var.equal = TRUE,
+                               conf.level = 0.95
+                               )
+             #+end_src
+           - Where the mean and SE are taken from the emmeans result for
+             implicit low vs high reliability
+         - So instead what we'll just do is the value that leads to a
+           significant equivalence for alignment 7
+         - 0.022 seems to be the value, with a p value of 0.0406
+         - Which we got by doing this:
+         #+begin_src R
+                      drake::loadd(data_clean_alignment_7)
+           library(emmeans)
+
+                      model_alignment_7 <-
+                        data_clean_alignment_7 %>%
+                        filter(alignment == "low") %>%
+                        nest_by(id, allocation, reliability_amount, reliability_type, npv_amount) %>%
+                        mixed(
+                          allocation ~ reliability_amount * reliability_type * npv_amount +
+                            (1 | id),
+                          data = .
+                        ) 
+
+                      model_alignment_7 %>%
+                        emtrends(spec = c("reliability_type", "reliability_amount"), var = "npv_amount") %>%
+                        pairs(by = "reliability_type") %>% 
+                        summary(infer = TRUE, side = "equivalence", delta = 0.022)
+         #+end_src
+**** New issues
+     - Power doesn't increase with sample size
+     - Need to check what is happening to the data when we increase n
+     - Data seems fine.
+     - Let's try do a simple t test and see if we can get the anticipated curves
+     - [[https://stats.stackexchange.com/a/460872][This answer on CV]] suggests that maybe it's an issue of the model itself
+       so maybe if we just fit a simpler model we'll be fine
+     - Yeah, even just a simple t test gives very weird results.
+       - That is, a power curve that is not smooth
+     - So it's probably the initial model estimation, that we get the data from
+     - We're getting the simulated data from the ~makeLmer~ function that is
+       taking in the estimates from the previous experiment
+     - I guess we can try changing the random error from 0 to not fit singular
+       and if that doesn't work, simulate with ~lm~
+       - Which I think you can do just from ~simulate~
+     - Also, at the moment what we're doing is making an artificial dataframe,
+       make up a model from estimates from old experiments and predicted, then
+       we get the estimates from that model, and again get a model, get the data
+       from that, and then run an analysis on that data.
+     - ~simulate~ also works on the ~lmer~ model
+       - Probably because of lme4 method
+       - Yep ~simulate.merMod~
+       - Also can take either model, or formula with old data
+     - Also, don't forget that technically you should be doing a sensitivity
+       analysis, rather than relying on the previous estimates
+     - But also, if you're doing the alignment 2 and 7 analysis using ~lm~, why
+       simulate using ~lmer~?
+     - Simulating with lm doesn't have the same functionality as makeLmer, so
+       seem like you have to first predict the values and then add them into the dataframe
+     - Cool, that's fine, but now how do we generate implicit condition?
+       - Before we specified estimates
+       - But surely now that it's lm we can just either do it by hand, or use
+         one of the packages we're looked at in the past, e.g., faux or simglm
+       - Nah, you have the same problem as before with generating the NPV amount variable
+       - You just did it by hand
+**** More issues
+     - Turns out the reason you had irregular curve was because you estimated
+     new alignment 8 model parameters for each sample size
+     - So now you fixed that and started using lm  
+     - Problem with lm is that it doesn't seem to account for the
+     within-subjects npv condition properly like ~afex::aov_car~ does.
+      - We're just assuming that that's the way to go
+     - The problem with using afex is that the way it does within-subjects is to
+     convert the lm call into ~mlm~, which is a multivariate lm
+     - The problem with that is that simulate can't handle it
+     - So do we just go back to lmer, now that we worked out the curve irregularity?
+     - But then we might as well just use lm
+     - Yep, let's stick to lm
+**** Effect size specification
+     - We want to be able to simulate for different effect sizes
+       - For a sensitivity analysis
+     - Ideally with standardised effect sizes
+       - In this case, partial eta squared.
+     - The ~effectsize~ package should help
+       - But for some reason, changing model coefficients doesn't lead to change
+in the standardised estimates
+     - So maybe we just stick to the unstandardised ones
+       - Should be interpreting them in terms of the allocation, anyway, right?
+     - I guess we can also just calculate and display pes later
+     - The other issue is that every time we estimate the alignment 8 model, we
+get quite different values
+      - Even between -0.02 and 0.009
+      - Because of the simulation of explicit and implicit y.
+      - So maybe we get the values without the errors
+      - So then we get the "true" values
+      - Nah, we need the variance.
+      - But only eventually.
+      - So maybe just use the no-variance model to get the estimates, and then
+add them later
+      - Ok, that works. But now isn't it just going to tell me to use the same
+amount of people as before, because we are technically doing a post-hoc analysis?
+- Well maybe, but also not necessarily, because the four-way interaction is new
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
@@ -2533,7 +2730,8 @@ predictor of a project's profits"
        - how much more expensive
          - four way is right way to go, other wise have to predict no effect
        - can specify the interactions
-**** TODO power analysis
+**** DONE power analysis
+     CLOSED: [2020-11-19 Thu 11:36]
 **** Instructions
      - NPV check
        - Maybe part of experiment
@@ -2634,7 +2832,8 @@ predictor of a project's profits"
 **** DONE Check about HDR funds
      CLOSED: [2020-11-10 Tue 15:14]
 **** TODO Ask Dan if he can answer Rob's question
-**** TODO Run specific power analyses
+**** DONE Run specific power analyses
+     CLOSED: [2020-11-19 Thu 11:36]
      - explict vs implicit (three-way) - high alignment
      - explict vs implicit (two-way) - low alignment
      - high vs low alignment (three-way) - explicit reliability
