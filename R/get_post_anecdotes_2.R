@@ -1,4 +1,4 @@
-##' @title Get post experiment trials Alignment Experiment 8
+##' @title Get post experiment trials Anecdotes Experiment 2
 
 ##' @return
 ##' @author Shir Dekel
