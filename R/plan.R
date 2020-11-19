@@ -128,16 +128,16 @@ the_plan <-
       ),
       format = "file"
     ),
-    ## materials_memo = target(
-    ##   {
-    ##     render(knitr_in(!!memo_path$materials$Rmd))
-    ##     file_out(!!memo_path$materials$pdf)
-    ##   },
-    ##   transform = map(
-    ##     .data = !!parameters,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    materials_memo = target(
+      {
+        render(knitr_in(!!memo_path$materials$Rmd))
+        file_out(!!memo_path$materials$pdf)
+      },
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
     ## data_raw_directory = target(
     ##   {
     ##     get_data_mock(testing, data_directory_server, 20, data_clean_test)
@@ -191,36 +191,36 @@ the_plan <-
     ##     .id = c(thesis_project, experiment_number)
     ##   )
     ## ),
-    ## data_simulation = target(
-    ##   get_data_simulation(),
-    ##   transform = map(
-    ##     .data = !!parameters,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
-    ## plot_simulation = target(
-    ##   get_plot_simulation(data_simulation),
-    ##   transform = map(
-    ##     data_simulation,
-    ##     .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
-    ## power_table = target(
-    ##   get_power_table(),
-    ##   transform = map(
-    ##     .data = !!parameters,
-    ##       .id = c(thesis_project, experiment_number)
-    ##   ),
-    ##   # So that the same npv_amount is generated
-    ##   seed = old_seed$experiment4
-    ## ),
-    ## power = target(
-    ##   get_power(power_table),
-    ##   transform = map(
-    ##     power_table,
-    ##       .id = c(thesis_project, experiment_number)
-    ##   )
-    ## ),
+    data_simulation = target(
+      get_data_simulation(),
+      transform = map(
+        .data = !!parameters,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
+    plot_simulation = target(
+      get_plot_simulation(data_simulation),
+      transform = map(
+        data_simulation,
+        .id = c(thesis_project, experiment_number)
+      )
+    ),
+    power_table = target(
+      get_power_table(),
+      transform = map(
+        .data = !!parameters,
+          .id = c(thesis_project, experiment_number)
+      ),
+      # So that the same npv_amount is generated
+      seed = old_seed$experiment4
+    ),
+    power = target(
+      get_power(power_table),
+      transform = map(
+        power_table,
+          .id = c(thesis_project, experiment_number)
+      )
+    ),
     ## results = target(
     ##   get_results(data_clean, iv, dv),
     ##   transform = map(
