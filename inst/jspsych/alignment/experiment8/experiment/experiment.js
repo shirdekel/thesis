@@ -231,7 +231,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -325,7 +325,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -419,7 +419,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -513,7 +513,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -607,7 +607,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -701,7 +701,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -795,7 +795,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -889,7 +889,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -983,7 +983,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1077,7 +1077,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1171,7 +1171,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1265,7 +1265,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1359,7 +1359,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1453,7 +1453,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1547,7 +1547,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1641,7 +1641,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1735,7 +1735,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1829,7 +1829,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -1923,7 +1923,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2017,7 +2017,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2111,7 +2111,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2205,7 +2205,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2299,7 +2299,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2393,7 +2393,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2487,7 +2487,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2581,7 +2581,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2675,7 +2675,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2769,7 +2769,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2863,7 +2863,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -2957,7 +2957,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3051,7 +3051,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3145,7 +3145,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3239,7 +3239,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3333,7 +3333,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3427,7 +3427,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3521,7 +3521,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3615,7 +3615,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3709,7 +3709,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3803,7 +3803,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3897,7 +3897,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -3991,7 +3991,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4085,7 +4085,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4179,7 +4179,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4273,7 +4273,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4367,7 +4367,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4461,7 +4461,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4555,7 +4555,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4649,7 +4649,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4743,7 +4743,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4837,7 +4837,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -4931,7 +4931,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5025,7 +5025,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5119,7 +5119,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5213,7 +5213,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5307,7 +5307,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5401,7 +5401,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5495,7 +5495,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5589,7 +5589,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5683,7 +5683,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5777,7 +5777,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5871,7 +5871,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -5965,7 +5965,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6059,7 +6059,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6153,7 +6153,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6247,7 +6247,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6341,7 +6341,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6435,7 +6435,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6529,7 +6529,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6623,7 +6623,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6717,7 +6717,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6811,7 +6811,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6905,7 +6905,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -6999,7 +6999,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7093,7 +7093,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7187,7 +7187,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7281,7 +7281,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7375,7 +7375,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7469,7 +7469,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7563,7 +7563,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7657,7 +7657,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7751,7 +7751,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7845,7 +7845,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -7939,7 +7939,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8033,7 +8033,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8127,7 +8127,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8221,7 +8221,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8315,7 +8315,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8409,7 +8409,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8503,7 +8503,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8597,7 +8597,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8691,7 +8691,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8785,7 +8785,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8879,7 +8879,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -8973,7 +8973,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9067,7 +9067,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9161,7 +9161,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9255,7 +9255,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9349,7 +9349,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9443,7 +9443,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9537,7 +9537,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9631,7 +9631,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9725,7 +9725,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9819,7 +9819,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -9913,7 +9913,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10007,7 +10007,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10101,7 +10101,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10195,7 +10195,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10289,7 +10289,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10383,7 +10383,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10477,7 +10477,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10571,7 +10571,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10665,7 +10665,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10759,7 +10759,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10853,7 +10853,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -10947,7 +10947,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11041,7 +11041,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11135,7 +11135,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11229,7 +11229,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11323,7 +11323,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11417,7 +11417,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11511,7 +11511,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11605,7 +11605,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11699,7 +11699,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11793,7 +11793,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11887,7 +11887,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -11981,7 +11981,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12075,7 +12075,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12169,7 +12169,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12263,7 +12263,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12357,7 +12357,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12451,7 +12451,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12545,7 +12545,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12639,7 +12639,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12733,7 +12733,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12827,7 +12827,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -12921,7 +12921,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13015,7 +13015,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13109,7 +13109,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13203,7 +13203,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13297,7 +13297,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13391,7 +13391,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13485,7 +13485,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13579,7 +13579,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13673,7 +13673,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13767,7 +13767,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13861,7 +13861,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -13955,7 +13955,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14049,7 +14049,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14143,7 +14143,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14237,7 +14237,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14331,7 +14331,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14425,7 +14425,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14519,7 +14519,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14613,7 +14613,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14707,7 +14707,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14801,7 +14801,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14895,7 +14895,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -14989,7 +14989,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15083,7 +15083,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15177,7 +15177,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15271,7 +15271,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15365,7 +15365,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15459,7 +15459,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15553,7 +15553,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15647,7 +15647,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15741,7 +15741,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15835,7 +15835,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -15929,7 +15929,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16023,7 +16023,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16117,7 +16117,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16211,7 +16211,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16305,7 +16305,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16399,7 +16399,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16493,7 +16493,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16587,7 +16587,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16681,7 +16681,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16775,7 +16775,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16869,7 +16869,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -16963,7 +16963,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17057,7 +17057,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17151,7 +17151,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17245,7 +17245,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17339,7 +17339,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17433,7 +17433,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17527,7 +17527,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17621,7 +17621,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17715,7 +17715,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17809,7 +17809,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17903,7 +17903,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -17997,7 +17997,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18091,7 +18091,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18185,7 +18185,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18279,7 +18279,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18373,7 +18373,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18467,7 +18467,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18561,7 +18561,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18655,7 +18655,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18749,7 +18749,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18843,7 +18843,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
@@ -18937,7 +18937,7 @@ var timeline = {
                                       "data": {
                                         "stage": ["project_allocation"]
                                       },
-                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 1 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
+                                      "preamble": ["Carefully read through the project descriptions below and then do the following: 1. Rank the projects between 1 and 5 in order of investment priority in the relevant \"Project Ranking\" row input; and 2. Allocate each project a percentage (a number between 0 and 100) of the total budget in the relevant \"Project Allocation\" row input."]
                                     }
                                   ]
                                 }
