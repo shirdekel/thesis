@@ -20,6 +20,9 @@ get_testing_directory <- function(thesis_project, experiment_number) {
       )
     )
 
+  testing_directory %>%
+      map(create_directory)
+
   return(testing_directory)
 
 }
