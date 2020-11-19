@@ -1,8 +1,4 @@
-##' .. content for \description{} (no empty lines) ..
-##'
-##' .. content for \details{} ..
-##'
-##' @title
+##' @title Instructions anecdotes 2
 
 ##' @return
 ##' @author Shir Dekel
@@ -45,7 +41,8 @@ get_instructions_anecdotes_2 <- function() {
       ~ tags$fieldset(
         introduction,
         .x,
-        project_test
+        project_test,
+        legend = "Instructions"
       ) %>%
         as.character()
     )
