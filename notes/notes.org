@@ -59,11 +59,11 @@ in the large sample?
     - DV
       - allocation
     - But the tricky thing is how we planned the new within-subjects design.
-      - Anecdotes article Efperiment 2 actually summarises it:
+      - Anecdotes article Experiment 2 actually summarises it:
     #+begin_quote
-Efperiment 2 was very similar to [Efperiment 1], efcept that we added a
+Experiment 2 was very similar to [Experiment 1], except that we added a
 within-subjects anecdote valence manipulation. Further, manipulated anecdote
-similarity within-subjects, in order to increase the efperiment's power. All
+similarity within-subjects, in order to increase the experiment's power. All
 participants saw the statistics only condition, as it did not contain an
 anecdote, and therefore did not need to be manipulated between-subjects. As
 such, each participant saw five displays, with one statistics only condition,
@@ -89,7 +89,7 @@ high) $\times$ valence (negative and positive) conditions.
           that you can shuffle the columns.
         - But I guess here you only have two projects.
         - So maybe we can just counterbalance anyway without bloating the
-          efperiment file too much.
+          experiment file too much.
       - But the main source of counterbalancing will be the domains
         - Don't we actually need 10 domains, because the statistics only display
           also is displaying two projects.
@@ -122,7 +122,7 @@ high) $\times$ valence (negative and positive) conditions.
           - And also because you always need an anecdote and one of the
             intrinsic features.
         - Then I guess we pair them
-        - No, we do like in the alignment efperiment
+        - No, we do like in the alignment experiment
           - Create a latin nested column, and the unnest, so that each domain
             has one of the variation values.
         - But we should still pair them up.
@@ -140,7 +140,7 @@ high) $\times$ valence (negative and positive) conditions.
           - Low valence, low similarity
           - Low valence, high similarity
           - NA
-        - But the teft of the anecdote depends on the intrinsic features
+        - But the text of the anecdote depends on the intrinsic features
           - So I guess we actually mean "the descriptive components of the anecdote".
       - Also remember that all of this is just for the "low similarity"
         condition, because in high similarity they're comparing two projects
@@ -251,7 +251,14 @@ high) $\times$ valence (negative and positive) conditions.
          - role
          - business name
      - Maybe just go for it
-
+     - Make a working example without counterbalancing
+     - So we essentially have five displays
+       - statistics only
+       - anecdote condition high alignment negative valence
+       - anecdote condition high alignment positive valence
+       - anecdote condition low alignment negative valence
+       - anecdote condition low alignment positive valence
+       
 * Aggregation
 ** Analysis
    - From Evan:
