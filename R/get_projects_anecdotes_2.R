@@ -292,32 +292,22 @@ get_projects_anecdotes_2 <- function() {
         shiR::fieldset(legend = "Case study"))
   )
 
-  statistics_only <-
-    div(
-      HTML(main_task$projects$statistics)
-    ) %>%
-    as.character()
-
-  anecdote_condition_high_alignment <-
-    div(
-      HTML(main_task$anecdote$highA),
-      HTML(main_task$projects$anecdote)
-    ) %>%
-    as.character()
-
-  anecdote_condition_low_alignment <-
-    div(
-      HTML(main_task$anecdote$lowA),
-      HTML(main_task$projects$anecdote)
-    ) %>%
-    as.character()
-
-  allocation_table <-
-    list(
-      statistics_only,
-      anecdote_condition_high_alignment,
-      anecdote_condition_low_alignment
-    )
+  x <-
+      tibble(
+          anecdote = c(
+              "",
+              main_task$anecdote %>% unlist()
+          ),
+          projects = main_task$projects[1:3] %>% unlist()
+      ) %>%
+    rowwise() %>%
+      mutate(
+          html = div(
+              HTML(anecdote),
+              HTML(projects)
+          ) %>%
+              as.character() 
+      )
 
   projects <-
     trial_generic(
@@ -327,7 +317,7 @@ get_projects_anecdotes_2 <- function() {
     ) %>%
     build_timeline() %>%
     set_variables(
-      allocation_table = allocation_table
+      allocation_table = x$html
     )
 
   return(projects)
