@@ -36,6 +36,30 @@ parameters in a model of this level of complexity.
    #+end_quote
    - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
 ** TODO Work out why you can pass symbols for functions in drake, but not for arguments
+** Title
+   - Resource allocation biases: data and semantics
+** Thesis logic
+   - People treat projects one at a time.
+     - Aggregation
+   - If you force them to look at them together, alignment matters.
+     - Alignment
+   - The degree of alignment matters?
+   - Nah that doesn't make sense, because the alignment there is about a different thing
+   - How about:
+     - People prefer case studies to data
+       - Anecdotes
+     - People treat projects one at a time.
+       - Aggregation
+     - If you force them to look at them together, alignment matters.
+       - Alignmendt
+   - Not good either.
+   - What was the anecdotes link previously?
+     - Can't find in meeting notes or thesis doc attempts
+   - Also the link between aggregation and alignment is now weird because you
+     didn't replicate the joint vs separate effects
+   - Ah, maybe the link is: anecdotes work shows that people like case studies
+     over projects, so let's show them single projects/this suggests that they
+     won't like to aggregate.
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
