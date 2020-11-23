@@ -2871,3 +2871,28 @@ predictor of a project's profits"
      - explict vs implicit (two-way) - low alignment
      - high vs low alignment (three-way) - explicit reliability
      - implicit null effects
+
+** Notes from <2020-11-23 Mon> 
+*** Participants
+    - Evan Livesey
+    - Daniel Costa
+*** Agenda
+    - Annual Progress Review interview
+*** Notes
+    - Covid impact
+    - Document impact
+    - Tight timeframe
+    - Writing motivation varies
+    - Not just writing quickly
+    - Also feedback
+    - Expectations of things to read
+    - Consider how important it is to get feedback from everyone
+    - "planning on finalising by this date"
+    - Team is receptive if impose a deadline
+    - Covid
+    - If you need a further extension need to document
+    - Working environment
+    - Potentially extend again
+    - Won't be an issue to ask for more time
+*** Actions
+**** TODO Work out plan of when to get drafts back to me
