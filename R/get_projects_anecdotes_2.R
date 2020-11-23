@@ -191,119 +191,71 @@ get_projects_anecdotes_2 <- function() {
     shiR::htmlp() %>%
     str_c(collapse = "")
 
-  ## Anecdote ----
-  reason <- list(
-    structure = c(
-      "communication across relevant business units was",
-      "key operational decisions were"
-    ),
-    integration = c(
-      "other well sites due to a drain on the collective resources",
-      "retail sites due to miscalculations of petrol supply"
-    ),
-    type = c(
-      "difficult to construct",
-      "susceptible to crude oil price changes"
-    )
-  )
-
-  cutoff <- val_trans %>%
-    map2(c(1.5 %>% rep(2), 1.2), ~ round(.x * .y))
-
-  anecdote_info <- projects_all %>%
-    filter(str_detect(project_type, "anecdote"))
-  analysis <- anecdote_info %>%
-    with(str_c(
-      `Business name`,
-      " struggled to establish itself in the regional market because of what scientists now know is a hydrocarbon shortage in the ",
-      Location %>%
-        str_replace(", (.*)", ""),
-      " area. A ",
-      Structure,
-      " organisational structure meant that ",
-      reason$structure,
-      " delayed with what needed to be a timely process. Being ",
-      Integration,
-      "ly integrated meant that these delays caused losses at the ",
-      reason$integration,
-      ". To make up for this, a post hoc analysis concluded that oil was needed to be extracted at a rate of ",
-      cutoff$rate,
-      "L an hour and sites have at least a ",
-      cutoff$prob,
-      "% probability of finding oil before management approved the project. Further, machinery needed to have thought to last at least ",
-      cutoff$maintenance,
-      " years before requiring maintenance, because maintenance costs further offset the initial investment after the ",
-      val_trans$maintenance,
-      " years of development. Further, the well was quite ",
-      reason$type,
-      " due to it being an ",
-      type$anecdote,
-      " well, and so added additional financial setbacks over the course of the project."
-    ))
-
-  anecdote_raw <- labels$align %>%
-    map(~ anecdote_info %>%
-      filter(project_type %>% str_detect(.x))) %>%
-    map_chr(~ htmltools::withTags({
-      ul(
-        li(
-          "Business details:",
-          .x %>%
-            with(htmltools::withTags({
-              ul(
-                li("Business name: ", `Business name`),
-                li("Location: ", Location),
-                li("Integration: ", Integration)
-              )
-            }))
-        ),
-        li(
-          "Investment:",
-          .x$Investment
-        ),
-        li(
-          "Predicted project features:",
-          htmltools::HTML(.x$`Predicted project features`)
-        )
-      )
-    }) %>%
-      as.character() %>%
-      str_remove_all("\n"))
-
   x <-
-      tibble(
-          analysis = c(
-              "",
-              analysis
-          ),
-          anecdote_raw = c(
-              "",
-              anecdote_raw
-          ),
-          projects = projects[1:3]
+    tibble(
+      reason = get_reason() %>% c("", .),
+      cutoff = get_cutoff(val_trans) %>% c("", .),
+      type = c("", "offshore", "onshore"),
+      projects = projects[1:3],
+      val_trans = val %>%
+        map(~ set_names(.x, "rate", "maintenance", "prob")) %>%
+        transpose() %>%
+        map(unlist) %>%
+        transpose() %>% c("", .),
+      project_type = c(
+        "no_anecdote",
+        "anecdote_lowA",
+        "anecdote_highA"
+      ),
+      business_name = c(
+        "",
+        "Refinera" %>%
+          rep(2)
+      ),
+      investment = c(
+        "",
+        "oil well" %>%
+          rep(2)
+      ),
+      location = c(
+        "",
+        "Zhuhai, China", "New Mexico, USA"
+      ),
+      integration = c("", "horizontal", "vertical"),
+      structure = c("", "decentralised", "centralised"),
+      predicted_project_features = details[1:2] %>% c("", .),
+      anecdote_presence = c(FALSE, TRUE, TRUE)
+    ) %>%
+    rowwise() %>%
+    mutate(
+      analysis = get_analysis(
+        anecdote_presence, business_name, location, structure,
+        reason, integration, cutoff, val_trans, type
+      ),
+      anecdote_raw = get_anecdote_raw(anecdote_presence, business_name, location,
+                             integration, investment,
+                             predicted_project_features) ,
+      projects = projects %>%
+        htmlTable::htmlTable(rnames = F) %>%
+        str_c(
+          preamble$main_task %>%
+            p() %>%
+            as.character(),
+          .,
+          allocation
+        ) %>%
+        HTML() %>%
+        tags$fieldset(tags$legend("Target projects")) %>%
+        as.character(),
+      anecdote_full = get_anecdote_full(analysis, anecdote_raw),
+      html = div(
+        HTML(anecdote_full),
+        HTML(projects)
       ) %>%
-      rowwise() %>%
-      mutate(
-          projects = projects %>%
-              htmlTable::htmlTable(rnames = F) %>%
-              str_c(
-                  preamble$main_task %>%
-                      p() %>%
-                      as.character(),
-                  .,
-                  allocation
-              ) %>%
-              HTML() %>%
-              tags$fieldset(tags$legend("Target projects")) %>%
-              as.character(),
-          anecdote_full = get_anecdote_full(analysis, anecdote_raw),
-          html = div(
-              HTML(anecdote_full),
-              HTML(projects)
-          ) %>%
-              as.character()
-      )
+        as.character()
+    )
 
+  ## x$html[[2]]
 
   projects <-
     trial_generic(
