@@ -169,8 +169,7 @@ get_projects_anecdotes_2 <- function() {
         names_from = project_label,
         values_from = value
       ) %>%
-      select(`Relevant information`, `Project A`, `Project B`)) %>%
-    set_names(labels$anecdote)
+      select(`Relevant information`, `Project A`, `Project B`))
 
   ## Preamble ----
   preamble <- list(
@@ -245,7 +244,7 @@ get_projects_anecdotes_2 <- function() {
   anecdote_raw <- labels$align %>%
     map(~ anecdote_info %>%
       filter(project_type %>% str_detect(.x))) %>%
-    map(~ htmltools::withTags({
+    map_chr(~ htmltools::withTags({
       ul(
         li(
           "Business details:",
@@ -269,45 +268,42 @@ get_projects_anecdotes_2 <- function() {
       )
     }) %>%
       as.character() %>%
-      str_remove_all("\n")) %>%
-    set_names(labels$align)
-
-  anecdote <- anecdote_raw %>%
-    map2(analysis, ~ .x %>%
-      str_c(.y))
-
-  # Export components ----
-  main_task <- list(
-    projects = projects %>%
-      map(~ str_c(
-        preamble$main_task %>%
-          shiR::htmlp(),
-        .x %>%
-          htmlTable::htmlTable(rnames = F),
-        allocation
-      ) %>%
-        shiR::fieldset(legend = "Target projects")),
-    anecdote = anecdote %>%
-      map(~ .x %>%
-        shiR::fieldset(legend = "Case study"))
-  )
+      str_remove_all("\n"))
 
   x <-
       tibble(
-          anecdote = c(
+          analysis = c(
               "",
-              main_task$anecdote %>% unlist()
+              analysis
           ),
-          projects = main_task$projects[1:3] %>% unlist()
+          anecdote_raw = c(
+              "",
+              anecdote_raw
+          ),
+          projects = projects[1:3]
       ) %>%
-    rowwise() %>%
+      rowwise() %>%
       mutate(
+          projects = projects %>%
+              htmlTable::htmlTable(rnames = F) %>%
+              str_c(
+                  preamble$main_task %>%
+                      p() %>%
+                      as.character(),
+                  .,
+                  allocation
+              ) %>%
+              HTML() %>%
+              tags$fieldset(tags$legend("Target projects")) %>%
+              as.character(),
+          anecdote_full = get_anecdote_full(analysis, anecdote_raw),
           html = div(
-              HTML(anecdote),
+              HTML(anecdote_full),
               HTML(projects)
           ) %>%
-              as.character() 
+              as.character()
       )
+
 
   projects <-
     trial_generic(
