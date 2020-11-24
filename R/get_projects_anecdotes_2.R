@@ -8,7 +8,7 @@ get_projects_anecdotes_2 <- function(allocation_display) {
   projects <-
     trial_generic(
       "survey-html-form3",
-      html = insert_variable("allocation_table"),
+      html = insert_variable("allocation_display"),
       data = insert_property(stage = "project_allocation")
     ) %>%
     build_timeline() %>%
