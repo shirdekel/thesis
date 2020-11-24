@@ -33,7 +33,6 @@ get_project_raw <- function(business_name_target, investment_target,
       )
   }
 
-
   project_raw <-
     project_raw_wide %>%
     pivot_longer(

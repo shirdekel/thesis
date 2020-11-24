@@ -4,130 +4,80 @@
 ##' @author Shir Dekel
 ##' @export
 get_projects_anecdotes_2 <- function() {
-
-  ## Labels ----
-  labels <- list(
-    align = c("lowA", "highA"),
-    anecdote = c(
-      "anecdote",
-      "statistics",
-      "combined",
-      "enhanced"
-    ),
-    proj_type = c("anecdote", "target"),
-    follow_up = c("rating", "justify"),
-    follow_up_type = c("similarity", "relevance_specific", "relevance_general"),
-    projects = c("projectA", "projectB")
-  )
-
-  # Main task ----
-  info <- list(
-    c(
-      "Oil extracted",
-      "Time the machinery lasts before requiring maintenance",
-      "Probability of finding oil",
-      "Type of well"
-    ),
-    c(
-      "Microchips produced",
-      "Usable semiconductor yield after testing",
-      "Compatible PCs in the market",
-      "Type of integrated circuit"
-    )
-  ) %>%
-    set_names("oil", "microchip")
-
-  val_high <- list(
-    c(
-      2000,
-      7,
-      80
-    ),
-    c(
-      4000,
-      60,
-      75
-    )
-  ) %>%
-    set_names(labels$proj_type)
-  unit <- list(
-    c(
-      "L an hour",
-      " years",
-      "%",
-      ""
-    ),
-    c(
-      " an hour",
-      "%" %>%
-        rep(2),
-      ""
-    )
-  ) %>%
-    set_names(labels$proj_type)
-  val <- round(val_high$anecdote * 0.7) %>%
-    list(val_high$anecdote)
-
-  val_trans <- val %>%
-    map(~ set_names(.x, "rate", "maintenance", "prob")) %>%
-    transpose() %>%
-    map(unlist)
-
-  type <- list(
-    c("offshore", "onshore"),
-    c("digital", "onshore")
-  ) %>%
-    set_names(labels$proj_type)
-
-  detail_unit <- list(unit$anecdote) %>%
-    rep(2) %>%
-    append(list(
-      unit$target,
-      unit$anecdote
-    ))
-
-  detail_val <- val %>%
-    append(list(
-      val_high$target,
-      round(val_high$anecdote * 1.1)
-    )) %>%
-    map2(type %>%
-      unlist(), ~ c(.x, .y)) %>%
-    map2(detail_unit, ~ .x %>%
-      str_c(.y))
-
-  detail_info <- list(info$oil) %>%
-    rep(2) %>%
-    append(list(
-      info$microchip,
-      info$oil
-    )) %>%
-    map(~ .x %>% str_c(": ")) %>%
-    map2(detail_val, ~ .x %>%
-      str_c(.y))
-
-  details <- detail_info %>%
-    map_chr(~ htmltools::tags$ul(.x %>%
-      map(htmltools::tags$li)) %>%
-      as.character() %>%
-      str_remove_all("\n"))
-
-
   x <-
     tibble(
+      info = list(
+        c(
+          "Oil extracted",
+          "Time the machinery lasts before requiring maintenance",
+          "Probability of finding oil",
+          "Type of well"
+        )
+      ) %>%
+        rep(2) %>%
+        c("", .),
+      info_target = list(
+        c(
+          "Microchips produced",
+          "Usable semiconductor yield after testing",
+          "Compatible PCs in the market",
+          "Type of integrated circuit"
+        ),
+        c(
+          "Oil extracted",
+          "Time the machinery lasts before requiring maintenance",
+          "Probability of finding oil",
+          "Type of well"
+        )
+      ) %>%
+        list(),
+      val = c(
+        2000,
+        7,
+        80
+      ) %>%
+        get_val(0.7) %>% c("", .),
       reason = get_reason() %>% c("", .),
-      cutoff = get_cutoff(val_trans) %>% c("", .),
       type = c("", "offshore", "onshore"),
-      val_trans = val %>%
-        map(~ set_names(.x, "rate", "maintenance", "prob")) %>%
-        transpose() %>%
-        map(unlist) %>%
-        transpose() %>% c("", .),
+      type_target = c("digital", "onshore") %>%
+        list(),
+      multipliers = c("", list(c(1.5 %>% rep(2), 1.2)) %>%
+        rep(2)),
       project_type = c(
         "no_anecdote",
         "anecdote_lowA",
         "anecdote_highA"
       ),
+      val_target = c(
+        4000,
+        60,
+        75
+      ) %>%
+        get_val(1.1) %>% list(),
+      unit = c(
+        "L an hour",
+        " years",
+        "%",
+        ""
+      ) %>%
+        list() %>%
+        rep(2) %>%
+        c("", .),
+      unit_target = list(
+        c(
+          " an hour",
+          "%" %>%
+            rep(2),
+          ""
+        ),
+        c(
+          "L an hour",
+          " years",
+          "%",
+          ""
+        )
+      ) %>%
+        list(),
       business_name_target = c(
         "Microxy",
         "Enfuel"
@@ -155,22 +105,33 @@ get_projects_anecdotes_2 <- function() {
         "",
         "Zhuhai, China", "New Mexico, USA"
       ),
-      integration_target = c("horizontal", "vertical") %>%list,
-      structure_target = c("decentralised", "centralised") %>%list,
+      integration_target = c("horizontal", "vertical") %>% list(),
+      structure_target = c("decentralised", "centralised") %>% list(),
       integration = c("", "horizontal", "vertical"),
       structure = c("", "decentralised", "centralised"),
-      predicted_project_features = details[1:2] %>% c("", .),
-      predicted_project_features_target = details[3:4] %>% list(),
       anecdote_presence = c(FALSE, TRUE, TRUE),
       reliability = c(87, 95) %>%
         as.character() %>%
-      list(NA, NA),
+        list(NA, NA),
       npv = c(100, 900) %>%
         as.character() %>%
         list(NA, NA)
     ) %>%
     rowwise() %>%
     mutate(
+      detail_val = str_c(info, ": ", c(val, type), unit) %>% list(),
+      detail_val_target = list(info_target, val_target, type_target, unit_target) %>%
+        pmap(
+          function(info, val, type, unit) str_c(info, ": ", c(val, type), unit)
+        ) %>% list(),
+      predicted_project_features = detail_val %>%
+        list() %>%
+        get_html_list(),
+      predicted_project_features_target = detail_val_target %>%
+        list() %>%
+        map(get_html_list),
+      val_trans = get_val_trans(anecdote_presence, val) %>% list(),
+      cutoff = get_cutoff(anecdote_presence, val_trans, multipliers) %>% list(),
       project_raw = get_project_raw(
         business_name_target,
         investment_target,
@@ -181,7 +142,7 @@ get_projects_anecdotes_2 <- function() {
         reliability,
         npv
       ) %>%
-     list(),
+        list(),
       analysis = get_analysis(
         anecdote_presence, business_name, location, structure,
         reason, integration, cutoff, val_trans, type
@@ -210,9 +171,6 @@ get_projects_anecdotes_2 <- function() {
       ) %>%
         as.character()
     )
-
-
-  ## x$project_raw[[1]]
 
   projects <-
     trial_generic(
