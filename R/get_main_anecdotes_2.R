@@ -18,8 +18,12 @@ get_main_anecdotes_2 <- function(gambles, randomize_order = TRUE) {
   instructions <-
     get_instructions_anecdotes_2()
 
+  allocation_display <-
+      get_parameters_anecdotes_2() %>%
+      mutate_parameters_anecdotes_2()
+
   projects <-
-    get_projects_anecdotes_2()
+    get_projects_anecdotes_2(allocation_display)
 
   ## project_allocation <-
   ##   projects %>%

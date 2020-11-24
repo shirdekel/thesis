@@ -3,11 +3,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_projects_anecdotes_2 <- function() {
-  allocation_display <-
-    get_parameters_anecdotes_2() %>%
-    mutate_parameters_anecdotes_2()
-
+##' @param allocation_display
+get_projects_anecdotes_2 <- function(allocation_display) {
   projects <-
     trial_generic(
       "survey-html-form3",
