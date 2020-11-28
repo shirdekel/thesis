@@ -60,6 +60,17 @@ parameters in a model of this level of complexity.
    - Ah, maybe the link is: anecdotes work shows that people like case studies
      over projects, so let's show them single projects/this suggests that they
      won't like to aggregate.
+   - Nah, I think what it is is that, assuming people will be met with low
+     similarity situations, how much do they rely on anecdotes.
+   - So it's:
+     - People treat projects one at a time.
+       - Aggregation
+     - If you force them to look at them together, alignment matters.
+       - Alignment
+     - But, since most cases are low alignment, what influences their reliance
+   on case studies?
+       - Anecdotes
+
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
@@ -282,7 +293,40 @@ high) $\times$ valence (negative and positive) conditions.
        - anecdote condition high alignment positive valence
        - anecdote condition low alignment negative valence
        - anecdote condition low alignment positive valence
-       
+**** After rewriting the old materials as a placeholder
+     - I think something like alignment 8 would be good
+     - The end result is a tibble with a column that has a tibble of the displays
+     - And each row of the original tibble is a condition that we pass to
+     jaysire to make a conditional timeline
+     - So each of those sub-tibbles should have five rows (statistics + four
+     anecdote displays)
+     - Between subjects IV is really just anecdote condition
+       - Plus whatever other variation IVs we end up having
+     - So the plan now is to first just get the minimum required for let's say
+     the combined condition, with three displays.
+     - And then I guess the variations would come from that
+     - For that you can also split it up into initially just getting the target
+sorted, and then working out the displays from there.
+- Because supposedly the values come from there.
+- The trouble now is doing everything in rows, but also making sure that
+anecdote and target have opposite values
+ - Perhaps using ~pivot~?
+   - Yes, pivot works
+   - Still not super pretty, because you have suffixes, but works.
+ - Currently have ~project_feature_variation~.
+   - But hard to see how that works with similarity manipulation
+   - So maybe we don't need that level of variation.
+   - Maybe varying the projects themselves between the five displays is enough
+   - That is, any differences between anecdote conditions can't be attributed to
+     content
+   - What about for alignment manipulation?
+     - Well it can't be due to content, because they're different.
+   - Does that mean that we now don't need the whole pivoted target/anecdote
+     shebang?
+   - Well I guess we still need it, but the target project doesn't need to change
+ - Not working with making the anecdote variation change with NPV.
+   - So maybe we rewrite so that target is made first, and then anecdote after,
+ without pivoting, inside each row's nested column
 * Aggregation
 ** Analysis
    - From Evan:
