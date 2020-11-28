@@ -7,7 +7,7 @@ get_parameters_anecdotes_2 <- function() {
   tibble(
     project_variation = 1,
     anecdote_variation = seq_len(2) %>%
-   as.numeric(),
+      as.numeric(),
     feature_type = c("target", "anecdote") %>% list(),
     business_name = get_business_name_anecdotes_2() %>% list(),
     type = get_project_type_anecdotes_2() %>% list(),
@@ -24,7 +24,7 @@ get_parameters_anecdotes_2 <- function() {
     project_type = c("target", "comparison") %>%
       latin_list(),
     alignment = c("low", "high") %>% list(),
-    reason = get_reason() %>%list()
+    reason = get_reason() %>% list()
   ) %>%
     unnest(c(
       location,
@@ -45,11 +45,6 @@ get_parameters_anecdotes_2 <- function() {
         multiplier,
       )
     ) %>%
-    ## select(business_name, feature_type, value_numeric, location)
-    rowwise() %>%
-    # needs to be removed because otherwise there are NAs after pivoting
-    ## select(feature_type, anecdote_variation, alignment, npv)
-    ungroup() %>%
     unnest(c(
       npv,
       reliability,
@@ -66,7 +61,6 @@ get_parameters_anecdotes_2 <- function() {
       unit,
       reason
     )) %>%
-    ## select(anecdote_variation, alignment, npv, reason, feature_type)
     rowwise() %>%
     mutate(
       value = get_value(
@@ -79,13 +73,15 @@ get_parameters_anecdotes_2 <- function() {
         feature,
         unit
       ),
-    cutoff = get_cutoff(value_numeric) %>%list,
-      analysis = get_analysis(business_name, location,
-                             integration, structure,
-                             value_string, value_numeric,
-                             reason, cutoff)
-      ) %>%
-    ## pull(analysis)
+      cutoff = get_cutoff(value_numeric) %>% list(),
+      analysis = get_analysis(
+        business_name, location,
+        integration, structure,
+        value_string, value_numeric,
+        reason, cutoff
+      )
+    ) %>%
+    # needs to be removed because otherwise there are NAs after pivoting
     select(-c(multiplier, value)) %>%
     pivot_longer(
       c(
@@ -116,9 +112,11 @@ get_parameters_anecdotes_2 <- function() {
     ) %>%
     nest_by(project_variation, anecdote_variation) %>%
     mutate(
-      timeline = get_projects_anecdotes_2(project_variation,
-                                          anecdote_variation,
-                                          data) %>%
+      timeline = get_projects_anecdotes_2(
+        project_variation,
+        anecdote_variation,
+        data
+      ) %>%
         list()
     ) %>%
     pull(timeline)
