@@ -6,16 +6,18 @@
 get_condition_allocation_anecdotes_2 <- function() {
   condition_level <-
     list(
-      c("low", "high"),
       c("anecdote_only", "statistics_only", "combined"),
-      c("negative", "positive")
+      c("negative", "positive"),
+      1,
+      seq_len(2)
     )
 
   condition_name <-
     c(
-      "alignment",
       "anecdote",
-      "valence"
+      "valence",
+      "project_variation",
+      "anecdote_variation"
     )
 
   sample <-

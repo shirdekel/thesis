@@ -18,20 +18,12 @@ get_main_anecdotes_2 <- function(gambles, randomize_order = TRUE) {
   instructions <-
     get_instructions_anecdotes_2()
 
-  allocation_display <-
-      get_parameters_anecdotes_2() %>%
-      mutate_parameters_anecdotes_2()
-
-  projects <-
-    get_projects_anecdotes_2(allocation_display)
-
-  ## project_allocation <-
-  ##   projects %>%
-  ##   slide(get_project_allocation, randomize_order)
+  allocation_timeline <-
+      get_parameters_anecdotes_2()
 
   main <-
       instructions %>%
-    build_timeline(projects %>%list(projects)) %>%
+    build_timeline(allocation_timeline) %>%
     map(flatten)
 
   return(main)

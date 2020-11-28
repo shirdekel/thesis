@@ -3,42 +3,37 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-##' @param business_name
-##' @param location
-##' @param integration
-##' @param investment
-##' @param predicted_project_features
-get_anecdote_raw <- function(anecdote_presence, business_name, location,
-                             integration, investment,
-                             predicted_project_features) {
-  if (anecdote_presence) {
-  anecdote_raw <-
-    htmltools::withTags({
-      ul(
-        li(
-          "Business details:",
-            htmltools::withTags({
-              ul(
-                li("Business name: ", business_name),
-                li("Location: ", location),
-                li("Integration: ", integration)
-              )
-            })
-        ),
-        li(
-          "Investment:",
-          investment
-        ),
-        li(
-          "Predicted project features:",
-          htmltools::HTML(predicted_project_features)
-        )
+##' @param business_name_anecdote
+##' @param location_anecdote
+##' @param integration_anecdote
+##' @param structure_anecdote
+##' @param type_anecdote
+##' @param predicted_features_anecdote
+get_anecdote_raw <- function(business_name_anecdote, location_anecdote,
+                             integration_anecdote, structure_anecdote,
+                             type_anecdote, predicted_features_anecdote) {
+  withTags({
+    ul(
+      li(
+        "Business details:",
+        withTags({
+          ul(
+            li("Business name: ", business_name_anecdote),
+            li("Location: ", location_anecdote),
+            li("Integration: ", integration_anecdote),
+            li("Structure: ", structure_anecdote)
+          )
+        })
+      ),
+      li(
+        "Investment:",
+        type_anecdote
+      ),
+      li(
+        "Predicted project features:",
+        HTML(predicted_features_anecdote)
       )
-    }) %>%
+    )
+  }) %>%
     as.character()
-  } else {
-    anecdote_raw <- ""
-  }
-
-  return(anecdote_raw)
 }

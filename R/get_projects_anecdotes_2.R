@@ -4,8 +4,9 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param allocation_display
-get_projects_anecdotes_2 <- function(allocation_display) {
-  projects <-
+get_projects_anecdotes_2 <- function(project_variation,
+                                          anecdote_variation,
+                                          data) {
     trial_generic(
       "survey-html-form3",
       html = insert_variable("allocation_display"),
@@ -13,8 +14,20 @@ get_projects_anecdotes_2 <- function(allocation_display) {
     ) %>%
     build_timeline() %>%
     set_variables(
-      allocation_display = allocation_display$html
+      allocation_display = data$display
+    ) %>%
+    set_parameters(randomize_order = FALSE) %>%
+    build_timeline() %>%
+    display_if(
+      fn_data_condition(
+        project_variation == !!project_variation
+      )
+    )%>%
+    build_timeline() %>%
+    display_if(
+      fn_data_condition(
+        anecdote_variation == !!anecdote_variation
+      )
     )
 
-  return(projects)
 }
