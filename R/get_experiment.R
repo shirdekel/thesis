@@ -30,7 +30,7 @@ get_experiment <- function(gambles, experiment_directory, thesis_project, experi
   build_experiment(
     timeline = build_timeline(
       welcome,
-      pre_experiment,
+      ## pre_experiment,
       main,
       post_experiment
     ),
