@@ -918,8 +918,8 @@
       "RemoteRepo": "jaysire",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "e3e5c093a9fe1974716dc75a5b4257ec3f22355d",
-      "Hash": "dcd73d7ef4b9d9d5beb4d80bd01beca8"
+      "RemoteSha": "157fec4fba12b474c53210b8dcff8b4f23557ef8",
+      "Hash": "d4951b11e5f7e1a8ed9efca3d87962ae"
     },
     "jpeg": {
       "Package": "jpeg",
