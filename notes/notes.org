@@ -2882,6 +2882,35 @@ add them later
       - Ok, that works. But now isn't it just going to tell me to use the same
 amount of people as before, because we are technically doing a post-hoc analysis?
 - Well maybe, but also not necessarily, because the four-way interaction is new
+*** DONE Fix form validation
+    CLOSED: [2020-12-01 Tue 10:27]
+    - You screwed up when "fixing" the phantomjs issue
+    - But now you fixed it with a ~hasDuplicates~ function.
+    - But now the conditional alert is screwing you over with the test variable
+    - So let's work it out. Here's what you want:
+   | has duplicates | test  | result |
+   |----------------+-------+--------|
+   | false          | false | false  |
+   | false          | true  | false  |
+   | true           | false | true   |
+   | true           | true  | false  |
+   - So it should just be what it was before, no?
+   #+begin_src javascript
+     var rank_duplicates = true
+     var test = true
+
+     if (rank_duplicates && !test) {
+         console.log("alert")
+     } else {
+         console.log("continue")
+     }
+
+   #+end_src
+*** Fix interstitial order
+    - Seems to be changing with randomisation of display order
+*** DONE Fix materials pdf
+    CLOSED: [2020-12-01 Tue 10:45]
+    - Seems to have been a result of the form validation issues
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
@@ -3114,9 +3143,11 @@ predictor of a project's profits"
       range
     - Cap on wednesday
 *** Actions
-**** TODO add uniform distribution
-**** TODO add "Each project is indepdent of the others"
+**** DONE add uniform distribution
+     CLOSED: [2020-12-01 Tue 08:59]
+**** DONE add "Each project is indepdent of the others"
+     CLOSED: [2020-12-01 Tue 08:55]
 **** TODO send Dan experiment link
      - State "TODO"       from              [2020-11-30 Mon 19:30]
-**** TODO Wednesday cap on McKinsey
+**** TODO Wednesday cap on McKinsey and RA payments
      - State "TODO"       from              [2020-11-30 Mon 19:30]
