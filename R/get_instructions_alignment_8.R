@@ -6,14 +6,14 @@
 get_instructions_alignment_8 <- function() {
   instructions_main <-
     c(
-      "For each project, you will see a range of possible NPVs alongside a 'midpoint'. The range literally represents the range of plausible outcomes, but the midpoint is the best guess, and hence is the same as a single NPV.",
+      "For each project, you will see a range of possible NPVs alongside a 'midpoint'. The range literally represents the range of plausible outcomes (a uniform distribution), but the midpoint is the best guess, and hence is the same as a single NPV.",
       "For each project, you will see an NPV, alongside a statement of whether NPV is considered to be a reliable (or an unreliable) metric for that project. There are usually a range of plausible NPV outcomes, so when NPV is considered to be \"reliable\" this means that the range of possible values is relatively narrow (indicating high confidence in the estimate). Conversely, when NPV is considered to be \"unreliable\", this means that the range of possible values is relatively wider (indicating low confidence in the estimate)."
     ) %>%
     map(
       function(reliability_type) {
         c(
           "Imagine that you are a CEO of a large company composed of many individual businesses.",
-          "You will be shown information about a number of projects that your company is considering to invest in. Some specific information about the project itself is provided. In addition to those numbers, you will find each project's net present value (NPV), which is the company's estimation of the future returns of the project. An NPV that is greater than 0 (zero) indicates that there is an expectation of profit. The higher the NPV, the better the expectations for each project.",
+          "You will be shown information about a number of projects that your company is considering to invest in. Each project is independent of the others. Some specific information about the project itself is provided. In addition to those numbers, you will find each project's net present value (NPV), which is the company's estimation of the future returns of the project. An NPV that is greater than 0 (zero) indicates that there is an expectation of profit. The higher the NPV, the better the expectations for each project.",
           reliability_type,
           "Your task is to rank the projects in order of investment priority and decide how to allocate the available budget (as a percentage) between them."
         ) %>%
