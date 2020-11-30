@@ -36,8 +36,14 @@ parameters in a model of this level of complexity.
    #+end_quote
    - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
 ** TODO Work out why you can pass symbols for functions in drake, but not for arguments
+** TODO Work out why sometimes drake re-runs when switching computers
+   - Seems to be set off by the resources folders
 ** Title
    - Resource allocation biases: data and semantics
+   - Data vs. semantics: An investigation of resource allocation biases
+   - Data vs. semantics: Decision-making biases in resource allocation
+   - The influence of semantics over statistics in managerial risky choice and resource allocation
+     - From thesis_doc
 ** Thesis logic
    - People treat projects one at a time.
      - Aggregation
@@ -441,8 +447,19 @@ anecdote and target have opposite values
 *** TODO Clean up functions
 *** TODO Valence condition
 *** TODO Anecdote condition analysis differences
-*** TODO Add project variation across within-subjects variables
-
+*** DONE Add project variation across within-subjects variables
+    CLOSED: [2020-11-30 Mon 15:43]
+    - State "DONE"       from "TODO"       [2020-11-30 Mon 15:43]
+*** TODO Anecdote conditions
+    - State "TODO"       from              [2020-11-30 Mon 15:49]
+    - Maybe done by javascript?
+    - Won't be easy, because it involves the NPV row
+*** TODO Statistics only condition
+    - State "TODO"       from              [2020-11-30 Mon 15:49]
+*** Analysis
+    - How are we comparing between Stats only and the others again?
+    - I guess compare the difference stats only and the anecdote condition
+      - And compare for each between subs condition.
 * Aggregation
 ** Analysis
    - From Evan:
@@ -3056,3 +3073,50 @@ predictor of a project's profits"
     - Won't be an issue to ask for more time
 *** Actions
 **** TODO Work out plan of when to get drafts back to me
+** Notes from <2020-11-23 Mon> 
+*** Participants
+    - Dan
+*** Agenda
+    - Alignment 8
+    - RA and McKinsey payments
+*** Notes
+    - page 2: 400-900 too large?
+      - when NPV is higher should have a higher range
+      - so it's not dominated
+    - page 3:
+      - not saying shift to npv, just rely less
+      - Just a comment
+    - Money:
+      - Managers:
+        - assuming $30 per person, 13 x 448 = 13,440
+      - a lot but we can do it
+    - Add "The projects are not correlated"
+      - "Each project is indepdent of the others"
+    - Why "predicted" project features
+      - all good
+    - Do we want a limit on allocation per project?
+      - Are we getting enough
+      - should have minimum allocation for each
+    - Figure 7: what's different from previous
+    - Should we go to three?
+    - should we have payoffs
+      - play these things out
+      - yes
+    - let dan try out experiment
+    - table to describe differences
+    - values
+      - showing the rate is bigger
+    - might submit to management science
+      - or smj (easier on this)
+    - when give the range
+      - somehwhere early: say range is uniform distribution
+    - whenever there's a dominant choices, e.g. high EV and non overlapping
+      range
+    - Cap on wednesday
+*** Actions
+**** TODO add uniform distribution
+**** TODO add "Each project is indepdent of the others"
+**** TODO send Dan experiment link
+     - State "TODO"       from              [2020-11-30 Mon 19:30]
+**** TODO Wednesday cap on McKinsey
+     - State "TODO"       from              [2020-11-30 Mon 19:30]
