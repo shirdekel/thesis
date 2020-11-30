@@ -70,7 +70,96 @@ parameters in a model of this level of complexity.
      - But, since most cases are low alignment, what influences their reliance
    on case studies?
        - Anecdotes
+** Examiners
+   - Current list
+     - [[https://liberalarts.utexas.edu/psychology/faculty/markman][Art Markman]]
+     - [[https://loewenstein.web.illinois.edu/][Jeffrey Loewenstein]] 
+     - [[https://www.tuck.dartmouth.edu/faculty/faculty-directory/giovanni-gavetti][Giovanni Gavetti]]
+     - [[https://mba.technion.ac.il/prof-ido-erev/][Ido Erev]]
+     - [[https://www.mpib-berlin.mpg.de/staff/ralph-hertwig][Ralph Hertwig]]
+     - [[https://ie.technion.ac.il/~yeldad/][Eldad Yechiam]]
+     - [[http://elke-u-weber.com/][Elke Weber]]
+     - [[https://www.qber.uni-kiel.de/de/team/alexander-klos][Alexander Klos]]
+     - [[https://www.anderson.ucla.edu/faculty-and-research/management-and-organizations/faculty/fox][Craig Fox]]
+     - [[https://www.wiwi.uni-muenster.de/fcm/de/das-fcm/lsf/team/thomas-langer][Thomas Langer]]
+     - [[https://www.ru.nl/english/people/zeisberger-s/][Stefan Zeisberger]]
+     - [[https://www.bwl.uni-mannheim.de/en/weber/][Martin Weber]]
+     - [[https://uwaterloo.ca/psychology/people-profiles/derek-j-koehler][Derek Koehler]]
+     - [[http://oriplonsky.com/][Ori Plonsky]]
+     - [[https://scholar.harvard.edu/rabin/home][Matthew Rabin]]
+     - [[https://www.wbs.ac.uk/about/person/daniel-read/][Daniel Read]]
+     - [[https://www.kellogg.northwestern.edu/faculty/directory/bockenholt_ulf.aspx][Ulf Bockenholt]]
+     - [[https://www8.gsb.columbia.edu/articles/authors/elizabeth-webb][Elizabeth Webb]]
+     - [[https://www.anderson.ucla.edu/faculty-and-research/marketing/faculty/shu][Suzanne Shu]]
+     - [[https://www.gsb.stanford.edu/faculty-research/faculty/baba-shiv][Baba Shiv]]
+     - [[https://www.cmu.edu/dietrich/sds/people/faculty/george-loewenstein.html][George Loewenstein]]
+     - [[https://www.sdabocconi.it/en/faculty/david-bardolet][David Bardolet]]
+   - Long list could include anyone on the reference list
+   - But:
+     - Probably can't be too close to supervisors
+     - Should have done something similar to the thesis
+     - Should have something to do with business/economics/organisation
+   - Probably not that connected to business
+     - [[https://www.mpib-berlin.mpg.de/staff/ralph-hertwig][Ralph Hertwig]]
+     - [[http://elke-u-weber.com/][Elke Weber]]
+   - Probably too big
+     - [[https://liberalarts.utexas.edu/psychology/faculty/markman][Art Markman]]
+     - [[https://scholar.harvard.edu/rabin/home][Matthew Rabin]]
+     - [[https://www.cmu.edu/dietrich/sds/people/faculty/george-loewenstein.html][George Loewenstein]]
+   - Maybe too connected
+     - [[https://www.anderson.ucla.edu/faculty-and-research/management-and-organizations/faculty/fox][Craig Fox]]
+     - [[https://www.sdabocconi.it/en/faculty/david-bardolet][David Bardolet]]
+   - Revised list
+     - [[https://loewenstein.web.illinois.edu/][Jeffrey Loewenstein]] 
+     - [[https://www.tuck.dartmouth.edu/faculty/faculty-directory/giovanni-gavetti][Giovanni Gavetti]]
+     - [[https://mba.technion.ac.il/prof-ido-erev/][Ido Erev]]
+     - [[https://ie.technion.ac.il/~yeldad/][Eldad Yechiam]]
+     - [[https://www.qber.uni-kiel.de/de/team/alexander-klos][Alexander Klos]]
+     - [[https://www.wiwi.uni-muenster.de/fcm/de/das-fcm/lsf/team/thomas-langer][Thomas Langer]]
+     - [[https://www.ru.nl/english/people/zeisberger-s/][Stefan Zeisberger]]
+     - [[https://www.bwl.uni-mannheim.de/en/weber/][Martin Weber]]
+     - [[http://oriplonsky.com/][Ori Plonsky]]
+     - [[https://www.wbs.ac.uk/about/person/daniel-read/][Daniel Read]]
+     - [[https://www.kellogg.northwestern.edu/faculty/directory/bockenholt_ulf.aspx][Ulf Bockenholt]]
+     - [[https://www8.gsb.columbia.edu/articles/authors/elizabeth-webb][Elizabeth Webb]]
+     - [[https://www.anderson.ucla.edu/faculty-and-research/marketing/faculty/shu][Suzanne Shu]]
+     - [[https://www.gsb.stanford.edu/faculty-research/faculty/baba-shiv][Baba Shiv]]
+   - The talk by Derek Wyman clarifies conflicts of interest
+   #+begin_quote
+   
+“...actual, potential or perceived conflicts of interest”
 
+Examiner – Supervisor:
+
+– circumstances in which the supervisors(s) and the examiner were co-applicants
+on grant proposals, have co-published or worked in the same academic unit within
+the last 5 years.
+
+   A person cannot be an examiner if they
+– have had involvement in the student’s research, or are a co-author on any part of the work;
+– have a past or current close personal relationship with the student or supervisor;
+– have had substantial contact with the student or supervisor in any other circumstance which might jeopardise the independence, or the perceived independence of the examination;
+– have been a research student of the supervisor within the last ten years; or have supervised the student at any time
+   #+end_quote
+   - So no Markman, Rabin, Bardolet
+   - But Fox is fine, because not within five years
+   - Updated list:
+     - [[https://www.anderson.ucla.edu/faculty-and-research/management-and-organizations/faculty/fox][Craig Fox]]
+     - [[https://www.cmu.edu/dietrich/sds/people/faculty/george-loewenstein.html][George Loewenstein]]
+     - [[https://loewenstein.web.illinois.edu/][Jeffrey Loewenstein]] 
+     - [[https://www.tuck.dartmouth.edu/faculty/faculty-directory/giovanni-gavetti][Giovanni Gavetti]]
+     - [[https://mba.technion.ac.il/prof-ido-erev/][Ido Erev]]
+     - [[https://ie.technion.ac.il/~yeldad/][Eldad Yechiam]]
+     - [[https://www.qber.uni-kiel.de/de/team/alexander-klos][Alexander Klos]]
+     - [[https://www.wiwi.uni-muenster.de/fcm/de/das-fcm/lsf/team/thomas-langer][Thomas Langer]]
+     - [[https://www.ru.nl/english/people/zeisberger-s/][Stefan Zeisberger]]
+     - [[https://www.bwl.uni-mannheim.de/en/weber/][Martin Weber]]
+     - [[http://oriplonsky.com/][Ori Plonsky]]
+     - [[https://www.wbs.ac.uk/about/person/daniel-read/][Daniel Read]]
+     - [[https://www.kellogg.northwestern.edu/faculty/directory/bockenholt_ulf.aspx][Ulf Bockenholt]]
+     - [[https://www8.gsb.columbia.edu/articles/authors/elizabeth-webb][Elizabeth Webb]]
+     - [[https://www.anderson.ucla.edu/faculty-and-research/marketing/faculty/shu][Suzanne Shu]]
+     - [[https://www.gsb.stanford.edu/faculty-research/faculty/baba-shiv][Baba Shiv]]
 * Anecdotes
 ** Conceptual discussion
    - Last reply from Micah:
@@ -323,10 +412,37 @@ anecdote and target have opposite values
      - Well it can't be due to content, because they're different.
    - Does that mean that we now don't need the whole pivoted target/anecdote
      shebang?
-   - Well I guess we still need it, but the target project doesn't need to change
+   - Well I guess we still need it, but the target project doesn't need to
+     change
  - Not working with making the anecdote variation change with NPV.
    - So maybe we rewrite so that target is made first, and then anecdote after,
  without pivoting, inside each row's nested column
+**** Justification of counterbalancing conditions
+     - Anecdote variation
+       - Otherwise it's unclear if people picked a project because of its
+         contents
+       - It's really also a "target project" variation
+     - Project variation
+       - We need five pairs of projects, for each of the five displays
+       - But I guess project variation is more about which pairs go with which
+     anecdote condition
+       - So we need five pairs for each anecdote condition, so that we can
+       assign each of the five pairs to the five conditions and choose one of
+       five latin square "variations".
+       - So one project variation condition filters to the five displays
+**** Making project variation work
+     - Project variation gives a number to (at this point) low and high
+       alignment rows and then a different number to the same rows but flipped.
+     - So that in one case domain 1 is low and domain 2 is high, and the
+       opposite is the case with the other variation condition level.
+*** TODO Realistic multipliers
+*** TODO Analysis content
+*** TODO Project variation content
+*** TODO Clean up functions
+*** TODO Valence condition
+*** TODO Anecdote condition analysis differences
+*** TODO Add project variation across within-subjects variables
+
 * Aggregation
 ** Analysis
    - From Evan:
