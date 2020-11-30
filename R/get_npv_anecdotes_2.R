@@ -6,7 +6,10 @@
 get_npv_anecdotes_2 <- function() {
   list(
     c(900, 101),
-    c(100, 901)
+    c(901, 100)
   ) %>%
-    map(as.character)
+    map(as.character) %>%
+        list() %>%
+        rep(2)
+
 }

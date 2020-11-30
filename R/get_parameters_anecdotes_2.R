@@ -4,10 +4,14 @@
 ##' @author Shir Dekel
 ##' @export
 get_parameters_anecdotes_2 <- function() {
+
   tibble(
-    project_variation = 1,
+    project_variation = seq_len(2) %>%
+      as.numeric() %>%
+   latin_list(),
     anecdote_variation = seq_len(2) %>%
-      as.numeric(),
+      as.numeric() %>%
+  latin_list(),
     feature_type = c("target", "anecdote") %>% list(),
     business_name = get_business_name_anecdotes_2() %>% list(),
     type = get_project_type_anecdotes_2() %>% list(),
@@ -21,47 +25,73 @@ get_parameters_anecdotes_2 <- function() {
     unit = get_unit_anecdotes_2() %>% list(),
     reliability = get_reliability_anecdotes_2(),
     npv = get_npv_anecdotes_2(),
-    project_type = c("target", "comparison") %>%
-      latin_list(),
+  project_type = c("target", "comparison") %>%
+ list(),
     alignment = c("low", "high") %>% list(),
     reason = get_reason() %>% list()
   ) %>%
-    unnest(c(
-      location,
-      integration,
-      structure,
-      value_string,
-      alignment,
-      multiplier
-    )) %>%
     unnest(
       c(
-        business_name,
-        feature_type,
-        location,
-        integration,
-        structure,
-        value_string,
-        multiplier,
-      )
-    ) %>%
-    unnest(c(
-      npv,
-      reliability,
-      project_type,
+      project_variation,
       business_name,
       type,
       location,
+      value_string,
+      feature,
+      ## integration,
+      ## structure,
+        ## reliability,
+      )
+      ) %>%
+   # vary by feature_type (target/anecdote)
+    unnest(c(
+      business_name,
+      location,
       integration,
       structure,
-      feature,
-      value_numeric,
       value_string,
       multiplier,
-      unit,
-      reason
+      ## alignment,
+        feature_type,
+      ## type
     )) %>%
-    rowwise() %>%
+    ## select(project_variation, anecdote_variation, alignment, business_name)
+    unnest(
+      c(
+        ## business_name,
+        ## location,
+        ## integration,
+        ## structure,
+        value_string,
+        multiplier,
+        type,
+        npv,
+        alignment,
+        reason,
+        reliability,
+      anecdote_variation
+      )
+    ) %>%
+    ## select(project_variation, anecdote_variation, alignment, business_name)
+    unnest(c(
+      business_name,
+      location,
+      integration,
+      structure,
+      ## value_string,
+      multiplier,
+      npv,
+      reliability,
+      project_type,
+      type,
+      feature,
+      value_numeric,
+      unit,
+      ## reason
+    )) %>%
+    ## select(project_variation, anecdote_variation, alignment, project_type, multiplier) %>%
+    ## arrange(project_variation, anecdote_variation, alignment)
+  rowwise() %>%
     mutate(
       value = get_value(
         value_numeric,
@@ -82,7 +112,9 @@ get_parameters_anecdotes_2 <- function() {
       )
     ) %>%
     # needs to be removed because otherwise there are NAs after pivoting
-    select(-c(multiplier, value)) %>%
+    select(-c(multiplier, value, feature,
+              reason, unit, cutoff
+              )) %>%
     pivot_longer(
       c(
         business_name,
@@ -99,8 +131,10 @@ get_parameters_anecdotes_2 <- function() {
     ) %>%
     pivot_wider(
       names_from = c(names, feature_type),
-      values_from = values
-    ) %>%
+      values_from = values,
+      ) %>%
+    ## select(project_variation, anecdote_variation, alignment, integration_anecdote)  %>%
+    ## arrange(project_variation, anecdote_variation, alignment)
     nest_by(project_variation, alignment, anecdote_variation) %>%
     mutate(
       target = get_target(data) %>%
@@ -111,6 +145,11 @@ get_parameters_anecdotes_2 <- function() {
         as.character()
     ) %>%
     nest_by(project_variation, anecdote_variation) %>%
+   ##  filter(project_variation == 1, anecdote_variation == 1) %>%
+   ##  pull(data) %>%
+   ##  .[[1]] %>%
+   ## pull(display) %>%
+   ## map(cat)
     mutate(
       timeline = get_projects_anecdotes_2(
         project_variation,

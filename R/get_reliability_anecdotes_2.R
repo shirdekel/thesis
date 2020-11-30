@@ -7,7 +7,9 @@ get_reliability_anecdotes_2 <- function() {
 
   list(
       c(95, 87),
-      c(88, 96)
+      c(96, 88)
   ) %>%
-      map(as.character)
+    map(as.character) %>%
+    list() %>%
+          rep(2)
 }

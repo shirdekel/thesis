@@ -10,19 +10,19 @@ get_location_anecdotes_2 <- function() {
       "microchip_target",
       "oil_target"
     ),
-      c("microchip_anecdote_low",
-        "oil_anecdote_low")
+      c("microchip_anecdote",
+        "oil_anecdote")
    ),
     list(
     c(
-      "microchip_target",
-      "oil_target"
+      "location3_target",
+      "location4_target"
     ),
       c(
-          "microchip_anecdote_high",
-          "oil_anecdote_high"
+          "location3_anecdote",
+          "location4_anecdote"
       )
     )
-  ) 
-    ## map(latin_list)
+  ) #%>% 
+    ## latin_list()
 }
