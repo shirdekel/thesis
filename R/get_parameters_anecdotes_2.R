@@ -43,6 +43,7 @@ get_parameters_anecdotes_2 <- function() {
       ## integration,
       ## structure,
         ## reliability,
+      reason
       )
       ) %>%
    # vary by feature_type (target/anecdote)
@@ -56,8 +57,9 @@ get_parameters_anecdotes_2 <- function() {
       ## alignment,
         feature_type,
       ## type
+      reason
     )) %>%
-    ## select(project_variation, anecdote_variation, alignment, business_name)
+    ## select(project_variation, anecdote_variation, alignment, business_name, reason)
    # vary by anecdote variation?
     unnest(
       c(
@@ -70,12 +72,14 @@ get_parameters_anecdotes_2 <- function() {
         type,
         npv,
         alignment,
-        reason,
+        ## reason,
         reliability,
       anecdote_variation
       )
     ) %>%
-    ## select(project_variation, anecdote_variation, alignment, business_name)
+   ##  select(project_variation, anecdote_variation, alignment, business_name,
+   ##         reason) %>%
+   ## pull(reason)
    # vary by project type? (target/comparison)
     unnest(c(
       business_name,
@@ -91,7 +95,7 @@ get_parameters_anecdotes_2 <- function() {
       feature,
       value_numeric,
       unit,
-      ## reason
+      reason
     )) %>%
    ##  select(project_variation, anecdote_variation, alignment, business_name, reason) %>%
    ##  arrange(project_variation, anecdote_variation, alignment) %>%
@@ -169,4 +173,5 @@ get_parameters_anecdotes_2 <- function() {
         list()
     ) %>%
     pull(timeline)
+
 }
