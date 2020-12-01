@@ -8,12 +8,15 @@
 get_value_string <- function() {
   list(
     list(
-        c("digital", "offshore"),
-        c("analogue", "onshore")
+      c("digital", "analogue"),
+      c("offshore", "onshore")
     ),
     list(
-    c("digital", "offshore"),
-    c("digital", "offshore")
+      c("value_string_3_1", "value_string_3_2"),
+      c("value_string_4_1", "value_string_4_2")
     )
-  )
+  ) %>%
+    map(~ .x %>%
+      transpose() %>%
+      map(unlist))
 }

@@ -5,6 +5,7 @@
 ##' @export
 get_parameters_anecdotes_2 <- function() {
 
+## asdf <- 
   tibble(
     project_variation = seq_len(2) %>%
       as.numeric() %>%
@@ -30,6 +31,7 @@ get_parameters_anecdotes_2 <- function() {
     alignment = c("low", "high") %>% list(),
     reason = get_reason() %>% list()
   ) %>%
+   # vary by project variation?
     unnest(
       c(
       project_variation,
@@ -56,13 +58,14 @@ get_parameters_anecdotes_2 <- function() {
       ## type
     )) %>%
     ## select(project_variation, anecdote_variation, alignment, business_name)
+   # vary by anecdote variation?
     unnest(
       c(
         ## business_name,
         ## location,
         ## integration,
         ## structure,
-        value_string,
+        ## value_string,
         multiplier,
         type,
         npv,
@@ -73,12 +76,13 @@ get_parameters_anecdotes_2 <- function() {
       )
     ) %>%
     ## select(project_variation, anecdote_variation, alignment, business_name)
+   # vary by project type? (target/comparison)
     unnest(c(
       business_name,
       location,
       integration,
       structure,
-      ## value_string,
+      value_string,
       multiplier,
       npv,
       reliability,
@@ -89,8 +93,10 @@ get_parameters_anecdotes_2 <- function() {
       unit,
       ## reason
     )) %>%
-    ## select(project_variation, anecdote_variation, alignment, project_type, multiplier) %>%
-    ## arrange(project_variation, anecdote_variation, alignment)
+   ##  select(project_variation, anecdote_variation, alignment, business_name, reason) %>%
+   ##  arrange(project_variation, anecdote_variation, alignment) %>%
+   ## filter(project_variation == 2, anecdote_variation == 2, alignment == "high") %>%
+   ##     pull(reason)
   rowwise() %>%
     mutate(
       value = get_value(
@@ -111,6 +117,10 @@ get_parameters_anecdotes_2 <- function() {
         reason, cutoff
       )
     ) %>%
+  ##   select(project_variation, anecdote_variation, alignment, business_name, value) %>%
+  ##  arrange(project_variation, anecdote_variation, alignment) %>%
+  ##  filter(project_variation == 2, anecdote_variation == 2, alignment == "high") %>%
+  ## pull(value)
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(multiplier, value, feature,
               reason, unit, cutoff
@@ -150,7 +160,7 @@ get_parameters_anecdotes_2 <- function() {
    ##  .[[1]] %>%
    ## pull(display) %>%
    ## map(cat)
-    mutate(
+  mutate(
       timeline = get_projects_anecdotes_2(
         project_variation,
         anecdote_variation,
