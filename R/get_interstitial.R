@@ -17,21 +17,33 @@ get_interstitial <- function(interstitial_number) {
       p(
         label(
           `for` = interstitial_name,
-          str_c(
-            "You will now see the",
-            ordinal(interstitial_number),
-            "project display. It is important that you pay attention and read through the task carefully. Click the following checkbox before continuing on to the next page: ",
-            sep = " "
-          )
+          "Click the following checkbox before continuing on to the next page: "
         ),
         input(
           type = "checkbox",
           name = interstitial_name,
           id = "pass",
-        )
+        ),
+        .noWS = "inside"
       )
-    ) %>%
-    as.character()
+    )
 
-  return(interstitial_html)
+  div(
+    p(
+      "You will now see project display #' +
+ jsPsych.data.getLastTrialData().select('current_project_display_order').values[0] +
+'. It is important that you pay attention and read through the task carefully."
+    ),
+    interstitial_html
+  ) %>%
+    as.character() %>%
+    # .noWS didn't work for the newline between the two p tags
+    str_remove_all("\\n") %>%
+    str_c(
+      "function() {
+        interstitial = '", ., "'
+        return interstitial
+        }"
+    ) %>%
+    insert_javascript()
 }

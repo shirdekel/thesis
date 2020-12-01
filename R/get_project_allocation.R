@@ -18,7 +18,15 @@ get_project_allocation <- function(projects, randomize_order) {
     trial_generic(
       "survey-html-form",
       html = insert_variable("interstitial"),
-      data = insert_property(stage = "interstitial")
+      data = insert_property(stage = "interstitial"),
+    on_finish = insert_javascript(
+        "function() {
+        current_project_display_order_value = 1 + jsPsych.data.getLastTrialData().select('current_project_display_order').values[0];
+        jsPsych.data.addProperties({
+        current_project_display_order: current_project_display_order_value
+        });
+        }"
+    )
     )
 
   interstitial_trials <-
