@@ -8,7 +8,7 @@
 ##' @export
 execute_function_call_if_else <- function(name, experiment_generator, thesis_project,
                                           experiment_number) {
-  if (experiment_generator == "jspsych") {
+  if (experiment_generator == "jaysire") {
     execute_function_call(
       name,
       thesis_project,

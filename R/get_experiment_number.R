@@ -8,7 +8,7 @@ get_experiment_number <- function() {
     c(
       c(2:4),
       c(2, 7, 8),
-      2
+      seq_len(2)
     )
   return(experiment_number)
 }

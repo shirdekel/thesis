@@ -1,3 +1,4 @@
+
 ##' @title Get plan parameters
 ##'
 ##' To be used in static branching functions
@@ -13,7 +14,10 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-        rep(4)
+      rep(2),
+      "import_data_local",
+      "import_data_anecdotes_1",
+      "import_data_local"
     ))
 
   data_directory_server <-
@@ -22,8 +26,9 @@ get_parameters <- function() {
         rep(3),
       here("inst", "extdata", "alignment", "experiment2"),
       here("inst", "extdata", "alignment", "experiment7"),
-      here("inst", "extdata", "psychsydexp") %>%
-        rep(2)
+      here("inst", "extdata", "psychsydexp"),
+      here("inst", "extdata", "anecdotes", "experiment1"),
+      here("inst", "extdata", "psychsydexp")
     )
 
   data_directory_server %>%
@@ -33,8 +38,9 @@ get_parameters <- function() {
     c(
       FALSE %>%
         rep(5),
-      TRUE %>%
-        rep(2)
+      TRUE,
+      FALSE,
+      TRUE
     )
 
   prolific_filter <-
@@ -44,6 +50,7 @@ get_parameters <- function() {
       get_prolific_filter_aggregation_4(),
       NA,
       NA,
+      "datetime > '2020-07-28'",
       "datetime > '2020-07-28'",
       "datetime > '2020-07-28'"
     )
@@ -66,6 +73,7 @@ get_parameters <- function() {
       NA,
       NA,
       NA,
+      NA,
       NA
     )
 
@@ -76,6 +84,7 @@ get_parameters <- function() {
       "clean_data_alignment_2",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
+      "clean_data_anecdotes_1",
       "clean_data_anecdotes_2"
     ) %>%
     syms()
@@ -104,6 +113,10 @@ get_parameters <- function() {
         "reliability_type",
         "reliability_amount",
         "npv_amount"
+      ),
+      c(
+        "Evidence",
+        "Similarity"
       ),
       c(
         "anecdote",
@@ -151,17 +164,21 @@ get_parameters <- function() {
       ),
       c(
         "allocation"
+      ),
+      c(
+        "allocation"
       )
     )
 
   experiment_generator <-
     c(
-      "jspsych" %>%
+      "jaysire" %>%
         rep(3),
       "qualtrics" %>%
         rep(2),
-      "jspsych" %>%
-        rep(2)
+      "jaysire",
+      "jspsych",
+      "jaysire"
     )
 
   parameters <-
@@ -200,8 +217,8 @@ get_parameters <- function() {
         experiment_number
       ),
       get_main = case_when(
-        experiment_generator == "jspsych" ~ get_function_call(
-                                  "main",
+        experiment_generator == "jaysire" ~ get_function_call(
+          "main",
           thesis_project,
           experiment_number
         ),
@@ -209,7 +226,7 @@ get_parameters <- function() {
           list()
       ),
       experiment_directory = case_when(
-        experiment_generator == "jspsych" ~ get_experiment_directory(
+        experiment_generator == "jaysire" ~ get_experiment_directory(
           thesis_project,
           experiment_number
         )
@@ -283,7 +300,8 @@ get_parameters <- function() {
           list()
       ),
       filter_data_raw = case_when(
-        experiment_generator == "jspsych" ~ sym("filter_data_raw_jspsych") %>%
+        experiment_generator %in% c("jaysire", "jspsych") ~
+          sym("filter_data_raw_jspsych") %>%
           list(),
         TRUE ~ sym("filter_data_raw_qualtrics") %>%
           list()

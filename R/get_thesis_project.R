@@ -10,7 +10,8 @@ get_thesis_project <- function() {
         rep(3),
       "alignment" %>%
         rep(3),
-      "anecdotes"
+      "anecdotes" %>%
+        rep(2)
     )
   return(thesis_project)
 }

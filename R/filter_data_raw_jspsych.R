@@ -29,6 +29,13 @@ filter_data_raw_jspsych <- function(data_raw, thesis_project, experiment_number)
         similarity = "high"
       ) %>%
       ungroup()
+  } else if (thesis_project == "anecdotes" & experiment == "experiment1") {
+    data_raw <-
+      data_raw %>%
+      mutate(
+        experiment = "experiment1",
+        thesis_project = "anecdotes"
+      )
   }
 
   data_raw_filtered <-
