@@ -7,7 +7,9 @@
 ##' @author Shir Dekel
 ##' @export
 get_parameters <- function() {
-  set_sum_contrasts()
+  if (all(getOption("contrasts") != c("contr.sum", "contr.poly"))) {
+    set_sum_contrasts()
+  }
 
   import_data <-
     syms(c(
