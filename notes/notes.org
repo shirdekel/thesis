@@ -180,6 +180,8 @@ seem problematic to me. But does formal analysis or simulations suggest it is
 still a good strategy? Or is this highly dependent on the degree of variability
 in the large sample?
      #+end_quote
+** Experiment 1
+*** TODO Summary
 ** Experiment 2
 *** Design
     - IVs
@@ -456,6 +458,8 @@ anecdote and target have opposite values
     - Won't be easy, because it involves the NPV row
 *** TODO Statistics only condition
     - State "TODO"       from              [2020-11-30 Mon 15:49]
+*** TODO Summary of plan
+    - Before investing further into the coding
 *** Analysis
     - How are we comparing between Stats only and the others again?
     - I guess compare the difference stats only and the anecdote condition
@@ -2906,8 +2910,10 @@ amount of people as before, because we are technically doing a post-hoc analysis
      }
 
    #+end_src
-*** Fix interstitial order
+*** DONE Fix interstitial order
+    CLOSED: [2020-12-01 Tue 12:15]
     - Seems to be changing with randomisation of display order
+    - Maybe we do what we did with the aggregation experiment and add a counter
 *** DONE Fix materials pdf
     CLOSED: [2020-12-01 Tue 10:45]
     - Seems to have been a result of the form validation issues
@@ -3147,7 +3153,8 @@ predictor of a project's profits"
      CLOSED: [2020-12-01 Tue 08:59]
 **** DONE add "Each project is indepdent of the others"
      CLOSED: [2020-12-01 Tue 08:55]
-**** TODO send Dan experiment link
+**** DONE send Dan experiment link
+     CLOSED: [2020-12-01 Tue 21:38]
      - State "TODO"       from              [2020-11-30 Mon 19:30]
 **** TODO Wednesday cap on McKinsey and RA payments
      - State "TODO"       from              [2020-11-30 Mon 19:30]
