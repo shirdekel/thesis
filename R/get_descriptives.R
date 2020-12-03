@@ -65,6 +65,20 @@ get_descriptives <- function(data_clean, iv) {
       )
     )
 
+  prolific_sample <-
+    data_clean %>%
+    names() %>%
+    str_detect("prolific") %>%
+    any()
+
+  if (prolific_sample) {
+    sample_description <-
+      "the online recruitment platform Prolific. Participants were compensated at a rate of £5 an hour."
+  } else {
+    sample_description <-
+      "a Psychology undergraduate sample at The University of Sydney. Participants were compensated with course credit."
+  }
+
   apa <-
     str_c(
       total_apa,
@@ -72,7 +86,9 @@ get_descriptives <- function(data_clean, iv) {
         "(",
         sex_female
       ),
-      "female) people were recruited from the online recruitment platform Prolific. Participants were compensated at a rate of £5 an hour. The average age was",
+      "female) people were recruited from",
+      sample_description,
+      "The average age was",
       str_c(
         numerical$age,
         "."
