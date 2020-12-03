@@ -6,8 +6,8 @@
 get_plot_anecdotes_1 <- function(data_clean) {
   data_clean %>%
       apa_plot(
-          iv1 = "Evidence",
-          iv2 = "Similarity",
+          iv1 = "anecdote",
+          iv2 = "alignment",
           iv1.lab = "Evidence type",
           iv2.lab = "Similarity",
           dv = "allocation_projectA",

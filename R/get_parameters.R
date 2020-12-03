@@ -1,4 +1,3 @@
-
 ##' @title Get plan parameters
 ##'
 ##' To be used in static branching functions
@@ -117,8 +116,8 @@ get_parameters <- function() {
         "npv_amount"
       ),
       c(
-        "Evidence",
-        "Similarity"
+        "anecdote",
+        "alignment"
       ),
       c(
         "anecdote",

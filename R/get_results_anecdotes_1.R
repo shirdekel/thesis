@@ -9,10 +9,10 @@
 get_results_anecdotes_1 <- function(data_clean, iv, dv) {
   results_anecdotes_1 <-
     data_clean %>%
-    nest_by(id, Evidence, age) %>%
+    nest_by(id, anecdote, age) %>%
     aov_4(
       age ~
-      Evidence + (1 | id),
+      anecdote + (1 | id),
       data = .,
       print.formula = T
     ) %>%
