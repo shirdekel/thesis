@@ -18,13 +18,13 @@
     - So do we just simulate the data with subject variance of zero?
     - [[https://stat.ethz.ch/pipermail/r-sig-mixed-models/2014q3/022509.html][Here]] Bates suggests that variance of zero just suggests the model should
     be simplified 
-     - Also:
+    - Also:
     #+begin_quote
     It is much more likely that there is insufficient data to estimate the
-parameters in a model of this level of complexity.
+    parameters in a model of this level of complexity.
     #+end_quote
-   - According to [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5970551/][this]], random effects...
-   #+begin_quote
+    - According to [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5970551/][this]], random effects...
+    #+begin_quote
     are quite ‘data hungry’; requiring at least five ‘levels’ (groups) for a
     random intercept term to achieve robust estimates of variance (Gelman &
     Hill, 2007; Harrison, 2015). With <5 levels, the mixed model may not be able
@@ -33,8 +33,8 @@ parameters in a model of this level of complexity.
     to an ordinary GLM (Gelman & Hill, 2007, p. 275) or be non-zero but
     incorrect if the small number of groups that were sampled are not
     representative of true distribution of means (Harrison, 2015).
-   #+end_quote
-   - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
+    #+end_quote
+    - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
 ** TODO Work out why you can pass symbols for functions in drake, but not for arguments
 ** TODO Work out why sometimes drake re-runs when switching computers
    - Seems to be set off by the resources folders
@@ -75,7 +75,7 @@ parameters in a model of this level of complexity.
        - Alignment
      - But, since most cases are low alignment, what influences their reliance
    on case studies?
-       - Anecdotes
+   - Anecdotes
 ** Examiners
    - Current list
      - [[https://liberalarts.utexas.edu/psychology/faculty/markman][Art Markman]]
@@ -133,19 +133,19 @@ parameters in a model of this level of complexity.
    - The talk by Derek Wyman clarifies conflicts of interest
    #+begin_quote
    
-“...actual, potential or perceived conflicts of interest”
+   “...actual, potential or perceived conflicts of interest”
 
-Examiner – Supervisor:
+   Examiner – Supervisor:
 
-– circumstances in which the supervisors(s) and the examiner were co-applicants
-on grant proposals, have co-published or worked in the same academic unit within
-the last 5 years.
+   – circumstances in which the supervisors(s) and the examiner were co-applicants
+   on grant proposals, have co-published or worked in the same academic unit within
+   the last 5 years.
 
    A person cannot be an examiner if they
-– have had involvement in the student’s research, or are a co-author on any part of the work;
-– have a past or current close personal relationship with the student or supervisor;
-– have had substantial contact with the student or supervisor in any other circumstance which might jeopardise the independence, or the perceived independence of the examination;
-– have been a research student of the supervisor within the last ten years; or have supervised the student at any time
+   – have had involvement in the student’s research, or are a co-author on any part of the work;
+   – have a past or current close personal relationship with the student or supervisor;
+   – have had substantial contact with the student or supervisor in any other circumstance which might jeopardise the independence, or the perceived independence of the examination;
+   – have been a research student of the supervisor within the last ten years; or have supervised the student at any time
    #+end_quote
    - So no Markman, Rabin, Bardolet
    - But Fox is fine, because not within five years
@@ -170,178 +170,178 @@ the last 5 years.
 ** Conceptual discussion
 *** Notes from original talk
     #+begin_quote
-   - what the normative account is
-   - can take business studies: people are case-based reasoners
-   - something seems blunt about just using the brute statistics without distinguishing the relevance
-   - part of what asking: can you distinguish anecdotal based thinking and case based
-   - might be justifying more normally than marginal statistics
-   - Micah: in the case of business specifically: when this might be relevant?
-     - are these the right features
-     - if seeing overall similarity that's not relevant...
-   - robert: don't think agrees on last point
-     - whole rage with precision medicine:
-     - let's say identical twin got benefit of vitamin
-     - i should take what they say more than random anecdote
-   - micah: work in progress is thinking about normative things
-     - easy to point when it's normative, e.g. ,vaccination
-     - but other situations might not be
-     - not saying it's always a bad thing
-     - can check if people are being selective
-       - might take expertise to figure out what the right dimesinos are
-   - rob: if going from ignornace
-     - maybe machine learning overall simialrity, then might be making good choices by looking at previous example
-   - micah: if aggregating across and have similar case
-     - strategy that's not horrible
-     - there might be cases that when it's not a reasonable strategy people would still do it
-     - can do more work that: situation where clearly similairty is important, and situation where it isn't importnat, and see if they're sensitive
-     - real world decisions where might mean there is no adaptive thing like that
-   - rob: if I was consultant, maybe similar cases might be sueful
-     - influenced by overall similarity, but also relevant similarity
-     - they'll ignore that we're both 6"1, when it's clear hight is not relevant to outcome
+    - what the normative account is
+    - can take business studies: people are case-based reasoners
+    - something seems blunt about just using the brute statistics without distinguishing the relevance
+    - part of what asking: can you distinguish anecdotal based thinking and case based
+    - might be justifying more normally than marginal statistics
+    - Micah: in the case of business specifically: when this might be relevant?
+      - are these the right features
+      - if seeing overall similarity that's not relevant...
+    - robert: don't think agrees on last point
+      - whole rage with precision medicine:
+      - let's say identical twin got benefit of vitamin
+      - i should take what they say more than random anecdote
+    - micah: work in progress is thinking about normative things
+      - easy to point when it's normative, e.g. ,vaccination
+      - but other situations might not be
+      - not saying it's always a bad thing
+      - can check if people are being selective
+        - might take expertise to figure out what the right dimesinos are
+    - rob: if going from ignornace
+      - maybe machine learning overall simialrity, then might be making good choices by looking at previous example
+    - micah: if aggregating across and have similar case
+      - strategy that's not horrible
+      - there might be cases that when it's not a reasonable strategy people would still do it
+      - can do more work that: situation where clearly similairty is important, and situation where it isn't importnat, and see if they're sensitive
+      - real world decisions where might mean there is no adaptive thing like that
+    - rob: if I was consultant, maybe similar cases might be sueful
+      - influenced by overall similarity, but also relevant similarity
+      - they'll ignore that we're both 6"1, when it's clear hight is not relevant to outcome
 
- - Gentner
-   - can see rob's point: where oil well might be normative
-   - with medical
-     - might be able to do it
-   - micah: in business clear how to find relevant dimension
-     - in medicine: do these people use simialrity
+    - Gentner
+      - can see rob's point: where oil well might be normative
+      - with medical
+        - might be able to do it
+      - micah: in business clear how to find relevant dimension
+        - in medicine: do these people use simialrity
     #+end_quote
 *** Micah and Rob Goldstone emails
     #+begin_quote
     Hi Rob, I appreciate your question because we do need a normative analysis. I
- think you left at this point, but Nina Simms asked a similar question and I
- think I perhaps had a better answer the second time around, so wanted to get
- your thoughts. If say, the aggregated data was from a pool of similar cases
- (because there are plenty of cases within the more specific category that are
- successful) and we were clear about that, as opposed to the current experiment
- where we were more vague about the nature of the aggregated pool, would that be
- a better test-case to see if someone was suboptimally relying on the one case
- they just happen to have the details for?
+    think you left at this point, but Nina Simms asked a similar question and I
+    think I perhaps had a better answer the second time around, so wanted to get
+    your thoughts. If say, the aggregated data was from a pool of similar cases
+    (because there are plenty of cases within the more specific category that are
+    successful) and we were clear about that, as opposed to the current experiment
+    where we were more vague about the nature of the aggregated pool, would that be
+    a better test-case to see if someone was suboptimally relying on the one case
+    they just happen to have the details for?
 
- I agree generally, that a normative case needs to be developed regardless. But
- how do you think this context would fit into the norm?
+    I agree generally, that a normative case needs to be developed regardless. But
+    how do you think this context would fit into the norm?
 
- thanks, Micah
+    thanks, Micah
     #+end_quote
    
- #+begin_quote
- Micah (and Shir),
+    #+begin_quote
+    Micah (and Shir),
 
- yeah, I was thinking about this kind of thing too. Along these
- lines, I was thinking of setting up a situation where it was clear that there
- were descriptions/reviews of each of the cases prepared ahead of time, and you
- are just randomly sampling from one of these descriptions and showing it to
- participants. I think in that situation there’s not any more information
- provided by the anecdote, and so it shouldn’t be used (unless the content of the
- review makes it clear that the person is thinking like, or is like, the
- participant). Like your oil/microchip example, the sampling could also be said
- to be biased toward neutral or similar-to-self cases. Normatively I think people
- should be more influenced in the latter case, and I’m guessing that’s what you
- would find, based on your oil/microchip results.
+    yeah, I was thinking about this kind of thing too. Along these
+    lines, I was thinking of setting up a situation where it was clear that there
+    were descriptions/reviews of each of the cases prepared ahead of time, and you
+    are just randomly sampling from one of these descriptions and showing it to
+    participants. I think in that situation there’s not any more information
+    provided by the anecdote, and so it shouldn’t be used (unless the content of the
+    review makes it clear that the person is thinking like, or is like, the
+    participant). Like your oil/microchip example, the sampling could also be said
+    to be biased toward neutral or similar-to-self cases. Normatively I think people
+    should be more influenced in the latter case, and I’m guessing that’s what you
+    would find, based on your oil/microchip results.
 
- Neat stuff!
- Rob
- #+end_quote
+    Neat stuff!
+    Rob
+    #+end_quote
 
- #+begin_quote
- Thanks Rob! I think I'll also more closely match the business and health domains
- as well. My intuition is that people are more likely to use irrelevant
- dimensions of similarity in the health domain because of a lack of a clear
- causal model (in which case, large samples to generalise from seems more
- normative). If it turns out people are more sophisticated and selective I'd be
- surprised, but actually pleasantly in terms of the implications.
+    #+begin_quote
+    Thanks Rob! I think I'll also more closely match the business and health domains
+    as well. My intuition is that people are more likely to use irrelevant
+    dimensions of similarity in the health domain because of a lack of a clear
+    causal model (in which case, large samples to generalise from seems more
+    normative). If it turns out people are more sophisticated and selective I'd be
+    surprised, but actually pleasantly in terms of the implications.
 
- Best, Micah
- #+end_quote
+    Best, Micah
+    #+end_quote
 
- #+begin_quote
- Yeah, but also remember: if people don't have a lot causal knowledge, then the
- smart/sophisticated thing to do is use overall similarity between the known
- cases and one’s own situation in order to weight their outcomes. So, I think the
- normative model would use both overall similarity and dimension-specific
- similarity, tuning the use of each according to the quality of one’s knowledge
- about which dimensions are really important.
- #+end_quote
+    #+begin_quote
+    Yeah, but also remember: if people don't have a lot causal knowledge, then the
+    smart/sophisticated thing to do is use overall similarity between the known
+    cases and one’s own situation in order to weight their outcomes. So, I think the
+    normative model would use both overall similarity and dimension-specific
+    similarity, tuning the use of each according to the quality of one’s knowledge
+    about which dimensions are really important.
+    #+end_quote
 
- #+begin_quote
- Meant to reply. I agree, that in the case that knowledge is lacking, overall
- similarity is a smart strategy. But, in the case where you have
- low-knowledge/overall similarity info of an individual case, but also know that
- individual case is an outlier from the overall trend from a larger sample, do
- you think that overall similarity should still be weighed heavily? It's
- specifically the low-knowledge strategy when in conflict with large samples that
- seem problematic to me.
+    #+begin_quote
+    Meant to reply. I agree, that in the case that knowledge is lacking, overall
+    similarity is a smart strategy. But, in the case where you have
+    low-knowledge/overall similarity info of an individual case, but also know that
+    individual case is an outlier from the overall trend from a larger sample, do
+    you think that overall similarity should still be weighed heavily? It's
+    specifically the low-knowledge strategy when in conflict with large samples that
+    seem problematic to me.
 
- But does formal analysis or simulations suggest it is still a good strategy? Or
- is this highly dependent on the degree of variability in the large sample?
+    But does formal analysis or simulations suggest it is still a good strategy? Or
+    is this highly dependent on the degree of variability in the large sample?
 
- thanks, your thoughts are very helpful!
+    thanks, your thoughts are very helpful!
 
- -mbg
+    -mbg
 
- #+end_quote
+    #+end_quote
 *** Shir and Micah emails
     #+begin_quote
     Hey Micah,
  
-I put together everything I’ve got on Rob’s normative question (notes I took
-from your talk, and your email exchange with him); see below for reference. What
-do you think about this as a summary:
+    I put together everything I’ve got on Rob’s normative question (notes I took
+    from your talk, and your email exchange with him); see below for reference. What
+    do you think about this as a summary:
  
-- On the one hand, we know that aggregated data is more useful than an anecdote
-  (from that dataset).
-  - On the other hand, an anecdote that is identical (e.g., a twin) to the
-    target situation use is more useful than aggregated data.
-- Therefore, aggregated data should be used when the anecdote is randomly drawn
-  from a sample of cases from the aggregated dataset, and the anecdote should be
-  used when it was picked out specifically for its causal similarities to the
-  target situation.
- 
-So I guess we can just tell participants that the anecdote comes from the
-dataset that the statistics are based on. In that case it should then be
-definitely normative to go with the statistics, right?
+    - On the one hand, we know that aggregated data is more useful than an anecdote
+      (from that dataset).
+      - On the other hand, an anecdote that is identical (e.g., a twin) to the
+        target situation use is more useful than aggregated data.
+    - Therefore, aggregated data should be used when the anecdote is randomly drawn
+      from a sample of cases from the aggregated dataset, and the anecdote should be
+      used when it was picked out specifically for its causal similarities to the
+      target situation.
+
+    So I guess we can just tell participants that the anecdote comes from the
+    dataset that the statistics are based on. In that case it should then be
+    definitely normative to go with the statistics, right?
     #+end_quote
     #+begin_quote
     Ah I think we would want to further express that it is randomly sampled from
     the aggregate in some manner right? Don't we already say it comes from the
     set?
 
-I guess in terms of design, do we want a condition difference where it is more
-relatively better to use an anecdote vs. not? or perhaps something about the
-relevance of the specific dimensions of similarity vs. global similarity...
+    I guess in terms of design, do we want a condition difference where it is more
+    relatively better to use an anecdote vs. not? or perhaps something about the
+    relevance of the specific dimensions of similarity vs. global similarity...
 
-hmm...though maybe we need to emphasise the randomness for now, but then just do
-this other issue later. Perhaps let's also hear what Dan says about this given
-he said he had an answer...
+    hmm...though maybe we need to emphasise the randomness for now, but then just do
+    this other issue later. Perhaps let's also hear what Dan says about this given
+    he said he had an answer...
     #+end_quote
-#+begin_quote
-Yep sorry I forgot to add the randomly sample bit. Yes, we already say it comes
-from the set.
+    #+begin_quote
+    Yep sorry I forgot to add the randomly sample bit. Yes, we already say it comes
+    from the set.
 
-I think for now just emphasising the randomness is a good idea, because we're
-already adding valence and I think one condition add at a time makes sense.
+    I think for now just emphasising the randomness is a good idea, because we're
+    already adding valence and I think one condition add at a time makes sense.
 
-We should also consider whether it's possible to put the thesis together without
-this experiment in case it drags on too much (e.g., I'm still working on it in
-Feb). At the moment it seems important so that the anecdotes chapter doesn't
-just have one experiment.
-#+end_quote
-#+begin_quote
-yeah; we could do one more experiment for the thesis, and still need more for a
-paper...
+    We should also consider whether it's possible to put the thesis together without
+    this experiment in case it drags on too much (e.g., I'm still working on it in
+    Feb). At the moment it seems important so that the anecdotes chapter doesn't
+    just have one experiment.
+    #+end_quote
+    #+begin_quote
+    yeah; we could do one more experiment for the thesis, and still need more for a
+    paper...
 
-and we probably want to embellish the random explanation a bit just to ensure
-they dont miss it.
+    and we probably want to embellish the random explanation a bit just to ensure
+    they dont miss it.
 
-check out this line of research for instruction inspiration
-https://link.springer.com/article/10.3758/s13423-018-1562-2
+    check out this line of research for instruction inspiration
+    https://link.springer.com/article/10.3758/s13423-018-1562-2
 
-#+end_quote
+    #+end_quote
 *** Dealing with Rob's comments
     - @hayes2019
       - Diversity effect: generalisation occurs more from dissimilar sets than
     similar ones
-      - Depends on whether participants are told that the items come from a
+    - Depends on whether participants are told that the items come from a
       random distribution (weak sampling) or were intentionally chosen (strong sampling)
       - [[https://osf.io/fpx9k/][OSF page]]
       - Strong sampling instruction excerpt:
@@ -350,15 +350,15 @@ https://link.springer.com/article/10.3758/s13423-018-1562-2
         variety of living things that have the property.
         #+end_quote
       - Weak sampling instruction excerpt:
-#+begin_quote
-We asked a student to open a book on plants and animals at weak pages and note
-the first three living things they came across and whether or not those living
-things have the property in question.
+    #+begin_quote
+    We asked a student to open a book on plants and animals at weak pages and note
+    the first three living things they came across and whether or not those living
+    things have the property in question.
 
-This means the information you receive may not be the most strong for making
-your judgment - by chance, the student will sometimes select very dissimilar
-items, and sometimes very similar ones.
-#+end_quote
+    This means the information you receive may not be the most strong for making
+    your judgment - by chance, the student will sometimes select very dissimilar
+    items, and sometimes very similar ones.
+    #+end_quote
 
 ** Experiment 1
 *** TODO Summary
@@ -373,16 +373,16 @@ items, and sometimes very similar ones.
     - But the tricky thing is how we planned the new within-subjects design.
       - Anecdotes article Experiment 2 actually summarises it:
     #+begin_quote
-Experiment 2 was very similar to [Experiment 1], except that we added a
-within-subjects anecdote valence manipulation. Further, manipulated anecdote
-similarity within-subjects, in order to increase the experiment's power. All
-participants saw the statistics only condition, as it did not contain an
-anecdote, and therefore did not need to be manipulated between-subjects. As
-such, each participant saw five displays, with one statistics only condition,
-and four displays for either the anecdote only condition, or the statistics and
-anecdote condition. These four displays consisted of the similarity (low and
-high) $\times$ valence (negative and positive) conditions.
-        #+end_quote
+    Experiment 2 was very similar to [Experiment 1], except that we added a
+    within-subjects anecdote valence manipulation. Further, manipulated anecdote
+    similarity within-subjects, in order to increase the experiment's power. All
+    participants saw the statistics only condition, as it did not contain an
+    anecdote, and therefore did not need to be manipulated between-subjects. As
+    such, each participant saw five displays, with one statistics only condition,
+    and four displays for either the anecdote only condition, or the statistics and
+    anecdote condition. These four displays consisted of the similarity (low and
+    high) $\times$ valence (negative and positive) conditions.
+    #+end_quote
     - How many domains?
       - Each display has two, and then the anecdote is the same as one of them.
       - So we cycle between each of them as the anecdote/reference.
@@ -459,18 +459,18 @@ high) $\times$ valence (negative and positive) conditions.
         from the same domain.
         - But the above technically already accounts for this because to do this
           we just need high and low value conditions
-         | project | business | valence | similarity | statistics amount | anecdote | intrinsic |
-         |---------+----------+---------+------------+-------------------+----------+-----------|
-         | oil     | fuel co  | high    | low        | high              |          |           |
-         | oil     | fuel co  | low     | low        | high              |          |           |
-         | oil     | fuel co  | high    | high       | high              |          |           |
-         | oil     | fuel co  | low     | high       | high              |          |           |
-         | oil     | fuel co  | NA      | NA         | NA                |          |           |
-         | oil     | refinera | high    | low        | low               |          |           |
-         | oil     | refinera | low     | low        | low               |          |           |
-         | oil     | refinera | high    | high       | low               |          |           |
-         | oil     | refinera | low     | high       | low               |          |           |
-         | oil     | refinera | NA      | NA         | NA                |          |           |
+          | project | business | valence | similarity | statistics amount | anecdote | intrinsic |
+          |---------+----------+---------+------------+-------------------+----------+-----------|
+          | oil     | fuel co  | high    | low        | high              |          |           |
+          | oil     | fuel co  | low     | low        | high              |          |           |
+          | oil     | fuel co  | high    | high       | high              |          |           |
+          | oil     | fuel co  | low     | high       | high              |          |           |
+          | oil     | fuel co  | NA      | NA         | NA                |          |           |
+          | oil     | refinera | high    | low        | low               |          |           |
+          | oil     | refinera | low     | low        | low               |          |           |
+          | oil     | refinera | high    | high       | low               |          |           |
+          | oil     | refinera | low     | high       | low               |          |           |
+          | oil     | refinera | NA      | NA         | NA                |          |           |
 **** After reviewing Experiment 1
      - High and low similarity don't mean different business names
        - They have different business names regardless of similarity condition
@@ -482,16 +482,16 @@ high) $\times$ valence (negative and positive) conditions.
        3. Anecdote - high valence high similarity
        4. Anecdote - low valence low similarity
        5. Anecdote - high valence low similarity
-         | project | project role | business | valence | similarity | analysis | features |
-         |---------+--------------+----------+---------+------------+----------+----------|
-         | oil     | target       | enfuel   | high    | high       | NA       | f        |
-         | oil     | anecdote     | refinera | high    | high       | a1       | f1       |
-         | oil     | target       | enfuel   | low     | high       | NA       | f        |
-         | oil     | anecdote     | refinera | low     | high       | a2       | f2       |
-         | oil     | target       | enfuel   | high    | low        | NA       | f        |
-         | oil     | anecdote     | refinera | high    | low        | a3       | f3       |
-         | oil     | target       | enfuel   | low     | low        | NA       | f        |
-         | oil     | anecdote     | refinera | low     | low        | a4       | f4       |
+          | project | project role | business | valence | similarity | analysis | features |
+          |---------+--------------+----------+---------+------------+----------+----------|
+          | oil     | target       | enfuel   | high    | high       | NA       | f        |
+          | oil     | anecdote     | refinera | high    | high       | a1       | f1       |
+          | oil     | target       | enfuel   | low     | high       | NA       | f        |
+          | oil     | anecdote     | refinera | low     | high       | a2       | f2       |
+          | oil     | target       | enfuel   | high    | low        | NA       | f        |
+          | oil     | anecdote     | refinera | high    | low        | a3       | f3       |
+          | oil     | target       | enfuel   | low     | low        | NA       | f        |
+          | oil     | anecdote     | refinera | low     | low        | a4       | f4       |
      - And then when we filter by condition we always get the same target, and
        one of the four anecdotes
      - But I guess we have stats only
@@ -511,38 +511,38 @@ high) $\times$ valence (negative and positive) conditions.
          | oil     | target   | enfuel   | low     | low        | NA       | f        | NA         |
          | oil     | anecdote | refinera | low     | low        | a4       | f4       | NA         |
        - Anecdote + statistics:
-          | project | role     | business | valence | similarity | analysis | features | statistics |
-          |---------+----------+----------+---------+------------+----------+----------+------------|
-          | oil     | target   | enfuel   | high    | high       | NA       | f        | high       |
-          | oil     | anecdote | refinera | high    | high       | a1       | f1       | high       |
-          | oil     | target   | enfuel   | low     | high       | NA       | f        | high       |
-          | oil     | anecdote | refinera | low     | high       | a2       | f2       | high       |
-          | oil     | target   | enfuel   | high    | low        | NA       | f        | high       |
-          | oil     | anecdote | refinera | high    | low        | a3       | f3       | high       |
-          | oil     | target   | enfuel   | low     | low        | NA       | f        | high       |
-          | oil     | anecdote | refinera | low     | low        | a4       | f4       | high       |
+         | project | role     | business | valence | similarity | analysis | features | statistics |
+         |---------+----------+----------+---------+------------+----------+----------+------------|
+         | oil     | target   | enfuel   | high    | high       | NA       | f        | high       |
+         | oil     | anecdote | refinera | high    | high       | a1       | f1       | high       |
+         | oil     | target   | enfuel   | low     | high       | NA       | f        | high       |
+         | oil     | anecdote | refinera | low     | high       | a2       | f2       | high       |
+         | oil     | target   | enfuel   | high    | low        | NA       | f        | high       |
+         | oil     | anecdote | refinera | high    | low        | a3       | f3       | high       |
+         | oil     | target   | enfuel   | low     | low        | NA       | f        | high       |
+         | oil     | anecdote | refinera | low     | low        | a4       | f4       | high       |
          - I think the target will always have high statistics
            - Or maybe just for low valence?
            - Yes, it depends on valence
            - Also valence is positive/negative, not high/low
        - Anecdote + statistics amended:
-          | project | role     | business | valence  | similarity | analysis | features | statistics |
-          |---------+----------+----------+----------+------------+----------+----------+------------|
-          | oil     | target   | enfuel   | positive | high       | NA       | f        | low        |
-          | oil     | anecdote | refinera | positive | high       | a1       | f1       | low        |
-          | oil     | target   | enfuel   | negative | high       | NA       | f        | high       |
-          | oil     | anecdote | refinera | negative | high       | a2       | f2       | high       |
-          | oil     | target   | enfuel   | positive | low        | NA       | f        | low        |
-          | oil     | anecdote | refinera | positive | low        | a3       | f3       | low        |
-          | oil     | target   | enfuel   | negative | low        | NA       | f        | high       |
-          | oil     | anecdote | refinera | negative | low        | a4       | f4       | high       |
+         | project | role     | business | valence  | similarity | analysis | features | statistics |
+         |---------+----------+----------+----------+------------+----------+----------+------------|
+         | oil     | target   | enfuel   | positive | high       | NA       | f        | low        |
+         | oil     | anecdote | refinera | positive | high       | a1       | f1       | low        |
+         | oil     | target   | enfuel   | negative | high       | NA       | f        | high       |
+         | oil     | anecdote | refinera | negative | high       | a2       | f2       | high       |
+         | oil     | target   | enfuel   | positive | low        | NA       | f        | low        |
+         | oil     | anecdote | refinera | positive | low        | a3       | f3       | low        |
+         | oil     | target   | enfuel   | negative | low        | NA       | f        | high       |
+         | oil     | anecdote | refinera | negative | low        | a4       | f4       | high       |
        - Also, statistics isn't really relevant to the anecdote; only to target.
          - But again, it seems to be useful for filtering, even though they're duplicated.
        - Statistics only:
-          | project | role     | business | valence | similarity | analysis | features | statistics |
-          |---------+----------+----------+---------+------------+----------+----------+------------|
-          | oil     | target   | enfuel   | NA      | NA         | NA       | f        | high       |
-          | oil     | anecdote | NA       | NA      | NA         | NA       | NA       | high       |
+         | project | role     | business | valence | similarity | analysis | features | statistics |
+         |---------+----------+----------+---------+------------+----------+----------+------------|
+         | oil     | target   | enfuel   | NA      | NA         | NA       | f        | high       |
+         | oil     | anecdote | NA       | NA      | NA         | NA       | NA       | high       |
      - So we make one of those for each domain.
      - Pair them up.
      - Then in each pair each one either acts as a target or a comparison each time.
@@ -583,28 +583,28 @@ high) $\times$ valence (negative and positive) conditions.
      the combined condition, with three displays.
      - And then I guess the variations would come from that
      - For that you can also split it up into initially just getting the target
-sorted, and then working out the displays from there.
-- Because supposedly the values come from there.
-- The trouble now is doing everything in rows, but also making sure that
-anecdote and target have opposite values
- - Perhaps using ~pivot~?
-   - Yes, pivot works
-   - Still not super pretty, because you have suffixes, but works.
- - Currently have ~project_feature_variation~.
-   - But hard to see how that works with similarity manipulation
-   - So maybe we don't need that level of variation.
-   - Maybe varying the projects themselves between the five displays is enough
-   - That is, any differences between anecdote conditions can't be attributed to
-     content
-   - What about for alignment manipulation?
-     - Well it can't be due to content, because they're different.
-   - Does that mean that we now don't need the whole pivoted target/anecdote
-     shebang?
-   - Well I guess we still need it, but the target project doesn't need to
-     change
- - Not working with making the anecdote variation change with NPV.
-   - So maybe we rewrite so that target is made first, and then anecdote after,
- without pivoting, inside each row's nested column
+     sorted, and then working out the displays from there.
+     - Because supposedly the values come from there.
+     - The trouble now is doing everything in rows, but also making sure that
+     anecdote and target have opposite values
+     - Perhaps using ~pivot~?
+       - Yes, pivot works
+       - Still not super pretty, because you have suffixes, but works.
+     - Currently have ~project_feature_variation~.
+       - But hard to see how that works with similarity manipulation
+       - So maybe we don't need that level of variation.
+       - Maybe varying the projects themselves between the five displays is enough
+       - That is, any differences between anecdote conditions can't be attributed to
+         content
+       - What about for alignment manipulation?
+         - Well it can't be due to content, because they're different.
+       - Does that mean that we now don't need the whole pivoted target/anecdote
+         shebang?
+       - Well I guess we still need it, but the target project doesn't need to
+         change
+     - Not working with making the anecdote variation change with NPV.
+       - So maybe we rewrite so that target is made first, and then anecdote after,
+     without pivoting, inside each row's nested column
 **** Justification of counterbalancing conditions
      - Anecdote variation
        - Otherwise it's unclear if people picked a project because of its
@@ -614,7 +614,7 @@ anecdote and target have opposite values
        - We need five pairs of projects, for each of the five displays
        - But I guess project variation is more about which pairs go with which
      anecdote condition
-       - So we need five pairs for each anecdote condition, so that we can
+     - So we need five pairs for each anecdote condition, so that we can
        assign each of the five pairs to the five conditions and choose one of
        five latin square "variations".
        - So one project variation condition filters to the five displays
@@ -655,38 +655,38 @@ anecdote and target have opposite values
    #+end_quote
 
    - From Alex:
-#+begin_quote
-What you are describing makes sense though. You have less information in a
-binary outcome than in a continuous or even a richer categorical outcome. So
-it’s not possible to get a meaningful value for the autocorrelation if you don’t
-have any information on how it varies, as in a sequence of all 1s or 0s. It’s a
-similar issue to when you have a perfect predictor for a binary outcome. There
-is no information in that predictor, because there is perfect separation, so you
-have to exclude it from your model.
+   #+begin_quote
+   What you are describing makes sense though. You have less information in a
+   binary outcome than in a continuous or even a richer categorical outcome. So
+   it’s not possible to get a meaningful value for the autocorrelation if you don’t
+   have any information on how it varies, as in a sequence of all 1s or 0s. It’s a
+   similar issue to when you have a perfect predictor for a binary outcome. There
+   is no information in that predictor, because there is perfect separation, so you
+   have to exclude it from your model.
 
-#+end_quote
+   #+end_quote
 * Alignment
 ** TODO Experiment 8
 *** Plan  
-     - Let's try work backwards:
-     - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
-     - So each iteration of the loop should have a list of two for the two displays
-     - I guess we can do everything in tibbles and then in the end nest the two displays (for reliability amount) in the end
-       - And convert the two rows to a list
-     - So everything can be on big tibble with the following variable columns:
-       - Alignment condition
-       - Reliability type
-       - Project variation
-         - Low alignment: intrinsic features
-         - High alignment: project type
-     - Then supposedly, filtering that down (and passing the relevant column value to display_if for condition) will get you the two displays for each combination
-       - but actually it wouldn't be filtering, it would be stepping down each row and pulling the 'parameters'
-     - Actually configuring the two reliability amount displays isn't that easy
-       - They need different NPVs
-       - Also, they need five new project descriptions
-     - New issue
-       - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
-       - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
+    - Let's try work backwards:
+    - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
+    - So each iteration of the loop should have a list of two for the two displays
+    - I guess we can do everything in tibbles and then in the end nest the two displays (for reliability amount) in the end
+      - And convert the two rows to a list
+    - So everything can be on big tibble with the following variable columns:
+      - Alignment condition
+      - Reliability type
+      - Project variation
+        - Low alignment: intrinsic features
+        - High alignment: project type
+    - Then supposedly, filtering that down (and passing the relevant column value to display_if for condition) will get you the two displays for each combination
+      - but actually it wouldn't be filtering, it would be stepping down each row and pulling the 'parameters'
+    - Actually configuring the two reliability amount displays isn't that easy
+      - They need different NPVs
+      - Also, they need five new project descriptions
+    - New issue
+      - You ran Aggregation Experiment 3b (high alignment top up) with the Experiment 4 link.
+      - So not the end of the world, but now what you probably need to do is to hard code those three IDs out of Experiment 4 prolific ID generation.
 *** DONE Counterbalancing
     CLOSED: [2020-10-08 Thu 16:40]
     - Project variation
@@ -2976,23 +2976,23 @@ have to exclude it from your model.
          - 0.022 seems to be the value, with a p value of 0.0406
          - Which we got by doing this:
          #+begin_src R
-                      drake::loadd(data_clean_alignment_7)
+           drake::loadd(data_clean_alignment_7)
            library(emmeans)
 
-                      model_alignment_7 <-
-                        data_clean_alignment_7 %>%
-                        filter(alignment == "low") %>%
-                        nest_by(id, allocation, reliability_amount, reliability_type, npv_amount) %>%
-                        mixed(
-                          allocation ~ reliability_amount * reliability_type * npv_amount +
-                            (1 | id),
-                          data = .
-                        ) 
+           model_alignment_7 <-
+             data_clean_alignment_7 %>%
+             filter(alignment == "low") %>%
+             nest_by(id, allocation, reliability_amount, reliability_type, npv_amount) %>%
+             mixed(
+               allocation ~ reliability_amount * reliability_type * npv_amount +
+                 (1 | id),
+               data = .
+             ) 
 
-                      model_alignment_7 %>%
-                        emtrends(spec = c("reliability_type", "reliability_amount"), var = "npv_amount") %>%
-                        pairs(by = "reliability_type") %>% 
-                        summary(infer = TRUE, side = "equivalence", delta = 0.022)
+           model_alignment_7 %>%
+             emtrends(spec = c("reliability_type", "reliability_amount"), var = "npv_amount") %>%
+             pairs(by = "reliability_type") %>% 
+             summary(infer = TRUE, side = "equivalence", delta = 0.022)
          #+end_src
 **** New issues
      - Power doesn't increase with sample size
@@ -3035,7 +3035,7 @@ have to exclude it from your model.
      - So now you fixed that and started using lm  
      - Problem with lm is that it doesn't seem to account for the
      within-subjects npv condition properly like ~afex::aov_car~ does.
-      - We're just assuming that that's the way to go
+     - We're just assuming that that's the way to go
      - The problem with using afex is that the way it does within-subjects is to
      convert the lm call into ~mlm~, which is a multivariate lm
      - The problem with that is that simulate can't handle it
@@ -3049,47 +3049,47 @@ have to exclude it from your model.
        - In this case, partial eta squared.
      - The ~effectsize~ package should help
        - But for some reason, changing model coefficients doesn't lead to change
-in the standardised estimates
+     in the standardised estimates
      - So maybe we just stick to the unstandardised ones
        - Should be interpreting them in terms of the allocation, anyway, right?
      - I guess we can also just calculate and display pes later
      - The other issue is that every time we estimate the alignment 8 model, we
-get quite different values
-      - Even between -0.02 and 0.009
-      - Because of the simulation of explicit and implicit y.
-      - So maybe we get the values without the errors
-      - So then we get the "true" values
-      - Nah, we need the variance.
-      - But only eventually.
-      - So maybe just use the no-variance model to get the estimates, and then
-add them later
-      - Ok, that works. But now isn't it just going to tell me to use the same
-amount of people as before, because we are technically doing a post-hoc analysis?
-- Well maybe, but also not necessarily, because the four-way interaction is new
+     get quite different values
+     - Even between -0.02 and 0.009
+     - Because of the simulation of explicit and implicit y.
+     - So maybe we get the values without the errors
+     - So then we get the "true" values
+     - Nah, we need the variance.
+     - But only eventually.
+     - So maybe just use the no-variance model to get the estimates, and then
+     add them later
+     - Ok, that works. But now isn't it just going to tell me to use the same
+     amount of people as before, because we are technically doing a post-hoc analysis?
+     - Well maybe, but also not necessarily, because the four-way interaction is new
 *** DONE Fix form validation
     CLOSED: [2020-12-01 Tue 10:27]
     - You screwed up when "fixing" the phantomjs issue
     - But now you fixed it with a ~hasDuplicates~ function.
     - But now the conditional alert is screwing you over with the test variable
     - So let's work it out. Here's what you want:
-   | has duplicates | test  | result |
-   |----------------+-------+--------|
-   | false          | false | false  |
-   | false          | true  | false  |
-   | true           | false | true   |
-   | true           | true  | false  |
-   - So it should just be what it was before, no?
-   #+begin_src javascript
-     var rank_duplicates = true
-     var test = true
+    | has duplicates | test  | result |
+    |----------------+-------+--------|
+    | false          | false | false  |
+    | false          | true  | false  |
+    | true           | false | true   |
+    | true           | true  | false  |
+    - So it should just be what it was before, no?
+    #+begin_src javascript
+      var rank_duplicates = true
+      var test = true
 
-     if (rank_duplicates && !test) {
-         console.log("alert")
-     } else {
-         console.log("continue")
-     }
+      if (rank_duplicates && !test) {
+          console.log("alert")
+      } else {
+          console.log("continue")
+      }
 
-   #+end_src
+    #+end_src
 *** DONE Fix interstitial order
     CLOSED: [2020-12-01 Tue 12:15]
     - Seems to be changing with randomisation of display order
@@ -3106,7 +3106,7 @@ amount of people as before, because we are technically doing a post-hoc analysis
 ** TODO Work out how to work with the additional ESS config
    - That is, do we keep it in the layer, or user-config, or private layer?
 ** DONE Elaborate on syntax highlighting question
-  CLOSED: [2020-10-03 Sat 19:00]
+   CLOSED: [2020-10-03 Sat 19:00]
 ** TODO Figure out listviewer
 ** TODO Figure out ess-r-view-data
 ** DONE Line wrap without breaking up words
@@ -3131,14 +3131,14 @@ amount of people as before, because we are technically doing a post-hoc analysis
       - Overall good
 **** DONE Add explanation for explicit reliability 
      CLOSED: [2020-11-02 Mon 19:14]
-      - But: way I call NPV unreliable
-        - the implication of that: unreliable because estimates are imperceise
+     - But: way I call NPV unreliable
+       - the implication of that: unreliable because estimates are imperceise
      - precision of the metric prediction
      - Also:
      #+begin_quote
      I would also change "in this particular industry, NPV is an unrelaible
-predictor of project success" to "in this industry, NPV is an unreliable
-predictor of a project's profits"
+     predictor of project success" to "in this industry, NPV is an unreliable
+     predictor of a project's profits"
      #+end_quote
      - Unreliability
        - Good feature some times too
@@ -3148,13 +3148,13 @@ predictor of a project's profits"
          - Unreliable because it's such a wide range of outcomes
            - broader range = meaning we have less confidence
 **** Four way interaction
-       - Focus on subcomponents
-       - If hypotheses only concern a subset
-       - Three way interaction for explicit, and no for implicit
-         - implies four-way
-       - how much more expensive
-         - four way is right way to go, other wise have to predict no effect
-       - can specify the interactions
+     - Focus on subcomponents
+     - If hypotheses only concern a subset
+     - Three way interaction for explicit, and no for implicit
+       - implies four-way
+     - how much more expensive
+       - four way is right way to go, other wise have to predict no effect
+     - can specify the interactions
 **** DONE power analysis
      CLOSED: [2020-11-19 Thu 11:36]
 **** Instructions
@@ -3166,8 +3166,8 @@ predictor of a project's profits"
 *** Aggregation
 **** DONE Send aggregation analyses
      CLOSED: [2020-11-02 Mon 19:14]
-       - Thursday - just about aggregation
-      
+     - Thursday - just about aggregation
+
 ** Notes from <2020-11-09 Mon> 
 *** Participants
     - Dan
