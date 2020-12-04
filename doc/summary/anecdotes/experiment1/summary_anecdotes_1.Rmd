@@ -1,0 +1,87 @@
+---
+title             : "Anecdotes Experiment 1 - Results summary"
+shorttitle        : ""
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r here::here("inst", "references.bib")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output: 
+  papaja::apa6_pdf:
+    includes: 
+      in_header: "preamble.tex"
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(descriptives_anecdotes_1)
+loadd(results_anecdotes_1)
+loadd(plot_anecdotes_1)
+```
+
+- Experiment 1 investigated the effect of alignment on the anecdotal bias
+  effect.
+- The anecdotal bias effect is usually seen by the difference in responses to a
+condition that only involves statistics, and a condition that involves both
+statistics and an anecdote.
+- We were interested in whether this effect was moderated by the similar of the
+  anecdote to the target.
+
+# Participants
+
+`r descriptives_anecdotes_1$apa` Table\ \@ref(tab:allocation) shows the condition allocation.
+
+```{r allocation}
+descriptives_anecdotes_1$condition_allocation_table %>% 
+  apa_table("Group allocation to the between-subject variables of anecdote condition and alignment.")
+```
+
+# Results
+
+- We found an interaction between anecdote condition and similarity (only when
+  collapsing across the combined and enhanced conditions).
+- Participants allocated more to the statistics only condition than the combined
+ statistics + anecdote condition in the high similarity condition.
+    - But not in the low similarity condition.
+- See Figure\ \@ref(fig:plot-anecdotes-1).
+
+``` {r plot-anecdotes-1, fig.cap = "Mean allocation to Project A (the target project). Error bars represent 95% confidence intervals."}
+plot_anecdotes_1
+```
+
+# Limitations
+
+- Anecdotes were all "negative" (meaning that were examples of a project that
+  performed poorly).
+    - Unclear if effects will be also seen for positive anecdotes, because
+      previous literature in medical decision-making found effects only for
+      negative anecdotes. This might be because people's baseline is "positive"
+      health.
+    - However, this is likely to be different in the business domain, because
+      wealth can be more tangibly increased. 
+- Unclear how to properly express the interaction statistically.
+    - The statistics only condition is not a part of the crossed design, so
+      cannot be tested in a standard ANOVA.
+    - A statistics consultant suggested to simply conduct two t-tests (comparing
+      statistics only to combined low similarity, and combined low similarity to
+      combined high similarity), which should imply the interaction. But unclear
+      if this will satisfy a reviewer.
+- Using the anecdote may be normative if participants assume that the anecdote
+  was chosen intentionally due to its similarity.
+  - @hayes2019 found that participants' similarity-based inductions depend on
+    whether they were told that the source information was randomly sampled or
+    chosen intentionally.
+
+\newpage
+
+# References
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
