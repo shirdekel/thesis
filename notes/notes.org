@@ -168,18 +168,198 @@ the last 5 years.
      - [[https://www.gsb.stanford.edu/faculty-research/faculty/baba-shiv][Baba Shiv]]
 * Anecdotes
 ** Conceptual discussion
-   - Last reply from Micah:
-     #+begin_quote
-     Meant to reply. I agree, that in the case that knowledge is lacking,
-overall similarity is a smart strategy. But, in the case where you have
-low-knowledge/overall similarity info of an individual case, but also know that
-individual case is an outlier from the overall trend from a larger sample, do
-you think that overall similarity should still be weighed heavily? It's
-specifically the low-knowledge strategy when in conflict with large samples that
-seem problematic to me. But does formal analysis or simulations suggest it is
-still a good strategy? Or is this highly dependent on the degree of variability
-in the large sample?
-     #+end_quote
+*** Notes from original talk
+    #+begin_quote
+   - what the normative account is
+   - can take business studies: people are case-based reasoners
+   - something seems blunt about just using the brute statistics without distinguishing the relevance
+   - part of what asking: can you distinguish anecdotal based thinking and case based
+   - might be justifying more normally than marginal statistics
+   - Micah: in the case of business specifically: when this might be relevant?
+     - are these the right features
+     - if seeing overall similarity that's not relevant...
+   - robert: don't think agrees on last point
+     - whole rage with precision medicine:
+     - let's say identical twin got benefit of vitamin
+     - i should take what they say more than random anecdote
+   - micah: work in progress is thinking about normative things
+     - easy to point when it's normative, e.g. ,vaccination
+     - but other situations might not be
+     - not saying it's always a bad thing
+     - can check if people are being selective
+       - might take expertise to figure out what the right dimesinos are
+   - rob: if going from ignornace
+     - maybe machine learning overall simialrity, then might be making good choices by looking at previous example
+   - micah: if aggregating across and have similar case
+     - strategy that's not horrible
+     - there might be cases that when it's not a reasonable strategy people would still do it
+     - can do more work that: situation where clearly similairty is important, and situation where it isn't importnat, and see if they're sensitive
+     - real world decisions where might mean there is no adaptive thing like that
+   - rob: if I was consultant, maybe similar cases might be sueful
+     - influenced by overall similarity, but also relevant similarity
+     - they'll ignore that we're both 6"1, when it's clear hight is not relevant to outcome
+
+ - Gentner
+   - can see rob's point: where oil well might be normative
+   - with medical
+     - might be able to do it
+   - micah: in business clear how to find relevant dimension
+     - in medicine: do these people use simialrity
+    #+end_quote
+*** Micah and Rob Goldstone emails
+    #+begin_quote
+    Hi Rob, I appreciate your question because we do need a normative analysis. I
+ think you left at this point, but Nina Simms asked a similar question and I
+ think I perhaps had a better answer the second time around, so wanted to get
+ your thoughts. If say, the aggregated data was from a pool of similar cases
+ (because there are plenty of cases within the more specific category that are
+ successful) and we were clear about that, as opposed to the current experiment
+ where we were more vague about the nature of the aggregated pool, would that be
+ a better test-case to see if someone was suboptimally relying on the one case
+ they just happen to have the details for?
+
+ I agree generally, that a normative case needs to be developed regardless. But
+ how do you think this context would fit into the norm?
+
+ thanks, Micah
+    #+end_quote
+   
+ #+begin_quote
+ Micah (and Shir),
+
+ yeah, I was thinking about this kind of thing too. Along these
+ lines, I was thinking of setting up a situation where it was clear that there
+ were descriptions/reviews of each of the cases prepared ahead of time, and you
+ are just randomly sampling from one of these descriptions and showing it to
+ participants. I think in that situation there’s not any more information
+ provided by the anecdote, and so it shouldn’t be used (unless the content of the
+ review makes it clear that the person is thinking like, or is like, the
+ participant). Like your oil/microchip example, the sampling could also be said
+ to be biased toward neutral or similar-to-self cases. Normatively I think people
+ should be more influenced in the latter case, and I’m guessing that’s what you
+ would find, based on your oil/microchip results.
+
+ Neat stuff!
+ Rob
+ #+end_quote
+
+ #+begin_quote
+ Thanks Rob! I think I'll also more closely match the business and health domains
+ as well. My intuition is that people are more likely to use irrelevant
+ dimensions of similarity in the health domain because of a lack of a clear
+ causal model (in which case, large samples to generalise from seems more
+ normative). If it turns out people are more sophisticated and selective I'd be
+ surprised, but actually pleasantly in terms of the implications.
+
+ Best, Micah
+ #+end_quote
+
+ #+begin_quote
+ Yeah, but also remember: if people don't have a lot causal knowledge, then the
+ smart/sophisticated thing to do is use overall similarity between the known
+ cases and one’s own situation in order to weight their outcomes. So, I think the
+ normative model would use both overall similarity and dimension-specific
+ similarity, tuning the use of each according to the quality of one’s knowledge
+ about which dimensions are really important.
+ #+end_quote
+
+ #+begin_quote
+ Meant to reply. I agree, that in the case that knowledge is lacking, overall
+ similarity is a smart strategy. But, in the case where you have
+ low-knowledge/overall similarity info of an individual case, but also know that
+ individual case is an outlier from the overall trend from a larger sample, do
+ you think that overall similarity should still be weighed heavily? It's
+ specifically the low-knowledge strategy when in conflict with large samples that
+ seem problematic to me.
+
+ But does formal analysis or simulations suggest it is still a good strategy? Or
+ is this highly dependent on the degree of variability in the large sample?
+
+ thanks, your thoughts are very helpful!
+
+ -mbg
+
+ #+end_quote
+*** Shir and Micah emails
+    #+begin_quote
+    Hey Micah,
+ 
+I put together everything I’ve got on Rob’s normative question (notes I took
+from your talk, and your email exchange with him); see below for reference. What
+do you think about this as a summary:
+ 
+- On the one hand, we know that aggregated data is more useful than an anecdote
+  (from that dataset).
+  - On the other hand, an anecdote that is identical (e.g., a twin) to the
+    target situation use is more useful than aggregated data.
+- Therefore, aggregated data should be used when the anecdote is randomly drawn
+  from a sample of cases from the aggregated dataset, and the anecdote should be
+  used when it was picked out specifically for its causal similarities to the
+  target situation.
+ 
+So I guess we can just tell participants that the anecdote comes from the
+dataset that the statistics are based on. In that case it should then be
+definitely normative to go with the statistics, right?
+    #+end_quote
+    #+begin_quote
+    Ah I think we would want to further express that it is randomly sampled from
+    the aggregate in some manner right? Don't we already say it comes from the
+    set?
+
+I guess in terms of design, do we want a condition difference where it is more
+relatively better to use an anecdote vs. not? or perhaps something about the
+relevance of the specific dimensions of similarity vs. global similarity...
+
+hmm...though maybe we need to emphasise the randomness for now, but then just do
+this other issue later. Perhaps let's also hear what Dan says about this given
+he said he had an answer...
+    #+end_quote
+#+begin_quote
+Yep sorry I forgot to add the randomly sample bit. Yes, we already say it comes
+from the set.
+
+I think for now just emphasising the randomness is a good idea, because we're
+already adding valence and I think one condition add at a time makes sense.
+
+We should also consider whether it's possible to put the thesis together without
+this experiment in case it drags on too much (e.g., I'm still working on it in
+Feb). At the moment it seems important so that the anecdotes chapter doesn't
+just have one experiment.
+#+end_quote
+#+begin_quote
+yeah; we could do one more experiment for the thesis, and still need more for a
+paper...
+
+and we probably want to embellish the random explanation a bit just to ensure
+they dont miss it.
+
+check out this line of research for instruction inspiration
+https://link.springer.com/article/10.3758/s13423-018-1562-2
+
+#+end_quote
+*** Dealing with Rob's comments
+    - @hayes2019
+      - Diversity effect: generalisation occurs more from dissimilar sets than
+    similar ones
+      - Depends on whether participants are told that the items come from a
+      random distribution (weak sampling) or were intentionally chosen (strong sampling)
+      - [[https://osf.io/fpx9k/][OSF page]]
+      - Strong sampling instruction excerpt:
+        #+begin_quote
+        Note that the instances were deliberately chosen to best illustrate the
+        variety of living things that have the property.
+        #+end_quote
+      - Weak sampling instruction excerpt:
+#+begin_quote
+We asked a student to open a book on plants and animals at weak pages and note
+the first three living things they came across and whether or not those living
+things have the property in question.
+
+This means the information you receive may not be the most strong for making
+your judgment - by chance, the student will sometimes select very dissimilar
+items, and sometimes very similar ones.
+#+end_quote
+
 ** Experiment 1
 *** TODO Summary
 ** Experiment 2
