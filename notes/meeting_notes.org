@@ -1,0 +1,220 @@
+* Notes from <2020-11-02 Mon> 
+** Participants
+   - Micah
+   - Dan
+   - Bruce
+** Alignment 8
+   - Micah
+     - Overall good
+*** DONE Add explanation for explicit reliability 
+    CLOSED: [2020-11-02 Mon 19:14]
+    - But: way I call NPV unreliable
+      - the implication of that: unreliable because estimates are imperceise
+    - precision of the metric prediction
+    - Also:
+    #+begin_quote
+    I would also change "in this particular industry, NPV is an unrelaible
+    predictor of project success" to "in this industry, NPV is an unreliable
+    predictor of a project's profits"
+    #+end_quote
+    - Unreliability
+      - Good feature some times too
+      - Usually it means that there's a greater upside and downside
+      - Makes it sound like a bad thing. Whereas when implicitly unreliable
+        might be different
+        - Unreliable because it's such a wide range of outcomes
+          - broader range = meaning we have less confidence
+*** Four way interaction
+    - Focus on subcomponents
+    - If hypotheses only concern a subset
+    - Three way interaction for explicit, and no for implicit
+      - implies four-way
+    - how much more expensive
+      - four way is right way to go, other wise have to predict no effect
+    - can specify the interactions
+*** DONE power analysis
+    CLOSED: [2020-11-19 Thu 11:36]
+*** Instructions
+    - NPV check
+      - Maybe part of experiment
+      - On a simple task
+      - maybe forcing NPV down their throats
+      - But actually ok
+** Aggregation
+*** DONE Send aggregation analyses
+    CLOSED: [2020-11-02 Mon 19:14]
+    - Thursday - just about aggregation
+
+* Notes from <2020-11-09 Mon> 
+** Participants
+   - Dan
+   - Bruce
+** Notes
+*** Alignment 
+    - People have different meanings on what reliable means
+    - Clearer now
+    - Not everyone will read and understand
+*** Aggregation
+    - Giving one at a time
+    - Expect risk aversion
+      - compared to graph
+    - One is telling them 20 projects
+      - Other one: not
+    - When taking one at a time
+    - Question: how does degree of risk aversion compare to distribution
+    - Effect of trial
+      - Compare awareness for trial 20
+      - Compare 1 and 20?
+    - Why riskier as it goes?
+      - Get gambler's fallacy, but rebound if make it longer
+      - "come up heads" will be tails
+      - But no feedback. Still trying to even things out
+      - Haven't been choosing them, better start choosing them
+      - Law of small numbers
+      - Give people enough trials: will choose risky option
+    - Why not risky things early?
+      - Probably risk aversion
+    - Important implication
+      - Could be big deal
+      - If you were looking at gambles and giving feedback
+      - People are losing
+      - In become riskier
+      - Expect to choose riskier things
+      - A lot of experiments like that tell people how many rounds there
+      - Need to check
+      - But we're seeing it without losses
+      - Period effect?
+    - Hot hand
+      - U shaped
+      - People think sequence will continue, then against it, then rebound back
+        up
+      - "Rebound effect"
+      - Related to WMC
+      - Shifted when you have more capacity
+    - Not taking into account shape
+    - Similarity effect
+      - There are people who see the low as different
+      - once you bracket for them they prefer them to be different
+*** Analogy
+    - Maybe we need more data to address
+    - Maybe honours student can follow up
+** Actions
+*** TODO Aggregation experiments summary 
+*** TODO Reanalyse aggregation 4
+    - Fix contrasts
+    - Try 1 vs 20
+    - Try aware vs naive for 20 or last five
+    - Try different trends
+      - quadratic
+      - straight and then linear after half way
+
+* Notes from <2020-11-10 Tue> 
+** Participants
+   - Micah
+** Notes
+   - Break down into different effects
+   - care about the different effect
+   - What effects?
+     - explicit: 80
+   - Something crazy
+     - What if what
+     - High null effect BF for alignment in implicit condition
+     - Or equivalence
+     - Interaction lets you infer
+   - total
+     - two three-ways
+     - one two-way
+   - four way only makes sense with other ones
+   - if we get
+   - Markers
+     - Jeff lowenstein
+     - Guy who worked with
+     - can be strategic about it and get someone to force to read the work
+** Actions
+*** DONE Check about HDR funds
+    CLOSED: [2020-11-10 Tue 15:14]
+*** TODO Ask Dan if he can answer Rob's question
+*** DONE Run specific power analyses
+    CLOSED: [2020-11-19 Thu 11:36]
+    - explict vs implicit (three-way) - high alignment
+    - explict vs implicit (two-way) - low alignment
+    - high vs low alignment (three-way) - explicit reliability
+    - implicit null effects
+
+* Notes from <2020-11-23 Mon> 
+** Participants
+   - Evan Livesey
+   - Daniel Costa
+** Agenda
+   - Annual Progress Review interview
+** Notes
+   - Covid impact
+   - Document impact
+   - Tight timeframe
+   - Writing motivation varies
+   - Not just writing quickly
+   - Also feedback
+   - Expectations of things to read
+   - Consider how important it is to get feedback from everyone
+   - "planning on finalising by this date"
+   - Team is receptive if impose a deadline
+   - Covid
+   - If you need a further extension need to document
+   - Working environment
+   - Potentially extend again
+   - Won't be an issue to ask for more time
+** Actions
+*** TODO Work out plan of when to get drafts back to me
+* Notes from <2020-11-30 Mon> 
+** Participants
+   - Dan
+** Agenda
+   - Alignment 8
+   - RA and McKinsey payments
+** Notes
+   - page 2: 400-900 too large?
+     - when NPV is higher should have a higher range
+     - so it's not dominated
+   - page 3:
+     - not saying shift to npv, just rely less
+     - Just a comment
+   - Money:
+     - Managers:
+       - assuming $30 per person, 13 x 448 = 13,440
+     - a lot but we can do it
+   - Add "The projects are not correlated"
+     - "Each project is indepdent of the others"
+   - Why "predicted" project features
+     - all good
+   - Do we want a limit on allocation per project?
+     - Are we getting enough
+     - should have minimum allocation for each
+   - Figure 7: what's different from previous
+   - Should we go to three?
+   - should we have payoffs
+     - play these things out
+     - yes
+   - let dan try out experiment
+   - table to describe differences
+   - values
+     - showing the rate is bigger
+   - might submit to management science
+     - or smj (easier on this)
+   - when give the range
+     - somehwhere early: say range is uniform distribution
+   - whenever there's a dominant choices, e.g. high EV and non overlapping
+     range
+   - Cap on wednesday
+** Actions
+*** DONE add uniform distribution
+    CLOSED: [2020-12-01 Tue 08:59]
+*** DONE add "Each project is indepdent of the others"
+    CLOSED: [2020-12-01 Tue 08:55]
+*** DONE send Dan experiment link
+    CLOSED: [2020-12-01 Tue 21:38]
+    - State "TODO"       from              [2020-11-30 Mon 19:30]
+** DONE Wednesday cap on McKinsey and RA payments
+   CLOSED: [2020-12-07 Mon 09:31]
+   - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
+   - State "TODO"       from              [2020-11-30 Mon 19:30]
+* Actions
