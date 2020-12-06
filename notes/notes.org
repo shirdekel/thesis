@@ -75,7 +75,10 @@
        - Alignment
      - But, since most cases are low alignment, what influences their reliance
    on case studies?
-   - Anecdotes
+       - Anecdotes
+   - Another way to put it
+       - when low similarity, they can therefore either use bad metrics, or go
+to case studies.
 ** Examiners
    - Current list
      - [[https://liberalarts.utexas.edu/psychology/faculty/markman][Art Markman]]
@@ -361,7 +364,8 @@
     #+end_quote
 
 ** Experiment 1
-*** TODO Summary
+*** DONE Summary
+    CLOSED: [2020-12-04 Fri 15:14]
 ** Experiment 2
 *** Design
     - IVs
@@ -638,12 +642,16 @@
     - Won't be easy, because it involves the NPV row
 *** TODO Statistics only condition
     - State "TODO"       from              [2020-11-30 Mon 15:49]
-*** TODO Summary of plan
+*** DONE Summary of plan
+    CLOSED: [2020-12-07 Mon 09:27]
+    - State "DONE"       from "TODO"       [2020-12-07 Mon 09:27]
     - Before investing further into the coding
 *** Analysis
     - How are we comparing between Stats only and the others again?
     - I guess compare the difference stats only and the anecdote condition
       - And compare for each between subs condition.
+    - Could get a "corrected" difference score of stats only vs anecdote condition
+      - Only works if within-subjects, I think.
 * Aggregation
 ** Analysis
    - From Evan:
@@ -666,7 +674,9 @@
 
    #+end_quote
 * Alignment
-** TODO Experiment 8
+** DONE Experiment 8
+   CLOSED: [2020-12-07 Mon 10:12]
+   - State "DONE"       from "TODO"       [2020-12-07 Mon 10:12]
 *** Plan  
     - Let's try work backwards:
     - Eventually we need to make a call to `trial_survey_multi_choice`, which creates timeline variables using `set_parameters`.
@@ -3097,6 +3107,10 @@
 *** DONE Fix materials pdf
     CLOSED: [2020-12-01 Tue 10:45]
     - Seems to have been a result of the form validation issues
+*** DONE Elaborate on uniform distribution instructions
+    CLOSED: [2020-12-07 Mon 10:12]
+    - State "DONE"       from "TODO"       [2020-12-07 Mon 10:12]
+    - State "TODO"       from              [2020-12-07 Mon 09:32]
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
@@ -3288,7 +3302,7 @@
     - Won't be an issue to ask for more time
 *** Actions
 **** TODO Work out plan of when to get drafts back to me
-** Notes from <2020-11-23 Mon> 
+** Notes from <2020-11-30 Mon> 
 *** Participants
     - Dan
 *** Agenda
@@ -3336,5 +3350,7 @@
 **** DONE send Dan experiment link
      CLOSED: [2020-12-01 Tue 21:38]
      - State "TODO"       from              [2020-11-30 Mon 19:30]
-**** TODO Wednesday cap on McKinsey and RA payments
+**** DONE Wednesday cap on McKinsey and RA payments
+     CLOSED: [2020-12-07 Mon 09:31]
+     - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
      - State "TODO"       from              [2020-11-30 Mon 19:30]
