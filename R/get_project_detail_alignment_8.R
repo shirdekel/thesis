@@ -88,8 +88,10 @@ get_project_detail_alignment_8 <- function() {
     mutate(
       project_value = project_value_base %>%
         prod(intrinsic_feature_multipliers) %>%
+        signif(digits = 3) %>%
         # Prevent scientific notation
-        as.integer(),
+        as.integer() %>%
+        format(big.mark = ","),
       combined = str_c(
         project_detail_feature, ": ", project_value, project_unit
       ),
@@ -149,7 +151,6 @@ get_project_detail_alignment_8 <- function() {
           str_replace_all(" ", "-"),
         npv_raw,
         data$input_id_component %>%
-          ## str_c("detail", 1:3, "_", .) %>%
           str_c(collapse = "_"),
         intrinsic_feature_rank,
         sep = "_"
