@@ -237,5 +237,8 @@ the_plan <-
         .data = !!parameters,
         .id = c(thesis_project, experiment_number)
       )
+    ),
+    thesis_summary = target(
+      render(knitr_in(!!here("doc", "thesis_summary", "thesis_summary.Rmd")))
     )
   )

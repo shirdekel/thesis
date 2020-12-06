@@ -1,0 +1,32 @@
+---
+title: "Thesis summary"
+author: "Shir Dekel"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+---
+
+# Findings
+
+- People struggle to consider independent investments as a portfolio that can be
+  aggregated.
+    - Only presenting an already-aggregated distribution changes this.
+- Dissimilar project comparisons lead to an over-reliance on coarse financial
+  metrics when making resource allocation decisions.
+    - People to not use variability information to inform their decisions.
+- Project case studies influence allocation decisions even when aggregated data
+is available. 
+    - Only when the cases are sufficiently similar.
+
+---
+
+# Impact
+
+- If executives consider projects one-at-a-time, they are missing out on the
+  power of risk aggregation.
+- Even if they consider projects together, if they are dissimilar they will be
+  hard to rank.
+- In diversified firms, this means that executives will either use financial
+  metrics poorly, or rely on case studies.
+- If they rely on case studies, they might discount relevant aggregated data.
