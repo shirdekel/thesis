@@ -1,5 +1,5 @@
 ---
-title             : "Alignment Experiment 8 - Plan"
+title             : "Anecdotes Experiment 2 - Plan"
 shorttitle        : ""
 
 note              : Created `r format(Sys.time())`
@@ -9,7 +9,7 @@ author:
   
 floatsintext      : yes
 
-bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+bibliography      : '`r here::here("inst", "references.bib")`'
 csl               : '`r system.file("apa.csl", package = "shiR")`'
 documentclass     : "apa7"
 classoption       : "man, donotrepeattitle"
@@ -22,3 +22,72 @@ output:
       in_header: "preamble.tex"
 ---
 
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+# Addressing Experiment 1 limitations
+
+- Limitation: only used negative anecdotes
+    - Solution: add valence condition
+        - Negative: anecdote is a case study of a failed project that is similar to
+          the target project (as in Experiment 1)
+        - Positive: anecdote is a case study of a successful project that is similar to
+          the target project
+- Limitation: unclear way to test the interaction effect
+    - Solution: plan analysis in advance
+        - Still unclear
+        - Maybe subtract the anecdote conditions allocation from the statistics only
+          condition allocation to a get a "corrected" allocation score, and then
+          conduct a standard three-way ANOVA.
+- Limitation: using the anecdote could be normative if it seems that it was
+  chosen due to its similarity
+    - Solution: clarify that the anecdotes were sampled randomly
+        - Use similar wording to @hayes2019.
+        
+            > We asked a student to open a book on plants and animals at weak
+            > pages and note the first three living things they came across
+            > and whether or not those living things have the property in
+            > question.
+            >
+            > This means the information you receive may not be the most
+            > strong for making your judgment - by chance, the student will
+            > sometimes select very dissimilar items, and sometimes very
+            > similar ones.
+
+# Summary
+
+- Experiment 2 investigates the effects of anecdote alignment and valence on
+  anecdotal bias.
+- IVs
+    - Similarity: low and high.
+        - Within-subjects
+    - Valence: low and high.
+        - Within-subjects
+    - Anecdote: statistics only, anecdote only, and combined.
+        - Between-subjects anecdotes
+        - Within-subjects statistics only
+- DV
+    - Allocation (0-100)
+- Each participants is in one of two between-subjects anecdote conditions, and
+  sees five displays (statistics only, and four anecdote displays).
+
+# Hypotheses
+
+- Statistics only condition will be higher (lower) than each anecdote condition for the
+  negative (positive) valence condition.
+- Main effect of similarity. 
+- Main effect of anecdote (excluding statistics only).
+- Three-way interaction, such that the effects are reversed between the valence conditions.
+- See Figure\ \@ref(fig:plot-simulation-anecdotes-2)
+
+```{r plot-simulation-anecdotes-2, fig.cap = "Anecdotes Experiment 2 predicted data"}
+readd(plot_simulation_anecdotes_2)
+```
+
+\newpage
+
+# References
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
