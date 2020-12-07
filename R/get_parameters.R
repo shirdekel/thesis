@@ -15,7 +15,7 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-      rep(2),
+        rep(2),
       "import_data_local",
       "import_data_anecdotes_1",
       "import_data_local"
@@ -261,8 +261,10 @@ get_parameters <- function() {
         experiment_number
       ),
       get_data_simulation = case_when(
-        thesis_project == "alignment" &
-          experiment_number == 8 ~ get_function_call(
+        (thesis_project == "alignment" &
+          experiment_number == 8) |
+          (thesis_project == "anecdotes" &
+            experiment_number == 2) ~ get_function_call(
           "data_simulation",
           thesis_project,
           experiment_number
@@ -291,8 +293,10 @@ get_parameters <- function() {
           list()
       ),
       get_plot_simulation = case_when(
-        thesis_project == "alignment" &
-          experiment_number == 8 ~ get_function_call(
+        (thesis_project == "alignment" &
+          experiment_number == 8) |
+          (thesis_project == "anecdotes" &
+            experiment_number == 2) ~ get_function_call(
           "plot_simulation",
           thesis_project,
           experiment_number
@@ -302,7 +306,7 @@ get_parameters <- function() {
       ),
       filter_data_raw = case_when(
         experiment_generator %in% c("jaysire", "jspsych") ~
-          sym("filter_data_raw_jspsych") %>%
+        sym("filter_data_raw_jspsych") %>%
           list(),
         TRUE ~ sym("filter_data_raw_qualtrics") %>%
           list()
