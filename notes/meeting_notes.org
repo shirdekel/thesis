@@ -1,3 +1,5 @@
+#+TODO: TODO(t) | CANCELLED(c) DONE(d)
+#+OPTIONS: tasks:todo
 * Notes from <2020-11-02 Mon>                                       :ARCHIVE:
 ** Present at meeting
    - [X] Micah
@@ -231,7 +233,8 @@
 ** DONE Action #3 Send aggregation analyses                              :#3:
    CLOSED: [2020-11-02 Mon 19:14]
    - Thursday - just about aggregation
-** TODO Action #4 Aggregation experiments summary                        :#4:
+** CANCELLED Action #4 Aggregation experiments summary                   :#4:
+   - State "CANCELLED"  from "TODO"       [2020-12-07 Mon 11:18]
 ** TODO Action #5 Reanalyse aggregation 4                                :#5:
   - Fix contrasts
   - Try 1 vs 20
@@ -260,4 +263,3 @@
    CLOSED: [2020-12-07 Mon 09:31]
    - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
    - State "TODO"       from              [2020-11-30 Mon 19:30]
-
