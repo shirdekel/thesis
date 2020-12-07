@@ -121,7 +121,7 @@ get_parameters <- function() {
       ),
       c(
         "anecdote",
-        "alignment",
+        ## "alignment",
         "valence"
       )
     )
