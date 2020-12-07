@@ -16,7 +16,7 @@ get_parameters <- function() {
         rep(3),
       "import_data_local" %>%
         rep(2),
-      "import_data_local",
+      "import_data_server",
       "import_data_anecdotes_1",
       "import_data_local"
     ))
@@ -38,9 +38,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(5),
-      TRUE,
-      FALSE,
+        rep(7),
       TRUE
     )
 

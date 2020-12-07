@@ -1,5 +1,5 @@
 ---
-title             : "Aggregation Experiment 4 - Results summary"
+title             : "Alignment Experiment 8 - Results summary"
 shorttitle        : ""
 
 note              : Created `r format(Sys.time())`
@@ -47,6 +47,6 @@ plot_alignment_8
 
 
 ```{r allocation-results, fig.cap = "lmer output."}
-results_alignment_8[[1]]$table %>%
+results_alignment_8$table %>%
   apa_table()
 ```

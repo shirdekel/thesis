@@ -9,11 +9,7 @@ unselect_jspysch_columns <- function(data_raw_filtered) {
     data_raw_filtered %>%
     select(
       -c(
-        view_history,
-        rt,
-        trial_type,
-        trial_index,
-        internal_node_id
+        view_history
       )
     )
   return(data_raw_jspsych_columns_unselected)

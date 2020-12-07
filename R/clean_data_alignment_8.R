@@ -10,7 +10,11 @@
 clean_data_alignment_8 <- function(data_raw_filtered, experiment_number, test, prolific_filter, prolific_filter_label) {
   data_raw_jspsych_columns_unselected <-
     data_raw_filtered %>%
-    unselect_jspysch_columns()
+    unselect_jspysch_columns() %>%
+    rowwise() %>%
+    mutate(
+      across(stage, fromJSON)
+    )
 
   data_allocation <-
     data_raw_jspsych_columns_unselected %>%
@@ -36,8 +40,8 @@ clean_data_alignment_8 <- function(data_raw_filtered, experiment_number, test, p
         as.factor),
       across(where(check_numeric), as.numeric)
     ) %>%
-  select(-c(time_elapsed, dateCreated))  %>%
-    clean_data_finalise(test, prolific_filter, prolific_filter_label)
+  select(-c(time_elapsed, dateCreated)) %>%
+    clean_data_finalise_alignment_8(test, prolific_filter, prolific_filter_label)
 
   return(data)
 }
