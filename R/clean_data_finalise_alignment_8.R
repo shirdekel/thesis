@@ -19,7 +19,7 @@
 ##' @author Shir Dekel
 ##' @export
 clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
-                                prolific_filter_label) {
+                                            prolific_filter_label) {
   if ("prolific" %in% colnames(data) & !test) {
     data_check <-
       data %>%
@@ -31,15 +31,9 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
 
     list(prolific_filter, prolific_filter_label) %>%
       pmap(
-        ~ data %>%
-          get_prolific_id(.x, .y)
+        ~ data_check %>%
+          get_prolific_id_reject(.x, .y)
       )
-
-    list(prolific_filter, prolific_filter_label) %>%
-        pmap(
-            ~ data_check %>%
-                get_prolific_id_reject(.x, .y)
-        )
     get_check_messages(data_check)
 
     data <-
@@ -50,6 +44,12 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
         # test participants are kept in the data, even if they only failed just that
         # check)
         !reject | (!project_test_fail & check_fail_count == 1)
+      )
+
+    list(prolific_filter, prolific_filter_label) %>%
+      pmap(
+        ~ data %>%
+          get_prolific_id(.x, .y)
       )
   }
 
