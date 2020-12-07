@@ -169,6 +169,18 @@ to case studies.
      - [[https://www8.gsb.columbia.edu/articles/authors/elizabeth-webb][Elizabeth Webb]]
      - [[https://www.anderson.ucla.edu/faculty-and-research/marketing/faculty/shu][Suzanne Shu]]
      - [[https://www.gsb.stanford.edu/faculty-research/faculty/baba-shiv][Baba Shiv]]
+** TODO Add aggregation 1 to drake plan
+** TODO Add alignment 1 to drake plan
+** TODO Add alignment 3 to drake plan
+** TODO Add alignment 4 to drake plan
+** TODO Add alignment 5 to drake plan
+** TODO Add alignment 6 to drake plan
+** TODO Introduction chapter draft
+** TODO Conclusion chapter draft
+** TODO Aggregation chapter draft
+** TODO Alignment chapter draft
+** TODO Anecdotes chapter draft
+   - State "TODO"       from              [2020-12-07 Mon 11:27]
 * Anecdotes
 ** Conceptual discussion
 *** Notes from original talk
@@ -3134,4 +3146,3 @@ to case studies.
    - RStudio has their .Rproj files, but it seems ESS doesn't want to do that
 ** TODO Get graphics device in buffer
 ** TODO Format while typing
-* Meeting notes
