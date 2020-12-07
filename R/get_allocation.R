@@ -13,6 +13,7 @@ get_allocation <- function() {
       ~ get_survey_number(
         .y,
         .x,
+        class = "allocation",
         suffix = "%"
       ) %>%
         p() %>%
