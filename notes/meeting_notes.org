@@ -209,6 +209,160 @@
     CLOSED: [2020-12-07 Mon 09:31]
     - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
     - State "TODO"       from              [2020-11-30 Mon 19:30]
+* Notes from <2020-12-07 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [ ] Dan
+   - [X] Micah
+   - [X] Bruce
+** Agenda
+   - Anecdotes 1
+   - Anecdotes 2
+** Notes
+*** Rob comment                                                         :#16:
+    - Rob was saying that global similarity is still not necessarily a bad thing,
+      even if randomly sample
+    - Certainly can diminish
+    - Will want an argument
+    - Want to minimise other concerns (randomly selected)
+    - But also other argument against it
+    - Starting with premise that aggregated data is better than cases
+    - But need to justify the assumption
+    - Medical case: no reason to consider. Because random
+    - But here, by manipulating similarity, we are introducing that there are
+      high similarity examples
+      - So why not go for high similarity.
+    - Even if it's random, and it's one of the most similar one in the pool
+    - e.g., 
+    - Twin: causal relationship and mechanism
+      - Same genetics
+      - similarity in biology
+      - Extreme example
+      - May have other factor
+    - Need to make argument that ignoring data is normative
+    - Make it clear, rather than assuming
+**** Case-based literature
+     - Shenkin,
+     - janet clodner/rodner
+     - Saw link between this and analogy
+     - wider view of cases
+     - didn't always have to be analogy
+     - problem with that work: hard to define when it should help and when
+       shouldn't
+     - empirically test most effective wasn't important
+     - illustrates: sometimes people will use anecdotes. not always easy when
+       they like to use
+     - case based: causal reasoning. when it gave you good causal argument
+**** Relative parameters
+     - Experiment 1 Ratings: variation about how relevant. relevance were related to
+       similarity.
+     - Does appear to be causal reasoning
+     - One of the reasons why interested: some work where negative anecdote
+       affected because causal reasoning, or whether it gives people a negative
+       association.
+     - Both could be there
+       - Even if investment has little relevance, probably does lower investment
+     - By manipulating similarity, we might have been making normative case for
+       the anecdote
+       - Unless we can make the case that the anecdote should be ignored, even
+         given this specific detail, then maybe we want to similarity in more
+         irrelevant ways.
+       - E.g., incompetent manager
+     - If we say it failed because number, etc.
+       - unless we make it clear that it's not deterministic of failure.
+     - Seem to be contrasting anecdotes and data
+       - Independent effect of anecdotes and statistics
+     - Dan: managers that are seduced by the allure of the case, vs analysis
+       - One company that bucked the trend
+     - If the statistics are close vs far
+       - relative strength which determines the outcome
+       - But assumption: people would be overweighing anecdotes
+       - But how to define overweighing
+*** Connection to base rate neglect                                     :#14:
+    - Base rate neglect and representativeness
+      - If statistics with neutral case, then 50/50
+      - They only use statistics, if had nothing else
+      - If you give people a neutral description, then less impact of statistics
+        than if by themselves.
+    - Can set up situation where there is a clear answer
+      - but then it's just extreme, and not the usual grey
+    - car reliability
+      - Consumer reports: based on 100 000 cases
+      - Car X is more reliable than Car Y
+      - One friend tells you Car Y is better
+      - Anecdote will influence
+      - People should be going with statistics
+      - But if all you had was 10 cases, limited edition, then maybe the story is relevant
+    - Easier to argue when you manipulate variable, have less or than impact
+    - Recommendation to managers
+      - Fine
+    - But teasing apart effect
+      - Doesnt need
+    - Not always ignore
+      - Overweight anecdotes
+    - Representativeness heuristic
+    - Bob the engineer vs lawyers
+      - But: category/essence thing
+    - Works as intuition engine
+      - Even if it doesn't switch choice, will make you think about it
+      - more cautious
+      - Normally not a strong effect
+    - Medicine
+      - Women's health anecdotes affect women more than men
+    - Tom Von Leer
+      - Studies narratives
+      - Social professor of narratology
+*** Narratives
+    - Work on coherence and reasoning
+    - Information presented in coherent way
+    - Expect trip advisor stories to have better impact
+    - But also could be that the more it's a story the more likely it's a story
+      or to this it's real
+    - Draws you in
+    - Coherence stuff: how much people were effected by coherence across instances?
+      - Evaluating political messages: incoherent with other point of view
+      - But would people notice?
+      - If you're not the expert
+      - Paul Thagard was analysing coherence
+        - How decision of ship thinking under attack from F15
+        - Different bits of information, came to support single story
+        - But some ambiguous information was changed to be more coherent
+        - So different information can be made to be more coherent
+        - "Vincence"?
+      - E.g., biden says supporting healthcare but not healthcare for all
+*** Analysis                                                            :#15:
+    - Can have internal analysis, but then also specific comparison to baseline
+    - Not a problem, becaues have no choice
+    - Fine to do separate analysis
+    - But no specific estimate
+    - But DV
+    - Could do differnce score?
+      - Seems like noisy measure
+      - If could get lots of statistics to get baseline
+      - But since one can throw things out
+      - Needs confidence that they are really the baseline
+    - Conceptually works, but might be adding more noise that need
+    - If just doing that comparison
+      - if statistics compared to high
+    - could just do comparison to low sim
+    - could do odds ratio terms
+      - aggregated across people?
+    - Putting in terms of dollar values is specific to experiment
+      - The odds of choosing the one that the statistics support is reduced by
+        X when high similarity anecdote etc.
+    - Could still in prose say that size of effect a is x and effect b is y
+    - if you have five groups, and
+    - "non fully factorial"
+      - But you have a reason why
+      - And have hypotheses
+*** TODO Action #14 Look into base rate neglect literature              :#14:
+    - like car reliability example
+*** TODO Action #15 Analyse anecdotes 2 as specific hypotheses          :#15:
+    - And infer the interactions
+    - So essentially like the stats consultant said
+*** TODO Action #16 Clarify that anecdotes are sampled randomly         :#16:
+*** TODO Action #17 Justify normative case for aggregated data          :#17:
+    - Within our specific parameters
+    - e.g., of large number of cases
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -236,22 +390,24 @@
 ** CANCELLED Action #4 Aggregation experiments summary                   :#4:
    - State "CANCELLED"  from "TODO"       [2020-12-07 Mon 11:18]
 ** TODO Action #5 Reanalyse aggregation 4                                :#5:
-  - Fix contrasts
-  - Try 1 vs 20
-  - Try aware vs naive for 20 or last five
-  - Try different trends
-    - quadratic
-    - straight and then linear after half way
+   - Fix contrasts
+   - Try 1 vs 20
+   - Try aware vs naive for 20 or last five
+   - Try different trends
+     - quadratic
+     - straight and then linear after half way
 ** DONE Action #6 Check about HDR funds                                  :#6:
-    CLOSED: [2020-11-10 Tue 15:14]
+   CLOSED: [2020-11-10 Tue 15:14]
 ** TODO Action #7 Ask Dan if he can answer Rob's question                :#7:
 ** DONE Action #8 Run specific power analyses                            :#8:
-    CLOSED: [2020-11-19 Thu 11:36]
+   CLOSED: [2020-11-19 Thu 11:36]
    - explict vs implicit (three-way) - high alignment
    - explict vs implicit (two-way) - low alignment
    - high vs low alignment (three-way) - explicit reliability
    - implicit null effects
 ** TODO Action #9 Work out plan of when to get drafts back to me         :#9:
+   - Bruce: on leave Christmas - Jan 15
+     - And busy rewriting a grant application
 ** DONE Action #10 add uniform distribution                             :#10:
    CLOSED: [2020-12-01 Tue 08:59]
 ** DONE Action #11 add "Each project is indepdent of the others"        :#11:
@@ -263,3 +419,13 @@
    CLOSED: [2020-12-07 Mon 09:31]
    - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
    - State "TODO"       from              [2020-11-30 Mon 19:30]
+
+** TODO Action #14 Look into base rate neglect literature               :#14:
+   - like car reliability example
+** TODO Action #15 Analyse anecdotes 2 as specific hypotheses           :#15:
+   - And infer the interactions
+   - So essentially like the stats consultant said
+** TODO Action #16 Clarify that anecdotes are sampled randomly          :#16:
+** TODO Action #17 Justify normative case for aggregated data           :#17:
+   - Within our specific parameters
+   - e.g., of large number of cases
