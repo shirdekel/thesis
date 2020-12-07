@@ -1,59 +1,64 @@
-* Notes from <2020-11-02 Mon> 
-** Participants
-   - Micah
-   - Dan
-   - Bruce
-** Alignment 8
-   - Micah
-     - Overall good
-*** DONE Add explanation for explicit reliability 
-    CLOSED: [2020-11-02 Mon 19:14]
-    - But: way I call NPV unreliable
-      - the implication of that: unreliable because estimates are imperceise
-    - precision of the metric prediction
-    - Also:
-    #+begin_quote
-    I would also change "in this particular industry, NPV is an unrelaible
-    predictor of project success" to "in this industry, NPV is an unreliable
-    predictor of a project's profits"
-    #+end_quote
-    - Unreliability
-      - Good feature some times too
-      - Usually it means that there's a greater upside and downside
-      - Makes it sound like a bad thing. Whereas when implicitly unreliable
-        might be different
-        - Unreliable because it's such a wide range of outcomes
-          - broader range = meaning we have less confidence
-*** Four way interaction
-    - Focus on subcomponents
-    - If hypotheses only concern a subset
-    - Three way interaction for explicit, and no for implicit
-      - implies four-way
-    - how much more expensive
-      - four way is right way to go, other wise have to predict no effect
-    - can specify the interactions
-*** DONE power analysis
-    CLOSED: [2020-11-19 Thu 11:36]
-*** Instructions
-    - NPV check
-      - Maybe part of experiment
-      - On a simple task
-      - maybe forcing NPV down their throats
-      - But actually ok
-** Aggregation
-*** DONE Send aggregation analyses
-    CLOSED: [2020-11-02 Mon 19:14]
-    - Thursday - just about aggregation
-
-* Notes from <2020-11-09 Mon> 
-** Participants
-   - Dan
-   - Bruce
+* Notes from <2020-11-02 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Micah
+   - [X] Dan
+   - [X] Bruce
+** Notes
+*** Alignment 8
+    - Micah
+      - Overall good
+**** TODO Action #1 Add explanation for explicit reliability             :#1:
+     - But: way I call NPV unreliable
+       - the implication of that: unreliable because estimates are imperceise
+     - precision of the metric prediction
+     - Also:
+     #+begin_quote
+     I would also change "in this particular industry, NPV is an unrelaible
+     predictor of project success" to "in this industry, NPV is an unreliable
+     predictor of a project's profits"
+     #+end_quote
+     - Unreliability
+       - Good feature some times too
+       - Usually it means that there's a greater upside and downside
+       - Makes it sound like a bad thing. Whereas when implicitly unreliable
+         might be different
+         - Unreliable because it's such a wide range of outcomes
+           - broader range = meaning we have less confidence
+**** Four way interaction
+     - Focus on subcomponents
+     - If hypotheses only concern a subset
+     - Three way interaction for explicit, and no for implicit
+       - implies four-way
+     - how much more expensive
+       - four way is right way to go, other wise have to predict no effect
+     - can specify the interactions
+**** TODO Action #2 power analysis                                       :#2:
+**** Instructions
+     - NPV check
+       - Maybe part of experiment
+       - On a simple task
+       - maybe forcing NPV down their throats
+       - But actually ok
+*** Aggregation
+**** TODO Action #3 Send aggregation analyses                            :#3:
+     - Thursday - just about aggregation
+      
+* Notes from <2020-11-09 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Dan
+   - [X] Bruce
 ** Notes
 *** Alignment 
     - People have different meanings on what reliable means
     - Clearer now
     - Not everyone will read and understand
+**** TODO Action #5 Reanalyse aggregation 4                             :#5:
+     - Fix contrasts
+     - Try 1 vs 20
+     - Try aware vs naive for 20 or last five
+     - Try different trends
+       - quadratic
+       - straight and then linear after half way
 *** Aggregation
     - Giving one at a time
     - Expect risk aversion
@@ -95,22 +100,13 @@
     - Similarity effect
       - There are people who see the low as different
       - once you bracket for them they prefer them to be different
+**** TODO Action #4 Aggregation experiments summary                      :#4:
 *** Analogy
     - Maybe we need more data to address
     - Maybe honours student can follow up
-** Actions
-*** TODO Aggregation experiments summary 
-*** TODO Reanalyse aggregation 4
-    - Fix contrasts
-    - Try 1 vs 20
-    - Try aware vs naive for 20 or last five
-    - Try different trends
-      - quadratic
-      - straight and then linear after half way
-
-* Notes from <2020-11-10 Tue> 
-** Participants
-   - Micah
+* Notes from <2020-11-10 Tue>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Micah
 ** Notes
    - Break down into different effects
    - care about the different effect
@@ -130,21 +126,17 @@
      - Jeff lowenstein
      - Guy who worked with
      - can be strategic about it and get someone to force to read the work
-** Actions
-*** DONE Check about HDR funds
-    CLOSED: [2020-11-10 Tue 15:14]
-*** TODO Ask Dan if he can answer Rob's question
-*** DONE Run specific power analyses
-    CLOSED: [2020-11-19 Thu 11:36]
+*** TODO Action #6 Check about HDR funds                                 :#6:
+*** TODO Action #7 Ask Dan if he can answer Rob's question               :#7:
+*** TODO Action #8 Run specific power analyses                           :#8:
     - explict vs implicit (three-way) - high alignment
     - explict vs implicit (two-way) - low alignment
     - high vs low alignment (three-way) - explicit reliability
     - implicit null effects
-
-* Notes from <2020-11-23 Mon> 
-** Participants
-   - Evan Livesey
-   - Daniel Costa
+* Notes from <2020-11-23 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Evan Livesey
+   - [X] Daniel Costa
 ** Agenda
    - Annual Progress Review interview
 ** Notes
@@ -163,11 +155,10 @@
    - Working environment
    - Potentially extend again
    - Won't be an issue to ask for more time
-** Actions
-*** TODO Work out plan of when to get drafts back to me
-* Notes from <2020-11-30 Mon> 
-** Participants
-   - Dan
+*** TODO Action #9 Work out plan of when to get drafts back to me        :#9:
+* Notes from <2020-11-30 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Dan
 ** Agenda
    - Alignment 8
    - RA and McKinsey payments
@@ -205,16 +196,68 @@
    - whenever there's a dominant choices, e.g. high EV and non overlapping
      range
    - Cap on wednesday
-** Actions
-*** DONE add uniform distribution
+*** TODO Action #10 add uniform distribution                            :#10:
     CLOSED: [2020-12-01 Tue 08:59]
-*** DONE add "Each project is indepdent of the others"
+*** TODO Action #11 add "Each project is indepdent of the others"       :#11:
     CLOSED: [2020-12-01 Tue 08:55]
-*** DONE send Dan experiment link
+*** TODO Action #12 send Dan experiment link                            :#12:
     CLOSED: [2020-12-01 Tue 21:38]
     - State "TODO"       from              [2020-11-30 Mon 19:30]
-** DONE Wednesday cap on McKinsey and RA payments
+*** TODO Action #13 Wednesday cap on McKinsey and RA payments           :#13:
+    CLOSED: [2020-12-07 Mon 09:31]
+    - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
+    - State "TODO"       from              [2020-11-30 Mon 19:30]
+* Actions
+** DONE Action #1 Add explanation for explicit reliability               :#1:
+   CLOSED: [2020-11-02 Mon 19:14]
+   - But: way I call NPV unreliable
+     - the implication of that: unreliable because estimates are imperceise
+   - precision of the metric prediction
+   - Also:
+   #+begin_quote
+   I would also change "in this particular industry, NPV is an unrelaible
+   predictor of project success" to "in this industry, NPV is an unreliable
+   predictor of a project's profits"
+   #+end_quote
+   - Unreliability
+     - Good feature some times too
+     - Usually it means that there's a greater upside and downside
+     - Makes it sound like a bad thing. Whereas when implicitly unreliable
+       might be different
+       - Unreliable because it's such a wide range of outcomes
+         - broader range = meaning we have less confidence
+** DONE Action #2 power analysis                                         :#2:
+   CLOSED: [2020-11-19 Thu 11:36]
+** DONE Action #3 Send aggregation analyses                              :#3:
+   CLOSED: [2020-11-02 Mon 19:14]
+   - Thursday - just about aggregation
+** TODO Action #4 Aggregation experiments summary                        :#4:
+** TODO Action #5 Reanalyse aggregation 4                                :#5:
+  - Fix contrasts
+  - Try 1 vs 20
+  - Try aware vs naive for 20 or last five
+  - Try different trends
+    - quadratic
+    - straight and then linear after half way
+** DONE Action #6 Check about HDR funds                                  :#6:
+    CLOSED: [2020-11-10 Tue 15:14]
+** TODO Action #7 Ask Dan if he can answer Rob's question                :#7:
+** DONE Action #8 Run specific power analyses                            :#8:
+    CLOSED: [2020-11-19 Thu 11:36]
+   - explict vs implicit (three-way) - high alignment
+   - explict vs implicit (two-way) - low alignment
+   - high vs low alignment (three-way) - explicit reliability
+   - implicit null effects
+** TODO Action #9 Work out plan of when to get drafts back to me         :#9:
+** DONE Action #10 add uniform distribution                             :#10:
+   CLOSED: [2020-12-01 Tue 08:59]
+** DONE Action #11 add "Each project is indepdent of the others"        :#11:
+   CLOSED: [2020-12-01 Tue 08:55]
+** DONE Action #12 send Dan experiment link                             :#12:
+   CLOSED: [2020-12-01 Tue 21:38]
+   - State "TODO"       from              [2020-11-30 Mon 19:30]
+** DONE Action #13 Wednesday cap on McKinsey and RA payments            :#13:
    CLOSED: [2020-12-07 Mon 09:31]
    - State "DONE"       from "TODO"       [2020-12-07 Mon 09:31]
    - State "TODO"       from              [2020-11-30 Mon 19:30]
-* Actions
+
