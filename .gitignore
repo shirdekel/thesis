@@ -42,3 +42,4 @@ resource/
 *.log
 /inst/jspsych/alignment/experiment8/data/
 /inst/jspsych/alignment/testing/experiment8/data/
+*.pptx
