@@ -363,6 +363,86 @@
 *** TODO Action #17 Justify normative case for aggregated data          :#17:
     - Within our specific parameters
     - e.g., of large number of cases
+* Notes from <2020-12-08 Tue>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Dan
+** Agenda
+   - Anecdotes 1
+   - Anecdotes 2
+** Notes
+*** Future
+    - Send documents as word
+    - ARC thing is for colleagues
+**** TODO Action #18 Generate word documents when sending PDFs          :#18:
+*** rob's comment                                                       :#19:
+    - if the other things aren't similar
+    - movie study
+      - rate similarity of movie to focal movie
+      - more weight when similar
+    - you can either state that, or that they're all equally similar
+    - or third option: list all of the things in the dataset
+    - randomly sampled
+      - but could be still more similar
+      - way around it: say that all of the anecdotes are equally similar to the
+    focal case.
+    - Not a crazy thing: with reference-class forecasting (kahneman and tversky,
+    and dan), each case is counted equally
+    - Refined further: different weights on different cases
+    - do 1-7 instead of 1-6
+**** TODO Action #19 Work out whether to use a six or seven point scale :#19:
+     - For anecdotes ratings
+*** anecdotes 1                                                         :#20:
+    - Rob is right
+    - Now understands what he's saying, so not sure what to do
+    - If something is more similar, you might have to use it more
+    - We've only got two anecdotes
+      - In both cases, people pay too much attention to anecdote
+    - Do we tell them how many
+    - Talk about later today
+    - One way to get around it: say something like
+      - this example falls within X range, i.e., +- 40-60% percentile
+      - Make sure it shouldn't have influence
+    - Would be great to have the right weight
+      - how much should, if you had similarity ratings of all projects
+      - There is a correct weight of how much influence it should have on decision
+    - We can also describe the distribution of how similar the projects are
+    - And then maybe the randomly choosing
+    - If you say it's random distribution, and we define what the highest
+    similarity could be. and if the highest similarity isn't .96 but it's .8 then we
+    can say that anytihng that's been chosen 
+    - instead of cutting off on percentiles. the most similar isn't all that similar.
+    - unifrom distribution. experts similarity distribution .3-.8
+**** TODO Action #20 Update others with ideas to respond to Rob         :#20:
+     - randomly sampled
+     - large pool
+     - specific company
+     - constraining range of possible similarity in the pool
+*** ARC                                                                 :#21:
+    - look up guideline and for each section a little bit
+    - Want to say not findings, but questions
+    - Not say thesis
+    - improving risky choice in business innovation
+    - Powerpoint
+    - Names: alphabetical order
+    - I have all information
+    - presenting in front of people in discipline, and someone from DVC research office
+    - can be slide
+    - ARC future proposal
+**** points to address 
+     - Significance
+     - listing the different projects and hypotheses
+       - like in page 6. study 1 . just the top and three hypotheses
+     - national and social benefit: increase risk taking
+     - one line on aims and background
+****  summary
+     - ARC future proposal
+     - title: improving risky choice in business innovation
+     - Dekel,
+     - Aims
+       - overcoming inherent risk aversion in organisation decisions
+     - if sounds repetitive group
+     - ideally on one slide
+**** TODO Action #21 Send ARC proposal slides                           :#21:
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -429,3 +509,13 @@
 ** TODO Action #17 Justify normative case for aggregated data           :#17:
    - Within our specific parameters
    - e.g., of large number of cases
+
+** TODO Action #18 Generate word documents when sending PDFs            :#18:
+** TODO Action #19 Work out whether to use a six or seven point scale   :#19:
+   - For anecdotes ratings
+** TODO Action #20 Update others with ideas to respond to Rob           :#20:
+   - randomly sampled
+   - large pool
+   - specific company
+   - constraining range of possible similarity in the pool
+** TODO Action #21 Send ARC proposal slides                             :#21:
