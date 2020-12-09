@@ -17,7 +17,15 @@ get_interstitial <- function(interstitial_number) {
       p(
         label(
           `for` = interstitial_name,
-          "Click the following checkbox before continuing on to the next page: "
+          str_c(
+            "To show that you are reading and paying attention,",
+            "please click on the following checkbox",
+            strong("before") %>%
+              as.character(),
+            "clicking on \"Continue\": ",
+            sep = " "
+          ) %>%
+            HTML()
         ),
         input(
           type = "checkbox",
