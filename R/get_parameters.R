@@ -309,7 +309,8 @@ get_parameters <- function() {
         TRUE ~ sym("filter_data_raw_qualtrics") %>%
           list()
       )
-    )
+    ) %>%
+    filter(!(thesis_project == "anecdotes" & experiment_number == 2))
 
   return(parameters)
 }
