@@ -10,11 +10,23 @@ get_project_table <- function(data, reliability_amount) {
     data %>%
     rowwise() %>%
     mutate(
+      input_id = str_c(
+        business_name %>%
+          str_replace_all(" ", "-"),
+        project_type %>%
+          str_replace_all(" ", "-"),
+        npv_raw,
+        data$input_id_component %>%
+          str_c(collapse = "_") %>%
+          str_remove_all(","),
+        intrinsic_feature_rank,
+        sep = "_"
+      ),
       input_allocation = get_survey_number(
         label_text = "Allocation: ",
         name = input_id %>%
           str_c(
-            reliability_amount,
+            "reliability_amount",
             "allocation",
             sep = "_"
           ),
@@ -25,7 +37,7 @@ get_project_table <- function(data, reliability_amount) {
         label_text = "Ranking: ",
         name = input_id %>%
           str_c(
-            reliability_amount,
+            "reliability_amount",
             "ranking",
             sep = "_"
           ),

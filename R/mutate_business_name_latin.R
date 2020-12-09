@@ -20,17 +20,32 @@ mutate_business_name_latin <- function(project_detail_alignment_8) {
       npv_latin = data$npv %>%
         latin_list() %>%
         list(),
+      npv_raw_latin = data$npv_raw %>%
+        latin_list() %>%
+        list(),
+      npv_raw_rep = data$npv_raw %>%
+        list() %>%
+        rep(5) %>%
+        list(),
       business_name_latin_table = case_when(
         # Shuffle business names for high alignment because npv needs to stay
         # connected to intrinsic features
         alignment == "high" ~ get_table_latin(
           data,
           business_name_latin,
-          business_name
-        ),
+          business_name,
+          npv_raw_rep
+        ) %>%
+          list(),
         # Shuffle npv for low alignment because business names need to stay
         # connected to intrinsic features
-        alignment == "low" ~ get_table_latin(data, npv_latin, npv)
+        alignment == "low" ~ get_table_latin(
+          data,
+          npv_latin,
+          npv,
+          npv_raw_latin
+        ) %>%
+          list(),
       ),
       business_name_variation = seq_len(5) %>%
         as.numeric() %>%

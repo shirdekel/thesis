@@ -3,15 +3,20 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_table_latin <- function(data, latin, name) {
+get_table_latin <- function(data, latin, name, npv_raw) {
   table_latin <-
-    latin %>%
-    map(
-      ~ data %>%
-        mutate("{{name}}" := .x) %>%
-        arrange(business_name)
+    list(
+      latin,
+      npv_raw
     ) %>%
-    list()
+    pmap(
+      ~ data %>%
+        mutate(
+          "{{name}}" := .x,
+          npv_raw = .y
+          ) %>%
+        arrange(business_name)
+    )
 
   return(table_latin)
 }

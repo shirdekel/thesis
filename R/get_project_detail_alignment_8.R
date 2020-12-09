@@ -143,19 +143,6 @@ get_project_detail_alignment_8 <- function() {
       values_to = "npv"
     ) %>%
     rowwise() %>%
-    get_display() %>%
-    mutate(
-      input_id = str_c(
-        business_name,
-        project_type %>%
-          str_replace_all(" ", "-"),
-        npv_raw,
-        data$input_id_component %>%
-          str_c(collapse = "_"),
-        intrinsic_feature_rank,
-        sep = "_"
-      )
-    )
-
+    get_display()
   return(project_detail_alignment_8)
 }
