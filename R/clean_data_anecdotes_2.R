@@ -15,7 +15,7 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test, p
 
   data_allocation <-
     data_raw_jspsych_columns_unselected %>%
-    select(subject, dateCreated, time_elapsed, anecdote, valence)
+    select(subject, dateCreated, time_elapsed, anecdote_between)
 
   data_combined <-
     data_raw_jspsych_columns_unselected %>%

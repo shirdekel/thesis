@@ -8,12 +8,12 @@ get_plot_anecdotes_2 <- function(data_clean) {
     data_clean %>%
     nest_by(
       id,
-      anecdote,
+      anecdote_between,
       age
     )  %>%
     apa_plot(
       dv = "age",
-      iv1 = "anecdote"
+      iv1 = "anecdote_between"
     )
 
   return(plot_anecdotes_2)
