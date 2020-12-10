@@ -248,9 +248,33 @@ get_parameters_anecdotes_2 <- function() {
       target = get_target(data) %>%
         list(),
       anecdote = get_anecdote(data) %>%
-        list(),
-      display = div(anecdote, target) %>%
-        as.character()
+        list()
+    ) %>%
+    unnest(data) %>%
+    rowwise() %>%
+    mutate(
+      display = case_when(
+        anecdote_within == "statistics_only" ~
+        div(target) %>%
+          as.character(),
+        anecdote_within == "anecdote" &
+          anecdote_between == "anecdote_only" ~
+        div(anecdote) %>%
+          as.character(),
+        anecdote_within == "anecdote" &
+          anecdote_between == "combined" ~
+        div(anecdote, target) %>%
+          as.character(),
+      )
+    ) %>%
+    ungroup() %>%
+    nest_by(
+      project_variation,
+      anecdote_variation,
+      anecdote_between,
+      alignment,
+      valence,
+      display
     ) %>%
     nest_by(
       project_variation,
