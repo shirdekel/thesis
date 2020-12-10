@@ -38,6 +38,8 @@
 ** TODO Work out why you can pass symbols for functions in drake, but not for arguments
 ** TODO Work out why sometimes drake re-runs when switching computers
    - Seems to be set off by the resources folders
+   - I think because when you change computer the file path changes
+   - Also happens to memos, because they have a path argument for ~knitr_in~
 ** Title
    - Resource allocation biases: data and semantics
    - Data vs. semantics: An investigation of resource allocation biases
@@ -643,16 +645,22 @@ to case studies.
 *** TODO Analysis content
 *** TODO Project variation content
 *** TODO Clean up functions
-*** TODO Valence condition
+*** DONE Valence condition
+    CLOSED: [2020-12-10 Thu 16:27]
+    - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
 *** TODO Anecdote condition analysis differences
 *** DONE Add project variation across within-subjects variables
     CLOSED: [2020-11-30 Mon 15:43]
     - State "DONE"       from "TODO"       [2020-11-30 Mon 15:43]
-*** TODO Anecdote conditions
+*** DONE Anecdote conditions
+    CLOSED: [2020-12-10 Thu 16:27]
+    - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
     - State "TODO"       from              [2020-11-30 Mon 15:49]
     - Maybe done by javascript?
     - Won't be easy, because it involves the NPV row
-*** TODO Statistics only condition
+*** DONE Statistics only condition
+    CLOSED: [2020-12-10 Thu 16:27]
+    - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
     - State "TODO"       from              [2020-11-30 Mon 15:49]
 *** DONE Summary of plan
     CLOSED: [2020-12-07 Mon 09:27]
@@ -3123,6 +3131,10 @@ to case studies.
     CLOSED: [2020-12-07 Mon 10:12]
     - State "DONE"       from "TODO"       [2020-12-07 Mon 10:12]
     - State "TODO"       from              [2020-12-07 Mon 09:32]
+*** DONE Fix mismatched input IDs
+    CLOSED: [2020-12-09 Wed 14:18]
+    - Generate the IDs after the shuffling in ~mutate_business_name_latin~
+    - Combine the existing intrinsic values with the shuffled NPVs and business names
 * Emacs
 ** DONE Spotify
    CLOSED: [2020-10-31 Sat 15:03]
