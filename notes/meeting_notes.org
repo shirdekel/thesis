@@ -518,4 +518,5 @@
    - large pool
    - specific company
    - constraining range of possible similarity in the pool
-** TODO Action #21 Send ARC proposal slides                             :#21:
+** DONE Action #21 Send ARC proposal slides                             :#21:
+   CLOSED: [2020-12-10 Thu 16:52]

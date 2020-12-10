@@ -36,10 +36,12 @@
     #+end_quote
     - But [[https://stats.stackexchange.com/a/466286][here]] Ben Bolker says it's fine to keep it even if fit is singular.
 ** TODO Work out why you can pass symbols for functions in drake, but not for arguments
-** TODO Work out why sometimes drake re-runs when switching computers
+** DONE Work out why sometimes drake re-runs when switching computers
+   CLOSED: [2020-12-11 Fri 09:16]
    - Seems to be set off by the resources folders
    - I think because when you change computer the file path changes
    - Also happens to memos, because they have a path argument for ~knitr_in~
+   - https://github.com/ropensci/drake/issues/1350
 ** Title
    - Resource allocation biases: data and semantics
    - Data vs. semantics: An investigation of resource allocation biases
@@ -648,13 +650,13 @@ to case studies.
 *** DONE Valence condition
     CLOSED: [2020-12-10 Thu 16:27]
     - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
-*** TODO Anecdote condition analysis differences
+*** DONE Anecdote condition analysis differences
+    CLOSED: [2020-12-11 Fri 10:29]
 *** DONE Add project variation across within-subjects variables
     CLOSED: [2020-11-30 Mon 15:43]
     - State "DONE"       from "TODO"       [2020-11-30 Mon 15:43]
 *** DONE Anecdote conditions
-    CLOSED: [2020-12-10 Thu 16:27]
-    - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
+    CLOSED: [2020-12-11 Fri 10:29]
     - State "TODO"       from              [2020-11-30 Mon 15:49]
     - Maybe done by javascript?
     - Won't be easy, because it involves the NPV row
