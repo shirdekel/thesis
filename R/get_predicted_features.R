@@ -1,8 +1,6 @@
-##' .. content for \description{} (no empty lines) ..
+##' @title Get predicted features
 ##'
-##' .. content for \details{} ..
-##'
-##' @title
+##' Anecdotes 2
 ##' @param value
 ##' @param feature
 ##' @param unit

@@ -1,8 +1,4 @@
-##' .. content for \description{} (no empty lines) ..
-##'
-##' .. content for \details{} ..
-##'
-##' @title
+##' @title Get value for anecdotes 2
 
 ##' @return
 ##' @author Shir Dekel

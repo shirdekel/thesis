@@ -4,12 +4,14 @@
 ##' @author Shir Dekel
 ##' @export
 get_reliability_anecdotes_2 <- function() {
-
   list(
-      c(95, 87),
-      c(96, 88)
+    seq(from = 91, to = 95),
+    seq(from = 81, to = 85)
   ) %>%
-    map(as.character) %>%
-    list() %>%
-          rep(2)
+    transpose() %>%
+    map(
+      ~ .x %>%
+        unlist() %>%
+        as.character()
+    )
 }

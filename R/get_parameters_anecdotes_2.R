@@ -4,104 +4,194 @@
 ##' @author Shir Dekel
 ##' @export
 get_parameters_anecdotes_2 <- function() {
+  conditions_anecdote <-
+    expand_grid(
+      anecdote_between = c("anecdote_only", "combined"),
+      anecdote_within = "anecdote",
+      alignment = c("low", "high"),
+      valence = c("negative", "positive"),
+      feature_type = c("target", "anecdote"),
+      project_type = c("target", "comparison"),
+    )
 
-## asdf <- 
-  tibble(
-    project_variation = seq_len(2) %>%
-      as.numeric() %>%
-   latin_list(),
-    anecdote_variation = seq_len(2) %>%
-      as.numeric() %>%
-  latin_list(),
-    feature_type = c("target", "anecdote") %>% list(),
-    business_name = get_business_name_anecdotes_2() %>% list(),
-    type = get_project_type_anecdotes_2() %>% list(),
-    location = get_location_anecdotes_2() %>% list(),
-    integration = get_integration() %>% list(),
-    structure = get_structure() %>% list(),
-    feature = get_feature_anecdotes_2() %>% list(),
-    value_numeric = get_project_value_base() %>% list(),
-    value_string = get_value_string() %>% list(),
-    multiplier = get_multiplier() %>% list(),
-    unit = get_unit_anecdotes_2() %>% list(),
-    reliability = get_reliability_anecdotes_2(),
-    npv = get_npv_anecdotes_2(),
-  project_type = c("target", "comparison") %>%
- list(),
-    alignment = c("low", "high") %>% list(),
-    reason = get_reason() %>% list()
-  ) %>%
-   # vary by project variation?
-    unnest(
-      c(
-      project_variation,
-      business_name,
-      type,
-      location,
-      value_string,
-      feature,
-      ## integration,
-      ## structure,
-        ## reliability,
-      reason
+  conditions_statistics_only <-
+    expand_grid(
+      anecdote_between = c("anecdote_only", "combined"),
+      feature_type = c("target", "anecdote"),
+      project_type = c("target", "comparison")
+    ) %>%
+    mutate(
+      anecdote_within = "statistics_only",
+      alignment = "NA",
+      valence = "NA",
+    )
+
+  conditions <-
+    conditions_anecdote %>%
+    full_join(
+      conditions_statistics_only,
+      by = c(
+        "anecdote_between", "anecdote_within", "alignment", "valence",
+        "feature_type", "project_type"
       )
-      ) %>%
-   # vary by feature_type (target/anecdote)
-    unnest(c(
-      business_name,
-      location,
-      integration,
-      structure,
-      value_string,
-      multiplier,
-      ## alignment,
-        feature_type,
-      ## type
-      reason
-    )) %>%
-    ## select(project_variation, anecdote_variation, alignment, business_name, reason)
-   # vary by anecdote variation?
+    )
+
+  conditions %>%
+    nest_by(
+      anecdote_between,
+      anecdote_within,
+      alignment,
+      valence,
+      feature_type
+    ) %>%
+    nest_by(
+      anecdote_between,
+      anecdote_within,
+      alignment,
+      valence,
+    ) %>%
+    nest_by(
+      anecdote_between
+    ) %>%
+    ## Mutate project variation here so that each between subjects condition is
+    ## identical and each gets the set of five counterbalanced sequences. Do the
+    ## same with anecdote variation.
+    mutate(
+      project_variation = seq_len(5) %>%
+        as.numeric() %>%
+        latin_list() %>%
+        list(),
+      anecdote_variation = seq_len(2) %>%
+        as.numeric() %>%
+        latin_list() %>%
+        list(),
+      .before = 1
+    ) %>%
+    ## Expand each between-subjects condition. Also, unnest project variation so
+    ## that each within-subjects combination (of alignment and valence) gets a
+    ## different project variation sequence.
     unnest(
       c(
-        ## business_name,
-        ## location,
-        ## integration,
-        ## structure,
-        ## value_string,
-        multiplier,
-        type,
-        npv,
-        alignment,
-        ## reason,
-        reliability,
-      anecdote_variation
+        data,
+        project_variation,
       )
     ) %>%
-   ##  select(project_variation, anecdote_variation, alignment, business_name,
-   ##         reason) %>%
-   ## pull(reason)
-   # vary by project type? (target/comparison)
-    unnest(c(
-      business_name,
-      location,
-      integration,
-      structure,
-      value_string,
-      multiplier,
-      npv,
-      reliability,
+    ## Mutate business name, type, and location here so that each of the five
+    ## sets (of four) business names and types are associated with a project
+    ## variation number.
+    mutate(
+      business_name = get_business_name_anecdotes_2() %>%
+        list(),
+      type = get_project_type_anecdotes_2() %>%
+        list(),
+      location = get_location_anecdotes_2() %>%
+        list(),
+      integration = get_integration() %>%
+        list(),
+      structure = get_structure() %>%
+        list(),
+      feature = get_feature_anecdotes_2() %>%
+        list(),
+      value_numeric = get_project_value_base() %>%
+        list(),
+      value_string = get_value_string() %>%
+        list(),
+      multiplier = get_multiplier() %>%
+        list(),
+      unit = get_unit_anecdotes_2() %>%
+        list(),
+      reliability = get_reliability_anecdotes_2() %>%
+        list(),
+      npv = get_npv_anecdotes_2() %>%
+        list(),
+      reason = get_reason() %>%
+        list(),
+    ) %>%
+    ## Expand each within-subjects condition alongside anecdote variation to
+    ## show feature type. This give each feature type condition (target or
+    ## anecdote) two anecdote variation combinations (1,2 or 2,1). Doing this
+    ## before any further business name/project variation unnesting guarantees
+    ## that each combination of conditions gets the same combination of business
+    ## names. Location needs to be unnested here so that each feature type
+    ## condition gets the relevant location (i.e., location_anecdote with
+    ## anecdote).
+    unnest(
+      c(
+        data,
+        anecdote_variation,
+        location
+      )
+    ) %>%
+    ## Expand sets of five (project variations)
+    ## Expand project variation with
+    ## business name, type, and location, etc. to align each set of five project
+    ## variations with a business name set (of two) and the relevant type and
+    ## location.
+    unnest(
+      c(
+        project_variation,
+        business_name,
+        type,
+        location,
+        feature,
+        value_numeric,
+        value_string,
+        multiplier,
+        unit,
+        reason,
+        reliability,
+        npv
+      )
+    ) %>%
+    ## Expand project type conditions with business name, type, location, and
+    ## feature so that each project type condition is associated with one of two
+    ## business names and the relevant type, location, and feature set.
+    ## Integration and structure are first unnested here and not in the previous
+    ## unnesting because they don't have five variations.
+    unnest(
+      c(
+        data,
+        business_name,
+        type,
+        location,
+        integration,
+        structure,
+        feature,
+        value_string,
+        multiplier,
+        reason,
+        reliability,
+        npv
+      )
+    ) %>%
+    ## Expand for project pairs
+    ## Expand remaining components so that each project type condition gets two
+    ## individual projects, and each one is associated with an anecdote
+    ## variation condition. Feature doesn't need another unnesting because we
+    ## use the same one for both target and comparison.
+    unnest(
+      c(
+        business_name,
+        anecdote_variation,
+        integration,
+        structure,
+        value_string,
+        multiplier,
+        reason,
+      )
+    ) %>%
+    ungroup() %>%
+    arrange(
+      project_variation,
+      anecdote_variation,
+      anecdote_between,
+      anecdote_within,
+      alignment,
+      valence,
+      feature_type,
       project_type,
-      type,
-      feature,
-      value_numeric,
-      unit,
-      reason
-    )) %>%
-   ##  select(project_variation, anecdote_variation, alignment, business_name, reason) %>%
-   ##  arrange(project_variation, anecdote_variation, alignment) %>%
-   ## filter(project_variation == 2, anecdote_variation == 2, alignment == "high") %>%
-   ##     pull(reason)
-  rowwise() %>%
+    ) %>%
+    rowwise() %>%
     mutate(
       value = get_value(
         value_numeric,
@@ -113,7 +203,8 @@ get_parameters_anecdotes_2 <- function() {
         feature,
         unit
       ),
-      cutoff = get_cutoff(value_numeric) %>% list(),
+      cutoff = get_cutoff(value_numeric) %>%
+        list(),
       analysis = get_analysis(
         business_name, location,
         integration, structure,
@@ -121,14 +212,13 @@ get_parameters_anecdotes_2 <- function() {
         reason, cutoff
       )
     ) %>%
-  ##   select(project_variation, anecdote_variation, alignment, business_name, value) %>%
-  ##  arrange(project_variation, anecdote_variation, alignment) %>%
-  ##  filter(project_variation == 2, anecdote_variation == 2, alignment == "high") %>%
-  ## pull(value)
     # needs to be removed because otherwise there are NAs after pivoting
-    select(-c(multiplier, value, feature,
-              reason, unit, cutoff
-              )) %>%
+    select(-c(
+      multiplier,
+      value,
+      feature,
+      reason,
+    )) %>%
     pivot_longer(
       c(
         business_name,
@@ -146,10 +236,14 @@ get_parameters_anecdotes_2 <- function() {
     pivot_wider(
       names_from = c(names, feature_type),
       values_from = values,
-      ) %>%
-    ## select(project_variation, anecdote_variation, alignment, integration_anecdote)  %>%
-    ## arrange(project_variation, anecdote_variation, alignment)
-    nest_by(project_variation, alignment, anecdote_variation) %>%
+    ) %>%
+    nest_by(
+      project_variation,
+      anecdote_variation,
+      anecdote_between,
+      alignment,
+      valence
+    ) %>%
     mutate(
       target = get_target(data) %>%
         list(),
@@ -158,20 +252,19 @@ get_parameters_anecdotes_2 <- function() {
       display = div(anecdote, target) %>%
         as.character()
     ) %>%
-    nest_by(project_variation, anecdote_variation) %>%
-   ##  filter(project_variation == 1, anecdote_variation == 1) %>%
-   ##  pull(data) %>%
-   ##  .[[1]] %>%
-   ## pull(display) %>%
-   ## map(cat)
-  mutate(
+    nest_by(
+      project_variation,
+      anecdote_variation,
+      anecdote_between
+    ) %>%
+    mutate(
       timeline = get_projects_anecdotes_2(
         project_variation,
         anecdote_variation,
+        anecdote_between,
         data
       ) %>%
         list()
     ) %>%
     pull(timeline)
-
 }

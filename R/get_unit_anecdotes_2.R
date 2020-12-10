@@ -12,6 +12,24 @@ get_unit_anecdotes_2 <- function() {
       ""
     ),
     c(
+      " an hour",
+      "%" %>%
+        rep(2),
+      ""
+    ),
+    c(
+      " an hour",
+      "%" %>%
+        rep(2),
+      ""
+    ),
+    c(
+      " an hour",
+      "%" %>%
+        rep(2),
+      ""
+    ),
+    c(
       "L an hour",
       " years",
       "%",

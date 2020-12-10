@@ -32,6 +32,48 @@ get_feature_anecdotes_2 <- function() {
         "feature4_3",
         "feature4_4"
       )
+    ),
+    list(
+      c(
+        "feature5_1",
+        "feature5_2",
+        "feature5_3",
+        "feature5_4"
+      ),
+      c(
+        "feature6_1",
+        "feature6_2",
+        "feature6_3",
+        "feature6_4"
+      )
+    ),
+    list(
+      c(
+        "feature7_1",
+        "feature7_2",
+        "feature7_3",
+        "feature7_4"
+      ),
+      c(
+        "feature8_1",
+        "feature8_2",
+        "feature8_3",
+        "feature8_4"
+      )
+    ),
+    list(
+      c(
+        "feature9_1",
+        "feature9_2",
+        "feature9_3",
+        "feature9_4"
+      ),
+      c(
+        "feature10_1",
+        "feature10_2",
+        "feature10_3",
+        "feature10_4"
+      )
     )
   )
 }

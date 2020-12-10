@@ -9,13 +9,26 @@ get_project_value_base <- function() {
       4000,
       60,
       75
-    ) %>%
-   set_names(str_c("name", 1:3)),
+    ),
     c(
       2000,
       7,
       80
-    ) %>%
-      set_names("rate", "maintenance", "prob")
+    ),
+    c(
+      2000,
+      7,
+      80
+    ),
+    c(
+      2000,
+      7,
+      80
+    ),
+    c(
+      2000,
+      7,
+      80
+    )
   )
 }

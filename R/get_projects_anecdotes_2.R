@@ -6,6 +6,7 @@
 ##' @param allocation_display
 get_projects_anecdotes_2 <- function(project_variation,
                                           anecdote_variation,
+                                     anecdote_between,
                                           data) {
     trial_generic(
       "survey-html-form3",
@@ -22,12 +23,19 @@ get_projects_anecdotes_2 <- function(project_variation,
       fn_data_condition(
         project_variation == !!project_variation
       )
-    )%>%
+    ) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
         anecdote_variation == !!anecdote_variation
       )
+    ) %>%
+    build_timeline() %>%
+    display_if(
+      fn_data_condition(
+        anecdote_between == !!anecdote_between
+      )
     )
+
 
 }
