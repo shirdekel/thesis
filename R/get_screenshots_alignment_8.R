@@ -8,7 +8,7 @@ get_screenshots_alignment_8 <- function() {
     get_file_name_materials_alignment_8()
 
   materials_directory <-
-    here("inst", "materials", "alignment", "experiment8")
+    file.path("inst", "materials", "alignment", "experiment8")
 
   file_path_materials <-
     get_file_path_materials(materials_directory, file_name_materials)

@@ -32,7 +32,7 @@ get_consent_html <- function(experiment_resources) {
 
   consent_html %>%
     save_html(
-      file.path(
+      here(
         experiment_resources,
         "consent.html"
       )

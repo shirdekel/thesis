@@ -9,7 +9,7 @@
 get_testing_directory <- function(thesis_project, experiment_number) {
 
   testing_directory <-
-    here(
+    file.path(
       "inst",
       "jspsych",
       thesis_project,

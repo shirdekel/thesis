@@ -11,7 +11,7 @@
 ##' @export
 get_memo_path <- function(thesis_project, experiment_number, memo_type, memo_extension) {
   memo_directory <-
-    here(
+    file.path(
       "doc",
       memo_type,
       thesis_project,

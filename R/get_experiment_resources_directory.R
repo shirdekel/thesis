@@ -8,7 +8,7 @@
 get_experiment_resources_directory <- function(thesis_project,
                                                experiment_number) {
   experiment_resources_directory <-
-    here(
+    file.path(
       "inst",
       "experiment_resources",
       thesis_project,

@@ -23,13 +23,13 @@ get_parameters <- function() {
 
   data_directory_server <-
     c(
-      here("inst", "extdata", "psychsydexp") %>%
+      file.path("inst", "extdata", "psychsydexp") %>%
         rep(3),
-      here("inst", "extdata", "alignment", "experiment2"),
-      here("inst", "extdata", "alignment", "experiment7"),
-      here("inst", "extdata", "psychsydexp"),
-      here("inst", "extdata", "anecdotes", "experiment1"),
-      here("inst", "extdata", "psychsydexp")
+      file.path("inst", "extdata", "alignment", "experiment2"),
+      file.path("inst", "extdata", "alignment", "experiment7"),
+      file.path("inst", "extdata", "psychsydexp"),
+      file.path("inst", "extdata", "anecdotes", "experiment1"),
+      file.path("inst", "extdata", "psychsydexp")
     )
 
   data_directory_server %>%

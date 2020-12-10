@@ -9,10 +9,11 @@
 zip_experiment <- function(path) {
 
   path %>%
+    here() %>%
     file.path("experiment.zip") %>%
     zip(
       files = "experiment",
-      root = path
+      root = here(path)
     )
 
 }

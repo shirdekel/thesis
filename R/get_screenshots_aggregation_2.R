@@ -9,7 +9,7 @@ get_screenshots_aggregation_2 <- function() {
     get_file_name_materials_experiment2()
 
   materials_directory_experiment2 <-
-    here("inst", "materials", "aggregation", "experiment2")
+    file.path("inst", "materials", "aggregation", "experiment2")
 
   if(!dir.exists(materials_directory_experiment2)) {
     dir.create(materials_directory_experiment2)

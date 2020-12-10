@@ -9,7 +9,7 @@
 ##' @export
 get_materials_directory <- function(thesis_project, experiment_number) {
   materials_directory <-
-    here(
+    file.path(
       "inst",
       "materials",
       thesis_project,

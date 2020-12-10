@@ -9,7 +9,7 @@
 get_file_path_materials <- function(materials_directory, file_name_materials) {
 
   file_path_materials <-
-    file.path(
+    here(
       materials_directory,
       str_c(
         file_name_materials,

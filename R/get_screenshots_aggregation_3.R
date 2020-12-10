@@ -9,7 +9,7 @@ get_screenshots_aggregation_3 <- function() {
     get_file_name_materials_experiment3()
 
   materials_directory_experiment3 <-
-    here("inst", "materials", "aggregation", "experiment3")
+    file.path("inst", "materials", "aggregation", "experiment3")
 
   file_path_materials <-
     get_file_path_materials(materials_directory_experiment3, file_name_materials_experiment3)

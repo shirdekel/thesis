@@ -239,9 +239,9 @@ the_plan <-
       )
     ),
     thesis_summary = target(
-      render(knitr_in(!!here("doc", "thesis_summary", "thesis_summary.Rmd")))
+      render(knitr_in(!!file.path("doc", "thesis_summary", "thesis_summary.Rmd")))
     ),
     arc_proposal = target(
-        render(knitr_in(!!here("doc", "arc_proposal", "arc_proposal.Rmd")))
+        render(knitr_in(!!file.path("doc", "arc_proposal", "arc_proposal.Rmd")))
     )
   )
