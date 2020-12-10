@@ -241,12 +241,42 @@ get_parameters_anecdotes_2 <- function() {
       project_variation,
       anecdote_variation,
       anecdote_between,
+      anecdote_within,
       alignment,
       valence
     ) %>%
     mutate(
-      target = get_target(data) %>%
-        list(),
+      target = case_when(
+        anecdote_within == "anecdote" &
+          anecdote_between == "anecdote_only" ~
+        data %>%
+          select(
+            business_name_target,
+            type_target,
+            location_target,
+            integration_target,
+            structure_target,
+            predicted_features_target,
+            project_type
+          ) %>%
+          get_target() %>%
+          list(),
+        TRUE ~
+        data %>%
+          select(
+            business_name_target,
+            type_target,
+            location_target,
+            integration_target,
+            structure_target,
+            predicted_features_target,
+            project_type,
+            reliability,
+            npv
+          ) %>%
+          get_target() %>%
+          list(),
+      ),
       anecdote = get_anecdote(data) %>%
         list()
     ) %>%
@@ -257,14 +287,9 @@ get_parameters_anecdotes_2 <- function() {
         anecdote_within == "statistics_only" ~
         div(target) %>%
           as.character(),
-        anecdote_within == "anecdote" &
-          anecdote_between == "anecdote_only" ~
-        div(anecdote) %>%
-          as.character(),
-        anecdote_within == "anecdote" &
-          anecdote_between == "combined" ~
+        anecdote_within == "anecdote" ~
         div(anecdote, target) %>%
-          as.character(),
+          as.character()
       )
     ) %>%
     ungroup() %>%

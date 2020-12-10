@@ -5,17 +5,6 @@
 ##' @export
 get_target <- function(data) {
   data %>%
-    select(
-      business_name_target,
-      type_target,
-      location_target,
-      integration_target,
-      structure_target,
-      predicted_features_target,
-      project_type,
-      reliability,
-      npv
-    ) %>%
     pivot_longer(
       cols = -project_type,
       names_to = "Relevant information"
