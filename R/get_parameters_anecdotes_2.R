@@ -84,8 +84,16 @@ get_parameters_anecdotes_2 <- function() {
         list(),
       type = get_project_type_anecdotes_2() %>%
         list(),
-      location = get_location_anecdotes_2() %>%
-        list(),
+      location = case_when(
+        alignment == "high" ~ get_location_anecdotes_2() %>%
+            .[["high"]] %>%
+            list(),
+        # Doesn't matter which anecdote locations NA gets, because they don't
+        # see an anecdote.
+        TRUE ~ get_location_anecdotes_2() %>%
+          .[["low"]] %>%
+          list()
+      ),
       integration = get_integration() %>%
         list(),
       structure = get_structure() %>%
@@ -192,19 +200,27 @@ get_parameters_anecdotes_2 <- function() {
         value_string,
         multiplier,
         reason,
+        location
       )
     ) %>%
     ungroup() %>%
-    arrange(
-      project_variation,
-      anecdote_variation,
-      anecdote_between,
-      anecdote_within,
-      alignment,
-      valence,
-      feature_type,
-      project_type,
-    ) %>%
+    ## arrange(
+    ##   project_variation,
+    ##   anecdote_variation,
+    ##   anecdote_between,
+    ##   anecdote_within,
+    ##   alignment,
+    ##   valence,
+    ##   feature_type,
+    ##   project_type,
+    ## ) %>%
+    ## filter(
+    ##   project_variation == 1,
+    ##   anecdote_variation == 1,
+    ##   anecdote_between == "combined",
+    ##   alignment == "low",
+    ##   valence == "negative",
+    ##   ) %>%
     rowwise() %>%
     mutate(
       value = get_value(

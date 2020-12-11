@@ -4,62 +4,112 @@
 ##' @author Shir Dekel
 ##' @export
 get_location_anecdotes_2 <- function() {
+
   list(
     list(
-      c(
-        "microchip_anecdote",
+      list(
+        c(
+          "microchip_anecdote_high_similarity",
+          "microchip_anecdote_low_similarity"
+        ),
         "microchip_target"
       ),
-      c(
-        "oil_anecdote",
+      list(
+        c(
+          "oil_anecdote_high_similarity",
+          "oil_anecdote_low_similarity"
+        ),
         "oil_target"
       )
     ),
     list(
-      c(
-        "location3_anecdote",
+      list(
+        c(
+          "location3_anecdote_high_similarity",
+          "location3_anecdote_low_similarity"
+        ),
         "location3_target"
       ),
-      c(
-        "location4_anecdote",
+      list(
+        c(
+          "location4_anecdote_high_similarity",
+          "location4_anecdote_low_similarity"
+        ),
         "location4_target"
       )
     ),
     list(
-      c(
-        "location5_anecdote",
+      list(
+        c(
+          "location5_anecdote_high_similarity",
+          "location5_anecdote_low_similarity"
+        ),
         "location5_target"
       ),
-      c(
-        "location6_anecdote",
+      list(
+        c(
+          "location6_anecdote_high_similarity",
+          "location6_anecdote_low_similarity"
+        ),
         "location6_target"
       )
     ),
     list(
-      c(
-        "location7_anecdote",
+      list(
+        c(
+          "location7_anecdote_high_similarity",
+          "location7_anecdote_low_similarity"
+        ),
         "location7_target"
       ),
-      c(
-        "location8_anecdote",
+      list(
+        c(
+          "location8_anecdote_high_similarity",
+          "location8_anecdote_low_similarity"
+        ),
         "location8_target"
       )
     ),
     list(
-      c(
-        "location9_anecdote",
+      list(
+        c(
+          "location9_anecdote_high_similarity",
+          "location9_anecdote_low_similarity"
+        ),
         "location9_target"
       ),
-      c(
-        "location10_anecdote",
+      list(
+        c(
+          "location10_anecdote_high_similarity",
+          "location10_anecdote_low_similarity"
+        ),
         "location10_target"
       )
     )
   ) %>%
     map(
       ~ .x %>%
-        transpose() %>%
-        simplify_all()
-    ) %>%
-    transpose()
+        map(
+          ~ .x %>%
+            map_if(
+              ~ length(.x) == 1,
+              ~ .x %>% rep(2)
+            ) %>%
+            transpose()
+        ) %>%
+        transpose()
+    )  %>%
+    map(
+      ~ .x %>%
+      map(
+        ~ .x %>%
+          transpose()
+      ) %>%
+        transpose()
+      ) %>%
+    transpose() %>%
+    map(transpose) %>%
+    transpose() %>%
+    set_names("high", "low")
+
 }
