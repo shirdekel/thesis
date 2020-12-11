@@ -18,8 +18,7 @@ get_target <- function(data) {
       "Allocate your budget between the following two projects using percentage values (the two values should sum to 100):" %>%
         p() %>%
         as.character(),
-      .,
-      get_allocation()
+      .
     ) %>%
     HTML() %>%
     tags$fieldset(tags$legend("Target projects"))

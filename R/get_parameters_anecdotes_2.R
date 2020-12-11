@@ -86,8 +86,8 @@ get_parameters_anecdotes_2 <- function() {
         list(),
       location = case_when(
         alignment == "high" ~ get_location_anecdotes_2() %>%
-            .[["high"]] %>%
-            list(),
+          .[["high"]] %>%
+          list(),
         # Doesn't matter which anecdote locations NA gets, because they don't
         # see an anecdote.
         TRUE ~ get_location_anecdotes_2() %>%
@@ -204,23 +204,6 @@ get_parameters_anecdotes_2 <- function() {
       )
     ) %>%
     ungroup() %>%
-    ## arrange(
-    ##   project_variation,
-    ##   anecdote_variation,
-    ##   anecdote_between,
-    ##   anecdote_within,
-    ##   alignment,
-    ##   valence,
-    ##   feature_type,
-    ##   project_type,
-    ## ) %>%
-    ## filter(
-    ##   project_variation == 1,
-    ##   anecdote_variation == 1,
-    ##   anecdote_between == "combined",
-    ##   alignment == "low",
-    ##   valence == "negative",
-    ##   ) %>%
     rowwise() %>%
     mutate(
       value = get_value(
@@ -240,7 +223,34 @@ get_parameters_anecdotes_2 <- function() {
         integration, structure,
         value_string, value_numeric,
         reason, cutoff
-      )
+      ),
+      input_id = str_c(
+        feature %>%
+          str_replace_all(" ", "-"),
+        value,
+        sep = "_",
+        collapse = "_"
+      ) %>%
+        str_c(
+          anecdote_within,
+          alignment,
+          valence,
+          business_name %>%
+            str_replace_all(" ", "-"),
+          type %>%
+            str_replace_all(" ", "-"),
+          npv,
+          reliability,
+          .,
+          project_type,
+          sep = "_"
+        ) %>%
+        get_survey_number(
+          "Allocation: ",
+          .,
+          class = "allocation"
+        ) %>%
+        as.character()
     ) %>%
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(
@@ -258,7 +268,8 @@ get_parameters_anecdotes_2 <- function() {
         structure,
         predicted_features,
         value_string,
-        analysis
+        analysis,
+        input_id
       ),
       names_to = "names",
       values_to = "values"
@@ -267,6 +278,23 @@ get_parameters_anecdotes_2 <- function() {
       names_from = c(names, feature_type),
       values_from = values,
     ) %>%
+    ## arrange(
+    ##   project_variation,
+    ##   anecdote_variation,
+    ##   anecdote_between,
+    ##   anecdote_within,
+    ##   alignment,
+    ##   valence,
+    ##   ## feature_type,
+    ##   ## project_type,
+    ## ) %>%
+    ## filter(
+    ##   project_variation == 1,
+    ##   anecdote_variation == 1,
+    ##   anecdote_between == "combined",
+    ##   alignment == "low",
+    ##   valence == "negative",
+    ##   ) %>%
     nest_by(
       project_variation,
       anecdote_variation,
@@ -287,7 +315,8 @@ get_parameters_anecdotes_2 <- function() {
             integration_target,
             structure_target,
             predicted_features_target,
-            project_type
+            project_type,
+            input_id_target
           ) %>%
           get_target() %>%
           list(),
@@ -302,7 +331,8 @@ get_parameters_anecdotes_2 <- function() {
             predicted_features_target,
             project_type,
             reliability,
-            npv
+            npv,
+            input_id_target
           ) %>%
           get_target() %>%
           list(),
