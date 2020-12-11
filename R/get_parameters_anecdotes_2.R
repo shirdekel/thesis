@@ -143,6 +143,20 @@ get_parameters_anecdotes_2 <- function() {
         npv
       )
     ) %>%
+    ## Make sure positive valence conditions have a low statistics and negative
+    ## valence conditions have high statistics.
+    mutate(
+      reliability = case_when(
+        valence == "positive" ~ reliability %>%
+          map(rev),
+        TRUE ~ reliability
+      ),
+      npv = case_when(
+        valence == "positive" ~ npv %>%
+          map(rev),
+        TRUE ~ npv
+      )
+    ) %>%
     ## Expand project type conditions with business name, type, location, and
     ## feature so that each project type condition is associated with one of two
     ## business names and the relevant type, location, and feature set.
