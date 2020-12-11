@@ -102,8 +102,14 @@ get_parameters_anecdotes_2 <- function() {
         list(),
       value_numeric = get_project_value_base() %>%
         list(),
-      value_string = get_value_string() %>%
-        list(),
+      value_string = case_when(
+        alignment == "high" ~ get_value_string() %>%
+          pluck("high") %>%
+          list(),
+        TRUE ~ get_value_string() %>%
+          pluck("low") %>%
+          list()
+      ),
       multiplier = get_multiplier() %>%
         list(),
       unit = get_unit_anecdotes_2() %>%
@@ -163,6 +169,20 @@ get_parameters_anecdotes_2 <- function() {
         valence == "positive" ~ npv %>%
           map(rev),
         TRUE ~ npv
+      ),
+      structure = case_when(
+        alignment == "high" &
+          feature_type == "anecdote"
+        ~ structure %>%
+          map(rev),
+        TRUE ~ structure
+      ),
+      integration = case_when(
+        alignment == "high" &
+          feature_type == "anecdote"
+        ~ integration %>%
+          map(rev),
+        TRUE ~ integration
       )
     ) %>%
     ## Expand project type conditions with business name, type, location, and
@@ -204,13 +224,32 @@ get_parameters_anecdotes_2 <- function() {
       )
     ) %>%
     ungroup() %>%
+    ## arrange(
+    ##   project_variation,
+    ##   anecdote_variation,
+    ##   anecdote_between,
+    ##   anecdote_within,
+    ##   alignment,
+    ##   valence,
+    ##   feature_type,
+    ##   project_type,
+    ## ) %>%
+    ## filter(
+    ##   project_variation == 2,
+    ##   anecdote_variation == 1,
+    ##   anecdote_between == "combined",
+    ##   alignment == "low",
+    ##   valence == "negative",
+    ##   ) %>%
+    ## select(-c(unit, value_numeric, reason, reliability, multiplier))
     rowwise() %>%
     mutate(
       value = get_value(
         value_numeric,
         multiplier,
         value_string
-      ) %>% list(),
+      ) %>%
+        list(),
       predicted_features = get_predicted_features(
         value,
         feature,
@@ -278,23 +317,6 @@ get_parameters_anecdotes_2 <- function() {
       names_from = c(names, feature_type),
       values_from = values,
     ) %>%
-    ## arrange(
-    ##   project_variation,
-    ##   anecdote_variation,
-    ##   anecdote_between,
-    ##   anecdote_within,
-    ##   alignment,
-    ##   valence,
-    ##   ## feature_type,
-    ##   ## project_type,
-    ## ) %>%
-    ## filter(
-    ##   project_variation == 1,
-    ##   anecdote_variation == 1,
-    ##   anecdote_between == "combined",
-    ##   alignment == "low",
-    ##   valence == "negative",
-    ##   ) %>%
     nest_by(
       project_variation,
       anecdote_variation,
