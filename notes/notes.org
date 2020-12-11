@@ -647,9 +647,17 @@ to case studies.
 *** TODO Analysis content
 *** TODO Project variation content
 *** TODO Clean up functions
+*** DONE Input IDs
+    CLOSED: [2020-12-11 Fri 15:51]
 *** DONE Valence condition
-    CLOSED: [2020-12-10 Thu 16:27]
-    - State "DONE"       from "TODO"       [2020-12-10 Thu 16:27]
+    CLOSED: [2020-12-11 Fri 11:16]
+    - Need to make sure valence positive targets have low statistics
+    - And obviously that the analysis explains that the case study did well.
+    - Unclear what to do with statistics only
+      - Whether to have one per valence condition
+      - Actually, you'd be using the other project's allocation
+      - Or just stick to one condition and accept that the difference between
+    valence conditions will be non-symmetrical
 *** DONE Anecdote condition analysis differences
     CLOSED: [2020-12-11 Fri 10:29]
 *** DONE Add project variation across within-subjects variables
@@ -668,6 +676,12 @@ to case studies.
     CLOSED: [2020-12-07 Mon 09:27]
     - State "DONE"       from "TODO"       [2020-12-07 Mon 09:27]
     - Before investing further into the coding
+*** DONE Fix location generation
+    CLOSED: [2020-12-11 Fri 14:59]
+    - Needs to vary by alignment and project type
+    - Should end up a list that has low and high alignment
+      - In each has anecdote and target
+        - In each has the five pairs
 *** Analysis
     - How are we comparing between Stats only and the others again?
     - I guess compare the difference stats only and the anecdote condition
