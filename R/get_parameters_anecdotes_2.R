@@ -241,7 +241,7 @@ get_parameters_anecdotes_2 <- function() {
     ##   alignment == "low",
     ##   valence == "negative",
     ##   ) %>%
-    ## select(-c(unit, value_numeric, reason, reliability, multiplier))
+    ## select(feature_type, project_type, multiplier)
     rowwise() %>%
     mutate(
       value = get_value(

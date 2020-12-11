@@ -1,4 +1,6 @@
 ##' @title Get multipliers for anecdotes 2
+##'
+##' First multiplier is for target, and the second is for comparison
 
 ##' @return
 ##' @author Shir Dekel
@@ -12,5 +14,7 @@ get_multiplier <- function() {
     c(1.1, 1.2)
   ) %>%
     map(~ .x %>%
-          list(c(1,1), .))
+      list(., c(1, 1)) %>%
+      transpose() %>%
+      simplify_all())
 }
