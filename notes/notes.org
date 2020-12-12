@@ -644,8 +644,10 @@ to case studies.
      - So that in one case domain 1 is low and domain 2 is high, and the
        opposite is the case with the other variation condition level.
 *** TODO Realistic multipliers
+    - Get from the same method as alignment 8
 *** TODO Analysis content
-*** TODO Project variation content
+*** DONE Project variation content
+    CLOSED: [2020-12-12 Sat 16:59]
 *** TODO Clean up functions
 *** DONE Input IDs
     CLOSED: [2020-12-11 Fri 15:51]
@@ -688,6 +690,16 @@ to case studies.
       - And compare for each between subs condition.
     - Could get a "corrected" difference score of stats only vs anecdote condition
       - Only works if within-subjects, I think.
+*** DONE Fix alignment correspondence with string value, structure, and integration
+    CLOSED: [2020-12-12 Sat 09:45]
+*** DONE Fix predicted features
+    CLOSED: [2020-12-12 Sat 10:44]
+    - At the moment the multiplier is both for the anecdote and comparison
+    - Should be a totally different set of values for comparison, and the
+    multiplier just for the anecdote
+    - And the anecdote multiplier should be different for each similarity condition
+    - So the 1 is for the target, and the non-zero multipliers for the anecdote
+
 * Aggregation
 ** Analysis
    - From Evan:
