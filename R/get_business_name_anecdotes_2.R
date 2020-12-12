@@ -1,4 +1,5 @@
 ##' @title Busines names anecdotes 2
+##' Names generated from namelix.com
 
 ##' @return
 ##' @author Shir Dekel
@@ -7,52 +8,52 @@ get_business_name_anecdotes_2 <- function() {
   list(
     list(
       c(
+        "Pressbloom",
+        "Grown Media"
+      ),
+      c(
+        "Pharmacore",
+        "Healthgenic"
+      )
+    ),
+    list(
+      c(
+        "Railmont",
+        "Rural Pass"
+      ),
+      c(
+        "Erectic",
+        "Refit"
+      )
+    ),
+    list(
+      c(
+        "Cweb",
+        "Codeck"
+      ),
+      c(
+        "Refinera",
+        "Enfuel"
+      )
+    ),
+    list(
+      c(
         "Microxy",
-        "microchip2"
+        "Altchip"
       ),
       c(
-        "Enfuel",
-        "Refinera"
+        "Logivia",
+        "Solgistics"
       )
     ),
     list(
       c(
-        "project_3_1",
-        "project_3_2"
+        "Dinerly",
+        "Savoro"
       ),
       c(
-        "project_4_1",
-        "project_4_2"
-      )
-    ),
-    list(
-      c(
-        "project_5_1",
-        "project_5_2"
-      ),
-      c(
-        "project_6_1",
-        "project_6_2"
-      )
-    ),
-    list(
-      c(
-        "project_7_1",
-        "project_7_2"
-      ),
-      c(
-        "project_8_1",
-        "project_8_2"
-      )
-    ),
-    list(
-      c(
-        "project_9_1",
-        "project_9_2"
-      ),
-      c(
-        "project_10_1",
-        "project_10_2"
+        "Vital Records",
+        "Poppin"
       )
     )
   )

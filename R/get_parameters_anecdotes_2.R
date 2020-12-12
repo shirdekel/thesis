@@ -199,8 +199,10 @@ get_parameters_anecdotes_2 <- function() {
         integration,
         structure,
         feature,
+        value_numeric,
         value_string,
         multiplier,
+        unit,
         reason,
         reliability,
         npv
@@ -241,7 +243,7 @@ get_parameters_anecdotes_2 <- function() {
     ##   alignment == "low",
     ##   valence == "negative",
     ##   ) %>%
-    ## select(feature_type, project_type, multiplier)
+    ## select(feature_type, project_type, value_numeric, unit)
     rowwise() %>%
     mutate(
       value = get_value(

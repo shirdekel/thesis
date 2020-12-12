@@ -9,24 +9,24 @@ get_value_string <- function() {
   low_alignment <-
     list(
       list(
-        c("digital", "analogue"),
+        c("advertising", "subscription"),
+        c("over-the-counter", "prescription")
+      ),
+      list(
+        c("intracity", "intercity"),
+        c("commercial", "residential")
+      ),
+      list(
+        c("enterprise", "consumer"),
         c("offshore", "onshore")
       ),
       list(
-        c("value_string_3_1", "value_string_3_2"),
-        c("value_string_4_1", "value_string_4_2")
+        c("digital", "analogue"),
+        c("parcel", "freight")
       ),
       list(
-        c("value_string_5_1", "value_string_5_2"),
-        c("value_string_6_1", "value_string_6_2")
-      ),
-      list(
-        c("value_string_7_1", "value_string_7_2"),
-        c("value_string_8_1", "value_string_8_2")
-      ),
-      list(
-        c("value_string_9_1", "value_string_9_2"),
-        c("value_string_10_1", "value_string_10_2")
+        c("fast food", "casual sit-down dining"),
+        c("rock", "pop")
       )
     )
 

@@ -5,35 +5,79 @@
 ##' @export
 get_unit_anecdotes_2 <- function() {
   list(
-    c(
-      " an hour",
-      "%" %>%
-        rep(2),
-      ""
+    list(
+      ## national newspaper
+      c(
+        " a day",
+        "",
+        "L a day"
+      ),
+      ## pharmaceutical
+      c(
+        " an hour",
+        " months",
+        "%"
+      )
     ),
-    c(
-      " an hour",
-      "%" %>%
-        rep(2),
-      ""
+    list(
+      ## railway
+      c(
+        " a decade",
+        "",
+        " years"
+      ),
+      ## high-rise construction
+      c(
+        " a year",
+        "%",
+        ""
+      )
     ),
-    c(
-      " an hour",
-      "%" %>%
-        rep(2),
-      ""
+    list(
+      ## software
+      c(
+        " lines a day",
+        "%",
+        " million"
+      ),
+      ## oil well
+      c(
+        "L an hour",
+        " years",
+        "%"
+      )
     ),
-    c(
-      " an hour",
-      "%" %>%
-        rep(2),
-      ""
+    list(
+      ## microchip
+      c(
+        " an hour",
+        "%",
+        "%"
+      ),
+      ## shipping logistics
+      c(
+        " a week",
+        " a day",
+        "%"
+      )
     ),
-    c(
-      "L an hour",
-      " years",
-      "%",
-      ""
+    list(
+      ## restaurant chain
+      c(
+        " a year",
+        "",
+        " a month"
+      ),
+      ## record label
+      c(
+        " a year",
+        " million",
+        ""
+      )
     )
-  )
+  ) %>%
+    map_depth(
+      2,
+      ~ c(.x, "")
+    )
 }

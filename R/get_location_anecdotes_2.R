@@ -4,86 +4,95 @@
 ##' @author Shir Dekel
 ##' @export
 get_location_anecdotes_2 <- function() {
-
   list(
     list(
+      ## national newspaper
       list(
         c(
-          "microchip_anecdote_high_similarity",
-          "microchip_anecdote_low_similarity"
+          "Wellington, New Zealand",
+          "Mexico City, Mexico"
         ),
-        "microchip_target"
+        "Sydney, Australia"
       ),
+      ## pharmaceutical
       list(
         c(
-          "oil_anecdote_high_similarity",
-          "oil_anecdote_low_similarity"
+          "Moscow, Russia",
+          "Jakarta, Indonesia"
         ),
-        "oil_target"
+        "St Petersburg, Russia"
       )
     ),
     list(
+      ## railway
       list(
         c(
-          "location3_anecdote_high_similarity",
-          "location3_anecdote_low_similarity"
+          "Daqing, China",
+          "Belo Horizonte, Brazil"
         ),
-        "location3_target"
+        "Guangzhou, China"
       ),
+      ## high-rise construction
       list(
         c(
-          "location4_anecdote_high_similarity",
-          "location4_anecdote_low_similarity"
+          "Manchester, UK",
+          "Dhahran, Saudi Arabia"
         ),
-        "location4_target"
+        "London, UK"
       )
     ),
     list(
+      ## software
       list(
         c(
-          "location5_anecdote_high_similarity",
-          "location5_anecdote_low_similarity"
+          "California, USA",
+          "Mumbai, India"
         ),
-        "location5_target"
+        "Austin, USA"
       ),
+      ## oil well
       list(
         c(
-          "location6_anecdote_high_similarity",
-          "location6_anecdote_low_similarity"
+          "New Mexico, USA",
+          "Omsk, Siberia"
         ),
-        "location6_target"
+        "Houston, USA"
       )
     ),
     list(
+      ## microchip
       list(
         c(
-          "location7_anecdote_high_similarity",
-          "location7_anecdote_low_similarity"
+          "Montreal, Canada",
+          "Abu Dhabi, UAE"
         ),
-        "location7_target"
+        "Toronto, Canada"
       ),
+      ## shipping logistics
       list(
         c(
-          "location8_anecdote_high_similarity",
-          "location8_anecdote_low_similarity"
+          "Seberang Perai, Malaysia",
+          "Basra, Iraq"
         ),
-        "location8_target"
+        "Kuala Lumpur, Malaysia"
       )
     ),
     list(
+      ## restaurant chain
       list(
         c(
-          "location9_anecdote_high_similarity",
-          "location9_anecdote_low_similarity"
+          "Milan, Italy",
+          "Lagos, Nigera"
         ),
-        "location9_target"
+        "Rome, Italy"
       ),
+      ## record label
       list(
         c(
-          "location10_anecdote_high_similarity",
-          "location10_anecdote_low_similarity"
+          "Gothenburg, Sweden",
+          "Cape Town, South Africa"
         ),
-        "location10_target"
+        "Stokholm, Sweden"
       )
     )
   ) %>%
@@ -98,18 +107,17 @@ get_location_anecdotes_2 <- function() {
             transpose()
         ) %>%
         transpose()
-    )  %>%
+    ) %>%
     map(
       ~ .x %>%
-      map(
-        ~ .x %>%
-          transpose()
-      ) %>%
+        map(
+          ~ .x %>%
+            transpose()
+        ) %>%
         transpose()
-      ) %>%
+    ) %>%
     transpose() %>%
     map(transpose) %>%
     transpose() %>%
     set_names("high", "low")
-
 }
