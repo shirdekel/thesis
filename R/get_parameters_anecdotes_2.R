@@ -67,6 +67,10 @@ get_parameters_anecdotes_2 <- function() {
         list(),
       .before = 1
     ) %>%
+    mutate(
+      multiplier = get_multiplier() %>%
+        list()
+    ) %>%
     ## Expand each between-subjects condition. Also, unnest project variation so
     ## that each within-subjects combination (of alignment and valence) gets a
     ## different project variation sequence.
@@ -74,6 +78,7 @@ get_parameters_anecdotes_2 <- function() {
       c(
         data,
         project_variation,
+        multiplier
       )
     ) %>%
     ## Mutate business name, type, and location here so that each of the five
@@ -110,8 +115,6 @@ get_parameters_anecdotes_2 <- function() {
           pluck("low") %>%
           list()
       ),
-      multiplier = get_multiplier() %>%
-        list(),
       unit = get_unit_anecdotes_2() %>%
         list(),
       reliability = get_reliability_anecdotes_2() %>%
@@ -213,6 +216,7 @@ get_parameters_anecdotes_2 <- function() {
     ## individual projects, and each one is associated with an anecdote
     ## variation condition. Feature doesn't need another unnesting because we
     ## use the same one for both target and comparison.
+    ## select(feature_type, project_type, value_numeric, multiplier)
     unnest(
       c(
         business_name,
@@ -237,13 +241,14 @@ get_parameters_anecdotes_2 <- function() {
     ##   project_type,
     ## ) %>%
     ## filter(
-    ##   project_variation == 2,
+    ##   project_variation == 4,
     ##   anecdote_variation == 1,
     ##   anecdote_between == "combined",
     ##   alignment == "low",
-    ##   valence == "negative",
+    ##   valence == "positive",
     ##   ) %>%
-    ## select(feature_type, project_type, value_numeric, unit)
+    ## select(feature_type, project_type, value_numeric, multiplier) %>%
+    ## unnest(value_numeric, multiplier)
     rowwise() %>%
     mutate(
       value = get_value(

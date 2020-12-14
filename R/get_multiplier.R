@@ -1,20 +1,125 @@
 ##' @title Get multipliers for anecdotes 2
 ##'
-##' First multiplier is for target, and the second is for comparison
-
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 get_multiplier <- function() {
+  normal_value <-
+    c(
+      ## negative_high
+      1.4,
+      ## positive_high
+      0.9,
+      ## negative_low
+      0.7,
+      ## positive_low
+      1.6,
+      ## statistics only
+      1
+    )
+
+  probability <-
+    c(
+      ## negative_high
+      1.05,
+      ## positive_high
+      0.9,
+      ## negative_low
+      0.8,
+      ## positive_low
+      1.1,
+      ## statistics only
+      1
+    )
+
+
   list(
-    c(0.1, 0.2),
-    c(0.3, 0.4),
-    c(0.5, 0.6),
-    c(0.7, 0.8),
-    c(1.1, 1.2)
+    normal_value,
+    probability
   ) %>%
-    map(~ .x %>%
-      list(., c(1, 1)) %>%
-      transpose() %>%
-      simplify_all())
+    pmap(
+      ~ list(
+        list(
+          ## national newspaper
+          c(
+            .x,
+            .x,
+            .x
+          ),
+          ## pharmaceutical
+          c(
+            .x,
+            .x,
+            .y
+          )
+        ),
+        list(
+          ## railway
+          c(
+            .x,
+            .x,
+            .x
+          ),
+          ## high-rise construction
+          c(
+            .x,
+            .y,
+            .x
+          )
+        ),
+        list(
+          ## software
+          c(
+            .x,
+            .x,
+            .x
+          ),
+          ## oil well
+          c(
+            .x,
+            .x,
+            .y
+          )
+        ),
+        list(
+          ## microchip
+          c(
+            .x,
+            .y,
+            .y
+          ),
+          ## shipping logistics
+          c(
+            .x,
+            .x,
+            .y
+          )
+        ),
+        list(
+          ## restaurant chain
+          c(
+            .x,
+            .x,
+            .x
+          ),
+          ## record label
+          c(
+            .x,
+            .x,
+            .x
+          )
+        )
+      ) %>%
+        map_depth(
+          3,
+          ~ .x %>%
+            list(., 1)
+        ) %>%
+        map_depth(
+          2,
+          ~ .x %>%
+            transpose() %>%
+            simplify_all()
+        )
+    )
 }
