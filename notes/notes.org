@@ -643,9 +643,67 @@ to case studies.
        alignment rows and then a different number to the same rows but flipped.
      - So that in one case domain 1 is low and domain 2 is high, and the
        opposite is the case with the other variation condition level.
-*** TODO Realistic multipliers
+*** DONE Realistic multipliers
+    CLOSED: [2020-12-15 Tue 10:46]
     - Get from the same method as alignment 8
+    - But actually a bit different
+    - There's a difference between alignment conditions
+      - Depends on the cut off, though.
+      - And also on valence, no?
+    - Example
+      - Target
+        - Oil: 2200L per hour
+      - Negative valence high alignment
+        - 2000
+        - Cutoff: 3000
+      - Negative valence low alignment
+        - 1400
+        - Cutoff: 2100
+    - So for negative high the cutoff is above both values
+      - anecdote failed, so the target will fail
+    - For negative low the cutoff is above anecdote, but below target
+      - anecdote failed, but target not necessarily
+    - For positive high, the cutoff should be below both of them
+      - anecdote worked, so target will work
+    - For positive low, the cutoff should be below anecdote, but above target
+      - anecdote worked, but target not necessarily
+| valence  | similarity | multiplier_anecdote | multiplier_cutoff | target | anecdote | cutoff |
+|----------+------------+---------------------+-------------------+--------+----------+--------|
+| negative | low        |                 0.7 |               0.9 |   2200 |    1540. |  1980. |
+| negative | high       |                 1.4 |               1.6 |   2200 |    3080. |  3520. |
+| positive | low        |                 1.6 |               1.4 |   2200 |    3520. |  3080. |
+| positive | high       |                 0.9 |               0.7 |   2200 |    1980. |  1540. |
+#+TBLFM: $6=$5 * $3::$7=$5 * $4
+
+- Should negative high anecdote be higher or lower thatn the target?
+  - Either way the cutoff is higher than both
+  - Seems as though it should be below so that there's less reason
+- But also shouldn't there be two stages of multiplication, rather than two
+separate ones?
+  - Making the cutoff and then anecdote from that
+  - Or the other way around
+| valence  | similarity | multiplier_cutoff | multiplier_anecdote | target | cutoff | anecdote |
+|----------+------------+-------------------+---------------------+--------+--------+----------|
+| negative | low        |               0.5 |                 0.5 |   2200 |  1100. |     550. |
+| negative | high       |               1.5 |                 0.5 |   2200 |  3300. |    1650. |
+| positive | low        |               1.5 |                 1.5 |   2200 |  3300. |    4950. |
+| positive | high       |               0.5 |                 1.5 |   2200 |  1100. |    1650. |
+#+TBLFM: $6=$5 * $3::$7=$6 * $4
+- That doesn't work, because it doesn't guarantee the anecdote - target
+relationship in the high similarity conditions
+- Regardless, what we need is a list of five (for each within-subjects combination)
+  - Each element has a list of two (for the anecdote/target
+    - Each of those has five combinations (for each domain)
+      - etc
+- Double check this
 *** TODO Analysis content
+    - Varies by
+      - Project variation: different content per variation
+      - Alignment: the same values as for the predicted features + cutoff
+      - Valence: as above
+    - Reason
+      - Has to be different for each domain, but can have three components.
+      
 *** DONE Project variation content
     CLOSED: [2020-12-12 Sat 16:59]
 *** TODO Clean up functions
@@ -699,7 +757,7 @@ to case studies.
     multiplier just for the anecdote
     - And the anecdote multiplier should be different for each similarity condition
     - So the 1 is for the target, and the non-zero multipliers for the anecdote
-
+      
 * Aggregation
 ** Analysis
    - From Evan:
