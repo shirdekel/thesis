@@ -69,6 +69,8 @@ get_parameters_anecdotes_2 <- function() {
     ) %>%
     mutate(
       multiplier = get_multiplier() %>%
+        list(),
+      success = get_success() %>%
         list()
     ) %>%
     ## Expand each between-subjects condition. Also, unnest project variation so
@@ -78,7 +80,8 @@ get_parameters_anecdotes_2 <- function() {
       c(
         data,
         project_variation,
-        multiplier
+        multiplier,
+        success
       )
     ) %>%
     ## Mutate business name, type, and location here so that each of the five
@@ -230,25 +233,6 @@ get_parameters_anecdotes_2 <- function() {
       )
     ) %>%
     ungroup() %>%
-    ## arrange(
-    ##   project_variation,
-    ##   anecdote_variation,
-    ##   anecdote_between,
-    ##   anecdote_within,
-    ##   alignment,
-    ##   valence,
-    ##   feature_type,
-    ##   project_type,
-    ## ) %>%
-    ## filter(
-    ##   project_variation == 4,
-    ##   anecdote_variation == 1,
-    ##   anecdote_between == "combined",
-    ##   alignment == "low",
-    ##   valence == "positive",
-    ##   ) %>%
-    ## select(feature_type, project_type, value_numeric, multiplier) %>%
-    ## unnest(value_numeric, multiplier)
     rowwise() %>%
     mutate(
       value = get_value(
@@ -265,10 +249,15 @@ get_parameters_anecdotes_2 <- function() {
       cutoff = get_cutoff(value_numeric) %>%
         list(),
       analysis = get_analysis(
-        business_name, location,
-        integration, structure,
-        value_string, value_numeric,
-        reason, cutoff
+        business_name,
+        success,
+        location,
+        integration,
+        structure,
+        value_string,
+        value_numeric,
+        reason,
+        cutoff
       ),
       input_id = str_c(
         feature %>%
@@ -298,6 +287,25 @@ get_parameters_anecdotes_2 <- function() {
         ) %>%
         as.character()
     ) %>%
+    ## arrange(
+    ##   project_variation,
+    ##   anecdote_variation,
+    ##   anecdote_between,
+    ##   anecdote_within,
+    ##   alignment,
+    ##   valence,
+    ##   feature_type,
+    ##   project_type,
+    ## ) %>%
+    ## filter(
+    ##   project_variation == 1,
+    ##   anecdote_variation == 1,
+    ##   anecdote_between == "combined",
+    ##   alignment == "low",
+    ##   valence == "negative",
+    ## ) %>%
+    ## select(feature_type, project_type, analysis)
+    ## unnest(value_numeric, multiplier)
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(
       multiplier,
