@@ -26,7 +26,7 @@ get_project_table <- function(data, reliability_amount) {
         label_text = "Allocation: ",
         name = input_id %>%
           str_c(
-            "reliability_amount",
+            reliability_amount,
             "allocation",
             sep = "_"
           ),
@@ -37,7 +37,7 @@ get_project_table <- function(data, reliability_amount) {
         label_text = "Ranking: ",
         name = input_id %>%
           str_c(
-            "reliability_amount",
+            reliability_amount,
             "ranking",
             sep = "_"
           ),
