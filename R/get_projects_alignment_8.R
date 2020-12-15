@@ -8,10 +8,12 @@ get_projects_alignment_8 <- function() {
         data,
         business_name_latin_table,
         business_name_latin,
-        npv_latin
-       )
+        npv_latin,
+        npv_raw_latin,
+        npv_raw_rep
+      )
     ) %>%
     nest(data = c(reliability_amount, project_table))
 
-   return(projects)
+  return(projects)
 }
