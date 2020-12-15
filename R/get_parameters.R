@@ -49,7 +49,16 @@ get_parameters <- function() {
       get_prolific_filter_aggregation_4(),
       NA,
       NA,
-      "datetime > '2020-07-28'",
+      ## Initial batch had incorrect input IDs
+      list(
+        c(
+          "datetime > '2020-07-28'",
+          "datetime < '2020-12-14'"
+        ),
+        c(
+          "datetime > '2020-12-14'"
+        )
+      ),
       "datetime > '2020-07-28'",
       "datetime > '2020-07-28'"
     )
@@ -71,7 +80,10 @@ get_parameters <- function() {
       ),
       NA,
       NA,
-      NA,
+      list(
+        "incorrect_input_id",
+        NA
+      ),
       NA,
       NA
     )

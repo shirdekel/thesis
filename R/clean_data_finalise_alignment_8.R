@@ -36,21 +36,29 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
       )
     get_check_messages(data_check)
 
-    data <-
+    data_all <-
       data_check %>%
       filter(
         # keep participants that have not been rejected, or those that passed
         # project test but failed one other test (meaning that no failed project
-        # test participants are kept in the data, even if they only failed just that
-        # check)
+        # test participants are kept in the data, even if they only failed just
+        # that check)
         !reject | (!project_test_fail & check_fail_count == 1)
       )
 
     list(prolific_filter, prolific_filter_label) %>%
       pmap(
-        ~ data %>%
+        ~ data_all %>%
           get_prolific_id(.x, .y)
       )
+
+    # Remove participants from first batch with faulty IDs
+    data <-
+      data_all %>%
+      filter(
+        datetime > "2020-12-14"
+      )
+
   }
 
   data %>%

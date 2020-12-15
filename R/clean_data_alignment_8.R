@@ -24,7 +24,7 @@ clean_data_alignment_8 <- function(data_raw_filtered, experiment_number, test, p
 
     data_combined <-
       data_raw_jspsych_columns_unselected %>%
-      clean_data_other("project_allocation") %>%
+      clean_data_other_alignment_8("project_allocation") %>%
       inner_join(data_allocation, by = "subject")
 
   data <-
