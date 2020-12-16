@@ -12,12 +12,14 @@
 ##' @param value_numeric
 ##' @param reason
 ##' @param cutoff
-get_analysis <- function(business_name, success, location, integration,
+get_analysis <- function(business_name, success, reason_location, location, integration,
                          structure, value_string, value_numeric, reason, cutoff) {
   str_c(
     business_name,
     success,
-    "in the regional market because of what scientists now know is a hydrocarbon shortage in the",
+    "in the regional market because",
+    reason_location,
+    "in the",
     location %>%
       str_replace(", (.*)", ""),
     "area. A",

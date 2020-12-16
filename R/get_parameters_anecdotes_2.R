@@ -71,6 +71,8 @@ get_parameters_anecdotes_2 <- function() {
       multiplier = get_multiplier() %>%
         list(),
       success = get_success() %>%
+        list(),
+      reason_location = get_reason_location() %>%
         list()
     ) %>%
     ## Expand each between-subjects condition. Also, unnest project variation so
@@ -126,6 +128,14 @@ get_parameters_anecdotes_2 <- function() {
         list(),
       reason = get_reason() %>%
         list(),
+      reason_location = case_when(
+        valence == "negative" ~ get_reason_location() %>%
+          pluck("negative") %>%
+          list(),
+        TRUE ~ get_reason_location() %>%
+          pluck("positive") %>%
+          list()
+      ),
     ) %>%
     ## Expand each within-subjects condition alongside anecdote variation to
     ## show feature type. This give each feature type condition (target or
@@ -159,6 +169,7 @@ get_parameters_anecdotes_2 <- function() {
         multiplier,
         unit,
         reason,
+        reason_location,
         reliability,
         npv
       )
@@ -210,6 +221,7 @@ get_parameters_anecdotes_2 <- function() {
         multiplier,
         unit,
         reason,
+        reason_location,
         reliability,
         npv
       )
@@ -251,6 +263,7 @@ get_parameters_anecdotes_2 <- function() {
       analysis = get_analysis(
         business_name,
         success,
+        reason_location,
         location,
         integration,
         structure,
@@ -305,7 +318,6 @@ get_parameters_anecdotes_2 <- function() {
     ##   valence == "negative",
     ## ) %>%
     ## select(feature_type, project_type, analysis)
-    ## unnest(value_numeric, multiplier)
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(
       multiplier,
