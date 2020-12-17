@@ -443,7 +443,7 @@
      - if sounds repetitive group
      - ideally on one slide
 **** TODO Action #21 Send ARC proposal slides                           :#21:
-* Notes from <2020-12-17 Tue>
+* Notes from <2020-12-17 Tue>                                       :ARCHIVE:
 ** Present at meeting
    - [X] Micah
 ** Agenda
@@ -555,7 +555,8 @@
      - straight and then linear after half way
 ** DONE Action #6 Check about HDR funds                                  :#6:
    CLOSED: [2020-11-10 Tue 15:14]
-** TODO Action #7 Ask Dan if he can answer Rob's question                :#7:
+** DONE Action #7 Ask Dan if he can answer Rob's question                :#7:
+   CLOSED: [2020-12-17 Thu 14:17]
 ** DONE Action #8 Run specific power analyses                            :#8:
    CLOSED: [2020-11-19 Thu 11:36]
    - explict vs implicit (three-way) - high alignment
@@ -591,7 +592,7 @@
 ** TODO Action #19 Work out whether to use a six or seven point scale   :#19:
    - For anecdotes ratings
 ** DONE Action #20 Update others with ideas to respond to Rob           :#20:
-   CLOSED: [2020-12-17 Thu 12:01]
+   CLOSED: [2020-12-17 Thu 14:19]
    - randomly sampled
    - large pool
    - specific company
@@ -599,7 +600,8 @@
 ** DONE Action #21 Send ARC proposal slides                             :#21:
    CLOSED: [2020-12-10 Thu 16:52]
 
-** TODO Action #22 Write explanation of new anecdote argument           :#22:
+** DONE Action #22 Write explanation of new anecdote argument           :#22:
+   CLOSED: [2020-12-17 Thu 16:07]
    - Including why valence still is useful
      - Maybe because previously it mattered for health
      - But because people appear sensitive to details, it shouldn't matter
