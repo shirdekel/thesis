@@ -520,6 +520,141 @@
     - can say hey, if you want to get rid of it
       - normative claim is an open question
       - Actually a form of causal induction
+* Notes from <2020-12-17 Tue>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Micah
+   - [X] Dan
+   - [X] Bruce
+** Agenda
+   - How to deal with the normative Anecdotes question?
+** Notes
+*** SBP                                                             :#27:#26:
+    - then anecdote should have more weight
+    - way to solve it
+      - sbp
+      - and robust analogising
+      - has equation: weight on similarity = similarity of i/sum of similarity
+        of all weight
+      - or gilboa/ david schmidler paper?
+*** TODO Action #26 Read Gilboa and Schmidler paper                     :#26:
+*** Flipped argument                                                    :#28:
+    - If we're making case: isn't weird that people are doing dumb thing in face
+    of data
+    - but maybe they should to a certain degree
+    - So maybe instead how dumb people are:
+      - Even though there's this general notion that anecdotal thinkjing in bad
+      - well in this situation there's  acase in which: one way in which they're bad, they give you a negative feeling
+      - hearing about a failed investment. prime failure. risk aversion
+      - different to similarity based forcasting: considering why each one failed
+      - here's why they apply
+      - They didn't ignore statistics in high similarity
+        - integrated
+        - maybe right thing to do
+      - or: has to address that they're doing causal reasoning thing
+      - not: seeing failure makes me scared
+*** Dan's idea                                                          :#27:
+    - in some sense you compare similarity features without outcome
+      - outcome helpsyou make prediction
+      - features of case without knowing outcome. then you hear about the outcome
+      - that outcome helps you makes prediction. but not part of similarity
+      - outcome is independent of what makes them similar?
+        - yeah
+      - how do you make it clear that it's irrelevant
+      - if the two main parametrs:
+        - average simialarity
+        - how similar this is in comparison
+      - then instead of high vs low similarity, then we have a way of seeing if they're overweighting or not
+        - nicely links: understanding variability and distributions
+      - if the two levers to pull are: instance similarity and average similarity in the distribution
+        - get rid of valence?
+          - could be an issue
+*** Real life recommendation                                            :#27:
+    - Should integrate similarity
+    - just matters the weight
+    - seems to be what people were doing
+    - don't know if their gredations of weight are like formula
+    - treating high similarity case as heavier weighted
+    - but: don't want to say
+      - these things are still 1/1000
+      - we want to know what the average similarity is and then how much more similar this one is
+      - without knowing distribution you don't know how to do systematically
+*** parameters                                                          :#27:
+    - there's both size of sample of cases
+      - 5 vs 1000
+      - more cases the more you should weigh
+    - average similarity
+    - a few lines of
+      - these are the things that go into calculation of similarity
+      - calculated by these aspect
+    - if you give someone similarity score
+      - there are 1000.
+      - average similarity is .3, and this one is .7
+      - vs 10 cases
+    - similarity
+      - think probability
+*** TODO Action #27 Write plan for new anecdotes experiment             :#27:
+*** maybe different point                                               :#27:
+    - causal connection: similarity helps generate explanation for why something failed
+    - if you're directly testing this other (similarity based forecastng)
+      - would set it up like aggregation.
+      - series of judgement
+      - minimise actual description
+    - but the story makes them overweigh
+      - still need story
+    - worth to read paper
+*** minimum manipulation for new thing                                  :#27:
+    - low average similarity high simliarity
+    - low vs high pool size
+*** actual
+    - testing whether similarity is about causal thing
+    - other thing: to do with grant
+*** TODO Action #25 reread robust analogising                           :#25:
+    - section called similarity based forecasting
+    - come back with ideas
+*** ARC                                                                 :#27:
+    - internal deadline: feb 10
+    - used to be end of march
+    - But still outcomes in Nov
+    - Was going to add something about measuring aggregation
+    - Micah already on 2: from last year and other thing
+    - If kahneman was on it track record would be fine
+    - research office gives feedback
+    - first strategic review: Jan 7
+      - for two rounds
+    - Second: Jan 13th
+    - Will get started
+    - Feb 10 is the hard deadline for compliance
+    - can keep working on it till 20th
+    - Area: SBE
+      - social behavioural economic
+      - within: depending how you pitch it will go to certain reviewers
+*** TODO Action #28 Send update about Anecdotes 2                       :#28:
+    - After reading recommended papers
+    - If can't find something to fix the normative problem, then say that we're
+      just going to do as before and change the argument
+*** normative question again                                            :#28:
+    - can say that they're all equally similar
+    - people's simliarity ratings predicted relevance
+    - makes sense if they're doing causal reasoning thing
+    - if these things share intrinsic features, then they can fail for same reasons
+    - if you have evidence validating of similarity ratings
+      - then isn't that enough
+    - but: no direct way to measure similarity to whole
+      - if this is one case from distribution.
+      - don't know how similar the other cases
+      - don't know how representative
+*** Typicality                                                          :#28:
+    - can ask about typicality
+      - is this a typical case
+      - in a way general relevance gets at that
+      - but could also say how typical do you think this is
+      - in terms of its features: how typical do you think this is of the 1000 cases
+      - asserting: they're seeing it as more or less typical
+      - if they don't understand, they might not be considering what distribution is
+    - but: how would they know what to say
+    - just need to establish
+    - can also do a version of what bruce recommended
+      - similarity ratings
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -609,3 +744,12 @@
 ** TODO Action #23 Change anecdote relevance question                   :#23:
 ** TODO Action #24 Add anecdote analysis descriptions                   :#24:
    - as before
+** TODO Action #26 Read Gilboa and Schmidler paper                      :#26:
+** TODO Action #27 Write plan for new anecdotes experiment              :#27:
+** TODO Action #25 reread robust analogising                            :#25:
+   - section called similarity based forecasting
+   - come back with ideas
+** TODO Action #28 Send update about Anecdotes 2                        :#28:
+   - After reading recommended papers
+   - If can't find something to fix the normative problem, then say that we're
+     just going to do as before and change the argument
