@@ -26,6 +26,24 @@ output:
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Changing argument
+
+Initially, the argument was that people are over-relying on anecdotes, while
+they should be using aggregated data instead. However, as Rob Goldstone’s
+example suggests, there are situations in which an anecdote is so similar (e.g.,
+an identical twin) that it would be unwise not to use the anecdote. As such, the
+idea is to pivot to the argument to be that people might actually be sensitive
+to the relevance of the anecdote. That is, our data suggests that they (arguably
+wisely) use the anecdote when it seems to share causal structure, and use it
+less when it doesn’t (even though it’s the same type of project). In fact,
+people seem to actually integrate the anecdote with the statistical information.
+
+Therefore, we can keep the anecdote descriptions the same as in Experiment 1
+(i.e., either causally similar to the target, or not). Further, we do not need
+to include any further descriptions of the pool of anecdotes (such as the limit
+of similarity) other than the fact that it is large and anecdotes are randomly
+sampled.
+
 # Addressing Experiment 1 limitations
 
 - Limitation: only used negative anecdotes
@@ -35,25 +53,19 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
         - Positive: anecdote is a case study of a successful project that is similar to
           the target project
 - Limitation: unclear way to test the interaction effect
-    - Solution: plan analysis in advance
-        - Still unclear
-        - Maybe subtract the anecdote conditions allocation from the statistics only
-          condition allocation to a get a "corrected" allocation score, and then
-          conduct a standard three-way ANOVA.
+    - Solution: compare the relevant simple effects.
+        - For instance, low similarity combined vs. high similarity combined, and
+          high similarity combined vs. statistics only. The two differences
+          should imply the interaction.
 - Limitation: using the anecdote could be normative if it seems that it was
   chosen due to its similarity
-    - Solution: clarify that the anecdotes were sampled randomly
-        - Use similar wording to @hayes2019.
-        
-            > We asked a student to open a book on plants and animals at weak
-            > pages and note the first three living things they came across
-            > and whether or not those living things have the property in
-            > question.
-            >
-            > This means the information you receive may not be the most
-            > strong for making your judgment - by chance, the student will
-            > sometimes select very dissimilar items, and sometimes very
-            > similar ones.
+    - Solution: change argument to be about people's ability to use anecdotes
+    when casual structure seems relevant, and to avoid them when it does not.
+        - Still clarify that the anecdotes were sampled randomly [with similar
+          wording to @hayes2019].
+        - Change the follow-up relevance question to be something like "how much
+          do you think the reason the case study failed is relevant to the
+          performance of the target project"
 
 # Summary
 
