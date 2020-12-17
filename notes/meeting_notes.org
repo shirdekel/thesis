@@ -443,6 +443,83 @@
      - if sounds repetitive group
      - ideally on one slide
 **** TODO Action #21 Send ARC proposal slides                           :#21:
+* Notes from <2020-12-17 Tue>
+** Present at meeting
+   - [X] Micah
+** Agenda
+   - How to deal with the normative Anecdotes question?
+** Notes
+*** Maybe sometimes anecdotes are ok                                    :#22:
+    - "actually what people do is sensitive"
+    - perhaps a flip
+      - assumption that people should ignore anecdote
+      - business people should only listen
+      - But what people are doing is sensible
+      - Not just hearing a story and getting scared, but sensible creating causal
+      story and applying that across
+    - And also, take and statistics and anecote into account
+      - there is a seductive allure/emotion/visual richness
+      - emotional content
+      - However, actually when anecdote is highly similar that applies across
+    cases, and still take the statistics into account
+    - if that's the case, maybe not second study
+    - whole literature on narratives
+      - narativologist: when in narrative people can't help themselves
+      - e.g., if person is brain dead and then comes to life, people still
+    believe it even if you tell them
+    - people compelled by stories
+    - can say people say it's bad
+      - But when it comes to investment people are perhaps doing more sensible things
+      - If that's the argument, you actually do the manipulation of causally
+    clear vs not
+    - generalising causal explanation
+    - good or bad:
+    - But is explanation legit?
+      - future manipulation
+**** TODO Action #22 Write explanation of new anecdote argument         :#22:
+     - Including why valence still is useful
+       - Maybe because previously it mattered for health
+       - But because people appear sensitive to details, it shouldn't matter
+     - Still with random sampling
+*** Relevance question                                                  :#23:
+    - is it clear that the reason for the failure applies here
+    - could be another question: do you think it's a concern about this
+      - or the reason could apply here
+    - But multiple displays?
+      - should be ok with counterbalancing
+      - if not, use the first
+**** TODO Action #23 Change anecdote relevance question                 :#23:
+*** Valence                                                             :#22:
+    - Hearing bad stories make you risk
+    - does a negative story peak your risk aversion
+    - But if you say that there are parallels in positive and negative, showing
+    that it isn't just about a negative story
+    - If we're saying it's bad, then "what context does it appear in"
+      - naive, not thinking about causal mechanism
+      - is it allure via negative scared of risk
+    - If doing causal reasoning thing, then you're already sensitive to details
+*** Follow up experiment                                                :#24:
+    - In this case maybe people "kind of get it"
+      - so no need for follow up
+    - If I want to make case it's causal
+    - What's the point I'm going to make
+      - New point
+      - People are sensibly doing this?
+        - causal reasoning
+      - Do you then do something simple where you make it more clear that it's
+    about causality
+    - Same as before
+      - in terms of analysis descriptions
+**** TODO Action #24 Add anecdote analysis descriptions                 :#24:
+     - as before
+*** Random sampling                                                     :#22:
+    - If we want to show smart
+    - need random sampling
+    - eliminates social pragmatic thing
+*** Argument                                                            :#22:
+    - can say hey, if you want to get rid of it
+      - normative claim is an open question
+      - Actually a form of causal induction
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -513,10 +590,20 @@
 ** TODO Action #18 Generate word documents when sending PDFs            :#18:
 ** TODO Action #19 Work out whether to use a six or seven point scale   :#19:
    - For anecdotes ratings
-** TODO Action #20 Update others with ideas to respond to Rob           :#20:
+** DONE Action #20 Update others with ideas to respond to Rob           :#20:
+   CLOSED: [2020-12-17 Thu 12:01]
    - randomly sampled
    - large pool
    - specific company
    - constraining range of possible similarity in the pool
 ** DONE Action #21 Send ARC proposal slides                             :#21:
    CLOSED: [2020-12-10 Thu 16:52]
+
+** TODO Action #22 Write explanation of new anecdote argument           :#22:
+   - Including why valence still is useful
+     - Maybe because previously it mattered for health
+     - But because people appear sensitive to details, it shouldn't matter
+   - Still with random sampling
+** TODO Action #23 Change anecdote relevance question                   :#23:
+** TODO Action #24 Add anecdote analysis descriptions                   :#24:
+   - as before

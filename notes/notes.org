@@ -378,7 +378,91 @@ to case studies.
     your judgment - by chance, the student will sometimes select very dissimilar
     items, and sometimes very similar ones.
     #+end_quote
+*** New emails
+    - Shir
+    #+begin_quote
+    I realise I forgot to update you after my call with Dan. We talked about the
+    question of whether it is normative to choose statistics over an anecdote if
+    the anecdote is similar to the target. Dan’s suggestion was to potentially
+    add text that describes the “limit of similarity” in the sample. For
+    instance, writing something like “the highest similarity rating of any of
+    these case studies to various targets was 70%”. Supposedly this would mean
+    that upon seeing a similar anecdote to the target project, participants
+    should assume that at best the anecdote might be 70% similar, and not
+    higher.
+ 
+So at the moment we have four ways of addressing the normative question in the
+experiment itself (i.e., apart from the justification in the paper):
 
+- Saying that the anecdote was randomly sampled from a pool of other projects
+- Saying that the pool is quite large (currently we say “thousands of projects”)
+- Using project-specific language when describing the failure/success of the
+  company (e.g., the project failed because of a loss in stakeholder interest
+  [project-specific] vs. the project failed because of problems with the soil in
+  the region [would be true for all companies in the region])
+- Constraining range of possible similarity in the pool (described above)
+ 
+Thoughts on this? Specifically, I’m unsure of what to do with the third point
+(the “analysis” of why they failed/succeeded), because we used more general
+reasons in Experiment 1 (e.g., target is an oil well in Texas and the anecdote
+is an oil well in New Mexico, which we say had a “hydrocarbon shortage” in the
+region). That is, it seems that the more the reason has causal implications to
+the target (via any of the attributes, e.g., location, company structure, etc.)
+it increases the chances of it being useful. But also isn’t the point that there
+are sometimes flukes and natural variations (and therefore one should listen to
+the data)?
+    #+end_quote
+    - Micah
+#+begin_quote
+I have a few questions about % similarity. 1 is whether that undercuts our
+similarity manipulation? A big part of the effect from E1 was driven by
+perceived similarity, and what if the "70% similarity" reduces the perceived
+similarity between the two, and thus the effect? 2. it reads weirdly to me
+without then explaining how that is calculated. It could be good to e.g.,
+explain all the dimensions that go into it: (e.g., the amount invested, the
+management of the project). 3. Does quantifying the similarity actually imply
+they should use the anecdote? why else quantify the similarity besides to
+establish it's potential basis for induction? I realize this suggests the
+opposite effect of 1. Both seem possible to me...
+
+Either way for the %, the first 3 seem good; I think we need to make sure that
+the overall similarity of the high similarity is not directly support a causal
+explanation for failure, unless we can then argue they still should ignore it
+(but that certainly seems a harder argument). Of course, any individual may then
+construct a causal connection but that would then be a sort of explanation for
+why similarity has the effect, is how it elicits that causal connection. Thats
+different than explicitly supporting it.
+
+Or am I thinking of these in the wrong way?
+#+end_quote
+- Dan
+#+begin_quote
+it's converting similarity to probability weighting that concerns me most
+#+end_quote
+*** First principles
+    - People use anecdotes even in the presence of aggregated data.
+      - e.g., medicine is taken more when description says "this medicine is 86%
+        effective" than when it says "this medicine is 86% effective. Suzy took
+        it and was ill."
+      - Both cases imply that it didn't work for some people.
+      - Maybe use percentage failed?
+      - Not use analysis description at all?
+    - How much should similarity affect this?
+      - If twin, then should rely on that.
+        - Because same causal structure
+      - If very different, then should rely on data
+      - So maybe it's a continuum, and it'll actually be hard to set it up as
+        perfectly normative to always use anecdote
+    - So maybe the question should be how /does/ similarity affect this?
+      - And the question comes from:
+        - On the one hand people like surface features over relational in
+          retrieval
+        - On the other hand are more sensitive to relations when directly
+          comparing
+      - Well that's not useful, because there's no retrieval.
+      - We can just stick to the fact that the findings in the literature are
+        mixed
+      - 
 ** Experiment 1
 *** DONE Summary
     CLOSED: [2020-12-04 Fri 15:14]
@@ -703,7 +787,17 @@ relationship in the high similarity conditions
       - Valence: as above
     - Reason
       - Has to be different for each domain, but can have three components.
-      
+    - So the worry is that by having the analysis description be too specific,
+    the target would appear more similar to such an extent that it is actually
+    rational to go with the anecdote, because they both seem to share a causal
+    structure. 
+    - Analogy-wise this might be the same as the surface/higher-order distinction
+    - so I guess ideally what we do is work out a way to describe the projects
+      so that it's rational to always go for statistics.
+      - However, as a back up we can just always end up descriptive and just point
+      to the fact that people are not so dumb like in the analogy literature to simply
+      use any indicator as relevance.
+
 *** DONE Project variation content
     CLOSED: [2020-12-12 Sat 16:59]
 *** TODO Clean up functions
@@ -3244,3 +3338,28 @@ relationship in the high similarity conditions
    - RStudio has their .Rproj files, but it seems ESS doesn't want to do that
 ** TODO Get graphics device in buffer
 ** TODO Format while typing
+* Life
+** Work
+   - Salary expectations
+     - [[https://www.thebalancecareers.com/interview-questions-about-your-salary-expectations-2061235][Interview Question: "What Are Your Salary Expectations"]]
+     - https://www.indeed.com/career-advice/interviewing/interview-question-what-are-your-salary-expectations
+   - Salary estimation
+     - https://www.totaljobs.com/
+     - https://www.themuse.com/
+     - https://www.seek.com.au/
+     - https://www.glassdoor.com/index.htm
+     - https://www.salary.com/
+     - https://www.payscale.com/
+     - https://www.indeed.com
+     - 
+   - Specific positions
+     - [[https://www.seek.com.au/job/51109627?type=standard#searchRequestToken=556a4535-15ca-4c18-bc23-7f290ba85245][Advisor - Behavioural insights]]
+       - 90k
+   - McKinsey
+     - https://www.mckinsey.com/careers/search-jobs
+   - behavioural economists
+     - https://www.linkedin.com/in/william-r-mailer-6b23621b/
+     - https://www.linkedin.com/in/dr-danielle-kent-372772b4/
+     - https://www.linkedin.com/in/mcordonnier/
+     - https://www.linkedin.com/in/etinosa-agbonlahor-2b588928/
+     - https://www.linkedin.com/in/nravichandar/
