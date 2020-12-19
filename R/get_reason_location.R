@@ -11,63 +11,74 @@ get_reason_location <- function() {
       ## national newspaper
       c("against", "towards") %>%
         str_c(
-          "of shifting demographic interest", ., "newspapers",
+          "shifting demographic interest", ., "newspapers",
           sep = " "
         ),
       ## pharmaceutical
-      c(
-        "pharma_negative",
-        "pharma_positive"
-      )
+      c("restricted", "expanded") %>%
+        str_c(
+        "legislation that", ., "pharmaceutical company freedoms",
+        sep = " "
+        )
     ),
     list(
       ## railway
-      c(
-        "railway_negative",
-        "railway_positive"
-      ),
+      c("a decrease", "an increase") %>%
+        str_c(
+        ., "in local fuel prices, changing commuter behaviour",
+          sep = " "
+        ),
       ## high-rise construction
-      c(
-        "high-rise_negative",
-        "high-rise_positive"
-      )
+      c("faults", "successes") %>%
+        str_c(
+        "a change in buyer confidence due to recent structural", .,
+        "in other such buildings",
+          sep = " "
+        )
     ),
     list(
       ## software
-      c(
-        "software_negative",
-        "software_positive"
-      ),
+      c("reduced", "increased") %>%
+        str_c(
+        "changes in privacy laws (that", .,
+        "consumer confidence in the business' apps)",
+          sep = " "
+        ),
       ## oil well
-      c(
-        "of what scientists now know is a hydrocarbon shortage",
-        "of what scientists now know is a hydrocarbon surplus"
-      )
+      c("shortage", "surplus") %>%
+        str_c(
+        "what scientists now know is a hydrocarbon", .,
+          sep = " "
+        )
     ),
     list(
       ## microchip
-      c(
-        "microchip_negative",
-        "microchip_positive"
-      ),
+      c("increased", "decreased") %>%
+        str_c(
+        ., "silicon taxes",
+          sep = " "
+        ),
       ## shipping logistics
-      c(
-        "shipping_negative",
-        "shipping_positive"
-      )
-    ),
+          c("increased", "decreased") %>%
+        str_c(
+        "port tariffs", .,
+          sep = " "
+        )
+),
     list(
       ## restaurant chain
-      c(
-        "restaurant_negative",
-        "restaurant_positive"
-      ),
+          c("decreased", "increased") %>%
+        str_c(
+        ., "tourism traffic",
+          sep = " "
+        ),
       ## record label
-      c(
-        "record_negative",
-        "record_positive"
-      )
-    )
+          c("reduced", "increased") %>%
+        str_c(
+        "radio listenership", .,
+          sep = " "
+        )
+)
   ) %>%
     map(transpose) %>%
     transpose() %>%

@@ -17,7 +17,7 @@ get_analysis <- function(business_name, success, reason_location, location, inte
   str_c(
     business_name,
     success,
-    "in the regional market because",
+    "in the regional market because of",
     reason_location,
     "in the",
     location %>%
