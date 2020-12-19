@@ -852,6 +852,7 @@ relationship in the high similarity conditions
     - And the anecdote multiplier should be different for each similarity condition
     - So the 1 is for the target, and the non-zero multipliers for the anecdote
       
+*** TODO Add reference class similarity description
 * Aggregation
 ** Analysis
    - From Evan:

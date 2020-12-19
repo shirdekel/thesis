@@ -746,10 +746,26 @@
    - as before
 ** TODO Action #26 Read Gilboa and Schmidler paper                      :#26:
 ** TODO Action #27 Write plan for new anecdotes experiment              :#27:
-** TODO Action #25 reread robust analogising                            :#25:
+** DONE Action #25 reread robust analogising                            :#25:
+   CLOSED: [2020-12-19 Sat 15:04]
    - section called similarity based forecasting
    - come back with ideas
-** TODO Action #28 Send update about Anecdotes 2                        :#28:
+     - p. 504
+     #+begin_quote
+     Here, single analogy forecasts could actually be ideal if there exists only
+     one highly similar case with all other cases rated only moderately similar.
+     For cases where there is potentially more than one highly similar case, the
+     ‘multi analogy forecast’ based on similarity weighting will probably result
+     in a more accurate prediction. 
+     #+end_quote
+     - Sounds like the idea that some times anecdotes should be used
+       - The nuance here is that this is the case not only when the anecdote is
+         similar, but also when the others in the pool are dissimilar by a lot.
+       - so can just tell participants that there are other similar cases in the pool
+       - we can say that the other projects in the pool were rated as equally
+         similar to the target
+** DONE Action #28 Send update about Anecdotes 2                        :#28:
+   CLOSED: [2020-12-19 Sat 15:03]
    - After reading recommended papers
    - If can't find something to fix the normative problem, then say that we're
      just going to do as before and change the argument
