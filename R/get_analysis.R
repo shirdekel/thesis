@@ -12,8 +12,9 @@
 ##' @param value_numeric
 ##' @param reason
 ##' @param cutoff
-get_analysis <- function(business_name, success, reason_location, location, integration,
-                         structure, value_string, value_numeric, reason, cutoff) {
+get_analysis <- function(business_name, success, reason_location, location,
+                         structure, reason_structure, integration, value_string,
+                         value_numeric, reason, cutoff) {
   str_c(
     business_name,
     success,
@@ -25,8 +26,10 @@ get_analysis <- function(business_name, success, reason_location, location, inte
     "area. A",
     structure,
     "organisational structure meant that",
-    reason$structure,
-    "delayed with what needed to be a timely process. Being",
+    str_c(
+    reason_structure,
+    ". Being"
+    ),
     str_c(
       integration,
       "ly integrated meant that these delays caused losses at the"
