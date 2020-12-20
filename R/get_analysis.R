@@ -13,7 +13,7 @@
 ##' @param reason
 ##' @param cutoff
 get_analysis <- function(business_name, success, reason_location, location,
-                         structure, reason_structure, integration, value_string,
+                         structure, reason_structure, integration, reason_integration, value_string,
                          value_numeric, reason, cutoff) {
   str_c(
     business_name,
@@ -32,10 +32,10 @@ get_analysis <- function(business_name, success, reason_location, location,
     ),
     str_c(
       integration,
-      "ly integrated meant that these delays caused losses at the"
+      "ly integrated meant that"
     ),
     str_c(
-      reason$integration,
+      reason_integration,
       ". To make up for this, a post hoc analysis concluded that oil was needed to be extracted at a rate of"
     ),
     str_c(

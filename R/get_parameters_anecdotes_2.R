@@ -137,6 +137,14 @@ get_parameters_anecdotes_2 <- function() {
           pluck("positive") %>%
           list()
       ),
+      reason_integration = case_when(
+        valence == "negative" ~ get_reason_integration() %>%
+          pluck("negative") %>%
+          list(),
+        TRUE ~ get_reason_integration() %>%
+          pluck("positive") %>%
+          list()
+      )
     ) %>%
     ## Expand each within-subjects condition alongside anecdote variation to
     ## show feature type. This give each feature type condition (target or
@@ -171,6 +179,7 @@ get_parameters_anecdotes_2 <- function() {
         unit,
         reason,
         reason_location,
+        reason_integration,
         reliability,
         npv
       )
@@ -201,6 +210,13 @@ get_parameters_anecdotes_2 <- function() {
         ~ integration %>%
           map(rev),
         TRUE ~ integration
+      ),
+      reason_integration = case_when(
+        alignment == "high" &
+          feature_type == "anecdote"
+        ~ reason_integration %>%
+          map(rev),
+        TRUE ~ reason_integration
       )
     ) %>%
     ## Expand project type conditions with business name, type, location, and
@@ -224,6 +240,7 @@ get_parameters_anecdotes_2 <- function() {
         unit,
         reason,
         reason_location,
+        reason_integration,
         reliability,
         npv
       )
@@ -244,9 +261,30 @@ get_parameters_anecdotes_2 <- function() {
         value_string,
         multiplier,
         reason,
+        reason_integration,
         location
       )
     ) %>%
+    ## arrange(
+    ##     project_variation,
+    ##     anecdote_variation,
+    ##     anecdote_between,
+    ##     anecdote_within,
+    ##     alignment,
+    ##     valence,
+    ##     feature_type,
+    ##     project_type,
+    ## ) %>%
+    ##     filter(
+    ##         project_variation == 1,
+    ##         anecdote_variation == 1,
+    ##         anecdote_between == "combined",
+    ##         alignment == "low",
+    ##         valence == "negative",
+    ##     ) %>%
+    ##     select(feature_type, project_type, valence, type, integration,
+    ##            reason_integration, ) %>%
+    ## unnest(reason_integration)
     rowwise() %>%
     mutate(
       value = get_value(
@@ -270,6 +308,7 @@ get_parameters_anecdotes_2 <- function() {
         structure,
         reason_structure,
         integration,
+        reason_integration,
         value_string,
         value_numeric,
         reason,
@@ -303,32 +342,14 @@ get_parameters_anecdotes_2 <- function() {
         ) %>%
         as.character()
     ) %>%
-    ## arrange(
-    ##     project_variation,
-    ##     anecdote_variation,
-    ##     anecdote_between,
-    ##     anecdote_within,
-    ##     alignment,
-    ##     valence,
-    ##     feature_type,
-    ##     project_type,
-    ## ) %>%
-    ##     filter(
-    ##         project_variation == 1,
-    ##         anecdote_variation == 1,
-    ##         anecdote_between == "combined",
-    ##         alignment == "low",
-    ##         valence == "positive",
-    ##     ) %>%
-    ##     select(feature_type, project_type, valence, alignment, structure,
-    ##            reason_structure, )
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(
       multiplier,
       value,
       feature,
       reason,
-      reason_structure
+      reason_structure,
+      reason_integration
     )) %>%
     pivot_longer(
       c(
