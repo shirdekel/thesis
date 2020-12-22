@@ -73,6 +73,8 @@ get_parameters_anecdotes_2 <- function() {
       success = get_success() %>%
         list(),
       reason_structure = get_reason_structure() %>%
+        list(),
+      reason_integration = get_reason_integration() %>%
         list()
     ) %>%
     ## Expand each between-subjects condition. Also, unnest project variation so
@@ -84,7 +86,8 @@ get_parameters_anecdotes_2 <- function() {
         project_variation,
         multiplier,
         success,
-        reason_structure
+        reason_structure,
+        reason_integration
       )
     ) %>%
     ## Mutate business name, type, and location here so that each of the five
@@ -136,14 +139,6 @@ get_parameters_anecdotes_2 <- function() {
         TRUE ~ get_reason_location() %>%
           pluck("positive") %>%
           list()
-      ),
-      reason_integration = case_when(
-        valence == "negative" ~ get_reason_integration() %>%
-          pluck("negative") %>%
-          list(),
-        TRUE ~ get_reason_integration() %>%
-          pluck("positive") %>%
-          list()
       )
     ) %>%
     ## Expand each within-subjects condition alongside anecdote variation to
@@ -179,7 +174,6 @@ get_parameters_anecdotes_2 <- function() {
         unit,
         reason,
         reason_location,
-        reason_integration,
         reliability,
         npv
       )
