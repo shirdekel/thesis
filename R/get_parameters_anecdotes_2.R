@@ -75,6 +75,8 @@ get_parameters_anecdotes_2 <- function() {
       reason_structure = get_reason_structure() %>%
         list(),
       reason_integration = get_reason_integration() %>%
+        list(),
+      reason_value_string = get_reason_value_string() %>%
         list()
     ) %>%
     ## Expand each between-subjects condition. Also, unnest project variation so
@@ -87,7 +89,8 @@ get_parameters_anecdotes_2 <- function() {
         multiplier,
         success,
         reason_structure,
-        reason_integration
+        reason_integration,
+        reason_value_string
       )
     ) %>%
     ## Mutate business name, type, and location here so that each of the five
@@ -139,7 +142,9 @@ get_parameters_anecdotes_2 <- function() {
         TRUE ~ get_reason_location() %>%
           pluck("positive") %>%
           list()
-      )
+      ),
+      reason_cutoff = get_reason_cutoff() %>%
+        list()
     ) %>%
     ## Expand each within-subjects condition alongside anecdote variation to
     ## show feature type. This give each feature type condition (target or
@@ -170,10 +175,12 @@ get_parameters_anecdotes_2 <- function() {
         feature,
         value_numeric,
         value_string,
+        reason_value_string,
         multiplier,
         unit,
         reason,
         reason_location,
+        reason_cutoff,
         reliability,
         npv
       )
@@ -230,11 +237,13 @@ get_parameters_anecdotes_2 <- function() {
         feature,
         value_numeric,
         value_string,
+        reason_value_string,
         multiplier,
         unit,
         reason,
         reason_location,
         reason_integration,
+        reason_cutoff,
         reliability,
         npv
       )
@@ -253,6 +262,7 @@ get_parameters_anecdotes_2 <- function() {
         structure,
         reason_structure,
         value_string,
+        reason_value_string,
         multiplier,
         reason,
         reason_integration,
@@ -303,10 +313,12 @@ get_parameters_anecdotes_2 <- function() {
         reason_structure,
         integration,
         reason_integration,
+        reason_cutoff,
         value_string,
+        reason_value_string,
         value_numeric,
-        reason,
-        cutoff
+        cutoff,
+        unit
       ),
       input_id = str_c(
         feature %>%
@@ -343,7 +355,8 @@ get_parameters_anecdotes_2 <- function() {
       feature,
       reason,
       reason_structure,
-      reason_integration
+      reason_integration,
+      reason_value_string
     )) %>%
     pivot_longer(
       c(

@@ -1,20 +1,25 @@
 ##' @title Get anecdote analysis
-##' @param anecdote_info
-
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 ##' @param business_name
+##' @param success
+##' @param reason_location
 ##' @param location
-##' @param integration
 ##' @param structure
+##' @param reason_structure
+##' @param integration
+##' @param reason_integration
+##' @param reason_cutoff
 ##' @param value_string
+##' @param reason_value_string
 ##' @param value_numeric
-##' @param reason
 ##' @param cutoff
+##' @param unit
 get_analysis <- function(business_name, success, reason_location, location,
-                         structure, reason_structure, integration, reason_integration, value_string,
-                         value_numeric, reason, cutoff) {
+                         structure, reason_structure, integration,
+                         reason_integration, reason_cutoff, value_string,
+                         reason_value_string, value_numeric, cutoff, unit) {
   str_c(
     business_name,
     success,
@@ -27,8 +32,8 @@ get_analysis <- function(business_name, success, reason_location, location,
     structure,
     "organisational structure meant that",
     str_c(
-    reason_structure,
-    ". Being"
+      reason_structure,
+      ". Being"
     ),
     str_c(
       integration,
@@ -36,24 +41,26 @@ get_analysis <- function(business_name, success, reason_location, location,
     ),
     str_c(
       reason_integration,
-      ". To make up for this, a post hoc analysis concluded that oil was needed to be extracted at a rate of"
+      ". A post hoc analysis concluded that"
     ),
+    reason_cutoff[[1]],
     str_c(
       cutoff[[1]],
-      "L an hour and sites have at least a"
+      unit[[1]]
     ),
+    reason_cutoff[[2]],
     str_c(
-      cutoff[[3]],
-      "% probability of finding oil before management approved the project. Further, machinery needed to have thought to last at least"
+      cutoff[[2]],
+      unit[[2]]
     ),
-    cutoff[[2]],
-    "years before requiring maintenance, because maintenance costs further offset the initial investment after the",
-    value_numeric[[2]],
-    "years of development. Further, the well was quite",
-    reason$type,
-    "due to it being an",
+    ". Further,",
+    reason_cutoff[[3]],
+    cutoff[[3]],
+    unit[[3]],
+    ". Further,",
+    reason_value_string,
     value_string,
-    "well, and so added additional financial setbacks over the course of the project.",
+    ".",
     sep = " "
   )
 }
