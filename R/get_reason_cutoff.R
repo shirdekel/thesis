@@ -9,71 +9,71 @@ get_reason_cutoff <- function() {
       list(
           ## national newspaper
           c(
-            "reason_newspaper_1",
-            "reason_newspaper_2",
-            "reason_newspaper_3"
+            "newspapers needed to be printed at a rate of",
+            "number of weekly advertisers needed to be",
+            "amount of undiscarded ink needed to be"
           ),
           ## pharmaceutical
           c(
-            "reason_pharmaceutical_1",
-            "reason_pharmaceutical_2",
-            "reason_pharmaceutical_3"
+            "pills needed to be pressed at a rate of",
+            "shelf life needed to be",
+            "probability of symptom reduction after a week needed to be"
           )
       ),
       list(
           ## railway
           c(
-            "reason_railway_1",
-            "reason_railway_2",
-            "reason_railway_3"
+            "railway lines needed to be built at a rate of",
+            "number of paying customers at peak hour needed to be",
+            "carriages needed to be estimated to last in good shape"
           ),
           ## high-rise construction
           c(
-            "reason_high-rise_1",
-            "reason_high-rise_2",
-            "reason_high-rise_3"
+            "high-rises needed to be built at a rate of",
+            "probability of on-time completion needed to be",
+            "number of tenant EOIs needed to be"
           )
       ),
       list(
           ## software
           c(
-            "reason_software_1",
-            "reason_software_2",
-            "reason_software_3"
+            "developers needed to write",
+            "the application needed to be certified with a security rating of",
+            "number of potential first-year customers needed to be"
           ),
           ## oil well
           c(
-            "reason_oil_1",
-            "reason_oil_2",
-            "reason_oil_3"
+            "oil was needed to be extracted at a rate of",
+            "machinery needed to function without maintenance for",
+            "probability of finding oil needed to be"
           )
       ),
       list(
           ## microchip
           c(
-            "reason_microchip_1",
-            "reason_microchip_2",
-            "reason_microchip_3"
+            "microchips needed to be produced at a rate of",
+            "semiconductor yield needed to be",
+            "percent of compatible PCs needed to be"
           ),
           ## shipping logistics
           c(
-            "reason_shipping_1",
-            "reason_shipping_2",
-            "reason_shipping_3"
+            "packages needed to be shipped at a rate of",
+            "number of orders not in a bottleneck needed to be",
+            "average accuracy of shipments needed to be"
           )
       ),
       list(
           ## restaurant chain
           c(
-            "reason_restaurant_1",
-            "reason_restaurant_2",
-            "reason_restaurant_3"
+            "restaurants needed to be established at a rate of",
+            "number of Saturday night reservations needed to be",
+            "number of positive reviews the restaurant needed to have been estimated to get"
           ),
           ## record label
           c(
-            "reason_record-label_1",
-            "reason_record-label_2",
-            "reason_record-label_3"
+            "rate of records produced needed to be",
+            "national radio listenership needed to be",
+            "network connections that management needed to have established"
           )
       )
   )

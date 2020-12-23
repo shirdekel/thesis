@@ -22,7 +22,7 @@ get_analysis <- function(business_name, success, reason_location, location,
                          reason_value_string, value_numeric, cutoff, unit) {
   str_c(
     business_name,
-    success,
+    success[[1]],
     "in the regional market because of",
     reason_location,
     "in the",
@@ -41,26 +41,35 @@ get_analysis <- function(business_name, success, reason_location, location,
     ),
     str_c(
       reason_integration,
-      ". A post hoc analysis concluded that"
+      ". A post hoc analysis concluded that, to"
+    ),
+    str_c(
+      success[[2]],
+      ", the"
     ),
     reason_cutoff[[1]],
     str_c(
       cutoff[[1]],
       unit[[1]]
     ),
+    "and the",
     reason_cutoff[[2]],
     str_c(
       cutoff[[2]],
-      unit[[2]]
+      unit[[2]],
+      ". Further, the"
     ),
-    ". Further,",
     reason_cutoff[[3]],
-    cutoff[[3]],
-    unit[[3]],
-    ". Further,",
+    str_c(
+      cutoff[[3]],
+      unit[[3]],
+      ". Further,"
+    ),
     reason_value_string,
-    value_string,
-    ".",
+    str_c(
+      value_string,
+      "."
+    ),
     sep = " "
   )
 }

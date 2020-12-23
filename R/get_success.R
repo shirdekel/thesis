@@ -6,13 +6,22 @@
 ##' @author Shir Dekel
 ##' @export
 get_success <- function() {
-  c(
-    ## negative
-    "struggled to establish itself",
+  list(
+    c(
+      ## negative
+      "struggled to establish itself",
+      "make up for these issues"
+    ),
     ## positive
-    "performed really well"
+    c(
+      "performed really well",
+      "take advantage of these benefits"
+    )
   ) %>%
     rep(2) %>%
-    ## statistics only
-    c("")
+        ## statistics only
+        append(
+            list("" %>%
+                rep(2))
+        )
 }
