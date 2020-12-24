@@ -3359,11 +3359,16 @@ relationship in the high similarity conditions
    - McKinsey
      - https://www.mckinsey.com/careers/search-jobs
    - behavioural economists
-     - https://www.linkedin.com/in/william-r-mailer-6b23621b/
      - https://www.linkedin.com/in/dr-danielle-kent-372772b4/
      - https://www.linkedin.com/in/mcordonnier/
-     - https://www.linkedin.com/in/etinosa-agbonlahor-2b588928/
-     - https://www.linkedin.com/in/nravichandar/
+     - https://www.linkedin.com/in/jasonallancollins/
+     - CBA
+       - https://www.linkedin.com/in/william-r-mailer-6b23621b/
+       - https://www.linkedin.com/in/nravichandar/
+       - https://www.linkedin.com/in/etinosa-agbonlahor-2b588928/
+       - https://www.linkedin.com/in/edaniels2/
+       - https://www.linkedin.com/in/patrick-hendy-97aaa0155/
+       - https://www.linkedin.com/in/daniel-campbell-44572b60/
    - [[https://www.indeed.com/career/associate-consultant/salaries?from=top_sb][Associate Consultant US]]
      - $69,193 USD
      - $7,000 profit sharing
