@@ -780,7 +780,9 @@ relationship in the high similarity conditions
     - Each of those has five combinations (for each domain)
       - etc
 - Double check this
-*** TODO Analysis content
+*** DONE Analysis content
+    CLOSED: [2020-12-24 Thu 15:30]
+    - State "DONE"       from "TODO"       [2020-12-24 Thu 15:30]
     - Varies by
       - Project variation: different content per variation
       - Alignment: the same values as for the predicted features + cutoff
@@ -798,6 +800,9 @@ relationship in the high similarity conditions
       to the fact that people are not so dumb like in the analogy literature to simply
       use any indicator as relevance.
 
+*** TODO Fix analysis content specifics
+    - State "TODO"       from              [2020-12-24 Thu 15:30]
+    - Including wording and multipliers
 *** DONE Project variation content
     CLOSED: [2020-12-12 Sat 16:59]
 *** TODO Clean up functions
