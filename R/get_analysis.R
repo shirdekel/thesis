@@ -63,13 +63,15 @@ get_analysis <- function(business_name, success, reason_location, location,
     str_c(
       cutoff[[3]],
       unit[[3]],
-      ". Further,"
+      ". Further, the"
     ),
     reason_value_string,
     str_c(
       value_string,
-      "."
-    ),
+      ", and so added additional financial"
+     ),
+      success[[3]],
+      "over the course of the project.",
     sep = " "
   )
 }

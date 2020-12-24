@@ -53,7 +53,7 @@ get_reason_cutoff <- function() {
           c(
             "microchips needed to be produced at a rate of",
             "semiconductor yield needed to be",
-            "percent of compatible PCs needed to be"
+            "percent of compatible devices needed to be"
           ),
           ## shipping logistics
           c(

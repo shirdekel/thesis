@@ -10,18 +10,20 @@ get_success <- function() {
     c(
       ## negative
       "struggled to establish itself",
-      "make up for these issues"
+      "make up for these issues",
+      "setbacks"
     ),
     ## positive
     c(
       "performed really well",
-      "take advantage of these benefits"
+      "take advantage of these benefits",
+      "resilience"
     )
   ) %>%
     rep(2) %>%
         ## statistics only
         append(
             list("" %>%
-                rep(2))
+                rep(3))
         )
 }

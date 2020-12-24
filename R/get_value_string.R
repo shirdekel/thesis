@@ -10,18 +10,18 @@ get_value_string <- function() {
     list(
       list(
         c("advertising", "subscription"),
-        c("over-the-counter", "prescription")
+        c("over-the-counter", "prescription-only")
       ),
       list(
         c("intracity", "intercity"),
-        c("commercial", "residential")
+        c("mixed office-retail", "apartment")
       ),
       list(
-        c("enterprise", "consumer"),
+        c("enterprise", "ordinary consumers"),
         c("offshore", "onshore")
       ),
       list(
-        c("digital", "analogue"),
+        c("Reduced Instruction Set Computing", "Complex Instruction Set Computing"),
         c("parcel", "freight")
       ),
       list(

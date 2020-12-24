@@ -38,7 +38,7 @@ get_feature_anecdotes_2 <- function() {
         "Code written",
         "Security rating",
         "Number of potential customers in first year",
-        "Purpose"
+        "Target users"
       ),
       c(
         "Oil extracted",
@@ -51,8 +51,8 @@ get_feature_anecdotes_2 <- function() {
       c(
         "Microchips produced",
         "Usable semiconductor yield after testing",
-        "Compatible PCs in the market",
-        "Type of integrated circuit"
+        "Compatible devices in the market",
+        "Type of chip architecture"
       ),
       c(
         "Packages shipped",
