@@ -3344,53 +3344,60 @@
    - RStudio has their .Rproj files, but it seems ESS doesn't want to do that
 ** TODO Get graphics device in buffer
 ** TODO Format while typing
-* Life
-** Work
-   - Salary expectations
-     - [[https://www.thebalancecareers.com/interview-questions-about-your-salary-expectations-2061235][Interview Question: "What Are Your Salary Expectations"]]
-     - [[https://www.indeed.com/career-advice/interviewing/interview-question-what-are-your-salary-expectations][From Indeed]]
-   - Salary estimation
-     - https://www.totaljobs.com/
-     - https://www.themuse.com/
-     - https://www.seek.com.au/
-     - https://www.glassdoor.com/index.htm
-     - https://www.salary.com/
-     - https://www.payscale.com/
-     - https://www.indeed.com
-     - 
-   - Specific positions
+* Work
+** Salary estimation
+*** Resources
+    - Salary expectations interview question
+      - [[https://www.thebalancecareers.com/interview-questions-about-your-salary-expectations-2061235][Interview Question: "What Are Your Salary Expectations"]]
+      - [[https://www.indeed.com/career-advice/interviewing/interview-question-what-are-your-salary-expectations][From Indeed]]
+    - Websites
+      - https://www.totaljobs.com/
+      - https://www.themuse.com/
+      - https://www.seek.com.au/
+      - https://www.glassdoor.com/index.htm
+      - https://www.salary.com/
+      - https://www.payscale.com/
+      - https://www.indeed.com
+*** Reference salaries
+**** Consulting
+***** McKinsey
+      - https://www.mckinsey.com/careers/search-jobs
+      - [[https://www.glassdoor.com/Salary/McKinsey-and-Company-Associate-Sydney-Salaries-EJI_IE2893.0,20_KO21,30_IL.31,37_IM962.htm?experienceLevel=ONE_TO_THREE][McKinsey & Company Associate Salaries in Sydney 1-3 years]]
+        - A$157,333
+***** CBA
+      - [[https://www.glassdoor.com/Salary/Commonwealth-Bank-of-Australia-Associate-Sydney-Salaries-EJI_IE7922.0,30_KO31,40_IL.41,47_IM962.htm?experienceLevel=ONE_TO_THREE][Commonwealth Bank of Australia Associate in Sydney]] 1-3 years
+        - A$82,662
+***** PwC
+      - [[https://www.glassdoor.com/Salary/PwC-Associate-Sydney-Salaries-EJI_IE8450.0,3_KO4,13_IL.14,20_IM962.htm?experienceLevel=ONE_TO_THREE][PwC Associate Salaries in Sydney 1-3 years]]
+        - A$60,000
+***** Other
+      - [[https://www.indeed.com/career/associate-consultant/salaries?from=top_sb][Associate Consultant US]]
+        - $69,193 USD
+        - $7,000 profit sharing
+**** Behavioural economics/insights
      - [[https://www.seek.com.au/job/51109627?type=standard#searchRequestToken=556a4535-15ca-4c18-bc23-7f290ba85245][Advisor - Behavioural insights]]
        - 90k AUD
-   - McKinsey
-     - https://www.mckinsey.com/careers/search-jobs
-   - behavioural economists
-     - https://www.linkedin.com/in/dr-danielle-kent-372772b4/
-     - https://www.linkedin.com/in/mcordonnier/
-     - https://www.linkedin.com/in/jasonallancollins/
-     - CBA
-       - https://www.linkedin.com/in/william-r-mailer-6b23621b/
-       - https://www.linkedin.com/in/nravichandar/
-       - https://www.linkedin.com/in/etinosa-agbonlahor-2b588928/
-       - https://www.linkedin.com/in/edaniels2/
-       - https://www.linkedin.com/in/patrick-hendy-97aaa0155/
-       - https://www.linkedin.com/in/daniel-campbell-44572b60/
-   - [[https://www.indeed.com/career/associate-consultant/salaries?from=top_sb][Associate Consultant US]]
-     - $69,193 USD
-     - $7,000 profit sharing
-   - [[https://www.glassdoor.co.uk/Salary/Behavioural-Insights-Team-Advisor-Salaries-E958568_D_KO26,33.htm][Behavioural Insights Team Advisor UK]]
-     - £37,122
-   - [[https://www.glassdoor.com/job-listing/behavioral-economics-research-professional-humana-JV_IC1137724_KO0,42_KE43,49.htm?jl=3735222386&pos=101&ao=242900&s=131&guid=0000017677c38c8cbf8769bc40de374a&src=GD_JOB_AD&t=FJ&extid=3&exst=&ist=OL&ast=OL&vt=w&slr=false&cs=1_cdbfbdcf&cb=1608327073057&jobListingId=3735222386&ctt=1608327111496][Behavioral Economics Research Professional Louisville, KY]]
-     - $31K - $65K USD
-   - [[https://www.glassdoor.com/job-listing/research-fellow-university-of-new-south-wales-JV_IC2235932_KO0,15_KE16,45.htm?jl=1006756855755&pos=101&ao=1136043&s=343&guid=0000017677deb7369b7d070bcb68ddc1&src=GD_JOB_AD&t=SR-JOBS-HR&vt=w&uido=E4493CEA7664EE1D7E8D9897CA5CD2B1&cs=1_19bd3b55&cb=1608328854027&jobListingId=1006756855755&jrtk=1-1eprtte9tu3n7801-1eprtteb4u2nr800-09f399701f8de383&ictk=1eprs7m4fu5a5801&ctt=1608347891724][Research Fellow Sydney]]
-     - $109,365 - $128,926 AUD plus 17% superannuation and leave loading
-   - [[https://www.glassdoor.com/Salaries/us-associate-professor-salary-SRCH_IL.0,2_IN1_KO3,22.htm?clickSource=searchBtn][Associate Professor Salaries in United States]]
-     - $81,534 USD
-   - [[https://www.glassdoor.com/Salary/Commonwealth-Bank-of-Australia-Associate-Sydney-Salaries-EJI_IE7922.0,30_KO31,40_IL.41,47_IM962.htm?experienceLevel=ONE_TO_THREE][Commonwealth Bank of Australia Associate in Sydney]] 1-3 years
-     - A$82,662
-   - [[https://www.glassdoor.com/Salary/PwC-Associate-Sydney-Salaries-EJI_IE8450.0,3_KO4,13_IL.14,20_IM962.htm?experienceLevel=ONE_TO_THREE][PwC Associate Salaries in Sydney 1-3 years]]
-     - A$60,000
-   - [[https://www.glassdoor.com/Salary/McKinsey-and-Company-Associate-Sydney-Salaries-EJI_IE2893.0,20_KO21,30_IL.31,37_IM962.htm?experienceLevel=ONE_TO_THREE][McKinsey & Company Associate Salaries in Sydney 1-3 years]]
-     - A$157,333
+     - [[https://www.glassdoor.co.uk/Salary/Behavioural-Insights-Team-Advisor-Salaries-E958568_D_KO26,33.htm][Behavioural Insights Team Advisor UK]]
+       - £37,122
+     - [[https://www.glassdoor.com/job-listing/behavioral-economics-research-professional-humana-JV_IC1137724_KO0,42_KE43,49.htm?jl=3735222386&pos=101&ao=242900&s=131&guid=0000017677c38c8cbf8769bc40de374a&src=GD_JOB_AD&t=FJ&extid=3&exst=&ist=OL&ast=OL&vt=w&slr=false&cs=1_cdbfbdcf&cb=1608327073057&jobListingId=3735222386&ctt=1608327111496][Behavioral Economics Research Professional Louisville, KY]]
+       - $31K - $65K USD
+**** Academia
+     - [[https://www.glassdoor.com/job-listing/research-fellow-university-of-new-south-wales-JV_IC2235932_KO0,15_KE16,45.htm?jl=1006756855755&pos=101&ao=1136043&s=343&guid=0000017677deb7369b7d070bcb68ddc1&src=GD_JOB_AD&t=SR-JOBS-HR&vt=w&uido=E4493CEA7664EE1D7E8D9897CA5CD2B1&cs=1_19bd3b55&cb=1608328854027&jobListingId=1006756855755&jrtk=1-1eprtte9tu3n7801-1eprtteb4u2nr800-09f399701f8de383&ictk=1eprs7m4fu5a5801&ctt=1608347891724][Research Fellow Sydney]]
+       - $109,365 - $128,926 AUD plus 17% superannuation and leave loading
+     - [[https://www.glassdoor.com/Salaries/us-associate-professor-salary-SRCH_IL.0,2_IN1_KO3,22.htm?clickSource=searchBtn][Associate Professor Salaries in United States]]
+       - $81,534 USD
+*** Reference people
+    - behavioural economists
+      - https://www.linkedin.com/in/dr-danielle-kent-372772b4/
+      - https://www.linkedin.com/in/mcordonnier/
+      - https://www.linkedin.com/in/jasonallancollins/
+      - CBA
+        - https://www.linkedin.com/in/william-r-mailer-6b23621b/
+        - https://www.linkedin.com/in/nravichandar/
+        - https://www.linkedin.com/in/etinosa-agbonlahor-2b588928/
+        - https://www.linkedin.com/in/edaniels2/
+        - https://www.linkedin.com/in/patrick-hendy-97aaa0155/
+        - https://www.linkedin.com/in/daniel-campbell-44572b60/
 * ARC
 ** Prospect theory 
    - The two examples in the 1993 paper:
@@ -3545,12 +3552,12 @@
      #+end_quote
      - A way to relate to analogy?
      - Also here (p. 23):
-#+begin_quote
-The explicit adoption of a broad frame will then require the use of an abstract
-language that highlights the important common dimensions of diverse decision
-problems.
-#+end_quote
-- But I guess they're talking about money and probability
+   #+begin_quote
+   The explicit adoption of a broad frame will then require the use of an abstract
+   language that highlights the important common dimensions of diverse decision
+   problems.
+   #+end_quote
+   - But I guess they're talking about money and probability
 ** Ideas
    - Could test the idea that executives are worried about themselves while
      realising that they aren't acting in the benefit of the company
