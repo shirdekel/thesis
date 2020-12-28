@@ -3391,3 +3391,182 @@
      - A$60,000
    - [[https://www.glassdoor.com/Salary/McKinsey-and-Company-Associate-Sydney-Salaries-EJI_IE2893.0,20_KO21,30_IL.31,37_IM962.htm?experienceLevel=ONE_TO_THREE][McKinsey & Company Associate Salaries in Sydney 1-3 years]]
      - A$157,333
+* ARC
+** Prospect theory 
+   - The two examples in the 1993 paper:
+     - With neutral probability weights
+     - PT and CE should be equivalent according to the paper
+   #+begin_src R
+     library(pt)
+
+     choice_ids <- c(1, 1, 1)
+     gamble_ids <- c(1, 2, 2)
+     outcome_ids <- c(1, 1, 2)
+     objective_consequences <- c(300, 0, 1000)
+     probability_strings <- c("1", "1/2", "1/2")
+     my_choices <- Choices(choice_ids=choice_ids,
+                           gamble_ids=gamble_ids,
+                           outcome_ids=outcome_ids,
+                           objective_consequences=objective_consequences,
+                           probability_strings=probability_strings)
+     my_choices
+
+     drawChoices(my_choices,
+                 decision_square_x=0.2, decision_square_edge_length=0.05,
+                 circle_radius=0.025, y_split_gap=0.15, x_split_offset=0.03,
+                 probability_text_digits=4, y_probability_text_offset=0.015,
+                 y_value_text_offset=0.005, x_value_text_offset=0.025,
+                 probability_text_font_colour="red", probability_text_font_size=10,
+                 objective_consequence_text_font_colour="blue",
+                 objective_consequence_text_font_size=10, label=c("A","B"),
+                 label_font_colour=c("orange","magenta"), label_font_size=c(11,11),
+                 label_positions=list(c(0.26,0.7),c(0.26,0.36)))
+
+     kl_1993_utility <- Utility(fun="power", par=c(alpha=0.575, beta=0.575, lambda=2.5))
+
+     tk_1992_positive_probWeight <-
+       ProbWeight(fun=
+                    "Tversky_Kahneman_1992",
+                  par=c(alpha=1))
+
+     tk_1992_negative_probWeight <-
+       ProbWeight(fun=
+                    "Tversky_Kahneman_1992",
+                  par=c(alpha=1))
+
+     comparePT(my_choices,
+               prob_weight_for_positive_outcomes=
+                 tk_1992_positive_probWeight,
+               prob_weight_for_negative_outcomes=
+                 tk_1992_negative_probWeight,
+               utility=kl_1993_utility,
+               digits=4)
+   #+end_src
+   - PT and CE for the two gambles here are not equivalent
+     - Actually should be more like a \lambda of 1.7
+   #+begin_src R
+     library(pt)
+
+     choice_ids <- c(1, 1, 1)
+     gamble_ids <- c(1, 2, 2)
+     outcome_ids <- c(1, 1, 2)
+     objective_consequences <- c(0, 250, -100)
+     probability_strings <- c("1", "1/2", "1/2")
+     my_choices <- Choices(choice_ids=choice_ids,
+                           gamble_ids=gamble_ids,
+                           outcome_ids=outcome_ids,
+                           objective_consequences=objective_consequences,
+                           probability_strings=probability_strings)
+     my_choices
+
+     drawChoices(my_choices,
+                 decision_square_x=0.2, decision_square_edge_length=0.05,
+                 circle_radius=0.025, y_split_gap=0.15, x_split_offset=0.03,
+                 probability_text_digits=4, y_probability_text_offset=0.015,
+                 y_value_text_offset=0.005, x_value_text_offset=0.025,
+                 probability_text_font_colour="red", probability_text_font_size=10,
+                 objective_consequence_text_font_colour="blue",
+                 objective_consequence_text_font_size=10, label=c("A","B"),
+                 label_font_colour=c("orange","magenta"), label_font_size=c(11,11),
+                 label_positions=list(c(0.26,0.7),c(0.26,0.36)))
+
+     kl_1993_utility <- Utility(fun="power", par=c(alpha=0.575, beta=0.575, lambda=2.5))
+     tk_1992_positive_probWeight <-
+       ProbWeight(fun=
+                    "Tversky_Kahneman_1992",
+                  par=c(alpha=1))
+     tk_1992_negative_probWeight <-
+       ProbWeight(fun=
+                    "Tversky_Kahneman_1992",
+                  par=c(alpha=1))
+
+     comparePT(my_choices,
+               prob_weight_for_positive_outcomes=
+                 tk_1992_positive_probWeight,
+               prob_weight_for_negative_outcomes=
+                 tk_1992_negative_probWeight,
+               utility=kl_1993_utility,
+               digits=4)
+   #+end_src
+   - If exponents (\alpha and \beta) and loss aversion coefficient (\lambda) are all 1, then
+     the function is equivalent to EV (linear)
+   #+begin_src R
+     library(pt)
+
+     plotUtility(my_x_label = "objective consequence",
+                 my_y_label = "subjective value",
+                 xmin = -10, xmax = 10, fun=power_uf,
+                 par=c(alpha = 1, beta = 1, lambda = 1),
+                 fun_colour = "purple",
+                 draw_reference_line_flag = TRUE,
+                 reference_line_colour = "red",
+                 reference_line_style = 1)
+   #+end_src
+   - Reducing \alpha and \beta reflects diminishing returns, as in EU.
+   #+begin_src R
+     library(pt)
+
+     plotUtility(my_x_label = "objective consequence",
+                 my_y_label = "subjective value",
+                 xmin = -10, xmax = 10, fun=power_uf,
+                 par=c(alpha = 0.575, beta = 0.575, lambda = 1),
+                 fun_colour = "purple",
+                 draw_reference_line_flag = TRUE,
+                 reference_line_colour = "red",
+                 reference_line_style = 1)
+   #+end_src
+   - Increasing \lambda reflects the steeper curve in the domain of losses, as in PT.
+   #+begin_src R
+     library(pt)
+
+     plotUtility(my_x_label = "objective consequence",
+                 my_y_label = "subjective value",
+                 xmin = -10, xmax = 10, fun=power_uf,
+                 par=c(alpha = 0.575, beta = 0.575, lambda = 2.5),
+                 fun_colour = "purple",
+                 draw_reference_line_flag = TRUE,
+                 reference_line_colour = "red",
+                 reference_line_style = 1)
+   #+end_src
+** 1993 paper
+   - p. 21
+   #+begin_quote
+   By the individual's own utility function, the cost of considering these
+   gambles in iso- lation is 27% of their expected value, surely more than any
+   rational decision maker should be willing to pay for whatever mental economy
+   this isolation achieves.
+   #+end_quote
+   - Expressing the effect of aggregation as being the comparison between PT
+     values with aggregation and PT values in isolation
+   - p. 22
+     #+begin_quote
+     Decisions will be narrowly framed even when they could be viewed as
+     instances of a category of similar decisions
+     #+end_quote
+     - A way to relate to analogy?
+     - Also here (p. 23):
+#+begin_quote
+The explicit adoption of a broad frame will then require the use of an abstract
+language that highlights the important common dimensions of diverse decision
+problems.
+#+end_quote
+- But I guess they're talking about money and probability
+** Ideas
+   - Could test the idea that executives are worried about themselves while
+     realising that they aren't acting in the benefit of the company
+   - Can manipulate whether the participant thinks that they're evaluating
+   subordinates' options, or they are the subordinate.
+   - Test in real data the idea (from p.23) that oil and pharma are more likely
+     to bracket broadly.
+   - The broader questions could be:
+     - how do managers bracket repeated gambles without feedback
+       - what's the line between the risk aversion of a single gamble and
+         displaying the distribution? Is there a way to structure the decisions
+         such that aggregation is more likely?
+     - can aggregation be encouraged
+       - What decision aids encourage aggregation? For instance, verbal or
+         visual cues.
+   - Can first get participant's loss aversion coefficient and then give them
+     specific gambles that they should technically be fine with.
+     - Everyone is personalised
+     - Would just be hard to have that all happen on the user side
