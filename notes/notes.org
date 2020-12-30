@@ -800,12 +800,14 @@
       to the fact that people are not so dumb like in the analogy literature to simply
       use any indicator as relevance.
 
-*** TODO Fix analysis content specifics
+*** DONE Fix analysis content specifics
+    CLOSED: [2020-12-30 Wed 11:26]
     - State "TODO"       from              [2020-12-24 Thu 15:30]
     - Including wording and multipliers
 *** DONE Project variation content
     CLOSED: [2020-12-12 Sat 16:59]
-*** TODO Clean up functions
+*** DONE Clean up functions
+    CLOSED: [2020-12-30 Wed 14:46]
 *** DONE Input IDs
     CLOSED: [2020-12-11 Fri 15:51]
 *** DONE Valence condition
@@ -858,6 +860,9 @@
     - So the 1 is for the target, and the non-zero multipliers for the anecdote
       
 *** TODO Add reference class similarity description
+*** DONE Update NPVs and reliability
+    CLOSED: [2020-12-30 Wed 11:54]
+
 * Aggregation
 ** Analysis
    - From Evan:
