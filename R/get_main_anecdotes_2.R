@@ -18,12 +18,13 @@ get_main_anecdotes_2 <- function(gambles, randomize_order = TRUE) {
   instructions <-
     get_instructions_anecdotes_2()
 
-  allocation_timeline <-
-      get_parameters_anecdotes_2()
+  timeline <-
+    get_parameters_anecdotes_2() %>%
+    get_timeline()
 
   main <-
-      instructions %>%
-    build_timeline(allocation_timeline) %>%
+    instructions %>%
+    build_timeline(timeline) %>%
     map(flatten)
 
   return(main)
