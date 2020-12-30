@@ -24,6 +24,8 @@ get_main_anecdotes_2 <- function(gambles, randomize_order = TRUE) {
 
   main <-
     instructions %>%
+    build_timeline() %>%
+    list() %>%
     build_timeline(timeline) %>%
     map(flatten)
 
