@@ -11,5 +11,6 @@ get_value <- function(
                       multiplier,
                       value_string) {
   round(value_numeric * multiplier) %>%
+    as.integer() %>%
     c(value_string)
 }
