@@ -5,11 +5,14 @@
 ##' @export
 get_npv_anecdotes_2 <- function() {
   list(
-    c(901, 101),
-    c(902, 102),
-    c(903, 103),
-    c(904, 104),
+    c(900, 100),
     c(905, 105)
   ) %>%
+    pmap(
+      ~ runif(n = 5, min = .x, max = .y) %>%
+        round()
+    ) %>%
+    transpose() %>%
+    simplify_all() %>%
     map(as.character)
 }
