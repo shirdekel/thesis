@@ -4,9 +4,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-##' @param val_trans
-##' @param multipliers
-get_cutoff <- function(value_numeric) {
-  value_numeric %>%
-    map(~ round(.x * 1.5))
+##' @param value_numeric
+##' @param multiplier_cutoff
+get_cutoff <- function(value_numeric, multiplier_cutoff) {
+    round(value_numeric * multiplier_cutoff)
 }

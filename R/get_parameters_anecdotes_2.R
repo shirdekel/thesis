@@ -68,7 +68,9 @@ get_parameters_anecdotes_2 <- function() {
       .before = 1
     ) %>%
     mutate(
-      multiplier = get_multiplier() %>%
+      multiplier_cutoff = get_multiplier_cutoff() %>%
+        list(),
+      multiplier_anecdote = get_multiplier_anecdote() %>%
         list(),
       success = get_success() %>%
         list(),
@@ -86,7 +88,8 @@ get_parameters_anecdotes_2 <- function() {
       c(
         data,
         project_variation,
-        multiplier,
+        multiplier_anecdote,
+        multiplier_cutoff,
         success,
         reason_structure,
         reason_integration,
@@ -176,7 +179,8 @@ get_parameters_anecdotes_2 <- function() {
         value_numeric,
         value_string,
         reason_value_string,
-        multiplier,
+        multiplier_anecdote,
+        multiplier_cutoff,
         unit,
         reason,
         reason_location,
@@ -238,7 +242,8 @@ get_parameters_anecdotes_2 <- function() {
         value_numeric,
         value_string,
         reason_value_string,
-        multiplier,
+        multiplier_anecdote,
+        multiplier_cutoff,
         unit,
         reason,
         reason_location,
@@ -263,7 +268,8 @@ get_parameters_anecdotes_2 <- function() {
         reason_structure,
         value_string,
         reason_value_string,
-        multiplier,
+        multiplier_anecdote,
+        multiplier_cutoff,
         reason,
         reason_integration,
         location
@@ -302,7 +308,7 @@ get_parameters_anecdotes_2 <- function() {
         feature,
         unit
       ),
-      cutoff = get_cutoff(value_numeric) %>%
+      cutoff = get_cutoff(value_numeric, multiplier_cutoff) %>%
         list(),
       analysis = get_analysis(
         business_name,
@@ -350,7 +356,9 @@ get_parameters_anecdotes_2 <- function() {
     ) %>%
     # needs to be removed because otherwise there are NAs after pivoting
     select(-c(
-      multiplier,
+      multiplier_anecdote,
+      multiplier_cutoff,
+      cutoff,
       value,
       feature,
       reason,

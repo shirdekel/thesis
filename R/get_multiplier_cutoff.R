@@ -3,17 +3,17 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_multiplier <- function() {
+get_multiplier_cutoff <- function() {
   normal_value <-
     c(
       ## negative_high
-      1.4,
-      ## positive_high
-      0.9,
-      ## negative_low
-      0.7,
-      ## positive_low
       1.6,
+      ## positive_high
+      0.7,
+      ## negative_low
+      0.9,
+      ## positive_low
+      1.4,
       ## statistics only
       1
     )
@@ -21,13 +21,13 @@ get_multiplier <- function() {
   probability <-
     c(
       ## negative_high
-      1.05,
-      ## positive_high
-      0.9,
-      ## negative_low
-      0.8,
-      ## positive_low
       1.1,
+      ## positive_high
+      0.8,
+      ## negative_low
+      0.9,
+      ## positive_low
+      1.05,
       ## statistics only
       1
     )
