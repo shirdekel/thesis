@@ -655,6 +655,122 @@
     - just need to establish
     - can also do a version of what bruce recommended
       - similarity ratings
+* Notes from <2021-01-04 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Dan
+** Agenda
+   - Previous grant clarification
+** Notes
+*** Risk consistency                                                    :#31:
+    - Another name for RAT
+    - Might have to contact school
+    - as you move down hierarchies, you get bigger differences between CEO and
+      person
+    - Tying to innovation because "the ARC loves that shit"
+*** TODO Action #31 Add risk consistency/RAT detail to grant            :#31:
+*** How did they calculate RAT?                                         :#31:
+    - Like the Thaler questions
+    - Read Swalm 1966
+    - Framed differently to different levels
+    - Had it programmed
+      - But might have to redo
+    - Done with former PhD student, but didn't publish
+    - Different magnitudes
+    - Old doctoral student has data
+    - But just say 32%
+*** TODO Action #32 Add interview detail to grant                       :#32:
+*** What should the interviews be about?                                :#32:
+    - Part of same project
+    - When we find people are being excessively loss/risk averse lower down in
+      the organisation
+    - find out why they're being that way
+    - particularly for new ideas
+      - R&D, new projects
+    - Expect to say they don't want to risk job
+    - Important to hit innovation angle
+    - Step one is online survey, step 2 interview people
+      - diagnostic, then more in depth interview about situation and ways to
+        overcome it
+      - But people at lower level and higher level
+*** TODO Action #33 Send new project description draft                  :#33:
+*** Grant                                                               :#33:
+    - "uniqueness bias"
+    - submitted grants all over the place
+    - initially focused on bold forecast part
+    - timid decision making not followed up
+    - didn't give enough
+    - to be fair to everyone
+    - but why not bet on big horses
+*** TODO Action #34 Add detail to incentive structure experiment        :#34:
+*** incentive structures                                                :#34:
+    - Experimental
+    - or for practitioners?
+    - But: we don't want it to seem like we're doing consulting work
+      - need to figure way around that
+      - because they won't like that
+      - focus on the australian business aspect
+      - mainly how a lot of these lower level projects are innovative risky new innovations
+*** TODO Action #35 Ask Micah about participant sample                  :#35:
+*** TODO Action #36 Use previous experiment pilots                      :#36:
+    - Distribution and similarity?
+    - First draft: put more in rather than less
+    - even if ambiguous and have idea why ambiguous, then can still add
+    - nothing that can hurt us
+*** Add to front                                                    :#29:#33:
+    - go thorugh that other people did htis with immediate feedback: say what
+      they found
+    - problem: not isomorphic to business
+    - Except for things than change by the day e.g., google
+    - Austrlia is resource economy, e.g., don't get feedback on mining
+    - get data: percentage of business in asutrlia that is done by large companies
+    - almost everytiung is oligopaly/duopoly
+    - resource sector: not industries with lots of players
+    - "large business" rahter than small medium
+    - a lopt of innovation takes place in large companies
+*** TODO Action #29 get percentage of revenue and employment for large vs sme :#29:
+    - if not can push through anecote
+    - in australia there are four bank, two airlines, vs elsewhere
+    - resource secotr: dominated by large companies
+      - revenues are dominated
+*** area of interest                                                    :#33:
+    - multiple levels of hierarchies
+    - are they taking the number of risky bets that makes sense to CEO
+    - one way for them to take those riskier bets is to understand about aggregation
+    - intellectual and practical conserns
+*** studies                                                             :#33:
+    - Would use broader terms "cost of risk aversion to austrlian companies
+      especially in risky bets"
+    - tool that can use
+    - once we see where the problems are, we go to in to the companies
+    - and then also after the decision aids
+    - RAT + interviews, things that change risk preferences, interventions
+    - give a feel for experiemnts, e.g., what the questions are
+    - similarity: once we bracket for them, they diversify
+*** decision aids                                                       :#33:
+    - interactive tool
+    - worried theyd think it's too consulting
+*** survey                                                              :#32:
+    - for each company, the survey needs to be adjusted to fit the industry and company
+*** job
+    - any one job is not likely
+    - salary: assume 100k
+    - maybe better to CBA for almost a year and then come back
+    - think I'd porbably better coming back
+    - McKinsey will eat you up in terms of time
+    - work cloes to americans
+    - notice period: would call and ask
+    - "would be happy to discuss at the interview"
+    - find out what senior lecturer makes and mckinsey
+    - don't want to price yourself out
+    - say somethink like "salary consistent with PhD credential and value you
+      think I could add to the company"
+*** grant                                                               :#33:
+    - two for two, and not had kahneman
+*** TODO Action #30 draft budget                                        :#30:
+    - budget: go over
+    - See what the highest pay for postdoc
+*** feedback
+    - doing a good job
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -769,3 +885,39 @@
    - After reading recommended papers
    - If can't find something to fix the normative problem, then say that we're
      just going to do as before and change the argument
+** TODO Action #31 Add risk consistency/RAT detail to grant             :#31:
+** TODO Action #32 Add interview detail to grant                        :#32:
+** TODO Action #33 Send new project description draft                   :#33:
+** TODO Action #34 Add detail to incentive structure experiment         :#34:
+** TODO Action #35 Ask Micah about participant sample                   :#35:
+** TODO Action #36 Use previous experiment pilots                       :#36:
+   - Distribution and similarity?
+   - First draft: put more in rather than less
+   - even if ambiguous and have idea why ambiguous, then can still add
+   - nothing that can hurt us
+** TODO Action #29 get percentage of revenue and employment for large vs sme :#29:
+   - if not can push through anecote
+   - in australia there are four bank, two airlines, vs elsewhere
+   - resource secotr: dominated by large companies
+     - revenues are dominated
+** TODO Action #30 draft budget                                         :#30:
+   - budget: go over
+   - See what the highest pay for postdoc
+** TODO Action #31 Add risk consistency/RAT detail to grant             :#31:
+** TODO Action #32 Add interview detail to grant                        :#32:
+** TODO Action #33 Send new project description draft                   :#33:
+** TODO Action #34 Add detail to incentive structure experiment         :#34:
+** TODO Action #35 Ask Micah about participant sample                   :#35:
+** TODO Action #36 Use previous experiment pilots                       :#36:
+   - Distribution and similarity?
+   - First draft: put more in rather than less
+   - even if ambiguous and have idea why ambiguous, then can still add
+   - nothing that can hurt us
+** TODO Action #29 get percentage of revenue and employment for large vs sme :#29:
+   - if not can push through anecote
+   - in australia there are four bank, two airlines, vs elsewhere
+   - resource secotr: dominated by large companies
+     - revenues are dominated
+** TODO Action #30 draft budget                                         :#30:
+   - budget: go over
+   - See what the highest pay for postdoc
