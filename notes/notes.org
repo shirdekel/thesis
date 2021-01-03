@@ -3770,3 +3770,148 @@
      specific gambles that they should technically be fine with.
      - Everyone is personalised
      - Would just be hard to have that all happen on the user side
+** Emails
+   -From Dan <2020-12-30 Wed> 
+   #+begin_quote
+First start from prospect theory and then go to Kahneman and Lovallo 1993, then
+go to my previous grant on measuring risk aversion across hierarchies. Then
+briefly mention the HBR article including kahneman as an author which mention
+the RAT, then go to the new experiments. Finally as Kahneman is one of the
+investigators on the grant I think we should mention that. Focus on Kahneman as
+much as possible. Fell free for the next draft to go long then we can edit.
+Micah please weigh in on the next draft please.
+   #+end_quote
+   -From Micah <2020-12-31 Thu> 
+   #+begin_quote
+   Hi Both again
+I have a few comments/questions Shir/.
+
+1.  The very first paragraph, and then the whole first page needs to make it
+   really clear what the stakes are to people from any academic background.
+   Everything after the first page is only really read by people in the area,
+   but people on the funding panel, who may be chemists, or anthropologists, or
+   anything need to think this is a worthwhile project. So, when you say that
+   some people understand diversifying, but others may not, you need to make it
+   clear why that matters. For example, is risk aversion a general barrier to
+   innovation for the economy of Australia as a whole? or does it distinguish
+   which businesses succeed and which businesss do not? is there someway to
+   estimate the economic costs of risk aversion? so you could say something like
+   "high level manager's risk aversion cost Australia's companies 3 billion
+   dollars a year" or whatever. I'm sure there's not a number exactly like that,
+   but perhaps even the RAT makes sense to bring up very early on?
+
+    From there, the logic needs to be crystal clear. Something like (but also
+   doesn't have to be there):
+
+    Risk aversion in business is big problem -> it's often caused because people
+   do not understand that they should aggregate risks across stuff ->
+   thisbecause there are environmental and psychological barriers to
+   aggregation, such as delays on outcomes of investments, perceiving projects
+   as distinct. -> our grant will do two things first, run experiments to
+   understand what prevents and support risk aggregation in managewrs 2. design
+   and test decision-aids to help managers aggregate risk
+
+    also throughout this first page, you weave in the story of the team. Right
+   near the top, you throw in sentences like "PI DK won a noble prize in part
+   for his work understanding risk aversion" and then stuff like "PI DK and CI
+   Lovalllo wrote a highly influential paper (1993) on risk aggregation, and
+   they have been collaborating on this issue since then" and e.g., cite the
+   2020 paper. and say stuff like "this project is the next important step in
+   this work- where we design decision aids for managers..."
+
+    After all of this stuff gets out: that this project is super important, and
+   it builds on the world's greatest research done by this team of researchers,
+   in a way that is clear to anyone with any academic background who is reading
+   the begining, then it gets into all the specifics and literature review, etc.
+
+2. Question: are we proposing to only work with managers on this grant? or both
+   lay people and manager? Relatedly, at the moment it just says we ran a 900N
+   series of pilots, but don't present results? We shouldn't present all the
+   results, but we should selectively pick the results that make our hypotheses
+   seem the strongest. Pilot data really helps. not just saying we have it, but
+   presenting it.
+
+3. Dan and I on the phone talked about ways to put delays between choices (e.g.,
+   extend the repeated gambles tasks over a couple of weeks). Because really, if
+   we want to get at real decision making we need to help people aggregate
+   across choices over time right? I was imagining that with lay people, but is
+   that actually feasible to propose with managers? If so, we may want to pilot
+   that with lay people either way.
+
+Shir, please ask any questions. For the next draft, does it seem possible to
+integrate what I'm saying here, with the structure Dan outlined in his comments,
+and conform to the template I attached in the last email? Please point out ways
+it doesn't all fit and we can talk.
+   #+end_quote
+   - From Dan <2020-12-31 Thu> 
+   #+begin_quote
+   The big issue is not even risk aversion but loss aversion. There is a paper
+   by Mathew Rabin that shows loss aversion is the largest part of risk
+   aversion. In the HBR paper we discuss pilot data that came from a large
+   successful Australian company that demonstrated the RAT was 32% of the
+   expected value of their entire investments that year- that is enormous!
+   Companies are giving up nearly a third of investment value just based on
+   their own rules! We can't say this but this was the most sophisticated
+   investment bank in Australia - can you imagine what others are doing? This
+   has huge implications for innovations at large companies, which make up a
+   larger amount of the economy in Australia than most (all) developed
+   countries. We want to hit hard on the innovation impact - the RAT really
+   impacts new risky projects the most. To examine the RAT in more detail we
+   need to go into at least 30 companies and this is a direct but new wrinkle on
+   K and L 1993 and even prosp[ect theory. (Please both of yall read the timid
+   choices section of that 1993 article closely if you have not) We want to
+   emphasize that on this part of the grant we are going to go into companies
+   and even do interviews on the impact of loss aversion impacts innovation
+   decisions while also measuring the RAT. We need to pay interviewers etc. This
+   part needs to be done in companies with executives but the other parts
+   needn't be.
+
+With the other aggregation work our point is that it isn't isomorphic with
+business. People don't get immediate feedback in the real world so the other
+work is all well and good but doesn't touch big questions (with a few exceptions
+such as short term pricing issues). This is why our new experiments are vital.
+
+We want to make sure my work with Danny is a central part of the grant so it
+doesn't look like he is just signing on and we have the papers to prove it. His
+role is designing the experiments with us and writing the papers.
+   #+end_quote
+** Project description plan
+   - The problem (existing literature)
+     - People are loss averse (Prospect theory)
+     - This translates to risk aversion in financial decision making (managerial
+       risk literature)
+     - People evaluate risky choices one at a time (1993 article)
+     - This means that they are less likely to aggregate (aggregation literature)
+     - Which leads to unnecessary risk aversion that can lose companies money
+       (HBR article)
+   - The solution (our experiments)
+     - Increase awareness of the problem by quantifying the effect of
+       aggregation neglect in Australian companies
+       - Study 1: Calculate the RAT in 30 Australian companies
+         - Same method as in HBR paper
+     - Identify the environmental and psychological barriers to aggregation
+       - Study 2: Effect of similarity
+         - Set of similar vs dissimilar gambles
+       - Study 3: Effect of presentation
+         - Seeing all gambles jointly vs separately
+       - Study 4: Effect of awareness of options
+         - Knowing the number of gambles available
+       - Study 5: Effect of incentive structure
+         - Compare global vs project-specific incentive structure
+       - Study 6: Accounting for loss aversion
+         - Test participant loss aversion coefficient
+         - Present participants with a set of gambles that are ultimately risk
+           neutral according to their own coefficient
+         - Use the most effective manipulation
+       - Study 7: Extended repeated gambles
+         - Use the most effective manipulation, over a few weeks.
+     - Develop relevant decision-aids
+       - Study 8: Visual representation of outcome distribution
+         - Same as we've done
+       - Study 9: Explicit education
+         - Explaining aggregation with explicit instructions
+       - Study 10: Interactive aggregation tool
+         - Participants can input the project details and see the various
+           possible distributions
+       - Study 11: Extended repeated gambles
+         - Use the most effective decision aid, over a few weeks.
