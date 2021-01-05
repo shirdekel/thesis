@@ -858,7 +858,8 @@
      - But because people appear sensitive to details, it shouldn't matter
    - Still with random sampling
 ** TODO Action #23 Change anecdote relevance question                   :#23:
-** TODO Action #24 Add anecdote analysis descriptions                   :#24:
+** DONE Action #24 Add anecdote analysis descriptions                   :#24:
+   CLOSED: [2021-01-04 Mon 10:03]
    - as before
 ** TODO Action #26 Read Gilboa and Schmidler paper                      :#26:
 ** TODO Action #27 Write plan for new anecdotes experiment              :#27:
@@ -895,29 +896,21 @@
    - First draft: put more in rather than less
    - even if ambiguous and have idea why ambiguous, then can still add
    - nothing that can hurt us
-** TODO Action #29 get percentage of revenue and employment for large vs sme :#29:
+** DONE Action #29 get percentage of revenue and employment for large vs sme :#29:
+   CLOSED: [2021-01-04 Mon 15:14]
    - if not can push through anecote
    - in australia there are four bank, two airlines, vs elsewhere
    - resource secotr: dominated by large companies
      - revenues are dominated
-** TODO Action #30 draft budget                                         :#30:
-   - budget: go over
-   - See what the highest pay for postdoc
-** TODO Action #31 Add risk consistency/RAT detail to grant             :#31:
-** TODO Action #32 Add interview detail to grant                        :#32:
-** TODO Action #33 Send new project description draft                   :#33:
-** TODO Action #34 Add detail to incentive structure experiment         :#34:
-** TODO Action #35 Ask Micah about participant sample                   :#35:
-** TODO Action #36 Use previous experiment pilots                       :#36:
-   - Distribution and similarity?
-   - First draft: put more in rather than less
-   - even if ambiguous and have idea why ambiguous, then can still add
-   - nothing that can hurt us
-** TODO Action #29 get percentage of revenue and employment for large vs sme :#29:
-   - if not can push through anecote
-   - in australia there are four bank, two airlines, vs elsewhere
-   - resource secotr: dominated by large companies
-     - revenues are dominated
+       - 2018-2019 Table 13 Data cube 1 from [[https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/latest-release][Counts of Australian Businesses, including Entries and Exits]] 
+         - Percent of large business of all business: 0.2%
+       - 2018-2019 Table 5 Data cube "Australian industry by division" from [[https://www.abs.gov.au/statistics/industry/industry-overview/australian-industry/latest-release#data-download][Australian Industry]] 
+         - Percent of employment of all business: 34%
+         - Percent of wages and salaries of all business: 45%
+         - Percent of industry value added of all business: 45%
+       - Innovative activity in Australian businesses, selected indicators(a), by employment size, 2016-17 from [[https://www.abs.gov.au/statistics/industry/technology-and-innovation/innovation-australian-business/latest-release#innovation-in-australian-business-summary][Innovation in Australian Business]]
+         - Percent of businesses that introduced or implemented innovation in large business: 63%
+           - vs 44% for all others (average)
 ** TODO Action #30 draft budget                                         :#30:
    - budget: go over
    - See what the highest pay for postdoc

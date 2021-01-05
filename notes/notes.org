@@ -3915,3 +3915,27 @@ role is designing the experiments with us and writing the papers.
            possible distributions
        - Study 11: Extended repeated gambles
          - Use the most effective decision aid, over a few weeks.
+** Keywords
+   - Risk aggregation
+   - RAT
+   - Risk consistency
+   - Risk aversion
+   - Loss aversion
+   - Innovation
+   - Repeated gambles
+   - Risky investment
+   - Narrow bracketing
+** Logic
+   - Middle-managers need to evaluate multiple investments over time
+   - Choice bracketing affects risk aggregation
+     - Middle-managers treating investments one at a time reduces chance of
+       risk aggregation
+     - Middle-managers treating investments as a portfolio increases chance of
+       risk aggregation
+   - Risk aggregation reduces loss aversion
+   - Loss aversion causes risk aversion
+   - Middle-managers' risk aversion causes risk inconsistency across company hierarchy
+     - RAT quantifies risk inconsistency
+   - Risk inconsistency leads to sub-optimal investment in innovation
+     - Because middle-managers do not invest in projects the CEO would have
+       wanted them to invest in.
