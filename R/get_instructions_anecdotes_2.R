@@ -26,11 +26,11 @@ get_instructions_anecdotes_2 <- function() {
     str_c(
       "Test yourself on the above instructions",
       "How many pairs of projects will you see?",
-      sep = ". "
+      sep = ": "
     ) %>%
     get_survey_number(
       name = "instructions_test",
-      suffix = " projects"
+      suffix = " project pairs"
     )
 
   instructions_html <-
