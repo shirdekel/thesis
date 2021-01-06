@@ -2,6 +2,8 @@
 ##'
 ##' Generate experiment condition structure and relevant parameters for each
 ##' condition. For subsequent parsing into javascript using jaysire.
+##'
+##' Used for display and follow_up columns
 
 ##' @return
 ##' @author Shir Dekel
@@ -12,7 +14,10 @@ get_parameters_anecdotes_2 <- function() {
     mutate(
       target = case_when_target(anecdote_within, anecdote_between, data),
       anecdote = get_anecdote(data) %>%
-        list()
+        list(),
+      follow_up = get_follow_up(
+        anecdote_within, data
+      )
     ) %>%
     unnest(data) %>%
     rowwise() %>%

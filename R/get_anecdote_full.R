@@ -5,6 +5,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
+##' @param analysis
+##' @param anecdote_raw
 get_anecdote_full <- function(analysis, anecdote_raw) {
   if (anecdote_raw == "") {
     anecdote_full <- anecdote_raw
