@@ -5,8 +5,8 @@
 ##' @export
 get_reliability_anecdotes_2 <- function() {
   list(
-    c(86, 91),
-    c(90, 95)
+    c(91, 86),
+    c(95, 90)
   ) %>%
     pmap(
       ~ runif(n = 5, min = .x, max = .y) %>%
