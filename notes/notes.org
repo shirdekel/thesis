@@ -862,12 +862,16 @@
 *** TODO Add reference class similarity description
 *** DONE Update NPVs and reliability
     CLOSED: [2020-12-30 Wed 11:54]
-*** TODO Add ratings
+** DONE Add ratings
+   CLOSED: [2021-01-06 Wed 15:15]
+*** TODO Fix reliability values
+    - Correspond to NPV
+    - Currently flipped
 *** DONE Add instructions
     CLOSED: [2020-12-30 Wed 19:24]
 *** DONE Add interstitials
     CLOSED: [2020-12-30 Wed 15:14]
-
+    
 * Aggregation
 ** Analysis
    - From Evan:
@@ -3591,6 +3595,9 @@
       - Me: 25k
       - CBA: 90-105k
     - Target: 100-105k
+*** Online application
+    - "Would like to find out more information about the role and discuss further."
+    - Notice period: "No official notice period as I am completing a PhD."
 * ARC
 ** Prospect theory 
    - The two examples in the 1993 paper:
@@ -3939,3 +3946,41 @@ role is designing the experiments with us and writing the papers.
    - Risk inconsistency leads to sub-optimal investment in innovation
      - Because middle-managers do not invest in projects the CEO would have
        wanted them to invest in.
+* Setup
+** Hardware
+*** Laptop
+*** Monitor
+*** Desk
+*** Monitor arm
+*** Mouse
+*** Keyboard
+*** Chair
+*** Speakers
+*** Laptop case
+*** Cable management
+*** Laptop stand
+*** USB hub
+** Software
+*** Terminal
+    - iTerm2
+*** Key bindings
+    - [[https://karabiner-elements.pqrs.org/][Karabiner]]
+*** Window manager
+    - Yabai
+    - Amethyst
+*** Editor
+    - Spacemacs GUI
+    - Spacemacs terminal
+*** File manager
+    - [[https://apple.stackexchange.com/questions/346941/vim-like-navigation-keys-for-finder][Vim like navigation keys for Finder]]
+*** Cloud storage
+*** Email
+*** Photo manager
+*** App launcher
+    - Alfred
+*** App manager
+    - Homebrew
+*** Shell 
+    - zsh
+    - bash
+    - fish

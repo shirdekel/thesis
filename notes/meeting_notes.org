@@ -886,12 +886,18 @@
    - After reading recommended papers
    - If can't find something to fix the normative problem, then say that we're
      just going to do as before and change the argument
-** TODO Action #31 Add risk consistency/RAT detail to grant             :#31:
-** TODO Action #32 Add interview detail to grant                        :#32:
-** TODO Action #33 Send new project description draft                   :#33:
-** TODO Action #34 Add detail to incentive structure experiment         :#34:
-** TODO Action #35 Ask Micah about participant sample                   :#35:
-** TODO Action #36 Use previous experiment pilots                       :#36:
+** DONE Action #31 Add risk consistency/RAT detail to grant             :#31:
+   CLOSED: [2021-01-06 Wed 10:12]
+** DONE Action #32 Add interview detail to grant                        :#32:
+   CLOSED: [2021-01-06 Wed 10:13]
+** DONE Action #33 Send new project description draft                   :#33:
+   CLOSED: [2021-01-06 Wed 10:13]
+** DONE Action #34 Add detail to incentive structure experiment         :#34:
+   CLOSED: [2021-01-06 Wed 10:13]
+** DONE Action #35 Ask Micah about participant sample                   :#35:
+   CLOSED: [2021-01-06 Wed 10:13]
+** DONE Action #36 Use previous experiment pilots                       :#36:
+   CLOSED: [2021-01-06 Wed 10:13]
    - Distribution and similarity?
    - First draft: put more in rather than less
    - even if ambiguous and have idea why ambiguous, then can still add
