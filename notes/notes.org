@@ -862,13 +862,16 @@
 *** TODO Add reference class similarity description
 *** DONE Update NPVs and reliability
     CLOSED: [2020-12-30 Wed 11:54]
-** DONE Add ratings
-   CLOSED: [2021-01-06 Wed 15:15]
-*** TODO Fix reliability values
+*** DONE Add ratings
+    CLOSED: [2021-01-06 Wed 15:15]
+*** DONE Fix reliability values
+    CLOSED: [2021-01-07 Thu 09:53]
     - Correspond to NPV
     - Currently flipped
 *** DONE Add instructions
     CLOSED: [2020-12-30 Wed 19:24]
+*** DONE Fix instructions valence correspondence
+    CLOSED: [2021-01-07 Thu 11:26]
 *** DONE Add interstitials
     CLOSED: [2020-12-30 Wed 15:14]
     
