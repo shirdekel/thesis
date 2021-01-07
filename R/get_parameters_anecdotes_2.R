@@ -24,7 +24,8 @@ get_parameters_anecdotes_2 <- function() {
     mutate(
       instructions = get_instructions_specific(
         anecdote_within,
-        anecdote_between
+        anecdote_between,
+        success
       ),
       display = get_display_anecdotes_2(
         instructions, anecdote_within, target,
