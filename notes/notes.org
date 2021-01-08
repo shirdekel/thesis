@@ -843,7 +843,7 @@
     - Should end up a list that has low and high alignment
       - In each has anecdote and target
         - In each has the five pairs
-*** Analysis
+*** TODO Analysis
     - How are we comparing between Stats only and the others again?
     - I guess compare the difference stats only and the anecdote condition
       - And compare for each between subs condition.
@@ -859,7 +859,8 @@
     - And the anecdote multiplier should be different for each similarity condition
     - So the 1 is for the target, and the non-zero multipliers for the anecdote
       
-*** TODO Add reference class similarity description
+*** DONE Add reference class similarity description
+    CLOSED: [2021-01-08 Fri 14:43]
 *** DONE Update NPVs and reliability
     CLOSED: [2020-12-30 Wed 11:54]
 *** DONE Add ratings
@@ -874,7 +875,10 @@
     CLOSED: [2021-01-07 Thu 11:26]
 *** DONE Add interstitials
     CLOSED: [2020-12-30 Wed 15:14]
-    
+*** DONE Fix project display aesthetics
+    CLOSED: [2021-01-08 Fri 17:05]
+*** TODO Screenshots
+
 * Aggregation
 ** Analysis
    - From Evan:
@@ -3956,7 +3960,15 @@ role is designing the experiments with us and writing the papers.
 *** Desk
 *** Monitor arm
 *** Mouse
+    - MX Master 3
+    - Apple Magic Trackpad
+    - Apple Magic Mouse
+    - [[https://www.logitech.com/en-au/products/mice/mx-anywhere-3-mac.910-005995.html][MX Anywhere 3]]
+*** Mouse pad
 *** Keyboard
+    - [[https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard?variant=31440990044249][Keychron K6]]
+    - [[https://www.keychron.com/products/keychron-k3-wireless-mechanical-keyboard?variant=32220198600793][Keychron K3]]
+    - Showroom at [[https://www.mwave.com.au/contact/otherenquiries][mwave]]
 *** Chair
 *** Speakers
 *** Laptop case
@@ -3987,3 +3999,4 @@ role is designing the experiments with us and writing the papers.
     - zsh
     - bash
     - fish
+      
