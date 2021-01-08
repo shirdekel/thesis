@@ -40,7 +40,7 @@ get_projects_anecdotes_2 <- function(project_variation,
   interstitial_trials <-
     seq_len(5) %>%
     map(
-      ~ get_interstitial(.x)
+      ~ get_interstitial_anecdotes(.x)
     )
 
   follow_up <-
