@@ -14,29 +14,30 @@ case_when_target <- function(anecdote_within, anecdote_between, data) {
       anecdote_between == "anecdote_only" ~
     data %>%
       select(
-        business_name_target,
-        type_target,
-        location_target,
-        integration_target,
-        structure_target,
-        predicted_features_target,
         project_type,
-        input_id_target
+        "Business name" = business_name_target,
+        "Project type" = type_target,
+        "Location" = location_target,
+        "Integration" = integration_target,
+        "Structure" = structure_target,
+        "Predicted project features" = predicted_features_target,
+        "Project allocation (%)" = input_id_target
       ) %>%
       get_target() %>%
       list(),
     TRUE ~
     data %>%
       select(
-        business_name_target,
-        type_target,
-        location_target,
-        integration_target,
-        structure_target,
-        predicted_features_target,
         project_type,
-        reliability,
-        npv,
+        "Business name" = business_name_target,
+        "Project type" = type_target,
+        "Location" = location_target,
+        "Integration" = integration_target,
+        "Structure" = structure_target,
+        "Predicted project features" = predicted_features_target,
+        "Project allocation (%)" = input_id_target,
+        "Overall reliability rating (%)" = reliability,
+        "NPV ($)" = npv,
         input_id_target
       ) %>%
       get_target() %>%
