@@ -52,13 +52,25 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
           get_prolific_id(.x, .y)
       )
 
-    # Remove participants from first batch with faulty IDs
+    # Get IDs of participants approved or awaiting review for subsequent
+    # filtering. This helps account for participants that may have finished the
+    # experiment, but subsequently returned their submission (or somehow
+    # timed-out).
+    participants_eligible <-
+      file.path("inst", "extdata", "export",
+                "prolific_5fd801122e636e10e21d282c_export.csv") %>%
+      read_csv() %>%
+      filter(status == "APPROVED" | status == "AWAITING REVIEW") %>%
+      pull(participant_id)
+
+    # Remove participants from first batch with faulty input IDs and filter out
+    # ineligible Prolific IDs
     data <-
       data_all %>%
       filter(
-        datetime > "2020-12-14"
+        datetime > "2020-12-14",
+        prolific %in% participants_eligible
       )
-
   }
 
   data %>%
