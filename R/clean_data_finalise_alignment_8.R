@@ -58,8 +58,8 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
     # timed-out).
     participants_eligible <-
       file.path("inst", "extdata", "export",
-                "prolific_5fd801122e636e10e21d282c_export.csv") %>%
-      read_csv() %>%
+                "prolific_export_5fd801122e636e10e21d282c.csv") %>%
+      read_csv(col_types = cols()) %>%
       filter(status == "APPROVED" | status == "AWAITING REVIEW") %>%
       pull(participant_id)
 
