@@ -9,10 +9,18 @@
 get_results_anecdotes_2 <- function(data_clean, iv, dv) {
   results_anecdotes_2 <-
     data_clean %>%
-    nest_by(id, anecdote_between, age) %>%
+    filter(anecdote_within == "anecdote") %>%
+    nest_by(
+      id,
+      anecdote_between,
+      alignment,
+      valence,
+      allocation
+    ) %>%
     aov_4(
-      age ~
-      anecdote_between + (1 | id),
+      allocation ~
+      anecdote_between * alignment * valence +
+        (c(alignment, valence) | id),
       data = .,
       print.formula = T
     ) %>%
