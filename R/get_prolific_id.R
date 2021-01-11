@@ -28,6 +28,6 @@ get_prolific_id <- function(data, prolific_filter, prolific_filter_label) {
     filter_by_string(prolific_filter) %>%
     pull(prolific) %>%
     unique() %>%
-    write_lines(here("inst", "extdata", file_name))
+    write_lines(here("inst", "extdata", "prolific_id", file_name))
 
 }

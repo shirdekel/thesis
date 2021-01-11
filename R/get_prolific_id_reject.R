@@ -22,5 +22,5 @@ get_prolific_id_reject <- function(data_check, prolific_filter, prolific_filter_
     filter(reject) %>%
     pull(prolific) %>%
     unique() %>%
-    write_lines(here("inst", "extdata", file_name))
+    write_lines(here("inst", "extdata", "prolific_id", file_name))
 }
