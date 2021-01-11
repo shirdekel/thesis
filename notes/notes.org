@@ -185,6 +185,13 @@
 ** TODO Alignment chapter draft
 ** TODO Anecdotes chapter draft
    - State "TODO"       from              [2020-12-07 Mon 11:27]
+** TODO Add separate data filtering target 
+   - State "TODO"       from              [2021-01-11 Mon 12:04]
+   - At the moment we have one target that cleans and filters for prolific and
+     attention checks
+   - But this way we can't pass the information of what was filtered out for 1.
+     inspection, and 2. methods participants section in which we explain the
+     exclusions
 * Anecdotes
 ** Conceptual discussion
 *** Notes from original talk
