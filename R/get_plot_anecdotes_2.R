@@ -9,11 +9,19 @@ get_plot_anecdotes_2 <- function(data_clean) {
     nest_by(
       id,
       anecdote_between,
-      age
-    )  %>%
+      anecdote_within,
+      alignment,
+      valence,
+      allocation
+    ) %>%
     apa_plot(
-      dv = "age",
-      iv1 = "anecdote_between"
+      iv1 = "valence",
+      iv2 = "anecdote_within",
+      dv = "allocation"
+    ) +
+    facet_grid(
+      col = vars(alignment), row = vars(anecdote_between),
+      labeller = label_both
     )
 
   return(plot_anecdotes_2)
