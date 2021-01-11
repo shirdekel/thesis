@@ -16,7 +16,7 @@ get_parameters_anecdotes_2 <- function() {
       anecdote = get_anecdote(data) %>%
         list(),
       follow_up = get_follow_up(
-        anecdote_within, data
+        anecdote_within, data, valence, alignment
       )
     ) %>%
     unnest(data) %>%

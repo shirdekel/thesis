@@ -6,7 +6,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_follow_up_html <- function(data, button_continue) {
+get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
+                               alignment) {
   target <-
     data %>%
     filter(project_type == "target")
@@ -97,11 +98,14 @@ get_follow_up_html <- function(data, button_continue) {
       "."
     ),
     question_name = c(
-      "similarity", "relevance_specific", "relevance_general",
+      "similarity", "relevance-specific", "relevance-general",
       "justify"
     ),
     follow_up_id = str_c(
-      "follow_up",
+      "follow-up",
+      anecdote_within,
+      valence,
+      alignment,
       question_type,
       question_name,
       sep = "_"

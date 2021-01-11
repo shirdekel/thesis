@@ -7,7 +7,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_follow_up <- function(anecdote_within, data) {
+get_follow_up <- function(anecdote_within, data, valence, alignment) {
   button_continue <-
     "Press the button below to continue." %>%
     div()
@@ -16,7 +16,7 @@ get_follow_up <- function(anecdote_within, data) {
     anecdote_within == "statistics_only" ~ button_continue %>%
       as.character(),
     anecdote_within == "anecdote" ~ get_follow_up_html(
-      data, button_continue
+      data, button_continue, anecdote_within, valence, alignment
     ) %>%
       as.character()
   )

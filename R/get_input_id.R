@@ -23,7 +23,9 @@ get_input_id <- function(feature, value, anecdote_within, alignment, valence,
     collapse = "_"
   ) %>%
     str_c(
-      anecdote_within,
+      # So that later parsing can use _ as a delimiter
+      anecdote_within %>%
+        str_replace_all("_", "-"),
       alignment,
       valence,
       business_name %>%
