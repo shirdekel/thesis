@@ -31,7 +31,7 @@ get_instructions_specific <- function(anecdote_within, anecdote_between,
       str_c(
         "As a part of the relevant information that will be provided for each",
         "target project, you will be provided with measures of overall",
-        "reliability and Net Present Value (NPV). The NPV is the company’s",
+        "reliability and Net Present Value (NPV). The NPV is the company's",
         "estimation of the future returns of the project. An NPV that is",
         "greater than 0 (zero) indicates that there is an expectation of",
         "profit. The higher the NPV, the better the expectations for each",
