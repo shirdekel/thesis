@@ -51,20 +51,20 @@ loadd(power_anecdotes_2)
           performance of the target project"
  
 [^1]: Initially, the argument was that people are over-relying on anecdotes, while
-they should be using aggregated data instead. However, as Rob Goldstone’s
-example suggests, there are situations in which an anecdote is so similar (e.g.,
-an identical twin) that it would be unwise not to use the anecdote. As such, the
-idea is to pivot to the argument to be that people might actually be sensitive
-to the relevance of the anecdote. That is, our data suggests that they (arguably
-wisely) use the anecdote when it seems to share causal structure, and use it
-less when it doesn’t (even though it’s the same type of project). In fact,
-people seem to actually integrate the anecdote with the statistical information.
+      they should be using aggregated data instead. However, as Rob Goldstone’s
+      example suggests, there are situations in which an anecdote is so similar (e.g.,
+      an identical twin) that it would be unwise not to use the anecdote. As such, the
+      idea is to pivot to the argument to be that people might actually be sensitive
+      to the relevance of the anecdote. That is, our data suggests that they (arguably
+      wisely) use the anecdote when it seems to share causal structure, and use it
+      less when it doesn’t (even though it’s the same type of project). In fact,
+      people seem to actually integrate the anecdote with the statistical information.
 
-  Therefore, we can keep the anecdote descriptions the same as in Experiment 1
-  (i.e., either causally similar to the target, or not). Further, we do not need
-  to include any further descriptions of the pool of anecdotes (such as the limit
-  of similarity) other than the fact that it is large and anecdotes are randomly
-  sampled.
+      Therefore, we can keep the anecdote descriptions the same as in Experiment 1
+      (i.e., either causally similar to the target, or not). Further, we do not need
+      to include any further descriptions of the pool of anecdotes (such as the limit
+      of similarity) other than the fact that it is large and anecdotes are randomly
+      sampled.
 
 # Summary
 
