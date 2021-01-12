@@ -24,25 +24,9 @@ output:
 
 ```{r setup, include = FALSE}
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(materials_anecdotes_2)
+loadd(power_anecdotes_2)
 ```
-
-# Changing argument
-
-Initially, the argument was that people are over-relying on anecdotes, while
-they should be using aggregated data instead. However, as Rob Goldstone’s
-example suggests, there are situations in which an anecdote is so similar (e.g.,
-an identical twin) that it would be unwise not to use the anecdote. As such, the
-idea is to pivot to the argument to be that people might actually be sensitive
-to the relevance of the anecdote. That is, our data suggests that they (arguably
-wisely) use the anecdote when it seems to share causal structure, and use it
-less when it doesn’t (even though it’s the same type of project). In fact,
-people seem to actually integrate the anecdote with the statistical information.
-
-Therefore, we can keep the anecdote descriptions the same as in Experiment 1
-(i.e., either causally similar to the target, or not). Further, we do not need
-to include any further descriptions of the pool of anecdotes (such as the limit
-of similarity) other than the fact that it is large and anecdotes are randomly
-sampled.
 
 # Addressing Experiment 1 limitations
 
@@ -60,16 +44,31 @@ sampled.
 - Limitation: using the anecdote could be normative if it seems that it was
   chosen due to its similarity
     - Solution: change argument to be about people's ability to use anecdotes
-    when casual structure seems relevant, and to avoid them when it does not.
-        - Still clarify that the anecdotes were sampled randomly [with similar
-          wording to @hayes2019].
+    when casual structure seems relevant, and to avoid them when it does not.[^1]
+        - Still clarify that the anecdotes were sampled randomly [as in @hayes2019].
         - Change the follow-up relevance question to be something like "how much
           do you think the reason the case study failed is relevant to the
           performance of the target project"
+ 
+[^1]: Initially, the argument was that people are over-relying on anecdotes, while
+they should be using aggregated data instead. However, as Rob Goldstone’s
+example suggests, there are situations in which an anecdote is so similar (e.g.,
+an identical twin) that it would be unwise not to use the anecdote. As such, the
+idea is to pivot to the argument to be that people might actually be sensitive
+to the relevance of the anecdote. That is, our data suggests that they (arguably
+wisely) use the anecdote when it seems to share causal structure, and use it
+less when it doesn’t (even though it’s the same type of project). In fact,
+people seem to actually integrate the anecdote with the statistical information.
+
+  Therefore, we can keep the anecdote descriptions the same as in Experiment 1
+  (i.e., either causally similar to the target, or not). Further, we do not need
+  to include any further descriptions of the pool of anecdotes (such as the limit
+  of similarity) other than the fact that it is large and anecdotes are randomly
+  sampled.
 
 # Summary
 
-- Experiment 2 investigates the effects of anecdote alignment and valence on
+- Experiment 2 investigates the effects of anecdote similarity and valence on
   anecdotal bias.
 - IVs
     - Similarity: low and high.
@@ -96,6 +95,102 @@ sampled.
 ```{r plot-simulation-anecdotes-2, fig.cap = "Anecdotes Experiment 2 predicted data"}
 readd(plot_simulation_anecdotes_2)
 ```
+
+# Power analysis
+
+\newpage
+
+\blandscape
+
+```{r power-curve-anecdotes-2, fig.width = 13, fig.height = 7, fig.cap = "Anecdotes Experiment 2 power curve. Labels indicate lowest sample size above 80% power."}
+# power_anecdotes_2$power_curve
+```
+
+\elandscape
+
+\newpage
+
+# Materials
+
+- Instructions
+    - Similar wording to other experiments.
+    - Includes a test of basic instructions understanding/attention check.
+- Each participant will see five project displays.
+    - One for each similarity/valence combination + statistics only.
+    - Each display will have:
+      - Specific instructions to that display, which varies by anecdote,
+        similarity, and valence conditions.
+      - A table describing the two target projects, with allocation inputs.
+    - Displays with an anecdote will also have a paragraph of "analysis", which
+      describes why the project failed or succeeded (based on the valence
+      condition).
+    - Before each display, participants will see an "interstitial" page, whose
+      role is 1. to introduce the next display, and 2. an attention check
+      (not required to answer, so can be skipped if the interstitial text isn't
+      read).
+- The following are counterbalanced:
+    - Project variation (five latin square variations).
+      - The association of each display content with each within-subject
+        condition.
+    - Anecdote variation (two variations).
+        - The association of each project display and being either the target
+          or comparison project.
+- The following are randomised:
+    - Table column order.
+    - Project display order.
+- The below figures show a sample of the possible project displays
+  participants will see.
+    - The first 16 Figures showcase the experiment materials and order for a
+      participant in the combined anecdote condition.
+    - The final figure shows an example of a display from the anecdote only
+      condition. All that differs here are the instructions.
+
+## Screenshots
+
+```{r include = FALSE}
+file_name_materials <-
+  get_file_name_materials_anecdotes_2()
+
+file_path_materials <-
+  get_file_path_materials(materials_anecdotes_2, file_name_materials)
+
+figure_captions <-
+  file_name_materials %>%
+  str_replace_all(
+    c(
+      "_" = " ",
+      "allocation" = "allocation -",
+      "valence" = "valence:",
+      " alignment" = ", alignment:",
+      " anecdote condition" = ", anecdote condition:"
+    )
+  ) %>%
+  str_c(".") %>%
+  str_to_sentence()
+
+src <-
+  list(
+    file_name_materials %>%
+      str_replace_all("_", "-"),
+    figure_captions,
+    file_path_materials
+  ) %>%
+  pmap(
+    function(chunk_name, caption, path) {
+      c(
+        '```{r {{chunk_name}}, out.width = "100%", fig.cap = "{{caption}}", fig.pos = "H"}',
+        'image_read("{{path}}") %>% image_trim()',
+        "```"
+      ) %>%
+        knit_expand(text = .)
+    } # needs `text = `
+  )
+
+res <-
+  knit_child(text = unlist(src)) # only works when knitting
+```
+
+`r res`
 
 \newpage
 
