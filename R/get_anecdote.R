@@ -16,8 +16,14 @@ get_anecdote <- function(data) {
       ),
       anecdote = str_c(analysis_anecdote, anecdote_raw) %>%
         HTML() %>%
-        tags$fieldset(tags$legend("Case study")) %>%
-        list()
+        tags$fieldset(
+          tags$legend(
+            "Case study",
+            .noWS = "outside"
+          ),
+          .noWS = "inside"
+        ) %>%
+        as.character()
     ) %>%
     pull(anecdote)
 }

@@ -48,7 +48,8 @@ get_instructions_specific <- function(anecdote_within, anecdote_between,
         sep = " "
       )
     ) %>%
-    map(p)
+    map(~ .x %>%
+      p(.noWS = "outside"))
 
   case_when(
     anecdote_within == "anecdote" &
@@ -56,10 +57,16 @@ get_instructions_specific <- function(anecdote_within, anecdote_between,
     instructions_raw[1],
     anecdote_within == "anecdote" &
       anecdote_between == "combined" ~
-    p(instructions_raw) %>%
+    p(instructions_raw, .noWS = c("inside")) %>%
       list(),
     TRUE ~ instructions_raw[2]
   ) %>%
-    tags$fieldset(tags$legend("Instructions")) %>%
-    list()
+    tags$fieldset(
+      tags$legend(
+        "Instructions",
+        .noWS = "before"
+      ),
+      .noWS = "inside"
+    ) %>%
+    as.character()
 }

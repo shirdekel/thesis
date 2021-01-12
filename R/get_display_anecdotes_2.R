@@ -14,12 +14,41 @@
 get_display_anecdotes_2 <- function(instructions, anecdote_within, target, anecdote) {
   case_when(
     anecdote_within == "statistics_only" ~
-      list(target),
-    ## div(instructions, target) %>%
-    ##   as.character(),
+    str_c(
+      "\"",
+      instructions,
+      "<fieldset>",
+      str_c(
+        "Allocate your budget between the following two projects using",
+        "percentage values (the two values should sum to 100):",
+        sep = " "
+      ) %>%
+        p() %>%
+        as.character(),
+      "\" + ",
+      target,
+      " + \"<legend>Target projects</legend></fieldset>\""
+    ) %>%
+      insert_javascript() %>%
+      list(),
     anecdote_within == "anecdote" ~
-      list(target)
-    ## div(instructions, anecdote, target) %>%
-    ##   as.character()
+    str_c(
+      "\"",
+      instructions,
+      anecdote,
+      "<fieldset>",
+      str_c(
+        "Allocate your budget between the following two projects using",
+        "percentage values (the two values should sum to 100):",
+        sep = " "
+      ) %>%
+        p() %>%
+        as.character(),
+      "\" + ",
+      target,
+      " + \"<legend>Target projects</legend></fieldset>\""
+    ) %>%
+      insert_javascript() %>%
+      list()
   )
 }

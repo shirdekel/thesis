@@ -9,8 +9,10 @@ get_html_list <- function(list) {
     list %>%
     map_chr(
       ~ tags$ul(.x %>%
-        map(tags$li)) %>%
-        as.character()
+        map(~ .x %>%
+          tags$li(.noWS = "outside"))) %>%
+        as.character(),
+      .noWS = "inside"
     )
 
   return(html_list)

@@ -1,4 +1,7 @@
 ##' @title Get raw anecdote description
+##'
+##' Need to remove whitespace so that when concatenated by `insert_javascript`
+##' it stays on the same line.
 
 ##' @return
 ##' @author Shir Dekel
@@ -15,24 +18,62 @@ get_anecdote_raw <- function(business_name_anecdote, location_anecdote,
   withTags({
     ul(
       li(
-        "Business details:",
-        withTags({
-          ul(
-            li("Business name: ", business_name_anecdote),
-            li("Location: ", location_anecdote),
-            li("Integration: ", integration_anecdote),
-            li("Structure: ", structure_anecdote)
-          )
-        })
+        str_c(
+          "Business details:",
+          withTags({
+            ul(
+              li(
+                str_c(
+                  "Business name:", business_name_anecdote,
+                  sep = " "
+                ),
+                .noWS = "inside"
+              ),
+              li(
+                str_c(
+                  "Location:", location_anecdote,
+                  sep = " "
+                ),
+                .noWS = c("inside", "outside")
+              ),
+              li(
+                str_c(
+                  "Integration:", integration_anecdote,
+                  sep = " "
+                ),
+                .noWS = "inside"
+              ),
+              li(
+                str_c(
+                  "Structure:", structure_anecdote,
+                  sep = " "
+                ),
+                .noWS = c("inside", "outside")
+              ),
+              .noWS = "inside"
+            )
+          }) %>%
+            as.character()
+        ) %>%
+          HTML(),
+        .noWS = "inside"
       ),
       li(
-        "Investment:",
-        type_anecdote
+        str_c(
+          "Investment:",
+          type_anecdote
+        ),
+        .noWS = c("inside", "outside")
       ),
       li(
-        "Predicted project features:",
-        HTML(predicted_features_anecdote)
-      )
+        str_c(
+          "Predicted project features:",
+          predicted_features_anecdote
+        ) %>%
+          HTML(),
+        .noWS = "inside"
+      ),
+      .noWS = "inside"
     )
   }) %>%
     as.character()
