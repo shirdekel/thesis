@@ -14,10 +14,12 @@
 get_display_anecdotes_2 <- function(instructions, anecdote_within, target, anecdote) {
   case_when(
     anecdote_within == "statistics_only" ~
-    div(instructions, target) %>%
-      as.character(),
+      list(target),
+    ## div(instructions, target) %>%
+    ##   as.character(),
     anecdote_within == "anecdote" ~
-    div(instructions, anecdote, target) %>%
-      as.character()
+      list(target)
+    ## div(instructions, anecdote, target) %>%
+    ##   as.character()
   )
 }

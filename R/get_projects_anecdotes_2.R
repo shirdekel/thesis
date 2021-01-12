@@ -19,7 +19,12 @@ get_projects_anecdotes_2 <- function(project_variation,
     trial_generic(
       "survey-html-form3",
       html = insert_variable("allocation_display"),
-      data = insert_property(stage = "project_allocation")
+      data = insert_property(stage = "project_allocation"),
+      preamble = str_c(
+        "Allocate your budget between the following two projects using",
+        "percentage values (the two values should sum to 100):",
+        sep = " "
+      )
     )
 
   interstitial <-

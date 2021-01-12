@@ -14,7 +14,6 @@ case_when_target <- function(anecdote_within, anecdote_between, data) {
       anecdote_between == "anecdote_only" ~
     data %>%
       select(
-        project_type,
         "Business name" = business_name_target,
         "Project type" = type_target,
         "Location" = location_target,
@@ -28,7 +27,6 @@ case_when_target <- function(anecdote_within, anecdote_between, data) {
     TRUE ~
     data %>%
       select(
-        project_type,
         "Business name" = business_name_target,
         "Project type" = type_target,
         "Location" = location_target,
