@@ -411,10 +411,10 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "2.1.0",
+      "Version": "2.2.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0b316487b21d21f99ebf98abe179b1ea"
+      "Hash": "3ef298932294b775fa0a3eeaa3a645b0"
     },
     "clipr": {
       "Package": "clipr",
@@ -509,10 +509,10 @@
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.13.2",
+      "Version": "1.13.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "907b184e0fd13bc19154a8f322920015"
+      "Hash": "813fa8857aaa949b243e2e0b4abb8592"
     },
     "dbplyr": {
       "Package": "dbplyr",
@@ -667,9 +667,14 @@
     "faux": {
       "Package": "faux",
       "Version": "0.0.1.5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "636ca3ab41449a93f02492db5076225f"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "faux",
+      "RemoteUsername": "debruine",
+      "RemoteRef": "master",
+      "RemoteSha": "df0d2ba40d092aff4122eb422fc59403f82b7db5",
+      "Hash": "e87ff119e6add17a90b22db9390b5a94"
     },
     "filelock": {
       "Package": "filelock",
@@ -729,10 +734,10 @@
     },
     "ggplot2": {
       "Package": "ggplot2",
-      "Version": "3.3.2",
+      "Version": "3.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "4ded8b439797f7b1693bd3d238d0106b"
+      "Hash": "3eb6477d01eb5bbdc03f7d5f70f2733e"
     },
     "ggrepel": {
       "Package": "ggrepel",
@@ -841,10 +846,10 @@
     },
     "htmlwidgets": {
       "Package": "htmlwidgets",
-      "Version": "1.5.2",
+      "Version": "1.5.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0aaf56b7960bb066646e1868cadcaf07"
+      "Hash": "6fdaa86d0700f8b3e92ee3c445a5a10d"
     },
     "httpuv": {
       "Package": "httpuv",
@@ -890,10 +895,10 @@
     },
     "isoband": {
       "Package": "isoband",
-      "Version": "0.2.2",
+      "Version": "0.2.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "6e58bd3d6b3dd82a944cd6f05ade228f"
+      "Hash": "53647fb507373700028b2ce6cd30751a"
     },
     "iterators": {
       "Package": "iterators",
@@ -918,8 +923,8 @@
       "RemoteRepo": "jaysire",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "157fec4fba12b474c53210b8dcff8b4f23557ef8",
-      "Hash": "d4951b11e5f7e1a8ed9efca3d87962ae"
+      "RemoteSha": "c031b838ed219bfd997dbc7bb214bf5d6f77a0b8",
+      "Hash": "aeb1ea4fd1e8f4ff2fdbb69dbf064197"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -937,10 +942,10 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.7.1",
+      "Version": "1.7.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "1ec84e070b88b37ed169f19def40d47c"
+      "Hash": "98138e0994d41508c7a6b84a0600cfcb"
     },
     "knitr": {
       "Package": "knitr",
@@ -993,10 +998,10 @@
     },
     "lme4": {
       "Package": "lme4",
-      "Version": "1.1-25",
+      "Version": "1.1-26",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "b3b401eba1d6435bcf009576e811f9bf"
+      "Hash": "5f2466f5127e0ce67e44bb381387eeca"
     },
     "lmerTest": {
       "Package": "lmerTest",
@@ -1223,17 +1228,17 @@
     },
     "pillar": {
       "Package": "pillar",
-      "Version": "1.4.6",
+      "Version": "1.4.7",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "bdf26e55ccb7df3e49a490150277f002"
+      "Hash": "3b3dd89b2ee115a8b54e93a34cd546b4"
     },
     "pkgbuild": {
       "Package": "pkgbuild",
-      "Version": "1.1.0",
+      "Version": "1.2.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "404684bc4e3685007f9720adf13b06c1"
+      "Hash": "725fcc30222d4d11ec68efb8ff11a9af"
     },
     "pkgconfig": {
       "Package": "pkgconfig",
@@ -1300,10 +1305,10 @@
     },
     "processx": {
       "Package": "processx",
-      "Version": "3.4.4",
+      "Version": "3.4.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "03446ed0b8129916f73676726cb3c48f"
+      "Hash": "22aab6098cb14edd0a5973a8438b569b"
     },
     "progress": {
       "Package": "progress",
@@ -1321,10 +1326,10 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.4.0",
+      "Version": "1.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "f5d7d94cc097aa9dade988e3e6715067"
+      "Hash": "ebaed51a03411fd5cfc1e12d9079b353"
     },
     "purrr": {
       "Package": "purrr",
@@ -1466,10 +1471,10 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "0.4.8",
+      "Version": "0.4.10",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "843a6af51414bce7f8a8e372f11d6cd0"
+      "Hash": "599df23c40a4fce9c7b4764f28c37857"
     },
     "rmarkdown": {
       "Package": "rmarkdown",
@@ -1565,8 +1570,8 @@
       "RemoteRepo": "shiR",
       "RemoteUsername": "shirdekel",
       "RemoteRef": "master",
-      "RemoteSha": "091baacc4347309182aa9af75df3db723de5c1f2",
-      "Hash": "8515320702ceb8b1dd01490b16779e9c"
+      "RemoteSha": "238c8aadfbb0a33a4f0cd0b9a0a58b054365e6a8",
+      "Hash": "65fa1c7aac01a50642c795c139e7a740"
     },
     "showimage": {
       "Package": "showimage",
@@ -1675,10 +1680,10 @@
     },
     "testthat": {
       "Package": "testthat",
-      "Version": "3.0.0",
+      "Version": "3.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "13298cedd051cb7b8a8972d380b559a6"
+      "Hash": "17826764cb92d8b5aae6619896e5a161"
     },
     "tibble": {
       "Package": "tibble",
@@ -1752,10 +1757,10 @@
     },
     "vctrs": {
       "Package": "vctrs",
-      "Version": "0.3.5",
+      "Version": "0.3.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d25c5bea636cf892edbfd64fc3d20c20"
+      "Hash": "5cf1957f93076c19fdc81d01409d240b"
     },
     "viridis": {
       "Package": "viridis",
