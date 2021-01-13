@@ -3976,12 +3976,16 @@ role is designing the experiments with us and writing the papers.
     - [[https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard?variant=31440990044249][Keychron K6]]
     - [[https://www.keychron.com/products/keychron-k3-wireless-mechanical-keyboard?variant=32220198600793][Keychron K3]]
     - Showroom at [[https://www.mwave.com.au/contact/otherenquiries][mwave]]
+    - Keychron K1 v4
 *** Chair
 *** Speakers
 *** Laptop case
 *** Cable management
 *** Laptop stand
 *** USB hub
+    - https://mattgranger.com/usbc
+    - [[https://www.amazon.com/CharJenPro-PREMIUM-macSTICK-EXCLUSIVELY-Thunderbolt/dp/B01N5PX0DH/ref=as_li_ss_tl][CharJenPro]]
+    - [[https://www.amazon.com.au/dp/B07X5JKVSK?tag=mattgranger-22&geniuslink=true][UtechSmart]]
 ** Software
 *** Terminal
     - iTerm2
