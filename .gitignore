@@ -31,8 +31,8 @@ rsconnect/
 renv/
 
 # output files
-# *.pdf
-# *.png
+*.pdf
+*.png
 *.tex
 *.thm
 !preamble.tex
@@ -42,7 +42,7 @@ resource/
 *.log
 /inst/jspsych/alignment/experiment8/data/
 /inst/jspsych/alignment/testing/experiment8/data/
-# *.pptx
-# thesis_summary.html
-# materials_anecdotes_1.html
+*.pptx
+thesis_summary.html
+materials_anecdotes_1.html
 /test.html
