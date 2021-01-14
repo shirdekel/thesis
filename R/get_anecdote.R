@@ -17,13 +17,15 @@ get_anecdote <- function(data) {
       anecdote = str_c(analysis_anecdote, anecdote_raw) %>%
         HTML() %>%
         tags$fieldset(
+          class = "anecdote",
           tags$legend(
             "Case study",
             .noWS = "outside"
           ),
           .noWS = "inside"
         ) %>%
-        as.character()
+        as.character() %>%
+        str_replace_all("\"", "'")
     ) %>%
     pull(anecdote)
 }

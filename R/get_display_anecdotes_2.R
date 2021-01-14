@@ -17,7 +17,7 @@ get_display_anecdotes_2 <- function(instructions, anecdote_within, target, anecd
     str_c(
       "\"",
       instructions,
-      "<fieldset>",
+      "<fieldset class = 'target'>",
       str_c(
         "Allocate your budget between the following two projects using",
         "percentage values (the two values should sum to 100):",
@@ -36,7 +36,7 @@ get_display_anecdotes_2 <- function(instructions, anecdote_within, target, anecd
       "\"",
       instructions,
       anecdote,
-      "<fieldset>",
+      "<fieldset class = 'target'>",
       str_c(
         "Allocate your budget between the following two projects using",
         "percentage values (the two values should sum to 100):",

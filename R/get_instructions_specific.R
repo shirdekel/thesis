@@ -62,11 +62,13 @@ get_instructions_specific <- function(anecdote_within, anecdote_between,
     TRUE ~ instructions_raw[2]
   ) %>%
     tags$fieldset(
+      class = "instructions",
       tags$legend(
         "Instructions",
         .noWS = "before"
       ),
       .noWS = "inside"
     ) %>%
-    as.character()
+    as.character() %>%
+    str_replace_all("\"", "'")
 }
