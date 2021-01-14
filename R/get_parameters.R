@@ -55,8 +55,14 @@ get_parameters <- function() {
           "datetime > '2020-07-28'",
           "datetime < '2020-12-14'"
         ),
+        # Fixed
         c(
-          "datetime > '2020-12-14'"
+          "datetime > '2020-12-14'",
+          "datetime < '2021-01-12'"
+        ),
+        # Fixed - explicit high top up
+        c(
+          "datetime > '2021-01-12'"
         )
       ),
       "datetime > '2020-07-28'",
@@ -82,7 +88,8 @@ get_parameters <- function() {
       NA,
       list(
         "incorrect_input_id",
-        NA
+        NA,
+        "high_explicit"
       ),
       NA,
       NA
