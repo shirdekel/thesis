@@ -31,22 +31,70 @@ loadd(plot_alignment_8)
 `r descriptives_alignment_8$apa` Table\ \@ref(tab:condition-allocation-table) shows the condition allocation.
 
 ```{r condition-allocation-table}
-descriptives_alignment_8$condition_allocation_table %>% 
-  apa_table("Group allocation to the between-subject variables of awareness, presentation, and distribution.")
+descriptives_alignment_8$condition_allocation_table %>%
+  apa_table("Group allocation to the between-subject variables of alignment and reliability type.")
 ```
 
 # Results
 
-## Project allocation
+## Summary
 
-Figure\ \@ref(fig:plot-allocation) shows the allocation data. Table\ \@ref(tab:allocation-results)
+- Explicit reliability
+    - Participants used (didn't use) NPV when told explicitly that is reliable
+      (unreliable).
+    - However, participants relied on NPV more regardless of reliability when
+      projects were dissimilar, compared to when they were similar.
+- Implicit reliability
+    - Participants did not use ranges to moderate allocations
+    - However, they did use the NPV mid-point.
+    - They also relied on NPV more when projects were dissimilar than when they
+      were similar.
 
-```{r plot-allocation, fig.cap = "Mean project acceptance for the similarity effect."}
+## Detailed
+
+We found evidence for all but one of the hypothesised effects.
+
+1. The four way interaction (alignment $\times$ reliability amount $\times$ NPV
+  amount $\times$ reliability type) was significant,
+  `r results_alignment_8$four_way`.
+  - See Figure\ \@ref(fig:plot-four-way).
+2. The three-way interaction (reliability amount $\times$ NPV amount $\times$
+  reliability type) in the high alignment condition was significant,
+  `r results_alignment_8$alignment_high_three_way`.
+3. The three-way interaction (alignment $\times$ reliability amount $\times$
+  NPV amount) in the explicit reliability condition was significant,
+  `r results_alignment_8$reliability_type_explicit_three_way`.
+4. The NPV amount $\times$ reliability type (averaging over reliability amount)
+  in the low alignment condition was significant,
+  `r results_alignment_8$alignment_low_two_way`.
+5. The association between allocation and NPV amount for those in the explicit
+  reliability high alignment condition was significantly stronger for those in
+  the high reliability condition, than for those in the low reliability
+  condition,
+  `r results_alignment_8$alignment_high_reliability_type_explicit_reliability_amount`.
+6. The association between allocation and NPV amount for those in the
+  explicit low reliability condition was significantly stronger for those in the
+  low alignment condition, than for those in the high alignment condition,
+  `r results_alignment_8$reliability_type_explicit_reliability_amount_low_alignment`.
+7. The association between allocation and NPV amount for those in the low
+  alignment condition was significantly stronger for those in the explicit
+  reliability condition, than for those in the implicit reliability condition
+  (averaging over reliability amount),
+  `r results_alignment_8$alignment_low_reliability_type`.
+8. The association between allocation and NPV amount for those in the implicit
+  reliability condition was significantly "equivalent" between those in the
+  low and high alignment conditions (averaging over reliability amount),
+  `r results_alignment_8$reliability_type_implicit_alignment_null`.
+    - However, a post-hoc comparison suggests a significant difference from zero
+    (with Bonferroni adjustment),
+    `r results_alignment_8$reliability_type_implicit_alignment`.
+9. The association between allocation and NPV amount for those in the implicit
+  reliability condition was significantly "equivalent" between those in the low
+  and high reliability conditions for both those in the low alignment
+  `r results_alignment_8$alignment_low_reliability_type_implicit_reliability_amount_null`
+  and high alignment conditions
+  `r results_alignment_8$alignment_high_reliability_type_implicit_reliability_amount_null`.
+
+```{r plot-four-way, fig.cap = "Mean project allocation for all conditions."}
 plot_alignment_8
-```
-
-
-```{r allocation-results, fig.cap = "lmer output."}
-results_alignment_8$table %>%
-  apa_table()
 ```
