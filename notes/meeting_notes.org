@@ -771,6 +771,43 @@
     - See what the highest pay for postdoc
 *** feedback
     - doing a good job
+* Notes from <2021-01-15 Fri>                                       :ARCHIVE:
+** Present at meeting
+   - [ ] Dan
+   - [X] Micah
+** Agenda
+   - Grant application
+** Notes
+*** Title
+    - Too long for online application
+*** Participants
+    - Kahneman email
+    - Institution approval?
+    - Need him to register in RMS
+*** Objectives
+    - Can they just be the same as the aims?
+*** FOR
+    - Codes
+    - Percentages
+*** basic question
+    - Because the RAT doesn't directly assess aggregation, we have to do somethign at the begining
+    - logic
+      - show orgs don't do this
+      - show things that help
+      - and end iwth we can help you
+    - problem: had gap between identifying the problem and doing the studies
+    - don't we have to establish that they aren't aggregating properly
+    - difference between not applying aggregation knowledge because different times
+      - from not being aware of aggregation
+    - choice bracketing didn't work for naive
+    - first org then large sample studies
+      - why not get
+*** deadlines
+    - Feb 10: finish everything but project description
+*** interest
+    - Rule out left wing humanity
+    - our project is in line with all the capitalist principles
+*** TODO Action #37 Get started on other grant sections                 :#37:
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -920,3 +957,5 @@
 ** TODO Action #30 draft budget                                         :#30:
    - budget: go over
    - See what the highest pay for postdoc
+     
+** TODO Action #37 Get started on other grant sections                  :#37:
