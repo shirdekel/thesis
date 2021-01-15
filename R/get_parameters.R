@@ -49,22 +49,7 @@ get_parameters <- function() {
       get_prolific_filter_aggregation_4(),
       NA,
       NA,
-      ## Initial batch had incorrect input IDs
-      list(
-        c(
-          "datetime > '2020-07-28'",
-          "datetime < '2020-12-14'"
-        ),
-        # Fixed
-        c(
-          "datetime > '2020-12-14'",
-          "datetime < '2021-01-12'"
-        ),
-        # Fixed - explicit high top up
-        c(
-          "datetime > '2021-01-12'"
-        )
-      ),
+      get_prolific_filter_alignment_8(),
       "datetime > '2020-07-28'",
       "datetime > '2020-07-28'"
     )
@@ -89,7 +74,8 @@ get_parameters <- function() {
       list(
         "incorrect_input_id",
         NA,
-        "high_explicit"
+        "high_explicit",
+        "high_implicit"
       ),
       NA,
       NA
