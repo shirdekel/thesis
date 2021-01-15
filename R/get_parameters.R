@@ -75,7 +75,8 @@ get_parameters <- function() {
         "incorrect_input_id",
         NA,
         "high_explicit",
-        "high_implicit"
+        "high_implicit",
+        "low_implicit"
       ),
       NA,
       NA

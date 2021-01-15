@@ -24,8 +24,14 @@ get_prolific_filter_alignment_8 <- function() {
     ),
     # Fixed - high implicit top up
     c(
+        "datetime > '2021-01-12'",
+        "alignment == 'high'",
+        "reliability_type == 'implicit'"
+    ),
+    # Fixed - low implicit top up
+    c(
       "datetime > '2021-01-12'",
-      "alignment == 'high'",
+      "alignment == 'low'",
       "reliability_type == 'implicit'"
     )
   )
