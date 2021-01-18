@@ -808,6 +808,34 @@
     - Rule out left wing humanity
     - our project is in line with all the capitalist principles
 *** TODO Action #37 Get started on other grant sections                 :#37:
+* Notes from <2021-01-18 Mon>                                       :ARCHIVE:
+** Present at meeting
+   - [X] Micah
+** Agenda
+   - Grant application
+** Notes
+*** Get kahneman to get RMS and ROPE
+*** Priorities
+    - None of research priorities really apply to social sciences anyway
+    - So maybe rely on the innovation priorities from industry instead
+*** FOR
+    - For reviewers, so need to ask Dan
+*** SEO
+    - expanding knoweldge not needed.
+    - Used for when you don't have anything else
+*** interdisciplanary
+    - if say yes and it's psych + mangement
+    - so it's fine
+    - Not fine for FOR
+*** international
+    - Bringing kahneman to sydney
+*** conference
+    - Probably don't ask for two
+*** equipment
+    - Justify computers with computing power for simulations and aggregation tool
+*** sample sizes
+    - if can justify then helpful
+*** TODO Action #38 Create list of things we need from Dan              :#38:
 * Actions
 ** DONE Action #1 Add explanation for explicit reliability               :#1:
    CLOSED: [2020-11-02 Mon 19:14]
@@ -871,7 +899,8 @@
 ** TODO Action #15 Analyse anecdotes 2 as specific hypotheses           :#15:
    - And infer the interactions
    - So essentially like the stats consultant said
-** TODO Action #16 Clarify that anecdotes are sampled randomly          :#16:
+** DONE Action #16 Clarify that anecdotes are sampled randomly          :#16:
+   CLOSED: [2021-01-18 Mon 16:33]
 ** TODO Action #17 Justify normative case for aggregated data           :#17:
    - Within our specific parameters
    - e.g., of large number of cases
@@ -954,8 +983,36 @@
        - Innovative activity in Australian businesses, selected indicators(a), by employment size, 2016-17 from [[https://www.abs.gov.au/statistics/industry/technology-and-innovation/innovation-australian-business/latest-release#innovation-in-australian-business-summary][Innovation in Australian Business]]
          - Percent of businesses that introduced or implemented innovation in large business: 63%
            - vs 44% for all others (average)
-** TODO Action #30 draft budget                                         :#30:
+** DONE Action #30 draft budget                                         :#30:
+   CLOSED: [2021-01-18 Mon 16:33]
    - budget: go over
    - See what the highest pay for postdoc
      
-** TODO Action #37 Get started on other grant sections                  :#37:
+** DONE Action #37 Get started on other grant sections                  :#37:
+   CLOSED: [2021-01-18 Mon 16:33]
+** DONE Action #38 Create list of things we need from Dan               :#38:
+   CLOSED: [2021-01-18 Mon 17:56]
+   - Kahneman
+     - Set up RMS login
+     - Get info for ROPE
+     - Salary for budget
+     - Host him in Sydney?
+   - Science and Research Priorities
+     - Are there any specific ones that fit, or do we just focus on National Innovation and Science Agenda in the Project Description?
+   - FOR and SEO codes
+     - Are there specific codes that you think will lead to ideal reviewers?
+     - At the moment we have:
+       - FOR
+         - 150307 - Innovation and Technology Management
+         - 150312 - Organisational Planning and Management
+         - 150310 - Organisation and Management Theory
+         - 150311 - Organisational Behaviour
+       - SEO
+         - 910406 - Technological and Organisational Innovation
+         - 910402 - Management
+   - Conferences
+     - Do you see an issue with asking to go to both SMS and AOM? Or is there one we should preference?
+   - Companies
+     - How many?
+     - How many employees surveyed for each?
+     - Location?
