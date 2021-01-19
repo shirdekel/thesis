@@ -42,20 +42,25 @@ get_screenshots_anecdotes_2 <- function() {
     casper_calls_chronological %>%
     .[
       c(
-        # instructions
+        # General instructions
         1,
-        # combined condition (interstitial, display, follow-up) x 3
-        2:16,
-        # anecdote only condition
-        3
+        # Anecdote only instructions
+        3,
+        # Combined instructions
+        3,
+        # Statistics only instructions
+        15,
+        # Interstitial, display (anecdote and target), and follow-up x 5
+        2:16
       )
     ]
 
   anecdote_between <-
     c(
+      "anecdote_only" %>%
+        rep(2),
       "combined" %>%
-        rep(16),
-      "anecdote_only"
+        rep(17)
     )
 
   webshot_eval <-
@@ -80,10 +85,75 @@ get_screenshots_anecdotes_2 <- function() {
       }
     )
 
+  selector_type <-
+    list(
+      instructions = ".instructions",
+      anecdote = c(".anecdote", ".target"),
+      statistics_only = ".target"
+    )
+
+  selector <-
+    list(
+      NULL,
+      selector_type$anecdote,
+      NULL
+    ) %>%
+    rep(4) %>%
+    c(
+      list(NULL),
+      list(selector_type$instructions) %>%
+        rep(3),
+      .,
+      list(NULL),
+      list(selector_type$statistics_only),
+      list(NULL)
+    )
+
+  expand_type <-
+    list(
+      anecdote_only = c(-1073, 0, 1073, 0),
+      combined_short = c(-1485, 0, 1485, 0),
+      combined_long = c(-1597, 0, 1597, 0),
+      statistics_only = c(-469, 0, 469, 0)
+    )
+
+  expand_allocation <-
+    c(
+      expand_type$combined_short %>%
+        list(),
+      expand_type$combined_long %>%
+        list() %>%
+        rep(3),
+      expand_type$statistics_only %>%
+        list()
+    )
+
+  expand <-
+    expand_allocation %>%
+    list(
+      0 %>% rep(5),
+      .,
+      0 %>% rep(5)
+    ) %>%
+    transpose() %>%
+    flatten() %>%
+    c(
+      0,
+      expand_type$anecdote_only %>%
+        list(),
+      expand_type$combined_short %>%
+        list(),
+      expand_type$statistics_only %>%
+        list(),
+      .
+    )
+
   screenshot_components <-
     lst(
       file_path_materials,
-      webshot_eval
+      webshot_eval,
+      selector,
+      expand
     )
   screenshot_components
 }

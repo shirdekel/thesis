@@ -159,10 +159,11 @@ figure_captions <-
   str_replace_all(
     c(
       "_" = " ",
+      "specific instructions" = "specific instructions -",
       "allocation" = "allocation -",
       "valence" = "valence:",
       " alignment" = ", alignment:",
-      " anecdote condition" = ", anecdote condition:"
+      "anecdote condition" = "anecdote condition:"
     )
   ) %>%
   str_c(".") %>%

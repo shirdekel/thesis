@@ -10,8 +10,15 @@
 ##' @author Shir Dekel
 ##' @export
 get_file_name_materials_anecdotes_2 <- function() {
-  project_allocation <-
-    c("low", "high") %>%
+  specific_instructions <-
+    str_c(
+      "specific_instructions",
+      "anecdote_condition",
+      c("anecdote_only", "combined", "statistics_only"),
+      sep = "_"
+    )
+
+  c("high", "low") %>%
     map(
       ~ str_c("project_allocation",
         "valence",
@@ -22,17 +29,6 @@ get_file_name_materials_anecdotes_2 <- function() {
       )
     ) %>%
     unlist() %>%
-    map(
-      ~ str_c(.x,
-        "anecdote_condition",
-        c("anecdote_only", "combined"),
-        sep = "_"
-      )
-    ) %>%
-    transpose() %>%
-    simplify_all()
-
-  project_allocation[[2]] %>%
     c("project_allocation_statistics_only") %>%
     list(
       str_c("interstitial", seq_len(5), sep = "_"),
@@ -41,6 +37,9 @@ get_file_name_materials_anecdotes_2 <- function() {
     ) %>%
     transpose() %>%
     unlist() %>%
-    c(project_allocation[[1]][[1]]) %>%
-    c("instructions", .)
+    c(
+      "general_instructions",
+      specific_instructions,
+      .
+    )
 }
