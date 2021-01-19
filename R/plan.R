@@ -128,10 +128,10 @@ the_plan <-
       ),
       format = "file"
     ),
-    materials_memo = target(
+    plan_memo = target(
       {
-        render(knitr_in(!!memo_path$materials$Rmd))
-        file_out(!!memo_path$materials$pdf)
+        render(knitr_in(!!memo_path$plan$Rmd))
+        file_out(!!memo_path$plan$pdf)
       },
       transform = map(
         .data = !!parameters,

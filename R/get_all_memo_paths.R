@@ -10,7 +10,7 @@
 get_all_memo_paths <- function(thesis_project, experiment_number) {
 
   memo_type <-
-    c("materials", "summary")
+    c("plan", "summary")
 
   memo_extension <-
     c("Rmd", "pdf")
