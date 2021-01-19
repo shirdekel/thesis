@@ -10,6 +10,8 @@ get_results_alignment_8 <- function(data_clean, iv, dv) {
   set_sum_contrasts()
   model <-
     data_clean %>%
+    nest_by(id, npv_amount, reliability_amount, alignment, reliability_type,
+            allocation) %>%
     lm(
       allocation ~
       npv_amount * reliability_amount * alignment * reliability_type,
