@@ -140,10 +140,14 @@ readd(plot_simulation_anecdotes_2)
     - Project display order.
 - The below figures show a sample of the possible project displays
   participants will see.
-    - The first 16 Figures showcase the experiment materials and order for a
-      participant in the combined anecdote condition.
-    - The final figure shows an example of a display from the anecdote only
-      condition. All that differs here are the instructions.
+    - Figure\ \@ref(fig:general-instructions) shows the "General instructions".
+    - The next three figures show the "Specific instructions". These are seen in
+      each allocation display, above the case study and target projects, but are
+      here shown separately for brevity.
+    - The next 15 Figures showcase the experiment materials (without the
+        specific instructions) as a participant would see them.
+    - Click on the below link to try out the experiment:
+        - https://psychsydexp.net/business-decisions/
 
 ## Screenshots
 
