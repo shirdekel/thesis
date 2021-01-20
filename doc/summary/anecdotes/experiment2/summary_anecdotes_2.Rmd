@@ -18,3 +18,27 @@ output:
     includes: 
       in_header: "preamble.tex"
 ---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(descriptives_anecdotes_2)
+loadd(results_anecdotes_2)
+loadd(plot_anecdotes_2)
+```
+
+# Participants
+
+`r descriptives_anecdotes_2$apa` Table\ \@ref(tab:condition-allocation-table) shows the condition allocation.
+
+```{r condition-allocation-table}
+descriptives_anecdotes_2$condition_allocation_table %>%
+  apa_table("Group allocation to the between-subject anecdote conditions.")
+```
+
+# Results
+
+## Summary
+
+```{r plot-four-way, fig.cap = "Mean project allocation for all conditions."}
+plot_anecdotes_2
+```
