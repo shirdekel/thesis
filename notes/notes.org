@@ -849,12 +849,35 @@
     - Should end up a list that has low and high alignment
       - In each has anecdote and target
         - In each has the five pairs
-*** TODO Analysis
+*** DONE Analysis
+    CLOSED: [2021-01-20 Wed 11:28]
     - How are we comparing between Stats only and the others again?
     - I guess compare the difference stats only and the anecdote condition
       - And compare for each between subs condition.
     - Could get a "corrected" difference score of stats only vs anecdote condition
       - Only works if within-subjects, I think.
+**** Hypotheses
+     - Omnibus
+       - Anecdote x similarity x valence
+     - Similarity check
+       - Negative valence
+         - Anecdotes only: low similarity > high similarity
+       - Positive valence
+         - Anecdotes only: high similarity > low similarity
+     - Effect of statistics
+       - Negative valence
+         - High similarity: combined > anecdote only
+       - Positive valence
+         - High similarity: combined > anecdote only
+     - Anecdotal bias moderated by similarity
+       - Negative valence
+         - Statistics only > combined high similarity
+         - Combined: Low similarity > high similarity
+         - Statistics only = combined low similarity
+       - Positive valence
+         - Statistics only > combined low similarity
+         - Combined: High similarity > low similarity
+         - Statistics only = combined high similarity
 *** DONE Fix alignment correspondence with string value, structure, and integration
     CLOSED: [2020-12-12 Sat 09:45]
 *** DONE Fix predicted features
@@ -882,29 +905,8 @@
     CLOSED: [2020-12-30 Wed 15:14]
 *** DONE Fix project display aesthetics
     CLOSED: [2021-01-08 Fri 17:05]
-**** Hypotheses
-     - Omnibus
-       - Anecdote x similarity x valence
-     - Similarity check
-       - Negative valence
-         - Anecdotes only: low similarity > high similarity
-       - Positive valence
-         - Anecdotes only: high similarity > low similarity
-     - Effect of statistics
-       - Negative valence
-         - High similarity: combined > anecdote only
-       - Positive valence
-         - High similarity: combined > anecdote only
-     - Anecdotal bias moderated by similarity
-       - Negative valence
-         - Statistics only > combined high similarity
-         - Combined: Low similarity > high similarity
-         - Statistics only = combined low similarity
-       - Positive valence
-         - Statistics only > combined low similarity
-         - Combined: High similarity > low similarity
-         - Statistics only = combined high similarity
-*** TODO Screenshots
+*** DONE Screenshots
+    CLOSED: [2021-01-20 Wed 11:29]
 *** TODO Change alignment to similarity
     - State "TODO"       from              [2021-01-19 Tue 14:44]
 * Aggregation
