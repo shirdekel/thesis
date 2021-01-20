@@ -907,8 +907,36 @@
     CLOSED: [2021-01-08 Fri 17:05]
 *** DONE Screenshots
     CLOSED: [2021-01-20 Wed 11:29]
-*** TODO Change alignment to similarity
+*** DONE Change alignment to similarity
+    CLOSED: [2021-01-20 Wed 13:16]
     - State "TODO"       from              [2021-01-19 Tue 14:44]
+*** TODO Add follow-up analyses
+    - Hypotheses
+      - Manipulation check - Similarity conditions are rated accordingly
+        - Similarity rating: High similarity > low similarity
+        - Regardless of condition
+      - Allocation is influenced by perceived similarity
+        - Negative valence
+          - Negative correlation between allocation and similarity rating
+        - Positive valence
+          - Positive correlation between allocation and similarity rating
+      - The relationship between allocation and specific relevance is moderated
+        by similarity
+        - Negative valence
+          - Low similarity: no correlation between allocation and specific relevance rating
+          - High similarity: negative correlation between allocation and specific relevance rating
+        - Positive valence
+          - Low similarity: no correlation between allocation and specific relevance rating
+          - High similarity: positive correlation between allocation and specific relevance rating
+      - Specific relevance is related to similarity rating
+        - Positive correlation between similarity rating and specific relevance rating
+        - Regardless of condition
+      - General relevance is unrelated to allocations
+        - No correlation between general relevance and allocation
+*** TODO Fix follow-up ratings
+    - From 0-6 to 1-6
+    - Or 1-7 if we decide
+
 * Aggregation
 ** Analysis
    - From Evan:
