@@ -806,7 +806,6 @@
       - However, as a back up we can just always end up descriptive and just point
       to the fact that people are not so dumb like in the analogy literature to simply
       use any indicator as relevance.
-
 *** DONE Fix analysis content specifics
     CLOSED: [2020-12-30 Wed 11:26]
     - State "TODO"       from              [2020-12-24 Thu 15:30]
@@ -865,7 +864,6 @@
     multiplier just for the anecdote
     - And the anecdote multiplier should be different for each similarity condition
     - So the 1 is for the target, and the non-zero multipliers for the anecdote
-      
 *** DONE Add reference class similarity description
     CLOSED: [2021-01-08 Fri 14:43]
 *** DONE Update NPVs and reliability
@@ -884,8 +882,31 @@
     CLOSED: [2020-12-30 Wed 15:14]
 *** DONE Fix project display aesthetics
     CLOSED: [2021-01-08 Fri 17:05]
+**** Hypotheses
+     - Omnibus
+       - Anecdote x similarity x valence
+     - Similarity check
+       - Negative valence
+         - Anecdotes only: low similarity > high similarity
+       - Positive valence
+         - Anecdotes only: high similarity > low similarity
+     - Effect of statistics
+       - Negative valence
+         - High similarity: combined > anecdote only
+       - Positive valence
+         - High similarity: combined > anecdote only
+     - Anecdotal bias moderated by similarity
+       - Negative valence
+         - Statistics only > combined high similarity
+         - Combined: Low similarity > high similarity
+         - Statistics only = combined low similarity
+       - Positive valence
+         - Statistics only > combined low similarity
+         - Combined: High similarity > low similarity
+         - Statistics only = combined high similarity
 *** TODO Screenshots
-
+*** TODO Change alignment to similarity
+    - State "TODO"       from              [2021-01-19 Tue 14:44]
 * Aggregation
 ** Analysis
    - From Evan:
