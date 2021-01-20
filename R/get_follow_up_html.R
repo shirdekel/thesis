@@ -34,7 +34,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
     "justify"
   )
 
-  similarity <-
+  similarity_rating <-
     str_c(
       "how similar do you think the",
       target$business_name_anecdote,
@@ -46,7 +46,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
       sep = " "
     )
 
-  relevance_specific <-
+  relevance_specific_rating <-
     str_c(
       "how relevant do you think the information about the",
       target$business_name_anecdote,
@@ -56,7 +56,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
       sep = " "
     )
 
-  relevance_general <-
+  relevance_general_rating <-
     str_c(
       "how relevant do you think the information about the",
       target$business_name_anecdote,
@@ -84,9 +84,9 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
       sep = " "
     ),
     question_raw = c(
-      similarity,
-      relevance_specific,
-      relevance_general,
+      similarity_rating,
+      relevance_specific_rating,
+      relevance_general_rating,
       ""
     ),
     question = str_c(
@@ -97,10 +97,8 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
       scale_explanation,
       "."
     ),
-    question_name = c(
-      "similarity", "relevance-specific", "relevance-general",
-      "justify"
-    ),
+    question_name = c("similarity-rating", "relevance-specific-rating",
+                      "relevance-general-rating", "justify"),
     follow_up_id = str_c(
       "follow-up",
       anecdote_within,
