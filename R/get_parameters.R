@@ -124,9 +124,9 @@ get_parameters <- function() {
         "alignment"
       ),
       c(
-        "anecdote_between"
-        ## "alignment",
-        ## "valence"
+        "anecdote_between",
+        "similarity",
+        "valence"
       )
     )
 

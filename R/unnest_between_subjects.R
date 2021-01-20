@@ -1,7 +1,7 @@
 ##' @title Unnest between-subjects components
 
 ##' Expand each between-subjects condition. Also, unnest project variation so
-##' that each within-subjects combination (of alignment and valence) gets a
+##' that each within-subjects combination (of similarity and valence) gets a
 ##' different project variation sequencej.
 ##' @return
 ##' @author Shir Dekel

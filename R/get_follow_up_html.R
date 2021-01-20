@@ -7,7 +7,7 @@
 ##' @author Shir Dekel
 ##' @export
 get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
-                               alignment) {
+                               similarity) {
   target <-
     data %>%
     filter(project_type == "target")
@@ -103,7 +103,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
       "follow-up",
       anecdote_within,
       valence,
-      alignment,
+      similarity,
       question_type,
       question_name,
       sep = "_"

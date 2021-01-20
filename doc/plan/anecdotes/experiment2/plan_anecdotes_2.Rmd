@@ -166,7 +166,7 @@ figure_captions <-
       "specific instructions" = "specific instructions -",
       "allocation" = "allocation -",
       "valence" = "valence:",
-      " alignment" = ", alignment:",
+      " similarity" = ", similarity:",
       "anecdote condition" = "anecdote condition:"
     )
   ) %>%

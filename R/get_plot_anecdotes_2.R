@@ -10,7 +10,7 @@ get_plot_anecdotes_2 <- function(data_clean) {
       id,
       anecdote_between,
       anecdote_within,
-      alignment,
+      similarity,
       valence,
       allocation
     ) %>%
@@ -20,7 +20,7 @@ get_plot_anecdotes_2 <- function(data_clean) {
       dv = "allocation"
     ) +
     facet_grid(
-      col = vars(alignment), row = vars(anecdote_between),
+      col = vars(similarity), row = vars(anecdote_between),
       labeller = label_both
     )
 

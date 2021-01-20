@@ -14,7 +14,7 @@ nest_for_timeline <- function(parameters_anecdotes_2) {
       project_variation,
       anecdote_variation,
       anecdote_between,
-      alignment,
+      similarity,
       valence,
       display,
       follow_up

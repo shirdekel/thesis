@@ -16,7 +16,7 @@ mutate_project_variation <- function(between_subjects_unnested) {
       type = get_project_type_anecdotes_2() %>%
         list(),
       location = case_when(
-        alignment == "high" ~ get_location_anecdotes_2() %>%
+        similarity == "high" ~ get_location_anecdotes_2() %>%
           .[["high"]] %>%
           list(),
         # Doesn't matter which anecdote locations NA gets, because they don't
@@ -34,7 +34,7 @@ mutate_project_variation <- function(between_subjects_unnested) {
       value_numeric = get_project_value_base() %>%
         list(),
       value_string = case_when(
-        alignment == "high" ~ get_value_string() %>%
+        similarity == "high" ~ get_value_string() %>%
           pluck("high") %>%
           list(),
         TRUE ~ get_value_string() %>%

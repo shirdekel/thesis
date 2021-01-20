@@ -48,7 +48,7 @@ get_display_setup <- function() {
         unit
       ),
       input_id = get_input_id(
-        feature, value, anecdote_within, alignment, valence,
+        feature, value, anecdote_within, similarity, valence,
         business_name, type, npv, reliability, project_type
       )
     ) %>%

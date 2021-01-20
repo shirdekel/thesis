@@ -11,7 +11,8 @@
 ##' @param anecdote_within
 ##' @param target
 ##' @param anecdote
-get_display_anecdotes_2 <- function(instructions, anecdote_within, target, anecdote) {
+get_display_anecdotes_2 <- function(instructions, anecdote_within, target,
+                                    anecdote) {
   case_when(
     anecdote_within == "statistics_only" ~
     str_c(

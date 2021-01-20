@@ -4,14 +4,14 @@
 ##' @author Shir Dekel
 ##' @export
 get_reason_value_string <- function() {
-  low_alignment <-
+  low_similarity <-
     list(
       get_reason_value_string_negative(),
       get_reason_value_string_positive()
     )
 
-  high_alignment <-
-    low_alignment %>%
+  high_similarity <-
+    low_similarity %>%
     map_depth(
       3,
       ~ .x %>%
@@ -20,8 +20,8 @@ get_reason_value_string <- function() {
     )
 
   c(
-    high_alignment,
-    low_alignment,
+    high_similarity,
+    low_similarity,
     NA
   )
 }

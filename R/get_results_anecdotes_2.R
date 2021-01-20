@@ -13,14 +13,14 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     nest_by(
       id,
       anecdote_between,
-      alignment,
+      similarity,
       valence,
       allocation
     ) %>%
     aov_4(
       allocation ~
       anecdote_between +
-        (c(alignment * valence) | id),
+        (c(similarity * valence) | id),
       data = .
     )
 
@@ -43,7 +43,7 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     c("anecdote_only_negative_high_low", "anecdote_only_positive_high_low") %>%
     map(
       ~ model %>%
-        emmeans(c("anecdote_between", "alignment", "valence")) %>%
+        emmeans(c("anecdote_between", "similarity", "valence")) %>%
         pairs(by = c("anecdote_between", "valence")) %>%
         apa_print() %>%
         pluck("full_result", .x)
@@ -64,8 +64,8 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     ) %>%
     map(
       ~ model %>%
-        emmeans(c("anecdote_between", "alignment", "valence")) %>%
-        pairs(by = c("alignment", "valence")) %>%
+        emmeans(c("anecdote_between", "similarity", "valence")) %>%
+        pairs(by = c("similarity", "valence")) %>%
         apa_print() %>%
         pluck("full_result", .x)
     ) %>%
@@ -96,7 +96,7 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
         nest_by(
           id,
           anecdote_between,
-          alignment,
+          similarity,
           valence,
           allocation,
           anecdote_within
@@ -107,7 +107,7 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
         ) %>%
         mutate(
           within = case_when(
-            anecdote_within == "anecdote" ~ str_c("similarity", alignment,
+            anecdote_within == "anecdote" ~ str_c("similarity", similarity,
               sep = "_"
             ),
             TRUE ~ anecdote_within

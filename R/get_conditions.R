@@ -8,7 +8,7 @@ get_conditions <- function() {
     expand_grid(
       anecdote_between = c("anecdote_only", "combined"),
       anecdote_within = "anecdote",
-      alignment = c("low", "high"),
+      similarity = c("low", "high"),
       valence = c("negative", "positive"),
       feature_type = c("target", "anecdote"),
       project_type = c("target", "comparison"),
@@ -22,7 +22,7 @@ get_conditions <- function() {
     ) %>%
     mutate(
       anecdote_within = "statistics_only",
-      alignment = "NA",
+      similarity = "NA",
       valence = "NA",
     )
 
@@ -30,7 +30,7 @@ get_conditions <- function() {
     full_join(
       conditions_statistics_only,
       by = c(
-        "anecdote_between", "anecdote_within", "alignment", "valence",
+        "anecdote_between", "anecdote_within", "similarity", "valence",
         "feature_type", "project_type"
       )
     )

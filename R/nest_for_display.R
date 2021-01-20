@@ -16,7 +16,7 @@ nest_for_display <- function(feature_type_pivoted) {
       anecdote_variation,
       anecdote_between,
       anecdote_within,
-      alignment,
+      similarity,
       valence
     )
   nested_for_display

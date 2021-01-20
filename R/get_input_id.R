@@ -6,14 +6,14 @@
 ##' @param feature
 ##' @param value
 ##' @param anecdote_within
-##' @param alignment
+##' @param similarity
 ##' @param valence
 ##' @param business_name
 ##' @param type
 ##' @param npv
 ##' @param reliability
 ##' @param project_type
-get_input_id <- function(feature, value, anecdote_within, alignment, valence,
+get_input_id <- function(feature, value, anecdote_within, similarity, valence,
                          business_name, type, npv, reliability, project_type) {
   str_c(
     feature %>%
@@ -26,7 +26,7 @@ get_input_id <- function(feature, value, anecdote_within, alignment, valence,
       # So that later parsing can use _ as a delimiter
       anecdote_within %>%
         str_replace_all("_", "-"),
-      alignment,
+      similarity,
       valence,
       business_name %>%
         str_replace_all(" ", "-"),

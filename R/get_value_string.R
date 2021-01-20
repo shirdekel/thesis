@@ -6,7 +6,7 @@
 ##' @author Shir Dekel
 ##' @export
 get_value_string <- function() {
-  low_alignment <-
+  low_similarity <-
     list(
       list(
         c("advertising", "subscription"),
@@ -21,7 +21,8 @@ get_value_string <- function() {
         c("offshore", "onshore")
       ),
       list(
-        c("Reduced Instruction Set Computing", "Complex Instruction Set Computing"),
+        c("Reduced Instruction Set Computing",
+          "Complex Instruction Set Computing"),
         c("parcel", "freight")
       ),
       list(
@@ -30,8 +31,8 @@ get_value_string <- function() {
       )
     )
 
-  high_alignment <-
-    low_alignment %>%
+  high_similarity <-
+    low_similarity %>%
     map_depth(
       2,
       ~ .x %>%
@@ -40,8 +41,8 @@ get_value_string <- function() {
     )
 
   list(
-    low_alignment,
-    high_alignment
+    low_similarity,
+    high_similarity
   ) %>%
     set_names("low", "high")
 }

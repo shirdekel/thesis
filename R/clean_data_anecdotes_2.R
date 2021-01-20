@@ -8,11 +8,12 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test, prolific_filter, prolific_filter_label) {
+clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test,
+                                   prolific_filter, prolific_filter_label) {
   names_to_allocation <-
     c(
       "anecdote_within",
-      "alignment",
+      "similarity",
       "valence",
       "business_name",
       "type",
@@ -54,7 +55,7 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test, p
     c(
       "anecdote_within",
       "valence",
-      "alignment",
+      "similarity",
       "question_type",
       "question_name"
     )
@@ -100,7 +101,7 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test, p
     select(-data) %>%
     inner_join(data_allocation, by = "subject") %>%
     full_join(data_follow_up, by = c(
-      "subject", "anecdote_within", "alignment",
+      "subject", "anecdote_within", "similarity",
       "valence"
     ))
 

@@ -23,7 +23,7 @@ get_file_name_materials_anecdotes_2 <- function() {
       ~ str_c("project_allocation",
         "valence",
         c("negative", "positive"),
-        "alignment",
+        "similarity",
         .x,
         sep = "_"
       )

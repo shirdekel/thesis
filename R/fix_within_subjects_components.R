@@ -24,21 +24,21 @@ fix_within_subjects_components <- function(within_subjects_unnested) {
         TRUE ~ npv
       ),
       structure = case_when(
-        alignment == "high" &
+        similarity == "high" &
           feature_type == "anecdote"
         ~ structure %>%
           map(rev),
         TRUE ~ structure
       ),
       integration = case_when(
-        alignment == "high" &
+        similarity == "high" &
           feature_type == "anecdote"
         ~ integration %>%
           map(rev),
         TRUE ~ integration
       ),
       reason_integration = case_when(
-        alignment == "high" &
+        similarity == "high" &
           feature_type == "anecdote"
         ~ reason_integration %>%
           map(rev),

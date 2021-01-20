@@ -13,14 +13,14 @@ get_nesting_setup <- function(conditions) {
     nest_by(
       anecdote_between,
       anecdote_within,
-      alignment,
+      similarity,
       valence,
       feature_type
     ) %>%
     nest_by(
       anecdote_between,
       anecdote_within,
-      alignment,
+      similarity,
       valence,
     ) %>%
     nest_by(
