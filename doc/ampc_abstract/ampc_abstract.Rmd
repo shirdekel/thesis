@@ -1,0 +1,43 @@
+---
+title             : "Apples and oranges: The effect of structural alignment on resource allocation decisions"
+shorttitle        : "AMPC 2021"
+
+note              : Created `r format(Sys.time())`
+
+author: 
+  - name          : "Shir Dekel"
+  
+floatsintext      : yes
+
+bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+csl               : '`r system.file("apa.csl", package = "shiR")`'
+documentclass     : "apa7"
+classoption       : "man, donotrepeattitle"
+output            : papaja::apa6_docx
+---
+
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+Business executives often have to allocate resources across very dissimilar
+projects. They use financial measures, such as Net Present Value (NPV), that
+simplify this difficult comparison because they aim to be equally applicable to
+any kind of project, but these measures vary in their reliability. Psychological
+research suggests that comparing alignable objects (apples to apples) will be
+easier than comparing non-alignable objects [apples to oranges; e.g.,
+@markman1993; @markman1995]. Our previous experiments showed that naive
+participants accommodate their use of a financial measure (NPV) based on its
+reliability when allocating resources to a set of alignable projects, but use it
+regardless of reliability when allocating to a set of non-alignable projects.
+Further, participants with more business experience similarly rely more on NPV
+for non-alignable projects. However, they do not use information about the
+variance underlying NPV. The present experiment replicated these findings with
+better controls for business experience and presentation style, which were
+potentially confounding factors in previous experiments. These findings support
+the importance of the structural alignment in decision-making and suggests that
+people do not use variance information in their financial decisions.
+
+\newpage
+
+# References

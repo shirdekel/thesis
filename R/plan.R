@@ -209,7 +209,7 @@ the_plan <-
       get_power_table(),
       transform = map(
         .data = !!parameters,
-          .id = c(thesis_project, experiment_number)
+        .id = c(thesis_project, experiment_number)
       ),
       # So that the same npv_amount is generated
       seed = old_seed$experiment4
@@ -218,7 +218,7 @@ the_plan <-
       get_power(power_table),
       transform = map(
         power_table,
-          .id = c(thesis_project, experiment_number)
+        .id = c(thesis_project, experiment_number)
       )
     ),
     results = target(
@@ -239,9 +239,20 @@ the_plan <-
       )
     ),
     thesis_summary = target(
-      render(knitr_in(!!file.path("doc", "thesis_summary", "thesis_summary.Rmd")))
+      render(knitr_in(!!file.path(
+        "doc",
+        "thesis_summary",
+        "thesis_summary.Rmd"
+      )))
+    ),
+    ampc_abstract = target(
+      render(knitr_in(!!file.path(
+        "doc",
+        "ampc_abstract",
+        "ampc_abstract.Rmd"
+      )))
     ),
     arc_proposal = target(
-        render(knitr_in(!!file.path("doc", "arc_proposal", "arc_proposal.Rmd")))
+      render(knitr_in(!!file.path("doc", "arc_proposal", "arc_proposal.Rmd")))
     )
   )
