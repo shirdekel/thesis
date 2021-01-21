@@ -1,5 +1,5 @@
 ---
-title             : "Apples and oranges: The effect of structural alignment on resource allocation decisions"
+title             : "Statistics vs. semantics: Project similarity bias and variance neglect in forecast metric evaluation"
 shorttitle        : "AMPC 2021"
 
 note              : Created `r format(Sys.time())`
@@ -22,21 +22,19 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 People make all sorts of decisions based on quantitative forecasts. However, it
 is unclear how people use these kinds of metrics in the context of other,
-non-numerical forms of information. Here we focus on resource allocation
+non-numerical, forms of information. Here we focus on resource allocation
 scenarios in large companies, wherein managers often have to allocate resources
-across very dissimilar projects (imagine a granting agency choosing between a
-proposal from biology or sociology). They use financial measures that simplify
-this difficult comparison because they aim to be equally applicable to any kind
-of project, but across domains, these measures vary in their reliability. Here
-we investigate the effects of project similarity, and information about variance
-in the forecasts. We found that participants accommodate their use of financial
-forecasts based on its reliability when allocating resources to a set of similar
-projects, but use reliability information less when allocating to a set of less
-similar projects. However, they only considered reliability when it was verbally
-communicated, not when it was expressed numerically. When expressed numerically,
-people made no use of the information about the variance in the forecasts.
-These findings show how the use of quantitative forecasts changes based on
-non-numerical information, despite the motivation of developing those metrics to
-apply across semantic contexts. In addition, people tend to ignore the
-quantified variance information in their forecasts.
-
+across very dissimilar projects. They use financial measures that simplify this
+difficult comparison because they aim to be equally applicable to any kind of
+project, but across domains, these measures vary in their reliability. Here we
+investigate the effects of project similarity, and forecast variance
+information. We found that participants accommodate their use of a financial
+forecast based on its reliability when allocating resources to a set of similar
+projects, but use reliability information less when allocating to a set of
+dissimilar projects. However, they only considered reliability when it was
+verbally communicated, not when it was expressed numerically. When expressed
+numerically, people made no use of the information about the variance in the
+forecasts. These findings show that the use of quantitative forecasts changes
+based on non-numerical information, despite the motivation of developing those
+metrics to apply across semantic contexts. In addition, people tend to ignore
+the variance information in their forecasts.
