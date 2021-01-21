@@ -42,65 +42,21 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     data_clean %>%
     get_combined()
 
-
-  ## Manipulation check  Similarity conditions are rated accordingly
-  ##   Similarity rating: High similarity > low similarity
-  ##   Regardless of condition
-
   model_similarity_rating <-
     data_analysis %>%
-    aov_4(
-      similarity_rating ~
-      anecdote_between +
-        (c(similarity * valence) | id),
-      data = .
-    )
+    get_model_similarity_rating()
 
   similarity_rating_similarity <-
     model_similarity_rating %>%
-    apa_print() %>%
-    pluck("full_result", "similarity")
-
-  ## Allocation is influenced by perceived similarity
-  ##   Negative valence
-  ##     Negative correlation between allocation and similarity rating
-  ##   Positive valence
-  ##     Positive correlation between allocation and similarity rating
+    get_similarity_rating_similarity()
 
   allocation_similarity_rating <-
     data_analysis %>%
-    lm(
-      allocation ~
-      valence * similarity * similarity_rating,
-      data = .
-    ) %>%
-    emtrends(c("valence", "similarity"), var = "similarity_rating") %>%
-    pairs(by = c("valence")) %>%
-    apa_print() %>%
-    pluck("full_result")
+    get_allocation_similarity_rating()
 
-  ## The relationship between allocation and specific relevance is moderated
-  ##  by similarity
-  ##   Negative valence
-  ##     Low similarity: no correlation between allocation and specific relevance rating
-  ##     High similarity: negative correlation between allocation and specific relevance rating
-  ##   Positive valence
-  ##     Low similarity: no correlation between allocation and specific relevance rating
-  ##     High similarity: positive correlation between allocation and specific relevance rating
-
-
-  # double check this
-  allocation_similarity_rating <-
+  allocation_specific_relevance <-
     data_analysis %>%
-    lm(
-      allocation ~
-      valence * similarity * relevance_specific_rating,
-      data = .
-    ) %>%
-    emtrends(c("valence", "similarity"), var = "relevance_specific_rating") %>%
-    contrast(interaction = "pairwise", by = "valence") %>%
-    apa_print() %>%
-    pluck("full_result")
+    get_allocation_specific_relevance()
 
   results_anecdotes_2 <-
     lst(
@@ -108,7 +64,9 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
       anecdotes_only_similarity,
       similarity_high_anecdote,
       combined,
-      similarity_rating_similarity
+      similarity_rating_similarity,
+      allocation_similarity_rating,
+      allocation_specific_relevance
     )
 
   return(results_anecdotes_2)
