@@ -9,7 +9,7 @@ author:
   
 floatsintext      : yes
 
-bibliography      : '`r system.file("refs.bib", package = "shiR")`'
+bibliography      : '`r here::here("inst", "references.bib")`'
 csl               : '`r system.file("apa.csl", package = "shiR")`'
 documentclass     : "apa7"
 classoption       : "man, donotrepeattitle"
@@ -20,23 +20,33 @@ output            : papaja::apa6_docx
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-Business executives often have to allocate resources across very dissimilar
-projects. They use financial measures, such as Net Present Value (NPV), that
-simplify this difficult comparison because they aim to be equally applicable to
-any kind of project, but these measures vary in their reliability. Psychological
-research suggests that comparing alignable objects (apples to apples) will be
-easier than comparing non-alignable objects [apples to oranges; e.g.,
-@markman1993; @markman1995]. Our previous experiments showed that naive
-participants accommodate their use of a financial measure (NPV) based on its
-reliability when allocating resources to a set of alignable projects, but use it
-regardless of reliability when allocating to a set of non-alignable projects.
-Further, participants with more business experience similarly rely more on NPV
-for non-alignable projects. However, they do not use information about the
-variance underlying NPV. The present experiment replicated these findings with
-better controls for business experience and presentation style, which were
-potentially confounding factors in previous experiments. These findings support
-the importance of the structural alignment in decision-making and suggests that
-people do not use variance information in their financial decisions.
+People make all sorts of decisions based on forecasts. We decide what to wear
+during the day by looking at the weather forecast, and managers in government
+and companies make consequential investment decisions based on financial
+forecasts. However, it is unclear how people use these kinds of metrics in the
+context of other, non-numerical, information. Here we focus on resource
+allocation scenarios, in which managers often have to allocate resources across
+very dissimilar projects. They use financial measures that simplify this
+difficult comparison because they aim to be equally applicable to any kind of
+project, but these measures vary in their reliability. We are interested in two
+questions: 1. what is the effect of the comparability of the projects on
+people's allocations? And 2. do people moderate their allocations based on
+variance information? Psychological research suggests that comparing alignable
+objects (apples to apples) will be easier than comparing non-alignable objects
+[apples to oranges; e.g., @markman1993; @markman1995]. Further, people struggle
+to use variance information, such as ranges, to inform their decisions
+[@batteux2020; @konold1989; @vivalt2018]. Therefore, we hypothesised that people
+will be better able make use of information about the reliability of the
+financial metrics when projects are alignable, than when they are not alignable.
+However, we predicted that this will not be the case when the reliability
+information is in the form of numerical ranges around the metric. We found that
+participants accommodate their use of a financial metric based on its
+reliability when allocating resources to a set of alignable projects, but use
+reliability information less when allocating to a set of non-alignable projects.
+However, they only did this when reliability was explicit, and not when it was
+expressed as numerical ranges. These findings support the importance of
+structural alignment in decision-making and suggests that people do not use
+variance information in their financial decisions.
 
 \newpage
 
