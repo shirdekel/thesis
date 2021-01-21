@@ -251,8 +251,5 @@ the_plan <-
         "ampc_abstract",
         "ampc_abstract.Rmd"
       )))
-    ),
-    arc_proposal = target(
-      render(knitr_in(!!file.path("doc", "arc_proposal", "arc_proposal.Rmd")))
     )
   )
