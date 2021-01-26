@@ -27,10 +27,10 @@ scenarios in large companies, wherein managers often have to allocate resources
 across very dissimilar projects. They use financial measures that simplify this
 difficult comparison because they aim to be equally applicable to any kind of
 project, but across domains, these measures vary in their reliability. Here we
-investigate the effects of project similarity, and forecast variance
+investigate the effects of project similarity and forecast variance
 information. We found that participants accommodate their use of a financial
 forecast based on its reliability when allocating resources to a set of similar
-projects, but use reliability information less when allocating to a set of
+projects but use reliability information less when allocating to a set of
 dissimilar projects. However, they only considered reliability when it was
 verbally communicated, not when it was expressed numerically. When expressed
 numerically, people made no use of the information about the variance in the
