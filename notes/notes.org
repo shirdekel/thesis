@@ -192,6 +192,43 @@
    - But this way we can't pass the information of what was filtered out for 1.
      inspection, and 2. methods participants section in which we explain the
      exclusions
+** Power analysis
+*** @morey2016
+    - p. 21
+    #+begin_quote
+    The broad point here is that the power curve depends only on the properties
+    of the test and chosen design, and the effect size used to power the design
+    should be based not on what one believes or what someone has found in the
+    past, but rather by the effect sizes one would like to detect (barring
+    resource constraints, etc). Belief and previous results need not enter into
+    the question at all, except to the extent that they inform one’s sense of
+    what an interesting effect size is.
+    #+end_quote
+    - p. 23
+    #+begin_quote
+    Claiming that any effect reliably different from zero supports your theory
+    is not a falsifiable prediction, because in the extreme case, there are not
+    enough people on earth to falsify it. Instead, we believe authors should
+    make specific, falsifiable, predictions. This is the main way for theories
+    to get money in the bank, so to speak (Meehl, 1990).
+    #+end_quote
+    - Unclear what the actual prescription is
+    - I think it's because their main point in this paper is about replication
+      studies.
+*** @anderson2017
+    - p. 1558
+    #+begin_quote
+    in lieu of using a sample effect-size estimate from a published study,
+    researchers conducting ANOVAs may instead have an idea of what the
+    individual group means are likely to be; such expectations may be based
+    either on prior studies or on theoretical expec- tations. Raw means from a
+    published study may not always be as susceptible to publication bias as the
+    sample effect size, as group means may come from nonsignificant comparisons
+    that are also reported in the article.
+    #+end_quote
+    - Let's just do this.
+    - And in the future do sequential
+
 * Anecdotes
 ** Conceptual discussion
 *** Notes from original talk
@@ -910,7 +947,8 @@
 *** DONE Change alignment to similarity
     CLOSED: [2021-01-20 Wed 13:16]
     - State "TODO"       from              [2021-01-19 Tue 14:44]
-*** TODO Add follow-up analyses
+*** DONE Add follow-up analyses
+    CLOSED: [2021-01-21 Thu 11:38]
     - Hypotheses
       - Manipulation check - Similarity conditions are rated accordingly
         - Similarity rating: High similarity > low similarity
@@ -936,7 +974,9 @@
 *** TODO Fix follow-up ratings
     - From 0-6 to 1-6
     - Or 1-7 if we decide
-
+*** TODO Power analyses
+    - Just use means
+    - But do you use specific means, or hypothetical ones that close/rounded?
 * Aggregation
 ** Analysis
    - From Evan:
