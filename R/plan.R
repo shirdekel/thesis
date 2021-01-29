@@ -251,5 +251,12 @@ the_plan <-
         "ampc_abstract",
         "ampc_abstract.Rmd"
       )))
+    ),
+    ampc_2021 = target(
+      render(knitr_in(!!file.path(
+        "doc",
+        "ampc_2021",
+        "ampc_2021.Rmd"
+      )))
     )
   )

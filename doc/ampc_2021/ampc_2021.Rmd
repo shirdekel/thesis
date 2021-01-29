@@ -1,0 +1,209 @@
+---
+title: "AMPC 2021"
+author: "Shir Dekel"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    seal: false
+---
+
+background-image: url("title_slide.png")
+
+background-size: contain
+
+---
+
+name: background
+
+class: inverse, center, middle, animated
+
+# Background
+
+---
+
+## Forecast example
+
+similar vs dissimilar
+
+---
+
+reliability differences
+
+---
+
+## Project similarity bias
+
+structural alignment
+
+---
+
+##  NPV
+
+formula
+
+---
+
+## Variance neglect
+
+- Citations
+
+---
+
+name: currentstudy
+
+class: inverse, center, middle
+
+# The current study
+
+---
+
+## Aims
+
+.pull-left[
+### Limitations of the literature
+
+1. Limited description-based repeated-play studies
+
+2. Limited choice bracketing manipulations of description-based repeated-play gambles
+
+3. Limited application to business decision-making context
+]
+
+--
+
+.pull-right[
+### We investigated:
+
+1. Description-based repeated-play gambles
+
+2. With novel risky choice bracketing manipulations
+
+3. Using business scenarios
+]
+
+---
+
+## Hypotheses
+
+More risky choice:
+
+- When participants know how many projects to expect than when they are unaware
+- In joint presentation than in separate presentation
+- When projects are alignable than non-alignable
+- Interactions?
+
+---
+
+name: methods
+
+class: inverse, center, middle
+
+# Methods
+
+---
+
+## Instructions
+
+
+---
+
+## High alignment
+
+---
+
+## Low alignment
+
+---
+
+## Design
+
+Independent variables
+- Reliability type (between-subjects)
+  - Implicit (ranges)
+  - Explicit (verbal)
+--
+
+- Reliability amount (within-subjects)
+  - Low
+  - High
+--
+
+- Alignment (between-subjects)
+  - Low (all from different industries)
+  - High (all from the same industry)
+
+---
+
+## Design
+
+Dependent variable
+
+- Resource allocation
+  - Out of 100%
+
+---
+
+name: results
+
+class: inverse, center, middle
+
+# Results
+
+four-way
+
+---
+
+## Reliability type
+
+---
+
+## Reliability amount
+
+---
+
+## Alignment
+
+---
+
+name: conclusion
+
+class: inverse, center, middle
+
+# Conclusion
+
+---
+
+## Summary
+
+---
+
+## Theoretical implications
+
+
+---
+
+## Practical implications
+
+---
+
+## Next steps
+
+- Test middle managers
+  - Qualtrics sample
+  - Do they replicate these effects?
+
+- How do we ensure people aggregate risk when projects are not alignable
+
+---
+
+class: inverse, center, middle
+
+# Thank you
+
+---
+
+class: inverse, center, middle
+
+# Extra
+
