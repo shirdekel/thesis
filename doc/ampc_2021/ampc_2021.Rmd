@@ -4,13 +4,22 @@ author: "Shir Dekel"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    self_contained: true
+    self_contained: false
     seal: false
 ---
 
-background-image: url("title_slide.png")
+```{r setup, include = FALSE}
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+background-image: url("img/title_slide.png")
 
 background-size: contain
+
+???
+
+Hello, my name is Shir and this is a prerecorded presentation for the 2021
+Meeting of the Australasian Mathematical Psychology Conference.
 
 ---
 
@@ -22,31 +31,70 @@ class: inverse, center, middle, animated
 
 ---
 
-## Forecast example
+## Imagine you're the ARC
 
-similar vs dissimilar
+- Picture of nanoscience project and history project
+
+???
+
+- How do you compare these projects? 
+- One way is to use something like an H index
+  - But this doesn't have the same reliability across disciplines
 
 ---
 
-reliability differences
+## Business context
 
----
+- oil well vs refinery
 
-## Project similarity bias
+???
 
-structural alignment
+- Diversified firms face a similar problem
+- Has financial implications
 
 ---
 
 ##  NPV
 
-formula
+- formula
+
+???
+
+- They deal with this problem by using metrics such as NPV
+- But just like H index reliability varies across domains
+
+---
+
+## Project similarity bias
+
+- Alignable differences are more important than non-alignable differences
+  - More weight in judgements of similarity (Markman & Gentner, 1996)
+  - Easier to list (Gentner & Gunn, 2001)
+  - Used more for decision making (Markman & Medin, 1995; Markman, 2010)
+
+???
+
+- We know that people evaluate options differently based on how easy it is to
+  compare across them
 
 ---
 
 ## Variance neglect
 
-- Citations
+- People are not good at using variance information (e.g., Konold, 1989)
+  - Specifically with forecasting (e.g., Vivalt, 2018)
+
+- e.g., which forecaster would you listen to?
+  - A: 14-16˚C
+  - B: 15-45˚C
+  
+---
+
+## Research questions
+
+- Does project similarity affect people's evaluation of projects that have
+  the same forecasts?
+- Do people use reliability information to inform their evaluations?
 
 ---
 
@@ -58,67 +106,126 @@ class: inverse, center, middle
 
 ---
 
-## Aims
-
-.pull-left[
-### Limitations of the literature
-
-1. Limited description-based repeated-play studies
-
-2. Limited choice bracketing manipulations of description-based repeated-play gambles
-
-3. Limited application to business decision-making context
-]
-
---
-
-.pull-right[
-### We investigated:
-
-1. Description-based repeated-play gambles
-
-2. With novel risky choice bracketing manipulations
-
-3. Using business scenarios
-]
-
----
-
 ## Hypotheses
 
-More risky choice:
+- When comparing alignable projects:
+  - NPV reliability will affect decision making
 
-- When participants know how many projects to expect than when they are unaware
-- In joint presentation than in separate presentation
-- When projects are alignable than non-alignable
-- Interactions?
-
----
-
-name: methods
-
-class: inverse, center, middle
-
-# Methods
+- When comparing non-alignable projects:
+  - NPV reliability will not affect decision making
 
 ---
 
-## Instructions
+background-image: url("img/full_display.png")
 
+background-size: contain
+
+???
+
+- This is an example of the display participants saw.
+- Each participant saw two of these: one for each reliability amount condition.
 
 ---
 
 ## High alignment
 
+```{r high-alignment}
+include_graphics("img/high_alignment.png")
+```
+
+???
+
+- This is an example of a high alignment project set.
+
 ---
 
 ## Low alignment
+
+```{r low-alignment}
+include_graphics("img/low_alignment.png")
+```
+
+???
+
+- This is an example of a low alignment project set.
+
+---
+
+## Implicit reliability
+
+.pull-left[
+
+### Low
+
+```{r implicit-reliability-low, results='asis'}
+get_reliability_implicit(836)[1] %>%
+  cat()
+```
+
+]
+
+.pull-right[
+
+### High
+
+```{r implicit-reliability-high, results='asis'}
+get_reliability_implicit(836)[2] %>%
+  cat()
+```
+
+]
+
+???
+
+- NPVs were displayed with reliability information expressed as either verbal
+  prompts or ranges
+- Reliability amount was manipulated by either changing the width of the ranges
+  or changing the explicit wording
+
+---
+
+## Explicit reliability:
+
+.pull-left[
+
+### Low
+
+```{r explicit-reliability-low, results='asis'}
+get_reliability_explicit(836)[1] %>%
+  cat()
+```
+
+]
+
+.pull-right[
+
+### High
+
+```{r explicit-reliability-high, results='asis'}
+get_reliability_explicit(836)[2] %>%
+  cat()
+```
+
+]
+
+???
+
+- NPVs were displayed with reliability information expressed as either verbal
+  prompts or ranges
+- Reliability amount was manipulated by either changing the width of the ranges
+  or changing the explicit wording
 
 ---
 
 ## Design
 
 Independent variables
+
+- Alignment (between-subjects)
+  - Low (all from different industries)
+  - High (all from the same industry)
+--
+
 - Reliability type (between-subjects)
   - Implicit (ranges)
   - Explicit (verbal)
@@ -129,18 +236,12 @@ Independent variables
   - High
 --
 
-- Alignment (between-subjects)
-  - Low (all from different industries)
-  - High (all from the same industry)
+Dependent variables
 
----
-
-## Design
-
-Dependent variable
-
-- Resource allocation
+- Allocation
   - Out of 100%
+- Rank
+  - 1-5
 
 ---
 
@@ -149,6 +250,8 @@ name: results
 class: inverse, center, middle
 
 # Results
+
+---
 
 four-way
 
