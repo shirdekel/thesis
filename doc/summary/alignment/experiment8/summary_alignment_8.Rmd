@@ -96,5 +96,5 @@ We found evidence for all but one of the hypothesised effects.
   `r results_alignment_8$alignment_high_reliability_type_implicit_reliability_amount_null`.
 
 ```{r plot-four-way, fig.cap = "Mean project allocation for all conditions."}
-plot_alignment_8
+plot_alignment_8$four_way
 ```

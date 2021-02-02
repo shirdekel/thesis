@@ -6,10 +6,18 @@ output:
   xaringan::moon_reader:
     self_contained: false
     seal: false
+    nature:
+      ratio: '16:9'
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include = FALSE}
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE, fig.width = 6,
+  fig.asp = 0.618, fig.retina = 3, out.width = "80%", fig.align = "center"
+)
+loadd(plot_alignment_8)
+use_webcam()
 ```
 
 background-image: url("img/title_slide.png")
@@ -18,8 +26,10 @@ background-size: contain
 
 ???
 
-Hello, my name is Shir and this is a prerecorded presentation for the 2021
+- Hello, my name is Shir and this is a prerecorded presentation for the 2021
 Meeting of the Australasian Mathematical Psychology Conference.
+- I will start with some background, describe one of our studies, and summarise
+  the results.
 
 ---
 
@@ -31,41 +41,142 @@ class: inverse, center, middle, animated
 
 ---
 
-## Imagine you're the ARC
+class: center, middle
 
-- Picture of nanoscience project and history project
+.pull-left[
 
-???
+```{r molecular-biologist}
+include_graphics("img/molecular_biologist.jpg")
+```
 
-- How do you compare these projects? 
-- One way is to use something like an H index
-  - But this doesn't have the same reliability across disciplines
+]
 
----
+.pull-right[
 
-## Business context
+```{r history}
+include_graphics("img/history.jpg")
+```
 
-- oil well vs refinery
-
-???
-
-- Diversified firms face a similar problem
-- Has financial implications
-
----
-
-##  NPV
-
-- formula
+]
 
 ???
 
-- They deal with this problem by using metrics such as NPV
-- But just like H index reliability varies across domains
+- So, imagine you're tasked with evaluating research projects for the ARC.
+  - Your job is to allocate funds to the best projects and you're down to two
+    projects: one from a molecular biologist, and one from an historian.
+- How do you work out how to allocate the funds?
+  - The projects are different in so many ways.
+- One way is to use something like an h-index.
+  - But you can imagine that molecular biology may have very different
+    publishing rates and output types than history.
+  - In other words, the metric doesn't have the same reliability across disciplines
+  - Maybe in disciplines for which it has a lower reliability you can weight
+    other metrics higher.
+- On the other hand, it would be a lot easier to compare across two molecular
+  biology projects, because they would be more biology-specific elements to
+  compare.
+- Sources
+  - https://www.wonderopolis.org/wonder/what-does-a-molecular-biologist-do
+  - https://phxpdmuseum.org/product/historical-research
 
 ---
 
-## Project similarity bias
+class: center, middle
+
+.pull-left[
+
+
+```{r oil-well}
+include_graphics("img/oil_well.jpg")
+```
+
+]
+
+.pull-right[
+
+
+```{r microchip}
+include_graphics("img/microchip.jpg")
+```
+
+]
+
+???
+
+- In our work we are interested in this kind of scenario but in a business
+  context.
+- The emphasis on diversification in recent decades has led to an increase in
+  mergers and acquisitions
+  - Meaning that large firms often need to allocate resources across very
+    dissimilar business units.
+  - For example, how would you go about allocating funds between an oil well
+    project and a microchip project?
+- Sources
+  - https://www.fleeson.com/news/fleeson-publications/oil-gas-stops-producing
+  - https://www.pcgamesn.com/intel/comet-lake-10-core-software-development-kithttps://asia.nikkei.com/Business/Trends/Japan-chipmaking-equipment-surging-on-Chinese-demand
+  
+---
+
+class: center, middle
+
+```{r koller2017}
+include_graphics("img/koller2017.png")
+```
+
+???
+
+- This situation has financial implications, with one study finding that those
+  managing portfolios of financially similar businesses are 20 percent more
+  likely than those managing financially dissimilar portfolios to describe
+  themselves as more profitable and faster growing than their peers.
+  - @koller2017
+- If companies just had to compare between two oil wells, then a metric such as
+  "litres of oil per hour" could be used to measure a well's efficiency.
+- Without this, companies need to rely on more abstract financial metrics.
+  - But these introduce more noise.
+
+---
+
+class: center, middle
+
+$$
+\text{NPV}=\frac{\text{Year 1 inflow}}{(1+\text{discount %})^1}+\frac{\text{Year
+2 inflow}}{(1+\text{discount %})^2}\cdots-\text{Initial investment}
+$$
+
+???
+
+- Managers often deal with this problem by using metrics such as Net Present
+  Value, or NPV.
+- NPV is the amount of money you think a project is going to make minus the money you spent on it.
+
+---
+
+class: center, middle
+
+```{r graham2001}
+include_graphics("img/graham2001.png")
+```
+
+???
+
+- This is a very popular metric.
+  - @graham2001
+  - (Arnold & Hatzopoulos, 2000; Pike, 1996)
+- But just like h-index reliability varies across domains
+
+---
+
+## Previous work
+
+???
+
+- There isn't much research on this topic, but there are a few suggestive lines
+  of work.
+
+--
+
+### Project similarity bias
 
 - Alignable differences are more important than non-alignable differences
   - More weight in judgements of similarity (Markman & Gentner, 1996)
@@ -74,27 +185,26 @@ class: inverse, center, middle, animated
 
 ???
 
-- We know that people evaluate options differently based on how easy it is to
-  compare across them
+- For one, we know that people evaluate options differently based on how easy it
+  is to compare across them.
+  - Specifically, options that share metrics are easier to compare.
 
----
+--
 
-## Variance neglect
+### Variance neglect
 
 - People are not good at using variance information (e.g., Konold, 1989)
   - Specifically with forecasting (e.g., Vivalt, 2018)
 
 - e.g., which forecaster would you listen to?
-  - A: 14-16˚C
-  - B: 15-45˚C
+  - A: 19-21˚C (mean = 20)
+  - B: 3-37˚C (mean = 20)
   
----
+???
 
-## Research questions
-
-- Does project similarity affect people's evaluation of projects that have
-  the same forecasts?
-- Do people use reliability information to inform their evaluations?
+- Also, we know that people often struggle with variance information.
+  - Even though it should be intuitively clear that a forecast with a smaller
+    range of values is likely to be more reliable than one with a greater range.
 
 ---
 
@@ -106,13 +216,24 @@ class: inverse, center, middle
 
 ---
 
-## Hypotheses
+## Research questions
 
-- When comparing alignable projects:
-  - NPV reliability will affect decision making
+- Does project similarity affect people's evaluation of projects that have
+  the same forecasts?
 
-- When comparing non-alignable projects:
-  - NPV reliability will not affect decision making
+???
+
+- We are interested in the effects of how similar a set of projects are to each
+  other on people's use of financial forecast metrics.
+
+--
+
+- Do people use reliability information to inform their evaluations?
+
+???
+
+- We are also interested in, if they do choose to use a forecast metric, whether
+  they moderate their use based on the variance information provided.
 
 ---
 
@@ -123,7 +244,81 @@ background-size: contain
 ???
 
 - This is an example of the display participants saw.
-- Each participant saw two of these: one for each reliability amount condition.
+- You can see how we asked them to respond, and the way we displayed the five
+  projects, and the relevant information about them.
+
+---
+
+## Design
+
+???
+
+- We manipulated a few variables.
+
+--
+
+Independent variables
+
+- Alignment (between-subjects)
+  - High
+  - Low
+
+???
+
+- Whether the five projects were all from the same domain or from five different
+  ones.
+
+--
+
+- Reliability type (between-subjects)
+  - Verbal
+  - Numerical
+
+???
+
+- Whether NPV reliability was expressed explicitly as words or through numerical
+  ranges.
+
+--
+
+- Reliability amount (within-subjects)
+  - High
+  - Low
+
+???
+
+- Whether this reliability information indicated that NPV was reliable or not.
+
+--
+
+- NPV amount (within-displays)
+  - Five values (400-900)
+
+???
+
+- Each project's NPV, which ranged between 400 and 900.
+  - These values were the inverse of each project's intrinsic value, such
+    that the highest NPV project had the lowest intrinsic value, and vice
+    versa.
+  - This meant that a participant's allocation is a proxy of their reliance
+    on NPV.
+
+---
+
+## Design
+
+Dependent variables
+
+- Rank
+  - 1-5
+- Allocation
+  - Out of 100%
+
+???
+
+- We asked participants to imagine that they are business executives in a large
+  firm, and to rank each project and allocate a percentage of the budget.
+- Each participant saw two displays: one for each reliability amount condition.
 
 ---
 
@@ -136,6 +331,10 @@ include_graphics("img/high_alignment.png")
 ???
 
 - This is an example of a high alignment project set.
+- The set is made up of oil well projects.
+    - They all vary on the same intrinsic features.
+- Notice that the project with the most attractive "Predicted project features"
+  has the lowest NPV.
 
 ---
 
@@ -148,10 +347,11 @@ include_graphics("img/low_alignment.png")
 ???
 
 - This is an example of a low alignment project set.
+- Each project is from a different domain.
 
 ---
 
-## Implicit reliability
+## Numerical reliability
 
 .pull-left[
 
@@ -175,16 +375,9 @@ get_reliability_implicit(836)[2] %>%
 
 ]
 
-???
+--
 
-- NPVs were displayed with reliability information expressed as either verbal
-  prompts or ranges
-- Reliability amount was manipulated by either changing the width of the ranges
-  or changing the explicit wording
-
----
-
-## Explicit reliability:
+## Verbal reliability
 
 .pull-left[
 
@@ -211,37 +404,57 @@ get_reliability_explicit(836)[2] %>%
 ???
 
 - NPVs were displayed with reliability information expressed as either verbal
-  prompts or ranges
+  prompts or ranges.
 - Reliability amount was manipulated by either changing the width of the ranges
-  or changing the explicit wording
+  or changing the explicit wording.
+  - Specifically, 5% or 85% of the NPV.
 
 ---
 
-## Design
+## Hypotheses
 
-Independent variables
+### Verbal reliability
 
-- Alignment (between-subjects)
-  - Low (all from different industries)
-  - High (all from the same industry)
+- NPV reliability will affect decision making
+
+???
+
+- We predicted that participants would use reliability information if it was
+  expressed explicitly in words.
+
 --
 
-- Reliability type (between-subjects)
-  - Implicit (ranges)
-  - Explicit (verbal)
+#### High alignment
+
+- Positive correlation between allocation and NPV amount.
+
+???
+
+- Specifically, we expected them to use NPV to inform their allocations when
+  they told that it is reliable...
+
 --
 
-- Reliability amount (within-subjects)
-  - Low
-  - High
+#### Low alignment
+
+- Negative correlation between allocation and NPV amount.
+
+???
+
+- and to use the intrinsic features when told that it is not.
+
 --
 
-Dependent variables
+### Numerical reliability
 
-- Allocation
-  - Out of 100%
-- Rank
-  - 1-5
+- No effect of alignment, reliability amount, or NPV amount.
+
+???
+
+- We predicted that when reliability is expressed as ranges people would
+  disregard them.
+  - Pilot data indicated that people sometimes do not even use the midpoint
+    information.
 
 ---
 
@@ -251,21 +464,67 @@ class: inverse, center, middle
 
 # Results
 
----
+???
 
-four-way
-
----
-
-## Reliability type
+- We found support for most of our hypotheses.
 
 ---
 
-## Reliability amount
+## Verbal reliability, high alignment
+
+```{r reliability-type-explicit-alignment-high}
+plot_alignment_8$reliability_type_explicit_alignment_high
+```
+
+???
+
+- Here is the allocation data plotted against NPV amount on the x-axis.
+- A positive correlation here suggests a reliance on NPV.
+- We found a significant interaction between reliability amount and NPV amount
+  for the explicit reliability high alignment condition.
+- Participants allocated based on NPV when told that it is reliable, but
+  allocated based on the projects' intrinsic features when told that NPV is
+  unreliable.
 
 ---
 
-## Alignment
+## Verbal reliability, low alignment
+
+```{r reliability-type-explicit-alignment-low}
+plot_alignment_8$reliability_type_explicit_alignment_low
+```
+
+???
+
+- In the low alignment condition, while participants still used the reliability
+  information, they mostly relied on NPV, as seen by the positive slope for both
+  reliability conditions.
+
+---
+
+## Numerical reliability, high alignment
+
+```{r reliability-type-implicit-alignment-high}
+plot_alignment_8$reliability_type_implicit_alignment_high
+```
+
+???
+
+- When reliability was expressed as ranges, participants relied on NPV, but
+  disregarded the range information completely.
+  - Even though this manipulation was within-subjects.
+
+---
+
+## Numerical reliability, low alignment
+
+```{r reliability-type-implicit-alignment-low}
+plot_alignment_8$reliability_type_implicit_alignment_low
+```
+
+???
+
+- We saw the same thing for the low alignment condition
 
 ---
 
@@ -279,24 +538,77 @@ class: inverse, center, middle
 
 ## Summary
 
+
+- When projects were comparable
+  - Used verbal reliability information
+
+???
+
+- People used explicit reliability information to inform their metric
+  evaluations.
+
+--
+
+- When projects were not comparable
+  - Relied more on NPV
+
+???
+
+- But relied more heavily on NPV when projects were dissimilar.
+
+--
+
+- People did not used numerical reliability information
+
+???
+
+- People did not moderate their evaluations when given numerical indicators of
+  reliability.
+
 ---
 
 ## Theoretical implications
 
+- Evidence for structural alignment in financial decision making
+
+???
+
+- Structural alignment effects replicate in financial decision making
+  - Showing that alignable differences help make decisions in difficult
+    comparisons
+
+--
+
+- Evidence for variance neglect
+
+???
+
+- Variance information is neglected when presented numerically
 
 ---
 
 ## Practical implications
 
----
+- Project allocation scenarios should be made more alignable
 
-## Next steps
+???
 
-- Test middle managers
-  - Qualtrics sample
-  - Do they replicate these effects?
+- These findings suggest that if possible, project allocation scenarios should
+  be made more alignable.
+  - In order to reduce the need to rely on a financial metric if it is
+    unreliable.
+  - Suggest maybe diversification is not always as useful as assumed
 
-- How do we ensure people aggregate risk when projects are not alignable
+--
+
+- Managers should pay more attention to metric variance
+
+???
+
+- Managers should pay attention to the variance underlying financial measures
+  - Single values often obscure the underlying variance (e.g., NPV)
+  - One strategy would be to give less weight to financial measures that are
+    based on higher variance estimates.
 
 ---
 
@@ -304,9 +616,6 @@ class: inverse, center, middle
 
 # Thank you
 
----
+???
 
-class: inverse, center, middle
-
-# Extra
-
+- Thank you for listening.

@@ -35,6 +35,7 @@ library(binom)
 library(emmeans)
 library(progress)
 library(quantmod)
+library(xaringanExtra)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
