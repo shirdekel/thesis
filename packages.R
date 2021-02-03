@@ -36,6 +36,8 @@ library(emmeans)
 library(progress)
 library(quantmod)
 library(xaringanExtra)
+library(effectsize)
+library(RefManageR)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")

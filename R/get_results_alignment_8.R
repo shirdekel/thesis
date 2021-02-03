@@ -10,8 +10,10 @@ get_results_alignment_8 <- function(data_clean, iv, dv) {
   set_sum_contrasts()
   model <-
     data_clean %>%
-    nest_by(id, npv_amount, reliability_amount, alignment, reliability_type,
-            allocation) %>%
+    nest_by(
+      id, npv_amount, reliability_amount, alignment, reliability_type,
+      allocation
+    ) %>%
     lm(
       allocation ~
       npv_amount * reliability_amount * alignment * reliability_type,
@@ -117,6 +119,88 @@ get_results_alignment_8 <- function(data_clean, iv, dv) {
     apa_print() %>%
     pluck("full_result", "high_implicit_high_low")
 
+  ## Post hoc
+
+  ## NPV amount x reliability amount
+
+  two_way_level <-
+    list(
+      c(
+        "explicit",
+        "implicit"
+      ) %>%
+        rep(each = 2),
+      c(
+        "high",
+        "low"
+      ) %>%
+        rep(2)
+    )
+
+  two_way_name <-
+    two_way_level %>%
+    pmap(
+      ~ str_c(
+        "reliability_type",
+        .x,
+        "alignment",
+        .y,
+        sep = "_"
+      )
+    )
+
+  two_way <-
+    two_way_level %>%
+    pmap(
+      ~ data_clean %>%
+        nest_by(
+          id,
+          reliability_amount,
+          npv_amount,
+          allocation,
+          alignment,
+          reliability_type
+        ) %>%
+        filter(
+          reliability_type == .x,
+          alignment == .y
+        ) %>%
+        lm(
+          allocation ~
+          npv_amount * reliability_amount,
+          data = .
+        ) %>%
+        standardize() %>%
+        apa_print(standardized = TRUE, digits = 3) %>%
+        pluck("full_result", "npv_amount_reliability_amount1") %>%
+        str_remove_all("\\\\")
+    ) %>%
+    set_names(two_way_name)
+
+  three_way_name <- c("explicit", "implicit")
+
+  three_way <-
+
+    three_way_name %>%
+    map(
+      ~ data_clean %>%
+        nest_by(
+          id, npv_amount, reliability_amount, alignment, reliability_type,
+          allocation
+        ) %>%
+        filter(reliability_type == .x) %>%
+        lm(
+          allocation ~
+          npv_amount * reliability_amount * alignment,
+          data = .
+        ) %>%
+        standardize() %>%
+        apa_print(standardized = TRUE, digits = 3) %>%
+        pluck("full_result", "npv_amount_reliability_amount1_alignment1") %>%
+        str_remove_all("\\\\")
+    ) %>%
+    set_names(three_way_name)
+
   lst(
     four_way,
     alignment_high_three_way,
@@ -128,6 +212,8 @@ get_results_alignment_8 <- function(data_clean, iv, dv) {
     reliability_type_implicit_alignment_null,
     reliability_type_implicit_alignment,
     alignment_low_reliability_type_implicit_reliability_amount_null,
-    alignment_high_reliability_type_implicit_reliability_amount_null
+    alignment_high_reliability_type_implicit_reliability_amount_null,
+    two_way,
+    three_way
   )
 }

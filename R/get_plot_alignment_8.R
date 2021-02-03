@@ -46,6 +46,14 @@ get_plot_alignment_8 <- function(data_clean) {
     two_way_level %>%
     pmap(
       ~ data_clean %>%
+        nest_by(
+          id,
+          reliability_amount,
+          npv_amount,
+          allocation,
+          alignment,
+          reliability_type
+        ) %>%
         filter(
           reliability_type == .x,
           alignment == .y
@@ -71,9 +79,53 @@ get_plot_alignment_8 <- function(data_clean) {
     ) %>%
     set_names(two_way_name)
 
+  three_way_name <- c("explicit", "implicit")
+
+  three_way <-
+    three_way_name %>%
+    map(
+      ~ data_clean %>%
+        nest_by(
+          id,
+          reliability_amount,
+          npv_amount,
+          allocation,
+          alignment,
+          reliability_type
+        ) %>%
+        filter(
+          reliability_type == .x
+        ) %>%
+        rename("Alignment" = alignment) %>%
+        ggplot(
+          aes(
+            y = allocation,
+            x = npv_amount,
+            linetype = reliability_amount,
+            fill = reliability_amount
+          )
+        ) +
+        facet_grid(
+          cols = vars(Alignment),
+          labeller = "label_both"
+        ) +
+        geom_point(shape = 21, colour = "black", alpha = 0.7) +
+        geom_smooth(method = "lm", colour = "black") +
+        scale_fill_grey(start = 0.2, end = 0.8) +
+        theme_apa(base_size = 10) +
+        labs(
+          y = "Allocation",
+          x = "NPV Amount ($)",
+          linetype = "Reliability amount",
+          fill = "Reliability amount"
+        )
+    ) %>%
+    set_names(three_way_name)
+
   plot_alignment_8 <-
     lst(
       four_way,
+      three_way
     ) %>%
     append(
       two_way
