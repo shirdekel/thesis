@@ -258,5 +258,8 @@ the_plan <-
         "ampc_2021",
         "ampc_2021.Rmd"
       )))
-    )
+    ),
+    ampc_blitz = export_ampc_blitz(plot_alignment_8)
+
   )
+
