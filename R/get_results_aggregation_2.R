@@ -27,12 +27,51 @@ get_results_aggregation_2 <- function(data, iv, dv) {
     prod(2) %>%
     ceiling()
 
+  distribution_mean <-
+    c("absent", "present") %>%
+    map(
+      ~ data_split$distribution %>%
+        group_by(distribution) %>%
+        summarise(across(
+          c(choice, portfolio_binary),
+          ~ .x %>%
+            mean() %>%
+            prod(100) %>%
+            printnum() %>%
+            str_c("%")
+        )) %>%
+        filter(distribution == .x)
+    ) %>%
+    set_names("absent", "present")
+
+  portfolio_binary_distribution <-
+    data_split$distribution %>%
+    mutate(across(distribution, ~ .x %>%
+      fct_relevel("absent"))) %>%
+    nest_by(id, distribution, portfolio_binary) %>%
+    glm(portfolio_binary ~ distribution, family = binomial, .) %>%
+    apa_print_or() %>%
+    filter(term == "distributionpresent") %>%
+    pull(apa)
+
+  choice_distribution <-
+    data_split$distribution %>%
+    mutate(across(distribution, ~ .x %>%
+      fct_relevel("absent"))) %>%
+    glmer(choice ~ distribution + (1 | id), family = binomial, .) %>%
+    apa_print_or() %>%
+    filter(term == "distributionpresent") %>%
+    pull(apa)
+
   results_experiment2 <-
     lst(
       choice,
       proportion,
       portfolio_binary,
-      portfolio_number
+      portfolio_number,
+      choice_distribution,
+      portfolio_binary_distribution,
+      distribution_mean
     )
 
   return(results_experiment2)
