@@ -49,3 +49,6 @@ materials_anecdotes_1.html
 *.docx
 /doc/ampc_2021/ampc_2021.html
 *.jpg
+/doc/ampc_2021/ampc_2021_files/
+*.mkv
+*.mp4
