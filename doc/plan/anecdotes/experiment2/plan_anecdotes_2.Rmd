@@ -98,9 +98,9 @@ loadd(power_anecdotes_2)
 ### Similarity manipulation check
 
 - Negative valence
-  - Anecdotes-only low similarity > anecdotes-only high similarity
+  - Anecdote-only low similarity > anecdote-only high similarity
 - Positive valence
-  - Anecdotes-only high similarity > anecdotes-only low similarity
+  - Anecdote-only high similarity > anecdote-only low similarity
 
 ### Effect of statistics
 
