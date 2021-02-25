@@ -6,10 +6,9 @@
 ##' @export
 get_model_anecdotes_2 <- function(data_clean) {
   data_clean %>%
-    aov_4(
+    lm(
       allocation ~
-      anecdote_between +
-        (c(similarity * valence) | id),
+      anecdote_between * similarity * valence,
       data = .
     )
 }
