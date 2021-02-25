@@ -31,16 +31,48 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     get_three_way()
 
   anecdotes_only_similarity <-
-    model %>%
-    get_anecdotes_only_similarity()
+    c("anecdote_only_negative_high_low", "anecdote_only_positive_high_low") %>%
+    map(
+      ~ model %>%
+        get_anecdotes_only_similarity() %>%
+        apa_print() %>%
+        pluck("full_result", .x)
+    ) %>%
+    set_names("valence_negative", "valence_positive")
 
   similarity_high_anecdote <-
-    model %>%
-    get_similarity_high_anecdote()
+    c(
+      "high_negative_anecdote_only_combined",
+      "high_positive_anecdote_only_combined"
+    ) %>%
+    map(
+      ~ model %>%
+        get_similarity_high_anecdote() %>%
+        apa_print() %>%
+        pluck("full_result", .x)
+    ) %>%
+    set_names("valence_negative", "valence_positive")
 
   combined <-
-    data_clean %>%
-    get_combined()
+    c(
+      "negative",
+      "positive"
+    ) %>%
+    map(
+      ~ data_clean %>%
+        nest_by(
+          id,
+          anecdote_between,
+          similarity,
+          valence,
+          allocation,
+          anecdote_within
+        ) %>%
+        get_combined(.x) %>%
+        apa_print() %>%
+        pluck("full_result")
+    ) %>%
+    set_names("valence_negative", "valence_positive")
 
   model_similarity_rating <-
     data_analysis %>%

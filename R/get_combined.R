@@ -17,42 +17,24 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param data_clean
-get_combined <- function(data_clean) {
-  c(
-    "negative",
-    "positive"
-  ) %>%
-    map(
-      ~ data_clean %>%
-        nest_by(
-          id,
-          anecdote_between,
-          similarity,
-          valence,
-          allocation,
-          anecdote_within
-        ) %>%
-        filter(
-          valence %in% c("negative", "NA"),
-          anecdote_between == "combined"
-        ) %>%
-        mutate(
-          within = case_when(
-            anecdote_within == "anecdote" ~ str_c("similarity", similarity,
-              sep = "_"
-            ),
-            TRUE ~ anecdote_within
-          )
-        ) %>%
-        aov_4(
-          allocation ~ within +
-            (within | id),
-          data = .
-        ) %>%
-        emmeans("within") %>%
-        pairs(adjust = "none") %>%
-        apa_print() %>%
-        pluck("full_result")
+get_combined <- function(data, valence) {
+  data %>%
+    filter(
+      valence %in% c(!!valence, NA),
+      anecdote_between == "combined"
     ) %>%
-    set_names("valence_negative", "valence_positive")
+    mutate(
+      within = case_when(
+        anecdote_within == "anecdote" ~ str_c("similarity", similarity,
+          sep = "_"
+        ),
+        TRUE ~ anecdote_within
+      )
+    ) %>%
+    lm(
+      allocation ~ within,
+      data = .
+    ) %>%
+    emmeans("within") %>%
+    pairs(adjust = "none")
 }
