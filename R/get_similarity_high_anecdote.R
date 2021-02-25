@@ -6,7 +6,7 @@
 ##'   Negative valence
 ##'     High similarity: combined > anecdote only
 ##'   Positive valence
-##'     High similarity: combined > anecdote only
+##'     High similarity: anecdote only > combined
 
 ##' @return
 ##' @author Shir Dekel

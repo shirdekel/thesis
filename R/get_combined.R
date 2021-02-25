@@ -12,7 +12,7 @@
 
 ##'     Combined: High similarity > low similarity
 
-##'     Statistics only = combined high similarity
+##'     Statistics only > combined high similarity
 ##' @return
 ##' @author Shir Dekel
 ##' @export
