@@ -48,18 +48,21 @@ get_analysis <- function(business_name, success, reason_location, location,
       ", the"
     ),
     reason_cutoff[[1]],
+    "at least",
     str_c(
       cutoff[[1]],
       unit[[1]]
     ),
     "and the",
     reason_cutoff[[2]],
+    "at least",
     str_c(
       cutoff[[2]],
       unit[[2]],
       ". Further, the"
     ),
     reason_cutoff[[3]],
+    "at least",
     str_c(
       cutoff[[3]],
       unit[[3]],

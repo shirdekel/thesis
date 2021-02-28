@@ -1,4 +1,4 @@
-##' @title Reason for cutoff 1
+##' @title Reason for cutoff
 
 ##' @return
 ##' @author Shir Dekel
@@ -25,7 +25,7 @@ get_reason_cutoff <- function() {
           c(
             "railway lines needed to be built at a rate of",
             "number of paying customers at peak hour needed to be",
-            "carriages needed to be estimated to last in good shape"
+            "carriages needed to be have been estimated to last in good shape for"
           ),
           ## high-rise construction
           c(
@@ -67,13 +67,13 @@ get_reason_cutoff <- function() {
           c(
             "restaurants needed to be established at a rate of",
             "number of Saturday night reservations needed to be",
-            "number of positive reviews the restaurant needed to have been estimated to get"
+            "number of positive reviews the restaurant received needed to be"
           ),
           ## record label
           c(
             "rate of records produced needed to be",
             "national radio listenership needed to be",
-            "network connections that management needed to have established"
+            "network connections that management needed to have established needed to be"
           )
       )
   )

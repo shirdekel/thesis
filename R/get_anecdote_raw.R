@@ -61,7 +61,8 @@ get_anecdote_raw <- function(business_name_anecdote, location_anecdote,
       li(
         str_c(
           "Investment:",
-          type_anecdote
+          type_anecdote,
+          sep = " "
         ),
         .noWS = c("inside", "outside")
       ),

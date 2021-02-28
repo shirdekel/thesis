@@ -25,7 +25,7 @@ get_reason_location <- function() {
       ## railway
       c("a decrease", "an increase") %>%
         str_c(
-        ., "in local fuel prices, changing commuter behaviour",
+        ., "in local fuel prices, which changed commuter behaviour",
           sep = " "
         ),
       ## high-rise construction
