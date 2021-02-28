@@ -18,7 +18,8 @@ get_input_id <- function(feature, value, anecdote_within, similarity, valence,
   str_c(
     feature %>%
       str_replace_all(" ", "-"),
-    value,
+    value %>%
+      str_replace_all(" ", "-"),
     sep = "_",
     collapse = "_"
   ) %>%
