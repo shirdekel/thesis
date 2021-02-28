@@ -116,6 +116,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
           label_text = question %>%
             HTML(),
           name = follow_up_id,
+          min = 1,
           max = 6
         ) %>%
           list(),
