@@ -7,13 +7,13 @@ get_multiplier_anecdote <- function() {
   normal_value <-
     c(
       ## negative_high
-      1.4,
+      0.8,
       ## positive_high
-      0.9,
+      1.2,
       ## negative_low
-      0.7,
+      0.6,
       ## positive_low
-      1.6,
+      1.4,
       ## statistics only
       1
     )
@@ -21,11 +21,11 @@ get_multiplier_anecdote <- function() {
   probability <-
     c(
       ## negative_high
-      1.05,
+      0.95,
       ## positive_high
-      0.9,
+      1.05,
       ## negative_low
-      0.8,
+      0.9,
       ## positive_low
       1.1,
       ## statistics only

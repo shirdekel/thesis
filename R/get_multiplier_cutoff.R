@@ -7,13 +7,13 @@ get_multiplier_cutoff <- function() {
   normal_value <-
     c(
       ## negative_high
-      1.6,
+      1.2,
       ## positive_high
-      0.7,
+      0.8,
       ## negative_low
-      0.9,
+      0.8,
       ## positive_low
-      1.4,
+      1.2,
       ## statistics only
       1
     )
@@ -21,11 +21,11 @@ get_multiplier_cutoff <- function() {
   probability <-
     c(
       ## negative_high
-      1.1,
+      1.05,
       ## positive_high
-      0.8,
+      0.95,
       ## negative_low
-      0.9,
+      0.95,
       ## positive_low
       1.05,
       ## statistics only

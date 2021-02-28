@@ -37,7 +37,7 @@ get_project_value_base <- function() {
       ## software
       c(
         1000,
-        60,
+        85,
         3
       ),
       ## oil well
@@ -58,7 +58,7 @@ get_project_value_base <- function() {
       c(
         800,
         400,
-        94
+        90
       )
     ),
     list(
