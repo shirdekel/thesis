@@ -1,0 +1,33 @@
+/* tables */
+table {
+    border-collapse: collapse;
+    /* Don't adapt column widths to content (some projects have longer names)*/
+    table-layout: fixed;
+    /* 100% stays within the global 750px */
+    width: 100%;
+    /* Seems to make the text not break away from the bullet point */
+    list-style-position: outside;
+}
+
+td {
+    /* Cell padding */
+    padding: 5px;
+}
+
+ul {
+    /* Make sure all the bullets are left aligned (including the ones in the project description) */
+    text-align: left;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+tr:first-child {
+    background-color: #333;
+    font-weight: bold;
+    color: #fff;
+}
+
+td:first-child {
+    font-weight: bold;
+}
