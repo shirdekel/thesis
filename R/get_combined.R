@@ -20,7 +20,7 @@
 get_combined <- function(data, valence) {
   data %>%
     filter(
-      valence %in% c(!!valence, NA),
+      valence %in% c(!!valence, "NA"),
       anecdote_between == "combined"
     ) %>%
     mutate(

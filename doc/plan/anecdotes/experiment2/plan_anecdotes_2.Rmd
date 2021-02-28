@@ -158,12 +158,26 @@ readd(plot_simulation_anecdotes_2)
 
 # Power analysis
 
+- I conducted a power analysis through simulation of the effects listed above.
+    - I simulated data with the same mean values as Experiment 1 for the effects
+      that were previously significant (i.e., similarity, statistics, and
+      moderation effects), and no effect for the differences that were non-significant (as shown in
+      Figure\ \@ref(fig:plot-simulation-anecdotes-2)).
+    - The null effect is analysed using the two one-sided tests (TOST)
+      procedure, or *equivalence* testing [@lakens2018], and setting the
+      smallest effect size of interest to the smallest difference that leads to
+      a significant equivalence between the combined low similarity and
+      statistics-only conditions in Experiment 1.
+- See Figure\ \@ref(fig:power-curve-anecdotes-2).
+- The analysis suggests a total sample size of `r power_anecdotes_2$n_total` (`r power_anecdotes_2$n` $\times$ 2).
+  - This means a total cost of approximately \$`r power_anecdotes_2$prolific_aud` AUD (\pounds`r power_anecdotes_2$prolific_gbp`).
+
 \newpage
 
 \blandscape
 
 ```{r power-curve-anecdotes-2, fig.width = 13, fig.height = 7, fig.cap = "Anecdotes Experiment 2 power curve. Labels indicate lowest sample size above 80% power."}
-# power_anecdotes_2$power_curve
+power_anecdotes_2$power_curve
 ```
 
 \elandscape
@@ -206,8 +220,6 @@ readd(plot_simulation_anecdotes_2)
       here shown separately for brevity.
     - The next 15 Figures showcase the experiment materials (without the
         specific instructions) as a participant would see them.
-    - Click on the below link to try out the experiment:
-        - https://psychsydexp.net/business-decisions/
 
 ## Screenshots
 

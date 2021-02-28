@@ -289,8 +289,10 @@ get_parameters <- function() {
           list()
       ),
       get_power = case_when(
-        thesis_project == "alignment" &
-          experiment_number == 8 ~ get_function_call(
+        (thesis_project == "alignment" &
+          experiment_number == 8) |
+          (thesis_project == "anecdotes" &
+            experiment_number == 2) ~ get_function_call(
           "power",
           thesis_project,
           experiment_number

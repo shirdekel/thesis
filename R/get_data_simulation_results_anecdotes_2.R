@@ -56,25 +56,53 @@ get_data_simulation_results_anecdotes_2 <- function(data) {
         get_combined(.x) %>%
         tidy()
     ) %>%
-    set_names("valence_negative", "valence_positive") %>%
+    set_names("negative", "positive") %>%
     bind_rows(.id = "valence") %>%
+    filter(!(valence == "negative" & contrast == "similarity_low - statistics_only")) %>%
     mutate(
       effect = c(
         "Negative valence: Combined low similarity > combined high similarity",
         "Negative valence: Statistics-only > combined high similarity",
-        "Negative valence: Statistics-only = combined low similarity",
         "Positive valence: Combined high similarity > combined low similarity",
         "Positive valence: Statistics-only > combined high similarity",
         "Positive valence: Statistics-only > combined low similarity"
       )
     )
 
+  negative_statistics_only_combined_null <-
+    data %>%
+    filter(
+      valence %in% c("negative", "NA"),
+      anecdote_between == "combined",
+      similarity %in% c("low", "NA")
+    ) %>%
+    mutate(
+      within = case_when(
+        anecdote_within == "anecdote" ~ str_c("similarity", similarity,
+          sep = "_"
+        ),
+        TRUE ~ anecdote_within
+      )
+    ) %>%
+    lm(
+      allocation ~ within,
+      data = .
+    ) %>%
+    emmeans("within") %>%
+    pairs(adjust = "none") %>%
+    tidy(side = "equivalence", delta = 10) %>%
+    mutate(
+      effect = c(
+        "Negative valence: Statistics-only = combined low similarity"
+      )
+    )
 
   lst(
     three_way,
     anecdotes_only_similarity,
     similarity_high_anecdote,
-    combined
+    combined,
+    negative_statistics_only_combined_null
   ) %>%
     bind_rows()
 }

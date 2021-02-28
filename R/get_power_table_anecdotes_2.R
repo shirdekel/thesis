@@ -4,18 +4,17 @@
 ##'
 ##' So the input of n_vector is in terms of group sample size, but we then need
 ##' to multiply it by 2 (two between-subjects conditions) in order to input it
-##' to sim_design in terms of full sample size.
+##' to sim_design, which divides it by 2 so you can get the correct full sample
+##' size.
 ##'
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 get_power_table_anecdotes_2 <- function() {
     n_vector <-
-        ## seq(from = 21, by = 1, length.out = 15)
-        100
+        seq(from = 30, by = 2, length.out = 10)
 
-    nsim <- ## 3000
-        2
+    nsim <- 1000
 
     n_vector %>%
         map_df(

@@ -38,6 +38,7 @@ library(quantmod)
 library(xaringanExtra)
 library(effectsize)
 library(RefManageR)
+library(printy)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
