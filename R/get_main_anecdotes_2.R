@@ -20,7 +20,7 @@ get_main_anecdotes_2 <- function(gambles, randomize_order = TRUE) {
 
   timeline <-
     get_parameters_anecdotes_2() %>%
-    get_timeline()
+    get_timeline(randomize_order)
 
   main <-
     instructions %>%

@@ -246,7 +246,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -360,7 +360,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -474,7 +474,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -588,7 +588,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -702,7 +702,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -816,7 +816,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -930,7 +930,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1044,7 +1044,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1158,7 +1158,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1272,7 +1272,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1386,7 +1386,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1500,7 +1500,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1614,7 +1614,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1728,7 +1728,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1842,7 +1842,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -1956,7 +1956,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -2070,7 +2070,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -2184,7 +2184,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -2298,7 +2298,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){
@@ -2412,7 +2412,7 @@ var timeline = {
                           "follow_up": ["<div>Press the button below to continue.<\/div>"]
                         }
                       ],
-                      "randomize_order": false
+                      "randomize_order": true
                     }
                   ],
                   "conditional_function": function(){

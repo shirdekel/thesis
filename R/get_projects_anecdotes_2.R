@@ -10,11 +10,16 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-##' @param allocation_display
+##' @param project_variation
+##' @param anecdote_variation
+##' @param anecdote_between
+##' @param data
+##' @param randomize_order
 get_projects_anecdotes_2 <- function(project_variation,
                                      anecdote_variation,
                                      anecdote_between,
-                                     data) {
+                                     data,
+                                     randomize_order) {
   projects <-
     trial_generic(
       "survey-html-form3",
@@ -61,7 +66,7 @@ get_projects_anecdotes_2 <- function(project_variation,
       interstitial = interstitial_trials,
       follow_up = data$follow_up
     ) %>%
-    set_parameters(randomize_order = FALSE) %>%
+    set_parameters(randomize_order = randomize_order) %>%
     build_timeline() %>%
     display_if(
       fn_data_condition(
