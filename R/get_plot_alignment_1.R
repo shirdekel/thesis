@@ -9,7 +9,7 @@ get_plot_alignment_1 <- function(data_clean) {
         mutate(across(project, as.numeric)) %>%
         nest_by(
             id,
-            npvReliability,
+            reliability_amount,
             project,
             allocation,
             alignment
@@ -18,8 +18,8 @@ get_plot_alignment_1 <- function(data_clean) {
             aes(
                 y = allocation,
                 x = project,
-                linetype = npvReliability,
-                fill = npvReliability
+                linetype = reliability_amount,
+                fill = reliability_amount
             )
         ) +
         facet_grid(

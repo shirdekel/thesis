@@ -109,7 +109,7 @@ get_parameters <- function() {
       "awareness",
       c(
         "alignment",
-        "npvReliability"
+        "reliability_amount"
       ),
       c(
         "alignment",

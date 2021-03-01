@@ -36,7 +36,7 @@ clean_data_alignment_1 <- function(data_raw,
                   str_c(collapse = ""))) %>%
     map(~ select(
       data_raw_prolific, all_of(.x),
-      "npvReliability" = "allocation",
+      "reliability_amount" = "allocation",
       "sex" = "Q79",
       "age" = "Q75"
     ) %>%
@@ -49,7 +49,7 @@ clean_data_alignment_1 <- function(data_raw,
       select(questionVals[[a]],
              "high" = contains(b),
              "low" = contains(c),
-             .data$npvReliability,
+             .data$reliability_amount,
              .data$id,
              .data$sex,
              .data$age
@@ -57,14 +57,14 @@ clean_data_alignment_1 <- function(data_raw,
     }) %>%
     map2(dvName,
          ~ pivot_longer(.x,
-                        cols = -(npvReliability:age),
+                        cols = -(reliability_amount:age),
                         names_to = c("alignment", "project"),
                         names_pattern = "(high|low)(.)",
                         values_to = .y
          )) %>%
-    reduce(left_join, by = c("npvReliability", "id", "sex", "age", "alignment", "project")) %>%
+    reduce(left_join, by = c("reliability_amount", "id", "sex", "age", "alignment", "project")) %>%
     mutate(
-      npvReliability = recode(npvReliability, "1" = "high", "2" = "low"),
+      reliability_amount = recode(reliability_amount, "1" = "high", "2" = "low"),
       project.npv = case_when(
         project == 1 ~ "700",
         project == 2 ~ "500",
@@ -78,7 +78,7 @@ clean_data_alignment_1 <- function(data_raw,
     mutate_if(is.character, as.factor) %>%
     mutate(sex = as.character(sex),
            sample = "prolific") %>%
-    get_max_min_difference(project.npv, alignment, npvReliability)
+    get_max_min_difference(project.npv, alignment, reliability_amount)
 
   return(data_clean)
 }

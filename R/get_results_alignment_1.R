@@ -12,12 +12,12 @@ get_results_alignment_1 <- function(data_clean, iv, dv) {
     data_clean %>%
         mutate(across(project, as.numeric)) %>%
     nest_by(
-      id, project, npvReliability, alignment,
+      id, project, reliability_amount, alignment,
       allocation
     ) %>%
     lm(
       allocation ~
-      project * npvReliability * alignment,
+      project * reliability_amount * alignment,
       data = .
     )
 
