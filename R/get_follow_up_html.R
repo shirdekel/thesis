@@ -12,7 +12,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
     data %>%
     filter(project_type == "target")
 
-  scale_max <- 6
+  scale_max <- 7
 
   scale <-
     str_c(
