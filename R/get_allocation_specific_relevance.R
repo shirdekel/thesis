@@ -26,14 +26,24 @@
 ##' @export
 ##' @param data_analysis
 get_allocation_specific_relevance <- function(data_analysis) {
-  data_analysis %>%
+  emm_allocation_specific_relevance <-
+    data_analysis %>%
     lm(
       allocation ~
       valence * similarity * relevance_specific_rating,
       data = .
     ) %>%
-    emtrends(c("valence", "similarity"), var = "relevance_specific_rating") %>%
-    contrast(interaction = "pairwise", by = "valence") %>%
+    emtrends(c("valence", "similarity"), var = "relevance_specific_rating")
+
+  individual <-
+    emm_allocation_specific_relevance %>%
+    contrast(by = "valence") %>%
     apa_print() %>%
     pluck("full_result")
+
+  emm_allocation_specific_relevance %>%
+    contrast(interaction = "pairwise", by = "valence") %>%
+    apa_print() %>%
+    pluck("full_result") %>%
+    c(individual, .)
 }

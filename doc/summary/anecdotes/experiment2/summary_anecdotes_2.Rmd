@@ -28,7 +28,8 @@ loadd(plot_anecdotes_2)
 
 # Participants
 
-`r descriptives_anecdotes_2$apa` Table\ \@ref(tab:condition-allocation-table) shows the condition allocation.
+`r descriptives_anecdotes_2$apa` Table\ \@ref(tab:condition-allocation-table)
+shows the condition allocation.
 
 ```{r condition-allocation-table}
 descriptives_anecdotes_2$condition_allocation_table %>%
@@ -37,8 +38,104 @@ descriptives_anecdotes_2$condition_allocation_table %>%
 
 # Results
 
-## Summary
+## Allocations
 
-```{r plot-four-way, fig.cap = "Mean project allocation for all conditions."}
+### Overall effect of manipulations
+
+As seen in Figure\ \@ref(fig:plot-allocations), the similarity $\times$ valence
+$\times$ anecdote interaction (excluding the statistics-only condition) was
+significant, `r results_anecdotes_2$three_way`.
+
+### Similarity manipulation check
+
+The similarity manipulation worked as expected, with the negative valence
+anecdote-only low similarity condition being allocated significantly more than
+those in the high similarity condition,
+`r results_anecdotes_2$anecdotes_only_similarity$valence_negative`. In the
+positive valence condition, those in the high similarity condition allocation
+significantly more than those in the low similarity condition,
+`r results_anecdotes_2$anecdotes_only_similarity$valence_positive`
+
+### Effect of statistics
+
+When in the negative valence condition, participants allocated more to the high
+similarity combined project than those in the high similarity anecdote-only
+condition, `r results_anecdotes_2$similarity_high_anecdote$valence_negative`.
+When in the positive valence condition, they allocated more to high similarity
+anecdote-only condition than those in the high similarity combined condition,
+`r results_anecdotes_2$similarity_high_anecdote$valence_positive`.
+
+### Anecdotal bias moderated by similarity
+
+To investigate whether anecdotal bias was moderated by similarity, we compared
+allocations between the combined high and low similarity conditions and the
+statistics-only condition. We found that in the negative valence condition,
+participants allocated more to the statistics-only condition than to the
+combined high similarity condition,
+`r results_anecdotes_2$combined$valence_negative$similarity_high_statistics_only`.
+Participants in the combined low similarity allocated more than when they saw
+the combined high similarity display,
+`r results_anecdotes_2$combined$valence_negative$similarity_high_similarity_low`.
+However, the difference between responses to the statistics-only projects and the
+combined low similarity projects was not significant,
+`r results_anecdotes_2$combined$valence_negative$similarity_low_statistics_only`.
+
+In the positive valence, allocations were higher in the statistics-only
+condition than in the combined low similarity condition,
+`r results_anecdotes_2$combined$valence_positive$similarity_high_statistics_only`.
+Allocations were also higher in the combined high similarity condition than in
+the combined low similarity condition,
+`r results_anecdotes_2$combined$valence_positive$similarity_high_similarity_low`.
+Further, allocations were higher in the statistics-only condition than in the
+combined high similarity condition.
+
+```{r plot-allocations, fig.cap = "Mean project allocation for all conditions."}
 plot_anecdotes_2
 ```
+
+## Ratings
+
+### Similarity manipulation check
+
+Our similarity manipulation seems to have worked, with participants rating
+anecdotes in the high similarity conditions as more similar to the target than
+those in the low similarity condition,
+`r results_anecdotes_2$similarity_rating_similarity`.
+
+### Allocation is influenced by perceived similarity
+
+As hypothesised, allocation was influenced by perceived similarity. That is, in
+the negative valence condition, there was a negative correlation between
+allocation and similarity rating,
+`r results_anecdotes_2$allocation_similarity_rating$negative_high_low`.
+However, in the positive valence condition,
+there was a positive correlation between allocation and similarity rating,
+`r results_anecdotes_2$allocation_similarity_rating$positive_high_low`.
+
+### The relationship between allocation and specific-relevance is moderated by similarity
+
+In the negative valence condition, there was a significant difference between
+the slopes of the high and low similarity conditions,
+`r results_anecdotes_2$allocation_specific_relevance$high_low_negative`.
+In the low similarity condition, allocation and specific-relevance rating were
+not correlated,
+`r results_anecdotes_2$allocation_specific_relevance$negative_loweffect`,
+whereas, in the low similarity condition, they were correlated negatively
+`r results_anecdotes_2$allocation_specific_relevance$negative_higheffect`.
+
+In the positive valence condition, there was a significant difference between
+the slopes of the high and low similarity conditions,
+`r results_anecdotes_2$allocation_specific_relevance$high_low_positive`.
+In the low similarity condition, allocation and specific-relevance rating were
+not correlated,
+`r results_anecdotes_2$allocation_specific_relevance$positive_loweffect`,
+whereas, in the low similarity condition, they were correlated positively
+`r results_anecdotes_2$allocation_specific_relevance$positive_higheffect`.
+
+### People do not consider general-relevance in their allocation
+
+There were no significant correlations between allocation and general-relevance
+rating.
+
+
+

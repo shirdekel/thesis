@@ -22,6 +22,8 @@ get_results_anecdotes_2 <- function(data_clean, iv, dv) {
     ) %>%
     ungroup()
 
+  set_sum_contrasts()
+
   model <-
     data_analysis %>%
     get_model_anecdotes_2()
