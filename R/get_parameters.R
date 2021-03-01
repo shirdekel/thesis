@@ -15,7 +15,7 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-        rep(2),
+        rep(3),
       "import_data_server",
       "import_data_anecdotes_1",
       "import_data_local"
@@ -25,6 +25,7 @@ get_parameters <- function() {
     c(
       file.path("inst", "extdata", "psychsydexp") %>%
         rep(3),
+      file.path("inst", "extdata", "alignment", "experiment1"),
       file.path("inst", "extdata", "alignment", "experiment2"),
       file.path("inst", "extdata", "alignment", "experiment7"),
       file.path("inst", "extdata", "psychsydexp"),
@@ -38,7 +39,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(7),
+        rep(8),
       TRUE
     )
 
@@ -47,6 +48,7 @@ get_parameters <- function() {
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
+      NA,
       NA,
       NA,
       get_prolific_filter_alignment_8(),
@@ -71,6 +73,7 @@ get_parameters <- function() {
       ),
       NA,
       NA,
+      NA,
       list(
         "incorrect_input_id",
         NA,
@@ -86,6 +89,7 @@ get_parameters <- function() {
     c(
       "clean_data_aggregation" %>%
         rep(3),
+      "clean_data_alignment_1",
       "clean_data_alignment_2",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
@@ -103,6 +107,10 @@ get_parameters <- function() {
       ),
       "similarity",
       "awareness",
+      c(
+        "alignment",
+        "npvReliability"
+      ),
       c(
         "alignment",
         "reliability_amount",
@@ -154,6 +162,11 @@ get_parameters <- function() {
       ),
       c(
         "allocation",
+        "confidence",
+        "max_min_difference"
+      ),
+      c(
+        "allocation",
         "ranking",
         "confidence",
         "forecast_mean",
@@ -180,7 +193,7 @@ get_parameters <- function() {
       "jaysire" %>%
         rep(3),
       "qualtrics" %>%
-        rep(2),
+        rep(3),
       "jaysire",
       "jspsych",
       "jaysire"
