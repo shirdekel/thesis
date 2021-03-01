@@ -15,7 +15,7 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-        rep(3),
+        rep(4),
       "import_data_server",
       "import_data_anecdotes_1",
       "import_data_local"
@@ -27,6 +27,7 @@ get_parameters <- function() {
         rep(3),
       file.path("inst", "extdata", "alignment", "experiment1"),
       file.path("inst", "extdata", "alignment", "experiment2"),
+      file.path("inst", "extdata", "alignment", "experiment3"),
       file.path("inst", "extdata", "alignment", "experiment7"),
       file.path("inst", "extdata", "psychsydexp"),
       file.path("inst", "extdata", "anecdotes", "experiment1"),
@@ -39,7 +40,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(8),
+        rep(9),
       TRUE
     )
 
@@ -48,6 +49,7 @@ get_parameters <- function() {
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
+      NA,
       NA,
       NA,
       NA,
@@ -74,6 +76,7 @@ get_parameters <- function() {
       NA,
       NA,
       NA,
+      NA,
       list(
         "incorrect_input_id",
         NA,
@@ -91,6 +94,7 @@ get_parameters <- function() {
         rep(3),
       "clean_data_alignment_1",
       "clean_data_alignment_2",
+      "clean_data_alignment_3",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
       "clean_data_anecdotes_1",
@@ -115,6 +119,10 @@ get_parameters <- function() {
         "alignment",
         "reliability_amount",
         "npv_amount"
+      ),
+      c(
+        "alignment",
+        "reliability"
       ),
       c(
         "reliability_type",
@@ -173,6 +181,13 @@ get_parameters <- function() {
         "forecast_sd"
       ),
       c(
+        "ranking",
+        "allocation",
+        "confidence",
+        "npv_allocation_correlation",
+        "max_min_difference"
+      ),
+      c(
         "allocation",
         "ranking"
       ),
@@ -193,7 +208,7 @@ get_parameters <- function() {
       "jaysire" %>%
         rep(3),
       "qualtrics" %>%
-        rep(3),
+        rep(4),
       "jaysire",
       "jspsych",
       "jaysire"

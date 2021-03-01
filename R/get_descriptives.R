@@ -15,19 +15,25 @@ get_descriptives <- function(data_clean, iv) {
     last() %>%
     printnum(numerals = FALSE, capitalize = TRUE)
 
-  sex <-
-    data_clean %>%
-    nest_by(id, sex) %>%
-    ungroup() %>%
-    count(sex)
+  ## Alignment 3 should be the only experiment in which specific sex data was
+  ## not collected
+  if (any(names(data_clean) %in% "sex")) {
+    sex <-
+      data_clean %>%
+      nest_by(id, sex) %>%
+      ungroup() %>%
+      count(sex)
 
-  sex_female <-
-    sex %>%
-    mutate(
-      across(sex, str_to_lower)
-    ) %>%
-    filter(sex == "female") %>%
-    pull(n)
+    sex_female <-
+      sex %>%
+      mutate(
+        across(sex, str_to_lower)
+      ) %>%
+      filter(sex == "female") %>%
+      pull(n)
+  } else {
+    sex_female <- 28
+  }
 
   numerical_names_raw <-
     c("age", "business_exp", "business_edu", "total_time")

@@ -39,6 +39,8 @@ library(xaringanExtra)
 library(effectsize)
 library(RefManageR)
 library(printy)
+library(readtext)
+library(mgsub)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")
