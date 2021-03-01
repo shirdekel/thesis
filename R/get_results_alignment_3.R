@@ -9,10 +9,10 @@
 get_results_alignment_3 <- function(data_clean, iv, dv) {
     results_alignment_3 <-
         data_clean %>%
-        nest_by(id, allocation, npv_amount, reliability, alignment) %>%
+        nest_by(id, allocation, npv_amount, reliability_amount, alignment) %>%
         aov_4(
             allocation ~
-             (npv_amount * alignment * reliability | id),
+             (npv_amount * alignment * reliability_amount | id),
             data = .,
             print.formula = T
         ) %>%

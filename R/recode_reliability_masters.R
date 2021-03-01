@@ -1,13 +1,13 @@
-##' @title Recode reliability for masters sample
+##' @title Recode reliability_amount for masters sample
 ##'
-##' Change high and low because originally coded as `variance`, which has opposite coding to `reliability`. For instance, high variance implies low reliability.
+##' Change high and low because originally coded as `variance`, which has opposite coding to `reliability_amount`. For instance, high variance implies low reliability.
 
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-recode_reliability_masters <- function(reliability) {
+recode_reliability_masters <- function(reliability_amount) {
 
-  reliability %>%
+  reliability_amount %>%
     recode("high" = "low",
            "low" = "high")
 

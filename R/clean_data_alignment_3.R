@@ -36,16 +36,16 @@ clean_data_alignment_3 <- function(data_raw,
     mutate(
       across(business_edu, recode_business_edu),
       across(business_exp, recode_business_exp),
-      across(reliability, recode_reliability_masters),
+      across(reliability_amount, recode_reliability_masters),
       across(where(check_numeric), as.numeric),
       project = recode_project_masters(project, order),
       npv_amount = get_npv_amount(project),
-      across(c(product, project, alignment, reliability), as.factor),
+      across(c(product, project, alignment, reliability_amount), as.factor),
       sample = "masters"
     ) %>%
     add_id_column(response_id) %>%
     get_npv_allocation_correlation() %>%
-    get_max_min_difference(npv_amount, alignment, reliability, phase)
+    get_max_min_difference(npv_amount, alignment, reliability_amount, phase)
 
   return(data_clean)
 }

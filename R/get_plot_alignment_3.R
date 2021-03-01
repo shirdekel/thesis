@@ -8,7 +8,7 @@ get_plot_alignment_3 <- function(data_clean) {
         data_clean %>%
         nest_by(
             id,
-            reliability,
+            reliability_amount,
             npv_amount,
             allocation,
             alignment
@@ -17,8 +17,8 @@ get_plot_alignment_3 <- function(data_clean) {
             aes(
                 y = allocation,
                 x = npv_amount,
-                linetype = reliability,
-                fill = reliability
+                linetype = reliability_amount,
+                fill = reliability_amount
             )
         ) +
         facet_grid(

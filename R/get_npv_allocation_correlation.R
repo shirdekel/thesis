@@ -9,7 +9,7 @@ get_npv_allocation_correlation <- function(data_clean) {
 
   npv_allocation_correlation <-
     data_clean %>%
-    group_by(id, phase, alignment, reliability) %>%
+    group_by(id, phase, alignment, reliability_amount) %>%
     mutate(
       npv_allocation_correlation = cor(npv_amount, allocation)
     ) %>%

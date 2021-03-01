@@ -122,7 +122,7 @@ get_parameters <- function() {
       ),
       c(
         "alignment",
-        "reliability"
+        "reliability_amount"
       ),
       c(
         "reliability_type",

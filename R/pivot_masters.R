@@ -10,7 +10,7 @@ pivot_masters <- function(masters_renamed) {
   names_to <-
     c(
       "alignment",
-      "reliability",
+      "reliability_amount",
       "order",
       "dv",
       "phase",
