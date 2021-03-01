@@ -10,14 +10,13 @@ get_results_alignment_1 <- function(data_clean, iv, dv) {
   set_sum_contrasts()
   model <-
     data_clean %>%
-        mutate(across(project, as.numeric)) %>%
     nest_by(
-      id, project, reliability_amount, alignment,
+      id, npv_amount, reliability_amount, alignment,
       allocation
     ) %>%
     lm(
       allocation ~
-      project * reliability_amount * alignment,
+      npv_amount * reliability_amount * alignment,
       data = .
     )
 

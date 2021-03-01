@@ -6,18 +6,17 @@
 get_plot_alignment_1 <- function(data_clean) {
     plot_alignment_1 <-
         data_clean %>%
-        mutate(across(project, as.numeric)) %>%
         nest_by(
             id,
             reliability_amount,
-            project,
+            npv_amount,
             allocation,
             alignment
         ) %>%
         ggplot(
             aes(
                 y = allocation,
-                x = project,
+                x = npv_amount,
                 linetype = reliability_amount,
                 fill = reliability_amount
             )

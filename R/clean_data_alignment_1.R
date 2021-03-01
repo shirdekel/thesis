@@ -65,20 +65,20 @@ clean_data_alignment_1 <- function(data_raw,
     reduce(left_join, by = c("reliability_amount", "id", "sex", "age", "alignment", "project")) %>%
     mutate(
       reliability_amount = recode(reliability_amount, "1" = "high", "2" = "low"),
-      project.npv = case_when(
+      npv_amount = case_when(
         project == 1 ~ "700",
         project == 2 ~ "500",
         project == 3 ~ "100",
         project == 4 ~ "900",
         project == 5 ~ "300"
       ),
-      across(c(all_of(dvName), project.npv, age), as.numeric),
+      across(c(all_of(dvName), npv_amount, age), as.numeric),
       id = as.factor(id)
     ) %>%
     mutate_if(is.character, as.factor) %>%
     mutate(sex = as.character(sex),
            sample = "prolific") %>%
-    get_max_min_difference(project.npv, alignment, reliability_amount)
+    get_max_min_difference(npv_amount, alignment, reliability_amount)
 
   return(data_clean)
 }
