@@ -111,19 +111,23 @@ get_screenshots_anecdotes_2 <- function() {
 
   expand_type <-
     list(
-      anecdote_only = c(-1073, 0, 1073, 0),
-      combined_short = c(-1485, 0, 1485, 0),
-      combined_long = c(-1597, 0, 1597, 0),
-      statistics_only = c(-469, 0, 469, 0)
+      anecdote_only = c(-1145, 0, 1145, 0),
+      combined_short = c(-1560, 0, 1560, 0),
+      combined_medium = c(-1620, 0, 1620, 0),
+      combined_long = c(-1675, 0, 1675, 0),
+      statistics_only = c(-550, 0, 550, 0)
     )
 
   expand_allocation <-
     c(
       expand_type$combined_short %>%
         list(),
+      expand_type$combined_medium %>%
+        list(),
+      expand_type$combined_short %>%
+        list(),
       expand_type$combined_long %>%
-        list() %>%
-        rep(3),
+        list(),
       expand_type$statistics_only %>%
         list()
     )
