@@ -15,7 +15,7 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-        rep(4),
+        rep(5),
       "import_data_server",
       "import_data_anecdotes_1",
       "import_data_local"
@@ -28,6 +28,7 @@ get_parameters <- function() {
       file.path("inst", "extdata", "alignment", "experiment1"),
       file.path("inst", "extdata", "alignment", "experiment2"),
       file.path("inst", "extdata", "alignment", "experiment3"),
+      file.path("inst", "extdata", "alignment", "experiment4"),
       file.path("inst", "extdata", "alignment", "experiment7"),
       file.path("inst", "extdata", "psychsydexp"),
       file.path("inst", "extdata", "anecdotes", "experiment1"),
@@ -40,7 +41,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(9),
+        rep(10),
       TRUE
     )
 
@@ -49,6 +50,7 @@ get_parameters <- function() {
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
+      NA,
       NA,
       NA,
       NA,
@@ -77,6 +79,7 @@ get_parameters <- function() {
       NA,
       NA,
       NA,
+      NA,
       list(
         "incorrect_input_id",
         NA,
@@ -95,6 +98,7 @@ get_parameters <- function() {
       "clean_data_alignment_1",
       "clean_data_alignment_2",
       "clean_data_alignment_3",
+      "clean_data_alignment_4",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
       "clean_data_anecdotes_1",
@@ -123,6 +127,10 @@ get_parameters <- function() {
       c(
         "alignment",
         "reliability_amount"
+      ),
+      c(
+        "alignment",
+        "npvReliability"
       ),
       c(
         "reliability_type",
@@ -188,6 +196,10 @@ get_parameters <- function() {
         "max_min_difference"
       ),
       c(
+        "forecastMean",
+        "forecastSD"
+      ),
+      c(
         "allocation",
         "ranking"
       ),
@@ -208,7 +220,7 @@ get_parameters <- function() {
       "jaysire" %>%
         rep(3),
       "qualtrics" %>%
-        rep(4),
+        rep(5),
       "jaysire",
       "jspsych",
       "jaysire"
