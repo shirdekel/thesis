@@ -7,8 +7,10 @@ get_experiment_number <- function() {
   experiment_number <-
     c(
       c(2:4),
-      c(1:5, 7, 8),
+      seq_len(8),
       seq_len(2)
-    )
+    ) %>%
+    as.numeric()
+
   return(experiment_number)
 }

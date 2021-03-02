@@ -15,7 +15,7 @@ get_parameters <- function() {
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
-        rep(6),
+        rep(7),
       "import_data_server",
       "import_data_anecdotes_1",
       "import_data_local"
@@ -30,6 +30,7 @@ get_parameters <- function() {
       file.path("inst", "extdata", "alignment", "experiment3"),
       file.path("inst", "extdata", "alignment", "experiment4"),
       file.path("inst", "extdata", "alignment", "experiment5"),
+      file.path("inst", "extdata", "alignment", "experiment6"),
       file.path("inst", "extdata", "alignment", "experiment7"),
       file.path("inst", "extdata", "psychsydexp"),
       file.path("inst", "extdata", "anecdotes", "experiment1"),
@@ -42,7 +43,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(11),
+        rep(12),
       TRUE
     )
 
@@ -51,6 +52,7 @@ get_parameters <- function() {
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
+      NA,
       NA,
       NA,
       NA,
@@ -83,6 +85,7 @@ get_parameters <- function() {
       NA,
       NA,
       NA,
+      NA,
       list(
         "incorrect_input_id",
         NA,
@@ -103,6 +106,7 @@ get_parameters <- function() {
       "clean_data_alignment_3",
       "clean_data_alignment_4",
       "clean_data_alignment_5",
+      "clean_data_alignment_6",
       "clean_data_alignment_7",
       "clean_data_alignment_8",
       "clean_data_anecdotes_1",
@@ -139,6 +143,10 @@ get_parameters <- function() {
       c(
         "alignment",
         "reliability_amount"
+      ),
+      c(
+        "hint",
+        "variance"
       ),
       c(
         "reliability_type",
@@ -212,6 +220,11 @@ get_parameters <- function() {
         "forecast_sd"
       ),
       c(
+        "ranking",
+        "allocation",
+        "max_min_difference"
+      ),
+      c(
         "allocation",
         "ranking"
       ),
@@ -232,7 +245,7 @@ get_parameters <- function() {
       "jaysire" %>%
         rep(3),
       "qualtrics" %>%
-        rep(6),
+        rep(7),
       "jaysire",
       "jspsych",
       "jaysire"
