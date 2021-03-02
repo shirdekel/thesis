@@ -9,7 +9,7 @@ get_thesis_project <- function() {
       c("aggregation") %>%
         rep(3),
       "alignment" %>%
-        rep(6),
+        rep(7),
       "anecdotes" %>%
         rep(2)
     )

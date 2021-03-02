@@ -51,7 +51,8 @@ get_descriptives <- function(data_clean, iv) {
           across(
             all_of(.x),
             lst(mean, sd, min, max),
-            .names = "{fn}"
+            .names = "{fn}",
+            na.rm = TRUE
           )
         ) %>%
         mutate(across(everything(), ~ .x %>%
