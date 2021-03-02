@@ -9,10 +9,10 @@
 get_results_alignment_4 <- function(data_clean, iv, dv) {
     results_alignment_4 <-
         data_clean %>%
-        nest_by(id, forecastMean, project.npv, npvReliability, alignment) %>%
+        nest_by(id, forecast_mean, npv_amount, reliability_amount, alignment) %>%
         aov_4(
-            forecastMean ~
-            alignment * npvReliability + (project.npv | id),
+            forecast_mean ~
+            alignment * reliability_amount + (npv_amount | id),
             data = .,
             print.formula = T
         ) %>%

@@ -12,11 +12,11 @@ clean_data_alignment_4 <- function(data_raw,
                                    prolific_filter,
                                    prolific_filter_label) {
 
-  dvName <- c("forecastMean", "forecastSD")
+  dvName <- c("forecast_mean", "forecast_sd")
 
   data_raw_renamed <- data_raw %>%
     rename(
-      npvReliability = .data$npvCond,
+      reliability_amount = .data$npvCond,
       alignment = .data$alignCond
     ) %>%
     filter(
@@ -27,14 +27,14 @@ clean_data_alignment_4 <- function(data_raw,
 
   data_setup <- data_raw_renamed %>%
     select(contains("project"),
-           .data$npvReliability,
+           .data$reliability_amount,
            .data$alignment,
            "sex" = "Q79",
            "age" = "Q75"
     ) %>%
     mutate(id = row_number()) %>%
     pivot_longer(
-      cols = -(.data$npvReliability:.data$id),
+      cols = -(.data$reliability_amount:.data$id),
       names_to = c("project", "forecast"),
       names_pattern = "\\w*(.)_(.*)",
       values_to = "dv",
@@ -42,16 +42,16 @@ clean_data_alignment_4 <- function(data_raw,
     ) %>%
     mutate(
       dv = as.numeric(.data$dv),
-      npvReliability = recode(.data$npvReliability, "1" = "Absent", "2" = "Present"),
+      reliability_amount = recode(.data$reliability_amount, "1" = "Absent", "2" = "Present"),
       alignment = recode(.data$alignment, "1" = "low", "2" = "high"),
-      project.npv = case_when(
+      npv_amount = case_when(
         project == 1 ~ "700",
         project == 2 ~ "500",
         project == 3 ~ "100",
         project == 4 ~ "900",
         project == 5 ~ "300"
       ),
-      project.npv = as.numeric(.data$project.npv),
+      npv_amount = as.numeric(.data$npv_amount),
       id = as.factor(.data$id),
       age = as.numeric(.data$age)
     ) %>%
@@ -61,7 +61,7 @@ clean_data_alignment_4 <- function(data_raw,
   weightings67 <- c(0.1, 0.08, 0.06, 0.04, 0.02, 0, -0.02, -0.04, -0.06, -0.08, -0.1)
 
   data_clean <-
-    c("forecastMean", "forecastSD") %>%
+    c("forecast_mean", "forecast_sd") %>%
     map2(
       c("getmean", "getsd"),
       ~ getforecast(
@@ -71,7 +71,7 @@ clean_data_alignment_4 <- function(data_raw,
         weightings = weightings67
       )
     ) %>%
-    reduce(left_join, by = c("npvReliability", "alignment", "sex", "age", "id", "project", "project.npv")) %>%
+    reduce(left_join, by = c("reliability_amount", "alignment", "sex", "age", "id", "project", "npv_amount")) %>%
     mutate(sample = "reddit")
 
   return(data_clean)

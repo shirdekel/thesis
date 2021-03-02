@@ -8,17 +8,17 @@ get_plot_alignment_4 <- function(data_clean) {
         data_clean %>%
         nest_by(
             id,
-            npvReliability,
-            project.npv,
-            forecastMean,
+            reliability_amount,
+            npv_amount,
+            forecast_mean,
             alignment
         ) %>%
         ggplot(
             aes(
-                y = forecastMean,
-                x = project.npv,
-                linetype = npvReliability,
-                fill = npvReliability
+                y = forecast_mean,
+                x = npv_amount,
+                linetype = reliability_amount,
+                fill = reliability_amount
             )
         ) +
         facet_grid(

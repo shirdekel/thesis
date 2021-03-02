@@ -13,7 +13,7 @@
 #' }
 getforecast <- function(data, forecastName, fun, weightings) {
   data %>%
-    group_by(.data$npvReliability, .data$alignment, .data$id, .data$project, .data$sex, .data$age, .data$project.npv) %>%
+    group_by(.data$reliability_amount, .data$alignment, .data$id, .data$project, .data$sex, .data$age, .data$npv_amount) %>%
     nest() %>%
     mutate(!!forecastName := map_dbl(data, get(fun), weightings), data = NULL) %>%
     ungroup()

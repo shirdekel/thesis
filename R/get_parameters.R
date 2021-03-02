@@ -130,7 +130,7 @@ get_parameters <- function() {
       ),
       c(
         "alignment",
-        "npvReliability"
+        "reliability_amount"
       ),
       c(
         "reliability_type",
@@ -196,8 +196,8 @@ get_parameters <- function() {
         "max_min_difference"
       ),
       c(
-        "forecastMean",
-        "forecastSD"
+        "forecast_mean",
+        "forecast_sd"
       ),
       c(
         "allocation",
