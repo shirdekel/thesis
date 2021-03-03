@@ -1,0 +1,9 @@
+book_filename: "thesis"
+output_dir: "doc/thesis/compiled_thesis"
+chapter_name: "Chapter "
+delete_merged_file: true
+rmd_files: 
+  - "doc/thesis/rmd/index.Rmd"
+  - "doc/thesis/rmd/introduction.Rmd"
+  - "doc/thesis/rmd/conclusion.Rmd"
+  - "doc/thesis/rmd/references.Rmd"

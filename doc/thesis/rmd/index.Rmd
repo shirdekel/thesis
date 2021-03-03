@@ -1,0 +1,37 @@
+---
+title: 'The psychology of managerial risky choice and resource allocation'
+author: 'Shir Dekel'
+date: '`r format(Sys.time())`'
+institution: 'The University of Sydney'
+division: 'School of Psychology'
+advisor: 'Micah Goldwater'
+department: 'Faculty of Science'
+degree: 'Doctor of Philosophy (Science)'
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+
+output:
+  thesisdown::thesis_pdf: default 
+  thesisdown::thesis_word: default
+
+abstract: (ref:abstract)
+acknowledgements: |
+  Acknowledgements.
+dedication: |
+  Dedication. 
+preface: |
+  Preface.
+  
+bibliography: inst/references.bib
+csl: inst/apa.csl
+lot: true
+lof: true
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+(ref:abstract) Overall, the thesis is about decision-making in business settings and how people deal with situations in which they have both semantically and statistically relevant information. The overarching thesis is that people are often influenced by largely semantic information despite the availability of useful statistical information. There were four main research questions. The first research question was how option similarity and variance information affect people's resource allocation behaviour. We found that when options are similar, people are able to selectively respond to reliability information about given data. However, when options are not similar people have to rely on easily comparable data, regardless of its reliability. Further, people struggle to use variance information to ascertain reliability information, regardless of business experience. The second research question was how choice grouping affects people's risky choice. We found that people accept more risky choices when they anticipate those choices, and when they see them together rather than separately. Choice similarity strengthens this presentation effect. The third research question was how anecdotes, and their similarity to the problem at hand, affect business decisions. We are yet to collect data on this question, but we hypothesise that anecdote similarity will strengthen the effect of anecdotes, and that only very explicit instructions will be able to reduce the anecdote effect. The fourth research question was whether business expertise would moderate any of these effects. That is, will real-life experience in managerial decision-making reduce reliance on unnecessary semantic information in favour of more useful statistical information? We hypothesise that unless an individual has statistical expertise, business expertise would not reduce the effect of choice similarity, choice grouping, and anecdotes.  
+

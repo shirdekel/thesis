@@ -15,8 +15,10 @@ the_plan <-
       seed = old_seed$restricted_values
     ),
     gambles = target(
-      get_gambles(thesis_project, experiment_number, restricted_values,
-                  gamble_n),
+      get_gambles(
+        thesis_project, experiment_number, restricted_values,
+        gamble_n
+      ),
       transform = map(
         restricted_values,
         .id = c(thesis_project, experiment_number)
@@ -260,7 +262,12 @@ the_plan <-
         "ampc_2021.Rmd"
       )))
     ),
-    ampc_blitz = export_ampc_blitz(plot_alignment_8)
-
+    ampc_blitz = export_ampc_blitz(plot_alignment_8),
+    thesis = render_book(
+      input = knitr_in(
+        "doc/thesis/rmd/index.Rmd"
+      ),
+      config_file = file_in("doc/thesis/_bookdown.yml"),
+      output_format = "all"
+    )
   )
-

@@ -355,9 +355,9 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "bookdown",
       "RemoteUsername": "rstudio",
-      "RemoteRef": "master",
+      "RemoteRef": "HEAD",
       "RemoteSha": "ca0145f9c09f99f4ea932ccfd06ac0a2766d095f",
-      "Hash": "9bbb25e7607e1294bdbf0744aa9cc279"
+      "Hash": "6aa56b4132430d84b4ecc9d189021346"
     },
     "boot": {
       "Package": "boot",
