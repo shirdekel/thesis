@@ -1,0 +1,7 @@
+## Experiment 6
+
+### Results
+
+```{r plot-alignment-6}
+readd(plot_alignment_6)
+```
