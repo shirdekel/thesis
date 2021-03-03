@@ -5,5 +5,6 @@ delete_merged_file: true
 rmd_files: 
   - "doc/thesis/rmd/index.Rmd"
   - "doc/thesis/rmd/introduction.Rmd"
+  - "doc/thesis/rmd/alignment_introduction.Rmd"
   - "doc/thesis/rmd/conclusion.Rmd"
   - "doc/thesis/rmd/references.Rmd"
