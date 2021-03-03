@@ -117,7 +117,7 @@ get_follow_up_html <- function(data, button_continue, anecdote_within, valence,
             HTML(),
           name = follow_up_id,
           min = 1,
-          max = 6
+          max = scale_max
         ) %>%
           list(),
         question_type == "text" ~ get_follow_up_textarea(follow_up_id) %>%
