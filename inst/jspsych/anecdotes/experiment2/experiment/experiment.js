@@ -2488,7 +2488,7 @@ jsPsych.init(
   "on_finish": function() {
       safe_to_close_window = true; // turn off verifyClose()
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'SaveToDatabase.aspx'); // change 'write_data.php' to point to php script.
+      xhr.open('POST', 'SaveToFile.aspx');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function () {
         if (xhr.status == 200) {
@@ -2496,7 +2496,7 @@ jsPsych.init(
           console.log(response.success);
         }
       };
-      xhr.send(jsPsych.data.get().json());
+      xhr.send(jsPsych.data.get().csv()); // .csv() for file format
       setTimeout('location.replace("https://app.prolific.co/submissions/complete?cc=8256C4AC");', 10000);
     }
 }
