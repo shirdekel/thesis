@@ -15,7 +15,8 @@ the_plan <-
       seed = old_seed$restricted_values
     ),
     gambles = target(
-      get_gambles(thesis_project, restricted_values, gamble_n),
+      get_gambles(thesis_project, experiment_number, restricted_values,
+                  gamble_n),
       transform = map(
         restricted_values,
         .id = c(thesis_project, experiment_number)

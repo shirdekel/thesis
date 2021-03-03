@@ -10,9 +10,9 @@ get_project_sections_experiment3 <- function(gambles,
                                              detail) {
 
   outcome_negative <-
-    gambles$outcome_dif - gambles$outcome_positive_restricted_sample
+    gambles$outcome_dif - gambles$outcome_positive
   prob_positive <-
-    gambles$prob_positive_restricted_sample * 100
+    gambles$prob_positive * 100
   prob_negative <-
     100 - prob_positive
 
@@ -64,7 +64,7 @@ get_project_sections_experiment3 <- function(gambles,
         str_c(
           "The company would make $",
           gambles$outcome_dif %>%
-            rep(length(gambles$outcome_positive_restricted_sample))
+            rep(length(gambles$outcome_positive))
         ),
         "million if the forecasted",
         components$forecast_details,
@@ -86,7 +86,7 @@ get_project_sections_experiment3 <- function(gambles,
       str_c(
         prob_positive,
         "% chance of gaining $",
-        gambles$outcome_positive_restricted_sample
+        gambles$outcome_positive
       ),
       "million (the forecasted revenue minus the cost amount) and a",
       str_c(

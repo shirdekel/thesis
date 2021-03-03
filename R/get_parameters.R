@@ -12,6 +12,7 @@ get_parameters <- function() {
 
   import_data <-
     syms(c(
+      "import_data_local",
       "import_data_server" %>%
         rep(3),
       "import_data_local" %>%
@@ -23,6 +24,7 @@ get_parameters <- function() {
 
   data_directory_server <-
     c(
+      file.path("inst", "extdata", "aggregation", "experiment1"),
       file.path("inst", "extdata", "psychsydexp") %>%
         rep(3),
       file.path("inst", "extdata", "alignment", "experiment1"),
@@ -43,12 +45,13 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(12),
+        rep(13),
       TRUE
     )
 
   prolific_filter <-
     list(
+      NA,
       "datetime > '2020-07-28'",
       get_prolific_filter_aggregation_3(),
       get_prolific_filter_aggregation_4(),
@@ -66,6 +69,7 @@ get_parameters <- function() {
 
   prolific_filter_label <-
     list(
+      NA,
       NA,
       list(
         NA,
@@ -99,6 +103,7 @@ get_parameters <- function() {
 
   clean_data <-
     c(
+      "clean_data_aggregation_1",
       "clean_data_aggregation" %>%
         rep(3),
       "clean_data_alignment_1",
@@ -116,6 +121,11 @@ get_parameters <- function() {
 
   iv <-
     list(
+      c(
+        "Alignment",
+        "Awareness",
+        "Presentation"
+      ),
       c(
         "awareness",
         "distribution",
@@ -172,6 +182,9 @@ get_parameters <- function() {
 
   dv <-
     list(
+      c(
+        "risk"
+      ),
       c(
         "choice",
         "proportion",
@@ -242,6 +255,7 @@ get_parameters <- function() {
 
   experiment_generator <-
     c(
+      "jspsych",
       "jaysire" %>%
         rep(3),
       "qualtrics" %>%

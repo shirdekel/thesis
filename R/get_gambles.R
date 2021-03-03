@@ -1,97 +1,103 @@
 ##' @title Get gambles
 
-##' @param restricted_values
-##'
-##' @param gamble_n number of gambles
 ##' @param thesis_project
-##'
+##' @param experiment_number
+##' @param restricted_values
+##' @param gamble_n number of gambles
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-get_gambles <- function(thesis_project, restricted_values, gamble_n) {
-
+get_gambles <- function(thesis_project, experiment_number, restricted_values,
+                        gamble_n) {
   if (thesis_project == "aggregation") {
+    if (experiment_number != 1) {
+      loss_prob <- 1
+      duplicate_restriction <- TRUE
 
-    loss_prob <- 1
-    duplicate_restriction <- TRUE
+      while ((loss_prob > 0.1) | any(duplicate_restriction)) {
 
-    while ((loss_prob > 0.1) | any(duplicate_restriction)) {
+        # Sample from the indexes of the restricted set (so that you can get the
+        # corresponding set of outcomes and probabilities)
+        index_sample <-
+          length(restricted_values$outcome) %>%
+          seq_len() %>%
+          sample(gamble_n)
 
-      # Sample from the indexes of the restricted set (so that you can get the corresponding set of outcomes and probabilities)
-      index_sample <-
-        1:length(restricted_values$outcome) %>%
-        sample(gamble_n)
+        # Get a sample of outcomes
+        outcome_positive_restricted_sample <-
+          restricted_values$outcome[index_sample]
 
-      # Get a sample of outcomes
-      outcome_positive_restricted_sample <-
-        restricted_values$outcome[index_sample]
+        # Get a sample of probabilities
+        prob_positive_restricted_sample <-
+          restricted_values$prob[index_sample]
 
-      # Get a sample of probabilities
-      prob_positive_restricted_sample <-
-        restricted_values$prob[index_sample]
+        # Combine outcomes and probabilities and organise as list of pairs
+        positive_combined <-
+          list(
+            outcome_positive_restricted_sample,
+            prob_positive_restricted_sample
+          ) %>%
+          transpose() %>%
+          map(unlist)
 
-      # Combine outcomes and probabilities and organise as list of pairs
-      positive_combined <-
-        list(outcome_positive_restricted_sample,prob_positive_restricted_sample) %>%
-        transpose() %>%
-        map(unlist)
+        # Check for duplicate pairs
+        duplicate_restriction <-
+          duplicated(positive_combined)
 
-      # Check for duplicate pairs
-      duplicate_restriction <-
-        duplicated(positive_combined)
+        aggregated_values <-
+          get_aggregated_values(
+            outcome_positive_restricted_sample,
+            prob_positive_restricted_sample,
+            restricted_values$outcome_dif
+          )
 
-      # Get a list of trial outcomes (positive and negative possibilities)
-      outcome_combined <-
-        list(
-          outcome_positive_restricted_sample,
-          outcome_positive_restricted_sample - restricted_values$outcome_dif
-        ) %>%
-        transpose() %>%
-        map(unlist)
+        loss_prob <-
+          get_loss_prob(
+            aggregated_values$outcome_aggregated,
+            aggregated_values$prob_aggregated
+          )
 
-      # Get aggregated outcomes
-      outcome_aggregated <-
-        expand.grid(outcome_combined) %>% # Get a data frame of all possible combinations of the trial outcomes
-        rowSums() %>% # Sum the rows (to get the final state of what the outcome combinations would be)
-        unique() %>%
-        sort() # Important so that the probabilities do not flip when plotted
+        outcome_positive <- outcome_positive_restricted_sample
+        prob_positive <- prob_positive_restricted_sample
+      }
+    } else {
+      aggregated_values <-
+        get_aggregated_values(
+          restricted_values$outcome,
+          restricted_values$prob,
+          restricted_values$outcome_dif,
+          sort = FALSE
+        )
 
-      # Get Poisson binomial distribution of the sample of probabilities
-      prob_aggregated <-
-        dpoibin(kk = 0:length(prob_positive_restricted_sample),
-                pp = prob_positive_restricted_sample)
-
-      # Get negative aggregated outcomes
-      loss <-
-        outcome_aggregated < 0
-
-      # Sum corresponding probabilities
       loss_prob <-
-        prob_aggregated[loss] %>%
-        sum()
+        get_loss_prob(
+          aggregated_values$outcome_aggregated,
+          aggregated_values$prob_aggregated
+        )
+
+      outcome_positive <- restricted_values$outcome
+      prob_positive <- restricted_values$prob
     }
 
     # Calculate expected value and gain/loss ratio of selected gambles
-    restriction_values_restricted <-
+    restriction_values <-
       get_restriction_values(
-        prob_positive_restricted_sample,
-        outcome_positive_restricted_sample
+        prob_positive,
+        outcome_positive
       )
 
     # Combine values
     gambles <-
-      list(
-        outcome_positive_restricted_sample = outcome_positive_restricted_sample,
-        prob_positive_restricted_sample = prob_positive_restricted_sample,
-        prob_aggregated = prob_aggregated,
-        outcome_aggregated = outcome_aggregated,
-        loss_prob = loss_prob
+      lst(
+        outcome_positive,
+        prob_positive,
+        loss_prob
       ) %>%
-      append(restriction_values_restricted)
+      append(aggregated_values) %>%
+      append(restriction_values)
 
     return(gambles)
   } else {
     return(NA)
   }
-
 }

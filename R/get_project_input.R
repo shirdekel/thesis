@@ -17,9 +17,9 @@ get_project_input <- function(type,
     type %>%
     str_replace_all(" ", "-") %>%
     str_c(detail,
-          gambles$outcome_positive_restricted_sample,
+          gambles$outcome_positive,
           gambles$outcome_dif,
-          gambles$prob_positive_restricted_sample,
+          gambles$prob_positive,
           sep = "_"
     )
 

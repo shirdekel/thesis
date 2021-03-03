@@ -12,15 +12,15 @@ get_project_description_experiment2 <- function(gambles,
                                                 project_type) {
 
 
-  outcome_negative <- gambles$outcome_dif - gambles$outcome_positive_restricted_sample
-  prob_positive <- gambles$prob_positive_restricted_sample * 100
+  outcome_negative <- gambles$outcome_dif - gambles$outcome_positive
+  prob_positive <- gambles$prob_positive * 100
   prob_negative <- 100 - prob_positive
 
   bold <- str_c(
     "there is ",
     prob_positive,
     "% chance of gaining $",
-    gambles$outcome_positive_restricted_sample,
+    gambles$outcome_positive,
     " million and a ",
     prob_negative,
     "% chance of losing $",
