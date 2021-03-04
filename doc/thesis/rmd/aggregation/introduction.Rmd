@@ -1,5 +1,7 @@
 # Aggregation
 
+## Introduction
+
 Investors know not to put all their eggs in one basket, but do the rest of us? Ever since work on modern portfolio theory [@markowitz1952], it has been clear that combining the risk of a set of individual investments reduces the overall risk of the portfolio of investments. But what about situations in which it is not clear that a set of investments fit together as a portfolio? Personal decisions such as buying a car or moving cities are typically evaluated independently, as are business decisions such as a farm investing in new cropping technology or an multi-business firm building a mine.
 
 While these decisions are separated in time, they are often not so far apart that it is easy to learn from past outcomes (and sometimes the outcomes themselves are unclear). This is because the outcomes of large investments are often delayed. As such, the decision-maker cannot always use the knowledge of the returns of one investment when evaluating a subsequent investment. Any results that a farmer may identify from using a new technology will only become apparent after many seasons of use. Similarly, it will take many years for a multi-business firm to begin to estimate whether the output of a mine resulted in the expected return on investment. These are the gambles that we investigate in the current study: large risky choices without immediate outcomes.
@@ -8,13 +10,13 @@ Work on prospect theory [@kahneman1979] suggests that people's evaluation of gam
 
 The earlier work on risk aggregation essentially did the aggregating work for the participants. For example, experimenters provided participants with an outcome probability distribution, and/or an explicit indication to group the choices together, such as by asking for a single decision to be made on a set of identical gambles. Other work addressed the more realistic situation of a set of independent gambles. However, most of this work provided participants with the outcomes of their choices before the subsequent choice. In these paradigms participants experience individual outcomes from the eventual outcome distribution of the gambles, meaning that aggregation is confounded with learning. As mentioned above, in real-life there is usually a significant delay between the choice a person makes and the outcome of that choice, and there are likely to be several interim choices in the meantime. This is especially true for business executives, who would typically have to wait months or years before beginning to understand the consequences of their decision, and even then the outcome may be unclear.However, previous work did not investigate the effect of choice bracketing on description-based repeated-play gambles. This is surprising, since choice bracketing is exactly the kind of process that should promote aggregation in these more realistic decisions. As such, we investigated new ways of encouraging participants to bracket their risky choices, but with a paradigm that involves a series of independent choices without feedback. In this way, our paradigm is more isometric with real-life risky choice.
 
-## Risk aggregation
+### Risk aggregation
 
 Risk aggregation is the combination of probability and/or variance information associated with certain outcomes for the purpose of understanding that information more comprehensively [@bjornsen2019]. In financial settings, the benefits of investment diversification are primarily due to risk aggregation. Among 10 risky gambles, one paying off might offset the other nine failing, especially if the investments are uncorrelated or negatively correlated. The advantages of diversification, through risk aggregation, is well-known in investment settings because of modern portfolio theory [@markowitz1952].
 
 However, it is unclear whether the general public and even business managers use this principle, due to the extent of risk aversion in both those populations [e.g., @tversky1992; @march1987]. In fact, executives treat risk like the rest of us; they view investments one at a time, are risk averse for gains and risk seeking in the domain of losses [@maccrimmon1986; @swalm1966; @lovallo2020]. However, it is understandable why risk aggregation is foreign to most people; outside of an investment portfolio selection situation, it is unlikely for people to group a selection of individual risky choices. Usually in life, people encounter risky choices sequentially, and so the risk of each individual choice is more salient than the aggregated risk of an arbitrary combination of choices.
 
-## Multi-play gambles
+### Multi-play gambles
 
 Despite the difficulties of risk aggregation, people seem to aggregate naturally when considering multiple gambles. @samuelson1963 told of a colleague that rejected a gamble that involved a 50% chance of gaining \$200 and a 50% of losing \$100. However, the same colleague said he would accept 100 plays of the same gamble.[^1] That is, the colleague was more risk averse when making a single decision about one gamble (a *single-play* gamble), than when making a single decision about multiple identical gambles (a *multi-play* gamble).[^2]
 
@@ -30,7 +32,7 @@ Multi-play gambles that are displayed with an aggregated outcome distribution of
 
 [^4]:  This does not seems to hold when returns are calculated as percentages, rather than fixed dollar amounts [@stutzer2013]; and when participants do not perceive gamble outcomes as fungible [@dekay2005].
 
-## Repeated-play gambles
+### Repeated-play gambles
 
 Decisions in real life are usually sequential, and rarely identical as in the multi-play paradigm [cf. @barron2003]. That is, people tend to be confronted with individual choices whose outcomes and outcome probabilities are different from one choice to another, and these choices occur at different points in time. In a business setting this can be seen in decisions about whether to invest in new projects; proposals and opportunities differ widely and occur at different times.
 
@@ -40,7 +42,7 @@ These studies are closer to real-life decisions than the multi-play gamble parad
 
 Only a limited number of studies used a repeated-play paradigm without feedback. For instance, @jessup2008 and @hertwig2004 investigated the effects of feedback in repeated-play gambles on the weighting of small probabilities, so therefore had a no-feedback control condition. Other work similarly used individual description-based gambles presented sequentially [e.g., @ert2013; @joag1990]. However, these studies did not attempt to facilitate participants' risk aggregation. @haisley2008 provided limited evidence for facilitating risk aggregation. They gave participants the opportunity to buy five (negative EV) lottery tickets, and either presented them one at a time, or together. Participants bought fewer tickets, thereby maximising EV, when they considered them jointly. However, the experimenters did not specify the outcomes and probabilities of each gamble, meaning that it is unclear if participants understood the independent lotteries as identical or non-identical. This reduces the external validity of the study, as most independent risky choice involves non-identical outcomes and probabilities.
 
-## Choice bracketing
+### Choice bracketing
 
 Research in psychology and economics has identified ways of facilitating risk aggregation by encouraging people choice grouping. Specifically, people aggregate more when they consider the consequences of their choices together (broad bracketing) than when they consider them individually [narrow bracketing; @read1999]. In multi-play gambles (especially when displayed with an outcome distribution), choices are inherently bracketed broadly because a single choice is made about multiple gambles. Similarly, studies that used repeated-play gambles facilitated risk-tolerance essentially through broad bracketing. For instance, when @thaler1997 presented gamble outcomes less frequently, they allowed participants to consider longer time increments with a single evaluation.
 
@@ -54,7 +56,7 @@ In addition to the similarity between choices, how choices are presented may aff
 
 @moher2010 replicated @gneezy1997, but separately manipulated the number of gambles seen per trial and feedback frequency. They found that participants were less risk averse when viewing a set of three gambles per trial, than when viewing only one. However, they only found this effect with a set of identical outcomes. When outcomes were non-identical, there was no effect of presentation. However, participants were always presented with gamble outcomes for each trial, so it is unclear to what extent this influenced participants' ability to bracket broadly. In fact, when seeing gambles separately, participants were less risk averse when receiving feedback for each trial, compared to every three trials. Testing a presentation manipulation without the confound of feedback will help clarify this effect.
 
-## Internal market capital investment context
+### Internal market capital investment context
 
 Risk aggregation is salient in the investment world. Much of the work of investment managers involves constructing investment portfolios that are adequately diversified, such that the risk is spread throughout the individual investments. This work primarily takes place in external markets, but do managers of companies follow similar principles when investing in business projects within their companies? Do managers of internal market investment diversify as well as managers of external market investment?
 

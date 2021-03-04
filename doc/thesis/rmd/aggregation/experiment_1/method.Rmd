@@ -1,6 +1,6 @@
-## Method
+### Method
 
-### Participants
+#### Participants
 
 ```{r descriptives-aggregation-1}
 descriptives <- aggregation::dat %>%
@@ -21,7 +21,7 @@ neg_sum <- aggregation::dat %>%
 descriptives_aggregation_1$apa
 ```
 
-### Materials
+#### Materials
 
 ```{r materials-aggregation-1}
   instructions_doc <- aggregation::instructions %>% 
@@ -34,14 +34,13 @@ descriptives_aggregation_1$apa
     str_c("Yes \\_\\_ No \\_\\_")
 ```
 
-#### Instructions
+##### Instructions
 
 Participants saw the following instructions:
 
 > `r instructions_doc`
 
-#### Risky investment task
-
+##### Risky investment task
 
 ```{r}
 losses <- aggregation::dist_rep$outcomes < 0 
@@ -79,7 +78,7 @@ As such, each project cannot be considered to be a loss under expected value the
 
 In the low similarity condition, these project descriptions were all about one type of projects and were all from the same business. In the high similarity condition, each project was from a different industry. In the joint presentation condition, the 10 projects were all displayed on the one webpage, whereas in the separate presentation condition each was displayed on a different webpage. Participants in the aware condition read the following before their separate presentation display: "`r aggregation::awareness["aware"]`" Those in the naive condition simply proceeded without this message. Note, the financial and probability values were identical regardless of condition, and the order of each set of 10 projects was randomised.
 
-#### Outcome distribution decision
+##### Outcome distribution decision
 
 Participants were asked if they would invest in the last 10 projects they saw and were provided with a graph of the outcome probability distribution of the 10 projects, seen in Figure\ \@ref(fig:aggregation-outcome).[^6]
 
@@ -89,11 +88,11 @@ Participants were asked if they would invest in the last 10 projects they saw an
 shiR::plotdist(x = aggregation::dist_rep$outcomes, y = aggregation::dist_rep$probs, xlab = "Outcome ($ million)")
 ```
 
-#### Negative EV gambles
+##### Negative EV gambles
 
 We wanted to make sure that participants were generally making decisions that were in line with EV theory and that our sample was not abnormally risk tolerant. As such, we presented participants two project decisions that had a negative EV. Out of the `r total_n*2` negative EV gambles included (two per participant), all but `r neg_sum` were rejected.
 
-### Procedure
+#### Procedure
 
 Participants read the instructions and completed the risky investment task, first in the separate presentation condition, and then in the joint condition. Participants then made the outcome distribution decision and subsequently completed the negative EV gambles.
 
