@@ -48,7 +48,10 @@ clean_data_alignment_8 <- function(data_raw_filtered, experiment_number, test, p
     select(-c(time_elapsed, dateCreated)) %>%
     clean_data_finalise_alignment_8(
       test, prolific_filter,
-      prolific_filter_label
+      prolific_filter_label,
+      project_test,
+      "alignment",
+      "b"
     )
 
   return(data)

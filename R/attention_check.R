@@ -16,13 +16,15 @@
 ##' @author Shir Dekel
 ##' @export
 ##' @param data
-attention_check <- function(data) {
-    data %>%
+##' @param test_name
+##' @param test_answer
+attention_check <- function(data, test_name, test_answer) {
+  data %>%
     rowwise() %>%
     mutate(
-      across(project_test, str_to_lower),
+      across({{ test_name }}, str_to_lower),
       project_test_fail = case_when(
-        project_test == "b" ~ FALSE,
+        {{ test_name }} == test_answer ~ FALSE,
         TRUE ~ TRUE,
       ),
       interstitial_1_fail = case_when(
@@ -38,7 +40,6 @@ attention_check <- function(data) {
         interstitial_1_fail,
         interstitial_2_fail
       ),
-      reject = check_fail_count > 1,
+      reject = check_fail_count > 1
     )
-
 }

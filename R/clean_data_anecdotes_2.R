@@ -122,7 +122,13 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test,
       internal_node_id,
       dateCreated
     )) %>%
-    clean_data_finalise(test, prolific_filter, prolific_filter_label)
+    clean_data_finalise_alignment_8(
+      test, prolific_filter,
+      prolific_filter_label,
+      instructions_test,
+      "anecdotes",
+      "5"
+    )
 
   return(data)
 }

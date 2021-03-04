@@ -15,19 +15,22 @@
 ##' @param test
 ##' @param prolific_filter
 ##' @param prolific_filter_label
+##' @param test_name
+##' @param thesis_project
 ##' @return
 ##' @author Shir Dekel
 ##' @export
 clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
-                                            prolific_filter_label) {
+                                            prolific_filter_label, test_name,
+                                            thesis_project, test_answer) {
   if ("prolific" %in% colnames(data) & !test) {
     data_check <-
       data %>%
       filter(
-        !str_detect(prolific, "test1234"),
+        !str_detect(prolific, "test"),
         prolific != "5b878067600e3a000194db61"
       ) %>%
-      attention_check()
+      attention_check({{ test_name }}, test_answer)
 
     list(prolific_filter, prolific_filter_label) %>%
       pmap(
@@ -40,7 +43,7 @@ clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
     # experiment, but subsequently returned their submission (or somehow
     # timed-out).
     participants_eligible <-
-      file.path("inst", "extdata", "export") %>%
+      file.path("inst", "extdata", "export", thesis_project) %>%
       list.files(full.names = TRUE) %>%
       map_dfr(
         ~ .x %>%
