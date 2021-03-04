@@ -3,8 +3,8 @@ title: 'The psychology of managerial risky choice and resource allocation'
 author: 'Shir Dekel'
 date: '`r format(Sys.time())`'
 institution: 'The University of Sydney'
-division: 'School of Psychology'
-advisor: 'Micah Goldwater'
+# division: 'School of Psychology'
+# advisor: 'Micah Goldwater'
 department: 'Faculty of Science'
 degree: 'Doctor of Philosophy (Science)'
 knit: bookdown::render_book
@@ -24,8 +24,8 @@ abstract: (ref:abstract)
   
 bibliography: inst/references.bib
 csl: inst/apa.csl
-lot: true
-lof: true
+# lot: true
+# lof: true
 ---
 
 ```{r setup, include=FALSE}
