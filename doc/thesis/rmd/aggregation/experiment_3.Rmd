@@ -1,0 +1,7 @@
+## Experiment 3
+
+### Results
+
+```{r plot-aggregation-3}
+readd(plot_aggregation_3)
+```
