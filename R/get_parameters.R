@@ -19,7 +19,7 @@ get_parameters <- function() {
         rep(7),
       "import_data_server",
       "import_data_anecdotes_1",
-      "import_data_local"
+      "import_data_local_anecdotes_2"
     ))
 
   data_directory_server <-
@@ -36,7 +36,7 @@ get_parameters <- function() {
       file.path("inst", "extdata", "alignment", "experiment7"),
       file.path("inst", "extdata", "psychsydexp"),
       file.path("inst", "extdata", "anecdotes", "experiment1"),
-      file.path("inst", "extdata", "psychsydexp")
+      file.path("inst", "extdata", "anecdotes", "experiment2")
     )
 
   data_directory_server %>%
@@ -45,8 +45,7 @@ get_parameters <- function() {
   data_clean_test <-
     c(
       FALSE %>%
-        rep(13),
-      TRUE
+        rep(14)
     )
 
   prolific_filter <-

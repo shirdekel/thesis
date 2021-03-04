@@ -109,7 +109,7 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test,
     data_combined %>%
     mutate(
       datetime = dateCreated %>%
-        dmy_hms(tz = "Australia/Sydney"),
+        ymd_hms(tz = "Australia/Sydney"),
       total_time = max(time_elapsed) / 60000, # Milliseconds to minutes
       across(where(check_numeric), as.numeric)
     ) %>%
