@@ -29,8 +29,8 @@ lof: true
 ---
 
 ```{r setup, include=FALSE}
-source("./packages.R")
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(drake)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
 (ref:abstract) People often have to make decisions in situations in which they
