@@ -15,12 +15,12 @@ output:
   thesisdown::thesis_word: default
 
 abstract: (ref:abstract)
-acknowledgements: |
-  Acknowledgements.
-dedication: |
-  Dedication. 
-preface: |
-  Preface.
+# acknowledgements: |
+#   Acknowledgements.
+# dedication: |
+#   Dedication. 
+# preface: |
+#   Preface.
   
 bibliography: inst/references.bib
 csl: inst/apa.csl
