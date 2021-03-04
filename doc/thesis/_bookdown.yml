@@ -6,6 +6,8 @@ rmd_files:
   - "doc/thesis/rmd/index.Rmd"
   # - "doc/thesis/rmd/introduction.Rmd"
   - "doc/thesis/rmd/aggregation/introduction.Rmd"
+  - "doc/thesis/rmd/aggregation/experiment_1/introduction.Rmd"
+  - "doc/thesis/rmd/aggregation/experiment_1/method.Rmd"
   # - "doc/thesis/rmd/alignment/introduction.Rmd"
   # - "doc/thesis/rmd/alignment/experiment_1.Rmd"
   # - "doc/thesis/rmd/alignment/experiment_2.Rmd"
