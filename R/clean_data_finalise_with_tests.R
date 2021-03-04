@@ -20,7 +20,7 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-clean_data_finalise_alignment_8 <- function(data, test, prolific_filter,
+clean_data_finalise_with_tests <- function(data, test, prolific_filter,
                                             prolific_filter_label, test_name,
                                             thesis_project, test_answer) {
   if ("prolific" %in% colnames(data) & !test) {
