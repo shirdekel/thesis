@@ -24,7 +24,7 @@ clean_data_finalise <- function(data, test, prolific_filter,
       data <-
           data %>%
           filter(
-              !str_detect(prolific, "test1234"),
+              !str_detect(prolific, "test"),
               prolific != "5b878067600e3a000194db61"
           )
 
