@@ -53,3 +53,4 @@ materials_anecdotes_1.html
 *.mkv
 *.mp4
 /_bookdown_files/
+/doc/thesis/compiled_thesis/reference-keys.txt
