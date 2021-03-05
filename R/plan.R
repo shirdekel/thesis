@@ -4,6 +4,9 @@ parameters <-
 old_seed <-
   get_old_seed()
 
+thesis_rmd <-
+  get_thesis_rmd()
+
 the_plan <-
   drake_plan(
     restricted_values = target(
@@ -263,11 +266,23 @@ the_plan <-
       )))
     ),
     ampc_blitz = export_ampc_blitz(plot_alignment_8),
-    thesis = render_book(
+    thesis = render_with_deps(
       input = knitr_in(
-        "doc/thesis/rmd/index.Rmd"
+        !!file.path(
+          "doc",
+          "thesis",
+          "rmd",
+          "index.Rmd"
+        )
       ),
-      config_file = file_in("doc/thesis/_bookdown.yml"),
-      output_format = "all"
+      config_file = file_in(
+        !!file.path(
+          "doc",
+          "thesis",
+          "_bookdown.yml"
+        )
+      ),
+      output_format = "all",
+      deps = file_in(!!thesis_rmd)
     )
   )
