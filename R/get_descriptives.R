@@ -9,10 +9,13 @@ get_descriptives <- function(data_clean, iv) {
     data_clean %>%
     get_condition_allocation_table(iv)
 
-  total_apa <-
+  total <-
     condition_allocation_table %>%
     pull(n) %>%
-    last() %>%
+    last()
+
+  total_apa <-
+    total %>%
     printnum(numerals = FALSE, capitalize = TRUE)
 
   ## Alignment 3 should be the only experiment in which specific sex data was
@@ -121,6 +124,7 @@ get_descriptives <- function(data_clean, iv) {
   descriptives <-
     lst(
       condition_allocation_table,
+      total,
       total_apa,
       sex_female,
       numerical,
