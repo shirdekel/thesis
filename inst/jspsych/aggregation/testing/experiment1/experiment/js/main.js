@@ -12,6 +12,16 @@ var awareness_cond = jsPsych.randomization.sampleWithoutReplacement(['aware', 'n
 // var alignment_cond = 'lowA';
 // var awareness_cond = 'aware';
 
+urlvar = jsPsych.data.urlVariables();
+
+if (typeof urlvar.alignment !== 'undefined') {
+    alignment_cond = urlvar.alignment;
+}
+
+if (typeof urlvar.awareness !== 'undefined') {
+    awareness_cond = urlvar.awareness;
+}
+
 // record the condition assignment in the jsPsych data
 jsPsych.data.addProperties({
   subject: subject_id,
@@ -151,7 +161,7 @@ var separateBlock = {
 	timeline: [separate],
 	timeline_variables: test_stimuli,
 	repetitions: 1,
-	randomize_order: true
+	randomize_order: false
 };
 timeline.push(separateBlock);
 
@@ -178,7 +188,7 @@ var joint = {
     type: 'survey-multi-choice',
     questions: question_array,
     preamble: obj.preamble,
-    randomize_question_order: true
+    randomize_question_order: false
   };
 timeline.push(joint);
 
