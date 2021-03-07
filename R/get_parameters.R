@@ -121,9 +121,9 @@ get_parameters <- function() {
   iv <-
     list(
       c(
-        "Alignment",
-        "Awareness",
-        "Presentation"
+        "alignment",
+        "awareness",
+        "presentation"
       ),
       c(
         "awareness",
@@ -182,7 +182,7 @@ get_parameters <- function() {
   dv <-
     list(
       c(
-        "risk"
+        "proportion"
       ),
       c(
         "choice",

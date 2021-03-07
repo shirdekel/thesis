@@ -2,24 +2,7 @@
 
 #### Participants
 
-```{r descriptives-aggregation-1}
-descriptives <- aggregation::dat %>%
-  group_by(id, Alignment, Awareness) %>%
-  nest() %>%
-  ungroup() %>%
-  count(Alignment, Awareness)
-
-total_n <- descriptives %>%
-  pull(n) %>%
-  sum()
-neg_sum <- aggregation::dat %>%
-  filter(condition == "check_neg") %>%
-      pull(value) %>%
-      sum() %>%
-      as.integer() %>%
- papaja::printnum(numerals = FALSE)
-descriptives_aggregation_1$apa
-```
+`r descriptives_aggregation_1$apa`
 
 #### Materials
 
@@ -90,7 +73,7 @@ shiR::plotdist(x = aggregation::dist_rep$outcomes, y = aggregation::dist_rep$pro
 
 ##### Negative EV gambles
 
-We wanted to make sure that participants were generally making decisions that were in line with EV theory and that our sample was not abnormally risk tolerant. As such, we presented participants two project decisions that had a negative EV. Out of the `r total_n*2` negative EV gambles included (two per participant), all but `r neg_sum` were rejected.
+We wanted to make sure that participants were generally making decisions that were in line with EV theory and that our sample was not abnormally risk tolerant. As such, we presented participants two project decisions that had a negative EV. Out of the `r descriptives_aggregation_1$total*2` negative EV gambles included (two per participant), all but `r results_aggregation_1$neg_sum_apa` were rejected.
 
 #### Procedure
 
