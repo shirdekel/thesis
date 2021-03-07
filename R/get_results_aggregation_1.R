@@ -28,8 +28,24 @@ get_results_aggregation_1 <- function(data_clean, iv, dv) {
     as.integer() %>%
     printnum(numerals = FALSE)
 
+  aggregated_values_samuelson <-
+    get_aggregated_values(
+      outcome_positive = 200 %>%
+        rep(10),
+      prob_positive = 0.5 %>%
+        rep(10),
+      300
+    )
+
+  loss_prob_samuelson <-
+    get_loss_prob(
+      aggregated_values_samuelson$outcome_aggregated,
+      aggregated_values_samuelson$prob_aggregated
+    )
+
   lst(
     omnibus,
-    neg_sum_apa
+    neg_sum_apa,
+    loss_prob_samuelson
   )
 }

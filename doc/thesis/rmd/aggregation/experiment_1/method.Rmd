@@ -6,44 +6,25 @@
 
 #### Materials
 
-```{r materials-aggregation-1}
-  instructions_doc <- aggregation::instructions %>% 
-    str_replace_all("</p><p>|</p> <p>|<br>", "\n\n >") %>% 
-    str_remove_all("<p>|</p>")
-  project_doc <- aggregation::projects$highA[[1]] %>% 
-    str_c(aggregation::project_question) %>% 
-    str_replace_all(c("<b>|</b>" = "**",
-                      "<p>|</p>" = "\n\n")) %>% 
-    str_c("Yes \\_\\_ No \\_\\_")
-```
-
 ##### Instructions
 
-Participants saw the following instructions:
+Participants were shown the instructions in Figure\ \@ref(fig:instructions-aggregation-1).
 
-> `r instructions_doc`
+(ref:instructions-aggregation-1) Experiment 1 instructions.
+
+```{r instructions-aggregation-1, fig.cap = "(ref:instructions-aggregation-1)"}
+here(
+  "inst",
+  "materials",
+  "aggregation",
+  "experiment1",
+  "instructions.png"
+) %>%
+  image_read() %>%
+  image_trim()
+```
 
 ##### Risky investment task
-
-```{r}
-losses <- aggregation::dist_rep$outcomes < 0 
-p_loss <- aggregation::dist_rep$probs[losses] %>% 
-  sum()
-
-chance_pos <- 0.5 %>% 
-  rep(10)
-pos <- 200 %>% 
-  rep(10)
-dif <- 300
-outcomes <- shiR::getoutcomes(pos, dif)
-dist_rep_samuelson <- shiR::getpoisbinom(prob = chance_pos,
-                                         outcomes = outcomes %>% 
-                                           sort())
-
-losses_samuelson <- dist_rep_samuelson$outcomes < 0 
-p_loss_samuelson <- dist_rep_samuelson$probs[losses_samuelson] %>%
-    sum()
-```
 
 In the risky investment task, participants saw 10 short descriptions of business projects, and asked whether they would invest in that project or not. Each description included the name of the hypothetical business, the amount they forecast the project to cost, the amount they forecast the project to make, and probabilities for these forecasts. We constructed these projects to appear attractive when aggregated, and unattractive when segregated [see @langer2001]. Project values were different for each project, but followed a set of constraints for each project's EV and loss aversion coefficient ($\lambda$), and the probability of any loss given the outcome distribution of all 10 projects ($P(loss)$):
 
@@ -53,22 +34,58 @@ In the risky investment task, participants saw 10 short descriptions of business
 
 3.  $P(loss) < 0.1$.
 
-As such, each project cannot be considered to be a loss under expected value theory, but also would not be an easy choice for investment, because of the low $\lambda$. Further,since people are especially sensitive to loss probabilities [@zeisberger2020; @kahneman1979], an arbitrarily low $P(loss)$ was chosen to make investment in the complete set of projects seem attractive (see Figure\ \@ref(fig:aggregation-outcome).[^5] Below is an example of a description of a project in this task:
+As such, each project cannot be considered to be a loss under expected value theory, but also would not be an easy choice for investment, because of the low $\lambda$. Further,since people are especially sensitive to loss probabilities [@zeisberger2020; @kahneman1979], an arbitrarily low $P(loss)$ was chosen to make investment in the complete set of projects seem attractive (see Figure\ \@ref(fig:project-choice-aggregated-aggregation-1)).[^5] Figure\ \@ref(fig:project-choice-aggregation-1) shows an example of a description of a project in this task.
 
-[^5]:  The actual probability of a loss given the outcome distribution we used was `r p_loss`. This was calculated by summing all probabilities in the Poisson binomial distribution in Figure\ \@ref(fig:aggregation-outcome) whose outcomes were less than zero. For comparison, $P(loss)$ = `r p_loss_samuelson` for 10 plays of the @samuelson1963 gamble.
+[^5]:  The actual probability of a loss given the outcome distribution we used was `r gambles_aggregation_1$loss_prob`. This was calculated by summing all probabilities in the Poisson binomial distribution in Figure\ \@ref(fig:project-choice-aggregated-aggregation-1) whose outcomes were less than zero. For comparison, $P(loss)$ = `r results_aggregation_1$loss_prob_samuelson` for 10 plays of the @samuelson1963 gamble.
 
-> `r project_doc`
+(ref:project-choice-aggregation-1) Example of a project choice display in Experiment 1.
 
-In the low similarity condition, these project descriptions were all about one type of projects and were all from the same business. In the high similarity condition, each project was from a different industry. In the joint presentation condition, the 10 projects were all displayed on the one webpage, whereas in the separate presentation condition each was displayed on a different webpage. Participants in the aware condition read the following before their separate presentation display: "`r aggregation::awareness["aware"]`" Those in the naive condition simply proceeded without this message. Note, the financial and probability values were identical regardless of condition, and the order of each set of 10 projects was randomised.
+```{r project-choice-aggregation-1, fig.cap = "(ref:project-choice-aggregation-1)"}
+here(
+  "inst",
+  "materials",
+  "aggregation",
+  "experiment1",
+  "project_choice_oil-well_separate_similarity_low_1.png"
+) %>%
+  image_read() %>%
+  image_trim()
+```
+
+In the low similarity condition, these project descriptions were all about one type of projects and were all from the same business. In the high similarity condition, each project was from a different industry. In the joint presentation condition, the 10 projects were all displayed on the one webpage, whereas in the separate presentation condition each was displayed on a different webpage. Participants in the aware condition saw the display shown in Figure\ \@ref(fig:awareness-aware-aggregation-1) before their separate presentation display. Those in the naive condition simply proceeded without this message. Note, the financial and probability values were identical regardless of condition, and the order of each set of 10 projects was randomised.
+
+(ref:awareness-aware-aggregation-1) The display seen by those in the aware condition of Experiment 1.
+
+```{r awareness-aware-aggregation-1, fig.cap = "(ref:awareness-aware-aggregation-1)"}
+here(
+  "inst",
+  "materials",
+  "aggregation",
+  "experiment1",
+  "awareness_aware.png"
+) %>%
+  image_read() %>%
+  image_trim()
+```
 
 ##### Outcome distribution decision
 
-Participants were asked if they would invest in the last 10 projects they saw and were provided with a graph of the outcome probability distribution of the 10 projects, seen in Figure\ \@ref(fig:aggregation-outcome).[^6]
+Participants were asked if they would invest in the last 10 projects they saw and were provided with a graph of the outcome probability distribution of the 10 projects, seen in Figure\ \@ref(fig:project-choice-aggregated-aggregation-1).[^6]
 
 [^6]:  This Poisson binomial distribution was calculated using the R package `poibin`, which uses calculations described in @hong2013.
 
-```{r aggregation-outcome, fig.cap = "The outcome distribution of the 10 gambles used in the experiment."}
-shiR::plotdist(x = aggregation::dist_rep$outcomes, y = aggregation::dist_rep$probs, xlab = "Outcome ($ million)")
+(ref:project-choice-aggregated-aggregation-1) The outcome distribution of the 10 gambles used in the experiment.
+
+```{r project-choice-aggregated-aggregation-1, fig.cap = "(ref:project-choice-aggregated-aggregation-1)"}
+here(
+  "inst",
+  "materials",
+  "aggregation",
+  "experiment1",
+  "project_choice_aggregated.png"
+) %>%
+  image_read() %>%
+  image_trim()
 ```
 
 ##### Negative EV gambles

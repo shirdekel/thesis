@@ -31,8 +31,20 @@ csl: inst/apa.csl
 ```{r setup, include=FALSE}
 library(drake)
 library(tidyverse)
+library(magick)
+library(here)
+library(knitr)
+
 loadd(starts_with("descriptives"))
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+loadd(starts_with("results"))
+loadd(starts_with("gambles"))
+
+opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  out.width = "100%"
+)
 ```
 
 (ref:abstract) People often have to make decisions in situations in which they
