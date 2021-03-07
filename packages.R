@@ -42,6 +42,7 @@ library(printy)
 library(readtext)
 library(mgsub)
 library(bookdown)
+library(yaml)
 
 conflict_prefer("filter", "dplyr")
 conflict_prefer("flatten", "purrr")

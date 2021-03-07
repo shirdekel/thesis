@@ -6,8 +6,7 @@
 ##' @author Shir Dekel
 ##' @export
 get_thesis_rmd <- function() {
-  c(
-    "doc/thesis/rmd/aggregation/introduction.Rmd",
-    "doc/thesis/rmd/aggregation/experiment_1/introduction.Rmd"
-  )
+  file.path("doc", "thesis", "_bookdown.yml") %>%
+    read_yaml() %>%
+    pluck("rmd_files")
 }

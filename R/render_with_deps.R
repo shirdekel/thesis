@@ -6,7 +6,8 @@
 ##' @return
 ##' @author Shir Dekel
 ##' @export
-render_with_deps <- function(input,
+render_with_deps <- function(input = file.path("doc", "thesis", "rmd",
+                                               "index.Rmd"),
                              config_file,
                              output_format,
                              deps) {

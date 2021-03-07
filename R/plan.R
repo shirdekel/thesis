@@ -267,21 +267,7 @@ the_plan <-
     ),
     ampc_blitz = export_ampc_blitz(plot_alignment_8),
     thesis = render_with_deps(
-      input = knitr_in(
-        !!file.path(
-          "doc",
-          "thesis",
-          "rmd",
-          "index.Rmd"
-        )
-      ),
-      config_file = file_in(
-        !!file.path(
-          "doc",
-          "thesis",
-          "_bookdown.yml"
-        )
-      ),
+      config_file = file_in(!!file.path("doc", "thesis", "_bookdown.yml")),
       output_format = "all",
       deps = file_in(!!thesis_rmd)
     )
