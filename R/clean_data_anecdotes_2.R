@@ -107,12 +107,14 @@ clean_data_anecdotes_2 <- function(data_raw_filtered, experiment_number, test,
 
   data <-
     data_combined %>%
+    rowwise(subject) %>%
     mutate(
       datetime = dateCreated %>%
         ymd_hms(tz = "Australia/Sydney"),
       total_time = max(time_elapsed) / 60000, # Milliseconds to minutes
       across(where(check_numeric), as.numeric)
     ) %>%
+    ungroup() %>%
     select(-c(
       view_history,
       rt,
