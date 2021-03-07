@@ -269,6 +269,6 @@ the_plan <-
     thesis = render_with_deps(
       config_file = file_in(!!file.path("doc", "thesis", "_bookdown.yml")),
       output_format = "all",
-      deps = file_in(!!thesis_rmd)
+      deps = knitr_in(!!thesis_rmd)
     )
   )
