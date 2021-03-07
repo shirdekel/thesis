@@ -27,7 +27,8 @@ clean_data_aggregation_1 <- function(data_raw_filtered_aggregation_1, experiment
   data_combined <- data_prep %>%
     mutate(
       df = map(data, extract_data, names_to, names_pattern),
-      total_time = map_dbl(data, shiR::gettime),
+      ## Milliseconds to minutes
+      total_time = map_dbl(data, shiR::gettime) / 60000,
       data = NULL
     )
 
@@ -97,7 +98,10 @@ clean_data_aggregation_1 <- function(data_raw_filtered_aggregation_1, experiment
     mutate(proportion = map_dbl(data, get_risk)) %>%
     unnest(data) %>%
     ungroup() %>%
-    mutate(awareness = awareness %>%
-      recode("naive" = "not aware")) %>%
+    mutate(
+      awareness = awareness %>%
+        recode("naive" = "not aware"),
+      across(where(check_numeric), as.numeric)
+    ) %>%
     mutate_at(c("alignment", "awareness", "presentation"), as.factor)
 }
