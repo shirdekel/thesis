@@ -54,3 +54,7 @@ materials_anecdotes_1.html
 *.mp4
 /_bookdown_files/
 /doc/thesis/compiled_thesis/reference-keys.txt
+/inst/jspsych/aggregation/testing/experiment1/experiment/js/jspsych-6.1.0/
+/inst/jspsych/aggregation/testing/experiment1/experiment/js/sampling-master/
+/inst/jspsych/aggregation/experiment1/experiment/js/jspsych-6.1.0/
+/inst/jspsych/aggregation/experiment1/experiment/js/sampling-master/
