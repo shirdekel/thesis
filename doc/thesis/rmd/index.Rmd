@@ -37,6 +37,7 @@ library(knitr)
 
 loadd(starts_with("descriptives"))
 loadd(starts_with("results"))
+loadd(starts_with("plot"))
 loadd(starts_with("gambles"))
 
 opts_chunk$set(

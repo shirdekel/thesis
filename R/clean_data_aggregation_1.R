@@ -48,7 +48,6 @@ clean_data_aggregation_1 <- function(data_raw_filtered_aggregation_1, experiment
     ungroup() %>%
     mutate(
       alignment = recode(alignment, lowA = "low", highA = "high"),
-      awareness = awareness %>% str_to_title(),
       value = as.double(as.character(recode(value, "Yes" = 1, "No" = 0))),
       id = as.factor(id),
       condition = replace_na(condition, "check_aggregated"),

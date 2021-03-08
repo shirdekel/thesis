@@ -95,4 +95,3 @@ We wanted to make sure that participants were generally making decisions that we
 #### Procedure
 
 Participants read the instructions and completed the risky investment task, first in the separate presentation condition, and then in the joint condition. Participants then made the outcome distribution decision and subsequently completed the negative EV gambles.
-
