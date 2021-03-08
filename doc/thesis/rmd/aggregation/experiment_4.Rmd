@@ -1,7 +1,0 @@
-## Experiment 4
-
-### Results
-
-```{r plot-aggregation-4}
-readd(plot_aggregation_4)
-```

@@ -6,7 +6,7 @@
 
 #### Materials
 
-##### Instructions
+##### Instructions {#instructions-aggregation-1}
 
 Participants were shown the instructions in Figure\ \@ref(fig:instructions-aggregation-1).
 
@@ -24,17 +24,17 @@ here(
   image_trim()
 ```
 
-##### Risky investment task
+##### Risky investment task {#task-aggregation-1}
 
 In the risky investment task, participants saw 10 short descriptions of business projects, and asked whether they would invest in that project or not. Each description included the name of the hypothetical business, the amount they forecast the project to cost, the amount they forecast the project to make, and probabilities for these forecasts. We constructed these projects to appear attractive when aggregated, and unattractive when segregated [see @langer2001]. Project values were different for each project, but followed a set of constraints for each project's EV and loss aversion coefficient ($\lambda$), and the probability of any loss given the outcome distribution of all 10 projects ($P(loss)$):
-
+ 
 1.  $\text{EV} > 0$;
 
-2.  $\lambda < 2$; and
+2.  $\lambda < 2.25$; and
 
 3.  $P(loss) < 0.1$.
 
-As such, each project cannot be considered to be a loss under expected value theory, but also would not be an easy choice for investment, because of the low $\lambda$. Further,since people are especially sensitive to loss probabilities [@zeisberger2020; @kahneman1979], an arbitrarily low $P(loss)$ was chosen to make investment in the complete set of projects seem attractive (see Figure\ \@ref(fig:project-choice-aggregated-aggregation-1)).[^5] Figure\ \@ref(fig:project-choice-aggregation-1) shows an example of a description of a project in this task.
+As such, each project cannot be considered to be a loss under expected value theory, but also would not be an easy choice for investment, because of the low $\lambda$ [made to be lower than the median loss aversion coefficient calculated in @tversky1992]. Further, since people are especially sensitive to loss probabilities [@zeisberger2020; @kahneman1979], an arbitrarily low $P(loss)$ was chosen to make investment in the complete set of projects seem attractive (see Figure\ \@ref(fig:project-choice-aggregated-aggregation-1)).[^5] Figure\ \@ref(fig:project-choice-aggregation-1) shows an example of a description of a project in this task.
 
 [^5]:  The actual probability of a loss given the outcome distribution we used was `r gambles_aggregation_1$loss_prob`. This was calculated by summing all probabilities in the Poisson binomial distribution in Figure\ \@ref(fig:project-choice-aggregated-aggregation-1) whose outcomes were less than zero. For comparison, $P(loss)$ = `r results_aggregation_1$loss_prob_samuelson` for 10 plays of the @samuelson1963 gamble.
 
