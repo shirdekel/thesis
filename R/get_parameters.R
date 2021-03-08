@@ -63,7 +63,7 @@ get_parameters <- function() {
       NA,
       get_prolific_filter_alignment_8(),
       "datetime > '2020-07-28'",
-      "datetime > '2020-07-28'"
+      get_prolific_filter_anecdotes_2()
     )
 
   prolific_filter_label <-
@@ -97,7 +97,11 @@ get_parameters <- function() {
         "low_implicit"
       ),
       NA,
-      NA
+      list(
+        NA,
+        "anecdote_only",
+        "combined"
+      )
     )
 
   clean_data <-
