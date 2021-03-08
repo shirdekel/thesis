@@ -34,6 +34,8 @@ library(tidyverse)
 library(magick)
 library(here)
 library(knitr)
+library(papaja)
+library(kableExtra)
 
 opts_chunk$set(
   echo = FALSE,

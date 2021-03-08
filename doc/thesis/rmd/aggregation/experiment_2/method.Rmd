@@ -11,7 +11,7 @@
 Participants were shown the same instructions as in
 [Experiment 1](#instructions-aggregation-1).
 
-##### Risky investment task
+##### Risky investment task {#task-aggregation-2}
 
 Participants saw a similar display to the one in
 [Experiment 1](#task-aggregation-1), but with new gamble values,
@@ -39,7 +39,7 @@ here(
   image_crop("1485x1880+0+0")
 ```
 
-##### Follow-up
+##### Follow-up {#follow-up-aggregation-2}
 
 Figure\ \@ref(fig:project-number-aggregation-2) shows the project number question (maximum
 value was set to 20). Figures\ \@ref(fig:portfolio-binary-aggregation-2) and\

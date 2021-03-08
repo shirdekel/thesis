@@ -1,0 +1,10 @@
+## Experiment 3
+
+```{r setup-aggregation-3}
+loadd(descriptives_aggregation_3)
+loadd(results_aggregation_3)
+loadd(plot_aggregation_3)
+loadd(gambles_aggregation_3)
+```
+
+Experiment 3 investigated the effect of similarity on project choice.
