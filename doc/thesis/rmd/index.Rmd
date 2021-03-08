@@ -35,10 +35,10 @@ library(magick)
 library(here)
 library(knitr)
 
-loadd(starts_with("descriptives"))
-loadd(starts_with("results"))
-loadd(starts_with("plot"))
-loadd(starts_with("gambles"))
+loadd(starts_with("descriptives_aggregation"))
+loadd(starts_with("results_aggregation"))
+loadd(starts_with("plot_aggregation"))
+loadd(starts_with("gambles_aggregation"))
 
 opts_chunk$set(
   echo = FALSE,
