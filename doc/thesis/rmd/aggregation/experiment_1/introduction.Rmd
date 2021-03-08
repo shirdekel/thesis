@@ -1,5 +1,12 @@
 ## Experiment 1
 
+```{r setup-aggregation-1}
+loadd(descriptives_aggregation_1)
+loadd(results_aggregation_1)
+loadd(plot_aggregation_1)
+loadd(gambles_aggregation_1)
+```
+
 We investigated the effect of three choice bracketing manipulations on risky
 choice in hypothetical resource allocation scenarios. Previous research had low
 ecological validity because of the use of multi-play paradigms or feedback. In

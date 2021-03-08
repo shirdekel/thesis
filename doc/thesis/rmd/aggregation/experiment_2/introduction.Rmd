@@ -1,5 +1,12 @@
 ## Experiment 2
 
+```{r setup-aggregation-2}
+loadd(descriptives_aggregation_2)
+loadd(results_aggregation_2)
+loadd(plot_aggregation_2)
+loadd(gambles_aggregation_2)
+```
+
 Experiment 2 investigated the effect of presentation, awareness, and
 distribution on project choice. However, in contract to Experiment 1, here I
 manipulated these variables between-subjects.
