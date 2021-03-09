@@ -101,8 +101,9 @@ plot_aggregation_4$project_number
 ### Portfolio choice - binary
 
 Participants were then asked if they would rather invest in all or none of the
-projects. As Figure\ \@ref(fig:plot-portfolio-binary) shows, the difference
-between awareness conditions was not significant,
+projects. As Figure\ \@ref(fig:plot-portfolio-binary) shows, there was no
+significant difference between awareness conditions in wanting to invest
+in all of the projects,
 `r results_aggregation_4$portfolio_binary$full_result[[2]]`.
 
 ```{r plot-portfolio-binary, fig.cap = "Mean choice of investing in all 10 projects for the awareness effect."}
