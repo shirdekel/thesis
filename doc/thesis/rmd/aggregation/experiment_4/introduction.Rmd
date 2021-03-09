@@ -1,0 +1,15 @@
+## Experiment 4
+
+```{r setup-aggregation-4}
+loadd(descriptives_aggregation_4)
+loadd(results_aggregation_4)
+loadd(plot_aggregation_4)
+loadd(gambles_aggregation_4)
+```
+
+Experiment 4 investigated the effect of "awareness" on project choice. The
+"naive" condition attempted to encourage participants to focus on projects one
+at a time and did not say how many projects there were. The "aware" condition
+attempted to encourage participants to think of all 20 projects (by saying the
+total number in the beginning, and notifying participants where they were in the
+project order).

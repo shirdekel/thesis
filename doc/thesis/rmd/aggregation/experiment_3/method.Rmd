@@ -16,7 +16,7 @@ descriptives_aggregation_3$condition_allocation_table %>%
 Participants were shown the same instructions as in
 [Experiment 1](#instructions-aggregation-1).
 
-##### Risky investment task
+##### Risky investment task {#task-aggregation-3}
 
 Participants saw displays with the same gamble values as those in
 [Experiment 2](#task-aggregation-2), but with some changes in wording and
@@ -44,7 +44,7 @@ The similarity manipulation was as in Experiment 1. However, here I varied
 project domain so that in the high similarity condition participants saw one of
 the ten project domains.
 
-##### Follow-up
+##### Follow-up {#follow-up-aggregation-3}
 
 The follow-up questions were similar to those in
 [Experiment 2](#follow-up-aggregation-2), except in the portfolio number
