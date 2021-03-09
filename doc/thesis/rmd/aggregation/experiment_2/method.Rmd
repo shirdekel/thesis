@@ -2,7 +2,12 @@
 
 #### Participants
 
-`r descriptives_aggregation_2$apa`
+`r descriptives_aggregation_2$apa` Table\ \@ref(tab:allocation-aggregation-2) shows the condition allocation.
+
+```{r allocation-aggregation-2}
+descriptives_aggregation_2$condition_allocation_table %>%
+  apa_table("Experiment 2 group allocation.")
+```
 
 #### Materials
 
