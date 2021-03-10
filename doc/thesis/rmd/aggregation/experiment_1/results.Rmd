@@ -1,6 +1,8 @@
 ### Results
 
-A three-way ANOVA was conducted to investigate the effects of similarity,
+#### Project choice
+
+I conducted a three-way ANOVA to investigate the effects of similarity,
 awareness, and presentation on the proportion of participants' decision to
 invest in the 10 projects. As seen in
 Figure\ \@ref(fig:plot-aggregation-1-awareness), participants invested more when they
@@ -41,6 +43,8 @@ Error bars represent 95% confidence intervals.
 plot_aggregation_1$alignment_presentation
 ```
 
+#### Outcome distribution
+
 A paired-samples t-test was conducted to compare participants' decision to
 invest in the 10 projects while seeing an aggregated distribution, and their
 decisions to invest in the projects individually, without the distribution.
@@ -48,3 +52,10 @@ Participants invested in the 10 projects more when seeing the distribution both
 in the separate presentation phase,
 `r results_aggregation_1$individual_aggregated$separate`; and in the joint
 presentation phase, `r results_aggregation_1$individual_aggregated$joint`.
+
+However, I subsequently discovered that the code that generated this
+distribution mistakenly flipped the outcome values. This means that although it
+appeared from the distribution that the propability of loss was
+`r gambles_aggregation_1$loss_prob`, the actual probability of loss of the
+underlying values given the correct distribution was
+`r gambles_aggregation_1$loss_prob_correct`

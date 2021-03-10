@@ -57,6 +57,8 @@ get_gambles <- function(thesis_project, experiment_number, restricted_values,
             aggregated_values$prob_aggregated
           )
 
+        loss_prob_correct <- loss_prob
+
         outcome_positive <- outcome_positive_restricted_sample
         prob_positive <- prob_positive_restricted_sample
       }
@@ -75,6 +77,19 @@ get_gambles <- function(thesis_project, experiment_number, restricted_values,
           aggregated_values$prob_aggregated
         )
 
+      aggregated_values_correct <-
+        get_aggregated_values(
+          restricted_values$outcome,
+          restricted_values$prob,
+          restricted_values$outcome_dif
+        )
+
+      loss_prob_correct <-
+        get_loss_prob(
+          aggregated_values_correct$outcome_aggregated,
+          aggregated_values_correct$prob_aggregated
+        )
+
       outcome_positive <- restricted_values$outcome
       prob_positive <- restricted_values$prob
     }
@@ -91,7 +106,8 @@ get_gambles <- function(thesis_project, experiment_number, restricted_values,
       lst(
         outcome_positive,
         prob_positive,
-        loss_prob
+        loss_prob,
+        loss_prob_correct
       ) %>%
       append(aggregated_values) %>%
       append(restriction_values)
