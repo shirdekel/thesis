@@ -1,7 +1,7 @@
 ### Discussion
 
-We found that choice bracketing facilitated risk aggregation in
-description-based repeated-play gambles . This paradigm has never been a target
+I found that choice bracketing facilitated risk aggregation in
+description-based repeated-play gambles. This paradigm has never been a target
 of research. Early work on risk aggregation involved multi-play gambles, which
 treated gambles as simultaneous and identical. However, most risky choice
 outside the lab involves considering multiple choices independently, as in
@@ -14,23 +14,23 @@ consider the effect of choice bracketing on risk aggregation. As such, our
 paradigm allowed for the investigation of choice bracketing in a way that is
 isomorphic with real-life prescriptions.
 
-In addition to the novelty of the paradigm itself, we found that choice
-bracketing facilitates risk aggregation. As per Hypothesis 1, we found that
+In addition to the novelty of the paradigm itself, I found that choice
+bracketing facilitates risk aggregation. As per Hypothesis 1, I found that
 merely knowing that further choices will have to be made reduces risk aversion.
-As per Hypothesis 2, we found that people are less risk averse when viewing
-their choices together. Contrary to Hypothesis 3, we did not find a main effect
+As per Hypothesis 2, I found that people are less risk averse when viewing
+their choices together. Contrary to Hypothesis 3, I did not find a main effect
 of similarity, but instead found that similarity moderated the presentation
 effect. That is, joint presentation is not as useful if projects cannot be
-easily compared. Unsurprisingly, as per Hypothesis 4, we found that risk
+easily compared. Unsurprisingly, as per Hypothesis 4, I found that risk
 aversion was further reduced when a distribution of outcome probabilities was
 provided. Altogether, it seems that although subtle contextual cues were able to
-encourage risk aggregation, people still struggled to aggregate as well as when
+encourage risk aggregation, people still struggled to aggregate as much as when
 risk is aggregated for them.
 
 Our choice bracketing findings are largely congruent with, but extend, previous
 research. @sokolhessner2009 and @sokolhessner2012 found that encouraging
 participants to make decisions akin to a professional investor increased the
-amount of risky choices they made. We found that risky choice increased with an
+amount of risky choices they made. I found that risky choice increased with an
 even subtler manipulation: whether or not participants were aware of the number
 of choices to be made. @hsee1999 found that useful, but hard-to-interpret,
 attributes were used more when the options were presented jointly, rather than
@@ -42,15 +42,15 @@ Research on the effect of option similarity on choice [e.g., @markman1995]
 suggests that alignable differences are more important than non-alignable
 differences. Further, the effects of multi-play gambles and outcome
 distributions on risk aggregation are only seen when participants perceive the
-options as fungible [e.g., @dekay2005]. As such, we predicted that a set of
+options as fungible [e.g., @dekay2005]. As such, I predicted that a set of
 investments that involve the same type of investment would be seen as more
-similar and fungible. We expected that this would facilitate a broad bracketing,
+similar and fungible. I expected that this would facilitate a broad bracketing,
 and therefore more risk aggregation.
 
-While we did not find a main effect of similarity, we found that choice
-similarity interacted with the presentation condition. We are unable to clearly
-account for this effect, since we would have expected to see it in the opposite
-direction. That is, we would have expected that seeing a set of similar projects
+While I did not find a main effect of similarity, I found that choice
+similarity interacted with the presentation condition. I are unable to clearly
+account for this effect, since I would have expected to see it in the opposite
+direction. That is, I would have expected that seeing a set of similar projects
 would help participants aggregate risk when seeing them separately, more than
 when projects are dissimilar. Note, however, that there was no significant
 difference between similarity conditions when viewing projects separately. As
@@ -64,10 +64,10 @@ Our finding that participants are less risk averse when provided with an
 aggregated outcome distribution is also congruent with previous work [e.g.,
 @redelmeier1992]. However, when distributions have been previously used, gambles
 were identical in multi-play paradigms and used immediate feedback for
-repeated-play paradigms [e.g., @benartzi1999]. As we mentioned previously, both
+repeated-play paradigms [e.g., @benartzi1999]. As I mentioned previously, both
 these paradigms have limited ecological validity because usually people are
 faced with non-identical sequential choices and do not receive immediate
-feedback. We are the first to provide evidence for this aggregation effect with
+feedback. I are the first to provide evidence for this aggregation effect with
 non-identical gambles without feedback .
 
 Limitations of cognitive capacity might explain some of these choice bracketing
@@ -111,7 +111,7 @@ difficult to comparing similar projects [@dekel2019]. The current work suggests
 that the gains of joint comparison would be amplified, compared to separate
 evaluation, when comparing a set of similar projects.
 
-One potential limitation of our experiment is that we provided participants with
+One potential limitation of our experiment is that I provided participants with
 explicit probabilities for gamble outcomes. However, in real-life decisions
 people rarely have specific probability information when evaluating risky
 choices. More often, people tend to make decisions under *ambiguity*, meaning
@@ -124,7 +124,7 @@ choices. However, @fox1995 only found ambiguity aversion in a within-subjects
 experiment and not in a between-subjects experiment. That is, participants did
 not treat risky and ambiguous choices differently when the two types of choices
 were not available for comparison. This finding suggests that there may not be a
-difference in the effects we found in a real-life ambiguous choice environment.
+difference in the effects I found in a real-life ambiguous choice environment.
 Further, @liu2009 found that playing ambiguous gambles as multi-play gambles
 inhibited ambiguity aversion. As such, it is unlikely that a paradigm with
 ambiguous choices would find different results to the current study. Future

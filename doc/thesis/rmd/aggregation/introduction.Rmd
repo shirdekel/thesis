@@ -1,4 +1,4 @@
-# Aggregation
+# Effects of choice bracketing on risk aggregation in repeated-play gambles with no feedback
 
 ## Introduction
 
@@ -19,7 +19,7 @@ the returns of one investment when evaluating a subsequent investment. Any
 results that a farmer may identify from using a new technology will only become
 apparent after many seasons of use. Similarly, it will take many years for a
 multi-business firm to begin to estimate whether the output of a mine resulted
-in the expected return on investment. These are the gambles that we investigate
+in the expected return on investment. These are the gambles that I investigate
 in the current study: large risky choices without immediate outcomes.
 
 Work on prospect theory [@kahneman1979] suggests that people's evaluation of
@@ -28,11 +28,11 @@ effects. Specifically, people typically evaluate gambles one by one [@rabin2009;
 @tversky1981; @kahneman1993]. As such, it is unlikely that people will be able
 to aggregate risk when they do not perceive a series of investments as a
 portfolio. So, what would encourage people to aggregate risk? The literature on
-*choice bracketing* [@read1999]shows that grouping a set of individual gambles
+*choice bracketing* [@read1999] shows that grouping a set of individual gambles
 together facilitates risk aggregation. As such, the current work provides two
-primary contributions. First, we are the first to investigate the effect of
+primary contributions. First, I am the first to investigate the effect of
 choice bracketing on risk aggregation in independent gambles evaluated without
-immediate returns. Second, we introduce novel choice bracketing manipulations.
+immediate returns. Second, I introduce novel choice bracketing manipulations.
 
 The earlier work on risk aggregation essentially did the aggregating work for
 the participants. For example, experimenters provided participants with an
@@ -48,13 +48,13 @@ between the choice a person makes and the outcome of that choice, and there are
 likely to be several interim choices in the meantime. This is especially true
 for business executives, who would typically have to wait months or years before
 beginning to understand the consequences of their decision, and even then the
-outcome may be unclear.However, previous work did not investigate the effect of
+outcome may be unclear. However, previous work did not investigate the effect of
 choice bracketing on description-based repeated-play gambles. This is
 surprising, since choice bracketing is exactly the kind of process that should
-promote aggregation in these more realistic decisions. As such, we investigated
+promote aggregation in these more realistic decisions. As such, I investigated
 new ways of encouraging participants to bracket their risky choices, but with a
 paradigm that involves a series of independent choices without feedback. In this
-way, our paradigm is more isometric with real-life risky choice.
+way, my paradigm is more isometric with real-life risky choice.
 
 ### Risk aggregation
 
@@ -93,7 +93,7 @@ single decision about multiple identical gambles (a *multi-play* gamble).[^2]
     @ross1999; @lopes1981; @aloysius2007]. However, a normative discussion is
     out of the scope of the present article.
 
-[^2]: We use the terminology from @bristow2011 and @camilleri2013 for
+[^2]: I use the terminology from @bristow2011 and @camilleri2013 for
     consistency.
 
 @wedell1994 replicated the @samuelson1963 anecdote experimentally with a gamble
@@ -162,7 +162,7 @@ participants are shown the outcomes of their gambles at multiple points in the
 experiment. This paradigm is known as *experience-based choice*. In
 *description-based choice* on the other hand, the gamble is simply presented to
 the participant without any feedback, as in the multi-play gambles above. In
-real life, we rarely see the immediate outcomes of our risky choices, and even
+real life, people rarely see the immediate outcomes of their risky choices, and even
 less so in financial settings, where any return on investment often takes years
 to manifest.
 
@@ -201,7 +201,7 @@ experimental artefact of immediate feedback. Previous research suggests some
 ways of doing this. @sokolhessner2009 and @sokolhessner2012 found that lengthy
 instructions with an elaborate explanation to "think like a trader" -- and to
 consider all the repeated-play gambles as a portfolio, as opposed to considering
-them individually -- reduced risk aversion. However, we are interested in how
+them individually -- reduced risk aversion. However, I am interested in how
 more subtle cues may facilitate risk aggregation, without relying on explicit
 education. The previous literature suggests that lay people do not know to
 aggregate risk, but this research did not directly test contextual cues that
@@ -298,18 +298,18 @@ each middle-manager, the choice represents a risk of loss for their division and
 potentially their job, whereas for the CEO the entire portfolio of choices
 represents a likely overall gain for the company.
 
-In the present study we investigate risky choice in the context of business
+In this chapter I investigate risky choice in the context of business
 project investment internal to a company because this is a real-world context
 where choice bracketing is important and currently underutilized [@lovallo2020].
-In the current study though, our participants are taken from a general
+The participants in my studies are taken from a general
 population that does not have extensive managerial experience. However, in the
 general population a lack of risk aggregation is most likely more common, and
-the variables we are researching here are readily applicable to the financial
+the variables I am researching here are readily applicable to the financial
 decisions that lay people make. For instance, one of the real-world applications
 of the choice bracketing literature has been to use outcome distributions and
 increased time horizons to encourage investment in high risk, but high EV, funds
 [e.g., @benartzi1999]. Otherwise, people typically prefer low risk, low EV,
-funds. Further, because our task concerns managerial decision-making, we can
+funds. Further, because my task concerns managerial decision-making, I can
 investigate contextual cues to choice bracketing, while eliminating potential
 differences between participants in their prior experience with the specific
 decision-context. Future research will focus on participants with
