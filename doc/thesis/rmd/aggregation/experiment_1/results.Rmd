@@ -43,7 +43,7 @@ Error bars represent 95% confidence intervals.
 plot_aggregation_1$alignment_presentation
 ```
 
-#### Outcome distribution
+#### Outcome distribution {#outcome-distribution-aggregation-3}
 
 A paired-samples t-test was conducted to compare participants' decision to
 invest in the 10 projects while seeing an aggregated distribution, and their

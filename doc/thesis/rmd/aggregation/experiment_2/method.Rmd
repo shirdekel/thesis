@@ -2,7 +2,8 @@
 
 #### Participants
 
-`r descriptives_aggregation_2$apa` Table\ \@ref(tab:allocation-aggregation-2) shows the condition allocation.
+`r descriptives_aggregation_2$apa` Table\ \@ref(tab:allocation-aggregation-2)
+shows the condition allocation.
 
 ```{r allocation-aggregation-2}
 descriptives_aggregation_2$condition_allocation_table %>%
@@ -19,8 +20,9 @@ Participants were shown the same instructions as in
 ##### Risky investment task {#task-aggregation-2}
 
 Participants saw a similar display to the one in
-[Experiment 1](#task-aggregation-1), but with new gamble values,
-in order to fix the mistake in the Experiment 1 gamble value calculation.
+[Experiment 1](#task-aggregation-1), but with new gamble values, in order to fix
+the mistake in the Experiment 1 gamble value calculation (detailed
+[above](#outcome-distribution-aggregation-3)).
 
 The presentation and awareness manipulations were as in Experiment 1. However,
 for the distribution variable, participants either saw the project descriptions
@@ -40,8 +42,7 @@ here(
   "project_choice_oil-well_separate_distribution_present_1.png"
 ) %>%
   image_read() %>%
-  image_trim() %>%
-  image_crop("1485x1880+0+0")
+  image_trim()
 ```
 
 ##### Follow-up {#follow-up-aggregation-2}
