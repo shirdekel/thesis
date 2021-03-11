@@ -146,7 +146,7 @@ gambles included (two per participant), all but
 
 ###### @samuelson1963 gambles
 
-I showed participants the original @samuelson gamble, asked them whether they
+I showed participants the original @samuelson1963 gamble, asked them whether they
 would accept 10 of that gamble, and whether they would accept those 10 given the
 associated outcome distribution. I then showed them the same three questions,
 but using outcome magnitudes that were similar to the ones in the risky
