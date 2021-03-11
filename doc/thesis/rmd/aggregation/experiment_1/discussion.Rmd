@@ -5,29 +5,56 @@ that people make more risky choices when considering those choices jointly on
 the same page, compared to on separate pages; and when they knew how many
 choices were in the set. Further, I found an interaction between project
 similarity and presentation, and found tentative evidence that people are less
-risk averse when risky choices are aggregated for them.
+risk averse when risky choices are aggregated for them. Exploratory analyses
+showed that participants' risk aversion seemed to decrease as they proceeded
+through the trials, but only when participants were aware of the number of
+projects.
 
-These results add evidence to the choice bracketing account, showing that people
-tend to consider their options one at a time. Further, they suggest that people
-are using a sort of "naive" aggregation process when they are encouraged to
-group their choices together. Specifically, the higher rates of choice for
-participants that viewed all ten projects jointly suggests that they were
-encouraged by the joint display to consider the set of projects together, and
+#### Presentation effect
+
+The presentation effect may be a result of one of two mechanisms.
+A mathematical aggregation explanation would mean that participants are
+combining the gambles into a mental representation of the probability distribution
+and then deciding based on the attractiveness of that distribution. A joint
+presentation of choices would facilitate this combination. On the other hand, people
+may also be using a sort of "naive" aggregation process when they are encouraged to
+group their choices together. a naive aggregation explanation would suggest that participants in the joint
+condition are simply more likely to realise that a few big wins could offset a few losses.
+It may be the case that participants were encouraged by the joint display to consider the set of projects together, and
 perhaps conclude that ultimately investing in a higher number of gambles is
 potentially valuable due to the possibility that one project might pay off the
-projects that showed losses. Similarly, it is likely that having an awareness of
+projects that showed losses. 
+
+#### Awareness effect
+
+I found an awareness effect such that participants that viewed the projects
+separately, were more likely to invest in the projects as the trials went on,
+regardless of the actual gambles. This result may be due to the 
+Gambler's fallacy/law of small numbers. That is, participants may have thought that
+after a few gambles that they considered risky, the last ones were more likely to materialise.
+However, it might also be the case  that having an awareness of
 the total number of projects in the set would increase the likelihood that
 participants would use this sort of "naive" aggregation.
 
-However, the similarity \\times presentation interaction is harder to explain
+#### Similarity effect
+
+The similarity \\times presentation interaction is harder to explain
 since I did not originally hypothesise it. In fact, the results seem to suggest
-the opposite to what was originally expected. Specifically, the interaction
-seems to be driven by the separate high similarity condition being lower, rather
-than by the joint high similarity being higher. This is surprising, since we
+the opposite to what was originally expected.
+Initially, I predicted that people would be less risk averse in the high
+similarity condition. I
 hypothesised that those in the high similarity condition would be be less risk
-averse, due to the better ability to consider the isolated projects as a set.
+averse, due to the better ability to consider the isolated projects as a set.I thought that more similarity would act as a broad
+bracket, and therefore increase aggregation. I found that in general, there was
+no similarity effect. Although, project acceptance was higher in the low than in
+the high similarity condition when projects were presented separately and
+participants were not aware of the number of projects.
+
+Specifically, the interaction
+seems to be driven by the separate high similarity condition being lower, rather
+than by the joint high similarity being higher.  
 However, a more likely explanation is that participants may be engaging in a
-naive *diverification*, rather. That is, participants may be considering the
+naive *diversification*, rather. That is, participants may be considering the
 high similarity condition as a sign that the set of projects may not be
 sufficiently "diversified". However, this explanation would also predict the
 joint presentation condition to be lower in the high similarity condition. So,
@@ -39,6 +66,23 @@ presentation, on the other hand, were able to see all ten projects, so would
 already known that there were no other projects in the set, and so were less
 likely to reject projects on the basis of the hope for different projects in the
 future.
+
+People neglect co-variation when diversifying [e.g., @hedesstrom2006].
+Instead, to the extent that people diversify, they seem to only diversify
+naively. That is, they could be said to be looking for variety, rather than
+diversification in the strict sense. This "diversification bias" is also seen in
+product choices [@read1995]. Perhaps this suggests that people were
+diversifying naively in the separate naive condition. Unclear why this wouldn't
+be the case also in the joint condition. Perhaps it is an order effect, with
+participants already establishing a certain risk tolerance after the separate
+trials.
+
+Naive diversification would suggest that
+participants may be trying to choose a set of projects that is more varied.
+Not finding this effect in the joint condition suggests that it is potentially
+more likely to be explained by gambler's fallacy.
+
+#### Limitations
 
 This experiment had two major limitations. First, proper counterbalancing was
 not used in either project domains, nor in the order of the within-subjects

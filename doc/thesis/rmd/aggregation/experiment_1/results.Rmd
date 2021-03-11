@@ -66,10 +66,13 @@ normative way.
 
 #### Trial-by-trial analysis
 
-I conducted exploratory analyses into the possible effects of the manipulations on a trial-by trial basis. 
-Figure\ \@ref(fig:plot-aggregation-1-trials) shows proportions of project acceptance across all conditions and trials.
+I conducted exploratory analyses into the possible effects of the manipulations
+on a trial-by trial basis. Figure\ \@ref(fig:plot-aggregation-1-trials) shows
+proportions of project acceptance across all conditions and trials.
 
-(ref:plot-aggregation-1-trials) Proportion of project acceptance by trial, similarity, awareness, and presentation conditions. LOESS is used for smoothing over trials, and the shading represents 95% confidence intervals.
+(ref:plot-aggregation-1-trials) Proportion of project acceptance by trial,
+similarity, awareness, and presentation conditions. LOESS is used for smoothing
+over trials, and the shading represents 95% confidence intervals.
 
 ```{r plot-aggregation-1-trials, fig.cap = "(ref:plot-aggregation-1-trials)"}
 plot_aggregation_1$trials
@@ -84,7 +87,10 @@ the relationship between choice and trial is significant in the aware condition,
 `r results_aggregation_1$trials_separate_awareness_slope$aware`; but not in the naive condition,
 `r results_aggregation_1$trials_separate_awareness_slope$naive`.
 
-(ref:plot-aggregation-1-trials-separate-awareness) Proportion of project acceptance in the separate presentation condition, by trial, and awareness conditions. LOESS is used for smoothing over trials, and the shading represents 95% confidence intervals.
+(ref:plot-aggregation-1-trials-separate-awareness) Proportion of project
+acceptance in the separate presentation condition, by trial, and awareness
+conditions. LOESS is used for smoothing over trials, and the shading
+represents 95% confidence intervals.
 
 ```{r plot-aggregation-1-trials-separate-awareness, fig.cap = "(ref:plot-aggregation-1-trials-separate-awareness)"}
 plot_aggregation_1$trials_separate_awareness

@@ -10,7 +10,7 @@ participants with feedback, or allowing them to sample from outcome
 distributions. Large real-life investments are different, as their outcomes are
 not eventuated immediately (and do not allow for distribution sampling). The
 limited prior work using description-based repeated-play gambles did not
-consider the effect of choice bracketing on risk aggregation. As such, our
+consider the effect of choice bracketing on risk aggregation. As such, my
 paradigm allowed for the investigation of choice bracketing in a way that is
 isomorphic with real-life prescriptions.
 
@@ -27,14 +27,14 @@ provided. Altogether, it seems that although subtle contextual cues were able to
 encourage risk aggregation, people still struggled to aggregate as much as when
 risk is aggregated for them.
 
-Our choice bracketing findings are largely congruent with, but extend, previous
+my choice bracketing findings are largely congruent with, but extend, previous
 research. @sokolhessner2009 and @sokolhessner2012 found that encouraging
 participants to make decisions akin to a professional investor increased the
 amount of risky choices they made. I found that risky choice increased with an
 even subtler manipulation: whether or not participants were aware of the number
 of choices to be made. @hsee1999 found that useful, but hard-to-interpret,
 attributes were used more when the options were presented jointly, rather than
-separately. In our case, the "hard to interpret" element of the decision set was
+separately. In my case, the "hard to interpret" element of the decision set was
 the risk of the projects. Similar to @hsee1999, it seemed that risk was
 accounted for more when projects were presented jointly, rather than separately.
 
@@ -60,7 +60,7 @@ were from different industries. Perhaps the ability to aggregate risk when
 projects are presented together is more made more salient when projects are
 similar.Future research should investigate this effect further.
 
-Our finding that participants are less risk averse when provided with an
+my finding that participants are less risk averse when provided with an
 aggregated outcome distribution is also congruent with previous work [e.g.,
 @redelmeier1992]. However, when distributions have been previously used, gambles
 were identical in multi-play paradigms and used immediate feedback for
@@ -81,7 +81,7 @@ surprising; the bottleneck of mentally aggregating the risk is removed, such
 that all that is left is the participants' risk preference.
 
 However, it is unlikely that the participants became better mathematicians due
-to our choice bracketing manipulation. Instead, choice bracketing during the
+to my choice bracketing manipulation. Instead, choice bracketing during the
 repeated-play gambles may be encouraging a more naive risk aggregation. That is,
 participants may be becoming more risk tolerant because choice bracketing, such
 as the joint presentation, reinforces the existence of other risky options.
@@ -93,7 +93,7 @@ decision-making. For instance, managers can implement processes that encourage a
 joint evaluation of projects. This way projects can be considered as individual
 components in a portfolio, thereby facilitating better risk aggregation. Some
 companies are already implementing such processes [@lovallo2020]. When that is
-not possible and projects must still be evaluated sequentially, our research
+not possible and projects must still be evaluated sequentially, my research
 suggests that making the existence of other projects salient will encourage risk
 aggregation. For example, executives can use simple reminders that ask how many
 future risky projects will be evaluated in a given time frame.
@@ -111,7 +111,7 @@ difficult to comparing similar projects [@dekel2019]. The current work suggests
 that the gains of joint comparison would be amplified, compared to separate
 evaluation, when comparing a set of similar projects.
 
-One potential limitation of our experiment is that I provided participants with
+One potential limitation of my experiment is that I provided participants with
 explicit probabilities for gamble outcomes. However, in real-life decisions
 people rarely have specific probability information when evaluating risky
 choices. More often, people tend to make decisions under *ambiguity*, meaning
@@ -119,7 +119,7 @@ that the outcome probabilities themselves are uncertain [@curley1986]. Both lay
 people and managers show *ambiguity aversion*, preferring risky gambles (in
 which probabilities are certain) to ambiguous gambles [in which probabilities
 are uncertain; @curley1986; @keren1999; @ho2002; @viscusi1999]. As such, it is
-unclear whether our results will also be seen in a paradigm with ambiguous
+unclear whether my results will also be seen in a paradigm with ambiguous
 choices. However, @fox1995 only found ambiguity aversion in a within-subjects
 experiment and not in a between-subjects experiment. That is, participants did
 not treat risky and ambiguous choices differently when the two types of choices
@@ -129,3 +129,53 @@ Further, @liu2009 found that playing ambiguous gambles as multi-play gambles
 inhibited ambiguity aversion. As such, it is unlikely that a paradigm with
 ambiguous choices would find different results to the current study. Future
 research should investigate this further.
+
+# The relationship between diversification and aggregation
+
+A diversified portfolio is one whose investments are uncorrelated or negatively
+correlated. According to Portfolio Theory [@markowitz1952], a diversified
+portfolio is preferred to one that is not diversified, because it reduces the
+probability of a loss. When some investments have losses, others will have
+gains; the root of "don't keep all your eggs in one basket." Aggregating a
+portfolio of investments means to combine their outcomes and corresponding
+probabilities into one decision (that is essentially just an outcome probability
+distribution). This works because the aggregated risk is lower than any
+individual investment risk. See @kahneman1993 for illustrative examples.
+
+Typically, questions of gamble aggregation assume that each gamble is
+independent. That is, the gambles are uncorrelated. As such, in a way,
+aggregation of a portfolio already assumes that the portfolio is somewhat
+diversified (at least that the gambles aren't perfectly correlated).
+
+# How does choice bracketing facilitate aggregation
+
+The literature suggests that multi-play effects (with and without a distributions) are due to the way that people weigh losses. The mechanism for repeated-play effects from experience is unclear.
+
+## Multi-play
+
+Much of the literature [e.g., @benartzi1999] is not clear about why they think
+choice bracketing occurs. Some explain the effect of bracketing on aggregation
+using risk aversion [e.g., @read1999], while others refer to the increased
+weighting of potential losses [@webb2017].
+
+## Repeated-play
+
+Decision-from-experience *sampling* studies explain the underweighting of rare
+events (as opposed to the overweighting that occurs with
+decisions-from-description) by sampling bias and recency effects [e.g.,
+@hertwig2004; @wulff2018]. That is, they explain that people are less risk
+averse for positive EV gambles because when they sample from the distribution
+they only sample a small amount (usually approximately 20 times) so they do not experience
+rare events very often. Also, the latter half of the sequence of sampling is
+significantly more predictive than the former (recency effect). Some
+decision-from-experience *feedback* studies explain this effect by "choice
+inertia" [@camilleri2011]. That is, "the tendency to repeat the last choice,
+irrespective of the obtained outcome" (p. 383). However, there is not much more
+elaboration beyond this. Repeated-play gambles show more underweighting than
+multi-play gambles. This is said to be due to a "reliance on a very small set of
+samples" [@camilleri2013, p. 64]. However, this explanation does not account
+for repeated-play effects independently.
+
+One way of addressing the question of whether people are aggregating naively or not is to pose participants a set of negative EV gambles.
+However, that would require mixed gambles.
+That is, a gamble with one risky (10% of winning 25 and 90% of losing 10) option and one certain (lose 20) option.

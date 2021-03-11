@@ -274,6 +274,16 @@ averse when receiving feedback for each trial, compared to every three trials.
 Testing a presentation manipulation without the confound of feedback will help
 clarify this effect.
 
+### Gambler's fallacy
+
+It is unclear how much something such as the gambler's fallacy could affect
+repeated-play tasks. @barron2010 found that the gambler's fallacy (in a roulette
+prediction task) emerges when information about past outcomes were displayed
+sequentially, but not when they are displayed all at once. @haisley2008 found
+evidence for the gambler's fallacy with a repeated-play gamble paradigm.
+However, it is unclear to what extent this is an explanation of repeated-play
+gamble effects that do not use feedback.
+
 ### Internal market capital investment context
 
 Risk aggregation is salient in the investment world. Much of the work of
@@ -300,7 +310,7 @@ represents a likely overall gain for the company.
 
 In this chapter I investigate risky choice in the context of business
 project investment internal to a company because this is a real-world context
-where choice bracketing is important and currently underutilized [@lovallo2020].
+where choice bracketing is important and currently under-utilised [@lovallo2020].
 The participants in my studies are taken from a general
 population that does not have extensive managerial experience. However, in the
 general population a lack of risk aggregation is most likely more common, and
