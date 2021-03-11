@@ -105,7 +105,8 @@ plot_aggregation_4$portfolio_number
 
 #### Gambles
 
-Figures\ \@ref(fig:plot-aggregation-4-trials) and\ \@ref(fig:plot-gamble-values) show the
+Figures\ \@ref(fig:plot-aggregation-4-trials)
+and\ \@ref(fig:plot-aggregation-4-gamble-values) show the
 overall people seemed to prefer gambles with higher probabilities of gain,
 sometimes regardless of expected value or value of the gain.
 
@@ -120,6 +121,6 @@ plot_aggregation_4$trials
 (ref:plot-aggregation-4-gamble-values) Mean project acceptance for the gambles'
 expected value, positive probability, and positive outcome.
 
-```{r plot-gamble-values, fig.cap = "(ref:plot-aggregation-4-gamble-values)"}
+```{r plot-aggregation-4-gamble-values, fig.cap = "(ref:plot-aggregation-4-gamble-values)"}
 plot_aggregation_4$gamble_values
 ```
