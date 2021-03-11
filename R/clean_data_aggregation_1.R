@@ -98,8 +98,6 @@ clean_data_aggregation_1 <- function(data_raw_filtered_aggregation_1, experiment
     unnest(data) %>%
     ungroup() %>%
     mutate(
-      awareness = awareness %>%
-        recode("naive" = "not aware"),
       across(where(check_numeric), as.numeric)
     ) %>%
     mutate_at(c("alignment", "awareness", "presentation"), as.factor)
