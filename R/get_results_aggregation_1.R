@@ -7,6 +7,8 @@
 ##' @author Shir Dekel
 ##' @export
 get_results_aggregation_1 <- function(data_clean, iv, dv) {
+  set_sum_contrasts()
+
   model <-
     aov_ez(
       data = data_clean,
@@ -81,10 +83,27 @@ get_results_aggregation_1 <- function(data_clean, iv, dv) {
     map(~ t_print(gambles_aggregated, .x, paired = TRUE)) %>%
     set_names("separate", "joint")
 
+  trials_separate_awareness_model <-
+    data_clean %>%
+    filter(presentation == "separate") %>%
+    glm(choice ~ awareness * project_order, ., family = binomial)
+
+  trials_separate_awareness <-
+    trials_separate_awareness_model %>%
+    apa_print()
+
+  trials_separate_awareness_slope <-
+    trials_separate_awareness_model %>%
+    emtrends(~awareness, var = "project_order") %>%
+    apa_print_emtrends() %>%
+    super_split(awareness) %>%
+    map(pull, apa)
+
   lst(
     neg_sum_apa,
     loss_prob_samuelson,
-    individual_aggregated
+    individual_aggregated,
+    trials_separate_awareness_slope
   ) %>%
     append(anova) %>%
     append(simple_effects) %>%
